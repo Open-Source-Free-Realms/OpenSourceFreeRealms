@@ -1,0 +1,180 @@
+# The following enums do not have corresponding animation slots in FreeRealms:
+#	cLTStandWithLightsaber,      
+#	cLTStrafeLeftWithLightsaber, 
+#	cLTStrafeRightWithLightsaber,
+#	
+#	emo_taunt01,
+#	emo_taunt02,
+#	emo_taunt03,
+#	emo_taunt04,
+#	emo_taunt05,
+#	emo_taunt06,
+#	emo_taunt07,
+#	emo_taunt08,
+#	emo_taunt09,
+#	emo_taunt10,
+#	env_off,    
+#	env_on,     
+#	env_spawn,  
+#	env_despawn,
+#	cLTThrowLightsaber,
+#	cLTStand,          
+#	cLTStrafeLeft,     
+#	cLTStrafeRight,    
+#	cLTCatchLightsaber,
+#
+Enum^Data^Name
+0^1^loc_stand
+1^3^loc_run
+2^103^loc_jump
+3^105^loc_land
+4^104^loc_fall
+5^101^loc_turn_left
+6^102^loc_turn_right
+7^1011^com_h2h_special_01
+8^1120^com_recoil_01
+9^3251^emo_pose_01
+10^1151^com_death_01
+11^4^loc_backpedal
+12^3101^emo_talk_basic
+13^3102^emo_talk_inquire
+14^3103^emo_talk_exclaim
+15^3314^emo_give
+16^3323^emo_receive
+17^3307^emo_confused
+18^3326^emo_shrug
+19^3333^emo_wave
+20^3334^emo_yawn
+21^3306^emo_cheer
+22^3331^emo_thanks
+23^3201^emo_dance_basic
+24^1300^com_wieldtype_stand
+25^1152^com_death_static_01
+26^1001^com_h2h_attack_01
+27^1002^com_h2h_attack_02
+28^1003^com_h2h_attack_03
+29^3001^emo_outfit_all
+30^2^loc_walk
+31^100^loc_fidget
+32^1200^com_fidget
+33^1000^com_h2h_attack
+34^1020^com_1hs_attack
+35^1040^com_2hs_attack
+36^1060^com_dws_attack
+37^6^loc_sprint
+38^1403^com_get_up
+39^9^loc_swim
+40^10^loc_swim_stand
+41^11^loc_swim_backpedal
+42^6001^scr_loc_idle
+43^6002^scr_loc_run
+44^6003^scr_loc_run_turn_left
+45^6004^scr_loc_run_turn_right
+46^6005^scr_loc_stumble
+47^6006^scr_loc_impact
+48^6007^scr_loc_fall
+49^6008^scr_loc_fall_nutbust
+50^6009^scr_loc_fall_hoverh
+51^6010^scr_loc_fall_facedrag
+52^6011^scr_loc_getup_back
+53^6012^scr_loc_jump
+54^6013^scr_loc_land
+55^6101^scr_off_kick_left
+56^6102^scr_off_kick_right
+57^6103^scr_off_kick_bicycle
+58^6104^scr_off_kick_tornado
+59^6105^scr_off_kick_hspin        
+60^6106^scr_off_run_kick_left
+61^6107^scr_off_run_kick_right
+62^6108^scr_off_run_kick_stop_left
+63^6109^scr_off_run_kick_stop_right
+64^6110^scr_off_run_diveheader
+65^6111^scr_off_run_pass_back
+66^6112^scr_off_run_highpass_receive_left
+67^6113^scr_off_run_highpass_receive_right
+68^6114^scr_off_highpass_receive_left
+69^6115^scr_off_highpass_receive_right
+70^6116^scr_off_pass_back              
+71^6117^scr_off_preload_rainbow
+72^6118^scr_off_juke_rainbow
+73^6119^scr_off_juke_lift
+74^6120^scr_off_juke_360_right
+75^6201^scr_def_backpedal
+76^6202^scr_def_run_strafe_left
+77^6203^scr_def_run_strafe_right
+78^6204^scr_def_run_steal_right
+79^6205^scr_def_run_slidetackle_end
+80^6206^scr_def_run_slidetackle_right
+81^6207^scr_goal_idle_intense
+82^6208^scr_goal_idle_with_ball
+83^6209^scr_goal_block_high_center
+84^6210^scr_goal_block_high_left
+85^6211^scr_goal_block_high_right
+86^6212^scr_goal_block_dive_low_left
+87^6213^scr_goal_block_dive_low_right
+88^6214^scr_goal_catch_low_center
+89^6215^scr_goal_catch_med_center
+90^6216^scr_goal_catch_high_center
+91^6217^scr_goal_getup_left
+92^6218^scr_goal_getup_right
+93^6301^scr_emo_celeb_fistpump
+94^6302^scr_emo_celeb_clap
+95^6303^scr_emo_celeb_flex
+96^6304^scr_emo_celeb_cheer
+97^6305^scr_emo_defeat_cry
+98^6306^scr_emo_defeat_frustrated
+99^6307^scr_emo_defeat_angry
+100^6308^scr_emo_taunt_namecall
+101^6501^drv_loc_idle
+102^6502^drv_loc_back_start
+103^6503^drv_loc_back_idle
+104^6504^drv_loc_back_end
+105^6505^drv_loc_turn_left
+106^6506^drv_loc_turn_right
+107^6600^drv_impact_soft
+108^6610^drv_impact_med
+109^6620^drv_impact_heavy
+110^6612^drv_impact_med_02
+111^6613^drv_impact_med_03
+112^6621^drv_impact_heavy_01
+113^6622^drv_impact_heavy_02
+114^6623^drv_impact_heavy_03
+115^6624^drv_impact_heavy_04
+116^6701^drv_emo_confused
+117^6702^drv_emo_celebrate
+118^6703^drv_emo_frustrated
+119^6704^drv_emo_angry
+120^3001^emo_outfit_all
+121^1099^com_swing
+122^3252^emo_pose_02
+123^1406^com_dodge
+127^3330^emo_taunt    
+138^1401^com_stunned
+143^2801^env_oneshot_01
+144^2802^env_oneshot_02             
+145^2803^env_oneshot_03             
+146^2804^env_oneshot_04                
+147^2805^env_oneshot_05                
+153^110^loc_bank_left                               
+154^111^loc_bank_right                              
+159^112^loc_backpedal_left                          
+160^113^loc_backpedal_right                         
+161^12^loc_swim_turn_left
+162^13^loc_swim_turn_right
+163^20^loc_walk_backpedal
+164^154^loc_parachute_deploy
+165^155^loc_parachute_fall
+166^156^loc_parachute_land
+167^157^loc_parachute_left
+168^158^loc_parachute_right
+169^159^loc_parachute_forward
+170^160^loc_parachute_backward
+171^161^loc_parachute_retract
+172^211^loc_glide_deploy
+173^212^loc_glide_fall
+174^213^loc_glide_land
+175^214^loc_glide_left
+176^215^loc_glide_right
+177^216^loc_glide_forward
+178^217^loc_glide_backward
+179^218^loc_glide_retract

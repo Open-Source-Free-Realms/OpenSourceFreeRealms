@@ -1,0 +1,79 @@
+#id parent text tooltip hassub submenu defaultfunc valuefunc optionname optiontype callback disabled param1
+
+# movement
+m0^movement^action_movementlabel^tooltip^0^0^0^0^0^label
+m1^movement^action_turnleft^tooltip^0^0^0^0^TurnLeft^key
+m2^movement^action_turnright^tooltip^0^0^0^0^TurnRight^key
+m3^movement^action_moveforward^tooltip^0^0^0^0^MoveForward^key
+m4^movement^action_movebackward^tooltip^0^0^0^0^MoveBackward^key
+m5^movement^action_strafeleft^tooltip^0^0^0^0^StrafeLeft^key
+m6^movement^action_straferight^tooltip^0^0^0^0^StrafeRight^key
+m7^movement^action_autorun^tooltip^0^0^0^0^AutoRun^key
+
+m8^movement^action_jump^tooltip^0^0^0^0^Jump^key
+
+# action bar
+a0^actionbar^action_actionbarlabel^tooltip^0^0^0^0^0^label
+a1^actionbar^action_actionbar1^tooltip^0^0^0^0^ActionBarSlot1^key
+a2^actionbar^action_actionbar2^tooltip^0^0^0^0^ActionBarSlot2^key
+a3^actionbar^action_actionbar3^tooltip^0^0^0^0^ActionBarSlot3^key
+a4^actionbar^action_actionbar4^tooltip^0^0^0^0^ActionBarSlot4^key
+a5^actionbar^action_actionbar5^tooltip^0^0^0^0^ActionBarSlot5^key
+a6^actionbar^action_actionbar6^tooltip^0^0^0^0^ActionBarSlot6^key
+a7^actionbar^action_actionbar7^tooltip^0^0^0^0^ActionBarSlot7^key
+a8^actionbar^action_actionbar8^tooltip^0^0^0^0^ActionBarSlot8^key
+a9^actionbar^action_actionbar9^tooltip^0^0^0^0^ActionBarSlot9^key
+a10^actionbar^action_altactionbar^tooltip^0^0^0^0^SelectAlternateActionBar^key
+
+a11^actionbar^action_tabtarget^tooltip^0^0^0^0^TabTargetSelect^key
+
+# general
+g0^general^action_generallabel^tooltip^0^0^0^0^0^label
+g1^general^action_interaction^tooltip^0^0^0^0^TriggerClosestInteraction^key
+
+# dock
+dock0^regular^action_docklabel^tooltip^0^0^0^0^0^label
+d1^dock^action_dockatlas^tooltip^0^0^0^0^DockOpenAtlas^key
+d2^dock^action_dockcharacter^tooltip^0^0^0^0^DockOpenCharacter^key
+d3^dock^action_dockjobs^tooltip^0^0^0^0^DockOpenJobs^key
+d4^dock^action_dockquests^tooltip^0^0^0^0^DockOpenQuests^key
+d5^dock^action_dockpets^tooltip^0^0^0^0^DockOpenPets^key
+d6^dock^action_dockinventory^tooltip^0^0^0^0^DockOpenInventory^key
+
+# free
+#free0^free^action_freelabel^tooltip^0^0^0^0^0^label
+#free1^free^action_freetranslation^tooltip^0^0^0^0^FreeformTranslation^key
+#free2^free^action_freerotation^tooltip^0^0^0^0^FreeformRotation^key
+#free3^free^action_freescale^tooltip^0^0^0^0^FreeformScale^key
+
+# dialog
+#d1^dialog^action_dockopencharacter^tooltip^0^0^0^0^DockOpenCharacter^key
+
+# fishing
+#f1^fishing^action_idle^tooltip^0^0^0^0^Idle^key
+
+# fly
+#fly1^fly^action_moveup^tooltip^0^0^0^0^MoveUp^key
+#fly2^fly^action_movedown^tooltip^0^0^0^0^MoveDown^key
+#fly3^fly^action_reducespeed^tooltip^0^0^0^0^ReduceSpeed^key
+
+# pet
+#p1^pet^action_idle^tooltip^0^0^0^0^DockOpenPets^key
+
+# regular
+#r4^regular^action_reducespeed^tooltip^0^0^0^0^ReduceSpeed^key
+#admin only r5^regular^action_ignorecollision^tooltip^0^0^0^0^IgnoreCollision^key
+
+# housing
+#h0^free^action_housinglabel^tooltip^0^0^0^0^0^label
+#h1^housing^action_deletefurniture^tooltip^0^0^0^0^HousingDeleteFurniture^key
+#h2^housing^action_cycleroom^tooltip^0^0^0^0^HousingCycleRoom^key
+
+# soccer
+#s0^soccer^action_soccerlabel^0^0^0^0^0^label
+#s1^soccer^action_kick^tooltip^0^0^0^0^Kick^key
+#s2^soccer^action_juke^tooltip^0^0^0^0^Juke^key
+
+# demolition derby
+#dd0^demolition^action_demolitionlabel^0^0^0^0^0^label
+#dd1^demolition^action_powerup^tooltip^0^0^0^0^UsePowerup^key

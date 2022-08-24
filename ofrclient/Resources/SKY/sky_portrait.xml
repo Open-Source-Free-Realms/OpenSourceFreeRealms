@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+
+<Dome>
+    <Texture File="Default_DomeGradient.dds" />
+</Dome>
+
+<Horizon>
+    <Texture File="Ring-CloudHoriz.dds" />
+    <Position Bottom="0" Top="45" />
+</Horizon>
+
+<SunLight>
+    <Direction Heading="210" Pitch="35" />
+    <Color R="192" G="180" B="112" Brightness="1.15" />
+</SunLight>
+
+<Ambient>
+    <Texture File="ambient_outdoordefault.tga" Brightness="1.85"/>
+</Ambient>
+
+<Reflection>
+    <CubeMap File="reflection_sky.dds" Brightness="5"/>
+</Reflection>
+
+<Fog>
+    <Color R="128" G="172" B="212" />
+    <Range Near="250" Far="500" />
+    <FadeRange Near="500" Far="550" />
+</Fog>
+
+<Post>
+    <Bloom Strength="0.45" />
+    <Haze Strength="0.33" Distance="200" />
+</Post>

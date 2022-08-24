@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<TimeOfDay>
+  <Dawn StartTime="none" />
+  <Day StartTime="none" />
+  <Dusk StartTime="none" />
+  <Night StartTime="19:45" />
+</TimeOfDay>
+
+<Dome>
+    <Texture File="dome_bandit_hideout.tga" />
+</Dome>
+
+<Horizon>
+    <Texture File="ring_blank.tga" />
+    <Position Bottom="-20" Top="-15" />
+</Horizon>
+
+<SunLight>
+    <Direction Heading="5" Pitch="65" />
+    <Color R="255" G="255" B="220" Brightness=".2" />
+    <Shadows Enabled="false" />
+</SunLight>
+
+<Ambient>
+    <Texture File="ambient_bandit_hideout.tga" Brightness=".75"/>
+</Ambient>
+
+<Fog>
+    <Color R="45" G="16" B="40" />
+    <Range Near="35" Far="125" /> 
+    <FadeRange Near="500" Far="550" />
+</Fog>
+
+<Post>
+    <Bloom Strength="1" />
+    <Haze Strength=".2" Distance="135" />
+</Post>

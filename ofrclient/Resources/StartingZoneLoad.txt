@@ -1,0 +1,5 @@
+#LOAD_ORDER^ASSET_LIST^CALLBACK^IS_BACKGROUND_LOAD^
+1^UiAssets.txt^^0^
+10^HighRoadAssets.txt^HUD.StartingZoneLoaded^0^
+20^MinigameAssets.txt^^1^
+100^FilteredCommonAssets.txt^^1^

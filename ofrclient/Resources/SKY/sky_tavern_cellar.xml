@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<TimeOfDay>
+  <Dawn StartTime="none" />
+  <Day StartTime="none" />
+  <Dusk StartTime="none" />
+  <Night StartTime="19:45" />
+</TimeOfDay>
+
+<Dome>
+    <Texture File="dome_tavern_cellar.tga" />
+</Dome>
+
+<Horizon>
+    <Texture File="ring_blank.tga" />
+    <Position Bottom="-20" Top="-15" />
+</Horizon>
+
+<SunLight>
+    <Direction Heading="5" Pitch="65" />
+    <Color R="255" G="255" B="220" Brightness=".275" />
+    <Shadows Enabled="false" />
+</SunLight>
+
+<Ambient>
+    <Texture File="ambient_tavern_cellar.tga" Brightness=".25"/>
+</Ambient>
+
+<Fog>
+    <Color R="75" G="49" B="65" />
+    <Range Near="0" Far="120" /> 
+    <FadeRange Near="500" Far="550" />
+</Fog>
+
+<Post>
+    <Bloom Strength="1" />
+    <Haze Strength=".2" Distance="135" />
+</Post>

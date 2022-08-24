@@ -1,0 +1,114 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+
+<TimeOfDay>
+  <Dawn StartTime="5:00" />
+  <Day StartTime="6:00" />
+  <Dusk StartTime="19:00" />
+  <Night StartTime="20:00" />
+</TimeOfDay>
+
+<Dome>
+    <Texture Time="03:00" File="dome_blackspore_03.tga" />
+    <Texture Time="06:00" File="dome_blackspore_06.tga" />
+	<Texture Time="12:00" File="dome_blackspore_18.tga" />
+    <Texture Time="18:00" File="dome_blackspore_12.tga" />
+
+    <Texture Time="21:00" File="dome_blackspore_21.tga" />
+    <Texture Time="00:00" File="dome_blackspore_00.tga" />
+</Dome>
+
+<Horizon>
+	<Texture Time="03:00" File="ring_blackspore.dds" R="5" G="94" B="131" Opacity="1"/>
+	<Texture Time="04:30" File="ring_blackspore.dds" R="20" G="140" B="170" Opacity="1"/>
+	<Texture Time="06:00" File="ring_blackspore.dds" R="94" G="212" B="215" Opacity="1"/>
+	<Texture Time="10:30" File="ring_blackspore.dds" R="50" G="180" B="205" Opacity="1"/>
+	<Texture Time="12:00" File="ring_blackspore.dds" R="87" G="220" B="202" Opacity="1"/>
+	<Texture Time="18:00" File="ring_blackspore.dds" R="100" G="209" B="191" Opacity="1"/>
+	<Texture Time="21:00" File="ring_blackspore.dds" R="37" G="100" B="155" Opacity="1"/>
+	<Texture Time="24:00" File="ring_blackspore.dds" R="0" G="64" B="88" Opacity="1"/>
+	<Position Bottom="5" Top="60" />
+</Horizon>
+
+<SunLight>
+    <Shadows Enabled="false" />
+    
+	<Color Time="06:00" R="115" G="177" B="230" Brightness=".3" />
+	<Color Time="12:00" R="115" G="177" B="230" Brightness=".5" />
+	<Color Time="18:00" R="115" G="177" B="230" Brightness=".3" />
+	<Color Time="00:00" R="115" G="177" B="230" Brightness="0" />
+	
+	<Direction Time="01:30" Heading="210" Pitch="60" /> 
+	<Direction Time="04:00" Heading="210" Pitch="22.4" />
+	<Direction Time="12:00" Heading="210" Pitch="60" />
+	<Direction Time="21:00" Heading="210" Pitch="28" />
+	<Direction Time="23:00" Heading="210" Pitch="22.4" />
+
+    <Flare>
+		<Color Time="06:00" R="32" G="180" B="255" Brightness="1"/>
+		<Shape Time="06:00" Size="0" Focus=".2" Zoom=".25" />
+
+		<Color Time="12:00" R="128" G="128" B="255" Brightness="1"/>
+		<Shape Time="12:00" Size="0" Focus=".2" Zoom=".25" />
+
+		<Color Time="18:00" R="64" G="128" B="255" Brightness="2"/>
+		<Shape Time="18:00" Size="0" Focus=".2" Zoom=".25" />
+
+		<Color Time="00:00" R="255" G="0" B="255" Brightness="0"/>
+		<Shape Time="00:00" Size="0" Focus=".2" Zoom=".25" />
+
+    </Flare>
+
+    <Aura>
+		<Color R="128" G="255" B="255" Brightness="0.33" />
+		<Shape Size="0" Focus="0.5" />
+		<Fringe Brightness="0.5" Width="1" />
+    </Aura>
+</SunLight>
+
+<Ambient>
+	<Texture Time="03:00" File="ambient_blackspore_00.tga" Brightness="1"/>
+	<Texture Time="06:00" File="ambient_blackspore_06.tga" Brightness="1.1"/>
+	<Texture Time="12:00" File="ambient_blackspore_18.tga" Brightness="1.1"/>
+	<Texture Time="18:00" File="ambient_blackspore_12.tga" Brightness="1.25"/>
+	<Texture Time="21:00" File="ambient_blackspore_21.tga" Brightness=".92"/>
+	<Texture Time="00:00" File="ambient_blackspore_00.tga" Brightness="1.1"/>
+</Ambient>
+
+<Fog>
+    <Color Time="03:00" R="25" G="50" B="80" />
+    <Range Time="03:00" Near="-32" Far="275" />
+    <FadeRange Time="03:00" Near="300" Far="370" />    
+    
+    <Color Time="06:00" R="33" G="128" B="145" />
+    <Range Time="06:00" Near="-32" Far="275" />
+    <FadeRange Time="06:00" Near="300" Far="370" />
+    
+    <Color Time="10:30" R="33" G="88" B="135" />
+    <Range Time="10:30" Near="-32" Far="275" />
+    <FadeRange Time="10:30" Near="300" Far="370" />
+        
+    <Color Time="12:00" R="10" G="90" B="140" />
+    <Range Time="12:00" Near="-15" Far="275" />
+    <FadeRange Time="12:00" Near="300" Far="370" />
+    
+    <Color Time="18:00" R="35" G="70" B="118" />
+    <Range Time="18:00" Near="-15" Far="275" />
+    <FadeRange Time="18:00" Near="300" Far="370" />
+
+    
+    <Color Time="21:00" R="5" G="42" B="105" />
+    <Range Time="21:00" Near="-24" Far="275" />
+    <FadeRange Time="21:00" Near="300" Far="370" />
+     
+    <Color Time="00:00" R="12" G="30" B="62" />
+    <Range Time="00:00" Near="-32" Far="275" />
+    <FadeRange Time="00:00" Near="300" Far="370" />    
+    
+</Fog>
+
+<Post>
+    <Bloom Time="06:00" Strength="1.0" />
+    <Bloom Time="12:00" Strength="1.0" />
+    <Bloom Time="00:00" Strength="2.0" />
+    <Haze Strength=".4" Distance="270" />
+</Post>

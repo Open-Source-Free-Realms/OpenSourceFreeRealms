@@ -1,0 +1,16 @@
+#ID^PARENT^TEXT^TOOLTIP^HAS_SUBMENU^SUBMENU^DEFAULTFUNC^VALUEFUNC^OPTION_NAME^OPTION_TYPE^CALLBACK^DISABLEDFUNC^PARAM1
+# order of subelements determine the display order
+
+# Base Tree 
+
+addCSTicket^^AskForHelp^tooltip^1^0^0^0^0^treebutton
+
+submitBugReport^^options_label_report_bug^tooltip^1^0^0^0^0^treebutton
+
+# teleportToSafety^^options_label_teleport_to_safety^tooltip^1^0^0^0^0^treebutton
+
+# credits^^options_label_credits^options_tooltip^1^credits^0^0^0^treebutton
+
+
+
+

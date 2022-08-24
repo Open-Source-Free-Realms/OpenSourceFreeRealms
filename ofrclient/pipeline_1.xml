@@ -1,0 +1,115 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Pipeline DrawStyle="Normal">
+    <Requirements VertexShaderVersion="FFP" PixelShaderVersion="1.1" MRT="1" MaterialsXml="materials_1.xml" RenderTargetsXml="rendertargets.xml" />
+
+    <!-- Ambient cube warp -->
+    <!-- Note: Ambient cube warp uses the same shader as Sky, but needs z test disabled, hence the "DisableDepth" and (later on) "EnableDepth" hackery -->
+
+    <Parameter Name="DisableDepth" Value="Int(0)" />
+    <Parameter Name="DisableTonalRangeCompensation" Value="Int(0)" />
+
+    <Stage Name="Ambient" Type="Scene" Target="AmbientCube">
+        <Source Parameter="DisableDepth" FXSemantic="ZEnable" />
+        <Source Parameter="DisableTonalRangeCompensation" FXSemantic="TonalRangeCompensation" />
+        <Material Type="AmbientCubeWarp" />
+    </Stage>
+    <Stage Name="Reflection" Type="Scene" Target="ReflectionCube">
+        <Material Type="ReflectionCubeWarp" />
+    </Stage>
+
+    <!-- Opaque -->
+
+    <Stage Name="Opaque" Type="Scene" Target="Backbuffer" ClearColor="Default" ClearDepth="1.0" ClearStencil="1">
+        <Material Type="ForwardTerrain" />
+        <Material Type="ForwardOpaque" />
+    </Stage>
+
+    <!-- Sky -->
+
+    <Parameter Name="EnableDepth" Value="Int(1)" />
+    <Parameter Name="EnableTonalRangeCompensation" Value="Int(1)" />
+
+    <Stage Name="Sky" Type="Scene" Target="Backbuffer">
+        <Source Parameter="EnableDepth" FXSemantic="ZEnable" />
+        <Source Parameter="EnableTonalRangeCompensation" FXSemantic="TonalRangeCompensation" />
+        <Material Type="Sky" />
+    </Stage>
+
+    <!-- Refractive -->
+
+    <Stage Name="Water" Type="Scene" Target="Backbuffer">
+        <Material Type="Refractive" />
+        <Material Type="Water" />
+    </Stage>
+
+    <!-- Semi-transparent stuff -->
+
+    <Stage Name="Alpha" Type="Scene" Target="Backbuffer" DrawStyle="Pre">
+        <Material Type="Ghost" />
+    </Stage>
+    <Stage Name="Alpha" Type="Scene" Target="Backbuffer">
+        <Material Type="ColorKey" />
+        <Material Type="Waterfall" />
+        <Material Type="ForwardAlpha" />
+        <Material Type="Particle" />
+        <Material Type="Ghost" />
+        <Material Type="Primitive3D" />
+        <Material Type="Primitive3DDepth" />
+    </Stage>
+
+    <!-- Downsample & blur for post -->
+
+    <Parameter Name="BlurStep1" Value="Float2(0.5, 0)" />
+    <Parameter Name="BlurStep2" Value="Float2(0, 0.5)" />
+    <Parameter Name="BlurStep3" Value="Float2(0.5, 0)" />
+    <Parameter Name="BlurStep4" Value="Float2(0, 0.5)" />
+
+    <Stage Name="BlitFromBackBuffer" Type="Blit" Target="Scratch">
+        <Source Target="Backbuffer" />
+    </Stage>
+    <Stage Name="BlitFromBackBuffer" Type="Quad" Target="Half">
+        <Material Name="Blit" />
+        <Source Target="Scratch" FXSemantic="Source" />
+    </Stage>
+
+    <Stage Name="Blur1" Type="Quad" Target="QuarterHeight">
+        <Material Name="Blur" />
+        <Source Parameter="BlurStep2" FXSemantic="Step" />
+        <Source Target="Half" FXSemantic="Source" />
+    </Stage>
+
+    <Stage Name="Blur2" Type="Quad" Target="Quarter">
+        <Material Name="Blur" />
+        <Source Parameter="BlurStep1" FXSemantic="Step" />
+        <Source Target="QuarterHeight" FXSemantic="Source" />
+    </Stage>
+
+    <Stage Name="Blur3" Type="Quad" Target="Quarter2">
+        <Material Name="Blur" />
+        <Source Parameter="BlurStep4" FXSemantic="Step" />
+        <Source Target="Quarter" FXSemantic="Source" />
+    </Stage>
+
+    <Stage Name="Blur4" Type="Quad" Target="Quarter">
+        <Material Name="Blur" />
+        <Source Parameter="BlurStep3" FXSemantic="Step" />
+        <Source Target="Quarter2" FXSemantic="Source" />
+    </Stage>
+
+    <!-- Post -->
+
+    <Stage Name="PostEffect1" Type="Scene" Target="Backbuffer">
+        <Material Type="PostProcess" />
+        <Source Target="Scratch" FXSemantic="Post1Source" />
+        <Source Target="Quarter" FXSemantic="Post2Source" />
+    </Stage>
+
+    <!-- Special primitives -->
+
+    <Stage Name="Primitive2D" Type="Scene" Target="Backbuffer" PixelCoordinates="True">
+        <Material Type="Primitive2D" />
+    </Stage>
+    <Stage Name="2D" Type="Scene" Target="Backbuffer">
+        <Material Type="OldPrimitive2D" />
+    </Stage>
+</Pipeline>

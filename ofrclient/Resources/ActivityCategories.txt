@@ -1,0 +1,17 @@
+#ID^CONTENT_ID^NAME_ID^DESCRIPTION_ID^THUMBNAIL_IMAGE_FILENAME^
+10^0^31018^0^bandit_hideout_detail.dds^
+11^36^3388^0^maples_trick_detail.dds^
+12^0^20226^0^royal_stew_du_jour_detail.dds^
+13^0^31021^0^Fishing_RainbowLake.dds^
+14^0^19201^0^alley_fighter_hammer_detail.dds^
+15^0^31023^0^queensfields_harvesting_detail.dds^
+16^0^31024^0^wildwood_racing_detail.dds^
+17^0^3717^0^daily_wheel_detail.dds^
+18^0^31026^0^hacknslash_detail.dds^
+19^0^7910^0^copper_mining_detail.dds^
+20^0^31028^0^Pirates_Arctic.dds^
+21^0^15293^0^smelting_silver_detail.dds^
+22^0^31030^0^Soccer_Briarwood.dds^
+23^0^3386^0^farm3_hard_detail.dds^
+24^0^436321^0^spot_the_diff_medium_detail.dds^
+26^36^629^0^treasure_wars_detail.dds^

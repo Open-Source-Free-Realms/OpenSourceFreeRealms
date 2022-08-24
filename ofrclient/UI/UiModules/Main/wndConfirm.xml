@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<Window Name="wndConfirm" Type="Window" Caption="Confirm" Sizeable="None" Moveable="True" Width="276" Height="138" AnchorX="Left" AnchorY="Top" X="778" Y="52" Style="Dialog" Spacing="Form" CloseBox="False" MinBox="False" MaxBox="False" CollapseBox="False" Visible="True" OuterBorder="True" InnerBorder="True" InnerFill="True" TitleBar="True" PopupMenu="True" InnerMoveable="True" HitTest="True" ZLayer="255" Focus="False">
+    <VBox Name="vbox" Type="VBox" X="8" Y="8" Width="238" Height="85" Spacing="None" AutoExpand="None">
+        <Label Type="Label" Caption="lblLabel" Multiline="False" Name="lblLabel" X="0" Y="0" Width="238" Height="30" AutoExpand="Vertical" />
+        <HBox Name="hbox" Type="HBox" X="0" Y="30" Width="238" Height="55" halign="Right" valign="Center" Spacing="Form" AutoExpand="Both">
+            <Button Name="btnOk" Caption="OK" X="62" Y="14" AutoExpand="None" Width="80" Height="27" IsToggle="False" ToggleValue="0" Visible="True" ImageDefault="" Type="Button" />
+            <Button Name="btnCancel" Caption="Cancel" X="150" Y="14" AutoExpand="None" Width="80" Height="27" IsToggle="False" ToggleValue="0" Visible="True" ImageDefault="" Type="Button" />
+        </HBox>
+    </VBox>
+</Window>

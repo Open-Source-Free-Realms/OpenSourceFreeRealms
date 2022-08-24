@@ -1,0 +1,2986 @@
+/********************************************************************** 
+
+Filename	:	FreeRealmsTheme_Button.thm
+Content		:	FreeRealms - GButton control theme
+
+
+Licensees may use this file in accordance with the valid Scaleform
+GFC Commercial License Agreement provided with the software.
+
+This file is provided AS IS with NO WARRANTY OF ANY KIND, INCLUDING 
+THE WARRANTY OF DESIGN, MERCHANTABILITY AND FITNESS FOR ANY PURPOSE.
+
+For information regarding GFC Commercial License Agreements go to:
+	online - http://www.scaleform.com/licensing.html or
+	email  - sales@scaleform.com 
+
+**********************************************************************/
+
+// *** Main Button control namespace 
+
+with GFC_Control_Button
+{
+	
+	// ** Default style
+	
+	GFC_Control_DefaultButton_Style
+	{
+		GFC_Control_Renderer_Control			=	GFC_CtrlTheme_Bitmap_Control_Button_Renderer_ControlStandard;
+
+		with .Renderer
+		{
+			// Renderer object used to draw text
+			.Text								=	GFC_CtrlTheme_Bitmap_Control_Button_Renderer_Text;
+			.Image								=	GFC_CtrlTheme_Bitmap_Control_Button_Renderer_Image;
+		}
+
+		with GFC_Control_Flag
+		{
+			// Base control flags
+			.Transparent						=	GFlags(GCtrl, GFC_CF_TRANSPARENT);
+			.SolidInner							=	0;	//GFlags(GCtrl, GFC_CF_SOLIDINNER);
+			.SolidBackground					=	0;	//GFlags(GCtrl, GFC_CF_SOLIDBACKGROUND);
+			.RegionClip							=	0;	//GFlags(GCtrl, GFC_CF_REGIONCLIP);
+			.RegionClipParent					=	0;	//GFlags(GCtrl, GFC_CF_REGIONCLIP_PARENT);
+			.NoExternalWindow					=	0;	//GFlags(GCtrl, GFC_CF_NOEXTERNALWINDOW);
+			.HitTest							=	0;	//GFlags(GCtrl, GFC_CF_HITTEST);
+			.TopLayer							=	0;	//GFlags(GCtrl, GFC_CF_TOPLAYER);
+			.TopLayerBitmap						=	0;	//GFlags(GCtrl, GFC_CF_TOPLAYERBITMAP);
+			.BottomLayerBitmap					=	0;	//GFlags(GCtrl, GFC_CF_BOTTOMLAYERBITMAP);
+											
+			// Control flag change masks	
+			.Mask_InvalidateControl				=	GFlags(GCtrl, GFC_CF_ACTIVE, GFC_CF_DISABLED, GFC_CF_TRANSPARENT, GFC_CF_TOPLAYER, GFC_CF_FORCE_ROLLOVER);
+		}
+					
+		with .Flag
+		{					
+			// Button flags
+			.DownOffset							=	0;	//GFlags(GButtonCtrl, GFC_CF_BUTTON_DOWNOFFSET_CONTENT);
+			.VAlign								=	GFlags(GButtonCtrl, GFC_CF_BUTTON_VCENTER);	
+			.HAlign								=	GFlags(GButtonCtrl, GFC_CF_BUTTON_HCENTER);	
+			.Focus								=	GFlags(GButtonCtrl, GFC_CF_BUTTON_FOCUS_CONTROL);
+			.HoldTimer							=	0;	//GFlags(GButtonCtrl, GFC_CF_BUTTON_HOLDTIMER);
+			.Text_VAlign						=	GFlags(GButtonCtrl, GFC_CF_BUTTON_TEXT_VCENTER);		
+			.Text_HAlign						=	GFlags(GButtonCtrl, GFC_CF_BUTTON_TEXT_RIGHT);
+			.Multiline							=	0;	//GFlags(GButtonCtrl, GFC_CF_BUTTON_MULTILINE);
+			.Just								=	0;	//GFlags(GButtonCtrl, GFC_CF_BUTTON_JUST_LEFT);
+			.Wrap								=	0;	//GFlags(GButtonCtrl, GFC_CF_BUTTON_WRAP_WORD);
+			.Crop								=	0;	//GFlags(GButtonCtrl, GFC_CF_BUTTON_CROP_CHAR);
+			.CropDotted							=	0;	//GFlags(GButtonCtrl, GFC_CF_BUTTON_CROP_DOTTED);
+
+			// Button flag change masks
+			//.ButtonMask_InvalidateControl		=	GFlags(GButtonCtrl);
+		}
+
+		with .Delay
+		{
+			// First hit takes place 1/4 of a second (250ms) The other ones will be 9/100
+			.HoldTimer_First					=	250;
+			.HoldTimer_Repeat					=	90;
+		}									
+												
+		with .Size								
+		{									
+			// Border style side widths			
+			.BorderMargin						=	GRectMargin(0,0,0,0);
+			.FocusMargin_Text					=	GRectMargin(4,4,4,4);
+			.FocusMargin_Image					=	GRectMargin(0,0,1,1);
+			.FocusMargin_Content				=	GRectMargin(4,4,4,4);
+			.FocusMargin_Control				=	GRectMargin(0,0,0,0);		
+			.ExtraMargin						=	GRectMargin(0,0,0,0);
+			.TextOffset							=	GPoint(0,0);
+			.DownOffset_Content					=	GPoint(1,1);
+			.DownOffset_Text					=	GPoint(1,1);
+			.DownOffset_Image					=	GPoint(1,1);
+			.ItemSpace							=	GFC_Control_Size_ItemSpace;			
+			.Default							=	GSize(80,40);
+			.Image								=	GSize(0,0);
+		}									
+												
+		with .Color								
+		{									
+			.Inner								=	GFC_Control_Color_Surface;
+			.Highlight							=	GColor(255,255,255,128);
+
+			with .Text
+			{
+				.Default						=	SF_CtrlTheme_FreeRealms_Control_Color_InvertText;
+				.Press							=	.Default;
+				.Disable						=	.Default;
+				.Rollover						=	.Default;
+				.Focus							=	.Default;
+				.FocusRollover					=	.Default;
+				.Toggle							=	.Default;		
+				.TogglePress					=	.Press;			
+				.ToggleDisable					=	.Disable;		
+				.ToggleRollover					=	.Rollover;		
+				.ToggleFocus					=	.Focus;			
+				.ToggleFocusRollover			=	.FocusRollover;	
+													
+				.Inactive						=	.Default;	
+				.InactivePress					=	.Press;		
+				.InactiveDisable				=	.Disable;	
+				.InactiveRollover				=	.Rollover;	
+				.InactiveToggle					=	.Toggle;	
+				.InactiveTogglePress			=	.TogglePress;		
+				.InactiveToggleDisable			=	.ToggleDisable;	
+				.InactiveToggleRollover			=	.ToggleRollover;	
+													
+				.Winoff							=	.Inactive;	
+				.WinoffPress					=	.InactivePress;		
+				.WinoffDisable					=	.InactiveDisable;	
+				.WinoffRollover					=	.InactiveRollover;	
+				.WinoffToggle					=	.InactiveToggle;	
+				.WinoffTogglePress				=	.InactiveTogglePress;	
+				.WinoffToggleDisable			=	.InactiveToggleDisable;	
+				.WinoffToggleRollover			=	.InactiveToggleRollover;
+			}
+
+			with .TextShadow
+			{
+				.Default						=	GFC_Control_Color_TextShadow_Default;
+				.Press							=	.Default;
+				.Disable						=	.Default;
+				.Rollover						=	.Default;
+				.Focus							=	.Default;
+				.FocusRollover					=	.Default;
+				.Toggle							=	.Default;		
+				.TogglePress					=	.Press;			
+				.ToggleDisable					=	.Disable;		
+				.ToggleRollover					=	.Rollover;		
+				.ToggleFocus					=	.Focus;			
+				.ToggleFocusRollover			=	.FocusRollover;	
+													
+				.Inactive						=	.Default;	
+				.InactivePress					=	.Press;		
+				.InactiveDisable				=	.Disable;	
+				.InactiveRollover				=	.Rollover;	
+				.InactiveToggle					=	.Toggle;	
+				.InactiveTogglePress			=	.TogglePress;		
+				.InactiveToggleDisable			=	.ToggleDisable;	
+				.InactiveToggleRollover			=	.ToggleRollover;	
+													
+				.Winoff							=	.Inactive;	
+				.WinoffPress					=	.InactivePress;		
+				.WinoffDisable					=	.InactiveDisable;	
+				.WinoffRollover					=	.InactiveRollover;	
+				.WinoffToggle					=	.InactiveToggle;	
+				.WinoffTogglePress				=	.InactiveTogglePress;	
+				.WinoffToggleDisable			=	.InactiveToggleDisable;	
+				.WinoffToggleRollover			=	.InactiveToggleRollover;
+			}
+
+			.Image_Default						=	GFC_Control_Color_Image_Default;
+			.Image_Disable						=	GFC_Control_Color_Image_Disable;
+		}									
+												
+		with .Combine							
+		{									
+			.Inner_Dest							=	GFC_Control_Combine_Surface;	
+			.Inner_Factor						=	GColorCombine(Factor, Source);
+			.Highlight_Dest						=	GColorCombine(BlendSource, Disable);
+			.Highlight_Factor					=	GColorCombine(Factor, Source);
+
+			.Image_Default_Dest					=	GFC_Control_Combine_Image_Default_Dest;
+			.Image_Default_Factor				=	GFC_Control_Combine_Image_Default_Factor;	
+			.Image_Disable_Dest					=	GFC_Control_Combine_Image_Disable_Dest;
+			.Image_Disable_Factor				=	GFC_Control_Combine_Image_Disable_Factor;	
+
+			.Text_Default_Dest					=	GFC_Control_Combine_Text_Default_Dest;			
+			.Text_Default_Factor				=	GFC_Control_Combine_Text_Default_Factor;
+			.Text_Disable_Dest					=	.Text_Default_Dest;
+			.Text_Disable_Factor				=	.Text_Default_Factor;
+			
+			.TextShadow_Default_Dest			=	GColorCombine(Disable, Disable);
+			.TextShadow_Default_Factor			=	GColorCombine(Disable, Disable);
+			.TextShadow_Disable_Dest			=	GColorCombine(Disable, Disable);
+			.TextShadow_Disable_Factor			=	GColorCombine(Disable, Disable);
+		}
+
+		with .Cursor
+		{
+			.Press								=	GFC_Control_Cursor_Default;
+			.Tracking							=	GFC_Control_Cursor_Default;
+			.Toggle								=	GFC_Control_Cursor_Default;
+			.TogglePress						=	.Toggle;
+			.ToggleTracking						=	.Toggle;
+			.Disable							=	GFC_Control_Cursor_Arrow;
+		}
+
+		with .Binding
+		{
+			.ButtonPress					=	GInputBinding(GPropertyId(GFC_Input_Mouse_Message_OnDown), LeftButton,
+															  GPropertyId(GFC_Input_Mouse_Message_OnDblClick), LeftButton,
+															  GPropertyId(GFC_Input_Keyboard_Message_OnKeyDown), Space);
+																								
+			.ButtonCancel					=	GInputBinding(GPropertyId(GFC_Input_Keyboard_Message_OnKeyDown), Escape);
+
+			.ButtonExecute					=	GInputBinding(GPropertyId(GFC_Input_Keyboard_Message_OnKeyDown), Return);
+												
+			.ButtonRelease					=	GInputBinding(GPropertyId(GFC_Input_Mouse_Message_OnUp), LeftButton,
+															  GPropertyId(GFC_Input_Keyboard_Message_OnKeyUp), Space);
+		}									
+
+		.Font_Text			= GFC_Control_Font_Normal;
+
+
+		// ******* Initialize all the Bitmap theme Button properties to avoid inheritance problems
+
+		with GFC_CtrlTheme_Bitmap_Control_Button_Skin
+		{
+			// Button stretchy skins
+			.Default										= 0;
+			.Press											= 0;
+			.Disable										= 0;
+			.Rollover										= 0;
+			.Focus											= 0;
+			.FocusPress										= 0;
+			.FocusDisable									= 0;
+			.FocusRollover									= 0;
+			.Toggle											= 0;
+			.TogglePress									= 0;
+			.ToggleDisable									= 0;
+			.ToggleRollover									= 0;
+			.ToggleFocus									= 0;
+			.ToggleFocusPress								= 0;
+			.ToggleFocusDisable								= 0;
+			.ToggleFocusRollover							= 0;
+			.Inactive										= 0;
+			.InactivePress									= 0;
+			.InactiveDisable								= 0;
+			.InactiveRollover								= 0;
+			.InactiveToggle									= 0;
+			.InactiveTogglePress							= 0;
+			.InactiveToggleDisable							= 0;
+			.InactiveToggleRollover							= 0;
+			.Winoff											= 0;
+			.WinoffPress									= 0;
+			.WinoffDisable									= 0;
+			.WinoffRollover									= 0;
+			.WinoffToggle									= 0;
+			.WinoffTogglePress								= 0;
+			.WinoffToggleDisable							= 0;
+			.WinoffToggleRollover							= 0;
+															
+			// Button icon (check or radio) skins			
+			.Image_Default									= 0;
+			.Image_Press									= 0;
+			.Image_Disable									= 0;
+			.Image_Rollover									= 0;
+			.Image_Focus									= 0;
+			.Image_FocusPress								= 0;
+			.Image_FocusDisable								= 0;
+			.Image_FocusRollover							= 0;
+			.Image_Toggle									= 0;
+			.Image_TogglePress								= 0;
+			.Image_ToggleDisable							= 0;
+			.Image_ToggleRollover							= 0;
+			.Image_ToggleFocus								= 0;
+			.Image_ToggleFocusPress							= 0;
+			.Image_ToggleFocusDisable						= 0;
+			.Image_ToggleFocusRollover						= 0;
+			.Image_Inactive									= 0;
+			.Image_InactivePress							= 0;
+			.Image_InactiveDisable							= 0;
+			.Image_InactiveRollover							= 0;
+			.Image_InactiveToggle							= 0;
+			.Image_InactiveTogglePress						= 0;
+			.Image_InactiveToggleDisable					= 0;
+			.Image_InactiveToggleRollover					= 0;
+			.Image_Winoff									= 0;
+			.Image_WinoffPress								= 0;
+			.Image_WinoffDisable							= 0;
+			.Image_WinoffRollover							= 0;
+			.Image_WinoffToggle								= 0;
+			.Image_WinoffTogglePress						= 0;
+			.Image_WinoffToggleDisable						= 0;
+			.Image_WinoffToggleRollover						= 0;
+															
+			// Button focus skins							
+			.Focuser_Press									= 0;
+			.Focuser_Rollover								= 0;
+			.Focuser_Toggle									= 0;
+			.Focuser_TogglePress							= 0;
+			.Focuser_ToggleRollover							= 0;
+			.Focuser_Inactive								= 0;
+			.Focuser_InactivePress							= 0;
+			.Focuser_InactiveRollover						= 0;
+			.Focuser_InactiveToggle							= 0;
+			.Focuser_InactiveTogglePress					= 0;
+			.Focuser_InactiveToggleRollover					= 0;
+			.Focuser_Winoff									= 0;
+			.Focuser_WinoffPress							= 0;
+			.Focuser_WinoffRollover							= 0;
+			.Focuser_WinoffToggle							= 0;
+			.Focuser_WinoffTogglePress						= 0;
+			.Focuser_WinoffToggleRollover					= 0;
+			.Focuser_Default								= 0;
+		}
+
+		map GFC_Control			=	GFC_Control_DefaultControl_Style;
+	}	// end GFC_Control_DefaultButton_Style
+
+	
+	// Normal button style
+
+	GFC_Control_StandardButton_Style
+	{
+		GFC_Control_Renderer_Control			=	GFC_CtrlTheme_Bitmap_Control_Button_Renderer_ControlStandard;		
+		
+		// Image skins
+		with GFC_CtrlTheme_Bitmap_Control_Button_Skin
+		{
+			.Default
+			{
+				layer
+				{
+					LayerFlags		= GFlags(GCtrlBitmapSkin, GFC_BITMAPSKIN_CENTER_SCALE, GFC_BITMAPSKIN_SIDES_SCALE);
+					DestCombine		= GColorCombine(BlendSource,Disable);
+					//FactorCombine	= GColorCombine(Modulate,Source);
+					//FactorColor		= SF_CtrlTheme_FreeRealms_Control_Color_DropShadow;
+					Image			= GBitmap("FreeRealms/FR_DialogButton.tga", HVGrid, 1, 1, 0, 0);
+					Margin			= GRectMargin(20,3,20,3);
+				}
+			}
+			.Rollover
+			{
+				layer
+				{
+					LayerFlags		= GFlags(GCtrlBitmapSkin, GFC_BITMAPSKIN_CENTER_SCALE, GFC_BITMAPSKIN_SIDES_SCALE);
+					DestCombine		= GColorCombine(BlendSource,Disable);
+					//FactorCombine	= GColorCombine(Modulate,Source);
+					//FactorColor		= SF_CtrlTheme_FreeRealms_Control_Color_DropShadow;
+					Image			= GBitmap("FreeRealms/FR_DialogButton_Over.tga", HVGrid, 1, 1, 0, 0);
+					Margin			= GRectMargin(20,3,20,3);
+				}
+			}
+			.Press
+			{
+				layer
+				{
+					LayerFlags		= GFlags(GCtrlBitmapSkin, GFC_BITMAPSKIN_CENTER_SCALE, GFC_BITMAPSKIN_SIDES_SCALE);
+					DestCombine		= GColorCombine(BlendSource,Disable);
+					//FactorCombine	= GColorCombine(Modulate,Source);
+					//FactorColor		= SF_CtrlTheme_FreeRealms_Control_Color_DropShadow;
+					Image			= GBitmap("FreeRealms/FR_DialogButton_Over.tga", HVGrid, 1, 1, 0, 0);
+					Margin			= GRectMargin(20,3,20,3);
+				}
+			}
+			.Disable
+			{
+				layer
+				{
+					LayerFlags		= GFlags(GCtrlBitmapSkin, GFC_BITMAPSKIN_CENTER_SCALE, GFC_BITMAPSKIN_SIDES_SCALE);
+					DestCombine		= GColorCombine(BlendSource,Disable);
+					FactorCombine	= GColorCombine(Modulate, Modulate);
+					FactorColor		= SF_CtrlTheme_FreeRealms_Control_Color_Surface1;
+					Image			= GBitmap("FreeRealms/FR_Button.tga", HVGrid, 1, 5, 0, 1);
+					Margin			= GRectMargin(10,12,10,12);
+				}
+				layer
+				{
+					LayerFlags		= GFlags(GCtrlBitmapSkin, GFC_BITMAPSKIN_CENTER_SCALE, GFC_BITMAPSKIN_SIDES_SCALE);
+					DestCombine		= GColorCombine(Add,Disable);
+					FactorCombine	= GColorCombine(Modulate, Source);
+					FactorColor		= SF_CtrlTheme_FreeRealms_Control_Color_SurfaceDis2;
+					Image			= GBitmap("FreeRealms/FR_Button.tga", HVGrid, 1, 5, 0, 2);
+					Margin			= GRectMargin(10,12,10,12);
+				}
+				layer
+				{
+					LayerFlags		= GFlags(GCtrlBitmapSkin, GFC_BITMAPSKIN_CENTER_EMPTY, GFC_BITMAPSKIN_SIDES_SCALE);
+					DestCombine		= GColorCombine(Add,Disable);
+					FactorCombine	= GColorCombine(Modulate, Source);
+					FactorColor		= SF_CtrlTheme_FreeRealms_Control_Color_OutlineDis;
+					Image			= GBitmap("FreeRealms/FR_Button.tga", HVGrid, 1, 5, 0, 3);
+					Margin			= GRectMargin(10,12,10,12);
+				}
+			}
+			.Toggle
+			{
+				layer
+				{
+					LayerFlags		= GFlags(GCtrlBitmapSkin, GFC_BITMAPSKIN_CENTER_SCALE, GFC_BITMAPSKIN_SIDES_SCALE);
+					DestCombine		= GColorCombine(BlendSource,Disable);
+					FactorCombine	= GColorCombine(Modulate, Modulate);
+					FactorColor		= SF_CtrlTheme_FreeRealms_Control_Color_Surface1;
+					Image			= GBitmap("FreeRealms/FR_Button.tga", HVGrid, 1, 5, 0, 1);
+					Margin			= GRectMargin(10,12,10,12);
+				}
+				layer
+				{
+					LayerFlags		= GFlags(GCtrlBitmapSkin, GFC_BITMAPSKIN_CENTER_SCALE, GFC_BITMAPSKIN_SIDES_SCALE);
+					DestCombine		= GColorCombine(BlendSource,Disable);
+					FactorCombine	= GColorCombine(Modulate, Modulate);
+					FactorColor		= SF_CtrlTheme_FreeRealms_Control_Color_SurfaceRoll1;
+					Image			= GBitmap("FreeRealms/FR_Button.tga", HVGrid, 1, 5, 0, 2);
+					Margin			= GRectMargin(10,12,10,12);
+				}
+				layer
+				{
+					LayerFlags		= GFlags(GCtrlBitmapSkin, GFC_BITMAPSKIN_CENTER_SCALE, GFC_BITMAPSKIN_SIDES_SCALE);
+					DestCombine		= GColorCombine(Add,Disable);
+					FactorCombine	= GColorCombine(Modulate, Source);
+					FactorColor		= SF_CtrlTheme_FreeRealms_Control_Color_SurfaceRoll2;
+					Image			= GBitmap("FreeRealms/FR_Button.tga", HVGrid, 1, 5, 0, 2);
+					Margin			= GRectMargin(10,12,10,12);
+				}
+				layer
+				{
+					LayerFlags		= GFlags(GCtrlBitmapSkin, GFC_BITMAPSKIN_CENTER_EMPTY, GFC_BITMAPSKIN_SIDES_SCALE);
+					DestCombine		= GColorCombine(Add,Disable);
+					FactorCombine	= GColorCombine(Modulate, Source);
+					FactorColor		= SF_CtrlTheme_FreeRealms_Control_Color_Outline;
+					Image			= GBitmap("FreeRealms/FR_Button.tga", HVGrid, 1, 5, 0, 3);
+					Margin			= GRectMargin(10,12,10,12);
+				}
+			}
+			.ToggleRollover
+			{
+				layer
+				{
+					LayerFlags		= GFlags(GCtrlBitmapSkin, GFC_BITMAPSKIN_CENTER_SCALE, GFC_BITMAPSKIN_SIDES_SCALE);
+					DestCombine		= GColorCombine(BlendSource,Disable);
+					FactorCombine	= GColorCombine(Modulate, Modulate);
+					FactorColor		= SF_CtrlTheme_FreeRealms_Control_Color_Surface1;
+					Image			= GBitmap("FreeRealms/FR_Button.tga", HVGrid, 1, 5, 0, 1);
+					Margin			= GRectMargin(10,12,10,12);
+				}
+				layer
+				{
+					LayerFlags		= GFlags(GCtrlBitmapSkin, GFC_BITMAPSKIN_CENTER_SCALE, GFC_BITMAPSKIN_SIDES_SCALE);
+					DestCombine		= GColorCombine(Add,Disable);
+					FactorCombine	= GColorCombine(Modulate, Source);
+					FactorColor		= SF_CtrlTheme_FreeRealms_Control_Color_SurfaceRoll2;
+					Image			= GBitmap("FreeRealms/FR_Button.tga", HVGrid, 1, 5, 0, 2);
+					Margin			= GRectMargin(10,12,10,12);
+				}
+				layer
+				{
+					LayerFlags		= GFlags(GCtrlBitmapSkin, GFC_BITMAPSKIN_CENTER_EMPTY, GFC_BITMAPSKIN_SIDES_SCALE);
+					DestCombine		= GColorCombine(Add,Disable);
+					FactorCombine	= GColorCombine(Modulate, Source);
+					FactorColor		= SF_CtrlTheme_FreeRealms_Control_Color_Outline;
+					Image			= GBitmap("FreeRealms/FR_Button.tga", HVGrid, 1, 5, 0, 3);
+					Margin			= GRectMargin(10,12,10,12);
+				}
+			}
+			.TogglePress			= .Toggle;
+			.ToggleDisable			= .Disable;
+			.ToggleFocus			= .Toggle;
+			.ToggleFocusPress		= .TogglePress;
+			.ToggleFocusDisable		= .ToggleDisable;
+			.ToggleFocusRollover	= .ToggleRollover;
+
+			.Inactive				= .Default;
+			.InactiveRollover		= .Rollover;
+			.InactivePress			= .Toggle;
+			.InactiveDisable		= .Disable;
+			.InactiveToggle			= .Toggle;
+			.InactiveTogglePress	= .TogglePress;
+			.InactiveToggleDisable	= .ToggleDisable;
+			.InactiveToggleRollover	= .ToggleRollover;
+									
+			.Winoff					= .Default;
+			.WinoffRollover			= .Rollover;
+			.WinoffPress			= .Toggle;
+			.WinoffDisable			= .Disable;
+			.WinoffToggle			= .Toggle;
+			.WinoffTogglePress		= .TogglePress;
+			.WinoffToggleDisable	= .ToggleDisable;
+			.WinoffToggleRollover	= .ToggleRollover;
+		}
+		// Image skins
+		with GFC_CtrlTheme_Bitmap_Control_Button_Skin_Focuser
+		{
+			.Default
+			{
+				layer
+				{
+					LayerFlags		= GFlags(GCtrlBitmapSkin, GFC_BITMAPSKIN_CENTER_EMPTY, GFC_BITMAPSKIN_SIDES_SCALE);
+					DestCombine		= GColorCombine(Add,Disable);
+					FactorCombine	= GColorCombine(Modulate, Source);
+					FactorColor		= SF_CtrlTheme_FreeRealms_Control_Color_OutlineFocus;
+					Image			= GBitmap("FreeRealms/FR_Button.tga", HVGrid, 1, 5, 0, 4);
+					Margin			= GRectMargin(10,12,10,12);
+				}
+			}
+		}
+		
+		map GFC_Control											= GFC_Control_DefaultButton_Style;
+		map GFC_CtrlTheme_Bitmap_Control_Button					= GFC_Control_DefaultButton_Style;
+		map SF_CtrlTheme_FreeRealms_Control						= GFC_Control_DefaultButton_Style;
+	}
+
+
+
+	GFC_Control_SquareButton_Style
+	{
+		GFC_Control_Renderer_Control			=	GFC_CtrlTheme_Bitmap_Control_Button_Renderer_ControlStandard;		
+				
+		// Image skins
+		with GFC_CtrlTheme_Bitmap_Control_Button_Skin
+		{
+			.Default
+			{
+				layer
+				{
+					LayerFlags		= GFlags(GCtrlBitmapSkin, GFC_BITMAPSKIN_CENTER_SCALE, GFC_BITMAPSKIN_SIDES_SCALE);
+					DestCombine		= GColorCombine(RevSubtract,Disable);
+					FactorCombine	= GColorCombine(Modulate,Source);
+					FactorColor		= SF_CtrlTheme_FreeRealms_Control_Color_DropShadow;
+					Image			= GBitmap("FreeRealms/FR_Button_Square.tga", HVGrid, 1, 5, 0, 0);
+					Margin			= GRectMargin(10,12,10,12);
+				}
+				layer
+				{
+					LayerFlags		= GFlags(GCtrlBitmapSkin, GFC_BITMAPSKIN_CENTER_SCALE, GFC_BITMAPSKIN_SIDES_SCALE);
+					DestCombine		= GColorCombine(BlendSource,Disable);
+					FactorCombine	= GColorCombine(Modulate, Modulate);
+					FactorColor		= SF_CtrlTheme_FreeRealms_Control_Color_Surface1;
+					Image			= GBitmap("FreeRealms/FR_Button_Square.tga", HVGrid, 1, 5, 0, 1);
+					Margin			= GRectMargin(10,12,10,12);
+				}
+				layer
+				{
+					LayerFlags		= GFlags(GCtrlBitmapSkin, GFC_BITMAPSKIN_CENTER_SCALE, GFC_BITMAPSKIN_SIDES_SCALE);
+					DestCombine		= GColorCombine(Add,Disable);
+					FactorCombine	= GColorCombine(Modulate, Source);
+					FactorColor		= SF_CtrlTheme_FreeRealms_Control_Color_Surface2;
+					Image			= GBitmap("FreeRealms/FR_Button_Square.tga", HVGrid, 1, 5, 0, 2);
+					Margin			= GRectMargin(10,12,10,12);
+				}
+				layer
+				{
+					LayerFlags		= GFlags(GCtrlBitmapSkin, GFC_BITMAPSKIN_CENTER_EMPTY, GFC_BITMAPSKIN_SIDES_SCALE);
+					DestCombine		= GColorCombine(Add,Disable);
+					FactorCombine	= GColorCombine(Modulate, Source);
+					FactorColor		= SF_CtrlTheme_FreeRealms_Control_Color_Outline;
+					Image			= GBitmap("FreeRealms/FR_Button_Square.tga", HVGrid, 1, 5, 0, 3);
+					Margin			= GRectMargin(10,12,10,12);
+				}
+			}
+			.Rollover
+			{
+				layer
+				{
+					LayerFlags		= GFlags(GCtrlBitmapSkin, GFC_BITMAPSKIN_CENTER_SCALE, GFC_BITMAPSKIN_SIDES_SCALE);
+					DestCombine		= GColorCombine(RevSubtract,Disable);
+					FactorCombine	= GColorCombine(Modulate,Source);
+					FactorColor		= SF_CtrlTheme_FreeRealms_Control_Color_DropShadow;
+					Image			= GBitmap("FreeRealms/FR_Button_Square.tga", HVGrid, 1, 5, 0, 0);
+					Margin			= GRectMargin(10,12,10,12);
+				}
+				layer
+				{
+					LayerFlags		= GFlags(GCtrlBitmapSkin, GFC_BITMAPSKIN_CENTER_SCALE, GFC_BITMAPSKIN_SIDES_SCALE);
+					DestCombine		= GColorCombine(BlendSource,Disable);
+					FactorCombine	= GColorCombine(Modulate, Modulate);
+					FactorColor		= SF_CtrlTheme_FreeRealms_Control_Color_SurfaceRoll1;
+					Image			= GBitmap("FreeRealms/FR_Button_Square.tga", HVGrid, 1, 5, 0, 1);
+					Margin			= GRectMargin(10,12,10,12);
+				}
+				layer
+				{
+					LayerFlags		= GFlags(GCtrlBitmapSkin, GFC_BITMAPSKIN_CENTER_SCALE, GFC_BITMAPSKIN_SIDES_SCALE);
+					DestCombine		= GColorCombine(Add,Disable);
+					FactorCombine	= GColorCombine(Modulate, Source);
+					FactorColor		= SF_CtrlTheme_FreeRealms_Control_Color_SurfaceRoll2;
+					Image			= GBitmap("FreeRealms/FR_Button_Square.tga", HVGrid, 1, 5, 0, 2);
+					Margin			= GRectMargin(10,12,10,12);
+				}
+				layer
+				{
+					LayerFlags		= GFlags(GCtrlBitmapSkin, GFC_BITMAPSKIN_CENTER_EMPTY, GFC_BITMAPSKIN_SIDES_SCALE);
+					DestCombine		= GColorCombine(Add,Disable);
+					FactorCombine	= GColorCombine(Modulate, Source);
+					FactorColor		= SF_CtrlTheme_FreeRealms_Control_Color_Outline;
+					Image			= GBitmap("FreeRealms/FR_Button_Square.tga", HVGrid, 1, 5, 0, 3);
+					Margin			= GRectMargin(10,12,10,12);
+				}
+			}
+			.Press
+			{
+				layer
+				{
+					LayerFlags		= GFlags(GCtrlBitmapSkin, GFC_BITMAPSKIN_CENTER_SCALE, GFC_BITMAPSKIN_SIDES_SCALE);
+					DestCombine		= GColorCombine(BlendSource,Disable);
+					FactorCombine	= GColorCombine(Modulate, Modulate);
+					FactorColor		= SF_CtrlTheme_FreeRealms_Control_Color_Surface1;
+					Image			= GBitmap("FreeRealms/FR_Button_Square.tga", HVGrid, 1, 5, 0, 1);
+					Margin			= GRectMargin(10,12,10,12);
+				}
+				layer
+				{
+					LayerFlags		= GFlags(GCtrlBitmapSkin, GFC_BITMAPSKIN_CENTER_SCALE, GFC_BITMAPSKIN_SIDES_SCALE);
+					DestCombine		= GColorCombine(Add,Disable);
+					FactorCombine	= GColorCombine(Modulate, Source);
+					FactorColor		= SF_CtrlTheme_FreeRealms_Control_Color_Surface2;
+					Image			= GBitmap("FreeRealms/FR_Button_Square.tga", HVGrid, 1, 5, 0, 2);
+					Margin			= GRectMargin(10,12,10,12);
+				}
+				layer
+				{
+					LayerFlags		= GFlags(GCtrlBitmapSkin, GFC_BITMAPSKIN_CENTER_EMPTY, GFC_BITMAPSKIN_SIDES_SCALE);
+					DestCombine		= GColorCombine(Add,Disable);
+					FactorCombine	= GColorCombine(Modulate, Source);
+					FactorColor		= SF_CtrlTheme_FreeRealms_Control_Color_Outline;
+					Image			= GBitmap("FreeRealms/FR_Button_Square.tga", HVGrid, 1, 5, 0, 3);
+					Margin			= GRectMargin(10,12,10,12);
+				}
+			}
+			.Disable
+			{
+				layer
+				{
+					LayerFlags		= GFlags(GCtrlBitmapSkin, GFC_BITMAPSKIN_CENTER_SCALE, GFC_BITMAPSKIN_SIDES_SCALE);
+					DestCombine		= GColorCombine(BlendSource,Disable);
+					FactorCombine	= GColorCombine(Modulate, Modulate);
+					FactorColor		= SF_CtrlTheme_FreeRealms_Control_Color_Surface1;
+					Image			= GBitmap("FreeRealms/FR_Button_Square.tga", HVGrid, 1, 5, 0, 1);
+					Margin			= GRectMargin(10,12,10,12);
+				}
+				layer
+				{
+					LayerFlags		= GFlags(GCtrlBitmapSkin, GFC_BITMAPSKIN_CENTER_SCALE, GFC_BITMAPSKIN_SIDES_SCALE);
+					DestCombine		= GColorCombine(Add,Disable);
+					FactorCombine	= GColorCombine(Modulate, Source);
+					FactorColor		= SF_CtrlTheme_FreeRealms_Control_Color_SurfaceDis2;
+					Image			= GBitmap("FreeRealms/FR_Button_Square.tga", HVGrid, 1, 5, 0, 2);
+					Margin			= GRectMargin(10,12,10,12);
+				}
+				layer
+				{
+					LayerFlags		= GFlags(GCtrlBitmapSkin, GFC_BITMAPSKIN_CENTER_EMPTY, GFC_BITMAPSKIN_SIDES_SCALE);
+					DestCombine		= GColorCombine(Add,Disable);
+					FactorCombine	= GColorCombine(Modulate, Source);
+					FactorColor		= SF_CtrlTheme_FreeRealms_Control_Color_OutlineDis;
+					Image			= GBitmap("FreeRealms/FR_Button_Square.tga", HVGrid, 1, 5, 0, 3);
+					Margin			= GRectMargin(10,12,10,12);
+				}
+			}
+			.Toggle
+			{
+				layer
+				{
+					LayerFlags		= GFlags(GCtrlBitmapSkin, GFC_BITMAPSKIN_CENTER_SCALE, GFC_BITMAPSKIN_SIDES_SCALE);
+					DestCombine		= GColorCombine(BlendSource,Disable);
+					FactorCombine	= GColorCombine(Modulate, Modulate);
+					FactorColor		= SF_CtrlTheme_FreeRealms_Control_Color_Surface1;
+					Image			= GBitmap("FreeRealms/FR_Button_Square.tga", HVGrid, 1, 5, 0, 1);
+					Margin			= GRectMargin(10,12,10,12);
+				}
+				layer
+				{
+					LayerFlags		= GFlags(GCtrlBitmapSkin, GFC_BITMAPSKIN_CENTER_SCALE, GFC_BITMAPSKIN_SIDES_SCALE);
+					DestCombine		= GColorCombine(BlendSource,Disable);
+					FactorCombine	= GColorCombine(Modulate, Modulate);
+					FactorColor		= SF_CtrlTheme_FreeRealms_Control_Color_SurfaceRoll1;
+					Image			= GBitmap("FreeRealms/FR_Button_Square.tga", HVGrid, 1, 5, 0, 2);
+					Margin			= GRectMargin(10,12,10,12);
+				}
+				layer
+				{
+					LayerFlags		= GFlags(GCtrlBitmapSkin, GFC_BITMAPSKIN_CENTER_SCALE, GFC_BITMAPSKIN_SIDES_SCALE);
+					DestCombine		= GColorCombine(Add,Disable);
+					FactorCombine	= GColorCombine(Modulate, Source);
+					FactorColor		= SF_CtrlTheme_FreeRealms_Control_Color_SurfaceRoll2;
+					Image			= GBitmap("FreeRealms/FR_Button_Square.tga", HVGrid, 1, 5, 0, 2);
+					Margin			= GRectMargin(10,12,10,12);
+				}
+				layer
+				{
+					LayerFlags		= GFlags(GCtrlBitmapSkin, GFC_BITMAPSKIN_CENTER_EMPTY, GFC_BITMAPSKIN_SIDES_SCALE);
+					DestCombine		= GColorCombine(Add,Disable);
+					FactorCombine	= GColorCombine(Modulate, Source);
+					FactorColor		= SF_CtrlTheme_FreeRealms_Control_Color_Outline;
+					Image			= GBitmap("FreeRealms/FR_Button_Square.tga", HVGrid, 1, 5, 0, 3);
+					Margin			= GRectMargin(10,12,10,12);
+				}
+			}
+			.ToggleRollover
+			{
+				layer
+				{
+					LayerFlags		= GFlags(GCtrlBitmapSkin, GFC_BITMAPSKIN_CENTER_SCALE, GFC_BITMAPSKIN_SIDES_SCALE);
+					DestCombine		= GColorCombine(BlendSource,Disable);
+					FactorCombine	= GColorCombine(Modulate, Modulate);
+					FactorColor		= SF_CtrlTheme_FreeRealms_Control_Color_Surface1;
+					Image			= GBitmap("FreeRealms/FR_Button_Square.tga", HVGrid, 1, 5, 0, 1);
+					Margin			= GRectMargin(10,12,10,12);
+				}
+				layer
+				{
+					LayerFlags		= GFlags(GCtrlBitmapSkin, GFC_BITMAPSKIN_CENTER_SCALE, GFC_BITMAPSKIN_SIDES_SCALE);
+					DestCombine		= GColorCombine(Add,Disable);
+					FactorCombine	= GColorCombine(Modulate, Source);
+					FactorColor		= SF_CtrlTheme_FreeRealms_Control_Color_SurfaceRoll2;
+					Image			= GBitmap("FreeRealms/FR_Button_Square.tga", HVGrid, 1, 5, 0, 2);
+					Margin			= GRectMargin(10,12,10,12);
+				}
+				layer
+				{
+					LayerFlags		= GFlags(GCtrlBitmapSkin, GFC_BITMAPSKIN_CENTER_EMPTY, GFC_BITMAPSKIN_SIDES_SCALE);
+					DestCombine		= GColorCombine(Add,Disable);
+					FactorCombine	= GColorCombine(Modulate, Source);
+					FactorColor		= SF_CtrlTheme_FreeRealms_Control_Color_Outline;
+					Image			= GBitmap("FreeRealms/FR_Button_Square.tga", HVGrid, 1, 5, 0, 3);
+					Margin			= GRectMargin(10,12,10,12);
+				}
+			}
+		}
+		// Image skins
+		with GFC_CtrlTheme_Bitmap_Control_Button_Skin_Focuser
+		{
+			.Default
+			{
+				layer
+				{
+					LayerFlags		= GFlags(GCtrlBitmapSkin, GFC_BITMAPSKIN_CENTER_EMPTY, GFC_BITMAPSKIN_SIDES_SCALE);
+					DestCombine		= GColorCombine(Add,Disable);
+					FactorCombine	= GColorCombine(Modulate, Source);
+					FactorColor		= SF_CtrlTheme_FreeRealms_Control_Color_OutlineFocus;
+					Image			= GBitmap("FreeRealms/FR_Button_Square.tga", HVGrid, 1, 5, 0, 4);
+					Margin			= GRectMargin(10,12,10,12);
+				}
+			}
+		}	
+		map GFC_Control											= GFC_Control_StandardButton_Style;
+		map GFC_CtrlTheme_Bitmap_Control_Button					= GFC_Control_StandardButton_Style;
+		map SF_CtrlTheme_FreeRealms_Control						= GFC_Control_StandardButton_Style;
+	}
+
+
+
+	GFC_Control_EtchedButton_Style
+	{
+
+		map GFC_Control											= GFC_Control_SquareButton_Style;
+		map GFC_CtrlTheme_Bitmap_Control_Button					= GFC_Control_SquareButton_Style;
+		map SF_CtrlTheme_FreeRealms_Control						= GFC_Control_SquareButton_Style;
+	}
+
+
+
+	GFC_Control_FlatButton_Style
+	{
+		// Image skins
+		with GFC_CtrlTheme_Bitmap_Control_Button_Skin
+		{
+			.Default
+			{
+				layer
+				{
+					LayerFlags		= GFlags(GCtrlBitmapSkin, GFC_BITMAPSKIN_CENTER_SCALE, GFC_BITMAPSKIN_SIDES_SCALE);
+					DestCombine		= GColorCombine(BlendSource,Disable);
+					FactorCombine	= GColorCombine(Modulate, Modulate);
+					FactorColor		= SF_CtrlTheme_FreeRealms_Control_Color_Surface1;
+					Image			= GBitmap("FreeRealms/FR_Button.tga", HVGrid, 1, 5, 0, 1);
+					Margin			= GRectMargin(10,12,10,12);
+				}
+				layer
+				{
+					LayerFlags		= GFlags(GCtrlBitmapSkin, GFC_BITMAPSKIN_CENTER_SCALE, GFC_BITMAPSKIN_SIDES_SCALE);
+					DestCombine		= GColorCombine(Add,Disable);
+					FactorCombine	= GColorCombine(Modulate, Source);
+					FactorColor		= SF_CtrlTheme_FreeRealms_Control_Color_Surface2;
+					Image			= GBitmap("FreeRealms/FR_Button.tga", HVGrid, 1, 5, 0, 2);
+					Margin			= GRectMargin(10,12,10,12);
+				}
+			}
+			.Rollover
+			{
+				layer
+				{
+					LayerFlags		= GFlags(GCtrlBitmapSkin, GFC_BITMAPSKIN_CENTER_SCALE, GFC_BITMAPSKIN_SIDES_SCALE);
+					DestCombine		= GColorCombine(RevSubtract,Disable);
+					FactorCombine	= GColorCombine(Modulate,Source);
+					FactorColor		= SF_CtrlTheme_FreeRealms_Control_Color_DropShadow;
+					Image			= GBitmap("FreeRealms/FR_Button.tga", HVGrid, 1, 5, 0, 0);
+					Margin			= GRectMargin(10,12,10,12);
+				}
+				layer
+				{
+					LayerFlags		= GFlags(GCtrlBitmapSkin, GFC_BITMAPSKIN_CENTER_SCALE, GFC_BITMAPSKIN_SIDES_SCALE);
+					DestCombine		= GColorCombine(BlendSource,Disable);
+					FactorCombine	= GColorCombine(Modulate, Modulate);
+					FactorColor		= SF_CtrlTheme_FreeRealms_Control_Color_SurfaceRoll1;
+					Image			= GBitmap("FreeRealms/FR_Button.tga", HVGrid, 1, 5, 0, 1);
+					Margin			= GRectMargin(10,12,10,12);
+				}
+				layer
+				{
+					LayerFlags		= GFlags(GCtrlBitmapSkin, GFC_BITMAPSKIN_CENTER_SCALE, GFC_BITMAPSKIN_SIDES_SCALE);
+					DestCombine		= GColorCombine(Add,Disable);
+					FactorCombine	= GColorCombine(Modulate, Source);
+					FactorColor		= SF_CtrlTheme_FreeRealms_Control_Color_SurfaceRoll2;
+					Image			= GBitmap("FreeRealms/FR_Button.tga", HVGrid, 1, 5, 0, 2);
+					Margin			= GRectMargin(10,12,10,12);
+				}
+				layer
+				{
+					LayerFlags		= GFlags(GCtrlBitmapSkin, GFC_BITMAPSKIN_CENTER_EMPTY, GFC_BITMAPSKIN_SIDES_SCALE);
+					DestCombine		= GColorCombine(Add,Disable);
+					FactorCombine	= GColorCombine(Modulate, Source);
+					FactorColor		= SF_CtrlTheme_FreeRealms_Control_Color_Outline;
+					Image			= GBitmap("FreeRealms/FR_Button.tga", HVGrid, 1, 5, 0, 3);
+					Margin			= GRectMargin(10,12,10,12);
+				}
+			}
+			.Press
+			{
+				layer
+				{
+					LayerFlags		= GFlags(GCtrlBitmapSkin, GFC_BITMAPSKIN_CENTER_SCALE, GFC_BITMAPSKIN_SIDES_SCALE);
+					DestCombine		= GColorCombine(BlendSource,Disable);
+					FactorCombine	= GColorCombine(Modulate, Modulate);
+					FactorColor		= SF_CtrlTheme_FreeRealms_Control_Color_Surface1;
+					Image			= GBitmap("FreeRealms/FR_Button.tga", HVGrid, 1, 5, 0, 1);
+					Margin			= GRectMargin(10,12,10,12);
+				}
+				layer
+				{
+					LayerFlags		= GFlags(GCtrlBitmapSkin, GFC_BITMAPSKIN_CENTER_SCALE, GFC_BITMAPSKIN_SIDES_SCALE);
+					DestCombine		= GColorCombine(Add,Disable);
+					FactorCombine	= GColorCombine(Modulate, Source);
+					FactorColor		= SF_CtrlTheme_FreeRealms_Control_Color_Surface2;
+					Image			= GBitmap("FreeRealms/FR_Button.tga", HVGrid, 1, 5, 0, 2);
+					Margin			= GRectMargin(10,12,10,12);
+				}
+				layer
+				{
+					LayerFlags		= GFlags(GCtrlBitmapSkin, GFC_BITMAPSKIN_CENTER_EMPTY, GFC_BITMAPSKIN_SIDES_SCALE);
+					DestCombine		= GColorCombine(Add,Disable);
+					FactorCombine	= GColorCombine(Modulate, Source);
+					FactorColor		= SF_CtrlTheme_FreeRealms_Control_Color_Outline;
+					Image			= GBitmap("FreeRealms/FR_Button.tga", HVGrid, 1, 5, 0, 3);
+					Margin			= GRectMargin(10,12,10,12);
+				}
+			}
+			.Disable
+			{
+				layer
+				{
+					LayerFlags		= GFlags(GCtrlBitmapSkin, GFC_BITMAPSKIN_CENTER_SCALE, GFC_BITMAPSKIN_SIDES_SCALE);
+					DestCombine		= GColorCombine(BlendSource,Disable);
+					FactorCombine	= GColorCombine(Modulate, Modulate);
+					FactorColor		= SF_CtrlTheme_FreeRealms_Control_Color_Surface1;
+					Image			= GBitmap("FreeRealms/FR_Button.tga", HVGrid, 1, 5, 0, 1);
+					Margin			= GRectMargin(10,12,10,12);
+				}
+				layer
+				{
+					LayerFlags		= GFlags(GCtrlBitmapSkin, GFC_BITMAPSKIN_CENTER_SCALE, GFC_BITMAPSKIN_SIDES_SCALE);
+					DestCombine		= GColorCombine(Add,Disable);
+					FactorCombine	= GColorCombine(Modulate, Source);
+					FactorColor		= SF_CtrlTheme_FreeRealms_Control_Color_SurfaceDis2;
+					Image			= GBitmap("FreeRealms/FR_Button.tga", HVGrid, 1, 5, 0, 2);
+					Margin			= GRectMargin(10,12,10,12);
+				}
+				layer
+				{
+					LayerFlags		= GFlags(GCtrlBitmapSkin, GFC_BITMAPSKIN_CENTER_EMPTY, GFC_BITMAPSKIN_SIDES_SCALE);
+					DestCombine		= GColorCombine(Add,Disable);
+					FactorCombine	= GColorCombine(Modulate, Source);
+					FactorColor		= SF_CtrlTheme_FreeRealms_Control_Color_OutlineDis;
+					Image			= GBitmap("FreeRealms/FR_Button.tga", HVGrid, 1, 5, 0, 3);
+					Margin			= GRectMargin(10,12,10,12);
+				}
+			}
+			.Toggle
+			{
+				layer
+				{
+					LayerFlags		= GFlags(GCtrlBitmapSkin, GFC_BITMAPSKIN_CENTER_SCALE, GFC_BITMAPSKIN_SIDES_SCALE);
+					DestCombine		= GColorCombine(BlendSource,Disable);
+					FactorCombine	= GColorCombine(Modulate, Modulate);
+					FactorColor		= SF_CtrlTheme_FreeRealms_Control_Color_Surface1;
+					Image			= GBitmap("FreeRealms/FR_Button.tga", HVGrid, 1, 5, 0, 1);
+					Margin			= GRectMargin(10,12,10,12);
+				}
+				layer
+				{
+					LayerFlags		= GFlags(GCtrlBitmapSkin, GFC_BITMAPSKIN_CENTER_SCALE, GFC_BITMAPSKIN_SIDES_SCALE);
+					DestCombine		= GColorCombine(BlendSource,Disable);
+					FactorCombine	= GColorCombine(Modulate, Modulate);
+					FactorColor		= SF_CtrlTheme_FreeRealms_Control_Color_SurfaceRoll1;
+					Image			= GBitmap("FreeRealms/FR_Button.tga", HVGrid, 1, 5, 0, 2);
+					Margin			= GRectMargin(10,12,10,12);
+				}
+				layer
+				{
+					LayerFlags		= GFlags(GCtrlBitmapSkin, GFC_BITMAPSKIN_CENTER_SCALE, GFC_BITMAPSKIN_SIDES_SCALE);
+					DestCombine		= GColorCombine(Add,Disable);
+					FactorCombine	= GColorCombine(Modulate, Source);
+					FactorColor		= SF_CtrlTheme_FreeRealms_Control_Color_SurfaceRoll2;
+					Image			= GBitmap("FreeRealms/FR_Button.tga", HVGrid, 1, 5, 0, 2);
+					Margin			= GRectMargin(10,12,10,12);
+				}
+				layer
+				{
+					LayerFlags		= GFlags(GCtrlBitmapSkin, GFC_BITMAPSKIN_CENTER_EMPTY, GFC_BITMAPSKIN_SIDES_SCALE);
+					DestCombine		= GColorCombine(Add,Disable);
+					FactorCombine	= GColorCombine(Modulate, Source);
+					FactorColor		= SF_CtrlTheme_FreeRealms_Control_Color_Outline;
+					Image			= GBitmap("FreeRealms/FR_Button.tga", HVGrid, 1, 5, 0, 3);
+					Margin			= GRectMargin(10,12,10,12);
+				}
+			}
+			.ToggleRollover
+			{
+				layer
+				{
+					LayerFlags		= GFlags(GCtrlBitmapSkin, GFC_BITMAPSKIN_CENTER_SCALE, GFC_BITMAPSKIN_SIDES_SCALE);
+					DestCombine		= GColorCombine(BlendSource,Disable);
+					FactorCombine	= GColorCombine(Modulate, Modulate);
+					FactorColor		= SF_CtrlTheme_FreeRealms_Control_Color_Surface1;
+					Image			= GBitmap("FreeRealms/FR_Button.tga", HVGrid, 1, 5, 0, 1);
+					Margin			= GRectMargin(10,12,10,12);
+				}
+				layer
+				{
+					LayerFlags		= GFlags(GCtrlBitmapSkin, GFC_BITMAPSKIN_CENTER_SCALE, GFC_BITMAPSKIN_SIDES_SCALE);
+					DestCombine		= GColorCombine(Add,Disable);
+					FactorCombine	= GColorCombine(Modulate, Source);
+					FactorColor		= SF_CtrlTheme_FreeRealms_Control_Color_SurfaceRoll2;
+					Image			= GBitmap("FreeRealms/FR_Button.tga", HVGrid, 1, 5, 0, 2);
+					Margin			= GRectMargin(10,12,10,12);
+				}
+				layer
+				{
+					LayerFlags		= GFlags(GCtrlBitmapSkin, GFC_BITMAPSKIN_CENTER_EMPTY, GFC_BITMAPSKIN_SIDES_SCALE);
+					DestCombine		= GColorCombine(Add,Disable);
+					FactorCombine	= GColorCombine(Modulate, Source);
+					FactorColor		= SF_CtrlTheme_FreeRealms_Control_Color_Outline;
+					Image			= GBitmap("FreeRealms/FR_Button.tga", HVGrid, 1, 5, 0, 3);
+					Margin			= GRectMargin(10,12,10,12);
+				}
+			}
+		}
+		map GFC_Control											= GFC_Control_StandardButton_Style;
+		map GFC_CtrlTheme_Bitmap_Control_Button					= GFC_Control_StandardButton_Style;
+		map SF_CtrlTheme_FreeRealms_Control						= GFC_Control_StandardButton_Style;
+	}
+
+
+
+	GFC_Control_LabelButton_Style
+	{
+		GFC_Control_Renderer_Control		=	GFC_CtrlTheme_Bitmap_Control_Button_Renderer_ControlLabel;
+										
+		.Flag_Focus							=	0;	//GFlags(GButtonCtrl, GFC_CF_BUTTON_FOCUS_TEXT);
+		.Flag_DownOffset					=	0;	//GFlags(GButtonCtrl, GFC_CF_BUTTON_DOWNOFFSET_CONTENT);
+										
+		.Size_DownOffset_Content			=	GPoint(1,1);
+		.Size_BorderMargin					=	GRectMargin(8,6,8,6);
+		
+		with .Color_Text
+		{
+			.Default						=	GFC_Control_Color_Text_Default;
+			.Press							=	SF_CtrlTheme_FreeRealms_Control_Color_TextFocus;
+			.Disable						=	GFC_Control_Color_Text_Disable;
+			.Rollover						=	.Default;
+			.Focus							=	.Press;
+			.FocusRollover					=	.Press;
+			.Toggle							=	.Default;		
+			.TogglePress					=	.Press;			
+			.ToggleDisable					=	.Disable;		
+			.ToggleRollover					=	.Rollover;		
+			.ToggleFocus					=	.Focus;			
+			.ToggleFocusRollover			=	.FocusRollover;	
+		}
+		
+		// Image skins
+		with GFC_CtrlTheme_Bitmap_Control_Button_Skin_Focuser
+		{
+			.Default
+			{
+				layer
+				{
+				}
+			}
+		}
+
+		map GFC_Control											= GFC_Control_DefaultButton_Style;
+		map GFC_CtrlTheme_Bitmap_Control_Button					= GFC_Control_DefaultButton_Style;
+		map SF_CtrlTheme_FreeRealms_Control						= GFC_Control_DefaultButton_Style;
+	}
+
+
+
+	GFC_Control_ImageButton_Style
+	{
+		GFC_Control_Renderer_Control		= GFC_CtrlTheme_Bitmap_Control_Button_Renderer_ControlImage;
+		
+		.Size_BorderMargin					= GRectMargin(8,6,8,6);
+		.Size_DownOffset_Content			= GPoint(1,1);
+
+		.Flag_DownOffset					= 0;	//GFlags(GButtonCtrl, GFC_CF_BUTTON_DOWNOFFSET_CONTENT);
+		.Flag_Focus							= 0;	//GFlags(GButtonCtrl, GFC_CF_BUTTON_FOCUS_CONTENT);
+		.Flag_Text_HAlign					= GFlags(GButtonCtrl, GFC_CF_BUTTON_TEXT_HCENTER);
+		.Flag_Text_VAlign					= GFlags(GButtonCtrl, GFC_CF_BUTTON_TEXT_BOTTOM);			
+		
+		with .Color_Text
+		{
+			.Default						=	GFC_Control_Color_Text_Default;
+			.Press							=	SF_CtrlTheme_FreeRealms_Control_Color_TextFocus;
+			.Disable						=	GFC_Control_Color_Text_Disable;
+			.Rollover						=	.Default;
+			.Focus							=	.Press;
+			.FocusRollover					=	.Press;
+			.Toggle							=	.Default;		
+			.TogglePress					=	.Press;			
+			.ToggleDisable					=	.Disable;		
+			.ToggleRollover					=	.Rollover;		
+			.ToggleFocus					=	.Focus;			
+			.ToggleFocusRollover			=	.FocusRollover;	
+		}
+		
+		// Image skins
+		with GFC_CtrlTheme_Bitmap_Control_Button_Skin_Focuser
+		{
+			.Default
+			{
+				layer
+				{
+				}
+			}
+		}
+			
+		map GFC_Control											= GFC_Control_DefaultButton_Style;
+		map GFC_CtrlTheme_Bitmap_Control_Button					= GFC_Control_DefaultButton_Style;
+		map SF_CtrlTheme_FreeRealms_Control						= GFC_Control_DefaultButton_Style;
+	}
+
+
+	GFC_Control_LinkButton_Style
+	{
+		GFC_Control_Renderer_Control		=	GFC_CtrlTheme_Bitmap_Control_Button_Renderer_ControlLink;
+		
+		.Renderer_Text						=	GFC_CtrlTheme_Bitmap_Control_Button_Renderer_TextLink;
+										
+		.Size_DownOffset_Content			=	GPoint(1,1);
+		.Size_BorderMargin					=	GRectMargin(8,6,8,6);
+										
+		.Flag_Focus							=	0;	//GFlags(GButtonCtrl, GFC_CF_BUTTON_FOCUS_CONTENT);
+		.Flag_DownOffset					=	0;	//GFlags(GButtonCtrl, GFC_CF_BUTTON_DOWNOFFSET_CONTENT);
+									
+		GFC_Control_Cursor_Default		=	GFC_Control_Cursor_Link;
+
+		with .Cursor
+		{
+			.Press							=	GFC_Control_Cursor_Link;
+			.Tracking						=	GFC_Control_Cursor_Arrow;
+		}
+		
+		with .Color_Text
+		{
+			.Default					=	GFC_Control_Color_Link_Default;
+			.Press						=	GFC_Control_Color_Link_Default;
+			.Disable					=	GFC_Control_Color_Link_Disable;
+			.Rollover					=	GFC_Control_Color_Link_Rollover;
+			.Focus						=	.Rollover;
+			.FocusRollover				=	.Rollover;
+			.Toggle						=	.Press;		
+			.TogglePress				=	.Rollover;			
+			.ToggleDisable				=	.Toggle;		
+			.ToggleRollover				=	.Rollover;		
+			.ToggleFocus				=	.Toggle;			
+			.ToggleFocusRollover		=	.ToggleRollover;
+										
+			.Inactive					=	.Default;	
+			.InactivePress				=	.Press;		
+			.InactiveDisable			=	.Disable;	
+			.InactiveRollover			=	.Rollover;	
+			.InactiveToggle				=	.Toggle;	
+			.InactiveTogglePress		=	.TogglePress;		
+			.InactiveToggleDisable		=	.ToggleDisable;	
+			.InactiveToggleRollover		=	.ToggleRollover;
+										
+			.Winoff						=	.Inactive;	
+			.WinoffPress				=	.InactivePress;		
+			.WinoffDisable				=	.InactiveDisable;	
+			.WinoffRollover				=	.InactiveRollover;	
+			.WinoffToggle				=	.InactiveToggle;	
+			.WinoffTogglePress			=	.InactiveTogglePress;	
+			.WinoffToggleDisable		=	.InactiveToggleDisable;	
+			.WinoffToggleRollover		=	.InactiveToggleRollover;	
+		}
+		
+		// Image skins
+		with GFC_CtrlTheme_Bitmap_Control_Button_Skin_Focuser
+		{
+			.Default
+			{
+				layer
+				{
+				}
+			}
+		}
+		
+		map GFC_CtrlTheme_Bitmap_Control_Button					= GFC_Control_DefaultButton_Style;
+		map GFC_Control											= GFC_Control_DefaultButton_Style;
+	}
+
+	
+	GFC_Control_ToolButton_Style
+	{
+		
+		with .Color_Text
+		{
+			.Default						=	GFC_Control_Color_Text_Default;
+			.Press							=	SF_CtrlTheme_FreeRealms_Control_Color_InvertText;
+			.Disable						=	GFC_Control_Color_Text_Disable;
+			.Rollover						=	.Press;
+			.Focus							=	SF_CtrlTheme_FreeRealms_Control_Color_TextFocus;
+			.FocusRollover					=	.Press;
+			.Toggle							=	.Press;		
+			.TogglePress					=	.Press;			
+			.ToggleDisable					=	.Disable;		
+			.ToggleRollover					=	.Rollover;		
+			.ToggleFocus					=	.Press;			
+			.ToggleFocusRollover			=	.FocusRollover;	
+		}
+		
+		with .Combine_Text								
+		{									
+			.Default_Dest					=	GFC_Control_Combine_Text_Default_Dest;			
+			.Default_Factor					=	GFC_Control_Combine_Text_Default_Factor;
+			.Disable_Dest					=	GFC_Control_Combine_Text_Disable_Dest;
+			.Disable_Factor					=	GFC_Control_Combine_Text_Disable_Factor;
+		}
+
+
+		// Image skins
+		with GFC_CtrlTheme_Bitmap_Control_Button_Skin
+		{
+			.Default
+			{
+				layer
+				{
+				}
+			}
+			.Rollover
+			{
+				layer
+				{
+					LayerFlags		= GFlags(GCtrlBitmapSkin, GFC_BITMAPSKIN_CENTER_SCALE, GFC_BITMAPSKIN_SIDES_SCALE);
+					DestCombine		= GColorCombine(RevSubtract,Disable);
+					FactorCombine	= GColorCombine(Modulate,Source);
+					FactorColor		= SF_CtrlTheme_FreeRealms_Control_Color_DropShadow;
+					Image			= GBitmap("FreeRealms/FR_Button_Square.tga", HVGrid, 1, 5, 0, 0);
+					Margin			= GRectMargin(10,12,10,12);
+				}
+				layer
+				{
+					LayerFlags		= GFlags(GCtrlBitmapSkin, GFC_BITMAPSKIN_CENTER_SCALE, GFC_BITMAPSKIN_SIDES_SCALE);
+					DestCombine		= GColorCombine(BlendSource,Disable);
+					FactorCombine	= GColorCombine(Modulate, Modulate);
+					FactorColor		= SF_CtrlTheme_FreeRealms_Control_Color_Surface1;
+					Image			= GBitmap("FreeRealms/FR_Button_Square.tga", HVGrid, 1, 5, 0, 1);
+					Margin			= GRectMargin(10,12,10,12);
+				}
+				layer
+				{
+					LayerFlags		= GFlags(GCtrlBitmapSkin, GFC_BITMAPSKIN_CENTER_SCALE, GFC_BITMAPSKIN_SIDES_SCALE);
+					DestCombine		= GColorCombine(Add,Disable);
+					FactorCombine	= GColorCombine(Modulate, Source);
+					FactorColor		= SF_CtrlTheme_FreeRealms_Control_Color_Surface2;
+					Image			= GBitmap("FreeRealms/FR_Button_Square.tga", HVGrid, 1, 5, 0, 2);
+					Margin			= GRectMargin(10,12,10,12);
+				}
+				layer
+				{
+					LayerFlags		= GFlags(GCtrlBitmapSkin, GFC_BITMAPSKIN_CENTER_EMPTY, GFC_BITMAPSKIN_SIDES_SCALE);
+					DestCombine		= GColorCombine(Add,Disable);
+					FactorCombine	= GColorCombine(Modulate, Source);
+					FactorColor		= SF_CtrlTheme_FreeRealms_Control_Color_Outline;
+					Image			= GBitmap("FreeRealms/FR_Button_Square.tga", HVGrid, 1, 5, 0, 3);
+					Margin			= GRectMargin(10,12,10,12);
+				}
+			}
+			.Press
+			{
+				layer
+				{
+					LayerFlags		= GFlags(GCtrlBitmapSkin, GFC_BITMAPSKIN_CENTER_SCALE, GFC_BITMAPSKIN_SIDES_SCALE);
+					DestCombine		= GColorCombine(BlendSource,Disable);
+					FactorCombine	= GColorCombine(Modulate, Modulate);
+					FactorColor		= SF_CtrlTheme_FreeRealms_Control_Color_Surface1;
+					Image			= GBitmap("FreeRealms/FR_Button_Square.tga", HVGrid, 1, 5, 0, 1);
+					Margin			= GRectMargin(10,12,10,12);
+				}
+				layer
+				{
+					LayerFlags		= GFlags(GCtrlBitmapSkin, GFC_BITMAPSKIN_CENTER_SCALE, GFC_BITMAPSKIN_SIDES_SCALE);
+					DestCombine		= GColorCombine(Add,Disable);
+					FactorCombine	= GColorCombine(Modulate, Source);
+					FactorColor		= SF_CtrlTheme_FreeRealms_Control_Color_Surface2;
+					Image			= GBitmap("FreeRealms/FR_Button_Square.tga", HVGrid, 1, 5, 0, 2);
+					Margin			= GRectMargin(10,12,10,12);
+				}
+				layer
+				{
+					LayerFlags		= GFlags(GCtrlBitmapSkin, GFC_BITMAPSKIN_CENTER_EMPTY, GFC_BITMAPSKIN_SIDES_SCALE);
+					DestCombine		= GColorCombine(Add,Disable);
+					FactorCombine	= GColorCombine(Modulate, Source);
+					FactorColor		= SF_CtrlTheme_FreeRealms_Control_Color_Outline;
+					Image			= GBitmap("FreeRealms/FR_Button_Square.tga", HVGrid, 1, 5, 0, 3);
+					Margin			= GRectMargin(10,12,10,12);
+				}
+			}
+			.Disable
+			{
+				layer
+				{
+				}
+			}
+			.Toggle
+			{
+				layer
+				{
+					LayerFlags		= GFlags(GCtrlBitmapSkin, GFC_BITMAPSKIN_CENTER_SCALE, GFC_BITMAPSKIN_SIDES_SCALE);
+					DestCombine		= GColorCombine(BlendSource,Disable);
+					FactorCombine	= GColorCombine(Modulate, Modulate);
+					FactorColor		= SF_CtrlTheme_FreeRealms_Control_Color_Surface1;
+					Image			= GBitmap("FreeRealms/FR_Button_Square.tga", HVGrid, 1, 5, 0, 1);
+					Margin			= GRectMargin(10,12,10,12);
+				}
+				layer
+				{
+					LayerFlags		= GFlags(GCtrlBitmapSkin, GFC_BITMAPSKIN_CENTER_SCALE, GFC_BITMAPSKIN_SIDES_SCALE);
+					DestCombine		= GColorCombine(Add,Disable);
+					FactorCombine	= GColorCombine(Modulate, Source);
+					FactorColor		= SF_CtrlTheme_FreeRealms_Control_Color_Surface2;
+					Image			= GBitmap("FreeRealms/FR_Button_Square.tga", HVGrid, 1, 5, 0, 2);
+					Margin			= GRectMargin(10,12,10,12);
+				}
+				layer
+				{
+					LayerFlags		= GFlags(GCtrlBitmapSkin, GFC_BITMAPSKIN_CENTER_EMPTY, GFC_BITMAPSKIN_SIDES_SCALE);
+					DestCombine		= GColorCombine(Add,Disable);
+					FactorCombine	= GColorCombine(Modulate, Source);
+					FactorColor		= SF_CtrlTheme_FreeRealms_Control_Color_Outline;
+					Image			= GBitmap("FreeRealms/FR_Button_Square.tga", HVGrid, 1, 5, 0, 3);
+					Margin			= GRectMargin(10,12,10,12);
+				}
+			}
+			.ToggleRollover			= .Rollover;
+			.TogglePress			= .Toggle;
+			.ToggleDisable
+			{
+				layer
+				{
+					LayerFlags		= GFlags(GCtrlBitmapSkin, GFC_BITMAPSKIN_CENTER_SCALE, GFC_BITMAPSKIN_SIDES_SCALE);
+					DestCombine		= GColorCombine(BlendSource,Disable);
+					FactorCombine	= GColorCombine(Modulate, Modulate);
+					FactorColor		= SF_CtrlTheme_FreeRealms_Control_Color_Surface1;
+					Image			= GBitmap("FreeRealms/FR_Button_Square.tga", HVGrid, 1, 5, 0, 1);
+					Margin			= GRectMargin(10,12,10,12);
+				}
+				layer
+				{
+					LayerFlags		= GFlags(GCtrlBitmapSkin, GFC_BITMAPSKIN_CENTER_SCALE, GFC_BITMAPSKIN_SIDES_SCALE);
+					DestCombine		= GColorCombine(Add,Disable);
+					FactorCombine	= GColorCombine(Modulate, Source);
+					FactorColor		= SF_CtrlTheme_FreeRealms_Control_Color_SurfaceDis2;
+					Image			= GBitmap("FreeRealms/FR_Button_Square.tga", HVGrid, 1, 5, 0, 2);
+					Margin			= GRectMargin(10,12,10,12);
+				}
+				layer
+				{
+					LayerFlags		= GFlags(GCtrlBitmapSkin, GFC_BITMAPSKIN_CENTER_EMPTY, GFC_BITMAPSKIN_SIDES_SCALE);
+					DestCombine		= GColorCombine(Add,Disable);
+					FactorCombine	= GColorCombine(Modulate, Source);
+					FactorColor		= SF_CtrlTheme_FreeRealms_Control_Color_OutlineDis;
+					Image			= GBitmap("FreeRealms/FR_Button_Square.tga", HVGrid, 1, 5, 0, 3);
+					Margin			= GRectMargin(10,12,10,12);
+				}
+			}
+			.ToggleFocus
+			{
+				layer { Inherit = .Toggle; }
+				layer { }
+				layer { }
+				layer { }
+				layer
+				{
+					LayerFlags		= GFlags(GCtrlBitmapSkin, GFC_BITMAPSKIN_CENTER_EMPTY, GFC_BITMAPSKIN_SIDES_SCALE);
+					DestCombine		= GColorCombine(Add,Disable);
+					FactorCombine	= GColorCombine(Modulate, Source);
+					FactorColor		= SF_CtrlTheme_FreeRealms_Control_Color_OutlineFocus;
+					Image			= GBitmap("FreeRealms/FR_Button_Square.tga", HVGrid, 1, 5, 0, 4);
+					Margin			= GRectMargin(10,12,10,12);
+				}
+			}
+			.ToggleFocusPress
+			{
+				layer { Inherit = .TogglePress; }
+				layer { }
+				layer { }
+				layer { }
+				layer
+				{
+					LayerFlags		= GFlags(GCtrlBitmapSkin, GFC_BITMAPSKIN_CENTER_EMPTY, GFC_BITMAPSKIN_SIDES_SCALE);
+					DestCombine		= GColorCombine(Add,Disable);
+					FactorCombine	= GColorCombine(Modulate, Source);
+					FactorColor		= SF_CtrlTheme_FreeRealms_Control_Color_OutlineFocus;
+					Image			= GBitmap("FreeRealms/FR_Button_Square.tga", HVGrid, 1, 5, 0, 4);
+					Margin			= GRectMargin(10,12,10,12);
+				}
+			}
+			.ToggleFocusDisable
+			{
+				layer { Inherit = .ToggleDisable; }
+				layer { }
+				layer { }
+				layer { }
+				layer
+				{
+					LayerFlags		= GFlags(GCtrlBitmapSkin, GFC_BITMAPSKIN_CENTER_EMPTY, GFC_BITMAPSKIN_SIDES_SCALE);
+					DestCombine		= GColorCombine(Add,Disable);
+					FactorCombine	= GColorCombine(Modulate, Source);
+					FactorColor		= SF_CtrlTheme_FreeRealms_Control_Color_OutlineFocus;
+					Image			= GBitmap("FreeRealms/FR_Button_Square.tga", HVGrid, 1, 5, 0, 4);
+					Margin			= GRectMargin(10,12,10,12);
+				}
+			}
+			.ToggleFocusRollover
+			{
+				layer { Inherit = .ToggleRollover; }
+				layer { }
+				layer { }
+				layer { }
+				layer { }
+				layer
+				{
+					LayerFlags		= GFlags(GCtrlBitmapSkin, GFC_BITMAPSKIN_CENTER_EMPTY, GFC_BITMAPSKIN_SIDES_SCALE);
+					DestCombine		= GColorCombine(Add,Disable);
+					FactorCombine	= GColorCombine(Modulate, Source);
+					FactorColor		= SF_CtrlTheme_FreeRealms_Control_Color_OutlineFocus;
+					Image			= GBitmap("FreeRealms/FR_Button_Square.tga", HVGrid, 1, 5, 0, 4);
+					Margin			= GRectMargin(10,12,10,12);
+				}
+			}
+
+			.Inactive				= .Default;
+			.InactiveRollover		= .Rollover;
+			.InactivePress			= .Toggle;
+			.InactiveDisable		= .Disable;
+			.InactiveToggle			= .Toggle;
+			.InactiveTogglePress	= .TogglePress;
+			.InactiveToggleDisable	= .ToggleDisable;
+			.InactiveToggleRollover	= .ToggleRollover;
+									
+			.Winoff					= .Default;
+			.WinoffRollover			= .Rollover;
+			.WinoffPress			= .Toggle;
+			.WinoffDisable			= .Disable;
+			.WinoffToggle			= .Toggle;
+			.WinoffTogglePress		= .TogglePress;
+			.WinoffToggleDisable	= .ToggleDisable;
+			.WinoffToggleRollover	= .ToggleRollover;
+		}
+		// Image skins
+		with GFC_CtrlTheme_Bitmap_Control_Button_Skin_Focuser
+		{
+			.Default
+			{
+				layer
+				{
+				}
+			}
+		}
+		map GFC_CtrlTheme_Bitmap_Control_Button					= GFC_Control_DefaultButton_Style;
+		map GFC_Control											= GFC_Control_DefaultButton_Style;
+		map SF_CtrlTheme_FreeRealms_Control						= GFC_Control_DefaultButton_Style;
+	}
+
+	
+	// Checkbox
+	GFC_Control_StandardCheckBox_Style
+	{
+		GFC_Control_Renderer_Control		=	GFC_CtrlTheme_Bitmap_Control_Button_Renderer_ControlToggle;
+												
+		// Flags								
+		with .Flag								
+		{									
+			.HAlign							=	GFlags(GButtonCtrl, GFC_CF_BUTTON_LEFT);
+			.VAlign							=	GFlags(GButtonCtrl, GFC_CF_BUTTON_VCENTER);
+			.Focus							=	0;	//= GFlags(GButtonCtrl, GFC_CF_BUTTON_FOCUS_CONTENT);
+			.DownOffset						=	GFlags(GButtonCtrl, GFC_CF_BUTTON_DOWNOFFSET_CONTENT);
+		}
+
+		with .Size
+		{
+			// Border style side widths
+			.BorderMargin					=	GRectMargin(4,4,4,4);
+			.FocusMargin_Text				=	GRectMargin(4,4,4,4);
+			.FocusMargin_Image				=	GRectMargin(0,0,1,1);
+			.FocusMargin_Content			=	GRectMargin(0,0,4,0);
+			.FocusMargin_Control			=	GRectMargin(0,0,0,0);		
+			.ExtraMargin					=	GRectMargin(0,0,0,0);
+			.TextOffset						=	GPoint(0,-1);
+			.DownOffset_Content				=	GPoint(0,0);
+			.DownOffset_Text				=	GPoint(0,0);
+			.DownOffset_Image				=	GPoint(0,0);
+			.ItemSpace						=	GFC_Control_Size_ItemSpace;			
+			.Default						=	GSize(16,16);	
+			.Image							=	GSize(16,16);
+		}		
+		
+		with .Color								
+		{									
+			.Text_Default					=	GFC_Control_Color_Text_Default;
+			.Text_Rollover					=	GFC_Control_Color_Text_Default;
+			.Text_Press						=	GFC_Control_Color_Text_Default;									
+			.Text_Focus						=	GFC_Control_Color_Text_Default;
+			.Text_Disable					=	GFC_Control_Color_Text_Disable;
+			.Text_ToggleDisable				=	.Text_Disable;
+
+			.TextShadow_Default					=	SF_CtrlTheme_FreeRealms_Control_Color_TextGlow;
+			.TextShadow_Press					=	.TextShadow_Default;
+			.TextShadow_Disable					=	.TextShadow_Default;
+			.TextShadow_Rollover				=	.TextShadow_Default;
+			.TextShadow_Focus					=	.TextShadow_Default;
+			.TextShadow_FocusRollover			=	.TextShadow_Default;
+			.TextShadow_Toggle					=	.TextShadow_Default;		
+			.TextShadow_TogglePress				=	.TextShadow_Press;			
+			.TextShadow_ToggleDisable			=	.TextShadow_Disable;		
+			.TextShadow_ToggleRollover			=	.TextShadow_Rollover;		
+			.TextShadow_ToggleFocus				=	.TextShadow_Focus;			
+			.TextShadow_ToggleFocusRollover		=	.TextShadow_FocusRollover;	
+												
+			.TextShadow_Inactive				=	.TextShadow_Default;	
+			.TextShadow_InactivePress			=	.TextShadow_Press;		
+			.TextShadow_InactiveDisable			=	.TextShadow_Disable;	
+			.TextShadow_InactiveRollover		=	.TextShadow_Rollover;	
+			.TextShadow_InactiveToggle			=	.TextShadow_Toggle;	
+			.TextShadow_InactiveTogglePress		=	.TextShadow_TogglePress;		
+			.TextShadow_InactiveToggleDisable	=	.TextShadow_ToggleDisable;	
+			.TextShadow_InactiveToggleRollover	=	.TextShadow_ToggleRollover;	
+												
+			.TextShadow_Winoff					=	.TextShadow_Inactive;	
+			.TextShadow_WinoffPress				=	.TextShadow_InactivePress;		
+			.TextShadow_WinoffDisable			=	.TextShadow_InactiveDisable;	
+			.TextShadow_WinoffRollover			=	.TextShadow_InactiveRollover;	
+			.TextShadow_WinoffToggle			=	.TextShadow_InactiveToggle;	
+			.TextShadow_WinoffTogglePress		=	.TextShadow_InactiveTogglePress;	
+			.TextShadow_WinoffToggleDisable		=	.TextShadow_InactiveToggleDisable;	
+			.TextShadow_WinoffToggleRollover	=	.TextShadow_InactiveToggleRollover;
+		}
+		with .Combine								
+		{									
+			.Text_Default_Dest				=	GFC_Control_Combine_Text_Default_Dest;			
+			.Text_Default_Factor			=	GFC_Control_Combine_Text_Default_Factor;
+			.Text_Disable_Dest				=	GFC_Control_Combine_Text_Disable_Dest;
+			.Text_Disable_Factor			=	GFC_Control_Combine_Text_Disable_Factor;
+			
+			.TextShadow_Default_Dest			=	GFC_Control_Combine_TextShadow_Default_Dest;
+			.TextShadow_Default_Factor			=	GFC_Control_Combine_TextShadow_Default_Factor;
+			.TextShadow_Disable_Dest			=	GColorCombine(Disable, Disable);
+			.TextShadow_Disable_Factor			=	GColorCombine(Disable, Disable);				
+		}
+
+
+		// Toggle State images
+		with GFC_CtrlTheme_Bitmap_Control_Button_Skin_Image
+		{
+			.Default
+			{
+				layer
+				{
+					LayerFlags		= GFlags(GCtrlBitmapSkin, GFC_BITMAPSKIN_CENTER_SCALE, GFC_BITMAPSKIN_SIDES_SCALE);
+					DestCombine		= GColorCombine(RevSubtract,Disable);
+					FactorCombine	= GColorCombine(Modulate,Source);
+					FactorColor		= SF_CtrlTheme_FreeRealms_Control_Color_DropShadow;
+					Image			= GBitmap("FreeRealms/FR_Checkbox.tga", HVGrid, 1, 6, 0, 0);
+					Margin			= GRectMargin(7,7,7,7);
+				}
+				layer
+				{
+					LayerFlags		= GFlags(GCtrlBitmapSkin, GFC_BITMAPSKIN_CENTER_SCALE, GFC_BITMAPSKIN_SIDES_SCALE);
+					DestCombine		= GColorCombine(BlendSource,Disable);
+					FactorCombine	= GColorCombine(Modulate, Modulate);
+					FactorColor		= SF_CtrlTheme_FreeRealms_Control_Color_Surface1;
+					Image			= GBitmap("FreeRealms/FR_Checkbox.tga", HVGrid, 1, 6, 0, 1);
+					Margin			= GRectMargin(7,7,7,7);
+				}
+				layer
+				{
+					LayerFlags		= GFlags(GCtrlBitmapSkin, GFC_BITMAPSKIN_CENTER_SCALE, GFC_BITMAPSKIN_SIDES_SCALE);
+					DestCombine		= GColorCombine(Add,Disable);
+					FactorCombine	= GColorCombine(Modulate, Source);
+					FactorColor		= SF_CtrlTheme_FreeRealms_Control_Color_Surface2;
+					Image			= GBitmap("FreeRealms/FR_Checkbox.tga", HVGrid, 1, 6, 0, 2);
+					Margin			= GRectMargin(7,7,7,7);
+				}
+				layer
+				{
+					LayerFlags		= GFlags(GCtrlBitmapSkin, GFC_BITMAPSKIN_CENTER_EMPTY, GFC_BITMAPSKIN_SIDES_SCALE);
+					DestCombine		= GColorCombine(Add,Disable);
+					FactorCombine	= GColorCombine(Modulate, Source);
+					FactorColor		= SF_CtrlTheme_FreeRealms_Control_Color_Outline;
+					Image			= GBitmap("FreeRealms/FR_Checkbox.tga", HVGrid, 1, 6, 0, 3);
+					Margin			= GRectMargin(7,7,7,7);
+				}
+			}
+			.Rollover
+			{
+				layer
+				{
+					LayerFlags		= GFlags(GCtrlBitmapSkin, GFC_BITMAPSKIN_CENTER_SCALE, GFC_BITMAPSKIN_SIDES_SCALE);
+					DestCombine		= GColorCombine(RevSubtract,Disable);
+					FactorCombine	= GColorCombine(Modulate,Source);
+					FactorColor		= SF_CtrlTheme_FreeRealms_Control_Color_DropShadow;
+					Image			= GBitmap("FreeRealms/FR_Checkbox.tga", HVGrid, 1, 6, 0, 0);
+					Margin			= GRectMargin(7,7,7,7);
+				}
+				layer
+				{
+					LayerFlags		= GFlags(GCtrlBitmapSkin, GFC_BITMAPSKIN_CENTER_SCALE, GFC_BITMAPSKIN_SIDES_SCALE);
+					DestCombine		= GColorCombine(BlendSource,Disable);
+					FactorCombine	= GColorCombine(Modulate, Modulate);
+					FactorColor		= SF_CtrlTheme_FreeRealms_Control_Color_SurfaceRoll1;
+					Image			= GBitmap("FreeRealms/FR_Checkbox.tga", HVGrid, 1, 6, 0, 1);
+					Margin			= GRectMargin(7,7,7,7);
+				}
+				layer
+				{
+					LayerFlags		= GFlags(GCtrlBitmapSkin, GFC_BITMAPSKIN_CENTER_SCALE, GFC_BITMAPSKIN_SIDES_SCALE);
+					DestCombine		= GColorCombine(Add,Disable);
+					FactorCombine	= GColorCombine(Modulate, Source);
+					FactorColor		= SF_CtrlTheme_FreeRealms_Control_Color_SurfaceRoll2;
+					Image			= GBitmap("FreeRealms/FR_Checkbox.tga", HVGrid, 1, 6, 0, 2);
+					Margin			= GRectMargin(7,7,7,7);
+				}
+				layer
+				{
+					LayerFlags		= GFlags(GCtrlBitmapSkin, GFC_BITMAPSKIN_CENTER_EMPTY, GFC_BITMAPSKIN_SIDES_SCALE);
+					DestCombine		= GColorCombine(Add,Disable);
+					FactorCombine	= GColorCombine(Modulate, Source);
+					FactorColor		= SF_CtrlTheme_FreeRealms_Control_Color_Outline;
+					Image			= GBitmap("FreeRealms/FR_Checkbox.tga", HVGrid, 1, 6, 0, 3);
+					Margin			= GRectMargin(7,7,7,7);
+				}
+			}
+			.Press
+			{
+				layer
+				{
+					LayerFlags		= GFlags(GCtrlBitmapSkin, GFC_BITMAPSKIN_CENTER_SCALE, GFC_BITMAPSKIN_SIDES_SCALE);
+					DestCombine		= GColorCombine(BlendSource,Disable);
+					FactorCombine	= GColorCombine(Modulate, Modulate);
+					FactorColor		= SF_CtrlTheme_FreeRealms_Control_Color_Surface1;
+					Image			= GBitmap("FreeRealms/FR_Checkbox.tga", HVGrid, 1, 6, 0, 1);
+					Margin			= GRectMargin(7,7,7,7);
+				}
+				layer
+				{
+					LayerFlags		= GFlags(GCtrlBitmapSkin, GFC_BITMAPSKIN_CENTER_SCALE, GFC_BITMAPSKIN_SIDES_SCALE);
+					DestCombine		= GColorCombine(Add,Disable);
+					FactorCombine	= GColorCombine(Modulate, Source);
+					FactorColor		= SF_CtrlTheme_FreeRealms_Control_Color_Surface2;
+					Image			= GBitmap("FreeRealms/FR_Checkbox.tga", HVGrid, 1, 6, 0, 2);
+					Margin			= GRectMargin(7,7,7,7);
+				}
+				layer
+				{
+					LayerFlags		= GFlags(GCtrlBitmapSkin, GFC_BITMAPSKIN_CENTER_EMPTY, GFC_BITMAPSKIN_SIDES_SCALE);
+					DestCombine		= GColorCombine(Add,Disable);
+					FactorCombine	= GColorCombine(Modulate, Source);
+					FactorColor		= SF_CtrlTheme_FreeRealms_Control_Color_Outline;
+					Image			= GBitmap("FreeRealms/FR_Checkbox.tga", HVGrid, 1, 6, 0, 3);
+					Margin			= GRectMargin(7,7,7,7);
+				}
+			}
+			.Disable
+			{
+				layer
+				{
+					LayerFlags		= GFlags(GCtrlBitmapSkin, GFC_BITMAPSKIN_CENTER_SCALE, GFC_BITMAPSKIN_SIDES_SCALE);
+					DestCombine		= GColorCombine(BlendSource,Disable);
+					FactorCombine	= GColorCombine(Modulate, Modulate);
+					FactorColor		= SF_CtrlTheme_FreeRealms_Control_Color_Surface1;
+					Image			= GBitmap("FreeRealms/FR_Checkbox.tga", HVGrid, 1, 6, 0, 1);
+					Margin			= GRectMargin(7,7,7,7);
+				}
+				layer
+				{
+					LayerFlags		= GFlags(GCtrlBitmapSkin, GFC_BITMAPSKIN_CENTER_SCALE, GFC_BITMAPSKIN_SIDES_SCALE);
+					DestCombine		= GColorCombine(Add,Disable);
+					FactorCombine	= GColorCombine(Modulate, Source);
+					FactorColor		= SF_CtrlTheme_FreeRealms_Control_Color_SurfaceDis2;
+					Image			= GBitmap("FreeRealms/FR_Checkbox.tga", HVGrid, 1, 6, 0, 2);
+					Margin			= GRectMargin(7,7,7,7);
+				}
+				layer
+				{
+					LayerFlags		= GFlags(GCtrlBitmapSkin, GFC_BITMAPSKIN_CENTER_EMPTY, GFC_BITMAPSKIN_SIDES_SCALE);
+					DestCombine		= GColorCombine(Add,Disable);
+					FactorCombine	= GColorCombine(Modulate, Source);
+					FactorColor		= SF_CtrlTheme_FreeRealms_Control_Color_OutlineDis;
+					Image			= GBitmap("FreeRealms/FR_Checkbox.tga", HVGrid, 1, 6, 0, 3);
+					Margin			= GRectMargin(7,7,7,7);
+				}
+			}
+			.Focus
+			{
+				layer
+				{
+					LayerFlags		= GFlags(GCtrlBitmapSkin, GFC_BITMAPSKIN_CENTER_SCALE, GFC_BITMAPSKIN_SIDES_SCALE);
+					DestCombine		= GColorCombine(RevSubtract,Disable);
+					FactorCombine	= GColorCombine(Modulate,Source);
+					FactorColor		= SF_CtrlTheme_FreeRealms_Control_Color_DropShadow;
+					Image			= GBitmap("FreeRealms/FR_Checkbox.tga", HVGrid, 1, 6, 0, 0);
+					Margin			= GRectMargin(7,7,7,7);
+				}
+				layer
+				{
+					LayerFlags		= GFlags(GCtrlBitmapSkin, GFC_BITMAPSKIN_CENTER_SCALE, GFC_BITMAPSKIN_SIDES_SCALE);
+					DestCombine		= GColorCombine(BlendSource,Disable);
+					FactorCombine	= GColorCombine(Modulate, Modulate);
+					FactorColor		= SF_CtrlTheme_FreeRealms_Control_Color_Surface1;
+					Image			= GBitmap("FreeRealms/FR_Checkbox.tga", HVGrid, 1, 6, 0, 1);
+					Margin			= GRectMargin(7,7,7,7);
+				}
+				layer
+				{
+					LayerFlags		= GFlags(GCtrlBitmapSkin, GFC_BITMAPSKIN_CENTER_SCALE, GFC_BITMAPSKIN_SIDES_SCALE);
+					DestCombine		= GColorCombine(Add,Disable);
+					FactorCombine	= GColorCombine(Modulate, Source);
+					FactorColor		= SF_CtrlTheme_FreeRealms_Control_Color_Surface2;
+					Image			= GBitmap("FreeRealms/FR_Checkbox.tga", HVGrid, 1, 6, 0, 2);
+					Margin			= GRectMargin(7,7,7,7);
+				}
+				layer
+				{
+					LayerFlags		= GFlags(GCtrlBitmapSkin, GFC_BITMAPSKIN_CENTER_EMPTY, GFC_BITMAPSKIN_SIDES_SCALE);
+					DestCombine		= GColorCombine(Add,Disable);
+					FactorCombine	= GColorCombine(Modulate, Source);
+					FactorColor		= SF_CtrlTheme_FreeRealms_Control_Color_Outline;
+					Image			= GBitmap("FreeRealms/FR_Checkbox.tga", HVGrid, 1, 6, 0, 3);
+					Margin			= GRectMargin(7,7,7,7);
+				}
+				layer
+				{
+					LayerFlags		= GFlags(GCtrlBitmapSkin, GFC_BITMAPSKIN_CENTER_EMPTY, GFC_BITMAPSKIN_SIDES_SCALE);
+					DestCombine		= GColorCombine(Add,Disable);
+					FactorCombine	= GColorCombine(Modulate, Source);
+					FactorColor		= SF_CtrlTheme_FreeRealms_Control_Color_OutlineFocus;
+					Image			= GBitmap("FreeRealms/FR_Checkbox.tga", HVGrid, 1, 6, 0, 5);
+					Margin			= GRectMargin(7,7,7,7);
+				}
+			}
+			.FocusRollover
+			{
+				layer
+				{
+					LayerFlags		= GFlags(GCtrlBitmapSkin, GFC_BITMAPSKIN_CENTER_SCALE, GFC_BITMAPSKIN_SIDES_SCALE);
+					DestCombine		= GColorCombine(RevSubtract,Disable);
+					FactorCombine	= GColorCombine(Modulate,Source);
+					FactorColor		= SF_CtrlTheme_FreeRealms_Control_Color_DropShadow;
+					Image			= GBitmap("FreeRealms/FR_Checkbox.tga", HVGrid, 1, 6, 0, 0);
+					Margin			= GRectMargin(7,7,7,7);
+				}
+				layer
+				{
+					LayerFlags		= GFlags(GCtrlBitmapSkin, GFC_BITMAPSKIN_CENTER_SCALE, GFC_BITMAPSKIN_SIDES_SCALE);
+					DestCombine		= GColorCombine(BlendSource,Disable);
+					FactorCombine	= GColorCombine(Modulate, Modulate);
+					FactorColor		= SF_CtrlTheme_FreeRealms_Control_Color_SurfaceRoll1;
+					Image			= GBitmap("FreeRealms/FR_Checkbox.tga", HVGrid, 1, 6, 0, 1);
+					Margin			= GRectMargin(7,7,7,7);
+				}
+				layer
+				{
+					LayerFlags		= GFlags(GCtrlBitmapSkin, GFC_BITMAPSKIN_CENTER_SCALE, GFC_BITMAPSKIN_SIDES_SCALE);
+					DestCombine		= GColorCombine(Add,Disable);
+					FactorCombine	= GColorCombine(Modulate, Source);
+					FactorColor		= SF_CtrlTheme_FreeRealms_Control_Color_SurfaceRoll2;
+					Image			= GBitmap("FreeRealms/FR_Checkbox.tga", HVGrid, 1, 6, 0, 2);
+					Margin			= GRectMargin(7,7,7,7);
+				}
+				layer
+				{
+					LayerFlags		= GFlags(GCtrlBitmapSkin, GFC_BITMAPSKIN_CENTER_EMPTY, GFC_BITMAPSKIN_SIDES_SCALE);
+					DestCombine		= GColorCombine(Add,Disable);
+					FactorCombine	= GColorCombine(Modulate, Source);
+					FactorColor		= SF_CtrlTheme_FreeRealms_Control_Color_Outline;
+					Image			= GBitmap("FreeRealms/FR_Checkbox.tga", HVGrid, 1, 6, 0, 3);
+					Margin			= GRectMargin(7,7,7,7);
+				}
+				layer
+				{
+					LayerFlags		= GFlags(GCtrlBitmapSkin, GFC_BITMAPSKIN_CENTER_EMPTY, GFC_BITMAPSKIN_SIDES_SCALE);
+					DestCombine		= GColorCombine(Add,Disable);
+					FactorCombine	= GColorCombine(Modulate, Source);
+					FactorColor		= SF_CtrlTheme_FreeRealms_Control_Color_OutlineFocus;
+					Image			= GBitmap("FreeRealms/FR_Checkbox.tga", HVGrid, 1, 6, 0, 5);
+					Margin			= GRectMargin(7,7,7,7);
+				}
+			}
+			.FocusPress
+			{
+				layer
+				{
+					LayerFlags		= GFlags(GCtrlBitmapSkin, GFC_BITMAPSKIN_CENTER_SCALE, GFC_BITMAPSKIN_SIDES_SCALE);
+					DestCombine		= GColorCombine(BlendSource,Disable);
+					FactorCombine	= GColorCombine(Modulate, Modulate);
+					FactorColor		= SF_CtrlTheme_FreeRealms_Control_Color_Surface1;
+					Image			= GBitmap("FreeRealms/FR_Checkbox.tga", HVGrid, 1, 6, 0, 1);
+					Margin			= GRectMargin(7,7,7,7);
+				}
+				layer
+				{
+					LayerFlags		= GFlags(GCtrlBitmapSkin, GFC_BITMAPSKIN_CENTER_SCALE, GFC_BITMAPSKIN_SIDES_SCALE);
+					DestCombine		= GColorCombine(Add,Disable);
+					FactorCombine	= GColorCombine(Modulate, Source);
+					FactorColor		= SF_CtrlTheme_FreeRealms_Control_Color_Surface2;
+					Image			= GBitmap("FreeRealms/FR_Checkbox.tga", HVGrid, 1, 6, 0, 2);
+					Margin			= GRectMargin(7,7,7,7);
+				}
+				layer
+				{
+					LayerFlags		= GFlags(GCtrlBitmapSkin, GFC_BITMAPSKIN_CENTER_EMPTY, GFC_BITMAPSKIN_SIDES_SCALE);
+					DestCombine		= GColorCombine(Add,Disable);
+					FactorCombine	= GColorCombine(Modulate, Source);
+					FactorColor		= SF_CtrlTheme_FreeRealms_Control_Color_Outline;
+					Image			= GBitmap("FreeRealms/FR_Checkbox.tga", HVGrid, 1, 6, 0, 3);
+					Margin			= GRectMargin(7,7,7,7);
+				}
+				layer
+				{
+					LayerFlags		= GFlags(GCtrlBitmapSkin, GFC_BITMAPSKIN_CENTER_EMPTY, GFC_BITMAPSKIN_SIDES_SCALE);
+					DestCombine		= GColorCombine(Add,Disable);
+					FactorCombine	= GColorCombine(Modulate, Source);
+					FactorColor		= SF_CtrlTheme_FreeRealms_Control_Color_OutlineFocus;
+					Image			= GBitmap("FreeRealms/FR_Checkbox.tga", HVGrid, 1, 6, 0, 5);
+					Margin			= GRectMargin(7,7,7,7);
+				}
+			}
+			.FocusDisable
+			{
+				layer
+				{
+					LayerFlags		= GFlags(GCtrlBitmapSkin, GFC_BITMAPSKIN_CENTER_SCALE, GFC_BITMAPSKIN_SIDES_SCALE);
+					DestCombine		= GColorCombine(BlendSource,Disable);
+					FactorCombine	= GColorCombine(Modulate, Modulate);
+					FactorColor		= SF_CtrlTheme_FreeRealms_Control_Color_Surface1;
+					Image			= GBitmap("FreeRealms/FR_Checkbox.tga", HVGrid, 1, 6, 0, 1);
+					Margin			= GRectMargin(7,7,7,7);
+				}
+				layer
+				{
+					LayerFlags		= GFlags(GCtrlBitmapSkin, GFC_BITMAPSKIN_CENTER_SCALE, GFC_BITMAPSKIN_SIDES_SCALE);
+					DestCombine		= GColorCombine(Add,Disable);
+					FactorCombine	= GColorCombine(Modulate, Source);
+					FactorColor		= SF_CtrlTheme_FreeRealms_Control_Color_SurfaceDis2;
+					Image			= GBitmap("FreeRealms/FR_Checkbox.tga", HVGrid, 1, 6, 0, 2);
+					Margin			= GRectMargin(7,7,7,7);
+				}
+				layer
+				{
+					LayerFlags		= GFlags(GCtrlBitmapSkin, GFC_BITMAPSKIN_CENTER_EMPTY, GFC_BITMAPSKIN_SIDES_SCALE);
+					DestCombine		= GColorCombine(Add,Disable);
+					FactorCombine	= GColorCombine(Modulate, Source);
+					FactorColor		= SF_CtrlTheme_FreeRealms_Control_Color_OutlineDis;
+					Image			= GBitmap("FreeRealms/FR_Checkbox.tga", HVGrid, 1, 6, 0, 3);
+					Margin			= GRectMargin(7,7,7,7);
+				}
+				layer
+				{
+					LayerFlags		= GFlags(GCtrlBitmapSkin, GFC_BITMAPSKIN_CENTER_EMPTY, GFC_BITMAPSKIN_SIDES_SCALE);
+					DestCombine		= GColorCombine(Add,Disable);
+					FactorCombine	= GColorCombine(Modulate, Source);
+					FactorColor		= SF_CtrlTheme_FreeRealms_Control_Color_OutlineFocus;
+					Image			= GBitmap("FreeRealms/FR_Checkbox.tga", HVGrid, 1, 6, 0, 5);
+					Margin			= GRectMargin(7,7,7,7);
+				}
+			}
+			.Toggle
+			{
+				layer
+				{
+					LayerFlags		= GFlags(GCtrlBitmapSkin, GFC_BITMAPSKIN_CENTER_SCALE, GFC_BITMAPSKIN_SIDES_SCALE);
+					DestCombine		= GColorCombine(RevSubtract,Disable);
+					FactorCombine	= GColorCombine(Modulate,Source);
+					FactorColor		= SF_CtrlTheme_FreeRealms_Control_Color_DropShadow;
+					Image			= GBitmap("FreeRealms/FR_Checkbox.tga", HVGrid, 1, 6, 0, 0);
+					Margin			= GRectMargin(7,7,7,7);
+				}
+				layer
+				{
+					LayerFlags		= GFlags(GCtrlBitmapSkin, GFC_BITMAPSKIN_CENTER_SCALE, GFC_BITMAPSKIN_SIDES_SCALE);
+					DestCombine		= GColorCombine(BlendSource,Disable);
+					FactorCombine	= GColorCombine(Modulate, Modulate);
+					FactorColor		= SF_CtrlTheme_FreeRealms_Control_Color_Surface1;
+					Image			= GBitmap("FreeRealms/FR_Checkbox.tga", HVGrid, 1, 6, 0, 1);
+					Margin			= GRectMargin(7,7,7,7);
+				}
+				layer
+				{
+					LayerFlags		= GFlags(GCtrlBitmapSkin, GFC_BITMAPSKIN_CENTER_SCALE, GFC_BITMAPSKIN_SIDES_SCALE);
+					DestCombine		= GColorCombine(Add,Disable);
+					FactorCombine	= GColorCombine(Modulate, Source);
+					FactorColor		= SF_CtrlTheme_FreeRealms_Control_Color_Surface2;
+					Image			= GBitmap("FreeRealms/FR_Checkbox.tga", HVGrid, 1, 6, 0, 2);
+					Margin			= GRectMargin(7,7,7,7);
+				}
+				layer
+				{
+					LayerFlags		= GFlags(GCtrlBitmapSkin, GFC_BITMAPSKIN_CENTER_SCALE, GFC_BITMAPSKIN_SIDES_SCALE);
+					DestCombine		= GColorCombine(BlendSource,Disable);
+					FactorCombine	= GColorCombine(Modulate,Modulate);
+					FactorColor		= SF_CtrlTheme_FreeRealms_Control_Color_Glyphs;
+					Image			= GBitmap("FreeRealms/FR_Checkbox.tga", HVGrid, 1, 6, 0, 4);
+					Margin			= GRectMargin(0,0,0,0);
+				}
+				layer
+				{
+					LayerFlags		= GFlags(GCtrlBitmapSkin, GFC_BITMAPSKIN_CENTER_EMPTY, GFC_BITMAPSKIN_SIDES_SCALE);
+					DestCombine		= GColorCombine(Add,Disable);
+					FactorCombine	= GColorCombine(Modulate, Source);
+					FactorColor		= SF_CtrlTheme_FreeRealms_Control_Color_Outline;
+					Image			= GBitmap("FreeRealms/FR_Checkbox.tga", HVGrid, 1, 6, 0, 3);
+					Margin			= GRectMargin(7,7,7,7);
+				}
+			}
+			.ToggleRollover
+			{
+				layer
+				{
+					LayerFlags		= GFlags(GCtrlBitmapSkin, GFC_BITMAPSKIN_CENTER_SCALE, GFC_BITMAPSKIN_SIDES_SCALE);
+					DestCombine		= GColorCombine(RevSubtract,Disable);
+					FactorCombine	= GColorCombine(Modulate,Source);
+					FactorColor		= SF_CtrlTheme_FreeRealms_Control_Color_DropShadow;
+					Image			= GBitmap("FreeRealms/FR_Checkbox.tga", HVGrid, 1, 6, 0, 0);
+					Margin			= GRectMargin(7,7,7,7);
+				}
+				layer
+				{
+					LayerFlags		= GFlags(GCtrlBitmapSkin, GFC_BITMAPSKIN_CENTER_SCALE, GFC_BITMAPSKIN_SIDES_SCALE);
+					DestCombine		= GColorCombine(BlendSource,Disable);
+					FactorCombine	= GColorCombine(Modulate, Modulate);
+					FactorColor		= SF_CtrlTheme_FreeRealms_Control_Color_SurfaceRoll1;
+					Image			= GBitmap("FreeRealms/FR_Checkbox.tga", HVGrid, 1, 6, 0, 1);
+					Margin			= GRectMargin(7,7,7,7);
+				}
+				layer
+				{
+					LayerFlags		= GFlags(GCtrlBitmapSkin, GFC_BITMAPSKIN_CENTER_SCALE, GFC_BITMAPSKIN_SIDES_SCALE);
+					DestCombine		= GColorCombine(Add,Disable);
+					FactorCombine	= GColorCombine(Modulate, Source);
+					FactorColor		= SF_CtrlTheme_FreeRealms_Control_Color_SurfaceRoll2;
+					Image			= GBitmap("FreeRealms/FR_Checkbox.tga", HVGrid, 1, 6, 0, 2);
+					Margin			= GRectMargin(7,7,7,7);
+				}
+				layer
+				{
+					LayerFlags		= GFlags(GCtrlBitmapSkin, GFC_BITMAPSKIN_CENTER_SCALE, GFC_BITMAPSKIN_SIDES_SCALE);
+					DestCombine		= GColorCombine(BlendSource,Disable);
+					FactorCombine	= GColorCombine(Modulate,Modulate);
+					FactorColor		= SF_CtrlTheme_FreeRealms_Control_Color_Glyphs;
+					Image			= GBitmap("FreeRealms/FR_Checkbox.tga", HVGrid, 1, 6, 0, 4);
+					Margin			= GRectMargin(0,0,0,0);
+				}
+				layer
+				{
+					LayerFlags		= GFlags(GCtrlBitmapSkin, GFC_BITMAPSKIN_CENTER_EMPTY, GFC_BITMAPSKIN_SIDES_SCALE);
+					DestCombine		= GColorCombine(Add,Disable);
+					FactorCombine	= GColorCombine(Modulate, Source);
+					FactorColor		= SF_CtrlTheme_FreeRealms_Control_Color_Outline;
+					Image			= GBitmap("FreeRealms/FR_Checkbox.tga", HVGrid, 1, 6, 0, 3);
+					Margin			= GRectMargin(7,7,7,7);
+				}
+			}
+			.TogglePress
+			{
+				layer
+				{
+					LayerFlags		= GFlags(GCtrlBitmapSkin, GFC_BITMAPSKIN_CENTER_SCALE, GFC_BITMAPSKIN_SIDES_SCALE);
+					DestCombine		= GColorCombine(BlendSource,Disable);
+					FactorCombine	= GColorCombine(Modulate, Modulate);
+					FactorColor		= SF_CtrlTheme_FreeRealms_Control_Color_Surface1;
+					Image			= GBitmap("FreeRealms/FR_Checkbox.tga", HVGrid, 1, 6, 0, 1);
+					Margin			= GRectMargin(7,7,7,7);
+				}
+				layer
+				{
+					LayerFlags		= GFlags(GCtrlBitmapSkin, GFC_BITMAPSKIN_CENTER_SCALE, GFC_BITMAPSKIN_SIDES_SCALE);
+					DestCombine		= GColorCombine(Add,Disable);
+					FactorCombine	= GColorCombine(Modulate, Source);
+					FactorColor		= SF_CtrlTheme_FreeRealms_Control_Color_Surface2;
+					Image			= GBitmap("FreeRealms/FR_Checkbox.tga", HVGrid, 1, 6, 0, 2);
+					Margin			= GRectMargin(7,7,7,7);
+				}
+				layer
+				{
+					LayerFlags		= GFlags(GCtrlBitmapSkin, GFC_BITMAPSKIN_CENTER_SCALE, GFC_BITMAPSKIN_SIDES_SCALE);
+					DestCombine		= GColorCombine(BlendSource,Disable);
+					FactorCombine	= GColorCombine(Modulate,Modulate);
+					FactorColor		= SF_CtrlTheme_FreeRealms_Control_Color_Glyphs;
+					Image			= GBitmap("FreeRealms/FR_Checkbox.tga", HVGrid, 1, 6, 0, 4);
+					Margin			= GRectMargin(0,0,0,0);
+				}
+				layer
+				{
+					LayerFlags		= GFlags(GCtrlBitmapSkin, GFC_BITMAPSKIN_CENTER_EMPTY, GFC_BITMAPSKIN_SIDES_SCALE);
+					DestCombine		= GColorCombine(Add,Disable);
+					FactorCombine	= GColorCombine(Modulate, Source);
+					FactorColor		= SF_CtrlTheme_FreeRealms_Control_Color_Outline;
+					Image			= GBitmap("FreeRealms/FR_Checkbox.tga", HVGrid, 1, 6, 0, 3);
+					Margin			= GRectMargin(7,7,7,7);
+				}
+			}
+			.ToggleDisable
+			{
+				layer
+				{
+					LayerFlags		= GFlags(GCtrlBitmapSkin, GFC_BITMAPSKIN_CENTER_SCALE, GFC_BITMAPSKIN_SIDES_SCALE);
+					DestCombine		= GColorCombine(BlendSource,Disable);
+					FactorCombine	= GColorCombine(Modulate, Modulate);
+					FactorColor		= SF_CtrlTheme_FreeRealms_Control_Color_Surface1;
+					Image			= GBitmap("FreeRealms/FR_Checkbox.tga", HVGrid, 1, 6, 0, 1);
+					Margin			= GRectMargin(7,7,7,7);
+				}
+				layer
+				{
+					LayerFlags		= GFlags(GCtrlBitmapSkin, GFC_BITMAPSKIN_CENTER_SCALE, GFC_BITMAPSKIN_SIDES_SCALE);
+					DestCombine		= GColorCombine(Add,Disable);
+					FactorCombine	= GColorCombine(Modulate, Source);
+					FactorColor		= SF_CtrlTheme_FreeRealms_Control_Color_SurfaceDis2;
+					Image			= GBitmap("FreeRealms/FR_Checkbox.tga", HVGrid, 1, 6, 0, 2);
+					Margin			= GRectMargin(7,7,7,7);
+				}
+				layer
+				{
+					LayerFlags		= GFlags(GCtrlBitmapSkin, GFC_BITMAPSKIN_CENTER_SCALE, GFC_BITMAPSKIN_SIDES_SCALE);
+					DestCombine		= GColorCombine(BlendSource,Disable);
+					FactorCombine	= GColorCombine(Modulate,Modulate);
+					FactorColor		= SF_CtrlTheme_FreeRealms_Control_Color_Glyphs;
+					Image			= GBitmap("FreeRealms/FR_Checkbox.tga", HVGrid, 1, 6, 0, 4);
+					Margin			= GRectMargin(0,0,0,0);
+				}
+				layer
+				{
+					LayerFlags		= GFlags(GCtrlBitmapSkin, GFC_BITMAPSKIN_CENTER_EMPTY, GFC_BITMAPSKIN_SIDES_SCALE);
+					DestCombine		= GColorCombine(Add,Disable);
+					FactorCombine	= GColorCombine(Modulate, Source);
+					FactorColor		= SF_CtrlTheme_FreeRealms_Control_Color_OutlineDis;
+					Image			= GBitmap("FreeRealms/FR_Checkbox.tga", HVGrid, 1, 6, 0, 3);
+					Margin			= GRectMargin(7,7,7,7);
+				}
+			}
+			.ToggleFocus
+			{
+				layer
+				{
+					LayerFlags		= GFlags(GCtrlBitmapSkin, GFC_BITMAPSKIN_CENTER_SCALE, GFC_BITMAPSKIN_SIDES_SCALE);
+					DestCombine		= GColorCombine(RevSubtract,Disable);
+					FactorCombine	= GColorCombine(Modulate,Source);
+					FactorColor		= SF_CtrlTheme_FreeRealms_Control_Color_DropShadow;
+					Image			= GBitmap("FreeRealms/FR_Checkbox.tga", HVGrid, 1, 6, 0, 0);
+					Margin			= GRectMargin(7,7,7,7);
+				}
+				layer
+				{
+					LayerFlags		= GFlags(GCtrlBitmapSkin, GFC_BITMAPSKIN_CENTER_SCALE, GFC_BITMAPSKIN_SIDES_SCALE);
+					DestCombine		= GColorCombine(BlendSource,Disable);
+					FactorCombine	= GColorCombine(Modulate, Modulate);
+					FactorColor		= SF_CtrlTheme_FreeRealms_Control_Color_Surface1;
+					Image			= GBitmap("FreeRealms/FR_Checkbox.tga", HVGrid, 1, 6, 0, 1);
+					Margin			= GRectMargin(7,7,7,7);
+				}
+				layer
+				{
+					LayerFlags		= GFlags(GCtrlBitmapSkin, GFC_BITMAPSKIN_CENTER_SCALE, GFC_BITMAPSKIN_SIDES_SCALE);
+					DestCombine		= GColorCombine(Add,Disable);
+					FactorCombine	= GColorCombine(Modulate, Source);
+					FactorColor		= SF_CtrlTheme_FreeRealms_Control_Color_Surface2;
+					Image			= GBitmap("FreeRealms/FR_Checkbox.tga", HVGrid, 1, 6, 0, 2);
+					Margin			= GRectMargin(7,7,7,7);
+				}
+				layer
+				{
+					LayerFlags		= GFlags(GCtrlBitmapSkin, GFC_BITMAPSKIN_CENTER_EMPTY, GFC_BITMAPSKIN_SIDES_SCALE);
+					DestCombine		= GColorCombine(Add,Disable);
+					FactorCombine	= GColorCombine(Modulate, Source);
+					FactorColor		= SF_CtrlTheme_FreeRealms_Control_Color_Outline;
+					Image			= GBitmap("FreeRealms/FR_Checkbox.tga", HVGrid, 1, 6, 0, 3);
+					Margin			= GRectMargin(7,7,7,7);
+				}
+				layer
+				{
+					LayerFlags		= GFlags(GCtrlBitmapSkin, GFC_BITMAPSKIN_CENTER_SCALE, GFC_BITMAPSKIN_SIDES_SCALE);
+					DestCombine		= GColorCombine(BlendSource,Disable);
+					FactorCombine	= GColorCombine(Modulate,Modulate);
+					FactorColor		= SF_CtrlTheme_FreeRealms_Control_Color_Glyphs;
+					Image			= GBitmap("FreeRealms/FR_Checkbox.tga", HVGrid, 1, 6, 0, 4);
+					Margin			= GRectMargin(0,0,0,0);
+				}
+				layer
+				{
+					LayerFlags		= GFlags(GCtrlBitmapSkin, GFC_BITMAPSKIN_CENTER_EMPTY, GFC_BITMAPSKIN_SIDES_SCALE);
+					DestCombine		= GColorCombine(Add,Disable);
+					FactorCombine	= GColorCombine(Modulate, Source);
+					FactorColor		= SF_CtrlTheme_FreeRealms_Control_Color_OutlineFocus;
+					Image			= GBitmap("FreeRealms/FR_Checkbox.tga", HVGrid, 1, 6, 0, 5);
+					Margin			= GRectMargin(7,7,7,7);
+				}
+			}
+			.ToggleFocusRollover
+			{
+				layer
+				{
+					LayerFlags		= GFlags(GCtrlBitmapSkin, GFC_BITMAPSKIN_CENTER_SCALE, GFC_BITMAPSKIN_SIDES_SCALE);
+					DestCombine		= GColorCombine(RevSubtract,Disable);
+					FactorCombine	= GColorCombine(Modulate,Source);
+					FactorColor		= SF_CtrlTheme_FreeRealms_Control_Color_DropShadow;
+					Image			= GBitmap("FreeRealms/FR_Checkbox.tga", HVGrid, 1, 6, 0, 0);
+					Margin			= GRectMargin(7,7,7,7);
+				}
+				layer
+				{
+					LayerFlags		= GFlags(GCtrlBitmapSkin, GFC_BITMAPSKIN_CENTER_SCALE, GFC_BITMAPSKIN_SIDES_SCALE);
+					DestCombine		= GColorCombine(BlendSource,Disable);
+					FactorCombine	= GColorCombine(Modulate, Modulate);
+					FactorColor		= SF_CtrlTheme_FreeRealms_Control_Color_SurfaceRoll1;
+					Image			= GBitmap("FreeRealms/FR_Checkbox.tga", HVGrid, 1, 6, 0, 1);
+					Margin			= GRectMargin(7,7,7,7);
+				}
+				layer
+				{
+					LayerFlags		= GFlags(GCtrlBitmapSkin, GFC_BITMAPSKIN_CENTER_SCALE, GFC_BITMAPSKIN_SIDES_SCALE);
+					DestCombine		= GColorCombine(Add,Disable);
+					FactorCombine	= GColorCombine(Modulate, Source);
+					FactorColor		= SF_CtrlTheme_FreeRealms_Control_Color_SurfaceRoll2;
+					Image			= GBitmap("FreeRealms/FR_Checkbox.tga", HVGrid, 1, 6, 0, 2);
+					Margin			= GRectMargin(7,7,7,7);
+				}
+				layer
+				{
+					LayerFlags		= GFlags(GCtrlBitmapSkin, GFC_BITMAPSKIN_CENTER_EMPTY, GFC_BITMAPSKIN_SIDES_SCALE);
+					DestCombine		= GColorCombine(Add,Disable);
+					FactorCombine	= GColorCombine(Modulate, Source);
+					FactorColor		= SF_CtrlTheme_FreeRealms_Control_Color_Outline;
+					Image			= GBitmap("FreeRealms/FR_Checkbox.tga", HVGrid, 1, 6, 0, 3);
+					Margin			= GRectMargin(7,7,7,7);
+				}
+				layer
+				{
+					LayerFlags		= GFlags(GCtrlBitmapSkin, GFC_BITMAPSKIN_CENTER_SCALE, GFC_BITMAPSKIN_SIDES_SCALE);
+					DestCombine		= GColorCombine(BlendSource,Disable);
+					FactorCombine	= GColorCombine(Modulate,Modulate);
+					FactorColor		= SF_CtrlTheme_FreeRealms_Control_Color_Glyphs;
+					Image			= GBitmap("FreeRealms/FR_Checkbox.tga", HVGrid, 1, 6, 0, 4);
+					Margin			= GRectMargin(0,0,0,0);
+				}
+				layer
+				{
+					LayerFlags		= GFlags(GCtrlBitmapSkin, GFC_BITMAPSKIN_CENTER_EMPTY, GFC_BITMAPSKIN_SIDES_SCALE);
+					DestCombine		= GColorCombine(Add,Disable);
+					FactorCombine	= GColorCombine(Modulate, Source);
+					FactorColor		= SF_CtrlTheme_FreeRealms_Control_Color_OutlineFocus;
+					Image			= GBitmap("FreeRealms/FR_Checkbox.tga", HVGrid, 1, 6, 0, 5);
+					Margin			= GRectMargin(7,7,7,7);
+				}
+			}
+			.ToggleFocusPress
+			{
+				layer
+				{
+					LayerFlags		= GFlags(GCtrlBitmapSkin, GFC_BITMAPSKIN_CENTER_SCALE, GFC_BITMAPSKIN_SIDES_SCALE);
+					DestCombine		= GColorCombine(BlendSource,Disable);
+					FactorCombine	= GColorCombine(Modulate, Modulate);
+					FactorColor		= SF_CtrlTheme_FreeRealms_Control_Color_Surface1;
+					Image			= GBitmap("FreeRealms/FR_Checkbox.tga", HVGrid, 1, 6, 0, 1);
+					Margin			= GRectMargin(7,7,7,7);
+				}
+				layer
+				{
+					LayerFlags		= GFlags(GCtrlBitmapSkin, GFC_BITMAPSKIN_CENTER_SCALE, GFC_BITMAPSKIN_SIDES_SCALE);
+					DestCombine		= GColorCombine(Add,Disable);
+					FactorCombine	= GColorCombine(Modulate, Source);
+					FactorColor		= SF_CtrlTheme_FreeRealms_Control_Color_Surface2;
+					Image			= GBitmap("FreeRealms/FR_Checkbox.tga", HVGrid, 1, 6, 0, 2);
+					Margin			= GRectMargin(7,7,7,7);
+				}
+				layer
+				{
+					LayerFlags		= GFlags(GCtrlBitmapSkin, GFC_BITMAPSKIN_CENTER_EMPTY, GFC_BITMAPSKIN_SIDES_SCALE);
+					DestCombine		= GColorCombine(Add,Disable);
+					FactorCombine	= GColorCombine(Modulate, Source);
+					FactorColor		= SF_CtrlTheme_FreeRealms_Control_Color_Outline;
+					Image			= GBitmap("FreeRealms/FR_Checkbox.tga", HVGrid, 1, 6, 0, 3);
+					Margin			= GRectMargin(7,7,7,7);
+				}
+				layer
+				{
+					LayerFlags		= GFlags(GCtrlBitmapSkin, GFC_BITMAPSKIN_CENTER_SCALE, GFC_BITMAPSKIN_SIDES_SCALE);
+					DestCombine		= GColorCombine(BlendSource,Disable);
+					FactorCombine	= GColorCombine(Modulate,Modulate);
+					FactorColor		= SF_CtrlTheme_FreeRealms_Control_Color_Glyphs;
+					Image			= GBitmap("FreeRealms/FR_Checkbox.tga", HVGrid, 1, 6, 0, 4);
+					Margin			= GRectMargin(0,0,0,0);
+				}
+				layer
+				{
+					LayerFlags		= GFlags(GCtrlBitmapSkin, GFC_BITMAPSKIN_CENTER_EMPTY, GFC_BITMAPSKIN_SIDES_SCALE);
+					DestCombine		= GColorCombine(Add,Disable);
+					FactorCombine	= GColorCombine(Modulate, Source);
+					FactorColor		= SF_CtrlTheme_FreeRealms_Control_Color_OutlineFocus;
+					Image			= GBitmap("FreeRealms/FR_Checkbox.tga", HVGrid, 1, 6, 0, 5);
+					Margin			= GRectMargin(7,7,7,7);
+				}
+			}
+			.ToggleFocusDisable
+			{
+				layer
+				{
+					LayerFlags		= GFlags(GCtrlBitmapSkin, GFC_BITMAPSKIN_CENTER_SCALE, GFC_BITMAPSKIN_SIDES_SCALE);
+					DestCombine		= GColorCombine(BlendSource,Disable);
+					FactorCombine	= GColorCombine(Modulate, Modulate);
+					FactorColor		= SF_CtrlTheme_FreeRealms_Control_Color_Surface1;
+					Image			= GBitmap("FreeRealms/FR_Checkbox.tga", HVGrid, 1, 6, 0, 1);
+					Margin			= GRectMargin(7,7,7,7);
+				}
+				layer
+				{
+					LayerFlags		= GFlags(GCtrlBitmapSkin, GFC_BITMAPSKIN_CENTER_SCALE, GFC_BITMAPSKIN_SIDES_SCALE);
+					DestCombine		= GColorCombine(Add,Disable);
+					FactorCombine	= GColorCombine(Modulate, Source);
+					FactorColor		= SF_CtrlTheme_FreeRealms_Control_Color_SurfaceDis2;
+					Image			= GBitmap("FreeRealms/FR_Checkbox.tga", HVGrid, 1, 6, 0, 2);
+					Margin			= GRectMargin(7,7,7,7);
+				}
+				layer
+				{
+					LayerFlags		= GFlags(GCtrlBitmapSkin, GFC_BITMAPSKIN_CENTER_EMPTY, GFC_BITMAPSKIN_SIDES_SCALE);
+					DestCombine		= GColorCombine(Add,Disable);
+					FactorCombine	= GColorCombine(Modulate, Source);
+					FactorColor		= SF_CtrlTheme_FreeRealms_Control_Color_OutlineDis;
+					Image			= GBitmap("FreeRealms/FR_Checkbox.tga", HVGrid, 1, 6, 0, 3);
+					Margin			= GRectMargin(7,7,7,7);
+				}
+				layer
+				{
+					LayerFlags		= GFlags(GCtrlBitmapSkin, GFC_BITMAPSKIN_CENTER_SCALE, GFC_BITMAPSKIN_SIDES_SCALE);
+					DestCombine		= GColorCombine(BlendSource,Disable);
+					FactorCombine	= GColorCombine(Modulate,Modulate);
+					FactorColor		= SF_CtrlTheme_FreeRealms_Control_Color_Glyphs;
+					Image			= GBitmap("FreeRealms/FR_Checkbox.tga", HVGrid, 1, 6, 0, 4);
+					Margin			= GRectMargin(0,0,0,0);
+				}
+				layer
+				{
+					LayerFlags		= GFlags(GCtrlBitmapSkin, GFC_BITMAPSKIN_CENTER_EMPTY, GFC_BITMAPSKIN_SIDES_SCALE);
+					DestCombine		= GColorCombine(Add,Disable);
+					FactorCombine	= GColorCombine(Modulate, Source);
+					FactorColor		= SF_CtrlTheme_FreeRealms_Control_Color_OutlineFocus;
+					Image			= GBitmap("FreeRealms/FR_Checkbox.tga", HVGrid, 1, 6, 0, 5);
+					Margin			= GRectMargin(7,7,7,7);
+				}
+			}
+		}
+
+		map GFC_Control										= GFC_Control_DefaultButton_Style;
+		map GFC_CtrlTheme_Bitmap_Control_Button				= GFC_Control_DefaultButton_Style;
+		map SF_CtrlTheme_FreeRealms_Control					= GFC_Control_DefaultButton_Style;
+	}
+
+
+
+	// RadioButton
+	GFC_Control_StandardRadioButton_Style
+	{
+		GFC_Control_Renderer_Control		= GFC_CtrlTheme_Bitmap_Control_Button_Renderer_ControlToggle;
+			
+		// Flags
+		with .Flag
+		{
+			.HAlign							= GFlags(GButtonCtrl, GFC_CF_BUTTON_LEFT);
+			.VAlign							= GFlags(GButtonCtrl, GFC_CF_BUTTON_VCENTER);
+			.Focus							= 0;	//GFlags(GButtonCtrl, GFC_CF_BUTTON_FOCUS_CONTENT);
+			.DownOffset						= GFlags(GButtonCtrl, GFC_CF_BUTTON_DOWNOFFSET_CONTENT);
+		}
+		
+		with .Size
+		{
+			// Border style side widths
+			.BorderMargin					=	GRectMargin(4,4,4,4);
+			.FocusMargin_Text				=	GRectMargin(4,4,4,4);
+			.FocusMargin_Image				=	GRectMargin(0,0,1,1);
+			.FocusMargin_Content			=	GRectMargin(0,0,4,0);
+			.FocusMargin_Control			=	GRectMargin(0,0,0,0);		
+			.ExtraMargin					=	GRectMargin(0,0,0,0);
+			.TextOffset						=	GPoint(0,-1);
+			.DownOffset_Content				=	GPoint(0,0);
+			.DownOffset_Text				=	GPoint(0,0);
+			.DownOffset_Image				=	GPoint(0,0);
+			.ItemSpace						=	GFC_Control_Size_ItemSpace;			
+			.Default						=	GSize(20,20);	
+			.Image							=	GSize(20,20);
+		}		
+		
+		with .Color								
+		{									
+			.Text_Default					=	GFC_Control_Color_Text_Default;
+			.Text_Rollover					=	GFC_Control_Color_Text_Default;
+			.Text_Press						=	GFC_Control_Color_Text_Default;									
+			.Text_Focus						=	GFC_Control_Color_Text_Default;
+			.Text_Disable					=	GFC_Control_Color_Text_Disable;
+			.Text_ToggleDisable				=	.Text_Disable;
+
+			.TextShadow_Default					=	SF_CtrlTheme_FreeRealms_Control_Color_TextGlow;
+			.TextShadow_Press					=	.TextShadow_Default;
+			.TextShadow_Disable					=	.TextShadow_Default;
+			.TextShadow_Rollover				=	.TextShadow_Default;
+			.TextShadow_Focus					=	.TextShadow_Default;
+			.TextShadow_FocusRollover			=	.TextShadow_Default;
+			.TextShadow_Toggle					=	.TextShadow_Default;		
+			.TextShadow_TogglePress				=	.TextShadow_Press;			
+			.TextShadow_ToggleDisable			=	.TextShadow_Disable;		
+			.TextShadow_ToggleRollover			=	.TextShadow_Rollover;		
+			.TextShadow_ToggleFocus				=	.TextShadow_Focus;			
+			.TextShadow_ToggleFocusRollover		=	.TextShadow_FocusRollover;	
+												
+			.TextShadow_Inactive				=	.TextShadow_Default;	
+			.TextShadow_InactivePress			=	.TextShadow_Press;		
+			.TextShadow_InactiveDisable			=	.TextShadow_Disable;	
+			.TextShadow_InactiveRollover		=	.TextShadow_Rollover;	
+			.TextShadow_InactiveToggle			=	.TextShadow_Toggle;	
+			.TextShadow_InactiveTogglePress		=	.TextShadow_TogglePress;		
+			.TextShadow_InactiveToggleDisable	=	.TextShadow_ToggleDisable;	
+			.TextShadow_InactiveToggleRollover	=	.TextShadow_ToggleRollover;	
+												
+			.TextShadow_Winoff					=	.TextShadow_Inactive;	
+			.TextShadow_WinoffPress				=	.TextShadow_InactivePress;		
+			.TextShadow_WinoffDisable			=	.TextShadow_InactiveDisable;	
+			.TextShadow_WinoffRollover			=	.TextShadow_InactiveRollover;	
+			.TextShadow_WinoffToggle			=	.TextShadow_InactiveToggle;	
+			.TextShadow_WinoffTogglePress		=	.TextShadow_InactiveTogglePress;	
+			.TextShadow_WinoffToggleDisable		=	.TextShadow_InactiveToggleDisable;	
+			.TextShadow_WinoffToggleRollover	=	.TextShadow_InactiveToggleRollover;
+		}
+		with .Combine								
+		{									
+			.Text_Default_Dest					=	GFC_Control_Combine_Text_Default_Dest;			
+			.Text_Default_Factor				=	GFC_Control_Combine_Text_Default_Factor;
+			.Text_Disable_Dest					=	GFC_Control_Combine_Text_Disable_Dest;
+			.Text_Disable_Factor				=	GFC_Control_Combine_Text_Disable_Factor;
+			
+			.TextShadow_Default_Dest			=	GFC_Control_Combine_TextShadow_Default_Dest;
+			.TextShadow_Default_Factor			=	GFC_Control_Combine_TextShadow_Default_Factor;
+			.TextShadow_Disable_Dest			=	GColorCombine(Disable, Disable);
+			.TextShadow_Disable_Factor			=	GColorCombine(Disable, Disable);
+		}
+
+		// Toggle State images
+		with GFC_CtrlTheme_Bitmap_Control_Button_Skin_Image
+		{
+			.Default
+			{
+				layer
+				{
+					LayerFlags		= GFlags(GCtrlBitmapSkin, GFC_BITMAPSKIN_CENTER_SCALE, GFC_BITMAPSKIN_SIDES_SCALE);
+					DestCombine		= GColorCombine(RevSubtract,Disable);
+					FactorCombine	= GColorCombine(Modulate,Source);
+					FactorColor		= SF_CtrlTheme_FreeRealms_Control_Color_DropShadow;
+					Image			= GBitmap("FreeRealms/FR_Radiobutton.tga", HVGrid, 1, 6, 0, 0);
+					Margin			= GRectMargin(9,9,9,9);
+				}
+				layer
+				{
+					LayerFlags		= GFlags(GCtrlBitmapSkin, GFC_BITMAPSKIN_CENTER_SCALE, GFC_BITMAPSKIN_SIDES_SCALE);
+					DestCombine		= GColorCombine(BlendSource,Disable);
+					FactorCombine	= GColorCombine(Modulate, Modulate);
+					FactorColor		= SF_CtrlTheme_FreeRealms_Control_Color_Surface1;
+					Image			= GBitmap("FreeRealms/FR_Radiobutton.tga", HVGrid, 1, 6, 0, 1);
+					Margin			= GRectMargin(9,9,9,9);
+				}
+				layer
+				{
+					LayerFlags		= GFlags(GCtrlBitmapSkin, GFC_BITMAPSKIN_CENTER_SCALE, GFC_BITMAPSKIN_SIDES_SCALE);
+					DestCombine		= GColorCombine(Add,Disable);
+					FactorCombine	= GColorCombine(Modulate, Source);
+					FactorColor		= SF_CtrlTheme_FreeRealms_Control_Color_Surface2;
+					Image			= GBitmap("FreeRealms/FR_Radiobutton.tga", HVGrid, 1, 6, 0, 2);
+					Margin			= GRectMargin(9,9,9,9);
+				}
+				layer
+				{
+					LayerFlags		= GFlags(GCtrlBitmapSkin, GFC_BITMAPSKIN_CENTER_EMPTY, GFC_BITMAPSKIN_SIDES_SCALE);
+					DestCombine		= GColorCombine(Add,Disable);
+					FactorCombine	= GColorCombine(Modulate, Source);
+					FactorColor		= SF_CtrlTheme_FreeRealms_Control_Color_Outline;
+					Image			= GBitmap("FreeRealms/FR_Radiobutton.tga", HVGrid, 1, 6, 0, 3);
+					Margin			= GRectMargin(9,9,9,9);
+				}
+			}
+			.Rollover
+			{
+				layer
+				{
+					LayerFlags		= GFlags(GCtrlBitmapSkin, GFC_BITMAPSKIN_CENTER_SCALE, GFC_BITMAPSKIN_SIDES_SCALE);
+					DestCombine		= GColorCombine(RevSubtract,Disable);
+					FactorCombine	= GColorCombine(Modulate,Source);
+					FactorColor		= SF_CtrlTheme_FreeRealms_Control_Color_DropShadow;
+					Image			= GBitmap("FreeRealms/FR_Radiobutton.tga", HVGrid, 1, 6, 0, 0);
+					Margin			= GRectMargin(9,9,9,9);
+				}
+				layer
+				{
+					LayerFlags		= GFlags(GCtrlBitmapSkin, GFC_BITMAPSKIN_CENTER_SCALE, GFC_BITMAPSKIN_SIDES_SCALE);
+					DestCombine		= GColorCombine(BlendSource,Disable);
+					FactorCombine	= GColorCombine(Modulate, Modulate);
+					FactorColor		= SF_CtrlTheme_FreeRealms_Control_Color_SurfaceRoll1;
+					Image			= GBitmap("FreeRealms/FR_Radiobutton.tga", HVGrid, 1, 6, 0, 1);
+					Margin			= GRectMargin(9,9,9,9);
+				}
+				layer
+				{
+					LayerFlags		= GFlags(GCtrlBitmapSkin, GFC_BITMAPSKIN_CENTER_SCALE, GFC_BITMAPSKIN_SIDES_SCALE);
+					DestCombine		= GColorCombine(Add,Disable);
+					FactorCombine	= GColorCombine(Modulate, Source);
+					FactorColor		= SF_CtrlTheme_FreeRealms_Control_Color_SurfaceRoll2;
+					Image			= GBitmap("FreeRealms/FR_Radiobutton.tga", HVGrid, 1, 6, 0, 2);
+					Margin			= GRectMargin(9,9,9,9);
+				}
+				layer
+				{
+					LayerFlags		= GFlags(GCtrlBitmapSkin, GFC_BITMAPSKIN_CENTER_EMPTY, GFC_BITMAPSKIN_SIDES_SCALE);
+					DestCombine		= GColorCombine(Add,Disable);
+					FactorCombine	= GColorCombine(Modulate, Source);
+					FactorColor		= SF_CtrlTheme_FreeRealms_Control_Color_Outline;
+					Image			= GBitmap("FreeRealms/FR_Radiobutton.tga", HVGrid, 1, 6, 0, 3);
+					Margin			= GRectMargin(9,9,9,9);
+				}
+			}
+			.Press
+			{
+				layer
+				{
+					LayerFlags		= GFlags(GCtrlBitmapSkin, GFC_BITMAPSKIN_CENTER_SCALE, GFC_BITMAPSKIN_SIDES_SCALE);
+					DestCombine		= GColorCombine(BlendSource,Disable);
+					FactorCombine	= GColorCombine(Modulate, Modulate);
+					FactorColor		= SF_CtrlTheme_FreeRealms_Control_Color_Surface1;
+					Image			= GBitmap("FreeRealms/FR_Radiobutton.tga", HVGrid, 1, 6, 0, 1);
+					Margin			= GRectMargin(9,9,9,9);
+				}
+				layer
+				{
+					LayerFlags		= GFlags(GCtrlBitmapSkin, GFC_BITMAPSKIN_CENTER_SCALE, GFC_BITMAPSKIN_SIDES_SCALE);
+					DestCombine		= GColorCombine(Add,Disable);
+					FactorCombine	= GColorCombine(Modulate, Source);
+					FactorColor		= SF_CtrlTheme_FreeRealms_Control_Color_Surface2;
+					Image			= GBitmap("FreeRealms/FR_Radiobutton.tga", HVGrid, 1, 6, 0, 2);
+					Margin			= GRectMargin(9,9,9,9);
+				}
+				layer
+				{
+					LayerFlags		= GFlags(GCtrlBitmapSkin, GFC_BITMAPSKIN_CENTER_EMPTY, GFC_BITMAPSKIN_SIDES_SCALE);
+					DestCombine		= GColorCombine(Add,Disable);
+					FactorCombine	= GColorCombine(Modulate, Source);
+					FactorColor		= SF_CtrlTheme_FreeRealms_Control_Color_Outline;
+					Image			= GBitmap("FreeRealms/FR_Radiobutton.tga", HVGrid, 1, 6, 0, 3);
+					Margin			= GRectMargin(9,9,9,9);
+				}
+			}
+			.Disable
+			{
+				layer
+				{
+					LayerFlags		= GFlags(GCtrlBitmapSkin, GFC_BITMAPSKIN_CENTER_SCALE, GFC_BITMAPSKIN_SIDES_SCALE);
+					DestCombine		= GColorCombine(BlendSource,Disable);
+					FactorCombine	= GColorCombine(Modulate, Modulate);
+					FactorColor		= SF_CtrlTheme_FreeRealms_Control_Color_Surface1;
+					Image			= GBitmap("FreeRealms/FR_Radiobutton.tga", HVGrid, 1, 6, 0, 1);
+					Margin			= GRectMargin(9,9,9,9);
+				}
+				layer
+				{
+					LayerFlags		= GFlags(GCtrlBitmapSkin, GFC_BITMAPSKIN_CENTER_SCALE, GFC_BITMAPSKIN_SIDES_SCALE);
+					DestCombine		= GColorCombine(Add,Disable);
+					FactorCombine	= GColorCombine(Modulate, Source);
+					FactorColor		= SF_CtrlTheme_FreeRealms_Control_Color_SurfaceDis2;
+					Image			= GBitmap("FreeRealms/FR_Radiobutton.tga", HVGrid, 1, 6, 0, 2);
+					Margin			= GRectMargin(9,9,9,9);
+				}
+				layer
+				{
+					LayerFlags		= GFlags(GCtrlBitmapSkin, GFC_BITMAPSKIN_CENTER_EMPTY, GFC_BITMAPSKIN_SIDES_SCALE);
+					DestCombine		= GColorCombine(Add,Disable);
+					FactorCombine	= GColorCombine(Modulate, Source);
+					FactorColor		= SF_CtrlTheme_FreeRealms_Control_Color_OutlineDis;
+					Image			= GBitmap("FreeRealms/FR_Radiobutton.tga", HVGrid, 1, 6, 0, 3);
+					Margin			= GRectMargin(9,9,9,9);
+				}
+			}
+			.Focus
+			{
+				layer
+				{
+					LayerFlags		= GFlags(GCtrlBitmapSkin, GFC_BITMAPSKIN_CENTER_SCALE, GFC_BITMAPSKIN_SIDES_SCALE);
+					DestCombine		= GColorCombine(RevSubtract,Disable);
+					FactorCombine	= GColorCombine(Modulate,Source);
+					FactorColor		= SF_CtrlTheme_FreeRealms_Control_Color_DropShadow;
+					Image			= GBitmap("FreeRealms/FR_Radiobutton.tga", HVGrid, 1, 6, 0, 0);
+					Margin			= GRectMargin(9,9,9,9);
+				}
+				layer
+				{
+					LayerFlags		= GFlags(GCtrlBitmapSkin, GFC_BITMAPSKIN_CENTER_SCALE, GFC_BITMAPSKIN_SIDES_SCALE);
+					DestCombine		= GColorCombine(BlendSource,Disable);
+					FactorCombine	= GColorCombine(Modulate, Modulate);
+					FactorColor		= SF_CtrlTheme_FreeRealms_Control_Color_Surface1;
+					Image			= GBitmap("FreeRealms/FR_Radiobutton.tga", HVGrid, 1, 6, 0, 1);
+					Margin			= GRectMargin(9,9,9,9);
+				}
+				layer
+				{
+					LayerFlags		= GFlags(GCtrlBitmapSkin, GFC_BITMAPSKIN_CENTER_SCALE, GFC_BITMAPSKIN_SIDES_SCALE);
+					DestCombine		= GColorCombine(Add,Disable);
+					FactorCombine	= GColorCombine(Modulate, Source);
+					FactorColor		= SF_CtrlTheme_FreeRealms_Control_Color_Surface2;
+					Image			= GBitmap("FreeRealms/FR_Radiobutton.tga", HVGrid, 1, 6, 0, 2);
+					Margin			= GRectMargin(9,9,9,9);
+				}
+				layer
+				{
+					LayerFlags		= GFlags(GCtrlBitmapSkin, GFC_BITMAPSKIN_CENTER_EMPTY, GFC_BITMAPSKIN_SIDES_SCALE);
+					DestCombine		= GColorCombine(Add,Disable);
+					FactorCombine	= GColorCombine(Modulate, Source);
+					FactorColor		= SF_CtrlTheme_FreeRealms_Control_Color_Outline;
+					Image			= GBitmap("FreeRealms/FR_Radiobutton.tga", HVGrid, 1, 6, 0, 3);
+					Margin			= GRectMargin(9,9,9,9);
+				}
+				layer
+				{
+					LayerFlags		= GFlags(GCtrlBitmapSkin, GFC_BITMAPSKIN_CENTER_EMPTY, GFC_BITMAPSKIN_SIDES_SCALE);
+					DestCombine		= GColorCombine(Add,Disable);
+					FactorCombine	= GColorCombine(Modulate, Source);
+					FactorColor		= SF_CtrlTheme_FreeRealms_Control_Color_OutlineFocus;
+					Image			= GBitmap("FreeRealms/FR_Radiobutton.tga", HVGrid, 1, 6, 0, 5);
+					Margin			= GRectMargin(9,9,9,9);
+				}
+			}
+			.FocusRollover
+			{
+				layer
+				{
+					LayerFlags		= GFlags(GCtrlBitmapSkin, GFC_BITMAPSKIN_CENTER_SCALE, GFC_BITMAPSKIN_SIDES_SCALE);
+					DestCombine		= GColorCombine(RevSubtract,Disable);
+					FactorCombine	= GColorCombine(Modulate,Source);
+					FactorColor		= SF_CtrlTheme_FreeRealms_Control_Color_DropShadow;
+					Image			= GBitmap("FreeRealms/FR_Radiobutton.tga", HVGrid, 1, 6, 0, 0);
+					Margin			= GRectMargin(9,9,9,9);
+				}
+				layer
+				{
+					LayerFlags		= GFlags(GCtrlBitmapSkin, GFC_BITMAPSKIN_CENTER_SCALE, GFC_BITMAPSKIN_SIDES_SCALE);
+					DestCombine		= GColorCombine(BlendSource,Disable);
+					FactorCombine	= GColorCombine(Modulate, Modulate);
+					FactorColor		= SF_CtrlTheme_FreeRealms_Control_Color_SurfaceRoll1;
+					Image			= GBitmap("FreeRealms/FR_Radiobutton.tga", HVGrid, 1, 6, 0, 1);
+					Margin			= GRectMargin(9,9,9,9);
+				}
+				layer
+				{
+					LayerFlags		= GFlags(GCtrlBitmapSkin, GFC_BITMAPSKIN_CENTER_SCALE, GFC_BITMAPSKIN_SIDES_SCALE);
+					DestCombine		= GColorCombine(Add,Disable);
+					FactorCombine	= GColorCombine(Modulate, Source);
+					FactorColor		= SF_CtrlTheme_FreeRealms_Control_Color_SurfaceRoll2;
+					Image			= GBitmap("FreeRealms/FR_Radiobutton.tga", HVGrid, 1, 6, 0, 2);
+					Margin			= GRectMargin(9,9,9,9);
+				}
+				layer
+				{
+					LayerFlags		= GFlags(GCtrlBitmapSkin, GFC_BITMAPSKIN_CENTER_EMPTY, GFC_BITMAPSKIN_SIDES_SCALE);
+					DestCombine		= GColorCombine(Add,Disable);
+					FactorCombine	= GColorCombine(Modulate, Source);
+					FactorColor		= SF_CtrlTheme_FreeRealms_Control_Color_Outline;
+					Image			= GBitmap("FreeRealms/FR_Radiobutton.tga", HVGrid, 1, 6, 0, 3);
+					Margin			= GRectMargin(9,9,9,9);
+				}
+				layer
+				{
+					LayerFlags		= GFlags(GCtrlBitmapSkin, GFC_BITMAPSKIN_CENTER_EMPTY, GFC_BITMAPSKIN_SIDES_SCALE);
+					DestCombine		= GColorCombine(Add,Disable);
+					FactorCombine	= GColorCombine(Modulate, Source);
+					FactorColor		= SF_CtrlTheme_FreeRealms_Control_Color_OutlineFocus;
+					Image			= GBitmap("FreeRealms/FR_Radiobutton.tga", HVGrid, 1, 6, 0, 5);
+					Margin			= GRectMargin(9,9,9,9);
+				}
+			}
+			.FocusPress
+			{
+				layer
+				{
+					LayerFlags		= GFlags(GCtrlBitmapSkin, GFC_BITMAPSKIN_CENTER_SCALE, GFC_BITMAPSKIN_SIDES_SCALE);
+					DestCombine		= GColorCombine(BlendSource,Disable);
+					FactorCombine	= GColorCombine(Modulate, Modulate);
+					FactorColor		= SF_CtrlTheme_FreeRealms_Control_Color_Surface1;
+					Image			= GBitmap("FreeRealms/FR_Radiobutton.tga", HVGrid, 1, 6, 0, 1);
+					Margin			= GRectMargin(9,9,9,9);
+				}
+				layer
+				{
+					LayerFlags		= GFlags(GCtrlBitmapSkin, GFC_BITMAPSKIN_CENTER_SCALE, GFC_BITMAPSKIN_SIDES_SCALE);
+					DestCombine		= GColorCombine(Add,Disable);
+					FactorCombine	= GColorCombine(Modulate, Source);
+					FactorColor		= SF_CtrlTheme_FreeRealms_Control_Color_Surface2;
+					Image			= GBitmap("FreeRealms/FR_Radiobutton.tga", HVGrid, 1, 6, 0, 2);
+					Margin			= GRectMargin(9,9,9,9);
+				}
+				layer
+				{
+					LayerFlags		= GFlags(GCtrlBitmapSkin, GFC_BITMAPSKIN_CENTER_EMPTY, GFC_BITMAPSKIN_SIDES_SCALE);
+					DestCombine		= GColorCombine(Add,Disable);
+					FactorCombine	= GColorCombine(Modulate, Source);
+					FactorColor		= SF_CtrlTheme_FreeRealms_Control_Color_Outline;
+					Image			= GBitmap("FreeRealms/FR_Radiobutton.tga", HVGrid, 1, 6, 0, 3);
+					Margin			= GRectMargin(9,9,9,9);
+				}
+				layer
+				{
+					LayerFlags		= GFlags(GCtrlBitmapSkin, GFC_BITMAPSKIN_CENTER_EMPTY, GFC_BITMAPSKIN_SIDES_SCALE);
+					DestCombine		= GColorCombine(Add,Disable);
+					FactorCombine	= GColorCombine(Modulate, Source);
+					FactorColor		= SF_CtrlTheme_FreeRealms_Control_Color_OutlineFocus;
+					Image			= GBitmap("FreeRealms/FR_Radiobutton.tga", HVGrid, 1, 6, 0, 5);
+					Margin			= GRectMargin(9,9,9,9);
+				}
+			}
+			.FocusDisable
+			{
+				layer
+				{
+					LayerFlags		= GFlags(GCtrlBitmapSkin, GFC_BITMAPSKIN_CENTER_SCALE, GFC_BITMAPSKIN_SIDES_SCALE);
+					DestCombine		= GColorCombine(BlendSource,Disable);
+					FactorCombine	= GColorCombine(Modulate, Modulate);
+					FactorColor		= SF_CtrlTheme_FreeRealms_Control_Color_Surface1;
+					Image			= GBitmap("FreeRealms/FR_Radiobutton.tga", HVGrid, 1, 6, 0, 1);
+					Margin			= GRectMargin(9,9,9,9);
+				}
+				layer
+				{
+					LayerFlags		= GFlags(GCtrlBitmapSkin, GFC_BITMAPSKIN_CENTER_SCALE, GFC_BITMAPSKIN_SIDES_SCALE);
+					DestCombine		= GColorCombine(Add,Disable);
+					FactorCombine	= GColorCombine(Modulate, Source);
+					FactorColor		= SF_CtrlTheme_FreeRealms_Control_Color_SurfaceDis2;
+					Image			= GBitmap("FreeRealms/FR_Radiobutton.tga", HVGrid, 1, 6, 0, 2);
+					Margin			= GRectMargin(9,9,9,9);
+				}
+				layer
+				{
+					LayerFlags		= GFlags(GCtrlBitmapSkin, GFC_BITMAPSKIN_CENTER_EMPTY, GFC_BITMAPSKIN_SIDES_SCALE);
+					DestCombine		= GColorCombine(Add,Disable);
+					FactorCombine	= GColorCombine(Modulate, Source);
+					FactorColor		= SF_CtrlTheme_FreeRealms_Control_Color_OutlineDis;
+					Image			= GBitmap("FreeRealms/FR_Radiobutton.tga", HVGrid, 1, 6, 0, 3);
+					Margin			= GRectMargin(9,9,9,9);
+				}
+				layer
+				{
+					LayerFlags		= GFlags(GCtrlBitmapSkin, GFC_BITMAPSKIN_CENTER_EMPTY, GFC_BITMAPSKIN_SIDES_SCALE);
+					DestCombine		= GColorCombine(Add,Disable);
+					FactorCombine	= GColorCombine(Modulate, Source);
+					FactorColor		= SF_CtrlTheme_FreeRealms_Control_Color_OutlineFocus;
+					Image			= GBitmap("FreeRealms/FR_Radiobutton.tga", HVGrid, 1, 6, 0, 5);
+					Margin			= GRectMargin(9,9,9,9);
+				}
+			}
+			.Toggle
+			{
+				layer
+				{
+					LayerFlags		= GFlags(GCtrlBitmapSkin, GFC_BITMAPSKIN_CENTER_SCALE, GFC_BITMAPSKIN_SIDES_SCALE);
+					DestCombine		= GColorCombine(RevSubtract,Disable);
+					FactorCombine	= GColorCombine(Modulate,Source);
+					FactorColor		= SF_CtrlTheme_FreeRealms_Control_Color_DropShadow;
+					Image			= GBitmap("FreeRealms/FR_Radiobutton.tga", HVGrid, 1, 6, 0, 0);
+					Margin			= GRectMargin(9,9,9,9);
+				}
+				layer
+				{
+					LayerFlags		= GFlags(GCtrlBitmapSkin, GFC_BITMAPSKIN_CENTER_SCALE, GFC_BITMAPSKIN_SIDES_SCALE);
+					DestCombine		= GColorCombine(BlendSource,Disable);
+					FactorCombine	= GColorCombine(Modulate, Modulate);
+					FactorColor		= SF_CtrlTheme_FreeRealms_Control_Color_Surface1;
+					Image			= GBitmap("FreeRealms/FR_Radiobutton.tga", HVGrid, 1, 6, 0, 1);
+					Margin			= GRectMargin(9,9,9,9);
+				}
+				layer
+				{
+					LayerFlags		= GFlags(GCtrlBitmapSkin, GFC_BITMAPSKIN_CENTER_SCALE, GFC_BITMAPSKIN_SIDES_SCALE);
+					DestCombine		= GColorCombine(Add,Disable);
+					FactorCombine	= GColorCombine(Modulate, Source);
+					FactorColor		= SF_CtrlTheme_FreeRealms_Control_Color_Surface2;
+					Image			= GBitmap("FreeRealms/FR_Radiobutton.tga", HVGrid, 1, 6, 0, 2);
+					Margin			= GRectMargin(9,9,9,9);
+				}
+				layer
+				{
+					LayerFlags		= GFlags(GCtrlBitmapSkin, GFC_BITMAPSKIN_CENTER_SCALE, GFC_BITMAPSKIN_SIDES_SCALE);
+					DestCombine		= GColorCombine(BlendSource,Disable);
+					FactorCombine	= GColorCombine(Modulate,Modulate);
+					FactorColor		= SF_CtrlTheme_FreeRealms_Control_Color_Glyphs;
+					Image			= GBitmap("FreeRealms/FR_Radiobutton.tga", HVGrid, 1, 6, 0, 4);
+					Margin			= GRectMargin(0,0,0,0);
+				}
+				layer
+				{
+					LayerFlags		= GFlags(GCtrlBitmapSkin, GFC_BITMAPSKIN_CENTER_EMPTY, GFC_BITMAPSKIN_SIDES_SCALE);
+					DestCombine		= GColorCombine(Add,Disable);
+					FactorCombine	= GColorCombine(Modulate, Source);
+					FactorColor		= SF_CtrlTheme_FreeRealms_Control_Color_Outline;
+					Image			= GBitmap("FreeRealms/FR_Radiobutton.tga", HVGrid, 1, 6, 0, 3);
+					Margin			= GRectMargin(9,9,9,9);
+				}
+			}
+			.ToggleRollover
+			{
+				layer
+				{
+					LayerFlags		= GFlags(GCtrlBitmapSkin, GFC_BITMAPSKIN_CENTER_SCALE, GFC_BITMAPSKIN_SIDES_SCALE);
+					DestCombine		= GColorCombine(RevSubtract,Disable);
+					FactorCombine	= GColorCombine(Modulate,Source);
+					FactorColor		= SF_CtrlTheme_FreeRealms_Control_Color_DropShadow;
+					Image			= GBitmap("FreeRealms/FR_Radiobutton.tga", HVGrid, 1, 6, 0, 0);
+					Margin			= GRectMargin(9,9,9,9);
+				}
+				layer
+				{
+					LayerFlags		= GFlags(GCtrlBitmapSkin, GFC_BITMAPSKIN_CENTER_SCALE, GFC_BITMAPSKIN_SIDES_SCALE);
+					DestCombine		= GColorCombine(BlendSource,Disable);
+					FactorCombine	= GColorCombine(Modulate, Modulate);
+					FactorColor		= SF_CtrlTheme_FreeRealms_Control_Color_SurfaceRoll1;
+					Image			= GBitmap("FreeRealms/FR_Radiobutton.tga", HVGrid, 1, 6, 0, 1);
+					Margin			= GRectMargin(9,9,9,9);
+				}
+				layer
+				{
+					LayerFlags		= GFlags(GCtrlBitmapSkin, GFC_BITMAPSKIN_CENTER_SCALE, GFC_BITMAPSKIN_SIDES_SCALE);
+					DestCombine		= GColorCombine(Add,Disable);
+					FactorCombine	= GColorCombine(Modulate, Source);
+					FactorColor		= SF_CtrlTheme_FreeRealms_Control_Color_SurfaceRoll2;
+					Image			= GBitmap("FreeRealms/FR_Radiobutton.tga", HVGrid, 1, 6, 0, 2);
+					Margin			= GRectMargin(9,9,9,9);
+				}
+				layer
+				{
+					LayerFlags		= GFlags(GCtrlBitmapSkin, GFC_BITMAPSKIN_CENTER_SCALE, GFC_BITMAPSKIN_SIDES_SCALE);
+					DestCombine		= GColorCombine(BlendSource,Disable);
+					FactorCombine	= GColorCombine(Modulate,Modulate);
+					FactorColor		= SF_CtrlTheme_FreeRealms_Control_Color_Glyphs;
+					Image			= GBitmap("FreeRealms/FR_Radiobutton.tga", HVGrid, 1, 6, 0, 4);
+					Margin			= GRectMargin(0,0,0,0);
+				}
+				layer
+				{
+					LayerFlags		= GFlags(GCtrlBitmapSkin, GFC_BITMAPSKIN_CENTER_EMPTY, GFC_BITMAPSKIN_SIDES_SCALE);
+					DestCombine		= GColorCombine(Add,Disable);
+					FactorCombine	= GColorCombine(Modulate, Source);
+					FactorColor		= SF_CtrlTheme_FreeRealms_Control_Color_Outline;
+					Image			= GBitmap("FreeRealms/FR_Radiobutton.tga", HVGrid, 1, 6, 0, 3);
+					Margin			= GRectMargin(9,9,9,9);
+				}
+			}
+			.TogglePress
+			{
+				layer
+				{
+					LayerFlags		= GFlags(GCtrlBitmapSkin, GFC_BITMAPSKIN_CENTER_SCALE, GFC_BITMAPSKIN_SIDES_SCALE);
+					DestCombine		= GColorCombine(BlendSource,Disable);
+					FactorCombine	= GColorCombine(Modulate, Modulate);
+					FactorColor		= SF_CtrlTheme_FreeRealms_Control_Color_Surface1;
+					Image			= GBitmap("FreeRealms/FR_Radiobutton.tga", HVGrid, 1, 6, 0, 1);
+					Margin			= GRectMargin(9,9,9,9);
+				}
+				layer
+				{
+					LayerFlags		= GFlags(GCtrlBitmapSkin, GFC_BITMAPSKIN_CENTER_SCALE, GFC_BITMAPSKIN_SIDES_SCALE);
+					DestCombine		= GColorCombine(Add,Disable);
+					FactorCombine	= GColorCombine(Modulate, Source);
+					FactorColor		= SF_CtrlTheme_FreeRealms_Control_Color_Surface2;
+					Image			= GBitmap("FreeRealms/FR_Radiobutton.tga", HVGrid, 1, 6, 0, 2);
+					Margin			= GRectMargin(9,9,9,9);
+				}
+				layer
+				{
+					LayerFlags		= GFlags(GCtrlBitmapSkin, GFC_BITMAPSKIN_CENTER_SCALE, GFC_BITMAPSKIN_SIDES_SCALE);
+					DestCombine		= GColorCombine(BlendSource,Disable);
+					FactorCombine	= GColorCombine(Modulate,Modulate);
+					FactorColor		= SF_CtrlTheme_FreeRealms_Control_Color_Glyphs;
+					Image			= GBitmap("FreeRealms/FR_Radiobutton.tga", HVGrid, 1, 6, 0, 4);
+					Margin			= GRectMargin(0,0,0,0);
+				}
+				layer
+				{
+					LayerFlags		= GFlags(GCtrlBitmapSkin, GFC_BITMAPSKIN_CENTER_EMPTY, GFC_BITMAPSKIN_SIDES_SCALE);
+					DestCombine		= GColorCombine(Add,Disable);
+					FactorCombine	= GColorCombine(Modulate, Source);
+					FactorColor		= SF_CtrlTheme_FreeRealms_Control_Color_Outline;
+					Image			= GBitmap("FreeRealms/FR_Radiobutton.tga", HVGrid, 1, 6, 0, 3);
+					Margin			= GRectMargin(9,9,9,9);
+				}
+			}
+			.ToggleDisable
+			{
+				layer
+				{
+					LayerFlags		= GFlags(GCtrlBitmapSkin, GFC_BITMAPSKIN_CENTER_SCALE, GFC_BITMAPSKIN_SIDES_SCALE);
+					DestCombine		= GColorCombine(BlendSource,Disable);
+					FactorCombine	= GColorCombine(Modulate, Modulate);
+					FactorColor		= SF_CtrlTheme_FreeRealms_Control_Color_Surface1;
+					Image			= GBitmap("FreeRealms/FR_Radiobutton.tga", HVGrid, 1, 6, 0, 1);
+					Margin			= GRectMargin(9,9,9,9);
+				}
+				layer
+				{
+					LayerFlags		= GFlags(GCtrlBitmapSkin, GFC_BITMAPSKIN_CENTER_SCALE, GFC_BITMAPSKIN_SIDES_SCALE);
+					DestCombine		= GColorCombine(Add,Disable);
+					FactorCombine	= GColorCombine(Modulate, Source);
+					FactorColor		= SF_CtrlTheme_FreeRealms_Control_Color_SurfaceDis2;
+					Image			= GBitmap("FreeRealms/FR_Radiobutton.tga", HVGrid, 1, 6, 0, 2);
+					Margin			= GRectMargin(9,9,9,9);
+				}
+				layer
+				{
+					LayerFlags		= GFlags(GCtrlBitmapSkin, GFC_BITMAPSKIN_CENTER_SCALE, GFC_BITMAPSKIN_SIDES_SCALE);
+					DestCombine		= GColorCombine(BlendSource,Disable);
+					FactorCombine	= GColorCombine(Modulate,Modulate);
+					FactorColor		= SF_CtrlTheme_FreeRealms_Control_Color_Glyphs;
+					Image			= GBitmap("FreeRealms/FR_Radiobutton.tga", HVGrid, 1, 6, 0, 4);
+					Margin			= GRectMargin(0,0,0,0);
+				}
+				layer
+				{
+					LayerFlags		= GFlags(GCtrlBitmapSkin, GFC_BITMAPSKIN_CENTER_EMPTY, GFC_BITMAPSKIN_SIDES_SCALE);
+					DestCombine		= GColorCombine(Add,Disable);
+					FactorCombine	= GColorCombine(Modulate, Source);
+					FactorColor		= SF_CtrlTheme_FreeRealms_Control_Color_OutlineDis;
+					Image			= GBitmap("FreeRealms/FR_Radiobutton.tga", HVGrid, 1, 6, 0, 3);
+					Margin			= GRectMargin(9,9,9,9);
+				}
+			}
+			.ToggleFocus
+			{
+				layer
+				{
+					LayerFlags		= GFlags(GCtrlBitmapSkin, GFC_BITMAPSKIN_CENTER_SCALE, GFC_BITMAPSKIN_SIDES_SCALE);
+					DestCombine		= GColorCombine(RevSubtract,Disable);
+					FactorCombine	= GColorCombine(Modulate,Source);
+					FactorColor		= SF_CtrlTheme_FreeRealms_Control_Color_DropShadow;
+					Image			= GBitmap("FreeRealms/FR_Radiobutton.tga", HVGrid, 1, 6, 0, 0);
+					Margin			= GRectMargin(9,9,9,9);
+				}
+				layer
+				{
+					LayerFlags		= GFlags(GCtrlBitmapSkin, GFC_BITMAPSKIN_CENTER_SCALE, GFC_BITMAPSKIN_SIDES_SCALE);
+					DestCombine		= GColorCombine(BlendSource,Disable);
+					FactorCombine	= GColorCombine(Modulate, Modulate);
+					FactorColor		= SF_CtrlTheme_FreeRealms_Control_Color_Surface1;
+					Image			= GBitmap("FreeRealms/FR_Radiobutton.tga", HVGrid, 1, 6, 0, 1);
+					Margin			= GRectMargin(9,9,9,9);
+				}
+				layer
+				{
+					LayerFlags		= GFlags(GCtrlBitmapSkin, GFC_BITMAPSKIN_CENTER_SCALE, GFC_BITMAPSKIN_SIDES_SCALE);
+					DestCombine		= GColorCombine(Add,Disable);
+					FactorCombine	= GColorCombine(Modulate, Source);
+					FactorColor		= SF_CtrlTheme_FreeRealms_Control_Color_Surface2;
+					Image			= GBitmap("FreeRealms/FR_Radiobutton.tga", HVGrid, 1, 6, 0, 2);
+					Margin			= GRectMargin(9,9,9,9);
+				}
+				layer
+				{
+					LayerFlags		= GFlags(GCtrlBitmapSkin, GFC_BITMAPSKIN_CENTER_EMPTY, GFC_BITMAPSKIN_SIDES_SCALE);
+					DestCombine		= GColorCombine(Add,Disable);
+					FactorCombine	= GColorCombine(Modulate, Source);
+					FactorColor		= SF_CtrlTheme_FreeRealms_Control_Color_Outline;
+					Image			= GBitmap("FreeRealms/FR_Radiobutton.tga", HVGrid, 1, 6, 0, 3);
+					Margin			= GRectMargin(9,9,9,9);
+				}
+				layer
+				{
+					LayerFlags		= GFlags(GCtrlBitmapSkin, GFC_BITMAPSKIN_CENTER_SCALE, GFC_BITMAPSKIN_SIDES_SCALE);
+					DestCombine		= GColorCombine(BlendSource,Disable);
+					FactorCombine	= GColorCombine(Modulate,Modulate);
+					FactorColor		= SF_CtrlTheme_FreeRealms_Control_Color_Glyphs;
+					Image			= GBitmap("FreeRealms/FR_Radiobutton.tga", HVGrid, 1, 6, 0, 4);
+					Margin			= GRectMargin(0,0,0,0);
+				}
+				layer
+				{
+					LayerFlags		= GFlags(GCtrlBitmapSkin, GFC_BITMAPSKIN_CENTER_EMPTY, GFC_BITMAPSKIN_SIDES_SCALE);
+					DestCombine		= GColorCombine(Add,Disable);
+					FactorCombine	= GColorCombine(Modulate, Source);
+					FactorColor		= SF_CtrlTheme_FreeRealms_Control_Color_OutlineFocus;
+					Image			= GBitmap("FreeRealms/FR_Radiobutton.tga", HVGrid, 1, 6, 0, 5);
+					Margin			= GRectMargin(9,9,9,9);
+				}
+			}
+			.ToggleFocusRollover
+			{
+				layer
+				{
+					LayerFlags		= GFlags(GCtrlBitmapSkin, GFC_BITMAPSKIN_CENTER_SCALE, GFC_BITMAPSKIN_SIDES_SCALE);
+					DestCombine		= GColorCombine(RevSubtract,Disable);
+					FactorCombine	= GColorCombine(Modulate,Source);
+					FactorColor		= SF_CtrlTheme_FreeRealms_Control_Color_DropShadow;
+					Image			= GBitmap("FreeRealms/FR_Radiobutton.tga", HVGrid, 1, 6, 0, 0);
+					Margin			= GRectMargin(9,9,9,9);
+				}
+				layer
+				{
+					LayerFlags		= GFlags(GCtrlBitmapSkin, GFC_BITMAPSKIN_CENTER_SCALE, GFC_BITMAPSKIN_SIDES_SCALE);
+					DestCombine		= GColorCombine(BlendSource,Disable);
+					FactorCombine	= GColorCombine(Modulate, Modulate);
+					FactorColor		= SF_CtrlTheme_FreeRealms_Control_Color_SurfaceRoll1;
+					Image			= GBitmap("FreeRealms/FR_Radiobutton.tga", HVGrid, 1, 6, 0, 1);
+					Margin			= GRectMargin(9,9,9,9);
+				}
+				layer
+				{
+					LayerFlags		= GFlags(GCtrlBitmapSkin, GFC_BITMAPSKIN_CENTER_SCALE, GFC_BITMAPSKIN_SIDES_SCALE);
+					DestCombine		= GColorCombine(Add,Disable);
+					FactorCombine	= GColorCombine(Modulate, Source);
+					FactorColor		= SF_CtrlTheme_FreeRealms_Control_Color_SurfaceRoll2;
+					Image			= GBitmap("FreeRealms/FR_Radiobutton.tga", HVGrid, 1, 6, 0, 2);
+					Margin			= GRectMargin(9,9,9,9);
+				}
+				layer
+				{
+					LayerFlags		= GFlags(GCtrlBitmapSkin, GFC_BITMAPSKIN_CENTER_EMPTY, GFC_BITMAPSKIN_SIDES_SCALE);
+					DestCombine		= GColorCombine(Add,Disable);
+					FactorCombine	= GColorCombine(Modulate, Source);
+					FactorColor		= SF_CtrlTheme_FreeRealms_Control_Color_Outline;
+					Image			= GBitmap("FreeRealms/FR_Radiobutton.tga", HVGrid, 1, 6, 0, 3);
+					Margin			= GRectMargin(9,9,9,9);
+				}
+				layer
+				{
+					LayerFlags		= GFlags(GCtrlBitmapSkin, GFC_BITMAPSKIN_CENTER_SCALE, GFC_BITMAPSKIN_SIDES_SCALE);
+					DestCombine		= GColorCombine(BlendSource,Disable);
+					FactorCombine	= GColorCombine(Modulate,Modulate);
+					FactorColor		= SF_CtrlTheme_FreeRealms_Control_Color_Glyphs;
+					Image			= GBitmap("FreeRealms/FR_Radiobutton.tga", HVGrid, 1, 6, 0, 4);
+					Margin			= GRectMargin(0,0,0,0);
+				}
+				layer
+				{
+					LayerFlags		= GFlags(GCtrlBitmapSkin, GFC_BITMAPSKIN_CENTER_EMPTY, GFC_BITMAPSKIN_SIDES_SCALE);
+					DestCombine		= GColorCombine(Add,Disable);
+					FactorCombine	= GColorCombine(Modulate, Source);
+					FactorColor		= SF_CtrlTheme_FreeRealms_Control_Color_OutlineFocus;
+					Image			= GBitmap("FreeRealms/FR_Radiobutton.tga", HVGrid, 1, 6, 0, 5);
+					Margin			= GRectMargin(9,9,9,9);
+				}
+			}
+			.ToggleFocusPress
+			{
+				layer
+				{
+					LayerFlags		= GFlags(GCtrlBitmapSkin, GFC_BITMAPSKIN_CENTER_SCALE, GFC_BITMAPSKIN_SIDES_SCALE);
+					DestCombine		= GColorCombine(BlendSource,Disable);
+					FactorCombine	= GColorCombine(Modulate, Modulate);
+					FactorColor		= SF_CtrlTheme_FreeRealms_Control_Color_Surface1;
+					Image			= GBitmap("FreeRealms/FR_Radiobutton.tga", HVGrid, 1, 6, 0, 1);
+					Margin			= GRectMargin(9,9,9,9);
+				}
+				layer
+				{
+					LayerFlags		= GFlags(GCtrlBitmapSkin, GFC_BITMAPSKIN_CENTER_SCALE, GFC_BITMAPSKIN_SIDES_SCALE);
+					DestCombine		= GColorCombine(Add,Disable);
+					FactorCombine	= GColorCombine(Modulate, Source);
+					FactorColor		= SF_CtrlTheme_FreeRealms_Control_Color_Surface2;
+					Image			= GBitmap("FreeRealms/FR_Radiobutton.tga", HVGrid, 1, 6, 0, 2);
+					Margin			= GRectMargin(9,9,9,9);
+				}
+				layer
+				{
+					LayerFlags		= GFlags(GCtrlBitmapSkin, GFC_BITMAPSKIN_CENTER_EMPTY, GFC_BITMAPSKIN_SIDES_SCALE);
+					DestCombine		= GColorCombine(Add,Disable);
+					FactorCombine	= GColorCombine(Modulate, Source);
+					FactorColor		= SF_CtrlTheme_FreeRealms_Control_Color_Outline;
+					Image			= GBitmap("FreeRealms/FR_Radiobutton.tga", HVGrid, 1, 6, 0, 3);
+					Margin			= GRectMargin(9,9,9,9);
+				}
+				layer
+				{
+					LayerFlags		= GFlags(GCtrlBitmapSkin, GFC_BITMAPSKIN_CENTER_SCALE, GFC_BITMAPSKIN_SIDES_SCALE);
+					DestCombine		= GColorCombine(BlendSource,Disable);
+					FactorCombine	= GColorCombine(Modulate,Modulate);
+					FactorColor		= SF_CtrlTheme_FreeRealms_Control_Color_Glyphs;
+					Image			= GBitmap("FreeRealms/FR_Radiobutton.tga", HVGrid, 1, 6, 0, 4);
+					Margin			= GRectMargin(0,0,0,0);
+				}
+				layer
+				{
+					LayerFlags		= GFlags(GCtrlBitmapSkin, GFC_BITMAPSKIN_CENTER_EMPTY, GFC_BITMAPSKIN_SIDES_SCALE);
+					DestCombine		= GColorCombine(Add,Disable);
+					FactorCombine	= GColorCombine(Modulate, Source);
+					FactorColor		= SF_CtrlTheme_FreeRealms_Control_Color_OutlineFocus;
+					Image			= GBitmap("FreeRealms/FR_Radiobutton.tga", HVGrid, 1, 6, 0, 5);
+					Margin			= GRectMargin(9,9,9,9);
+				}
+			}
+			.ToggleFocusDisable
+			{
+				layer
+				{
+					LayerFlags		= GFlags(GCtrlBitmapSkin, GFC_BITMAPSKIN_CENTER_SCALE, GFC_BITMAPSKIN_SIDES_SCALE);
+					DestCombine		= GColorCombine(BlendSource,Disable);
+					FactorCombine	= GColorCombine(Modulate, Modulate);
+					FactorColor		= SF_CtrlTheme_FreeRealms_Control_Color_Surface1;
+					Image			= GBitmap("FreeRealms/FR_Radiobutton.tga", HVGrid, 1, 6, 0, 1);
+					Margin			= GRectMargin(9,9,9,9);
+				}
+				layer
+				{
+					LayerFlags		= GFlags(GCtrlBitmapSkin, GFC_BITMAPSKIN_CENTER_SCALE, GFC_BITMAPSKIN_SIDES_SCALE);
+					DestCombine		= GColorCombine(Add,Disable);
+					FactorCombine	= GColorCombine(Modulate, Source);
+					FactorColor		= SF_CtrlTheme_FreeRealms_Control_Color_SurfaceDis2;
+					Image			= GBitmap("FreeRealms/FR_Radiobutton.tga", HVGrid, 1, 6, 0, 2);
+					Margin			= GRectMargin(9,9,9,9);
+				}
+				layer
+				{
+					LayerFlags		= GFlags(GCtrlBitmapSkin, GFC_BITMAPSKIN_CENTER_EMPTY, GFC_BITMAPSKIN_SIDES_SCALE);
+					DestCombine		= GColorCombine(Add,Disable);
+					FactorCombine	= GColorCombine(Modulate, Source);
+					FactorColor		= SF_CtrlTheme_FreeRealms_Control_Color_OutlineDis;
+					Image			= GBitmap("FreeRealms/FR_Radiobutton.tga", HVGrid, 1, 6, 0, 3);
+					Margin			= GRectMargin(9,9,9,9);
+				}
+				layer
+				{
+					LayerFlags		= GFlags(GCtrlBitmapSkin, GFC_BITMAPSKIN_CENTER_SCALE, GFC_BITMAPSKIN_SIDES_SCALE);
+					DestCombine		= GColorCombine(BlendSource,Disable);
+					FactorCombine	= GColorCombine(Modulate,Modulate);
+					FactorColor		= SF_CtrlTheme_FreeRealms_Control_Color_Glyphs;
+					Image			= GBitmap("FreeRealms/FR_Radiobutton.tga", HVGrid, 1, 6, 0, 4);
+					Margin			= GRectMargin(0,0,0,0);
+				}
+				layer
+				{
+					LayerFlags		= GFlags(GCtrlBitmapSkin, GFC_BITMAPSKIN_CENTER_EMPTY, GFC_BITMAPSKIN_SIDES_SCALE);
+					DestCombine		= GColorCombine(Add,Disable);
+					FactorCombine	= GColorCombine(Modulate, Source);
+					FactorColor		= SF_CtrlTheme_FreeRealms_Control_Color_OutlineFocus;
+					Image			= GBitmap("FreeRealms/FR_Radiobutton.tga", HVGrid, 1, 6, 0, 5);
+					Margin			= GRectMargin(9,9,9,9);
+				}
+			}
+		}
+
+		map GFC_Control										= GFC_Control_DefaultButton_Style;
+		map GFC_CtrlTheme_Bitmap_Control_Button				= GFC_Control_DefaultButton_Style;
+		map SF_CtrlTheme_FreeRealms_Control					= GFC_Control_DefaultButton_Style;
+	}
+
+
+}	// end of GFC_Control_Button

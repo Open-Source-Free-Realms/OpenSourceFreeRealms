@@ -1,0 +1,210 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<TimeOfDay>
+	<Dawn StartTime="4:30" />
+	<Day StartTime="12:00" />
+	<Dusk StartTime="16:00" />
+	<Night StartTime="21:00" />
+</TimeOfDay>
+
+<Dome>
+<!-- MIDNIGHT -->
+	<Texture Time="00:00" File="dome_seaside_midnight.tga" />
+	<Texture Time="04:20" File="dome_seaside_midnight.tga" />
+<!-- SUNRISE -->
+	<Texture Time="04:30" File="dome_seaside_sunrise.tga" />
+	<Texture Time="11:50" File="dome_seaside_sunrise.tga" />
+<!-- NOON -->    
+	<Texture Time="12:00" File="dome_seaside_noon.tga" />
+	<Texture Time="15:50" File="dome_seaside_noon.tga" />
+<!-- SUNSET -->    
+	<Texture Time="16:00" File="dome_seaside_sunset.tga" />
+	<Texture Time="21:50" File="dome_seaside_sunset.tga" />
+<!-- NIGHT -->    
+	<Texture Time="22:00" File="dome_seaside_night.tga" />
+	<Texture Time="23:50" File="dome_seaside_night.tga" />
+</Dome>
+
+<Horizon>
+<!-- MIDNIGHT -->
+	<Texture R="180" G="226" B="225" Time="00:00" File="ring_snowhill_12.dds" Opacity=".4" />
+	<Texture R="180" G="226" B="225" Time="04:20" File="ring_snowhill_12.dds" Opacity=".4" />
+<!-- SUNRISE -->    
+	<Texture Time="04:30" R="255" G="220" B="220" File="ring_seaside_sunset.dds" Opacity=".65" />
+	<Texture Time="11:50" R="255" G="220" B="220" File="ring_seaside_sunset.dds" Opacity=".65" />
+<!-- NOON -->
+	<Texture Time="12:00" File="ring_snowhill_12.dds" Opacity=".75" />
+	<Texture Time="15:50" File="ring_snowhill_12.dds" Opacity=".75" />
+<!-- SUNSET -->
+	<Texture Time="16:00" File="ring_seaside_sunset.dds" Opacity=".50" />
+	<Texture Time="21:50" File="ring_seaside_sunset.dds" Opacity=".50" />
+<!-- NIGHT -->
+	<Texture R="180" G="226" B="225" Time="22:00" File="ring_snowhill_12.dds" Opacity=".4" />
+	<Texture R="180" G="226" B="225" Time="23:50" File="ring_snowhill_12.dds" Opacity=".4" />
+
+	<Position Bottom="-6" Top="35" />
+</Horizon>
+
+<SunLight>
+<!-- MIDNIGHT -->
+	<Color Time="00:00" R="120" G="225" B="255" Brightness=".3" />
+	<Color Time="04:20" R="120" G="225" B="255" Brightness=".3" />
+<!-- SUNRISE --> 
+	<Color Time="04:30" R="255" G="180" B="100" Brightness=".9" />
+	<Color Time="11:50" R="255" G="180" B="100" Brightness=".7" />
+<!-- NOON -->    
+	<Color Time="12:00" R="255" G="200" B="100" Brightness=".9" />
+	<Color Time="15:50" R="255" G="200" B="100" Brightness=".9" />
+<!-- SUNSET -->
+	<Color Time="16:00" R="255" G="150" B="135" Brightness=".75" />
+	<Color Time="21:50" R="255" G="150" B="135" Brightness=".65" />
+<!-- NIGHT -->
+	<Color Time="22:00" R="155" G="230" B="230" Brightness=".4" />
+	<Color Time="23:50" R="155" G="230" B="230" Brightness=".4" />
+
+    	<Direction Time="01:30" Heading="210" Pitch="60" /> 
+		<Direction Time="04:00" Heading="210" Pitch="22.4" />
+    	<Direction Time="12:00" Heading="210" Pitch="60" />
+		<Direction Time="21:00" Heading="210" Pitch="28" />
+    	<Direction Time="23:00" Heading="210" Pitch="22.4" />
+		<Shadows Enabled="true" />
+		
+		
+<Flare>
+	<!-- MIDNIGHT -->
+		<Color Time="00:00" R="255" G="255" B="64" Brightness="0.0"/>
+		<Shape Time="00:00" Size="0" Focus="0.2" Zoom="0" />
+			<Color Time="04:20" R="255" G="255" B="64" Brightness="0.0"/>
+			<Shape Time="04:20" Size="0" Focus="0.2" Zoom="0" />
+	<!-- SUNRISE -->
+		<Color Time="04:30" R="255" G="120" B="0" Brightness=".6"/>
+		<Shape Time="04:30" Size="0" Focus=".65" Zoom="0" />
+			<Color Time="11:50" R="255" G="120" B="0" Brightness=".6"/>
+			<Shape Time="11:50" Size="0" Focus=".05" Zoom="0" />/clien`
+	<!-- NOON -->
+		<Color Time="12:00" R="255" G="255" B="0" Brightness="0"/>
+		<Shape Time="12:00" Size="0" Focus="0.2" Zoom="0" />
+			<Color Time="15:50" R="255" G="255" B="0" Brightness="0"/>
+			<Shape Time="15:50" Size="0" Focus="0.2" Zoom="0" />
+	<!-- SUNSET -->
+		<Color Time="16:00" R="255" G="180" B="120" Brightness="0"/>
+		<Shape Time="16:00" Size="0" Focus="0.2" Zoom="0" />
+			<Color Time="22:50" R="255" G="180" B="120" Brightness="0"/>
+			<Shape Time="22:50" Size="0" Focus="0.2" Zoom="0" />
+	<!-- NIGHT -->
+		<Color Time="23:00" R="255" G="255" B="64" Brightness="0.0"/>
+		<Shape Time="23:00" Size="0" Focus="0.2" Zoom="0" />     
+</Flare>
+
+
+
+<Aura>
+		<Color R="128" G="255" B="255" Brightness="0.33" />
+		<Shape Size="0" Focus="0.5" />
+		<Fringe Brightness="0.5" Width="1" />
+</Aura>
+	
+	
+	
+</SunLight>
+
+
+
+<Ambient>
+<!-- MIDNIGHT -->
+	<Texture Time="00:00" File="ambient_seaside_midnight.tga" Brightness=".8" />
+	<Texture Time="04:20" File="ambient_seaside_midnight.tga" Brightness=".8" />
+<!-- SUNRISE -->    
+	<Texture Time="04:30" File="ambient_seaside_sunrise.tga" Brightness="1" />
+	<Texture Time="11:50" File="ambient_seaside_sunrise.tga" Brightness="1" />
+<!-- NOON -->
+	<Texture Time="12:00" File="ambient_seaside_noon.tga" Brightness="1.2" />
+	<Texture Time="15:50" File="ambient_seaside_noon.tga" Brightness="1.2" />
+<!-- SUNSET -->
+	<Texture Time="16:00" File="ambient_seaside_sunset.tga" Brightness=".9" />
+	<Texture Time="21:50" File="ambient_seaside_sunset.tga" Brightness=".9" />
+<!-- NIGHT -->
+	<Texture Time="22:00" File="ambient_seaside_night.tga" Brightness="1.2" />
+	<Texture Time="23:50" File="ambient_seaside_night.tga" Brightness="1.2" />
+</Ambient>
+
+
+
+<Reflection>
+	<CubeMap File="reflection_sky.dds" Brightness="1"/>
+</Reflection>
+
+
+
+<Fog>
+<!-- MIDNIGHT -->
+	<Color Time="00:00" R="16" G="60" B="85" />
+	<Range Time="00:00" Near="100" Far="950" />
+	<FadeRange Time="00:00" Near="450" Far="1100" />
+	
+		<Color Time="04:20" R="16" G="60" B="85" />
+		<Range Time="04:20" Near="0" Far="950" />
+		<FadeRange Time="04:20" Near="450" Far="1100" />
+<!-- SUNRISE -->
+	<Color Time="04:30" R="205" G="95" B="90" />
+	<Range Time="04:30" Near="-200" Far="800" />
+	<FadeRange Time="04:30" Near="450" Far="1100" />
+	
+		<Color Time="11:50" R="205" G="95" B="90" />
+    		<Range Time="11:50" Near="-100" Far="900" />
+    		<FadeRange Time="11:50" Near="450" Far="1100" />
+<!-- NOON -->
+	<Color Time="12:00" R="50" G="200" B="255" />
+	<Range Time="12:00" Near="-50" Far="950" />
+	<FadeRange Time="12:00" Near="450" Far="1100" />
+	
+		<Color Time="15:50" R="50" G="200" B="255" />
+		<Range Time="15:50" Near="-50" Far="900" />
+		<FadeRange Time="15:50" Near="450" Far="1100" />
+<!-- SUNSET -->
+	<Color Time="16:00" R="255" G="110" B="90" />
+	<Range Time="16:00" Near="-100" Far="800" />
+	<FadeRange Time="16:00" Near="450" Far="1100" />
+	
+		<Color Time="21:50" R="255" G="110" B="90" />
+		<Range Time="21:50" Near="-50" Far="900" />
+		<FadeRange Time="21:50" Near="450" Far="1100" />
+<!-- NIGHT -->
+	<Color Time="22:00" R="40" G="100" B="170"  />
+	<Range Time="22:00" Near="50" Far="950" />
+	<FadeRange Time="22:00" Near="450" Far="1100" />
+	
+		<Color Time="23:50" R="40" G="100" B="170" />
+    		<Range Time="23:50" Near="100" Far="950" />
+    		`<FadeRange Time="23:50" Near="450" Far="1100" />
+</Fog>
+
+
+
+<Post>
+<!-- MIDNIGHT -->
+	<Bloom Time="00:00" Strength="2" />
+	<Haze Time="00:00" Strength="0.1" Distance="500" />
+		<Bloom Time="04:20" Strength="2" />
+		<Haze Time="04:20" Strength="0.1" Distance="500" />
+<!-- SUNRISE -->
+	<Bloom Time="04:30" Strength=".66" />
+	<Haze Time="04:30" Strength="0.3" Distance="250" />
+		<Bloom Time="11:50" Strength=".66" />
+		<Haze Time="11:50" Strength="0.2" Distance="250" />
+<!-- NOON -->
+	<Bloom Time="12:00" Strength=".66" />
+	<Haze Time="12:00" Strength="0.1" Distance="500" />
+		<Bloom Time="15:50" Strength=".66" />
+		<Haze Time="15:50" Strength="0.1" Distance="500" />
+<!-- SUNSET -->
+	<Bloom Time="16:00" Strength=".33" />
+	<Haze Time="16:00" Strength="0.3" Distance="250" />
+		<Bloom Time="21:50" Strength=".33" />
+		<Haze Time="21:50" Strength="0.2" Distance="250" />
+<!-- NIGHT -->
+	<Bloom Time="22:00" Strength=".33" />
+	<Haze Time="22:00" Strength="0.1" Distance="500" />
+		<Bloom Time="23:50" Strength=".33" />
+		<Haze Time="23:50" Strength="0.1" Distance="500" />
+</Post>

@@ -1,0 +1,4 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<Window Name="wndHousingBrowser" Type="Window" X="0" Y="0" Width="1024" Height="768" ZLayer="121" ChildAlignH="Default" ChildAlignV="Default" AlignH="Undefined Property." AlignV="Undefined Property." SizingH="Undefined Property." SizingV="Undefined Property." HExpandParent="N/A" VExpandParent="N/A" Caption="" Sizeable="None" Moveable="False" AnchorX="Left" AnchorY="Top" Style="Dialog" Spacing="None" CloseBox="False" MinBox="False" MaxBox="False" CollapseBox="False" Visible="True" OuterBorder="False" InnerBorder="False" InnerFill="False" TitleBar="False" PopupMenu="False" InnerMoveable="False" HitTest="Children" Focus="True" Alpha="255" Class="">
+  <Flashanim Name="swfHousingBrowser" Type="Flashanim" X="0" Y="0" Width="1024" Height="670" AlignH="Default" AlignV="Center" SizingH="Minimum" SizingV="Default" HExpandParent="True" VExpandParent="True" File="UI\HousingBrowser.swf" />
+</Window>

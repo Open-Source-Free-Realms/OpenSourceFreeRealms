@@ -1,0 +1,318 @@
+<AnimationTransitionRules>
+    <!---------------------------------------------------------------------------------------------------->
+    <!--                                                                                                -->
+    <!-- Animation Transition Rules                                                                     -->
+    <!--                                                                                                -->
+    <!-- Each rule must have exactly one "from" and one "to" attribute:                                 -->
+    <!--   - fromType, toType: - name of an animation type (e.g., "Locomotion", "Emote", etc.)          -->
+    <!--                       - "Any" is a special, reserved animation type                            -->
+    <!--                       - "Any"->"Any" and type->"Any" (e.g, "Locomotion"->"Any")                -->
+    <!--                              isn't supported.                                                  -->
+    <!--                       - Each animation type must have at least an "Any"->"Type" rule           -->
+    <!--   - fromSlot, toSlot: animation ID (e.g., "LocWalk", "LocRun", etc.)                           -->
+    <!--                                                                                                -->
+    <!--                                                                                                -->
+    <!-- Each rule may have the following, optional attributes:                                         -->
+    <!--   - numLoops:        -1 ==> infinite loop (default=-1)                                         -->
+    <!--   - speed:           1.0 ==> 100% speed (default=1.0)                                          -->
+    <!--   - delay:           time delay (sec.) before animation will start playing (default=0.0)       -->
+    <!--   - easeIn:          blend-in time once animation starts (default=0.0)                         -->
+    <!--   - easeOut:         blend-out time at end of animation (default=0.0)                          -->
+    <!--   - transitionAnimSlot: transition animation slot name                                         -->
+    <!--   - transitionEaseIn:   blend-in time once transition animation starts (default=0.0)           -->
+    <!--   - transitionEaseOut:  blend-out time once transition animation starts (default=0.0)          -->
+    <!--   - boneMaskSuffix:  bone mask suffix to apply to the "to" animation (has precedence over      -->
+    <!--                      bone mask suffix set in animation slot which in turn has precedence       -->
+    <!--                      over the bone mask suffix in the animation type.                          -->
+    <!--                         AnimRule > AnimSlot > AnimType    .                                    -->
+    <!--                      For a list of bone mask suffixes, see BoneMasks.xml (BoneMaskSuffixes).   -->
+    <!--                                                                                                -->
+    <!---------------------------------------------------------------------------------------------------->
+    <!---->
+    <!-- Animation Constants -->
+    <!--     - wieldTypeTransitionTimeSec:  Transition time for animations when the wieldtype changes on an actor -->
+    <AnimationConstants wieldTypeTransitionTimeSec="0.5" />
+    <!---->
+    <!---->
+    <!-------------------------------------->
+    <!-- Deprecated Animation Transitions -->
+    <!-------------------------------------->
+    <Rule fromType="Any" toType="None" numLoops="-1" speed="1.0"  delay="0.0" easeIn="0.2" easeOut="0.2" />
+    <Rule fromType="Any" toSlot="com_death_01" numLoops="1" speed="1.0" delay="0.0" easeIn="0.0" easeOut="0.2" />
+    <!---->
+    <!---->
+    <!-------------------------------------->
+    <!-- Locomotion Animation Transitions -->
+    <!-------------------------------------->
+    <Rule fromType="Any"            toType="Locomotion"          numLoops="-1" speed="1.0"  delay="0.0" easeIn="0.2" easeOut="0.2" />
+    <Rule fromType="Any"            toSlot="loc_sit_to_stand"    numLoops="1" speed="1.0"  delay="0.0" easeIn="0.2" easeOut="0.2" />
+    <Rule fromType="Any"            toSlot="loc_stand_to_sit"    numLoops="1" speed="1.0"  delay="0.0" easeIn="0.2" easeOut="0.2" />
+    <Rule fromType="Stand"          toSlot="loc_stand"           numLoops="0" speed="1.0"  delay="0.0" easeIn="0.2" easeOut="0.2" />
+    <Rule fromType="StandFidgets"   toSlot="loc_stand"           numLoops="0" speed="1.0"  delay="0.0" easeIn="0.2" easeOut="0.2" />
+    <Rule fromType="Combat"         toSlot="loc_stand"           numLoops="-1" speed="1.0"  delay="0.0" easeIn="0.6" easeOut="0.2" />
+    <Rule fromType="Sit"            toSlot="loc_stand"           numLoops="0" speed="1.0"  delay="0.0" easeIn="0.2" easeOut="0.2" />
+    <Rule fromType="SitFidgets"     toSlot="loc_stand"           numLoops="0" speed="1.0"  delay="0.0" easeIn="0.2" easeOut="0.2" />
+    <Rule fromType="Lie"            toSlot="loc_stand"           numLoops="0" speed="1.0"  delay="0.0" easeIn="0.2" easeOut="0.2" />
+    <Rule fromType="LieFidgets"     toSlot="loc_stand"           numLoops="0" speed="1.0"  delay="0.0" easeIn="0.2" easeOut="0.2" />
+    <Rule fromType="Ambient"        toSlot="loc_stand"           numLoops="0" speed="1.0"  delay="0.0" easeIn="0.2" easeOut="0.2" />
+    <Rule fromType="AmbientLoops"   toSlot="loc_stand"           numLoops="0" speed="1.0"  delay="0.0" easeIn="0.2" easeOut="0.2" />
+    <Rule fromType="Any"            toSlot="com_stand"           numLoops="-1" speed="1.0" delay="0.0" easeIn="0.2" easeOut="0.2" />
+    <Rule fromType="Locomotion"     toSlot="loc_stand"           numLoops="-1" speed="1.0"  delay="0.0" easeIn="0.2" easeOut="0.2" />
+    <!-- Note: The loc_stand-to-loc_stand transition is meant to capture transitions that should *only* occur when transitioning  -->
+    <!--       from a normal stand to a mounted stand or vice versa.                                                              -->
+    <Rule fromSlot="loc_stand"      toSlot="loc_stand"           numLoops="-1" speed="1.0"  delay="0.0" easeIn="0.0" easeOut="0.2" />  
+    <Rule fromType="Any"            toSlot="loc_land"            numLoops="1"  easeIn="0.2" easeOut="0.3" />    
+    <Rule fromType="Any"            toSlot="loc_jump"            numLoops="1"  easeIn="0.1" easeOut="0.2" />    
+    <Rule fromSlot="loc_jump"       toSlot="loc_turn_left"       numLoops="-1" easeIn="0.2" easeOut="0.2" />    
+    <Rule fromSlot="loc_jump"       toSlot="loc_turn_right"      numLoops="-1" easeIn="0.2" easeOut="0.2" />    
+    <Rule fromSlot="loc_jump"       toSlot="loc_fall"            numLoops="-1" easeIn="0.2" easeOut="0.25" />    
+    <Rule fromSlot="loc_jump"       toSlot="loc_land"            numLoops="1" easeIn="0.2" easeOut="0.3" /> 
+    <Rule fromSlot="loc_turn_left"  toSlot="loc_fall"            numLoops="-1" easeIn="0.2" easeOut="0.2" />    
+    <Rule fromSlot="loc_turn_right" toSlot="loc_fall"            numLoops="-1" easeIn="0.2" easeOut="0.2" />    
+    <Rule fromSlot="loc_fall"       toSlot="loc_land"            numLoops="1" delay="0.0" easeIn="0.2" easeOut="0.3" />    
+    
+    <Rule fromSlot="loc_jump"       toSlot="loc_run"             numLoops="-1" delay="0.0" easeIn="0.25" easeOut="0.2" />    
+    <Rule fromSlot="loc_fall"       toSlot="loc_run"             numLoops="-1" delay="0.0" easeIn="0.25" easeOut="0.2" />    
+    <Rule fromSlot="loc_land"       toSlot="loc_run"             numLoops="-1" delay="0.0" easeIn="0.25" easeOut="0.2" />   
+    
+    <Rule fromSlot="loc_jump"       toSlot="loc_backpedal"       numLoops="-1" delay="0.0" easeIn="0.25" easeOut="0.2" />    
+    <Rule fromSlot="loc_fall"       toSlot="loc_backpedal"       numLoops="-1" delay="0.0" easeIn="0.25" easeOut="0.2" />    
+    <Rule fromSlot="loc_land"       toSlot="loc_backpedal"       numLoops="-1" delay="0.0" easeIn="0.25" easeOut="0.2" />   
+    
+    <Rule fromSlot="loc_land"       toSlot="loc_stand"           numLoops="-1" easeIn="0.2" easeOut="0.0" />    
+    <Rule fromSlot="loc_stand"      toSlot="loc_walk"            numLoops="-1" easeIn="0.4" easeOut="0.4" />
+    <Rule fromSlot="loc_walk"       toSlot="loc_stand"           numLoops="-1" easeIn="0.4" easeOut="0.4" />
+    <Rule fromSlot="loc_stand"      toSlot="loc_run"             numLoops="-1" easeIn="0.4" easeOut="0.4" />    
+    <Rule fromSlot="loc_run"        toSlot="loc_stand"           numLoops="-1" easeIn="0.4" easeOut="0.4" />    
+    <Rule fromSlot="loc_sprint"     toSlot="loc_stand"           numLoops="-1" easeIn="0.3" easeOut="0.2" />
+    <Rule fromSlot="loc_stand"      toSlot="loc_sprint"          numLoops="-1" easeIn="0.05" easeOut="0.2" />
+    <Rule fromSlot="loc_stand"      toType="Locomotion"          numLoops="-1" easeIn="0.2" easeOut="0.2" />
+    <Rule fromSlot="loc_stand"      toSlot="emo_outfit_all"      numLoops="1"  speed="1.0"  delay="0.0" easeIn="0.2" easeOut="0.2" />    
+    
+    <Rule fromType="Any"            toSlot="loc_parachute_land"          numLoops="1" delay="0.0" easeIn="0.2" easeOut="0.3" />
+    <Rule fromType="Any"            toSlot="loc_parachute_deploy"        numLoops="1"  easeIn="0.6" easeOut="0.3" />    
+    <Rule fromType="Any"            toSlot="loc_parachute_retract"       numLoops="1"  easeIn="0.6" easeOut="0.3" />    
+    <Rule fromType="Any"            toSlot="loc_parachute_fall"          numLoops="-1"  easeIn="0.6" easeOut="0.3" />    
+    <Rule fromType="Any"            toSlot="loc_parachute_fall_forward"  numLoops="-1"  easeIn="0.6" easeOut="0.3" />    
+    <Rule fromType="Any"            toSlot="loc_parachute_fall_backward" numLoops="-1"  easeIn="0.6" easeOut="0.3" />    
+    <Rule fromType="Any"            toSlot="loc_parachute_fall_left"     numLoops="-1"  easeIn="0.6" easeOut="0.3" />    
+    <Rule fromType="Any"            toSlot="loc_parachute_fall_right"    numLoops="-1"  easeIn="0.6" easeOut="0.3" />    
+    
+    <Rule fromType="Any"            toSlot="loc_squirrelsuit_land"          numLoops="1" delay="0.0" easeIn="0.2" easeOut="0.3" />
+    <Rule fromType="Any"            toSlot="loc_squirrelsuit_deploy"        numLoops="1"  easeIn="0.6" easeOut="0.3" />    
+    <Rule fromType="Any"            toSlot="loc_squirrelsuit_retract"       numLoops="1"  easeIn="0.6" easeOut="0.3" />    
+    <Rule fromType="Any"            toSlot="loc_squirrelsuit_fall"          numLoops="-1"  easeIn="0.6" easeOut="0.3" />    
+    <Rule fromType="Any"            toSlot="loc_squirrelsuit_fall_forward"  numLoops="-1"  easeIn="0.6" easeOut="0.3" />    
+    <Rule fromType="Any"            toSlot="loc_squirrelsuit_fall_backward" numLoops="-1"  easeIn="0.6" easeOut="0.3" />    
+    <Rule fromType="Any"            toSlot="loc_squirrelsuit_fall_left"     numLoops="-1"  easeIn="0.6" easeOut="0.3" />    
+    <Rule fromType="Any"            toSlot="loc_squirrelsuit_fall_right"    numLoops="-1"  easeIn="0.6" easeOut="0.3" />    
+
+    <Rule fromType="Any"            toSlot="loc_glide_land"          numLoops="1" delay="0.0" easeIn="0.2" easeOut="0.3" />
+    <Rule fromType="Any"            toSlot="loc_glide_deploy"        numLoops="1"  easeIn="0.6" easeOut="0.3" />    
+    <Rule fromType="Any"            toSlot="loc_glide_retract"       numLoops="1"  easeIn="0.6" easeOut="0.3" />    
+    <Rule fromType="Any"            toSlot="loc_glide_fall"          numLoops="-1"  easeIn="0.6" easeOut="0.3" />    
+    <Rule fromType="Any"            toSlot="loc_glide_fall_forward"  numLoops="-1"  easeIn="0.6" easeOut="0.3" />    
+    <Rule fromType="Any"            toSlot="loc_glide_fall_backward" numLoops="-1"  easeIn="0.6" easeOut="0.3" />    
+    <Rule fromType="Any"            toSlot="loc_glide_fall_left"     numLoops="-1"  easeIn="0.6" easeOut="0.3" />    
+    <Rule fromType="Any"            toSlot="loc_glide_fall_right"    numLoops="-1"  easeIn="0.6" easeOut="0.3" />    
+
+    <!-- banking while running or swimming -->
+    <Rule fromSlot="loc_run"        toSlot="loc_bank_left"       numLoops="-1" speed="1.0"  delay="0.0" easeIn="0.5" easeOut="1.0" />
+    <Rule fromSlot="loc_run"        toSlot="loc_bank_right"      numLoops="-1" speed="1.0"  delay="0.0" easeIn="0.5" easeOut="1.0" />
+    <Rule fromSlot="loc_backpedal"  toSlot="loc_bank_left"       numLoops="-1" speed="1.0"  delay="0.0" easeIn="0.5" easeOut="1.0" />
+    <Rule fromSlot="loc_backpedal"  toSlot="loc_bank_right"      numLoops="-1" speed="1.0"  delay="0.0" easeIn="0.5" easeOut="1.0" />
+    <Rule fromSlot="loc_swim"        toSlot="loc_bank_left"      numLoops="-1" speed="1.0"  delay="0.0" easeIn="0.5" easeOut="1.0" />
+    <Rule fromSlot="loc_swim"        toSlot="loc_bank_right"     numLoops="-1" speed="1.0"  delay="0.0" easeIn="0.5" easeOut="1.0" />
+    <Rule fromSlot="loc_swim_backpedal"  toSlot="loc_bank_left"  numLoops="-1" speed="1.0"  delay="0.0" easeIn="0.5" easeOut="1.0" />
+    <Rule fromSlot="loc_swim_backpedal"  toSlot="loc_bank_right" numLoops="-1" speed="1.0"  delay="0.0" easeIn="0.5" easeOut="1.0" />
+    
+    <!------------------------------------>
+    <!-- Swimming Animation Transitions -->
+    <!------------------------------------>    
+    <Rule fromSlot="loc_run" toSlot="loc_swim" numLoops="-1" easeIn="0.5" easeOut="0.2" />  
+    <Rule fromSlot="loc_land" toSlot="loc_swim" numLoops="-1" easeIn="0.0" easeOut="0.2" /> 
+    <Rule fromSlot="loc_land" toSlot="loc_swim_stand" numLoops="-1" easeIn="0.0" easeOut="0.2" />   
+    <Rule fromSlot="loc_land" toSlot="loc_swim_backpedal" numLoops="-1" easeIn="0.0" easeOut="0.2" />   
+    <Rule fromSlot="loc_backpedal" toSlot="loc_swim_backpedal" numLoops="-1" easeIn="0.5" easeOut="0.2" />
+    <Rule fromSlot="loc_swim" toSlot="loc_run" numLoops="-1" easeIn="0.5" easeOut="0.2" />  
+    <Rule fromSlot="loc_swim" toSlot="loc_swim_stand" numLoops="-1" easeIn="0.6" easeOut="0.2" />
+    <Rule fromSlot="loc_swim" toSlot="loc_swim_backpedal" numLoops="-1" easeIn="0.6" easeOut="0.2" />
+    <Rule fromSlot="loc_swim" toSlot="loc_fall" numLoops="0" easeIn="0.2" easeOut="0.2" />  
+    <Rule fromSlot="loc_swim" toSlot="loc_land" numLoops="0" easeIn="0.2" easeOut="0.3" />  
+    <Rule fromSlot="loc_swim_stand" toSlot="loc_swim" numLoops="-1" easeIn="0.6" easeOut="0.2" />
+    <Rule fromSlot="loc_swim_stand" toSlot="loc_swim_backpedal" numLoops="-1" easeIn="0.6" easeOut="0.2" />
+    <Rule fromSlot="loc_swim_backpedal" toSlot="loc_backpedal" numLoops="-1" easeIn="0.5" easeOut="0.2" />
+    <Rule fromSlot="loc_swim_backpedal" toSlot="loc_swim" numLoops="-1" easeIn="0.6" easeOut="0.2" />
+    <Rule fromSlot="loc_swim_backpedal" toSlot="loc_swim_stand" numLoops="-1" easeIn="0.5" easeOut="0.2" />
+    <Rule fromSlot="loc_swim_backpedal" toSlot="loc_fall" numLoops="0" easeIn="0.2" easeOut="0.2" />    >
+    <Rule fromSlot="loc_swim_backpedal" toSlot="loc_land" numLoops="0" easeIn="0.2" easeOut="0.3" />
+    <!---->
+    <!---->
+    <!---------------------------------->
+    <!-- Combat Animation Transitions -->
+    <!---------------------------------->
+    <Rule fromType="Any" toType="Combat" numLoops="1" speed="1.0" delay="0.0" easeIn="0.2" easeOut="0.2" />
+    <Rule fromSlot="com_knock_down" toSlot="com_death_static_01" numLoops="-1" easeIn="0.0" easeOut="1.0" />
+    <Rule fromSlot="com_death_01" toSlot="com_death_static_01" numLoops="-1" easeIn="0.2" easeOut="0.2" />
+    <Rule fromSlot="com_death_static_01" toSlot="com_stand" numLoops="0" speed="1.0" delay="0.0" easeIn="0.2" easeOut="0.2" />
+    <Rule fromSlot="com_death_static_01" toSlot="com_get_up" numLoops="1" easeIn="0.0" easeOut="1.0" />
+
+    <Rule fromType="Any" toSlot="com_stand" numLoops="-1" speed="1.0" delay="0.0" easeIn="0.2" easeOut="0.2" />
+    <Rule fromType="Any" toSlot="com_h2h_stand" numLoops="-1" speed="1.0" delay="0.0" easeIn="0.2" easeOut="0.2" />
+    <Rule fromType="Any" toSlot="com_1hs_stand" numLoops="-1" speed="1.0" delay="0.0" easeIn="0.2" easeOut="0.2" />
+    <Rule fromType="Any" toSlot="com_2hs_stand" numLoops="-1" speed="1.0" delay="0.0" easeIn="0.2" easeOut="0.2" />
+    <Rule fromType="Any" toSlot="com_dws_stand" numLoops="-1" speed="1.0" delay="0.0" easeIn="0.2" easeOut="0.2" />
+    <Rule fromType="Any" toSlot="com_2hp_stand" numLoops="-1" speed="1.0" delay="0.0" easeIn="0.2" easeOut="0.2" />
+    <Rule fromType="Any" toSlot="com_bow_stand" numLoops="-1" speed="1.0" delay="0.0" easeIn="0.2" easeOut="0.2" />
+    <Rule fromType="Any" toSlot="com_wnd_stand" numLoops="-1" speed="1.0" delay="0.0" easeIn="0.2" easeOut="0.2" />
+    <Rule fromSlot="loc_stand" toSlot="com_stand" numLoops="-1" speed="1.0" delay="0.0" easeIn="0.6" easeOut="0.2" />
+    <Rule fromSlot="loc_stand" toSlot="com_h2h_stand" numLoops="-1" speed="1.0" delay="0.0" easeIn="0.6" easeOut="0.2" />
+    <Rule fromSlot="loc_stand" toSlot="com_1hs_stand" numLoops="-1" speed="1.0" delay="0.0" easeIn="0.6" easeOut="0.2" />
+    <Rule fromSlot="loc_stand" toSlot="com_2hs_stand" numLoops="-1" speed="1.0" delay="0.0" easeIn="0.6" easeOut="0.2" />
+    <Rule fromSlot="loc_stand" toSlot="com_dws_stand" numLoops="-1" speed="1.0" delay="0.0" easeIn="0.6" easeOut="0.2" />
+    <Rule fromSlot="loc_stand" toSlot="com_2hp_stand" numLoops="-1" speed="1.0" delay="0.0" easeIn="0.6" easeOut="0.2" />
+    <Rule fromSlot="loc_stand" toSlot="com_bow_stand" numLoops="-1" speed="1.0" delay="0.0" easeIn="0.6" easeOut="0.2" />
+    <Rule fromSlot="loc_stand" toSlot="com_wnd_stand" numLoops="-1" speed="1.0" delay="0.0" easeIn="0.6" easeOut="0.2" />
+    <Rule fromType="Any" toSlot="com_death_static_01" numLoops="-1" speed="1.0" delay="0.0" easeIn="0.2" easeOut="0.2" />
+    <!---->
+    <!---->
+    <!----------------------------------->
+    <!-- Ambient Animation Transitions -->
+    <!----------------------------------->
+    <Rule fromType="Any" toType="Ambient"       numLoops="1" speed="1.0" delay="0.0" easeIn="0.2" easeOut="0.2" />
+    <Rule fromType="Any" toType="AmbientLoops"  numLoops="-1" speed="1.0"  delay="0.0" easeIn="0.2" easeOut="0.2" />
+    <!---->
+    <!---->
+    <!---------------------------------------------->
+    <!-- Environment Object Animation Transitions -->
+    <!---------------------------------------------->
+    <Rule fromType="Any" toType="EnvironmentOneShots" numLoops="1" speed="1.0" delay="0.0" easeIn="0.2" easeOut="0.2" />
+    <Rule fromType="Any" toType="EnvironmentLoops" numLoops="-1" speed="1.0"  delay="0.0" easeIn="0.2" easeOut="0.2" />
+    <!---->
+    <!---->
+    <!--------------------------------->
+    <!-- Emote Animation Transitions -->
+    <!--------------------------------->
+    <Rule fromType="Any" toType="Emote" numLoops="1" speed="1.0" delay="0.0" easeIn="0.4" easeOut="0.4" />
+    <Rule fromType="Any" toSlot="emo_pose_01" numLoops="1" speed="1.0" delay="0.0" easeIn="0.0" easeOut="0.0" />
+    <!---->
+    <!---->
+    <!---------------------------------->
+    <!-- Fidget Animation Transitions -->
+    <!---------------------------------->
+    <Rule fromType="Any"            toType="Fidgets"     numLoops="1" speed="1.0"  delay="0.0" easeIn="0.01" easeOut="0.01" />
+    <Rule fromType="Stand"          toType="Fidgets"     numLoops="0" speed="1.0"  delay="0.0" easeIn="0.2" easeOut="0.2" />
+    <Rule fromType="StandFidgets"   toType="Fidgets"     numLoops="0" speed="1.0"  delay="0.0" easeIn="0.2" easeOut="0.2" />
+    <Rule fromType="Combat"         toType="Fidgets"     numLoops="0" speed="1.0"  delay="0.0" easeIn="0.2" easeOut="0.2" />
+    <Rule fromType="Sit"            toType="Fidgets"     numLoops="0" speed="1.0"  delay="0.0" easeIn="0.2" easeOut="0.2" />
+    <Rule fromType="SitFidgets"     toType="Fidgets"     numLoops="0" speed="1.0"  delay="0.0" easeIn="0.2" easeOut="0.2" />
+    <Rule fromType="Lie"            toType="Fidgets"     numLoops="0" speed="1.0"  delay="0.0" easeIn="0.2" easeOut="0.2" />
+    <Rule fromType="LieFidgets"     toType="Fidgets"     numLoops="0" speed="1.0"  delay="0.0" easeIn="0.2" easeOut="0.2" />
+    <Rule fromType="AmbientLoops"   toType="Fidgets"     numLoops="0" speed="1.0"  delay="0.0" easeIn="0.2" easeOut="0.2" />
+    <Rule fromType="Ambient"        toType="Fidgets"     numLoops="0" speed="1.0"  delay="0.0" easeIn="0.2" easeOut="0.2" />
+    <Rule fromType="Emote"          toType="Fidgets"     numLoops="0" speed="1.0"  delay="0.0" easeIn="0.2" easeOut="0.2" />
+    <!---->
+    <!---->
+    <!----------------------------------------->
+    <!-- Combat Fidget Animation Transitions -->
+    <!----------------------------------------->
+    <Rule fromType="Any"            toType="CombatFidgets"     numLoops="1" speed="1.0"  delay="0.0" easeIn="0.05" easeOut="0.05" />
+    <!---->
+    <!---->
+    <!------------------------------->
+    <!-- Stand Animation Transitions -->
+    <!------------------------------->
+    <Rule fromType="Any"            toType="Stand"     numLoops="-1" speed="1.0"  delay="0.0" easeIn="0.6" easeOut="0.6" />
+    <!---->
+    <!---->
+    <!-------------------------------------->
+    <!-- Stand Fidget Animation Transitions -->
+    <!-------------------------------------->
+    <Rule fromType="Any"            toType="StandFidgets"     numLoops="1" speed="1.0"  delay="0.0" easeIn="0.2" easeOut="0.2" />
+    <!---->
+    <!---->
+    <!------------------------------->
+    <!-- Sit Animation Transitions -->
+    <!------------------------------->
+    <Rule fromType="Any"            toType="Sit"     numLoops="-1" speed="1.0"  delay="0.0" easeIn="0.2" easeOut="0.2" />
+    <!---->
+    <!---->
+    <!-------------------------------------->
+    <!-- Sit Fidget Animation Transitions -->
+    <!-------------------------------------->
+    <Rule fromType="Any"            toType="SitFidgets"     numLoops="1" speed="1.0"  delay="0.0" easeIn="0.2" easeOut="0.2" />
+    <!---->
+    <!---->
+    <!------------------------------->
+    <!-- Lie Animation Transitions -->
+    <!------------------------------->
+    <Rule fromType="Any"            toType="Lie"     numLoops="-1" speed="1.0"  delay="0.0" easeIn="0.2" easeOut="0.2" />
+    <!---->
+    <!---->
+    <!-------------------------------------->
+    <!-- Lie Fidget Animation Transitions -->
+    <!-------------------------------------->
+    <Rule fromType="Any"            toType="LieFidgets"     numLoops="1" speed="1.0"  delay="0.0" easeIn="0.2" easeOut="0.2" />
+    <!---->
+    <!---->
+    <!-------------------------------------->
+    <!-- Soccer Animation Transitions -->
+    <!-------------------------------------->
+    <Rule fromType="Any" toType="Soccer" numLoops="1" speed="1.0" delay="0.0" easeIn="0.2" easeOut="0.2" />
+    <Rule fromType="Any" toSlot="scr_loc_idle" numLoops="-1" speed="1.0" delay="0.0" easeIn="0.2" easeOut="0.2" />
+    <Rule fromType="Any" toSlot="scr_loc_run" numLoops="-1" speed="1.0" delay="0.0" easeIn="0.2" easeOut="0.2" />
+    <Rule fromType="Any" toSlot="scr_loc_run_turn_left" numLoops="-1" speed="1.0" delay="0.0" easeIn="0.2" easeOut="0.2" />
+    <Rule fromType="Any" toSlot="scr_loc_run_turn_right" numLoops="-1" speed="1.0" delay="0.0" easeIn="0.2" easeOut="0.2" />
+    <Rule fromType="Any" toSlot="scr_loc_fall" numLoops="-1" speed="1.0" delay="0.0" easeIn="0.2" easeOut="0.2" />
+    <Rule fromType="Any" toSlot="scr_def_backpedal" numLoops="-1" speed="1.0" delay="0.0" easeIn="0.2" easeOut="0.2" />
+    <Rule fromType="Any" toSlot="scr_def_run_strafe_left" numLoops="-1" speed="1.0" delay="0.0" easeIn="0.2" easeOut="0.2" />
+    <Rule fromType="Any" toSlot="scr_def_run_strafe_right" numLoops="-1" speed="1.0" delay="0.0" easeIn="0.2" easeOut="0.2" />
+    <Rule fromType="Any" toSlot="scr_def_run_slidetackle_idle" numLoops="-1" speed="1.0" delay="0.0" easeIn="0.2" easeOut="0.2" />
+    <Rule fromType="Any" toSlot="scr_goal_idle_intense" numLoops="-1" speed="1.0" delay="0.0" easeIn="0.2" easeOut="0.2" />
+    <Rule fromType="Any" toSlot="scr_goal_idle_with_ball" numLoops="-1" speed="1.0" delay="0.0" easeIn="0.2" easeOut="0.2" />
+    <Rule fromType="Any" toSlot="scr_emo_crowd_idle" numLoops="-1" speed="1.0" delay="0.0" easeIn="0.2" easeOut="0.2" />
+    <Rule fromType="Any" toSlot="scr_emo_crowd_cheer" numLoops="-1" speed="1.0" delay="0.0" easeIn="0.2" easeOut="0.2" />
+    <!---->
+    <!---->
+    <!----------------------------------->
+    <!-- Driving Animation Transitions -->
+    <!----------------------------------->
+    <Rule fromType="Any"        toType="Driving"     numLoops="1"  speed="1.0" delay="0" easeIn="0.2" easeOut="0" />    
+    <Rule fromType="Any" toSlot="drv_loc_turn_left"  numLoops="-1" speed="0"   delay="0" easeIn="0.2" easeOut="0" />
+    <Rule fromType="Any" toSlot="drv_loc_turn_right" numLoops="-1" speed="0"   delay="0" easeIn="0.2" easeOut="0" />
+    <Rule fromType="Any" toSlot="drv_loc_back_idle"  numLoops="-1" speed="1.0" delay="0" easeIn="0"   easeOut="0" />
+    <Rule fromType="Any" toSlot="drv_loc_idle"       numLoops="-1" speed="1.0" delay="0" easeIn="0.2" easeOut="0" />
+    <!---->
+    <!---->
+    <!----------------------------------->
+    <!-- Fishing Animation Transitions -->
+    <!----------------------------------->
+    <Rule fromType="Any" toType="Fishing"            numLoops="1"  speed="1.0" delay="0.0" easeIn="0.2" easeOut="0.2" />
+    <Rule fromType="Any" toSlot="fish_idle_01"       numLoops="-1" speed="1.0" delay="0.0" easeIn="0.2" easeOut="0.0" />
+    <Rule fromType="Any" toSlot="fish_idle_02"       numLoops="-1" speed="1.0" delay="0.0" easeIn="0.2" easeOut="0.0" />
+    <Rule fromType="Any" toSlot="fish_idle_03"       numLoops="-1" speed="1.0" delay="0.0" easeIn="0.2" easeOut="0.0" />
+    <Rule fromType="Any" toSlot="fish_idle_04"       numLoops="-1" speed="1.0" delay="0.0" easeIn="0.2" easeOut="0.0" />
+    <Rule fromType="Any" toSlot="fish_reel_loop"     numLoops="-1" speed="1.0" delay="0.0" easeIn="0.2" easeOut="0.0" />
+    <Rule fromType="Any" toSlot="fish_reel_idle"     numLoops="-1" speed="1.0" delay="0.0" easeIn="0.2" easeOut="0.0" />
+    <!---->
+    <!---->
+    <!-------------------------------------->
+    <!-- Pirate Ship Animation Transitions -->
+    <!-------------------------------------->
+    <Rule fromType="Any" toType="PirateShip" numLoops="1" speed="1.0" delay="0.0" easeIn="0.4" easeOut="0.4" />
+    <Rule fromType="Any" toSlot="pirate_idle_01" numLoops="-1" speed="1.0" delay="0.0" easeIn="0.8" easeOut="0.8" />
+    <Rule fromType="Any" toSlot="pirate_forward" numLoops="-1" speed="1.0" delay="0.0" easeIn="0.8" easeOut="0.8" />
+    <Rule fromType="Any" toSlot="pirate_turn_left" numLoops="-1" speed="1.0" delay="0.0" easeIn="1" easeOut="1" />
+    <Rule fromType="Any" toSlot="pirate_turn_right" numLoops="-1" speed="1.0" delay="0.0" easeIn="1" easeOut="1" />
+    <Rule fromType="Any" toSlot="pirate_damage_idle" numLoops="-1" speed="1.0" delay="0.0" easeIn="0.4" easeOut="0.0" />
+    <Rule fromType="Any" toSlot="pirate_damage_forward" numLoops="-1" speed="1.0" delay="0.0" easeIn="0.4" easeOut="0.0" />
+    <Rule fromType="Any" toSlot="pirate_current_1" numLoops="-1" speed="1.0" delay="0.0" easeIn="0.2" easeOut="0.2" />
+    <Rule fromType="Any" toSlot="pirate_current_2" numLoops="1" speed="1.0" delay="0.0" easeIn="0.0" easeOut="0.2" />  
+    <Rule fromType="Any" toSlot="pirate_sink" numLoops="1" speed="1.0" delay="0.0" easeIn="0.4" easeOut="0.4" />   
+    <Rule fromType="Any" toSlot="pirate_repair" numLoops="1" speed="1.0" delay="0.0" easeIn="0.4" easeOut="0.0" />  
+    <Rule fromType="pirate_whirlpool_in_forward" toSlot="pirate_idle_01" numLoops="1" speed="1.0" delay="0.0" easeIn="0.0" easeOut="0.0" />  
+    <Rule fromType="pirate_idle_01" toSlot="pirate_whirlpool_out" numLoops="1" speed="1.0" delay="0.0" easeIn="0.0" easeOut="0.0" />  
+    <Rule fromType="pirate_whirlpool_out" toSlot="pirate_idle_01" numLoops="1" speed="1.0" delay="0.0" easeIn="0.4" easeOut="0.4" />
+    <Rule fromType="Any" toSlot="pirate_respawn" numLoops="1" speed="1.0" delay="0.0" easeIn="0.0" easeOut="0.0" />  
+</AnimationTransitionRules>
+

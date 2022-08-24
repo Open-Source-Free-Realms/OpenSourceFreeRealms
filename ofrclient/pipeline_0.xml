@@ -1,0 +1,48 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Pipeline DrawStyle="Normal">
+    <Requirements VertexShaderVersion="FFP" PixelShaderVersion="FFP" MRT="1" MaterialsXml="materials_0.xml" RenderTargetsXml="rendertargets_0.xml" />
+
+    <!-- Opaque -->
+
+    <Stage Name="Opaque" Type="Scene" Target="Backbuffer" ClearColor="Default" ClearDepth="1.0" ClearStencil="1">
+        <Material Type="ForwardTerrain" />
+        <Material Type="ForwardOpaque" />
+    </Stage>
+
+    <!-- Sky -->
+
+    <Stage Name="Sky" Type="Scene" Target="Backbuffer">
+        <Material Type="Sky" />
+    </Stage>
+
+    <!-- Refractive -->
+
+    <Stage Name="Water" Type="Scene" Target="Backbuffer">
+        <Material Type="Refractive" />
+        <Material Type="Water" />
+    </Stage>
+
+    <!-- Semi-transparent stuff -->
+
+    <Stage Name="Alpha" Type="Scene" Target="Backbuffer" DrawStyle="Pre">
+        <Material Type="Ghost" />
+    </Stage>
+    <Stage Name="Alpha" Type="Scene" Target="Backbuffer">
+        <Material Type="ColorKey" />
+        <Material Type="Waterfall" />
+        <Material Type="ForwardAlpha" />
+        <Material Type="Particle" />
+        <Material Type="Ghost" />
+        <Material Type="Primitive3D" />
+        <Material Type="Primitive3DDepth" />
+    </Stage>
+
+    <!-- Special primitives -->
+
+    <Stage Name="Primitive2D" Type="Scene" Target="Backbuffer" PixelCoordinates="True">
+        <Material Type="Primitive2D" />
+    </Stage>
+    <Stage Name="2D" Type="Scene" Target="Backbuffer">
+        <Material Type="OldPrimitive2D" />
+    </Stage>
+</Pipeline>

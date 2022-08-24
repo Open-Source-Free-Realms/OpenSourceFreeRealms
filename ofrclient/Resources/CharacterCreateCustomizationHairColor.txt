@@ -1,0 +1,41 @@
+#GUID^ICON_ID^ICON_TINT^ITEM_ID^RACE^GENDER^NAME^DESCRIPTION^
+1000001^6526^5^193^Pixie^Female^429654^Golden Honey^
+1000002^6526^82^134^Pixie^Female^429663^Juicy Apricot^
+1000003^6526^83^138^Pixie^Female^429684^Milk Chocolate^
+1000004^6526^22^128^Pixie^Female^429629^Dark Chocolate^
+1000005^6526^19^194^Pixie^Female^429619^Cinnamon Stick^
+1000006^6526^84^127^Pixie^Female^429624^Cotton Candy^
+1000007^6526^85^154^Pixie^Female^429771^Twilight Orchid^
+1000008^6526^86^135^Pixie^Female^429674^Luscious Plum^
+1000009^6526^87^130^Pixie^Female^429633^Deep Emerald^
+1000010^6526^88^137^Pixie^Female^429683^Midnight Sky^
+1000011^6526^73^155^Human^Female^429772^Vanilla Dream^
+1000012^6526^3^151^Human^Female^429757^Sun Kissed^
+1000013^6526^75^147^Human^Female^429750^Stargazer^
+1000014^6526^24^143^Human^Female^429722^Rich Cocoa^
+1000015^6526^23^192^Human^Female^429762^Sweet Cane^
+1000016^6526^74^150^Human^Female^429755^Sugarplum^
+1000017^6526^76^149^Human^Female^402870^Strawberry^
+1000018^6526^77^142^Human^Female^4169^Raspberry^
+1000019^6526^30^191^Human^Female^429602^Blueberry^
+1000020^6526^78^126^Human^Female^429596^Black Licorice^
+1000021^6526^2^146^Human^Male^429735^Shock Wave^
+1000022^6526^10^133^Human^Male^429653^Gold Rush^
+1000023^6526^23^144^Human^Male^429725^Sand Blast^
+1000024^6526^79^131^Human^Male^429635^Dust Devil^
+1000025^6526^80^129^Human^Male^429631^Deadwood^
+1000026^6526^19^132^Human^Male^429640^Fire Burst^
+1000027^6526^20^140^Human^Male^429702^Oxidized^
+1000028^6526^81^148^Human^Male^19606^Storm Cloud^
+1000029^6526^30^153^Human^Male^116264^Tidal Wave^
+1000030^6526^78^190^Human^Male^429628^Dark Abyss^
+1000031^6526^43^152^Pixie^Male^429761^Super Nova 1^
+1000032^6526^5^125^Pixie^Male^429588^Atomic Blast 2^
+1000033^6526^26^145^Pixie^Male^429728^Scorched Earth 3^
+1000034^6526^20^188^Pixie^Male^429608^Burnt Iron^
+1000035^6526^89^141^Pixie^Male^429714^Raging Inferno 5^
+1000036^6526^27^189^Pixie^Male^429615^Charred Oak 6^
+1000037^6526^90^136^Pixie^Male^429682^Midnight Shadow 7^
+1000038^6526^91^139^Pixie^Male^429698^Ocean Depths^
+1000039^6526^30^186^Pixie^Male^429744^Smoldering Ash^
+1000040^6526^78^187^Pixie^Male^429696^Obsidian Vortex^

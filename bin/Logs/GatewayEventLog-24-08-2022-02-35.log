@@ -1,0 +1,10 @@
+<2022-08-24 02:35:13,049> :SOEServer: [INFO] Initializing server...
+<2022-08-24 02:35:13,061> :SOEConnectionManager: [INFO] Service constructed
+<2022-08-24 02:35:13,063> :SOEProtocol: [INFO] Service constructed
+<2022-08-24 02:35:13,067> :SOEProtocol: [INFO] Using protocol -- CGAPI_527
+<2022-08-24 02:35:13,067> :SOERoleManager: [INFO] Service constructed
+<2022-08-24 02:35:13,068> :SOERoleManager: [INFO] Loading role: 'Gateway.dll'...
+<2022-08-24 02:35:13,074> :Gateway: [INFO] Constructing gateway...
+<2022-08-24 02:35:13,075> :LoginManager: [INFO] Service constructed
+<2022-08-24 02:35:13,075> :Gateway: [INFO] Finished constructing gateway!
+<2022-08-24 02:35:13,079> :SOEServer: [FATAL] You already have a server running on port: 20260

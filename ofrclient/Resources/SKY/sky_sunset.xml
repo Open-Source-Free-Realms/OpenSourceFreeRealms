@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<TimeOfDay>
+  <Dawn StartTime="none" />
+  <Day StartTime="none" />
+  <Dusk StartTime="18:00" />
+  <Night StartTime="none" />
+</TimeOfDay>
+
+<Dome>
+    <Texture File="Dome_sunset.dds" />
+</Dome>
+
+<Horizon>
+    <Texture File="Ring_sunset.dds" />
+    <Position Bottom="-4" Top="45" />
+</Horizon>
+
+<SunLight>
+    <Direction Heading="75" Pitch="20" />
+    <Color R="247" G="204" B="93" Brightness=".5" />
+</SunLight>
+
+<Ambient>
+    <Texture File="ambient_sunset.tga" Brightness="1"/>
+</Ambient>
+
+<Fog>
+    <Color R="149" G="154" B="170" />
+    <Range Near="75" Far="650" />
+    <FadeRange Near="300" Far="500" />
+</Fog>
+
+<Post>
+    <Bloom Strength="1" />
+    <Haze Strength="0.33" Distance="500" />
+</Post>

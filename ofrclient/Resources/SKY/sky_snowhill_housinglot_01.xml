@@ -1,0 +1,85 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+
+<Dome>
+
+	<Texture File="dome_snowhill_12.tga" />
+
+
+</Dome>
+
+
+
+<Horizon>
+
+
+	<Texture File="ring_snowhill_housinglot_01.dds" Bottom="-35" Top="45" R="255" G="255" B="255" Opacity=".7" />
+
+</Horizon>
+
+
+
+<SunLight>
+
+       
+	<Color R="255" G="255" B="200" Brightness=".55" />
+    	<Direction Time="12:00" Heading="75" Pitch="60" />
+	
+		<Shadows Enabled="true" />`
+
+    
+<Flare>
+
+             
+	<Color R="255" G="255" B="128" Brightness="0"/>
+	<Shape Size="0" Focus=".5" Zoom="0" />
+	
+</Flare>
+
+
+
+<Aura>
+	<Color R="128" G="255" B="255" Brightness="0.33" />
+	<Shape Size="0" Focus="0.5" />
+	<Fringe Brightness="0.5" Width="1" />
+</Aura>
+
+
+
+</SunLight>
+
+
+
+<Ambient>
+
+  
+	<Texture File="ambient_snowhill_12.tga"  Brightness=".9" />
+
+</Ambient>
+
+
+
+<Reflection>
+    <CubeMap File="reflection_outdoordefault.dds" Brightness="1" />
+</Reflection>
+
+
+
+<Fog>
+
+
+	<Color R="112" G="185" B="229" />
+	<Range Near="10" Far="300" />
+	<FadeRange Near="500" Far="550" />
+
+
+</Fog>
+
+
+
+<Post>
+  
+	<Bloom  Strength=".66" />
+	<Haze  Strength="0.33" Distance="200" />
+
+
+</Post>

@@ -1,0 +1,21 @@
+C:\Users\Groaxy\Desktop\Landwalker\Landwalker Server\Gateway.dll
+C:\Users\Groaxy\Desktop\Landwalker\Landwalker Server\Gateway.pdb
+C:\Users\Groaxy\Desktop\Landwalker\Landwalker Server Assets\Gateway\obj\Debug\Gateway.csproj.AssemblyReference.cache
+C:\Users\Groaxy\Desktop\Landwalker\Landwalker Server Assets\Gateway\obj\Debug\Gateway.csproj.CoreCompileInputs.cache
+C:\Users\Groaxy\Desktop\Landwalker\Landwalker Server Assets\Gateway\obj\Debug\Gateway.csproj.CopyComplete
+C:\Users\Groaxy\Desktop\Landwalker\Landwalker Server Assets\Gateway\obj\Debug\Gateway.dll
+C:\Users\Groaxy\Desktop\Landwalker\Landwalker Server Assets\Gateway\obj\Debug\Gateway.pdb
+D:\Landwalker\Landwalker Server\Gateway.dll
+D:\Landwalker\Landwalker Server\Gateway.pdb
+D:\Landwalker\Landwalker Server Assets\Gateway\obj\Debug\Gateway.csproj.AssemblyReference.cache
+D:\Landwalker\Landwalker Server Assets\Gateway\obj\Debug\Gateway.csproj.CoreCompileInputs.cache
+D:\Landwalker\Landwalker Server Assets\Gateway\obj\Debug\Gateway.csproj.CopyComplete
+D:\Landwalker\Landwalker Server Assets\Gateway\obj\Debug\Gateway.dll
+D:\Landwalker\Landwalker Server Assets\Gateway\obj\Debug\Gateway.pdb
+D:\Landwalker\bin\Gateway.dll
+D:\Landwalker\bin\Gateway.pdb
+D:\Landwalker\ofrserver\Gateway\obj\Debug\Gateway.csproj.AssemblyReference.cache
+D:\Landwalker\ofrserver\Gateway\obj\Debug\Gateway.csproj.CoreCompileInputs.cache
+D:\Landwalker\ofrserver\Gateway\obj\Debug\Gateway.csproj.CopyComplete
+D:\Landwalker\ofrserver\Gateway\obj\Debug\Gateway.dll
+D:\Landwalker\ofrserver\Gateway\obj\Debug\Gateway.pdb

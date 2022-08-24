@@ -1,0 +1,64 @@
+ <soundDriver path="*Miles" panFactor="2.000000" rolloffFactor="1.000000">
+    <channelOptions low="32" medium="64" high="128" />
+    <sampleOptions low="22050" medium="22050" high="44100" />
+    <reverbOptions low="0" medium="1" high="1" />
+</soundDriver> 
+<masterCategories>
+    <masterCategory name="Ui" id="1" />
+    <masterCategory name="Music" id="2" />
+    <masterCategory name="Game" id="3" />
+</masterCategories>
+<categories masterMixVolume="1.000000">
+    <category name="Music" id="1" volume="0.900000" master="2">
+        <subcategory name="World" id="1" volume="0.900000" />
+        <subcategory name="Area" id="2" volume="0.600000" />
+        <subcategory name="Combat" id="3" volume="0.700000" />
+    </category>
+    <category name="Ambient" id="2" volume="0.800000" master="3">
+        <subcategory name="Long" id="1" volume="0.800000" />
+        <subcategory name="Oneshots" id="2" volume="0.800000" />
+        <subcategory name="Loops" id="3" volume="0.800000" />
+        <subcategory name="Special" id="4" volume="0.800000" />
+    </category>
+    <category name="Hit" id="3" volume="0.850000" master="3">
+        <subcategory name="PC" id="1" volume="0.850000" />
+        <subcategory name="NPC" id="2" volume="0.850000" />
+    </category>
+    <category name="Travel" id="4" volume="0.800000" master="3">
+        <subcategory name="Footsteps" id="1" volume="0.800000" />
+        <subcategory name="Flying" id="2" volume="0.800000" />
+        <subcategory name="Whoosh" id="3" volume="0.8" />
+    </category>
+    <category name="Dialog" id="5" volume="0.90000" master="3">
+        <subcategory name="PC Grunts" id="1" volume="0.750000" />
+        <subcategory name="PC Emote" id="2" volume="0.70" />
+        <subcategory name="PC Ambience" id="3" volume="0.800000" />
+        <subcategory name="Live Stream" id="4" volume="0.800000" />
+        <subcategory name="NPC Grunts" id="5" volume="0.850000" />
+        <subcategory name="NPC Emote" id="6" volume="0.75" />
+        <subcategory name="NPC Ambience" id="7" volume="0.800000" />
+        <subcategory name="Creature Grunts" id="8" volume="0.850000" />
+        <subcategory name="Creature Emote" id="9" volume="0.850000" />
+        <subcategory name="Creature Ambience" id="10" volume="0.800000" />
+        <subcategory name="Special" id="11" volume="0.800000" />
+    </category>
+    <category name="Bodyfalls" id="6" volume="0.800000" master="3" />
+    <category name="UI" id="7" volume="0.700000" master="1" />
+    <category name="Foley" id="8" volume="0.9" master="3">
+        <subcategory name="PC" id="1" volume="0.8" />
+        <subcategory name="NPC" id="2" volume="0.9" />
+    </category>
+    <category name="Whooshes" id="9" volume="0.900000" master="3">
+        <subcategory name="Weapons" id="1" volume="0.900000" />
+        <subcategory name="Large" id="2" volume="0.900000" />
+    </category>
+    <category name="Abilities" id="10" volume="0.800000" master="3">
+        <subcategory name="Cast" id="1" volume="0.800000" />
+        <subcategory name="Launch" id="2" volume="0.800000" />
+        <subcategory name="Land" id="3" volume="0.800000" />
+    </category>
+  <category name="Minigames" id="11" volume="0.8500000" master="3" />
+  <category name="MiniGameMusic" id="12" volume="0.9" master="2" />
+    <category name="Boombox" id="13" volume="0.900000" master="3">
+    </category>
+</categories>

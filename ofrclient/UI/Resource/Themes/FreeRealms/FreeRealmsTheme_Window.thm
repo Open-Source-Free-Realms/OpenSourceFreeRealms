@@ -1,0 +1,4160 @@
+/********************************************************************** 
+
+Filename	:	FreeRealmsTheme_Window.thm
+Content		:	FreeRealms - GWindow control theme
+
+Licensees may use this file in accordance with the valid Scaleform
+GFC Commercial License Agreement provided with the software.
+
+This file is provided AS IS with NO WARRANTY OF ANY KIND, INCLUDING 
+THE WARRANTY OF DESIGN, MERCHANTABILITY AND FITNESS FOR ANY PURPOSE.
+
+For information regarding GFC Commercial License Agreements go to:
+	online - http://www.scaleform.com/licensing.html or
+	email  - sales@scaleform.com 
+
+**********************************************************************/
+
+// *** Main Window control namespace 
+
+
+// Window Styles 
+
+with GFC_Control_Window
+{
+
+//****** Default Window ******
+
+	GFC_Control_DefaultWindow_Style
+	{
+		GFC_Control_Update_ChildLayout		=	GFC_CtrlTheme_Bitmap_Control_Window_Update_ChildLayout;
+
+		GFC_Control_Renderer_Control		=	GFC_CtrlTheme_Bitmap_Control_Window_Renderer_Control;
+											
+		// Child prototypes					
+		with .Child							
+		{										
+			.TitleBar							=	GFC_CtrlTheme_Bitmap_Control_Window_Child_TitleBar;
+			.OuterBorder						=	GFC_CtrlTheme_Bitmap_Control_Window_Child_OuterBorder;
+			.InnerBorder						=	GFC_CtrlTheme_Bitmap_Control_Window_Child_InnerBorder;
+			.ResizeGrip							=	GFC_CtrlTheme_Bitmap_Control_Window_Child_ResizeGrip;
+			.PopupMenu							=	GFC_CtrlTheme_Bitmap_Control_Window_Child_PopupMenu;
+		}									
+												
+		// Child styles										
+		with .StyleId										
+		{												
+			.TitleBar							=	GPropertyId(GFC_Control_StandardTitleBar_Style);
+			.OuterBorder						=	GPropertyId(GFC_Control_EmptyBorder_Style);
+			.InnerBorder						=	GPropertyId(GFC_Control_StandardBorder_Style);
+			.ResizeGrip							=	GPropertyId(GFC_Control_StandardSizeGrip_Style);
+			.PopupMenu							=	GPropertyId(GFC_Control_StandardMenu_Style);
+		}							
+
+		
+		with GFC_CtrlTheme_Bitmap_Control_Window_StyleId
+		{
+			with .OuterBorder
+			{
+				.Normal							=	GPropertyId(GFC_Control_EmptyBorder_Style);
+				.Maximized						=	GPropertyId(GFC_Control_EmptyBorder_Style);	
+				.Minimized						=	GPropertyId(GFC_Control_EmptyBorder_Style);
+				.Collapsed						=	GPropertyId(GFC_Control_EmptyBorder_Style);
+				.NoBorderNormal					=	.Normal;
+				.NoBorderMaximized				=	.Maximized;
+				.NoBorderMinimized				=	.Minimized;
+				.NoBorderCollapsed				=	.Collapsed;
+				.SysBorderNormal				=	.Maximized;
+				.SysBorderMinimized				=	.Maximized;
+				.SysBorderMaximized				=	.Maximized;
+				.SysBorderCollapsed				=	.Maximized;
+			}								
+												
+			with .TitleBar						
+			{								
+				.Normal							=	GPropertyId(GFC_Control_StandardTitleBar_Style);
+				.Minimized						=	GPropertyId(GFC_Control_StandardTitleBar_Style);
+				.Maximized						=	GPropertyId(GFC_Control_StandardTitleBar_Style);	
+				.Collapsed						=	GPropertyId(GFC_Control_StandardTitleBar_Style);
+				.NoBorderNormal					=	.Normal;
+				.NoBorderMinimized				=	.Minimized;	
+				.NoBorderMaximized				=	.Maximized;	
+				.NoBorderCollapsed				=	.Collapsed;	
+				.SysBorderNormal				=	.Maximized;			
+				.SysBorderMinimized				=	.Maximized;		
+				.SysBorderMaximized				=	.Maximized;		
+				.SysBorderCollapsed				=	.Maximized;
+			}								
+												
+			with .InFrameBorder					
+			{								
+				.Normal							=	GPropertyId(GFC_Control_EmptyBorder_Style);
+				.Maximized						=	GPropertyId(GFC_Control_EmptyBorder_Style);	
+				.Minimized						=	GPropertyId(GFC_Control_EmptyBorder_Style);
+				.Collapsed						=	GPropertyId(GFC_Control_EmptyBorder_Style);
+				.NoBorderNormal					=	.Normal;
+				.NoBorderMaximized				=	.Maximized;
+				.NoBorderMinimized				=	.Minimized;
+				.NoBorderCollapsed				=	.Collapsed;
+				.SysBorderNormal				=	.Maximized;
+				.SysBorderMinimized				=	.Maximized;
+				.SysBorderMaximized				=	.Maximized;
+				.SysBorderCollapsed				=	.Maximized;
+			}									
+													
+			.InnerBorder_Normal					=	GPropertyId(GFC_Control_EmptyBorder_Style);
+		}										
+													
+													
+		with GFC_Control_Flag
+		{										
+			// Base control flags
+			.Transparent					=	GFlags(GCtrl, GFC_CF_TRANSPARENT);
+			.SolidInner						=	0;	//GFlags(GCtrl, GFC_CF_SOLIDINNER);
+			.SolidBackground				=	0;	//GFlags(GCtrl, GFC_CF_SOLIDBACKGROUND);
+			.RegionClip						=	0;	//GFlags(GCtrl, GFC_CF_REGIONCLIP);
+			.RegionClipParent				=	0;	//GFlags(GCtrl, GFC_CF_REGIONCLIP_PARENT);
+			.NoExternalWindow				=	0;	//GFlags(GCtrl, GFC_CF_NOEXTERNALWINDOW);
+			.HitTest						=	0;	//GFlags(GCtrl, GFC_CF_HITTEST_CHILDREN);
+			.TopLayer						=	0;	//GFlags(GCtrl, GFC_CF_TOPLAYER);
+			.TopLayerBitmap					=	0;	//GFlags(GCtrl, GFC_CF_TOPLAYERBITMAP);
+			.BottomLayerBitmap				=	0;	//GFlags(GCtrl, GFC_CF_BOTTOMLAYERBITMAP);
+											
+			// Control flag change masks	
+			.Mask_InvalidateControl			=	GFlags(GCtrl, GFC_CF_TRANSPARENT, GFC_CF_TOPLAYER);
+		}
+
+		with .Flag
+		{
+			// Window flags																	
+			.NoTitleBar						=	0;	//GFlags(GWindowCtrl, GFC_CF_WINDOW_NOTITLEBAR);
+			.NoResizeGrip					=	0;	//GFlags(GWindowCtrl, GFC_CF_WINDOW_NORESIZEGRIP);
+			.NoPopupMenu					=	0;	//GFlags(GWindowCtrl, GFC_CF_WINDOW_NOPOPUPMENU);
+			.NoBorder						=	0;	//GFlags(GWindowCtrl, GFC_CF_WINDOW_NOBORDER);
+			.NoInnerBorder					=	0;	//GFlags(GWindowCtrl, GFC_CF_WINDOW_NOINNERBORDER);
+			.NoInnerFill					=	0;	//GFlags(GWindowCtrl, GFC_CF_WINDOW_NOINNERFILL)
+			
+			// Window flag change 
+			//.WindowMask_InvalidateControl	=	GFlags(GWindowCtrl);
+		}										
+													
+		with .Size									
+		{										
+			.ResizeGrip							=	GSize(18,18);
+
+			.DefaultMin_Normal					=	GSize(0,0);
+			.DefaultMin_Collapsed				=	GSize(0,0);
+			.DefaultMin_Minimized				=	GSize(0,0);
+			.DefaultMin_Maximized				=	GSize(0,0);
+
+			.ExtentMargin_Normal				=	GRectMargin(0,4,0,0);
+			.ExtentMargin_Collapsed				=	GRectMargin(0,0,0,0);
+			.ExtentMargin_Minimized				=	GRectMargin(0,0,0,0);
+			.ExtentMargin_Maximized				=	GRectMargin(0,0,0,0);
+		}										
+													
+		with .Color									
+		{									
+			.Inner						=	SF_CtrlTheme_FreeRealms_Control_Color_TitlebarText;	
+			.Title_Default					=	SF_CtrlTheme_FreeRealms_Control_Color_TitlebarText;
+			.Title_Disable					=	SF_CtrlTheme_FreeRealms_Control_Color_TitlebarText;
+			.Title_Winoff					=	SF_CtrlTheme_FreeRealms_Control_Color_TitlebarTextWinoff;
+			.Title_WinoffDisable				=	SF_CtrlTheme_FreeRealms_Control_Color_TitlebarTextWinoff;
+												
+			.TitleShadow_Default				=	0;
+			.TitleShadow_Disable				=	0;
+			.TitleShadow_Winoff				=	0;
+			.TitleShadow_WinoffDisable			=	0;
+		}								
+											
+											
+		with .Combine						
+		{								
+			.Inner								=	GFC_Control_Combine_Inner_Default;
+
+			.Title_Default_Dest					=	GFC_Control_Combine_Text_Default_Dest;
+			.Title_Default_Factor				=	GFC_Control_Combine_Text_Default_Factor;
+			.Title_Disable_Dest					=	.Title_Default_Dest;
+			.Title_Disable_Factor				=	.Title_Default_Factor;
+			.Title_Winoff_Dest					=	.Title_Default_Dest;
+			.Title_Winoff_Factor				=	.Title_Default_Factor;
+			.Title_WinoffDisable_Dest			=	.Title_Default_Dest;
+			.Title_WinoffDisable_Factor			=	.Title_Default_Factor;
+												
+			.TitleShadow_Default_Dest			=	0;
+			.TitleShadow_Default_Factor			=	0;
+			.TitleShadow_Disable_Dest			=	.TitleShadow_Default_Dest;
+			.TitleShadow_Disable_Factor			=	.TitleShadow_Default_Factor;
+			.TitleShadow_Winoff_Dest			=	.TitleShadow_Default_Dest;
+			.TitleShadow_Winoff_Factor			=	.TitleShadow_Default_Factor;
+			.TitleShadow_WinoffDisable_Dest		=	.TitleShadow_Default_Dest;
+			.TitleShadow_WinoffDisable_Factor	=	.TitleShadow_Default_Factor;
+		}
+
+		with .Font						
+		{								
+			.Title								=	GFC_Control_Font_Bold;
+		}
+
+		with .Cursor								
+		{										
+			.Size								=	GFC_Control_Cursor_Size_All;
+			.SizeUp								=	GFC_Control_Cursor_Size_UpDown;
+			.SizeDown							=	GFC_Control_Cursor_Size_UpDown;
+			.SizeLeft							=	GFC_Control_Cursor_Size_LeftRight;
+			.SizeRight							=	GFC_Control_Cursor_Size_LeftRight;
+			.SizeUpLeft							=	GFC_Control_Cursor_Size_UpLeft;
+			.SizeUpRight						=	GFC_Control_Cursor_Size_UpRight;
+			.SizeDownLeft						=	GFC_Control_Cursor_Size_DownLeft;
+			.SizeDownRight						=	GFC_Control_Cursor_Size_DownRight;
+												
+			.Move								=	GFC_Control_Cursor_Arrow;
+			.MoveUp								=	.Move;
+			.MoveDown							=	.Move;
+			.MoveUpDown							=	.Move;
+			.MoveLeft							=	.Move;
+			.MoveRight							=	.Move;
+			.MoveLeftRight						=	.Move;
+		}
+		
+		with .Text
+		{
+			with .PopupMenu			
+			{					
+				.Move						=	"Move";
+				.Size						=	"Size";
+				.Minimize					=	"Minimize";
+				.Maximize					=	"Maximize";
+				.Collapse					=	"Collapse";
+				.CollapseRestore			=	"Expand";
+				.MinimizeRestore			=	"Restore Up";
+				.MaximizeRestore			=	"Restore Down";
+				.Close						=	"Close";
+				.Help						=	"Help";
+				.Windows					=	"Windows...";
+			}							
+		}
+
+
+
+		// ******* Initialize all the Bitmap theme Window properties to avoid inheritance problems
+		
+		with GFC_CtrlTheme_Bitmap_Control_Window_Skin_Inner
+		{
+			.Default
+			{
+				layer
+				{
+					LayerFlags		=	GFlags(GCtrlBitmapSkin, GFC_BITMAPSKIN_CENTER_FILL, GFC_BITMAPSKIN_BACKCAPS_REGION);
+					CenterColor		=	SF_CtrlTheme_FreeRealms_Control_Color_Background;
+				}	
+				layer
+				{
+					LayerFlags		=	GFlags(GCtrlBitmapSkin, GFC_BITMAPSKIN_CENTER_FILL, GFC_BITMAPSKIN_BACKCAPS_PARTIAL);
+					DestCombine		=	GColorCombine(BlendSource, Disable);
+					CenterColor		=	SF_CtrlTheme_FreeRealms_Control_Color_Background;
+				}
+			
+			}
+			.Winoff
+			{
+				layer
+				{
+					LayerFlags		=	GFlags(GCtrlBitmapSkin, GFC_BITMAPSKIN_CENTER_FILL, GFC_BITMAPSKIN_BACKCAPS_REGION);
+					CenterColor		=	SF_CtrlTheme_FreeRealms_Control_Color_Background;
+				}	
+				layer
+				{
+					LayerFlags		=	GFlags(GCtrlBitmapSkin, GFC_BITMAPSKIN_CENTER_FILL, GFC_BITMAPSKIN_BACKCAPS_PARTIAL);
+					DestCombine		=	GColorCombine(BlendSource, Disable);
+					CenterColor		=	SF_CtrlTheme_FreeRealms_Control_Color_Background;
+				}
+
+			}
+		}
+
+		map GFC_Control			=	GFC_Control_DefaultControl_Style;
+	}	// end of GFC_Control_DefaultWindow_Style
+
+
+
+
+//****** Normal Border Styles *****************************************************************************************************************************************
+
+
+//****** Normal Out Border ******
+
+style SF_CtrlTheme_FreeRealms_Control_Window_Standard_OuterBorder_Normal_Style
+{	
+	GFC_Control_Flag_RegionClipParent				=	GFlags(GCtrl, GFC_CF_REGIONCLIP_PARENT);
+	GFC_Control_Flag_Mask_InvalidateControl			=	GFlags(GCtrl, GFC_CF_WINDOWACTIVE, GFC_CF_DISABLED, GFC_CF_TRANSPARENT, GFC_CF_TOPLAYER);
+	GFC_Control_Flag_HitTest						=	GFlags(GCtrl, GFC_CF_HITTEST);
+
+	GFC_Control_Border_Size_Margin					=	GRectMargin(0,18,0,18);
+
+	// Set drag corners to prevent resizing the sides in the diagonal position
+	GFC_Control_Border_Size_DragCorner_TopLeft		=	GSize(11,11);
+	GFC_Control_Border_Size_DragCorner_TopRight		=	GSize(11,11);
+	GFC_Control_Border_Size_DragCorner_BottomLeft	=	GSize(11,11);
+	GFC_Control_Border_Size_DragCorner_BottomRight	=	GSize(21,12); 	//NOTE: last number controls the height, 
+																		//in this theme inborder is used for sides therefore 'see InFrameBorder'
+	
+
+	with GFC_CtrlTheme_Bitmap_Control_Border_Skin
+	{
+		.Full_Default			=	0;
+		.Top_Default			=	0;
+		.Bottom_Default
+		{
+			layer
+			{
+				LayerFlags		= GFlags(GCtrlBitmapSkin, GFC_BITMAPSKIN_CENTER_TILE, GFC_BITMAPSKIN_SIDES_SCALE, GFC_BITMAPSKIN_NOHITTEST);
+				DestCombine		= GColorCombine(BlendSource,Disable);
+				BottomLeft		= GBitmap("FreeRealms/FR_InBorderBottom.tga",GRect(0, 0, 30,18) );
+				Margin			= GRectMargin(30,0,0,0);
+			}
+			layer
+			{
+				LayerFlags		= GFlags(GCtrlBitmapSkin, GFC_BITMAPSKIN_CENTER_TILE, GFC_BITMAPSKIN_SIDES_SCALE, GFC_BITMAPSKIN_NOHITTEST);
+				DestCombine		= GColorCombine(BlendSource,Disable);
+				BottomRight		= GBitmap("FreeRealms/FR_InBorderBottom.tga", GRect(31, 0, 61,18) );
+				Margin			= GRectMargin(0,0,30,0);
+			}
+			
+			layer 
+			{
+				LayerFlags		= GFlags(GCtrlBitmapSkin, GFC_BITMAPSKIN_CENTER_TILE, GFC_BITMAPSKIN_SIDES_SCALE, GFC_BITMAPSKIN_NOHITTEST);
+				DestCombine		= GColorCombine(BlendSource,Disable);
+				Center			= GBitmap("FreeRealms/FR_InBorderMidBottom.tga", GRect(0, 1, 172,18) );
+				Margin			= GRectMargin(0,0,0,0);
+				Indent			= GRectMargin(30,0,30,0);
+			}
+			
+			/*
+			layer
+			{
+				LayerFlags		= GFlags(GCtrlBitmapSkin, GFC_BITMAPSKIN_CENTER_TILE, GFC_BITMAPSKIN_SIDES_SCALE, GFC_BITMAPSKIN_NOHITTEST, GFC_BITMAPSKIN_SIDES_SCALE);
+				DestCombine		= GColorCombine(BlendSource,Disable);
+				BottomRight		= GBitmap("FreeRealms/FR_InBorderBottom.tga", GRect(18, 0, 44,18) );
+				Margin			= GRectMargin(0,0,0,0);
+				Indent			= GRectMargin(30,0,30,0);
+			}
+			*/
+		}
+		.Left_Default			=	0;
+		.Right_Default			=	0;
+		
+		.Full_Winoff			=	.Full_Default;
+		.Full_WinoffDisable		=	.Full_Winoff;
+		.Top_Winoff				=	.Top_Default;
+		.Top_WinoffDisable		=	.Top_Winoff;
+		.Bottom_Winoff
+		{
+			layer
+			{
+				LayerFlags		= GFlags(GCtrlBitmapSkin, GFC_BITMAPSKIN_CENTER_TILE, GFC_BITMAPSKIN_SIDES_SCALE, GFC_BITMAPSKIN_NOHITTEST);
+				DestCombine		= GColorCombine(BlendSource,Disable);
+				BottomLeft		= GBitmap("FreeRealms/FR_InBorderBottom.tga",GRect(0, 0, 30,18) );
+				Margin			= GRectMargin(30,0,0,0);
+			}
+			layer
+			{
+				LayerFlags		= GFlags(GCtrlBitmapSkin, GFC_BITMAPSKIN_CENTER_TILE, GFC_BITMAPSKIN_SIDES_SCALE, GFC_BITMAPSKIN_NOHITTEST);
+				DestCombine		= GColorCombine(BlendSource,Disable);
+				BottomRight		= GBitmap("FreeRealms/FR_InBorderBottom.tga", GRect(31, 0, 61,18) );
+				Margin			= GRectMargin(0,0,30,0);
+			}
+			
+			layer
+			{
+				LayerFlags		= GFlags(GCtrlBitmapSkin, GFC_BITMAPSKIN_CENTER_TILE, GFC_BITMAPSKIN_SIDES_SCALE, GFC_BITMAPSKIN_NOHITTEST);
+				DestCombine		= GColorCombine(BlendSource,Disable);
+				Center			= GBitmap("FreeRealms/FR_InBorderMidBottom.tga", GRect(0, 1, 172,18) );
+				Margin			= GRectMargin(0,0,0,0);
+				Indent			= GRectMargin(30,0,30,0);
+			}
+		}
+		.Bottom_WinoffDisable	=	.Bottom_Winoff;
+		.Left_Winoff			=	.Left_Default;
+		.Left_WinoffDisable		=	.Left_Winoff;
+		.Right_Winoff			=	.Right_Default;
+		.Right_WinoffDisable	=	.Right_Winoff;
+		
+	}
+
+	with GFC_CtrlTheme_Bitmap_Control_Border_SkinId
+	{
+		.TopLeftCorner			= GPropertyId(.Flag_Left);
+		.BottomLeftCorner		= GPropertyId(.Flag_Left);
+		.TopRightCorner			= GPropertyId(.Flag_Right);
+		.BottomRightCorner		= GPropertyId(.Flag_Right);
+	}
+
+	map SF_CtrlTheme_FreeRealms_Control						=	GFC_Control_StandardBorder_Style;
+	map GFC_CtrlTheme_Bitmap_Control_Border					=	GFC_Control_StandardBorder_Style;
+	map GFC_Control											=	GFC_Control_StandardBorder_Style;
+}
+
+
+
+
+//****** Normal In Border ******
+
+style SF_CtrlTheme_FreeRealms_Control_Window_Standard_InFrameBorder_Normal_Style
+{
+	GFC_Control_Flag_RegionClipParent				=	GFlags(GCtrl, GFC_CF_REGIONCLIP_PARENT);
+	GFC_Control_Flag_Mask_InvalidateControl			=	GFlags(GCtrl, GFC_CF_WINDOWACTIVE, GFC_CF_DISABLED, GFC_CF_TRANSPARENT, GFC_CF_TOPLAYER);
+	GFC_Control_Flag_HitTest						=	GFlags(GCtrl, GFC_CF_HITTEST);
+
+	GFC_Control_Border_Size_Margin					=	GRectMargin(11,0,11,0);
+	GFC_Control_Border_Size_ForceHitTestMargin		=	GRectMargin(10,0,10,0);
+	GFC_Control_Border_Size_ForceSizableMargin		=	GRectMargin(10,0,10,0);
+	GFC_Control_Border_Size_ForceUpdateMargin		=	GRectMargin(-1,-1,-1,-1);
+	
+	// Set drag coreners to prevernt resizing the SIDES in the diagonal position
+	GFC_Control_Border_Size_DragCorner_TopLeft		=	GSize(0,0);
+	GFC_Control_Border_Size_DragCorner_TopRight		=	GSize(0,0);
+	GFC_Control_Border_Size_DragCorner_BottomRight	=	GSize(21,14);
+	
+
+	with GFC_CtrlTheme_Bitmap_Control_Border_Skin
+	{
+		.Full_Default
+		{
+			//Sides
+			layer
+			{
+				LayerFlags		= GFlags(GCtrlBitmapSkin, GFC_BITMAPSKIN_CENTER_EMPTY, GFC_BITMAPSKIN_SIDES_SCALE, GFC_BITMAPSKIN_BACKCAPS_REGION);
+				DestCombine		= GColorCombine(BlendSource,Disable);
+				Image			= GBitmap("FreeRealms/FR_InBorderSide.tga", HVGrid, 2, 1, 0, 0);
+				Margin			= GRectMargin(11,0,0,0);
+			}
+			layer
+			{
+				LayerFlags		= GFlags(GCtrlBitmapSkin, GFC_BITMAPSKIN_CENTER_EMPTY, GFC_BITMAPSKIN_SIDES_SCALE, GFC_BITMAPSKIN_BACKCAPS_PARTIAL);
+				DestCombine		= GColorCombine(BlendSource,Disable);
+				Image			= GBitmap("FreeRealms/FR_InBorderSide.tga", HVGrid, 2, 1, 0, 0);
+				Margin			= GRectMargin(11,0,0,0);
+			}
+			layer
+			{
+				LayerFlags		= GFlags(GCtrlBitmapSkin, GFC_BITMAPSKIN_CENTER_EMPTY, GFC_BITMAPSKIN_SIDES_TILE);
+				DestCombine		= GColorCombine(BlendSource,Disable);
+				Image			= GBitmap("FreeRealms/FR_InBorderSide.tga", HVGrid, 2, 1, 1, 0);
+				Margin			= GRectMargin(0,0,11,0);
+			}
+		}
+		.Full_Winoff
+		{
+			//Sides
+			layer
+			{
+				LayerFlags		= GFlags(GCtrlBitmapSkin, GFC_BITMAPSKIN_CENTER_EMPTY, GFC_BITMAPSKIN_SIDES_SCALE, GFC_BITMAPSKIN_BACKCAPS_REGION);
+				DestCombine		= GColorCombine(BlendSource,Disable);
+				Image			= GBitmap("FreeRealms/FR_InBorderSide.tga", HVGrid, 2, 1, 0, 0);
+				Margin			= GRectMargin(11,0,0,0);
+			}
+			layer
+			{
+				LayerFlags		= GFlags(GCtrlBitmapSkin, GFC_BITMAPSKIN_CENTER_EMPTY, GFC_BITMAPSKIN_SIDES_SCALE, GFC_BITMAPSKIN_BACKCAPS_PARTIAL);
+				DestCombine		= GColorCombine(BlendSource,Disable);
+				Image			= GBitmap("FreeRealms/FR_InBorderSide.tga", HVGrid, 2, 1, 0, 0);
+				Margin			= GRectMargin(11,0,0,0);
+			}
+			layer
+			{
+				LayerFlags		= GFlags(GCtrlBitmapSkin, GFC_BITMAPSKIN_CENTER_EMPTY, GFC_BITMAPSKIN_SIDES_TILE);
+				DestCombine		= GColorCombine(BlendSource,Disable);
+				Image			= GBitmap("FreeRealms/FR_InBorderSide.tga", HVGrid, 2, 1, 1, 0);
+				Margin			= GRectMargin(0,0,11,0);
+			}
+
+		}
+	}
+	map SF_CtrlTheme_FreeRealms_Control						=	GFC_Control_StandardBorder_Style;
+	map GFC_CtrlTheme_Bitmap_Control_Border					=	GFC_Control_StandardBorder_Style;
+	map GFC_Control											=	GFC_Control_StandardBorder_Style;
+}
+
+
+
+
+
+
+//****** Normal Titlebar Border ******
+
+style SF_CtrlTheme_FreeRealms_Control_TitleBar_Standard_Border_Style
+{
+	GFC_Control_Border_Size_ForceHitTestMargin				=	GRectMargin(10,10,10,0);
+
+	// Set drag corners to prevent resizing the SIDES in the diagonal position
+	GFC_Control_Border_Size_DragCorner_BottomLeft			=	GSize(4,0);
+	GFC_Control_Border_Size_DragCorner_BottomRight			=	GSize(4,0);
+
+	map SF_CtrlTheme_FreeRealms_Control						=	GFC_Control_EmptyBorder_Style;
+	map GFC_CtrlTheme_Bitmap_Control_Border					=	GFC_Control_EmptyBorder_Style;
+	map GFC_Control											=	GFC_Control_EmptyBorder_Style;
+}
+
+//****** Collapsed Titlebar Border ******
+
+style SF_CtrlTheme_FreeRealms_Control_TitleBar_Standard_Collapsed_Border_Style
+{
+	GFC_Control_Border_Size_ForceHitTestMargin				=	GRectMargin(34,0,34,0);
+
+	map SF_CtrlTheme_FreeRealms_Control						=	GFC_Control_EmptyBorder_Style;
+	map GFC_CtrlTheme_Bitmap_Control_Border					=	GFC_Control_EmptyBorder_Style;
+	map GFC_Control											=	GFC_Control_EmptyBorder_Style;
+}
+
+
+
+
+
+
+//****** Dialog Border Styles *****************************************************************************************************************************************
+
+//****** Dialog Out Border ******
+
+style SF_CtrlTheme_FreeRealms_Control_Window_Dialog_OuterBorder_Normal_Style
+{	
+
+	map SF_CtrlTheme_FreeRealms_Control						= SF_CtrlTheme_FreeRealms_Control_Window_Standard_OuterBorder_Normal_Style;
+	map GFC_CtrlTheme_Bitmap_Control_Border					= SF_CtrlTheme_FreeRealms_Control_Window_Standard_OuterBorder_Normal_Style;
+	map GFC_Control											= SF_CtrlTheme_FreeRealms_Control_Window_Standard_OuterBorder_Normal_Style;
+}
+
+
+//** Maximized **
+
+style SF_CtrlTheme_FreeRealms_Control_Window_Dialog_OuterBorder_Maximized_Style
+{
+
+	map SF_CtrlTheme_FreeRealms_Control						= SF_CtrlTheme_FreeRealms_Control_Window_Standard_InFrameBorder_Normal_Style;
+	map GFC_CtrlTheme_Bitmap_Control_Border					= SF_CtrlTheme_FreeRealms_Control_Window_Standard_InFrameBorder_Normal_Style;
+	map GFC_Control											= SF_CtrlTheme_FreeRealms_Control_Window_Standard_InFrameBorder_Normal_Style;
+}
+
+//** Minimized **
+
+style SF_CtrlTheme_FreeRealms_Control_Window_Dialog_OuterBorder_Minimized_Style
+{
+
+	map SF_CtrlTheme_FreeRealms_Control						=	SF_CtrlTheme_FreeRealms_Control_Window_Standard_OuterBorder_Normal_Style;
+	map GFC_CtrlTheme_Bitmap_Control_Border					=	SF_CtrlTheme_FreeRealms_Control_Window_Standard_OuterBorder_Normal_Style;
+	map GFC_Control											=	SF_CtrlTheme_FreeRealms_Control_Window_Standard_OuterBorder_Normal_Style;
+}
+
+
+
+//****** Dialog In Border ******
+
+style SF_CtrlTheme_FreeRealms_Control_Window_Dialog_InFrameBorder_Normal_Style
+{	
+
+	map SF_CtrlTheme_FreeRealms_Control						= SF_CtrlTheme_FreeRealms_Control_Window_Standard_InFrameBorder_Normal_Style;
+	map GFC_CtrlTheme_Bitmap_Control_Border					= SF_CtrlTheme_FreeRealms_Control_Window_Standard_InFrameBorder_Normal_Style;
+	map GFC_Control											= SF_CtrlTheme_FreeRealms_Control_Window_Standard_InFrameBorder_Normal_Style;
+}
+
+
+
+
+
+//****** Dialog Titlebar Border ******
+
+style SF_CtrlTheme_FreeRealms_Control_TitleBar_Dialog_Border_Normal_Style
+{
+
+	map SF_CtrlTheme_FreeRealms_Control						=	GFC_Control_EmptyBorder_Style;
+	map GFC_CtrlTheme_Bitmap_Control_Border					=	GFC_Control_EmptyBorder_Style;
+	map GFC_Control											=	GFC_Control_EmptyBorder_Style;
+}
+
+style SF_CtrlTheme_FreeRealms_Control_TitleBar_Dialog_Border_Collapsed_Style
+{
+
+	map SF_CtrlTheme_FreeRealms_Control						=	GFC_Control_EmptyBorder_Style;
+	map GFC_CtrlTheme_Bitmap_Control_Border					=	GFC_Control_EmptyBorder_Style;
+	map GFC_Control											=	GFC_Control_EmptyBorder_Style;
+}
+
+
+//****** ChatDialog In Border ******
+
+style SF_CtrlTheme_FreeRealms_Control_Window_ChatDialog_InFrameBorder_Normal_Style
+{	
+
+	map SF_CtrlTheme_FreeRealms_Control						= SF_CtrlTheme_FreeRealms_Control_Window_Standard_InFrameBorder_Normal_Style;
+	map GFC_CtrlTheme_Bitmap_Control_Border					= SF_CtrlTheme_FreeRealms_Control_Window_Standard_InFrameBorder_Normal_Style;
+	map GFC_Control											= SF_CtrlTheme_FreeRealms_Control_Window_Standard_InFrameBorder_Normal_Style;
+}
+
+
+
+
+
+//****** ChatDialog Titlebar Border ******
+
+style SF_CtrlTheme_FreeRealms_Control_TitleBar_ChatDialog_Border_Normal_Style
+{
+
+	map SF_CtrlTheme_FreeRealms_Control						=	GFC_Control_EmptyBorder_Style;
+	map GFC_CtrlTheme_Bitmap_Control_Border					=	GFC_Control_EmptyBorder_Style;
+	map GFC_Control											=	GFC_Control_EmptyBorder_Style;
+}
+
+style SF_CtrlTheme_FreeRealms_Control_TitleBar_Dialog_Border_Collapsed_Style
+{
+
+	map SF_CtrlTheme_FreeRealms_Control						=	GFC_Control_EmptyBorder_Style;
+	map GFC_CtrlTheme_Bitmap_Control_Border					=	GFC_Control_EmptyBorder_Style;
+	map GFC_Control											=	GFC_Control_EmptyBorder_Style;
+}
+
+
+
+
+
+
+//****** Toolbar Border Styles *****************************************************************************************************************************************
+
+//****** Toolbar Out Border ******
+
+style SF_CtrlTheme_FreeRealms_Control_Window_Tool_OuterBorder_Normal_Style
+	{	
+	GFC_Control_Flag_RegionClipParent				=	GFlags(GCtrl, GFC_CF_REGIONCLIP_PARENT);
+	GFC_Control_Flag_Mask_InvalidateControl			=	GFlags(GCtrl, GFC_CF_WINDOWACTIVE, GFC_CF_DISABLED, GFC_CF_TRANSPARENT, GFC_CF_TOPLAYER);
+	GFC_Control_Flag_HitTest						=	GFlags(GCtrl, GFC_CF_HITTEST);
+
+	GFC_Control_Border_Size_Margin					=	GRectMargin(0,0,0,6);
+
+	// Set drag corners to prevent resizing the sides in the diagonal position
+	GFC_Control_Border_Size_DragCorner_TopLeft		=	GSize(6,6);
+	GFC_Control_Border_Size_DragCorner_TopRight		=	GSize(6,6);
+	GFC_Control_Border_Size_DragCorner_BottomLeft	=	GSize(6,6);
+	GFC_Control_Border_Size_DragCorner_BottomRight	=	GSize(6,6);
+	
+
+	with GFC_CtrlTheme_Bitmap_Control_Border_Skin
+	{
+		.Full_Default			=	0;
+		.Top_Default			=	0;
+		.Bottom_Default
+		{
+			layer
+			{
+				LayerFlags		= GFlags(GCtrlBitmapSkin, GFC_BITMAPSKIN_CENTER_TILE, GFC_BITMAPSKIN_SIDES_SCALE);
+				DestCombine		= GColorCombine(BlendSource,Disable);
+				Image			= GBitmap("FreeRealms/FR_Tool_Bottom.tga", HVGrid, 1, 2, 0, 0);
+				Margin			= GRectMargin(14,0,14,0);
+			}
+			layer
+			{
+				LayerFlags		= GFlags(GCtrlBitmapSkin, GFC_BITMAPSKIN_CENTER_SCALE, GFC_BITMAPSKIN_SIDES_SCALE, GFC_BITMAPSKIN_NOHITTEST);
+				DestCombine		= GColorCombine(Add,Disable);
+				FactorCombine	= GColorCombine(Modulate, Source);
+				FactorColor		= SF_CtrlTheme_FreeRealms_Control_Color_TitlebarGlow;
+				Image			= GBitmap("FreeRealms/FR_Tool_Bottom.tga", HVGrid, 1, 2, 0, 1);
+				Margin			= GRectMargin(14,0,14,0);
+			}
+		}
+		.Left_Default			=	0;
+		.Right_Default			=	0;
+		
+		.Full_Winoff			=	.Full_Default;
+		.Full_WinoffDisable		=	.Full_Winoff;
+		.Top_Winoff				=	.Top_Default;
+		.Top_WinoffDisable		=	.Top_Winoff;
+		.Bottom_Winoff
+		{
+			layer
+			{
+				LayerFlags		= GFlags(GCtrlBitmapSkin, GFC_BITMAPSKIN_CENTER_TILE, GFC_BITMAPSKIN_SIDES_SCALE);
+				DestCombine		= GColorCombine(BlendSource,Disable);
+				Image			= GBitmap("FreeRealms/FR_Tool_Bottom.tga", HVGrid, 1, 2, 0, 0);
+				Margin			= GRectMargin(14,0,14,0);
+			}
+		}
+		.Bottom_WinoffDisable	=	.Bottom_Winoff;
+		.Left_Winoff			=	.Left_Default;
+		.Left_WinoffDisable		=	.Left_Winoff;
+		.Right_Winoff			=	.Right_Default;
+		.Right_WinoffDisable	=	.Right_Winoff;
+		
+	}
+
+	with GFC_CtrlTheme_Bitmap_Control_Border_SkinId
+	{
+		.TopLeftCorner			= GPropertyId(.Flag_Left);
+		.BottomLeftCorner		= GPropertyId(.Flag_Left);
+		.TopRightCorner			= GPropertyId(.Flag_Right);
+		.BottomRightCorner		= GPropertyId(.Flag_Right);
+	}
+
+	map SF_CtrlTheme_FreeRealms_Control						=	GFC_Control_StandardBorder_Style;
+	map GFC_CtrlTheme_Bitmap_Control_Border					=	GFC_Control_StandardBorder_Style;
+	map GFC_Control											=	GFC_Control_StandardBorder_Style;
+}
+
+
+//****** Toolbar In Border ******
+
+style SF_CtrlTheme_FreeRealms_Control_Window_Tool_InFrameBorder_Normal_Style
+{
+	GFC_Control_Flag_RegionClipParent				=	GFlags(GCtrl, GFC_CF_REGIONCLIP_PARENT);
+	GFC_Control_Flag_Mask_InvalidateControl			=	GFlags(GCtrl, GFC_CF_WINDOWACTIVE, GFC_CF_DISABLED, GFC_CF_TRANSPARENT, GFC_CF_TOPLAYER);
+	GFC_Control_Flag_HitTest						=	GFlags(GCtrl, GFC_CF_HITTEST);
+
+	GFC_Control_Border_Size_Margin					=	GRectMargin(2,0,2,0);
+	GFC_Control_Border_Size_ForceHitTestMargin		=	GRectMargin(4,0,4,0);
+	GFC_Control_Border_Size_ForceSizableMargin		=	GRectMargin(4,0,4,0);
+	GFC_Control_Border_Size_ForceUpdateMargin		=	GRectMargin(-1,-1,-1,-1);
+	
+	// Set drag coreners to prevernt resizing the SIDES in the diagonal position
+	GFC_Control_Border_Size_DragCorner_TopLeft		=	GSize(0,0);
+	GFC_Control_Border_Size_DragCorner_TopRight		=	GSize(0,0);
+	
+
+	with GFC_CtrlTheme_Bitmap_Control_Border_Skin
+	{
+		.Full_Default
+		{
+			//Sides
+			layer
+			{
+				LayerFlags		= GFlags(GCtrlBitmapSkin, GFC_BITMAPSKIN_CENTER_EMPTY, GFC_BITMAPSKIN_SIDES_SCALE);
+				DestCombine		= GColorCombine(BlendSource,Disable);
+				FactorCombine	= GColorCombine(Modulate, Modulate);
+				FactorColor		= SF_CtrlTheme_FreeRealms_Control_Color_Background;
+				Image			= GBitmap("FreeRealms/FR_Tool_Side.tga", HVGrid, 1, 1, 0, 0);
+				Margin			= GRectMargin(2,0,2,0);
+			}
+			layer
+			{
+				LayerFlags		= GFlags(GCtrlBitmapSkin, GFC_BITMAPSKIN_CENTER_EMPTY, GFC_BITMAPSKIN_SIDES_SCALE);
+				DestCombine		= GColorCombine(Add,Disable);
+				FactorCombine	= GColorCombine(Modulate, Source);
+				FactorColor		= SF_CtrlTheme_FreeRealms_Control_Color_Outline;
+				Image			= GBitmap("FreeRealms/FR_Tool_Side.tga", HVGrid, 1, 1, 0, 0);
+				Margin			= GRectMargin(2,0,2,0);
+			}
+
+		}
+		.Full_Winoff
+		{
+			//Sides
+			layer
+			{
+				LayerFlags		= GFlags(GCtrlBitmapSkin, GFC_BITMAPSKIN_CENTER_EMPTY, GFC_BITMAPSKIN_SIDES_SCALE);
+				DestCombine		= GColorCombine(BlendSource,Disable);
+				FactorCombine	= GColorCombine(Modulate, Modulate);
+				FactorColor		= SF_CtrlTheme_FreeRealms_Control_Color_Background;
+				Image			= GBitmap("FreeRealms/FR_Tool_Side.tga", HVGrid, 1, 1, 0, 0);
+				Margin			= GRectMargin(2,0,2,0);
+			}
+			layer
+			{
+				LayerFlags		= GFlags(GCtrlBitmapSkin, GFC_BITMAPSKIN_CENTER_EMPTY, GFC_BITMAPSKIN_SIDES_SCALE);
+				DestCombine		= GColorCombine(Add,Disable);
+				FactorCombine	= GColorCombine(Modulate, Source);
+				FactorColor		= SF_CtrlTheme_FreeRealms_Control_Color_Outline;
+				Image			= GBitmap("FreeRealms/FR_Tool_Side.tga", HVGrid, 1, 1, 0, 0);
+				Margin			= GRectMargin(2,0,2,0);
+			}
+
+		}
+	}
+	map SF_CtrlTheme_FreeRealms_Control						=	GFC_Control_StandardBorder_Style;
+	map GFC_CtrlTheme_Bitmap_Control_Border					=	GFC_Control_StandardBorder_Style;
+	map GFC_Control											=	GFC_Control_StandardBorder_Style;
+}
+
+
+
+
+
+
+//****** Toolbar Titlebar Border ******
+
+style SF_CtrlTheme_FreeRealms_Control_TitleBar_Tool_Border_Normal_Style
+{	
+	GFC_Control_Border_Size_ForceHitTestMargin				=	GRectMargin(4,4,4,0);
+
+	GFC_Control_Border_Size_DragCorner_TopLeft				=	GSize(6,6);
+	GFC_Control_Border_Size_DragCorner_TopRight				=	GSize(6,6);
+	GFC_Control_Border_Size_DragCorner_BottomLeft			=	GSize(4,0);
+	GFC_Control_Border_Size_DragCorner_BottomRight			=	GSize(4,0);
+
+	map SF_CtrlTheme_FreeRealms_Control						=	GFC_Control_EmptyBorder_Style;
+	map GFC_CtrlTheme_Bitmap_Control_Border					=	GFC_Control_EmptyBorder_Style;
+	map GFC_Control											=	GFC_Control_EmptyBorder_Style;
+}
+
+
+
+
+
+//*****************************************************************************************************************************************************
+//*****************************************************************************************************************************************************
+//*****************************************************************************************************************************************************
+//*****************************************************************************************************************************************************
+//*****************************************************************************************************************************************************
+//****** Normal Buttons *****************************************************************************************************************************************
+
+//****** Normal Close Button ******
+
+style SF_CtrlTheme_FreeRealms_Control_TitleBar_Standard_CloseButton_Style
+{
+	GFC_Control_Renderer_Control				= GFC_CtrlTheme_Bitmap_Control_Button_Renderer_ControlStandard;
+
+	
+	// No down offset
+	GFC_Control_Button_Size_DownOffset_Content = GPoint(0,0);
+
+	with GFC_CtrlTheme_Bitmap_Control_Button_Skin
+	{
+		.Default
+		{
+			layer {
+				LayerFlags  = GFlags(GCtrlBitmapSkin, GFC_BITMAPSKIN_CENTER_SCALE, GFC_BITMAPSKIN_SIDES_SCALE);
+				Image		= GBitmap("FreeRealms/FR_TitlebarButtons.tga", HVGrid, 8, 4, 0, 0);
+				DestCombine = GColorCombine(BlendSource,Disable);
+				Margin		= GRectMargin(0,0,0,0);
+			}
+		}
+		.Rollover
+		{
+			layer {
+				LayerFlags  = GFlags(GCtrlBitmapSkin, GFC_BITMAPSKIN_CENTER_SCALE, GFC_BITMAPSKIN_SIDES_SCALE);
+				Image		= GBitmap("FreeRealms/FR_TitlebarButtons.tga", HVGrid, 8, 4, 0, 1);
+				DestCombine = GColorCombine(BlendSource,Disable);
+				Margin		= GRectMargin(0,0,0,0);
+			}	
+		}
+		.Press
+		{
+			layer {
+				LayerFlags  = GFlags(GCtrlBitmapSkin, GFC_BITMAPSKIN_CENTER_SCALE, GFC_BITMAPSKIN_SIDES_SCALE);
+				Image		= GBitmap("FreeRealms/FR_TitlebarButtons.tga", HVGrid, 8, 4, 0, 2);
+				DestCombine = GColorCombine(BlendSource,Disable);
+				Margin		= GRectMargin(0,0,0,0);
+			}		
+		}
+		.Disable
+		{
+			layer {
+				LayerFlags  = GFlags(GCtrlBitmapSkin, GFC_BITMAPSKIN_CENTER_SCALE, GFC_BITMAPSKIN_SIDES_SCALE);
+				Image		= GBitmap("FreeRealms/FR_TitlebarButtons.tga", HVGrid, 8, 4, 0, 3);
+				DestCombine = GColorCombine(BlendSource,Disable);
+				Margin		= GRectMargin(0,0,0,0);
+			}		
+		}
+		.Inactive			=	.Default;
+		.InactiveRollover	=	.Rollover;
+		.InactivePress		=	.Press;
+		.InactiveDisable	=	.Disable;
+	}
+	
+	map SF_CtrlTheme_FreeRealms_Control						= GFC_Control_DefaultButton_Style;
+	map GFC_CtrlTheme_Bitmap_Control_Button					= GFC_Control_DefaultButton_Style;
+	map GFC_Control											= GFC_Control_DefaultButton_Style;
+}
+
+
+
+
+
+
+//****** Normal Maximize Button ****** 
+
+style SF_CtrlTheme_FreeRealms_Control_TitleBar_Standard_MaximizeButton_Style
+{
+	GFC_Control_Renderer_Control				= GFC_CtrlTheme_Bitmap_Control_Button_Renderer_ControlStandard;
+
+	// No down offset
+	GFC_Control_Button_Size_DownOffset_Content	= GPoint(0,0);
+
+
+	with GFC_CtrlTheme_Bitmap_Control_Button_Skin
+	{
+		.Default
+		{
+			layer {
+				LayerFlags  = GFlags(GCtrlBitmapSkin, GFC_BITMAPSKIN_CENTER_SCALE, GFC_BITMAPSKIN_SIDES_SCALE);
+				Image		= GBitmap("FreeRealms/FR_TitlebarButtons.tga", HVGrid, 8, 4, 1, 0);
+				DestCombine = GColorCombine(BlendSource,Disable);
+				Margin		= GRectMargin(0,0,0,0);
+			}
+		}
+		.Rollover
+		{
+			layer {
+				LayerFlags  = GFlags(GCtrlBitmapSkin, GFC_BITMAPSKIN_CENTER_SCALE, GFC_BITMAPSKIN_SIDES_SCALE);
+				Image		= GBitmap("FreeRealms/FR_TitlebarButtons.tga", HVGrid, 8, 4, 1, 1);
+				DestCombine = GColorCombine(BlendSource,Disable);
+				Margin		= GRectMargin(0,0,0,0);
+			}	
+		}
+		.Press
+		{
+			layer {
+				LayerFlags  = GFlags(GCtrlBitmapSkin, GFC_BITMAPSKIN_CENTER_SCALE, GFC_BITMAPSKIN_SIDES_SCALE);
+				Image		= GBitmap("FreeRealms/FR_TitlebarButtons.tga", HVGrid, 8, 4, 1, 2);
+				DestCombine = GColorCombine(BlendSource,Disable);
+				Margin		= GRectMargin(0,0,0,0);
+			}		
+		}
+		.Disable
+		{
+			layer {
+				LayerFlags  = GFlags(GCtrlBitmapSkin, GFC_BITMAPSKIN_CENTER_SCALE, GFC_BITMAPSKIN_SIDES_SCALE);
+				Image		= GBitmap("FreeRealms/FR_TitlebarButtons.tga", HVGrid, 8, 4, 1, 3);
+				DestCombine = GColorCombine(BlendSource,Disable);
+				Margin		= GRectMargin(0,0,0,0);
+			}		
+		}
+		.Inactive			=	.Default;
+		.InactiveRollover	=	.Rollover;
+		.InactivePress		=	.Press;
+		.InactiveDisable	=	.Disable;
+	}
+	
+	map SF_CtrlTheme_FreeRealms_Control						= GFC_Control_DefaultButton_Style;
+	map GFC_CtrlTheme_Bitmap_Control_Button					= GFC_Control_DefaultButton_Style;
+	map GFC_Control											= GFC_Control_DefaultButton_Style;
+}
+
+
+
+
+
+
+//****** Normal Minimize Button ****** 
+
+style SF_CtrlTheme_FreeRealms_Control_TitleBar_Standard_MinimizeButton_Style
+{
+	GFC_Control_Renderer_Control				= GFC_CtrlTheme_Bitmap_Control_Button_Renderer_ControlStandard;
+
+	// No down offset
+	GFC_Control_Button_Size_DownOffset_Content	= GPoint(0,0);
+
+
+	with GFC_CtrlTheme_Bitmap_Control_Button_Skin
+	{
+		.Default
+		{
+			layer {
+				LayerFlags  = GFlags(GCtrlBitmapSkin);//, GFC_BITMAPSKIN_CENTER_SCALE, GFC_BITMAPSKIN_SIDES_SCALE);
+				Image		= GBitmap("FreeRealms/FR_TitlebarButtons.tga", HVGrid, 8, 4, 3, 0);
+				DestCombine = GColorCombine(BlendSource,Disable);
+				Margin		= GRectMargin(0,0,0,0);
+			}
+		}
+		.Rollover
+		{
+			layer {
+				LayerFlags  = GFlags(GCtrlBitmapSkin, GFC_BITMAPSKIN_CENTER_SCALE, GFC_BITMAPSKIN_SIDES_SCALE);
+				Image		= GBitmap("FreeRealms/FR_TitlebarButtons.tga", HVGrid, 8, 4, 3, 1);
+				DestCombine = GColorCombine(BlendSource,Disable);
+				Margin		= GRectMargin(0,0,0,0);
+			}	
+		}
+		.Press
+		{
+			layer {
+				LayerFlags  = GFlags(GCtrlBitmapSkin, GFC_BITMAPSKIN_CENTER_SCALE, GFC_BITMAPSKIN_SIDES_SCALE);
+				Image		= GBitmap("FreeRealms/FR_TitlebarButtons.tga", HVGrid, 8, 4, 3, 2);
+				DestCombine = GColorCombine(BlendSource,Disable);
+				Margin		= GRectMargin(0,0,0,0);
+			}		
+		}
+		.Disable
+		{
+			layer {
+				LayerFlags  = GFlags(GCtrlBitmapSkin, GFC_BITMAPSKIN_CENTER_SCALE, GFC_BITMAPSKIN_SIDES_SCALE);
+				Image		= GBitmap("FreeRealms/FR_TitlebarButtons.tga", HVGrid, 8, 4, 3, 3);
+				DestCombine = GColorCombine(BlendSource,Disable);
+				Margin		= GRectMargin(0,0,0,0);
+			}		
+		}
+		.Inactive			=	.Default;
+		.InactiveRollover	=	.Rollover;
+		.InactivePress		=	.Press;
+		.InactiveDisable	=	.Disable;
+	}
+	
+	map SF_CtrlTheme_FreeRealms_Control						= GFC_Control_DefaultButton_Style;
+	map GFC_CtrlTheme_Bitmap_Control_Button					= GFC_Control_DefaultButton_Style;
+	map GFC_Control											= GFC_Control_DefaultButton_Style;
+}
+
+
+
+
+
+
+//****** Normal Restore Down Button ****** 
+
+style SF_CtrlTheme_FreeRealms_Control_TitleBar_Standard_MaximizeRestoreButton_Style
+{
+	GFC_Control_Renderer_Control				= GFC_CtrlTheme_Bitmap_Control_Button_Renderer_ControlStandard;
+
+	// No down offset
+	GFC_Control_Button_Size_DownOffset_Content	= GPoint(0,0);
+
+
+	with GFC_CtrlTheme_Bitmap_Control_Button_Skin
+	{
+		.Default
+		{
+			layer {
+				LayerFlags  = GFlags(GCtrlBitmapSkin, GFC_BITMAPSKIN_CENTER_SCALE, GFC_BITMAPSKIN_SIDES_SCALE);
+				Image		= GBitmap("FreeRealms/FR_TitlebarButtons.tga", HVGrid, 8, 4, 2, 0);
+				DestCombine = GColorCombine(BlendSource,Disable);
+				Margin		= GRectMargin(0,0,0,0);
+			}
+		}
+		.Rollover
+		{
+			layer {
+				LayerFlags  = GFlags(GCtrlBitmapSkin, GFC_BITMAPSKIN_CENTER_SCALE, GFC_BITMAPSKIN_SIDES_SCALE);
+				Image		= GBitmap("FreeRealms/FR_TitlebarButtons.tga", HVGrid, 8, 4, 2, 1);
+				DestCombine = GColorCombine(BlendSource,Disable);
+				Margin		= GRectMargin(0,0,0,0);
+			}	
+		}
+		.Press
+		{
+			layer {
+				LayerFlags  = GFlags(GCtrlBitmapSkin, GFC_BITMAPSKIN_CENTER_SCALE, GFC_BITMAPSKIN_SIDES_SCALE);
+				Image		= GBitmap("FreeRealms/FR_TitlebarButtons.tga", HVGrid, 8, 4, 2, 2);
+				DestCombine = GColorCombine(BlendSource,Disable);
+				Margin		= GRectMargin(0,0,0,0);
+			}		
+		}
+		.Disable
+		{
+			layer {
+				LayerFlags  = GFlags(GCtrlBitmapSkin, GFC_BITMAPSKIN_CENTER_SCALE, GFC_BITMAPSKIN_SIDES_SCALE);
+				Image		= GBitmap("FreeRealms/FR_TitlebarButtons.tga", HVGrid, 8, 4, 2, 3);
+				DestCombine = GColorCombine(BlendSource,Disable);
+				Margin		= GRectMargin(0,0,0,0);
+			}		
+		}
+		.Inactive			=	.Default;
+		.InactiveRollover	=	.Rollover;
+		.InactivePress		=	.Press;
+		.InactiveDisable	=	.Disable;
+	}
+	
+	map SF_CtrlTheme_FreeRealms_Control						= GFC_Control_DefaultButton_Style;
+	map GFC_CtrlTheme_Bitmap_Control_Button					= GFC_Control_DefaultButton_Style;
+	map GFC_Control											= GFC_Control_DefaultButton_Style;
+}
+
+
+
+
+
+
+//****** Normal Restore Up Button ****** 
+
+style SF_CtrlTheme_FreeRealms_Control_TitleBar_Standard_MinimizeRestoreButton_Style
+{
+	GFC_Control_Renderer_Control				= GFC_CtrlTheme_Bitmap_Control_Button_Renderer_ControlStandard;
+
+	// No down offset
+	GFC_Control_Button_Size_DownOffset_Content	= GPoint(0,0);
+
+
+	with GFC_CtrlTheme_Bitmap_Control_Button_Skin
+	{
+		.Default
+		{
+			layer {
+				LayerFlags  = GFlags(GCtrlBitmapSkin, GFC_BITMAPSKIN_CENTER_SCALE, GFC_BITMAPSKIN_SIDES_SCALE);
+				Image		= GBitmap("FreeRealms/FR_TitlebarButtons.tga", HVGrid, 8, 4, 4, 0);
+				DestCombine = GColorCombine(BlendSource,Disable);
+				Margin		= GRectMargin(0,0,0,0);
+			}
+		}
+		.Rollover
+		{
+			layer {
+				LayerFlags  = GFlags(GCtrlBitmapSkin, GFC_BITMAPSKIN_CENTER_SCALE, GFC_BITMAPSKIN_SIDES_SCALE);
+				Image		= GBitmap("FreeRealms/FR_TitlebarButtons.tga", HVGrid, 8, 4, 4, 1);
+				DestCombine = GColorCombine(BlendSource,Disable);
+				Margin		= GRectMargin(0,0,0,0);
+			}	
+		}
+		.Press
+		{
+			layer {
+				LayerFlags  = GFlags(GCtrlBitmapSkin, GFC_BITMAPSKIN_CENTER_SCALE, GFC_BITMAPSKIN_SIDES_SCALE);
+				Image		= GBitmap("FreeRealms/FR_TitlebarButtons.tga", HVGrid, 8, 4, 4, 2);
+				DestCombine = GColorCombine(BlendSource,Disable);
+				Margin		= GRectMargin(0,0,0,0);
+			}		
+		}
+		.Disable
+		{
+			layer {
+				LayerFlags  = GFlags(GCtrlBitmapSkin, GFC_BITMAPSKIN_CENTER_SCALE, GFC_BITMAPSKIN_SIDES_SCALE);
+				Image		= GBitmap("FreeRealms/FR_TitlebarButtons.tga", HVGrid, 8, 4, 4, 3);
+				DestCombine = GColorCombine(BlendSource,Disable);
+				Margin		= GRectMargin(0,0,0,0);
+			}		
+		}
+		.Inactive			=	.Default;
+		.InactiveRollover	=	.Rollover;
+		.InactivePress		=	.Press;
+		.InactiveDisable	=	.Disable;
+	}
+	
+	map SF_CtrlTheme_FreeRealms_Control						= GFC_Control_DefaultButton_Style;
+	map GFC_CtrlTheme_Bitmap_Control_Button					= GFC_Control_DefaultButton_Style;
+	map GFC_Control											= GFC_Control_DefaultButton_Style;
+}
+
+
+
+
+
+
+//****** Normal Collapse Button ****** 
+
+style SF_CtrlTheme_FreeRealms_Control_TitleBar_Standard_CollapseButton_Style
+{
+	GFC_Control_Renderer_Control				= GFC_CtrlTheme_Bitmap_Control_Button_Renderer_ControlStandard;
+
+	// No down offset
+	GFC_Control_Button_Size_DownOffset_Content	= GPoint(0,0);
+
+
+	with GFC_CtrlTheme_Bitmap_Control_Button_Skin
+	{
+		.Default
+		{
+			layer {
+				LayerFlags  = GFlags(GCtrlBitmapSkin, GFC_BITMAPSKIN_CENTER_SCALE, GFC_BITMAPSKIN_SIDES_SCALE);
+				Image		= GBitmap("FreeRealms/FR_TitlebarButtons.tga", HVGrid, 8, 4, 5, 0);
+				DestCombine = GColorCombine(BlendSource,Disable);
+				Margin		= GRectMargin(0,0,0,0);
+			}
+		}
+		.Rollover
+		{
+			layer {
+				LayerFlags  = GFlags(GCtrlBitmapSkin, GFC_BITMAPSKIN_CENTER_SCALE, GFC_BITMAPSKIN_SIDES_SCALE);
+				Image		= GBitmap("FreeRealms/FR_TitlebarButtons.tga", HVGrid, 8, 4, 5, 1);
+				DestCombine = GColorCombine(BlendSource,Disable);
+				Margin		= GRectMargin(0,0,0,0);
+			}	
+		}
+		.Press
+		{
+			layer {
+				LayerFlags  = GFlags(GCtrlBitmapSkin, GFC_BITMAPSKIN_CENTER_SCALE, GFC_BITMAPSKIN_SIDES_SCALE);
+				Image		= GBitmap("FreeRealms/FR_TitlebarButtons.tga", HVGrid, 8, 4, 5, 2);
+				DestCombine = GColorCombine(BlendSource,Disable);
+				Margin		= GRectMargin(0,0,0,0);
+			}		
+		}
+		.Disable
+		{
+			layer {
+				LayerFlags  = GFlags(GCtrlBitmapSkin, GFC_BITMAPSKIN_CENTER_SCALE, GFC_BITMAPSKIN_SIDES_SCALE);
+				Image		= GBitmap("FreeRealms/FR_TitlebarButtons.tga", HVGrid, 8, 4, 5, 3);
+				DestCombine = GColorCombine(BlendSource,Disable);
+				Margin		= GRectMargin(0,0,0,0);
+			}		
+		}
+		.Inactive			=	.Default;
+		.InactiveRollover	=	.Rollover;
+		.InactivePress		=	.Press;
+		.InactiveDisable	=	.Disable;
+	}
+	
+	map SF_CtrlTheme_FreeRealms_Control						= GFC_Control_DefaultButton_Style;
+	map GFC_CtrlTheme_Bitmap_Control_Button					= GFC_Control_DefaultButton_Style;
+	map GFC_Control											= GFC_Control_DefaultButton_Style;
+}
+
+
+
+
+
+
+//****** Normal Expand Button ****** 
+
+style SF_CtrlTheme_FreeRealms_Control_TitleBar_Standard_CollapseRestoreButton_Style
+{
+	GFC_Control_Renderer_Control				= GFC_CtrlTheme_Bitmap_Control_Button_Renderer_ControlStandard;
+
+	// No down offset
+	GFC_Control_Button_Size_DownOffset_Content	= GPoint(0,0);
+
+
+	with GFC_CtrlTheme_Bitmap_Control_Button_Skin
+	{
+		.Default
+		{
+			layer {
+				LayerFlags  = GFlags(GCtrlBitmapSkin, GFC_BITMAPSKIN_CENTER_SCALE, GFC_BITMAPSKIN_SIDES_SCALE);
+				Image		= GBitmap("FreeRealms/FR_TitlebarButtons.tga", HVGrid, 8, 4, 6, 0);
+				DestCombine = GColorCombine(BlendSource,Disable);
+				Margin		= GRectMargin(0,0,0,0);
+			}
+		}
+		.Rollover
+		{
+			layer {
+				LayerFlags  = GFlags(GCtrlBitmapSkin, GFC_BITMAPSKIN_CENTER_SCALE, GFC_BITMAPSKIN_SIDES_SCALE);
+				Image		= GBitmap("FreeRealms/FR_TitlebarButtons.tga", HVGrid, 8, 4, 6, 1);
+				DestCombine = GColorCombine(BlendSource,Disable);
+				Margin		= GRectMargin(0,0,0,0);
+			}	
+		}
+		.Press
+		{
+			layer {
+				LayerFlags  = GFlags(GCtrlBitmapSkin, GFC_BITMAPSKIN_CENTER_SCALE, GFC_BITMAPSKIN_SIDES_SCALE);
+				Image		= GBitmap("FreeRealms/FR_TitlebarButtons.tga", HVGrid, 8, 4, 6, 2);
+				DestCombine = GColorCombine(BlendSource,Disable);
+				Margin		= GRectMargin(0,0,0,0);
+			}		
+		}
+		.Disable
+		{
+			layer {
+				LayerFlags  = GFlags(GCtrlBitmapSkin, GFC_BITMAPSKIN_CENTER_SCALE, GFC_BITMAPSKIN_SIDES_SCALE);
+				Image		= GBitmap("FreeRealms/FR_TitlebarButtons.tga", HVGrid, 8, 4, 6, 3);
+				DestCombine = GColorCombine(BlendSource,Disable);
+				Margin		= GRectMargin(0,0,0,0);
+			}		
+		}
+		.Inactive			=	.Default;
+		.InactiveRollover	=	.Rollover;
+		.InactivePress		=	.Press;
+		.InactiveDisable	=	.Disable;
+	}
+	
+	map SF_CtrlTheme_FreeRealms_Control						= GFC_Control_DefaultButton_Style;
+	map GFC_CtrlTheme_Bitmap_Control_Button					= GFC_Control_DefaultButton_Style;
+	map GFC_Control											= GFC_Control_DefaultButton_Style;
+}
+
+
+
+
+
+
+//****** Normal Help Button ******
+
+style SF_CtrlTheme_FreeRealms_Control_TitleBar_Standard_HelpButton_Style
+{
+	GFC_Control_Renderer_Control				= GFC_CtrlTheme_Bitmap_Control_Button_Renderer_ControlStandard;
+
+	
+	// No down offset
+	GFC_Control_Button_Size_DownOffset_Content = GPoint(0,0);
+
+	with GFC_CtrlTheme_Bitmap_Control_Button_Skin
+	{
+		.Default
+		{
+			layer {
+				LayerFlags  = GFlags(GCtrlBitmapSkin, GFC_BITMAPSKIN_CENTER_SCALE, GFC_BITMAPSKIN_SIDES_SCALE);
+				Image		= GBitmap("FreeRealms/FR_TitlebarButtons.tga", HVGrid, 8, 4, 7, 0);
+				DestCombine = GColorCombine(BlendSource,Disable);
+				Margin		= GRectMargin(0,0,0,0);
+			}
+		}
+		.Rollover
+		{
+			layer {
+				LayerFlags  = GFlags(GCtrlBitmapSkin, GFC_BITMAPSKIN_CENTER_SCALE, GFC_BITMAPSKIN_SIDES_SCALE);
+				Image		= GBitmap("FreeRealms/FR_TitlebarButtons.tga", HVGrid, 8, 4, 7, 1);
+				DestCombine = GColorCombine(BlendSource,Disable);
+				Margin		= GRectMargin(0,0,0,0);
+			}	
+		}
+		.Press
+		{
+			layer {
+				LayerFlags  = GFlags(GCtrlBitmapSkin, GFC_BITMAPSKIN_CENTER_SCALE, GFC_BITMAPSKIN_SIDES_SCALE);
+				Image		= GBitmap("FreeRealms/FR_TitlebarButtons.tga", HVGrid, 8, 4, 7, 2);
+				DestCombine = GColorCombine(BlendSource,Disable);
+				Margin		= GRectMargin(0,0,0,0);
+			}		
+		}
+		.Disable
+		{
+			layer {
+				LayerFlags  = GFlags(GCtrlBitmapSkin, GFC_BITMAPSKIN_CENTER_SCALE, GFC_BITMAPSKIN_SIDES_SCALE);
+				Image		= GBitmap("FreeRealms/FR_TitlebarButtons.tga", HVGrid, 8, 4, 7, 3);
+				DestCombine = GColorCombine(BlendSource,Disable);
+				Margin		= GRectMargin(0,0,0,0);
+			}		
+		}
+		.Inactive			=	.Default;
+		.InactiveRollover	=	.Rollover;
+		.InactivePress		=	.Press;
+		.InactiveDisable	=	.Disable;
+	}
+	
+	map SF_CtrlTheme_FreeRealms_Control						= GFC_Control_DefaultButton_Style;
+	map GFC_CtrlTheme_Bitmap_Control_Button					= GFC_Control_DefaultButton_Style;
+	map GFC_Control											= GFC_Control_DefaultButton_Style;
+}
+
+
+
+
+
+//****** Tool Close Button ******
+
+style SF_CtrlTheme_FreeRealms_Control_TitleBar_Tool_CloseButton_Style
+{
+	GFC_Control_Renderer_Control				= GFC_CtrlTheme_Bitmap_Control_Button_Renderer_ControlStandard;
+
+	
+	// No down offset
+	GFC_Control_Button_Size_DownOffset_Content = GPoint(0,0);
+
+	with GFC_CtrlTheme_Bitmap_Control_Button_Skin
+	{
+		.Default
+		{
+			layer {
+				LayerFlags  = GFlags(GCtrlBitmapSkin, GFC_BITMAPSKIN_CENTER_SCALE, GFC_BITMAPSKIN_SIDES_SCALE);
+				Image		= GBitmap("FreeRealms/FR_Tool_TitlebarButtons.tga", HVGrid, 8, 4, 0, 0);
+				DestCombine = GColorCombine(BlendSource,Disable);
+				Margin		= GRectMargin(0,0,0,0);
+			}
+		}
+		.Rollover
+		{
+			layer {
+				LayerFlags  = GFlags(GCtrlBitmapSkin, GFC_BITMAPSKIN_CENTER_SCALE, GFC_BITMAPSKIN_SIDES_SCALE);
+				Image		= GBitmap("FreeRealms/FR_Tool_TitlebarButtons.tga", HVGrid, 8, 4, 0, 1);
+				DestCombine = GColorCombine(BlendSource,Disable);
+				Margin		= GRectMargin(0,0,0,0);
+			}	
+		}
+		.Press
+		{
+			layer {
+				LayerFlags  = GFlags(GCtrlBitmapSkin, GFC_BITMAPSKIN_CENTER_SCALE, GFC_BITMAPSKIN_SIDES_SCALE);
+				Image		= GBitmap("FreeRealms/FR_Tool_TitlebarButtons.tga", HVGrid, 8, 4, 0, 2);
+				DestCombine = GColorCombine(BlendSource,Disable);
+				Margin		= GRectMargin(0,0,0,0);
+			}		
+		}
+		.Disable
+		{
+			layer {
+				LayerFlags  = GFlags(GCtrlBitmapSkin, GFC_BITMAPSKIN_CENTER_SCALE, GFC_BITMAPSKIN_SIDES_SCALE);
+				Image		= GBitmap("FreeRealms/FR_Tool_TitlebarButtons.tga", HVGrid, 8, 4, 0, 3);
+				DestCombine = GColorCombine(BlendSource,Disable);
+				Margin		= GRectMargin(0,0,0,0);
+			}		
+		}
+		.Inactive			=	.Default;
+		.InactiveRollover	=	.Rollover;
+		.InactivePress		=	.Press;
+		.InactiveDisable	=	.Disable;
+	}
+	
+	map SF_CtrlTheme_FreeRealms_Control						= GFC_Control_DefaultButton_Style;
+	map GFC_CtrlTheme_Bitmap_Control_Button					= GFC_Control_DefaultButton_Style;
+	map GFC_Control											= GFC_Control_DefaultButton_Style;
+}
+
+
+
+
+
+
+//****** Tool Maximize Button ****** 
+
+style SF_CtrlTheme_FreeRealms_Control_TitleBar_Tool_MaximizeButton_Style
+{
+	GFC_Control_Renderer_Control				= GFC_CtrlTheme_Bitmap_Control_Button_Renderer_ControlStandard;
+
+	// No down offset
+	GFC_Control_Button_Size_DownOffset_Content	= GPoint(0,0);
+
+
+	with GFC_CtrlTheme_Bitmap_Control_Button_Skin
+	{
+		.Default
+		{
+			layer {
+				LayerFlags  = GFlags(GCtrlBitmapSkin, GFC_BITMAPSKIN_CENTER_SCALE, GFC_BITMAPSKIN_SIDES_SCALE);
+				Image		= GBitmap("FreeRealms/FR_Tool_TitlebarButtons.tga", HVGrid, 8, 4, 1, 0);
+				DestCombine = GColorCombine(BlendSource,Disable);
+				Margin		= GRectMargin(0,0,0,0);
+			}
+		}
+		.Rollover
+		{
+			layer {
+				LayerFlags  = GFlags(GCtrlBitmapSkin, GFC_BITMAPSKIN_CENTER_SCALE, GFC_BITMAPSKIN_SIDES_SCALE);
+				Image		= GBitmap("FreeRealms/FR_Tool_TitlebarButtons.tga", HVGrid, 8, 4, 1, 1);
+				DestCombine = GColorCombine(BlendSource,Disable);
+				Margin		= GRectMargin(0,0,0,0);
+			}	
+		}
+		.Press
+		{
+			layer {
+				LayerFlags  = GFlags(GCtrlBitmapSkin, GFC_BITMAPSKIN_CENTER_SCALE, GFC_BITMAPSKIN_SIDES_SCALE);
+				Image		= GBitmap("FreeRealms/FR_Tool_TitlebarButtons.tga", HVGrid, 8, 4, 1, 2);
+				DestCombine = GColorCombine(BlendSource,Disable);
+				Margin		= GRectMargin(0,0,0,0);
+			}		
+		}
+		.Disable
+		{
+			layer {
+				LayerFlags  = GFlags(GCtrlBitmapSkin, GFC_BITMAPSKIN_CENTER_SCALE, GFC_BITMAPSKIN_SIDES_SCALE);
+				Image		= GBitmap("FreeRealms/FR_Tool_TitlebarButtons.tga", HVGrid, 8, 4, 1, 3);
+				DestCombine = GColorCombine(BlendSource,Disable);
+				Margin		= GRectMargin(0,0,0,0);
+			}		
+		}
+		.Inactive			=	.Default;
+		.InactiveRollover	=	.Rollover;
+		.InactivePress		=	.Press;
+		.InactiveDisable	=	.Disable;
+	}
+	
+	map SF_CtrlTheme_FreeRealms_Control						= GFC_Control_DefaultButton_Style;
+	map GFC_CtrlTheme_Bitmap_Control_Button					= GFC_Control_DefaultButton_Style;
+	map GFC_Control											= GFC_Control_DefaultButton_Style;
+}
+
+
+
+
+
+
+//****** Tool Minimize Button ****** 
+
+style SF_CtrlTheme_FreeRealms_Control_TitleBar_Tool_MinimizeButton_Style
+{
+	GFC_Control_Renderer_Control				= GFC_CtrlTheme_Bitmap_Control_Button_Renderer_ControlStandard;
+
+	// No down offset
+	GFC_Control_Button_Size_DownOffset_Content	= GPoint(0,0);
+
+
+	with GFC_CtrlTheme_Bitmap_Control_Button_Skin
+	{
+		.Default
+		{
+			layer {
+				LayerFlags  = GFlags(GCtrlBitmapSkin, GFC_BITMAPSKIN_CENTER_SCALE, GFC_BITMAPSKIN_SIDES_SCALE);
+				Image		= GBitmap("FreeRealms/FR_Tool_TitlebarButtons.tga", HVGrid, 8, 4, 3, 0);
+				DestCombine = GColorCombine(BlendSource,Disable);
+				Margin		= GRectMargin(0,0,0,0);
+			}
+		}
+		.Rollover
+		{
+			layer {
+				LayerFlags  = GFlags(GCtrlBitmapSkin, GFC_BITMAPSKIN_CENTER_SCALE, GFC_BITMAPSKIN_SIDES_SCALE);
+				Image		= GBitmap("FreeRealms/FR_Tool_TitlebarButtons.tga", HVGrid, 8, 4, 3, 1);
+				DestCombine = GColorCombine(BlendSource,Disable);
+				Margin		= GRectMargin(0,0,0,0);
+			}	
+		}
+		.Press
+		{
+			layer {
+				LayerFlags  = GFlags(GCtrlBitmapSkin, GFC_BITMAPSKIN_CENTER_SCALE, GFC_BITMAPSKIN_SIDES_SCALE);
+				Image		= GBitmap("FreeRealms/FR_Tool_TitlebarButtons.tga", HVGrid, 8, 4, 3, 2);
+				DestCombine = GColorCombine(BlendSource,Disable);
+				Margin		= GRectMargin(0,0,0,0);
+			}		
+		}
+		.Disable
+		{
+			layer {
+				LayerFlags  = GFlags(GCtrlBitmapSkin, GFC_BITMAPSKIN_CENTER_SCALE, GFC_BITMAPSKIN_SIDES_SCALE);
+				Image		= GBitmap("FreeRealms/FR_Tool_TitlebarButtons.tga", HVGrid, 8, 4, 3, 3);
+				DestCombine = GColorCombine(BlendSource,Disable);
+				Margin		= GRectMargin(0,0,0,0);
+			}		
+		}
+		.Inactive			=	.Default;
+		.InactiveRollover	=	.Rollover;
+		.InactivePress		=	.Press;
+		.InactiveDisable	=	.Disable;
+	}
+	
+	map SF_CtrlTheme_FreeRealms_Control						= GFC_Control_DefaultButton_Style;
+	map GFC_CtrlTheme_Bitmap_Control_Button					= GFC_Control_DefaultButton_Style;
+	map GFC_Control											= GFC_Control_DefaultButton_Style;
+}
+
+
+
+
+
+
+//****** Tool Restore Down Button ****** 
+
+style SF_CtrlTheme_FreeRealms_Control_TitleBar_Tool_MaximizeRestoreButton_Style
+{
+	GFC_Control_Renderer_Control				= GFC_CtrlTheme_Bitmap_Control_Button_Renderer_ControlStandard;
+
+	// No down offset
+	GFC_Control_Button_Size_DownOffset_Content	= GPoint(0,0);
+
+
+	with GFC_CtrlTheme_Bitmap_Control_Button_Skin
+	{
+		.Default
+		{
+			layer {
+				LayerFlags  = GFlags(GCtrlBitmapSkin, GFC_BITMAPSKIN_CENTER_SCALE, GFC_BITMAPSKIN_SIDES_SCALE);
+				Image		= GBitmap("FreeRealms/FR_Tool_TitlebarButtons.tga", HVGrid, 8, 4, 2, 0);
+				DestCombine = GColorCombine(BlendSource,Disable);
+				Margin		= GRectMargin(0,0,0,0);
+			}
+		}
+		.Rollover
+		{
+			layer {
+				LayerFlags  = GFlags(GCtrlBitmapSkin, GFC_BITMAPSKIN_CENTER_SCALE, GFC_BITMAPSKIN_SIDES_SCALE);
+				Image		= GBitmap("FreeRealms/FR_Tool_TitlebarButtons.tga", HVGrid, 8, 4, 2, 1);
+				DestCombine = GColorCombine(BlendSource,Disable);
+				Margin		= GRectMargin(0,0,0,0);
+			}	
+		}
+		.Press
+		{
+			layer {
+				LayerFlags  = GFlags(GCtrlBitmapSkin, GFC_BITMAPSKIN_CENTER_SCALE, GFC_BITMAPSKIN_SIDES_SCALE);
+				Image		= GBitmap("FreeRealms/FR_Tool_TitlebarButtons.tga", HVGrid, 8, 4, 2, 2);
+				DestCombine = GColorCombine(BlendSource,Disable);
+				Margin		= GRectMargin(0,0,0,0);
+			}		
+		}
+		.Disable
+		{
+			layer {
+				LayerFlags  = GFlags(GCtrlBitmapSkin, GFC_BITMAPSKIN_CENTER_SCALE, GFC_BITMAPSKIN_SIDES_SCALE);
+				Image		= GBitmap("FreeRealms/FR_Tool_TitlebarButtons.tga", HVGrid, 8, 4, 2, 3);
+				DestCombine = GColorCombine(BlendSource,Disable);
+				Margin		= GRectMargin(0,0,0,0);
+			}		
+		}
+		.Inactive			=	.Default;
+		.InactiveRollover	=	.Rollover;
+		.InactivePress		=	.Press;
+		.InactiveDisable	=	.Disable;
+	}
+	
+	map SF_CtrlTheme_FreeRealms_Control						= GFC_Control_DefaultButton_Style;
+	map GFC_CtrlTheme_Bitmap_Control_Button					= GFC_Control_DefaultButton_Style;
+	map GFC_Control											= GFC_Control_DefaultButton_Style;
+}
+
+
+
+
+
+
+//****** Tool Restore Up Button ****** 
+
+style SF_CtrlTheme_FreeRealms_Control_TitleBar_Tool_MinimizeRestoreButton_Style
+{
+	GFC_Control_Renderer_Control				= GFC_CtrlTheme_Bitmap_Control_Button_Renderer_ControlStandard;
+
+	// No down offset
+	GFC_Control_Button_Size_DownOffset_Content	= GPoint(0,0);
+
+
+	with GFC_CtrlTheme_Bitmap_Control_Button_Skin
+	{
+		.Default
+		{
+			layer {
+				LayerFlags  = GFlags(GCtrlBitmapSkin, GFC_BITMAPSKIN_CENTER_SCALE, GFC_BITMAPSKIN_SIDES_SCALE);
+				Image		= GBitmap("FreeRealms/FR_Tool_TitlebarButtons.tga", HVGrid, 8, 4, 4, 0);
+				DestCombine = GColorCombine(BlendSource,Disable);
+				Margin		= GRectMargin(0,0,0,0);
+			}
+		}
+		.Rollover
+		{
+			layer {
+				LayerFlags  = GFlags(GCtrlBitmapSkin, GFC_BITMAPSKIN_CENTER_SCALE, GFC_BITMAPSKIN_SIDES_SCALE);
+				Image		= GBitmap("FreeRealms/FR_Tool_TitlebarButtons.tga", HVGrid, 8, 4, 4, 1);
+				DestCombine = GColorCombine(BlendSource,Disable);
+				Margin		= GRectMargin(0,0,0,0);
+			}	
+		}
+		.Press
+		{
+			layer {
+				LayerFlags  = GFlags(GCtrlBitmapSkin, GFC_BITMAPSKIN_CENTER_SCALE, GFC_BITMAPSKIN_SIDES_SCALE);
+				Image		= GBitmap("FreeRealms/FR_Tool_TitlebarButtons.tga", HVGrid, 8, 4, 4, 2);
+				DestCombine = GColorCombine(BlendSource,Disable);
+				Margin		= GRectMargin(0,0,0,0);
+			}		
+		}
+		.Disable
+		{
+			layer {
+				LayerFlags  = GFlags(GCtrlBitmapSkin, GFC_BITMAPSKIN_CENTER_SCALE, GFC_BITMAPSKIN_SIDES_SCALE);
+				Image		= GBitmap("FreeRealms/FR_Tool_TitlebarButtons.tga", HVGrid, 8, 4, 4, 3);
+				DestCombine = GColorCombine(BlendSource,Disable);
+				Margin		= GRectMargin(0,0,0,0);
+			}		
+		}
+		.Inactive			=	.Default;
+		.InactiveRollover	=	.Rollover;
+		.InactivePress		=	.Press;
+		.InactiveDisable	=	.Disable;
+	}
+	
+	map SF_CtrlTheme_FreeRealms_Control						= GFC_Control_DefaultButton_Style;
+	map GFC_CtrlTheme_Bitmap_Control_Button					= GFC_Control_DefaultButton_Style;
+	map GFC_Control											= GFC_Control_DefaultButton_Style;
+}
+
+
+
+
+
+
+//****** Tool Collapse Button ****** 
+
+style SF_CtrlTheme_FreeRealms_Control_TitleBar_Tool_CollapseButton_Style
+{
+	GFC_Control_Renderer_Control				= GFC_CtrlTheme_Bitmap_Control_Button_Renderer_ControlStandard;
+
+	// No down offset
+	GFC_Control_Button_Size_DownOffset_Content	= GPoint(0,0);
+
+
+	with GFC_CtrlTheme_Bitmap_Control_Button_Skin
+	{
+		.Default
+		{
+			layer {
+				LayerFlags  = GFlags(GCtrlBitmapSkin, GFC_BITMAPSKIN_CENTER_SCALE, GFC_BITMAPSKIN_SIDES_SCALE);
+				Image		= GBitmap("FreeRealms/FR_Tool_TitlebarButtons.tga", HVGrid, 8, 4, 5, 0);
+				DestCombine = GColorCombine(BlendSource,Disable);
+				Margin		= GRectMargin(0,0,0,0);
+			}
+		}
+		.Rollover
+		{
+			layer {
+				LayerFlags  = GFlags(GCtrlBitmapSkin, GFC_BITMAPSKIN_CENTER_SCALE, GFC_BITMAPSKIN_SIDES_SCALE);
+				Image		= GBitmap("FreeRealms/FR_Tool_TitlebarButtons.tga", HVGrid, 8, 4, 5, 1);
+				DestCombine = GColorCombine(BlendSource,Disable);
+				Margin		= GRectMargin(0,0,0,0);
+			}	
+		}
+		.Press
+		{
+			layer {
+				LayerFlags  = GFlags(GCtrlBitmapSkin, GFC_BITMAPSKIN_CENTER_SCALE, GFC_BITMAPSKIN_SIDES_SCALE);
+				Image		= GBitmap("FreeRealms/FR_Tool_TitlebarButtons.tga", HVGrid, 8, 4, 5, 2);
+				DestCombine = GColorCombine(BlendSource,Disable);
+				Margin		= GRectMargin(0,0,0,0);
+			}		
+		}
+		.Disable
+		{
+			layer {
+				LayerFlags  = GFlags(GCtrlBitmapSkin, GFC_BITMAPSKIN_CENTER_SCALE, GFC_BITMAPSKIN_SIDES_SCALE);
+				Image		= GBitmap("FreeRealms/FR_Tool_TitlebarButtons.tga", HVGrid, 8, 4, 5, 3);
+				DestCombine = GColorCombine(BlendSource,Disable);
+				Margin		= GRectMargin(0,0,0,0);
+			}		
+		}
+		.Inactive			=	.Default;
+		.InactiveRollover	=	.Rollover;
+		.InactivePress		=	.Press;
+		.InactiveDisable	=	.Disable;
+	}
+	
+	map SF_CtrlTheme_FreeRealms_Control						= GFC_Control_DefaultButton_Style;
+	map GFC_CtrlTheme_Bitmap_Control_Button					= GFC_Control_DefaultButton_Style;
+	map GFC_Control											= GFC_Control_DefaultButton_Style;
+}
+
+
+
+
+
+
+//****** Tool Expand Button ****** 
+
+style SF_CtrlTheme_FreeRealms_Control_TitleBar_Tool_CollapseRestoreButton_Style
+{
+	GFC_Control_Renderer_Control				= GFC_CtrlTheme_Bitmap_Control_Button_Renderer_ControlStandard;
+
+	// No down offset
+	GFC_Control_Button_Size_DownOffset_Content	= GPoint(0,0);
+
+
+	with GFC_CtrlTheme_Bitmap_Control_Button_Skin
+	{
+		.Default
+		{
+			layer {
+				LayerFlags  = GFlags(GCtrlBitmapSkin, GFC_BITMAPSKIN_CENTER_SCALE, GFC_BITMAPSKIN_SIDES_SCALE);
+				Image		= GBitmap("FreeRealms/FR_Tool_TitlebarButtons.tga", HVGrid, 8, 4, 6, 0);
+				DestCombine = GColorCombine(BlendSource,Disable);
+				Margin		= GRectMargin(0,0,0,0);
+			}
+		}
+		.Rollover
+		{
+			layer {
+				LayerFlags  = GFlags(GCtrlBitmapSkin, GFC_BITMAPSKIN_CENTER_SCALE, GFC_BITMAPSKIN_SIDES_SCALE);
+				Image		= GBitmap("FreeRealms/FR_Tool_TitlebarButtons.tga", HVGrid, 8, 4, 6, 1);
+				DestCombine = GColorCombine(BlendSource,Disable);
+				Margin		= GRectMargin(0,0,0,0);
+			}	
+		}
+		.Press
+		{
+			layer {
+				LayerFlags  = GFlags(GCtrlBitmapSkin, GFC_BITMAPSKIN_CENTER_SCALE, GFC_BITMAPSKIN_SIDES_SCALE);
+				Image		= GBitmap("FreeRealms/FR_Tool_TitlebarButtons.tga", HVGrid, 8, 4, 6, 2);
+				DestCombine = GColorCombine(BlendSource,Disable);
+				Margin		= GRectMargin(0,0,0,0);
+			}		
+		}
+		.Disable
+		{
+			layer {
+				LayerFlags  = GFlags(GCtrlBitmapSkin, GFC_BITMAPSKIN_CENTER_SCALE, GFC_BITMAPSKIN_SIDES_SCALE);
+				Image		= GBitmap("FreeRealms/FR_Tool_TitlebarButtons.tga", HVGrid, 8, 4, 6, 3);
+				DestCombine = GColorCombine(BlendSource,Disable);
+				Margin		= GRectMargin(0,0,0,0);
+			}		
+		}
+		.Inactive			=	.Default;
+		.InactiveRollover	=	.Rollover;
+		.InactivePress		=	.Press;
+		.InactiveDisable	=	.Disable;
+	}
+	
+	map SF_CtrlTheme_FreeRealms_Control						= GFC_Control_DefaultButton_Style;
+	map GFC_CtrlTheme_Bitmap_Control_Button					= GFC_Control_DefaultButton_Style;
+	map GFC_Control											= GFC_Control_DefaultButton_Style;
+}
+
+
+
+
+
+
+//****** Tool Help Button ******
+
+style SF_CtrlTheme_FreeRealms_Control_TitleBar_Tool_HelpButton_Style
+{
+	GFC_Control_Renderer_Control				= GFC_CtrlTheme_Bitmap_Control_Button_Renderer_ControlStandard;
+
+	
+	// No down offset
+	GFC_Control_Button_Size_DownOffset_Content = GPoint(0,0);
+
+	with GFC_CtrlTheme_Bitmap_Control_Button_Skin
+	{
+		.Default
+		{
+			layer {
+				LayerFlags  = GFlags(GCtrlBitmapSkin, GFC_BITMAPSKIN_CENTER_SCALE, GFC_BITMAPSKIN_SIDES_SCALE);
+				Image		= GBitmap("FreeRealms/FR_Tool_TitlebarButtons.tga", HVGrid, 8, 4, 7, 0);
+				DestCombine = GColorCombine(BlendSource,Disable);
+				Margin		= GRectMargin(0,0,0,0);
+			}
+		}
+		.Rollover
+		{
+			layer {
+				LayerFlags  = GFlags(GCtrlBitmapSkin, GFC_BITMAPSKIN_CENTER_SCALE, GFC_BITMAPSKIN_SIDES_SCALE);
+				Image		= GBitmap("FreeRealms/FR_Tool_TitlebarButtons.tga", HVGrid, 8, 4, 7, 1);
+				DestCombine = GColorCombine(BlendSource,Disable);
+				Margin		= GRectMargin(0,0,0,0);
+			}	
+		}
+		.Press
+		{
+			layer {
+				LayerFlags  = GFlags(GCtrlBitmapSkin, GFC_BITMAPSKIN_CENTER_SCALE, GFC_BITMAPSKIN_SIDES_SCALE);
+				Image		= GBitmap("FreeRealms/FR_Tool_TitlebarButtons.tga", HVGrid, 8, 4, 7, 2);
+				DestCombine = GColorCombine(BlendSource,Disable);
+				Margin		= GRectMargin(0,0,0,0);
+			}		
+		}
+		.Disable
+		{
+			layer {
+				LayerFlags  = GFlags(GCtrlBitmapSkin, GFC_BITMAPSKIN_CENTER_SCALE, GFC_BITMAPSKIN_SIDES_SCALE);
+				Image		= GBitmap("FreeRealms/FR_Tool_TitlebarButtons.tga", HVGrid, 8, 4, 7, 3);
+				DestCombine = GColorCombine(BlendSource,Disable);
+				Margin		= GRectMargin(0,0,0,0);
+			}		
+		}
+		.Inactive			=	.Default;
+		.InactiveRollover	=	.Rollover;
+		.InactivePress		=	.Press;
+		.InactiveDisable	=	.Disable;
+	}
+	
+	map SF_CtrlTheme_FreeRealms_Control						= GFC_Control_DefaultButton_Style;
+	map GFC_CtrlTheme_Bitmap_Control_Button					= GFC_Control_DefaultButton_Style;
+	map GFC_Control											= GFC_Control_DefaultButton_Style;
+}
+
+
+
+
+
+
+//*****************************************************************************************************************************************************
+//*****************************************************************************************************************************************************
+//*****************************************************************************************************************************************************
+//*****************************************************************************************************************************************************
+//*****************************************************************************************************************************************************
+//****** Titlebar Styles *****************************************************************************************************************************************
+
+with GFC_Control_TitleBar
+{
+
+//****** Default Titlebar *****************************************************************************************************************************************
+
+	GFC_Control_DefaultTitleBar_Style
+	{
+		
+		GFC_Control_Update_ChildLayout			=	GFC_CtrlTheme_Bitmap_Control_TitleBar_Update_ChildLayout;
+
+		GFC_Control_Renderer_Control	 		=	GFC_CtrlTheme_Bitmap_Control_TitleBar_Renderer_Control;
+											
+		with .Child								
+		{								
+			// Label & icon					
+			.Image							=	GFC_CtrlTheme_Bitmap_Control_TitleBar_Child_Image;
+			.Text							=	GFC_CtrlTheme_Bitmap_Control_TitleBar_Child_Label;
+			.Border							=	GFC_CtrlTheme_Bitmap_Control_TitleBar_Child_Border;
+											
+			//.PopupMenu					
+											
+			// Buttons						
+			.CloseButton					=	GFC_CtrlTheme_Bitmap_Control_TitleBar_Child_CloseButton;
+			.MinimizeButton					=	GFC_CtrlTheme_Bitmap_Control_TitleBar_Child_MinimizeButton;
+			.MaximizeButton					=	GFC_CtrlTheme_Bitmap_Control_TitleBar_Child_MaximizeButton;
+			.CollapseButton					=	GFC_CtrlTheme_Bitmap_Control_TitleBar_Child_CollapseButton;
+			.CollapseRestoreButton			=	GFC_CtrlTheme_Bitmap_Control_TitleBar_Child_CollapseRestoreButton;
+			.MinimizeRestoreButton			=	GFC_CtrlTheme_Bitmap_Control_TitleBar_Child_MinimizeRestoreButton;
+			.MaximizeRestoreButton			=	GFC_CtrlTheme_Bitmap_Control_TitleBar_Child_MaximizeRestoreButton;
+			.HelpButton						=	GFC_CtrlTheme_Bitmap_Control_TitleBar_Child_HelpButton;
+		}
+
+		with .StyleId							
+		{								
+			// Label & icon					
+			.Image							=	GPropertyId(GFC_Control_StandardImage_Style);
+			.Text							=	GPropertyId(GFC_Control_StandardLabel_Style);
+			.Border							=	GPropertyId(GFC_Control_EmptyBorder_Style);
+														
+			// Buttons						
+			.CloseButton					=	GPropertyId(GFC_Control_StandardButton_Style);
+			.MinimizeButton					=	GPropertyId(GFC_Control_StandardButton_Style);
+			.MaximizeButton					=	GPropertyId(GFC_Control_StandardButton_Style);
+			.CollapseButton					=	GPropertyId(GFC_Control_StandardButton_Style);
+			.CollapseRestoreButton			=	GPropertyId(GFC_Control_StandardButton_Style);
+			.MinimizeRestoreButton			=	GPropertyId(GFC_Control_StandardButton_Style);
+			.MaximizeRestoreButton			=	GPropertyId(GFC_Control_StandardButton_Style);
+			.HelpButton						=	GPropertyId(GFC_Control_StandardButton_Style);
+		}
+
+		with GFC_Control_Flag
+		{
+			// Base control flags
+			.Transparent					=	GFlags(GCtrl, GFC_CF_TRANSPARENT);
+			.HitTest						=	0;	//GFlags(GCtrl, GFC_CF_HITTEST);
+			.SolidInner						=	0;	//GFlags(GCtrl, GFC_CF_SOLIDINNER);
+			.SolidBackground				=	0;	//GFlags(GCtrl, GFC_CF_SOLIDBACKGROUND);
+			.RegionClip						=	0;	//GFlags(GCtrl, GFC_CF_REGIONCLIP);
+			.RegionClipParent				=	GFlags(GCtrl, GFC_CF_REGIONCLIP_PARENT);
+			.NoExternalWindow				=	0;	//GFlags(GCtrl, GFC_CF_NOEXTERNALWINDOW);			
+			.TopLayer						=	0;	//GFlags(GCtrl, GFC_CF_TOPLAYER);
+			.TopLayerBitmap					=	0;	//GFlags(GCtrl, GFC_CF_TOPLAYERBITMAP);
+			.BottomLayerBitmap				=	0;	//GFlags(GCtrl, GFC_CF_BOTTOMLAYERBITMAP);
+											
+			// Control flag change masks	
+			.Mask_InvalidateControl				=	GFlags(GCtrl, GFC_CF_WINDOWACTIVE, GFC_CF_DISABLED, GFC_CF_TRANSPARENT, GFC_CF_TOPLAYER);
+		}
+
+		with .Flag								
+		{
+			.NoBorder							=	GFlags(GTitleBarCtrl, GFC_CF_TITLEBAR_NOBORDER);
+			.NoInnerFill						=	0;	//GFlags(GTitleBarCtrl, GFC_CF_TITLEBAR_NOINNERFILL);
+			
+			// TitleBar flag change 
+			//.TitleBarMask_InvalidateControl	=	0;	//GFlags(GTitleBarCtrl, );
+		}
+
+		with .Size
+		{
+			.Margin							=	GRectMargin(3,1,0,3);
+			.ButtonSpace					=	0;
+			.BarThickness					=	48;
+		}									
+												
+		with .Color								
+		{									
+			.Inner_Default						=	GFC_Control_Color_Inner_Select;
+			.Inner_Disable						=	.Inner_Default;
+			.Inner_Winoff						=	.Inner_Default;
+			.Inner_WinoffDisable				=	.Inner_Disable;
+													
+			.Text_Default						=	GFC_Control_DefaultWindow_Style[GFC_Control_Window_Color_Title_Default];
+			.Text_Disable						=	GFC_Control_DefaultWindow_Style[GFC_Control_Window_Color_Title_Disable];
+			.Text_Winoff						=	GFC_Control_DefaultWindow_Style[GFC_Control_Window_Color_Title_Winoff];
+			.Text_WinoffDisable					=	GFC_Control_DefaultWindow_Style[GFC_Control_Window_Color_Title_WinoffDisable];
+			.TextShadow_Default					=	GFC_Control_DefaultWindow_Style[GFC_Control_Window_Color_TitleShadow_Default];
+			.TextShadow_Disable					=	GFC_Control_DefaultWindow_Style[GFC_Control_Window_Color_TitleShadow_Disable];
+			.TextShadow_Winoff					=	GFC_Control_DefaultWindow_Style[GFC_Control_Window_Color_TitleShadow_Winoff];
+			.TextShadow_WinoffDisable			=	GFC_Control_DefaultWindow_Style[GFC_Control_Window_Color_TitleShadow_WinoffDisable];
+		}									
+												
+		with .Combine							
+		{									
+			.Inner_Default						=	GFC_Control_Combine_Surface;
+			.Inner_Disable						=	.Inner_Default;
+			.Inner_Winoff						=	.Inner_Default;
+			.Inner_WinoffDisable				=	.Inner_Disable;
+												
+			.Text_Default_Dest					=	GFC_Control_DefaultWindow_Style[GFC_Control_Window_Combine_Title_Default_Dest];
+			.Text_Default_Factor				=	GFC_Control_DefaultWindow_Style[GFC_Control_Window_Combine_Title_Default_Factor];
+			.Text_Disable_Dest					=	GFC_Control_DefaultWindow_Style[GFC_Control_Window_Combine_Title_Disable_Dest];
+			.Text_Disable_Factor				=	GFC_Control_DefaultWindow_Style[GFC_Control_Window_Combine_Title_Disable_Factor];
+			.Text_Winoff_Dest					=	GFC_Control_DefaultWindow_Style[GFC_Control_Window_Combine_Title_Winoff_Dest];
+			.Text_Winoff_Factor					=	GFC_Control_DefaultWindow_Style[GFC_Control_Window_Combine_Title_Winoff_Factor];
+			.Text_WinoffDisable_Dest			=	GFC_Control_DefaultWindow_Style[GFC_Control_Window_Combine_Title_WinoffDisable_Dest];
+			.Text_WinoffDisable_Factor			=	GFC_Control_DefaultWindow_Style[GFC_Control_Window_Combine_Title_WinoffDisable_Factor];
+												
+			.TextShadow_Default_Dest			=	GFC_Control_DefaultWindow_Style[GFC_Control_Window_Combine_TitleShadow_Default_Dest];
+			.TextShadow_Default_Factor			=	GFC_Control_DefaultWindow_Style[GFC_Control_Window_Combine_TitleShadow_Default_Factor];
+			.TextShadow_Disable_Dest			=	GFC_Control_DefaultWindow_Style[GFC_Control_Window_Combine_TitleShadow_Disable_Dest];
+			.TextShadow_Disable_Factor			=	GFC_Control_DefaultWindow_Style[GFC_Control_Window_Combine_TitleShadow_Disable_Factor];
+			.TextShadow_Winoff_Dest				=	GFC_Control_DefaultWindow_Style[GFC_Control_Window_Combine_TitleShadow_Winoff_Dest];
+			.TextShadow_Winoff_Factor			=	GFC_Control_DefaultWindow_Style[GFC_Control_Window_Combine_TitleShadow_Winoff_Factor];
+			.TextShadow_WinoffDisable_Dest		=	GFC_Control_DefaultWindow_Style[GFC_Control_Window_Combine_TitleShadow_WinoffDisable_Dest];
+			.TextShadow_WinoffDisable_Factor	=	GFC_Control_DefaultWindow_Style[GFC_Control_Window_Combine_TitleShadow_WinoffDisable_Factor];
+		}
+
+		with .Font
+		{				
+			.Text								=	GFC_Control_DefaultWindow_Style[GFC_Control_Window_Font_Title];
+		}	
+
+		with .Cursor								
+		{										
+			.Move								=	GFC_Control_Cursor_Arrow;
+			.MoveUp								=	.Move;
+			.MoveDown							=	.Move;
+			.MoveUpDown							=	.Move;
+			.MoveLeft							=	.Move;
+			.MoveRight							=	.Move;
+			.MoveLeftRight						=	.Move;
+		}
+		
+		with .Text							
+		{								
+			.CropDots							=	"...";
+												
+			with .ToolTip						
+			{								
+				.MinimizeButton					=	"Minimize";
+				.MaximizeButton					=	"Maximize";
+				.CollapseButton					=	"Collapse";
+				.CollapseRestoreButton			=	"Expand";
+				.MinimizeRestoreButton			=	"Restore Up";
+				.MaximizeRestoreButton			=	"Restore Down";
+				.CloseButton					=	"Close";
+				.HelpButton						=	"Help";
+			}							
+		}
+
+
+		// ******* Initialize the Bitmap theme properties to zero to prevent inheritance problems
+
+		with GFC_CtrlTheme_Bitmap_Control_TitleBar
+		{
+			with .Skin
+			{
+				.Full_Default						=	0;
+				.LeftItem_Default 					=	0;
+				.CenterItem_Default 				=	0;
+				.RightItem_Default 					=	0;
+				.ItemToCenter_Default 				=	0;
+				.CenterToItem_Default 				=	0;
+				.LeftToCenter_Default 				=	0;
+				.CenterToRight_Default 				=	0;
+				.ItemToRight_Default 				=	0;
+				.LeftToItem_Default 				=	0;
+				.ItemToItem_Default 				=	0;
+				.LeftToRight_Default 				=	0;
+				/*
+				.Full_Winoff						=	0;
+				.LeftItem_Winoff 					=	0;
+				.CenterItem_Winoff 					=	0;
+				.RightItem_Winoff 					=	0;
+				.ItemToCenter_Winoff 				=	0;
+				.CenterToItem_Winoff 				=	0;
+				.LeftToCenter_Winoff 				=	0;
+				.CenterToRight_Winoff 				=	0;
+				.ItemToRight_Winoff 				=	0;
+				.LeftToItem_Winoff 					=	0;
+				.ItemToItem_Winoff 					=	0;
+				.LeftToRight_Winoff 				=	0;
+				*/
+				.Full_Winoff						=	.Full_Default;
+				.LeftItem_Winoff 					=	.LeftItem_Default;
+				.CenterItem_Winoff 					=	.CenterItem_Default;
+				.RightItem_Winoff 					=	.RightItem_Default;
+				.ItemToCenter_Winoff 				=	.ItemToCenter_Default;
+				.CenterToItem_Winoff 				=	.CenterToItem_Default;
+				.LeftToCenter_Winoff 				=	.LeftToCenter_Default;
+				.CenterToRight_Winoff 				=	.CenterToRight_Default;
+				.ItemToRight_Winoff 				=	.ItemToRight_Default;
+				.LeftToItem_Winoff 					=	.LeftToItem_Default;
+				.ItemToItem_Winoff 					=	.ItemToItem_Default;
+				.LeftToRight_Winoff 				=	.LeftToRight_Default;
+			}
+
+			with .Flag
+			{
+				.CenterItem_Relative_Default		=	0;
+				.CenterItem_Relative_Winoff			=	0;
+
+				.Label_Align						=	0;
+				.Image_Align						=	0;
+				.CloseButton_Align					=	0;
+				.MinimizeButton_Align				=	0;
+				.MaximizeButton_Align				=	0;
+				.MinimizeRestoreButton_Align		=	0;
+				.MaximizeRestoreButton_Align		=	0;
+				.CollapseButton_Align				=	0;
+				.CollapseRestoreButton_Align		=	0;
+				.HelpButton_Align					=	0;
+			}
+
+			// *** Sizes
+			with .Size
+			{
+				.LeftItem_Width_Default				=	0;
+				.CenterItem_Width_Default			=	0;
+				.RightItem_Width_Default			=	0;
+				.LeftItem_Width_Winoff				=	.LeftItem_Width_Default;
+				.CenterItem_Width_Winoff			=	.CenterItem_Width_Default;
+				.RightItem_Width_Winoff				=	.RightItem_Width_Default;
+
+				.LeftItem_Margin_Default			=	GRectMargin(0,0,0,0);
+				.CenterItem_Margin_Default			=	GRectMargin(0,0,0,0);
+				.RightItem_Margin_Default			=	GRectMargin(0,0,0,0);
+				.LeftItem_Margin_Winoff				=	.LeftItem_Margin_Default;
+				.CenterItem_Margin_Winoff			=	.CenterItem_Margin_Default;
+				.RightItem_Margin_Winoff			=	.RightItem_Margin_Default;
+
+				.Label_Index						=	0;
+				.Label_Width						=	0;
+				.Label_Spacing						=	0;
+
+				.Image_Index						=	0;
+				.Image_Width						=	0;
+				.Image_Spacing						=	0;
+
+				.CloseButton_Index					=	0;
+				.CloseButton_Width					=	0;
+				.CloseButton_Spacing				=	0;
+
+				.MinimizeButton_Index				=	0;
+				.MinimizeButton_Width				=	0;
+				.MinimizeButton_Spacing				=	0;
+
+				.MaximizeButton_Index				=	0;
+				.MaximizeButton_Width				=	0;
+				.MaximizeButton_Spacing				=	0;
+
+				.MinimizeRestoreButton_Index		=	0;
+				.MinimizeRestoreButton_Width		=	0;
+				.MinimizeRestoreButton_Spacing		=	0;
+
+				.MaximizeRestoreButton_Index		=	0;
+				.MaximizeRestoreButton_Width		=	0;
+				.MaximizeRestoreButton_Spacing		=	0;
+
+				.CollapseButton_Index				=	0;
+				.CollapseButton_Width				=	0;
+				.CollapseButton_Spacing				=	0;
+
+				.CollapseRestoreButton_Index		=	0;
+				.CollapseRestoreButton_Width		=	0;
+				.CollapseRestoreButton_Spacing		=	0;
+
+				.HelpButton_Index					=	0;
+				.HelpButton_Width					=	0;
+				.HelpButton_Spacing					=	0;
+			}
+		}
+
+		map GFC_Control			=	GFC_Control_DefaultControl_Style;
+	}	// end GFC_Control_DefaultTitleBar_Style
+
+
+
+
+
+//** Normal TitleBar Section skins *****************************************************************************************************************
+			
+skin SF_CtrlTheme_FreeRealms_Control_Window_Skin_Standard_TitleBar_LeftItem_Default
+{
+
+	layer
+	{
+		LayerFlags		= GFlags(GCtrlBitmapSkin, GFC_BITMAPSKIN_CENTER_TILE, GFC_BITMAPSKIN_SIDES_SCALE, GFC_BITMAPSKIN_BACKCAPS_PARTIAL);
+		DestCombine		= GColorCombine(BlendSource,Disable);
+		Image			= GBitmap("FreeRealms/FR_Titlebar_corners_claps.tga", HVGrid, 1, 2, 0, 0);
+		Margin			= GRectMargin(35,0,0,0);
+	}
+
+}
+skin SF_CtrlTheme_FreeRealms_Control_Window_Skin_Standard_TitleBar_ItemToItem_Default
+{
+	layer
+	{
+		LayerFlags		= GFlags(GCtrlBitmapSkin, GFC_BITMAPSKIN_CENTER_TILE, GFC_BITMAPSKIN_SIDES_SCALE,
+												  GFC_BITMAPSKIN_BACKCAPS_REGION, GFC_BITMAPSKIN_REGION_TRANSPARENT, GFC_BITMAPSKIN_COLORKEY);
+		DestCombine		= GColorCombine(BlendSource,Disable);
+		Image			= GBitmap("FreeRealms/FR_Titlebar_middle_claps.tga" );
+
+	}
+	layer
+	{
+		LayerFlags		= GFlags(GCtrlBitmapSkin, GFC_BITMAPSKIN_CENTER_TILE, GFC_BITMAPSKIN_SIDES_SCALE, GFC_BITMAPSKIN_BACKCAPS_PARTIAL);
+		DestCombine		= GColorCombine(BlendSource,Disable);
+		Image			= GBitmap("FreeRealms/FR_Titlebar_middle_claps.tga");
+		Margin			= GRectMargin(0,0,0,0);
+	}
+}
+skin SF_CtrlTheme_FreeRealms_Control_Window_Skin_Standard_TitleBar_ItemToRight_Default
+{
+	layer
+	{
+		LayerFlags		= GFlags(GCtrlBitmapSkin, GFC_BITMAPSKIN_CENTER_TILE, GFC_BITMAPSKIN_SIDES_SCALE,												  GFC_BITMAPSKIN_BACKCAPS_REGION, GFC_BITMAPSKIN_REGION_TRANSPARENT, GFC_BITMAPSKIN_COLORKEY);
+		DestCombine		= GColorCombine(BlendSource,Disable);
+		Image			= GBitmap("FreeRealms/FR_Titlebar_middle_claps.tga");
+
+	}
+
+	layer
+	{
+		LayerFlags		= GFlags(GCtrlBitmapSkin, GFC_BITMAPSKIN_CENTER_TILE, GFC_BITMAPSKIN_SIDES_SCALE, GFC_BITMAPSKIN_BACKCAPS_PARTIAL);
+		DestCombine		= GColorCombine(BlendSource,Disable);
+		Image			= GBitmap("FreeRealms/FR_Titlebar_middle_claps.tga");
+		Margin			= GRectMargin(0,0,0,0);
+	}
+
+}
+skin SF_CtrlTheme_FreeRealms_Control_Window_Skin_Standard_TitleBar_LeftToCenter_Default
+{
+	layer
+	{
+		LayerFlags		= GFlags(GCtrlBitmapSkin, GFC_BITMAPSKIN_CENTER_TILE, GFC_BITMAPSKIN_SIDES_SCALE,
+												  GFC_BITMAPSKIN_BACKCAPS_REGION, GFC_BITMAPSKIN_REGION_TRANSPARENT, GFC_BITMAPSKIN_COLORKEY);
+		DestCombine		= GColorCombine(BlendSource,Disable);
+		Image			= GBitmap("FreeRealms/FR_Titlebar_middle_claps.tga");
+		Margin			= GRectMargin(0,0,0,0);
+		ColorKey		= GColor(0,0,0,0);
+		ColorKeyMax		= GColor(0,0,0,128);
+		ColorKeyMask	= GColor(0,0,0,255);
+	}
+	layer
+	{
+		LayerFlags		= GFlags(GCtrlBitmapSkin, GFC_BITMAPSKIN_CENTER_TILE, GFC_BITMAPSKIN_SIDES_SCALE, GFC_BITMAPSKIN_BACKCAPS_PARTIAL);
+		DestCombine		= GColorCombine(BlendSource,Disable);
+		Image			= GBitmap("FreeRealms/FR_Titlebar_middle_claps.tga");
+		Margin			= GRectMargin(0,0,0,0);
+	}
+}
+skin SF_CtrlTheme_FreeRealms_Control_Window_Skin_Standard_TitleBar_ItemToCenter_Default
+{
+	layer
+	{
+		LayerFlags		= GFlags(GCtrlBitmapSkin, GFC_BITMAPSKIN_CENTER_TILE, GFC_BITMAPSKIN_SIDES_SCALE,
+												  GFC_BITMAPSKIN_BACKCAPS_REGION, GFC_BITMAPSKIN_REGION_TRANSPARENT, GFC_BITMAPSKIN_COLORKEY);
+		DestCombine		= GColorCombine(BlendSource,Disable);
+		Image			= GBitmap("FreeRealms/FR_Titlebar_middle_claps.tga");
+		Margin			= GRectMargin(0,0,0,0);
+		ColorKey		= GColor(0,0,0,0);
+		ColorKeyMax		= GColor(0,0,0,128);
+		ColorKeyMask	= GColor(0,0,0,255);
+	}
+	layer
+	{
+		LayerFlags		= GFlags(GCtrlBitmapSkin, GFC_BITMAPSKIN_CENTER_TILE, GFC_BITMAPSKIN_SIDES_SCALE, GFC_BITMAPSKIN_BACKCAPS_PARTIAL);
+		DestCombine		= GColorCombine(BlendSource,Disable);
+		Image			= GBitmap("FreeRealms/FR_Titlebar_middle_claps.tga");
+		Margin			= GRectMargin(0,0,0,0);
+	}
+}
+skin SF_CtrlTheme_FreeRealms_Control_Window_Skin_Standard_TitleBar_CenterItem_Default
+{
+	layer
+	{
+		LayerFlags		= GFlags(GCtrlBitmapSkin, GFC_BITMAPSKIN_CENTER_SCALE, GFC_BITMAPSKIN_SIDES_SCALE,
+												  GFC_BITMAPSKIN_BACKCAPS_REGION, GFC_BITMAPSKIN_REGION_TRANSPARENT, GFC_BITMAPSKIN_COLORKEY);
+		DestCombine		= GColorCombine(BlendSource,Disable);
+		Image			= GBitmap("FreeRealms/FR_Titlebar_middle_claps.tga");
+		Margin			= GRectMargin(0,0,0,0);
+		ColorKey		= GColor(0,0,0,0);
+		ColorKeyMax		= GColor(0,0,0,128);
+		ColorKeyMask	= GColor(0,0,0,255);
+	}
+	layer
+	{
+		LayerFlags		= GFlags(GCtrlBitmapSkin, GFC_BITMAPSKIN_CENTER_TILE, GFC_BITMAPSKIN_SIDES_SCALE, GFC_BITMAPSKIN_BACKCAPS_PARTIAL);
+		DestCombine		= GColorCombine(BlendSource,Disable);
+		Image			= GBitmap("FreeRealms/FR_Titlebar_middle_claps.tga");
+		Margin			= GRectMargin(0,0,0,0);
+	}
+}
+
+skin SF_CtrlTheme_FreeRealms_Control_Window_Skin_Standard_TitleBar_CenterToItem_Default
+{
+	layer
+	{
+		LayerFlags		= GFlags(GCtrlBitmapSkin, GFC_BITMAPSKIN_CENTER_TILE, GFC_BITMAPSKIN_SIDES_SCALE,
+												  GFC_BITMAPSKIN_BACKCAPS_REGION, GFC_BITMAPSKIN_REGION_TRANSPARENT, GFC_BITMAPSKIN_COLORKEY);
+		DestCombine		= GColorCombine(BlendSource,Disable);
+		Image			= GBitmap("FreeRealms/FR_Titlebar_middle_claps.tga");
+		Margin			= GRectMargin(0,0,0,0);
+		ColorKey		= GColor(0,0,0,0);
+		ColorKeyMax		= GColor(0,0,0,128);
+		ColorKeyMask	= GColor(0,0,0,255);
+	}
+	layer
+	{
+		LayerFlags		= GFlags(GCtrlBitmapSkin, GFC_BITMAPSKIN_CENTER_TILE, GFC_BITMAPSKIN_SIDES_SCALE, GFC_BITMAPSKIN_BACKCAPS_PARTIAL);
+		DestCombine		= GColorCombine(BlendSource,Disable);
+		Image			= GBitmap("FreeRealms/FR_Titlebar_middle_claps.tga");
+		Margin			= GRectMargin(0,0,0,0);
+	}
+}
+skin SF_CtrlTheme_FreeRealms_Control_Window_Skin_Standard_TitleBar_CenterToRight_Default
+{
+	layer
+	{
+		LayerFlags		= GFlags(GCtrlBitmapSkin, GFC_BITMAPSKIN_CENTER_TILE, GFC_BITMAPSKIN_SIDES_SCALE,
+												  GFC_BITMAPSKIN_BACKCAPS_REGION, GFC_BITMAPSKIN_REGION_TRANSPARENT, GFC_BITMAPSKIN_COLORKEY);
+		DestCombine		= GColorCombine(BlendSource,Disable);
+		Image			= GBitmap("FreeRealms/FR_Titlebar_middle_claps.tga", HVGrid, 1, 2, 0, 1);
+		Margin			= GRectMargin(0,0,0,0);
+		ColorKey		= GColor(0,0,0,0);
+		ColorKeyMax		= GColor(0,0,0,128);
+		ColorKeyMask	= GColor(0,0,0,255);
+	}
+
+	layer
+	{
+		LayerFlags		= GFlags(GCtrlBitmapSkin, GFC_BITMAPSKIN_CENTER_TILE, GFC_BITMAPSKIN_SIDES_SCALE, GFC_BITMAPSKIN_BACKCAPS_PARTIAL);
+		DestCombine		= GColorCombine(BlendSource,Disable);
+		Image			= GBitmap("FreeRealms/FR_Titlebar_middle_claps.tga", HVGrid, 1, 2, 0, 1);
+		Margin			= GRectMargin(0,0,0,0);
+	}
+}
+skin SF_CtrlTheme_FreeRealms_Control_Window_Skin_Standard_TitleBar_RightItem_Default
+{
+	layer
+	{
+		LayerFlags		= GFlags(GCtrlBitmapSkin, GFC_BITMAPSKIN_CENTER_TILE, GFC_BITMAPSKIN_SIDES_SCALE,
+												  GFC_BITMAPSKIN_BACKCAPS_REGION, GFC_BITMAPSKIN_REGION_TRANSPARENT, GFC_BITMAPSKIN_COLORKEY);
+		DestCombine		= GColorCombine(BlendSource,Disable);
+		Image			= GBitmap("FreeRealms/FR_Titlebar_corners_claps.tga", HVGrid, 1, 2, 0, 1);
+	}
+	layer
+	{
+		LayerFlags		= GFlags(GCtrlBitmapSkin, GFC_BITMAPSKIN_CENTER_TILE, GFC_BITMAPSKIN_SIDES_SCALE, GFC_BITMAPSKIN_BACKCAPS_PARTIAL);
+		DestCombine		= GColorCombine(BlendSource,Disable);
+		Image			= GBitmap("FreeRealms/FR_Titlebar_corners_claps.tga", HVGrid, 1, 2, 0, 1);
+		Margin			= GRectMargin(0,0,0,0);
+	}
+}
+
+				
+//** Maximized **
+
+skin SF_CtrlTheme_FreeRealms_Control_Window_Skin_Standard_TitleBar_Maximized_LeftItem_Default
+{
+	layer
+	{
+		LayerFlags		= GFlags(GCtrlBitmapSkin, GFC_BITMAPSKIN_CENTER_TILE, GFC_BITMAPSKIN_SIDES_SCALE);
+		DestCombine		= GColorCombine(BlendSource,Disable);
+		Image			= GBitmap("FreeRealms/FR_Titlebar_corners_max.tga", HVGrid, 1, 2, 0, 0);
+		Margin			= GRectMargin(35,0,0,0);
+	}
+
+}
+skin SF_CtrlTheme_FreeRealms_Control_Window_Skin_Standard_TitleBar_Maximized_ItemToItem_Default
+{
+	layer
+	{
+		LayerFlags		= GFlags(GCtrlBitmapSkin, GFC_BITMAPSKIN_CENTER_TILE, GFC_BITMAPSKIN_SIDES_SCALE);
+		DestCombine		= GColorCombine(BlendSource,Disable);
+		Image			= GBitmap("FreeRealms/FR_Titlebar_middle_claps.tga", GRect(0, 5, 172, 38) );
+		Margin			= GRectMargin(0,0,0,0);
+	}
+
+}
+skin SF_CtrlTheme_FreeRealms_Control_Window_Skin_Standard_TitleBar_Maximized_ItemToRight_Default
+{
+	layer
+	{
+		LayerFlags		= GFlags(GCtrlBitmapSkin, GFC_BITMAPSKIN_CENTER_TILE, GFC_BITMAPSKIN_SIDES_SCALE);
+		DestCombine		= GColorCombine(BlendSource,Disable);
+		Image			= GBitmap("FreeRealms/FR_Titlebar_corners_max.tga", HVGrid, 1, 2, 0, 1);
+		Margin			= GRectMargin(35,0,35,0);
+	}
+}
+skin SF_CtrlTheme_FreeRealms_Control_Window_Skin_Standard_TitleBar_Maximized_LeftToCenter_Default
+{
+	layer
+	{
+		LayerFlags		= GFlags(GCtrlBitmapSkin, GFC_BITMAPSKIN_CENTER_TILE, GFC_BITMAPSKIN_SIDES_SCALE);
+		DestCombine		= GColorCombine(BlendSource,Disable);
+		Image			= GBitmap("FreeRealms/FR_Titlebar_middle_claps.tga", GRect(0, 5, 172, 38) );
+		Margin			= GRectMargin(0,0,0,0);
+	}
+}
+skin SF_CtrlTheme_FreeRealms_Control_Window_Skin_Standard_TitleBar_Maximized_ItemToCenter_Default
+{
+	layer
+	{
+		LayerFlags		= GFlags(GCtrlBitmapSkin, GFC_BITMAPSKIN_CENTER_TILE, GFC_BITMAPSKIN_SIDES_SCALE);
+		DestCombine		= GColorCombine(BlendSource,Disable);
+		Image			= GBitmap("FreeRealms/FR_Titlebar_middle_claps.tga", GRect(0, 5, 172, 38) );
+		Margin			= GRectMargin(0,0,0,0);
+	}
+}
+skin SF_CtrlTheme_FreeRealms_Control_Window_Skin_Standard_TitleBar_Maximized_CenterItem_Default
+{
+	layer
+	{
+		LayerFlags		= GFlags(GCtrlBitmapSkin, GFC_BITMAPSKIN_CENTER_TILE, GFC_BITMAPSKIN_SIDES_SCALE);
+		DestCombine		= GColorCombine(BlendSource,Disable);
+		Image			= GBitmap("FreeRealms/FR_Titlebar_center_max.tga", HVGrid, 1, 1, 0, 0);
+		Margin			= GRectMargin(0,0,0,0);
+	}
+}
+skin SF_CtrlTheme_FreeRealms_Control_Window_Skin_Standard_TitleBar_Maximized_CenterToItem_Default
+{
+	layer
+	{
+		LayerFlags		= GFlags(GCtrlBitmapSkin, GFC_BITMAPSKIN_CENTER_TILE, GFC_BITMAPSKIN_SIDES_SCALE);
+		DestCombine		= GColorCombine(BlendSource,Disable);
+		Image			= GBitmap("FreeRealms/FR_Titlebar_middle_claps.tga", GRect(0, 5, 172, 38) );
+		Margin			= GRectMargin(0,0,0,0);
+	}
+}
+skin SF_CtrlTheme_FreeRealms_Control_Window_Skin_Standard_TitleBar_Maximized_CenterToRight_Default
+{
+	layer
+	{
+		LayerFlags		= GFlags(GCtrlBitmapSkin, GFC_BITMAPSKIN_CENTER_TILE, GFC_BITMAPSKIN_SIDES_SCALE);
+		DestCombine		= GColorCombine(BlendSource,Disable);
+		Image			= GBitmap("FreeRealms/FR_Titlebar_corners_max.tga", HVGrid, 1, 2, 0, 1);
+		Margin			= GRectMargin(35,0,35,0);
+	}
+}
+skin SF_CtrlTheme_FreeRealms_Control_Window_Skin_Standard_TitleBar_Maximized_RightItem_Default
+{
+	layer
+	{
+		LayerFlags		= GFlags(GCtrlBitmapSkin, GFC_BITMAPSKIN_CENTER_TILE, GFC_BITMAPSKIN_SIDES_SCALE);
+		DestCombine		= GColorCombine(BlendSource,Disable);
+		Image			= GBitmap("FreeRealms/FR_Titlebar_corners_max.tga", HVGrid, 1, 2, 0, 1);
+		Margin			= GRectMargin(35,0,35,0);
+	}
+}			
+
+
+//** Minimized **
+
+skin SF_CtrlTheme_FreeRealms_Control_Window_Skin_Standard_TitleBar_Minimized_LeftItem_Default
+{
+	layer
+	{
+		LayerFlags		= GFlags(GCtrlBitmapSkin, GFC_BITMAPSKIN_CENTER_TILE, GFC_BITMAPSKIN_SIDES_SCALE);
+		DestCombine		= GColorCombine(BlendSource,Disable);
+		Image			= GBitmap("FreeRealms/FR_Titlebar_corners_max.tga", HVGrid, 1, 2, 0, 0);
+		Margin			= GRectMargin(35,0,0,0);
+	}
+}
+skin SF_CtrlTheme_FreeRealms_Control_Window_Skin_Standard_TitleBar_Minimized_ItemToItem_Default
+{
+	layer
+	{
+		LayerFlags		= GFlags(GCtrlBitmapSkin, GFC_BITMAPSKIN_CENTER_TILE, GFC_BITMAPSKIN_SIDES_SCALE);
+		DestCombine		= GColorCombine(BlendSource,Disable);
+		Image			= GBitmap("FreeRealms/FR_Titlebar_middle_claps.tga", GRect(0, 5, 172, 38) );
+		Margin			= GRectMargin(0,0,0,0);
+	}
+}
+skin SF_CtrlTheme_FreeRealms_Control_Window_Skin_Standard_TitleBar_Minimized_ItemToRight_Default
+{
+	layer
+	{
+		LayerFlags		= GFlags(GCtrlBitmapSkin, GFC_BITMAPSKIN_CENTER_TILE, GFC_BITMAPSKIN_SIDES_SCALE);
+		DestCombine		= GColorCombine(BlendSource,Disable);
+		Image			= GBitmap("FreeRealms/FR_Titlebar_corners_max.tga", HVGrid, 1, 2, 0, 1);
+		Margin			= GRectMargin(0,0,35,0);
+	}
+}
+skin SF_CtrlTheme_FreeRealms_Control_Window_Skin_Standard_TitleBar_Minimized_LeftToCenter_Default
+{
+	layer
+	{
+		LayerFlags		= GFlags(GCtrlBitmapSkin, GFC_BITMAPSKIN_CENTER_TILE, GFC_BITMAPSKIN_SIDES_SCALE);
+		DestCombine		= GColorCombine(BlendSource,Disable);
+		Image			= GBitmap("FreeRealms/FR_Titlebar_middle_claps.tga", GRect(0, 5, 172, 38) );
+		Margin			= GRectMargin(0,0,0,0);
+	}
+}
+skin SF_CtrlTheme_FreeRealms_Control_Window_Skin_Standard_TitleBar_Minimized_ItemToCenter_Default
+{
+	layer
+	{
+		LayerFlags		= GFlags(GCtrlBitmapSkin, GFC_BITMAPSKIN_CENTER_TILE, GFC_BITMAPSKIN_SIDES_SCALE);
+		DestCombine		= GColorCombine(BlendSource,Disable);
+		Image			= GBitmap("FreeRealms/FR_Titlebar_middle_claps.tga", GRect(0, 5, 172, 38) );
+		Margin			= GRectMargin(0,0,0,0);
+	}
+}
+skin SF_CtrlTheme_FreeRealms_Control_Window_Skin_Standard_TitleBar_Minimized_CenterItem_Default
+{
+	layer
+	{
+		LayerFlags		= GFlags(GCtrlBitmapSkin, GFC_BITMAPSKIN_CENTER_TILE, GFC_BITMAPSKIN_SIDES_SCALE);
+		DestCombine		= GColorCombine(BlendSource,Disable);
+		Image			= GBitmap("FreeRealms/FR_Titlebar_center_max.tga", HVGrid, 1, 1, 0, 0);
+		Margin			= GRectMargin(0,0,0,0);
+	}
+}
+skin SF_CtrlTheme_FreeRealms_Control_Window_Skin_Standard_TitleBar_Minimized_CenterToItem_Default
+{
+	layer
+	{
+		LayerFlags		= GFlags(GCtrlBitmapSkin, GFC_BITMAPSKIN_CENTER_TILE, GFC_BITMAPSKIN_SIDES_SCALE);
+		DestCombine		= GColorCombine(BlendSource,Disable);
+		Image			= GBitmap("FreeRealms/FR_Titlebar_middle_claps.tga", GRect(0, 5, 172, 38) );
+		Margin			= GRectMargin(0,0,0,0);
+	}
+}
+skin SF_CtrlTheme_FreeRealms_Control_Window_Skin_Standard_TitleBar_Minimized_CenterToRight_Default
+{
+	layer
+	{
+		LayerFlags		= GFlags(GCtrlBitmapSkin, GFC_BITMAPSKIN_CENTER_TILE, GFC_BITMAPSKIN_SIDES_SCALE);
+		DestCombine		= GColorCombine(BlendSource,Disable);
+		Image			= GBitmap("FreeRealms/FR_Titlebar_corners_max.tga", HVGrid, 1, 2, 0, 1);
+		Margin			= GRectMargin(0,0,0,0);
+	}
+}
+skin SF_CtrlTheme_FreeRealms_Control_Window_Skin_Standard_TitleBar_Minimized_RightItem_Default
+{
+	layer
+	{
+		LayerFlags		= GFlags(GCtrlBitmapSkin, GFC_BITMAPSKIN_CENTER_TILE, GFC_BITMAPSKIN_SIDES_SCALE);
+		DestCombine		= GColorCombine(BlendSource,Disable);
+		Image			= GBitmap("FreeRealms/FR_Titlebar_corners_max.tga", HVGrid, 1, 2, 0, 1);
+		Margin			= GRectMargin(0,0,0,0);
+	}
+}
+
+
+//** Collapsed **				
+
+skin SF_CtrlTheme_FreeRealms_Control_Window_Skin_Standard_TitleBar_Collapsed_LeftItem_Default
+{
+	layer
+	{
+		LayerFlags		= GFlags(GCtrlBitmapSkin, GFC_BITMAPSKIN_CENTER_TILE, GFC_BITMAPSKIN_SIDES_SCALE,
+												  GFC_BITMAPSKIN_BACKCAPS_REGION, GFC_BITMAPSKIN_REGION_TRANSPARENT, GFC_BITMAPSKIN_COLORKEY);
+		DestCombine		= GColorCombine(BlendSource,Disable);
+		Image			= GBitmap("FreeRealms/FR_Titlebar_corners_claps.tga", HVGrid, 1, 2, 0, 0);
+		Margin			= GRectMargin(0,0,0,0);
+		ColorKey		= GColor(0,0,0,0);
+		ColorKeyMax		= GColor(0,0,0,128);
+		ColorKeyMask	= GColor(0,0,0,255);
+	}
+	layer
+	{
+		LayerFlags		= GFlags(GCtrlBitmapSkin, GFC_BITMAPSKIN_CENTER_TILE, GFC_BITMAPSKIN_SIDES_SCALE, GFC_BITMAPSKIN_BACKCAPS_PARTIAL);
+		DestCombine		= GColorCombine(BlendSource,Disable);
+		Image			= GBitmap("FreeRealms/FR_Titlebar_corners_claps.tga", HVGrid, 1, 2, 0, 0);
+		Margin			= GRectMargin(0,0,0,0);
+	}
+}
+skin SF_CtrlTheme_FreeRealms_Control_Window_Skin_Standard_TitleBar_Collapsed_ItemToItem_Default
+{
+	layer
+	{
+		LayerFlags		= GFlags(GCtrlBitmapSkin, GFC_BITMAPSKIN_CENTER_TILE, GFC_BITMAPSKIN_SIDES_SCALE, 
+												  GFC_BITMAPSKIN_BACKCAPS_REGION, GFC_BITMAPSKIN_REGION_TRANSPARENT, GFC_BITMAPSKIN_COLORKEY);
+		DestCombine		= GColorCombine(BlendSource,Disable);
+		Image			= GBitmap("FreeRealms/FR_Titlebar_middle_claps.tga", HVGrid, 1, 1, 0, 0);
+		Margin			= GRectMargin(0,0,0,0);
+		ColorKey		= GColor(0,0,0,0);
+		ColorKeyMax		= GColor(0,0,0,128);
+		ColorKeyMask	= GColor(0,0,0,255);
+	}
+	layer
+	{
+		LayerFlags		= GFlags(GCtrlBitmapSkin, GFC_BITMAPSKIN_CENTER_TILE, GFC_BITMAPSKIN_SIDES_SCALE, GFC_BITMAPSKIN_BACKCAPS_PARTIAL);
+		DestCombine		= GColorCombine(BlendSource,Disable);
+		Image			= GBitmap("FreeRealms/FR_Titlebar_middle_claps.tga", HVGrid, 1, 1, 0, 0);
+		Margin			= GRectMargin(0,0,0,0);
+	}
+}
+skin SF_CtrlTheme_FreeRealms_Control_Window_Skin_Standard_TitleBar_Collapsed_ItemToRight_Default
+{
+	layer
+	{
+		LayerFlags		= GFlags(GCtrlBitmapSkin, GFC_BITMAPSKIN_CENTER_TILE, GFC_BITMAPSKIN_SIDES_SCALE,
+												  GFC_BITMAPSKIN_BACKCAPS_REGION, GFC_BITMAPSKIN_REGION_TRANSPARENT, GFC_BITMAPSKIN_COLORKEY);
+		DestCombine		= GColorCombine(BlendSource,Disable);
+		Image			= GBitmap("FreeRealms/FR_Titlebar_corners_claps.tga", HVGrid, 1, 2, 0, 1);
+		Margin			= GRectMargin(0,0,0,0);
+		ColorKey		= GColor(0,0,0,0);
+		ColorKeyMax		= GColor(0,0,0,128);
+		ColorKeyMask	= GColor(0,0,0,255);
+	}
+
+	layer
+	{
+		LayerFlags		= GFlags(GCtrlBitmapSkin, GFC_BITMAPSKIN_CENTER_TILE, GFC_BITMAPSKIN_SIDES_SCALE, GFC_BITMAPSKIN_BACKCAPS_PARTIAL);
+		DestCombine		= GColorCombine(BlendSource,Disable);
+		Image			= GBitmap("FreeRealms/FR_Titlebar_corners_claps.tga", HVGrid, 1, 2, 0, 1);
+		Margin			= GRectMargin(0,0,0,0);
+	}
+}
+skin SF_CtrlTheme_FreeRealms_Control_Window_Skin_Standard_TitleBar_Collapsed_LeftToCenter_Default
+{
+	layer
+	{
+		LayerFlags		= GFlags(GCtrlBitmapSkin, GFC_BITMAPSKIN_CENTER_TILE, GFC_BITMAPSKIN_SIDES_SCALE, 
+												  GFC_BITMAPSKIN_BACKCAPS_REGION, GFC_BITMAPSKIN_REGION_TRANSPARENT, GFC_BITMAPSKIN_COLORKEY);
+		DestCombine		= GColorCombine(BlendSource,Disable);
+		Image			= GBitmap("FreeRealms/FR_Titlebar_middle_claps.tga", HVGrid, 1, 1, 0, 0);
+		Margin			= GRectMargin(0,0,0,0);
+		ColorKey		= GColor(0,0,0,0);
+		ColorKeyMax		= GColor(0,0,0,128);
+		ColorKeyMask	= GColor(0,0,0,255);
+	}
+	layer
+	{
+		LayerFlags		= GFlags(GCtrlBitmapSkin, GFC_BITMAPSKIN_CENTER_TILE, GFC_BITMAPSKIN_SIDES_SCALE, GFC_BITMAPSKIN_BACKCAPS_PARTIAL);
+		DestCombine		= GColorCombine(BlendSource,Disable);
+		Image			= GBitmap("FreeRealms/FR_Titlebar_middle_claps.tga", HVGrid, 1, 1, 0, 0);
+		Margin			= GRectMargin(0,0,0,0);
+	}
+}
+skin SF_CtrlTheme_FreeRealms_Control_Window_Skin_Standard_TitleBar_Collapsed_ItemToCenter_Default
+{
+	layer
+	{
+		LayerFlags		= GFlags(GCtrlBitmapSkin, GFC_BITMAPSKIN_CENTER_TILE, GFC_BITMAPSKIN_SIDES_SCALE, 
+												  GFC_BITMAPSKIN_BACKCAPS_REGION, GFC_BITMAPSKIN_REGION_TRANSPARENT, GFC_BITMAPSKIN_COLORKEY);
+		DestCombine		= GColorCombine(BlendSource,Disable);
+		Image			= GBitmap("FreeRealms/FR_Titlebar_middle_claps.tga", HVGrid, 1, 1, 0, 0);
+		Margin			= GRectMargin(0,0,0,0);
+		ColorKey		= GColor(0,0,0,0);
+		ColorKeyMax		= GColor(0,0,0,128);
+		ColorKeyMask	= GColor(0,0,0,255);
+	}
+	layer
+	{
+		LayerFlags		= GFlags(GCtrlBitmapSkin, GFC_BITMAPSKIN_CENTER_TILE, GFC_BITMAPSKIN_SIDES_SCALE, GFC_BITMAPSKIN_BACKCAPS_PARTIAL);
+		DestCombine		= GColorCombine(BlendSource,Disable);
+		Image			= GBitmap("FreeRealms/FR_Titlebar_middle_claps.tga", HVGrid, 1, 1, 0, 0);
+		Margin			= GRectMargin(0,0,0,0);
+	}
+}
+skin SF_CtrlTheme_FreeRealms_Control_Window_Skin_Standard_TitleBar_Collapsed_CenterItem_Default
+{
+	layer
+	{
+		LayerFlags		= GFlags(GCtrlBitmapSkin, GFC_BITMAPSKIN_CENTER_TILE, GFC_BITMAPSKIN_SIDES_SCALE, 
+												  GFC_BITMAPSKIN_BACKCAPS_REGION, GFC_BITMAPSKIN_REGION_TRANSPARENT, GFC_BITMAPSKIN_COLORKEY);
+		DestCombine		= GColorCombine(BlendSource,Disable);
+		Image			= GBitmap("FreeRealms/FR_Titlebar03claps.tga", HVGrid, 1, 1, 0, 0);
+		Margin			= GRectMargin(0,0,0,0);
+		ColorKey		= GColor(0,0,0,0);
+		ColorKeyMax		= GColor(0,0,0,128);
+		ColorKeyMask	= GColor(0,0,0,255);
+	}
+	layer
+	{
+		LayerFlags		= GFlags(GCtrlBitmapSkin, GFC_BITMAPSKIN_CENTER_TILE, GFC_BITMAPSKIN_SIDES_SCALE, GFC_BITMAPSKIN_BACKCAPS_PARTIAL);
+		DestCombine		= GColorCombine(BlendSource,Disable);
+		Image			= GBitmap("FreeRealms/FR_Titlebar03claps.tga", HVGrid, 1, 1, 0, 0);
+		Margin			= GRectMargin(0,0,0,0);
+	}
+}
+skin SF_CtrlTheme_FreeRealms_Control_Window_Skin_Standard_TitleBar_Collapsed_CenterToItem_Default
+{
+	layer
+	{
+		LayerFlags		= GFlags(GCtrlBitmapSkin, GFC_BITMAPSKIN_CENTER_TILE, GFC_BITMAPSKIN_SIDES_SCALE, 
+												  GFC_BITMAPSKIN_BACKCAPS_REGION, GFC_BITMAPSKIN_REGION_TRANSPARENT, GFC_BITMAPSKIN_COLORKEY);
+		DestCombine		= GColorCombine(BlendSource,Disable);
+		Image			= GBitmap("FreeRealms/FR_Titlebar_middle_claps.tga", HVGrid, 1, 1, 0, 0);
+		Margin			= GRectMargin(0,0,0,0);
+		ColorKey		= GColor(0,0,0,0);
+		ColorKeyMax		= GColor(0,0,0,128);
+		ColorKeyMask	= GColor(0,0,0,255);
+	}
+	layer
+	{
+		LayerFlags		= GFlags(GCtrlBitmapSkin, GFC_BITMAPSKIN_CENTER_TILE, GFC_BITMAPSKIN_SIDES_SCALE, GFC_BITMAPSKIN_BACKCAPS_PARTIAL);
+		DestCombine		= GColorCombine(BlendSource,Disable);
+		Image			= GBitmap("FreeRealms/FR_Titlebar_middle_claps.tga", HVGrid, 1, 1, 0, 0);
+		Margin			= GRectMargin(0,0,0,0);
+	}
+}
+skin SF_CtrlTheme_FreeRealms_Control_Window_Skin_Standard_TitleBar_Collapsed_CenterToRight_Default
+{
+	layer
+	{
+		LayerFlags		= GFlags(GCtrlBitmapSkin, GFC_BITMAPSKIN_CENTER_TILE, GFC_BITMAPSKIN_SIDES_SCALE,
+												  GFC_BITMAPSKIN_BACKCAPS_REGION, GFC_BITMAPSKIN_REGION_TRANSPARENT, GFC_BITMAPSKIN_COLORKEY);
+		DestCombine		= GColorCombine(BlendSource,Disable);
+		Image			= GBitmap("FreeRealms/FR_Titlebar_corners_claps.tga", HVGrid, 1, 2, 0, 1);
+		Margin			= GRectMargin(0,0,0,0);
+		ColorKey		= GColor(0,0,0,0);
+		ColorKeyMax		= GColor(0,0,0,128);
+		ColorKeyMask	= GColor(0,0,0,255);
+	}
+
+	layer
+	{
+		LayerFlags		= GFlags(GCtrlBitmapSkin, GFC_BITMAPSKIN_CENTER_TILE, GFC_BITMAPSKIN_SIDES_SCALE, GFC_BITMAPSKIN_BACKCAPS_PARTIAL);
+		DestCombine		= GColorCombine(BlendSource,Disable);
+		Image			= GBitmap("FreeRealms/FR_Titlebar_corners_claps.tga", HVGrid, 1, 2, 0, 1);
+		Margin			= GRectMargin(0,0,0,0);
+	}
+}
+skin SF_CtrlTheme_FreeRealms_Control_Window_Skin_Standard_TitleBar_Collapsed_RightItem_Default
+{
+	layer
+	{
+		LayerFlags		= GFlags(GCtrlBitmapSkin, GFC_BITMAPSKIN_CENTER_TILE, GFC_BITMAPSKIN_SIDES_SCALE,
+												  GFC_BITMAPSKIN_BACKCAPS_REGION, GFC_BITMAPSKIN_REGION_TRANSPARENT, GFC_BITMAPSKIN_COLORKEY);
+		DestCombine		= GColorCombine(BlendSource,Disable);
+		Image			= GBitmap("FreeRealms/FR_Titlebar_corners_claps.tga", HVGrid, 1, 2, 0, 1);
+		Margin			= GRectMargin(0,0,0,0);
+		ColorKey		= GColor(0,0,0,0);
+		ColorKeyMax		= GColor(0,0,0,128);
+		ColorKeyMask	= GColor(0,0,0,255);
+	}
+
+	layer
+	{
+		LayerFlags		= GFlags(GCtrlBitmapSkin, GFC_BITMAPSKIN_CENTER_TILE, GFC_BITMAPSKIN_SIDES_SCALE, GFC_BITMAPSKIN_BACKCAPS_PARTIAL);
+		DestCombine		= GColorCombine(BlendSource,Disable);
+		Image			= GBitmap("FreeRealms/FR_Titlebar_corners_claps.tga", HVGrid, 1, 2, 0, 1);
+		Margin			= GRectMargin(0,0,0,0);
+	}
+}
+
+
+//** Inactive **			
+skin SF_CtrlTheme_FreeRealms_Control_Window_Skin_Standard_TitleBar_LeftItem_Winoff
+{
+
+	layer
+	{
+		LayerFlags		= GFlags(GCtrlBitmapSkin, GFC_BITMAPSKIN_CENTER_TILE, GFC_BITMAPSKIN_SIDES_SCALE, GFC_BITMAPSKIN_BACKCAPS_PARTIAL);
+		DestCombine		= GColorCombine(BlendSource,Disable);
+		Image			= GBitmap("FreeRealms/FR_Titlebar_corners_claps.tga", HVGrid, 1, 2, 0, 0);
+		Margin			= GRectMargin(35,0,0,0);
+	}
+
+}
+skin SF_CtrlTheme_FreeRealms_Control_Window_Skin_Standard_TitleBar_ItemToItem_Winoff
+{
+	layer
+	{
+		LayerFlags		= GFlags(GCtrlBitmapSkin, GFC_BITMAPSKIN_CENTER_TILE, GFC_BITMAPSKIN_SIDES_SCALE,
+												  GFC_BITMAPSKIN_BACKCAPS_REGION, GFC_BITMAPSKIN_REGION_TRANSPARENT, GFC_BITMAPSKIN_COLORKEY);
+		DestCombine		= GColorCombine(BlendSource,Disable);
+		Image			= GBitmap("FreeRealms/FR_Titlebar_middle_claps.tga" );
+
+	}
+	layer
+	{
+		LayerFlags		= GFlags(GCtrlBitmapSkin, GFC_BITMAPSKIN_CENTER_TILE, GFC_BITMAPSKIN_SIDES_SCALE, GFC_BITMAPSKIN_BACKCAPS_PARTIAL);
+		DestCombine		= GColorCombine(BlendSource,Disable);
+		Image			= GBitmap("FreeRealms/FR_Titlebar_middle_claps.tga");
+		Margin			= GRectMargin(0,0,0,0);
+	}
+}
+skin SF_CtrlTheme_FreeRealms_Control_Window_Skin_Standard_TitleBar_ItemToRight_Winoff
+{
+	layer
+	{
+		LayerFlags		= GFlags(GCtrlBitmapSkin, GFC_BITMAPSKIN_CENTER_TILE, GFC_BITMAPSKIN_SIDES_SCALE,												  GFC_BITMAPSKIN_BACKCAPS_REGION, GFC_BITMAPSKIN_REGION_TRANSPARENT, GFC_BITMAPSKIN_COLORKEY);
+		DestCombine		= GColorCombine(BlendSource,Disable);
+		Image			= GBitmap("FreeRealms/FR_Titlebar_middle_claps.tga");
+
+	}
+
+	layer
+	{
+		LayerFlags		= GFlags(GCtrlBitmapSkin, GFC_BITMAPSKIN_CENTER_TILE, GFC_BITMAPSKIN_SIDES_SCALE, GFC_BITMAPSKIN_BACKCAPS_PARTIAL);
+		DestCombine		= GColorCombine(BlendSource,Disable);
+		Image			= GBitmap("FreeRealms/FR_Titlebar_middle_claps.tga");
+		Margin			= GRectMargin(0,0,0,0);
+	}
+
+}
+skin SF_CtrlTheme_FreeRealms_Control_Window_Skin_Standard_TitleBar_LeftToCenter_Winoff
+{
+	layer
+	{
+		LayerFlags		= GFlags(GCtrlBitmapSkin, GFC_BITMAPSKIN_CENTER_TILE, GFC_BITMAPSKIN_SIDES_SCALE,
+												  GFC_BITMAPSKIN_BACKCAPS_REGION, GFC_BITMAPSKIN_REGION_TRANSPARENT, GFC_BITMAPSKIN_COLORKEY);
+		DestCombine		= GColorCombine(BlendSource,Disable);
+		Image			= GBitmap("FreeRealms/FR_Titlebar_middle_claps.tga");
+		Margin			= GRectMargin(0,0,0,0);
+		ColorKey		= GColor(0,0,0,0);
+		ColorKeyMax		= GColor(0,0,0,128);
+		ColorKeyMask	= GColor(0,0,0,255);
+	}
+	layer
+	{
+		LayerFlags		= GFlags(GCtrlBitmapSkin, GFC_BITMAPSKIN_CENTER_TILE, GFC_BITMAPSKIN_SIDES_SCALE, GFC_BITMAPSKIN_BACKCAPS_PARTIAL);
+		DestCombine		= GColorCombine(BlendSource,Disable);
+		Image			= GBitmap("FreeRealms/FR_Titlebar_middle_claps.tga");
+		Margin			= GRectMargin(0,0,0,0);
+	}
+}
+skin SF_CtrlTheme_FreeRealms_Control_Window_Skin_Standard_TitleBar_ItemToCenter_Winoff
+{
+	layer
+	{
+		LayerFlags		= GFlags(GCtrlBitmapSkin, GFC_BITMAPSKIN_CENTER_TILE, GFC_BITMAPSKIN_SIDES_SCALE,
+												  GFC_BITMAPSKIN_BACKCAPS_REGION, GFC_BITMAPSKIN_REGION_TRANSPARENT, GFC_BITMAPSKIN_COLORKEY);
+		DestCombine		= GColorCombine(BlendSource,Disable);
+		Image			= GBitmap("FreeRealms/FR_Titlebar_middle_claps.tga");
+		Margin			= GRectMargin(0,0,0,0);
+		ColorKey		= GColor(0,0,0,0);
+		ColorKeyMax		= GColor(0,0,0,128);
+		ColorKeyMask	= GColor(0,0,0,255);
+	}
+	layer
+	{
+		LayerFlags		= GFlags(GCtrlBitmapSkin, GFC_BITMAPSKIN_CENTER_TILE, GFC_BITMAPSKIN_SIDES_SCALE, GFC_BITMAPSKIN_BACKCAPS_PARTIAL);
+		DestCombine		= GColorCombine(BlendSource,Disable);
+		Image			= GBitmap("FreeRealms/FR_Titlebar_middle_claps.tga");
+		Margin			= GRectMargin(0,0,0,0);
+	}
+}
+skin SF_CtrlTheme_FreeRealms_Control_Window_Skin_Standard_TitleBar_CenterItem_Winoff
+{
+	layer
+	{
+		LayerFlags		= GFlags(GCtrlBitmapSkin, GFC_BITMAPSKIN_CENTER_SCALE, GFC_BITMAPSKIN_SIDES_SCALE,
+												  GFC_BITMAPSKIN_BACKCAPS_REGION, GFC_BITMAPSKIN_REGION_TRANSPARENT, GFC_BITMAPSKIN_COLORKEY);
+		DestCombine		= GColorCombine(BlendSource,Disable);
+		Image			= GBitmap("FreeRealms/FR_Titlebar_middle_claps.tga");
+		Margin			= GRectMargin(0,0,0,0);
+		ColorKey		= GColor(0,0,0,0);
+		ColorKeyMax		= GColor(0,0,0,128);
+		ColorKeyMask	= GColor(0,0,0,255);
+	}
+	layer
+	{
+		LayerFlags		= GFlags(GCtrlBitmapSkin, GFC_BITMAPSKIN_CENTER_TILE, GFC_BITMAPSKIN_SIDES_SCALE, GFC_BITMAPSKIN_BACKCAPS_PARTIAL);
+		DestCombine		= GColorCombine(BlendSource,Disable);
+		Image			= GBitmap("FreeRealms/FR_Titlebar_middle_claps.tga");
+		Margin			= GRectMargin(0,0,0,0);
+	}
+}
+
+skin SF_CtrlTheme_FreeRealms_Control_Window_Skin_Standard_TitleBar_CenterToItem_Winoff
+{
+	layer
+	{
+		LayerFlags		= GFlags(GCtrlBitmapSkin, GFC_BITMAPSKIN_CENTER_TILE, GFC_BITMAPSKIN_SIDES_SCALE,
+												  GFC_BITMAPSKIN_BACKCAPS_REGION, GFC_BITMAPSKIN_REGION_TRANSPARENT, GFC_BITMAPSKIN_COLORKEY);
+		DestCombine		= GColorCombine(BlendSource,Disable);
+		Image			= GBitmap("FreeRealms/FR_Titlebar_middle_claps.tga");
+		Margin			= GRectMargin(0,0,0,0);
+		ColorKey		= GColor(0,0,0,0);
+		ColorKeyMax		= GColor(0,0,0,128);
+		ColorKeyMask	= GColor(0,0,0,255);
+	}
+	layer
+	{
+		LayerFlags		= GFlags(GCtrlBitmapSkin, GFC_BITMAPSKIN_CENTER_TILE, GFC_BITMAPSKIN_SIDES_SCALE, GFC_BITMAPSKIN_BACKCAPS_PARTIAL);
+		DestCombine		= GColorCombine(BlendSource,Disable);
+		Image			= GBitmap("FreeRealms/FR_Titlebar_middle_claps.tga");
+		Margin			= GRectMargin(0,0,0,0);
+	}
+}
+skin SF_CtrlTheme_FreeRealms_Control_Window_Skin_Standard_TitleBar_CenterToRight_Winoff
+{
+	layer
+	{
+		LayerFlags		= GFlags(GCtrlBitmapSkin, GFC_BITMAPSKIN_CENTER_TILE, GFC_BITMAPSKIN_SIDES_SCALE,
+												  GFC_BITMAPSKIN_BACKCAPS_REGION, GFC_BITMAPSKIN_REGION_TRANSPARENT, GFC_BITMAPSKIN_COLORKEY);
+		DestCombine		= GColorCombine(BlendSource,Disable);
+		Image			= GBitmap("FreeRealms/FR_Titlebar_middle_claps.tga", HVGrid, 1, 2, 0, 1);
+		Margin			= GRectMargin(0,0,0,0);
+		ColorKey		= GColor(0,0,0,0);
+		ColorKeyMax		= GColor(0,0,0,128);
+		ColorKeyMask	= GColor(0,0,0,255);
+	}
+
+	layer
+	{
+		LayerFlags		= GFlags(GCtrlBitmapSkin, GFC_BITMAPSKIN_CENTER_TILE, GFC_BITMAPSKIN_SIDES_SCALE, GFC_BITMAPSKIN_BACKCAPS_PARTIAL);
+		DestCombine		= GColorCombine(BlendSource,Disable);
+		Image			= GBitmap("FreeRealms/FR_Titlebar_middle_claps.tga", HVGrid, 1, 2, 0, 1);
+		Margin			= GRectMargin(0,0,0,0);
+	}
+}
+skin SF_CtrlTheme_FreeRealms_Control_Window_Skin_Standard_TitleBar_RightItem_Winoff
+{
+	layer
+	{
+		LayerFlags		= GFlags(GCtrlBitmapSkin, GFC_BITMAPSKIN_CENTER_TILE, GFC_BITMAPSKIN_SIDES_SCALE,
+												  GFC_BITMAPSKIN_BACKCAPS_REGION, GFC_BITMAPSKIN_REGION_TRANSPARENT, GFC_BITMAPSKIN_COLORKEY);
+		DestCombine		= GColorCombine(BlendSource,Disable);
+		Image			= GBitmap("FreeRealms/FR_Titlebar_corners_claps.tga", HVGrid, 1, 2, 0, 1);
+	}
+	layer
+	{
+		LayerFlags		= GFlags(GCtrlBitmapSkin, GFC_BITMAPSKIN_CENTER_TILE, GFC_BITMAPSKIN_SIDES_SCALE, GFC_BITMAPSKIN_BACKCAPS_PARTIAL);
+		DestCombine		= GColorCombine(BlendSource,Disable);
+		Image			= GBitmap("FreeRealms/FR_Titlebar_corners_claps.tga", HVGrid, 1, 2, 0, 1);
+		Margin			= GRectMargin(0,0,0,0);
+	}
+}
+
+				
+//** Maximized **
+
+skin SF_CtrlTheme_FreeRealms_Control_Window_Skin_Standard_TitleBar_Maximized_LeftItem_Winoff
+{
+	layer
+	{
+		LayerFlags		= GFlags(GCtrlBitmapSkin, GFC_BITMAPSKIN_CENTER_TILE, GFC_BITMAPSKIN_SIDES_SCALE);
+		DestCombine		= GColorCombine(BlendSource,Disable);
+		Image			= GBitmap("FreeRealms/FR_Titlebar_corners_max.tga", HVGrid, 1, 2, 0, 0);
+		Margin			= GRectMargin(35,0,0,0);
+	}
+}
+skin SF_CtrlTheme_FreeRealms_Control_Window_Skin_Standard_TitleBar_Maximized_ItemToItem_Winoff
+{
+	layer
+	{
+		LayerFlags		= GFlags(GCtrlBitmapSkin, GFC_BITMAPSKIN_CENTER_TILE, GFC_BITMAPSKIN_SIDES_SCALE);
+		DestCombine		= GColorCombine(BlendSource,Disable);
+		Image			= GBitmap("FreeRealms/FR_Titlebar_middle_claps.tga", GRect(0, 5, 172, 38) );
+		Margin			= GRectMargin(0,0,0,0);
+	}
+}
+skin SF_CtrlTheme_FreeRealms_Control_Window_Skin_Standard_TitleBar_Maximized_ItemToRight_Winoff
+{
+	layer
+	{
+		LayerFlags		= GFlags(GCtrlBitmapSkin, GFC_BITMAPSKIN_CENTER_TILE, GFC_BITMAPSKIN_SIDES_SCALE);
+		DestCombine		= GColorCombine(BlendSource,Disable);
+		Image			= GBitmap("FreeRealms/FR_Titlebar_corners_max.tga", HVGrid, 1, 2, 0, 1);
+		Margin			= GRectMargin(0,0,35,0);
+	}
+}
+skin SF_CtrlTheme_FreeRealms_Control_Window_Skin_Standard_TitleBar_Maximized_LeftToCenter_Winoff
+{
+	layer
+	{
+		LayerFlags		= GFlags(GCtrlBitmapSkin, GFC_BITMAPSKIN_CENTER_TILE, GFC_BITMAPSKIN_SIDES_SCALE);
+		DestCombine		= GColorCombine(BlendSource,Disable);
+		Image			= GBitmap("FreeRealms/FR_Titlebar_middle_claps.tga", GRect(0, 5, 172, 38) );
+		Margin			= GRectMargin(0,0,0,0);
+	}
+}
+skin SF_CtrlTheme_FreeRealms_Control_Window_Skin_Standard_TitleBar_Maximized_ItemToCenter_Winoff
+{
+	layer
+	{
+		LayerFlags		= GFlags(GCtrlBitmapSkin, GFC_BITMAPSKIN_CENTER_TILE, GFC_BITMAPSKIN_SIDES_SCALE);
+		DestCombine		= GColorCombine(BlendSource,Disable);
+		Image			= GBitmap("FreeRealms/FR_Titlebar_middle_claps.tga", GRect(0, 5, 172, 38) );
+		Margin			= GRectMargin(0,0,0,0);
+	}
+}
+skin SF_CtrlTheme_FreeRealms_Control_Window_Skin_Standard_TitleBar_Maximized_CenterItem_Winoff
+{
+	layer
+	{
+		LayerFlags		= GFlags(GCtrlBitmapSkin, GFC_BITMAPSKIN_CENTER_TILE, GFC_BITMAPSKIN_SIDES_SCALE);
+		DestCombine		= GColorCombine(BlendSource,Disable);
+		Image			= GBitmap("FreeRealms/FR_Titlebar_center_max.tga", HVGrid, 1, 1, 0, 0);
+		Margin			= GRectMargin(0,0,0,0);
+	}
+}
+skin SF_CtrlTheme_FreeRealms_Control_Window_Skin_Standard_TitleBar_Maximized_CenterToItem_Winoff
+{
+	layer
+	{
+		LayerFlags		= GFlags(GCtrlBitmapSkin, GFC_BITMAPSKIN_CENTER_TILE, GFC_BITMAPSKIN_SIDES_SCALE);
+		DestCombine		= GColorCombine(BlendSource,Disable);
+		Image			= GBitmap("FreeRealms/FR_Titlebar_middle_claps.tga", GRect(0, 5, 172, 38) );
+		Margin			= GRectMargin(0,0,0,0);
+	}
+}
+skin SF_CtrlTheme_FreeRealms_Control_Window_Skin_Standard_TitleBar_Maximized_CenterToRight_Winoff
+{
+	layer
+	{
+		LayerFlags		= GFlags(GCtrlBitmapSkin, GFC_BITMAPSKIN_CENTER_TILE, GFC_BITMAPSKIN_SIDES_SCALE);
+		DestCombine		= GColorCombine(BlendSource,Disable);
+		Image			= GBitmap("FreeRealms/FR_Titlebar_corners_max.tga", HVGrid, 1, 2, 0, 1);
+		Margin			= GRectMargin(0,0,35,0);
+	}
+}
+skin SF_CtrlTheme_FreeRealms_Control_Window_Skin_Standard_TitleBar_Maximized_RightItem_Winoff
+{
+	layer
+	{
+		LayerFlags		= GFlags(GCtrlBitmapSkin, GFC_BITMAPSKIN_CENTER_TILE, GFC_BITMAPSKIN_SIDES_SCALE);
+		DestCombine		= GColorCombine(BlendSource,Disable);
+		Image			= GBitmap("FreeRealms/FR_Titlebar_corners_max.tga", HVGrid, 1, 2, 0, 1);
+		Margin			= GRectMargin(0,0,35,0);
+	}
+}
+
+				
+//** Minimized **
+
+skin SF_CtrlTheme_FreeRealms_Control_Window_Skin_Standard_TitleBar_Minimized_LeftItem_Winoff
+{
+	layer
+	{
+		LayerFlags		= GFlags(GCtrlBitmapSkin, GFC_BITMAPSKIN_CENTER_TILE, GFC_BITMAPSKIN_SIDES_SCALE);
+		DestCombine		= GColorCombine(BlendSource,Disable);
+		Image			= GBitmap("FreeRealms/FR_Titlebar_corners_max.tga", HVGrid, 1, 2, 0, 0);
+		Margin			= GRectMargin(35,0,0,0);
+	}
+}
+skin SF_CtrlTheme_FreeRealms_Control_Window_Skin_Standard_TitleBar_Minimized_ItemToItem_Winoff
+{
+	layer
+	{
+		LayerFlags		= GFlags(GCtrlBitmapSkin, GFC_BITMAPSKIN_CENTER_TILE, GFC_BITMAPSKIN_SIDES_SCALE);
+		DestCombine		= GColorCombine(BlendSource,Disable);
+		Image			= GBitmap("FreeRealms/FR_Titlebar_middle_claps.tga", GRect(0, 5, 172, 38) );
+		Margin			= GRectMargin(0,0,0,0);
+	}
+}
+skin SF_CtrlTheme_FreeRealms_Control_Window_Skin_Standard_TitleBar_Minimized_ItemToRight_Winoff
+{
+	layer
+	{
+		LayerFlags		= GFlags(GCtrlBitmapSkin, GFC_BITMAPSKIN_CENTER_TILE, GFC_BITMAPSKIN_SIDES_SCALE);
+		DestCombine		= GColorCombine(BlendSource,Disable);
+		Image			= GBitmap("FreeRealms/FR_Titlebar_corners_max.tga", HVGrid, 1, 2, 0, 1);
+		Margin			= GRectMargin(0,0,35,0);
+	}
+}
+skin SF_CtrlTheme_FreeRealms_Control_Window_Skin_Standard_TitleBar_Minimized_LeftToCenter_Winoff
+{
+	layer
+	{
+		LayerFlags		= GFlags(GCtrlBitmapSkin, GFC_BITMAPSKIN_CENTER_TILE, GFC_BITMAPSKIN_SIDES_SCALE);
+		DestCombine		= GColorCombine(BlendSource,Disable);
+		Image			= GBitmap("FreeRealms/FR_Titlebar_middle_claps.tga", GRect(0, 5, 172, 38) );
+		Margin			= GRectMargin(0,0,0,0);
+	}
+}
+skin SF_CtrlTheme_FreeRealms_Control_Window_Skin_Standard_TitleBar_Minimized_ItemToCenter_Winoff
+{
+	layer
+	{
+		LayerFlags		= GFlags(GCtrlBitmapSkin, GFC_BITMAPSKIN_CENTER_TILE, GFC_BITMAPSKIN_SIDES_SCALE);
+		DestCombine		= GColorCombine(BlendSource,Disable);
+		Image			= GBitmap("FreeRealms/FR_Titlebar_middle_claps.tga", GRect(0, 5, 172, 38) );
+		Margin			= GRectMargin(0,0,0,0);
+	}
+}
+skin SF_CtrlTheme_FreeRealms_Control_Window_Skin_Standard_TitleBar_Minimized_CenterItem_Winoff
+{
+	layer
+	{
+		LayerFlags		= GFlags(GCtrlBitmapSkin, GFC_BITMAPSKIN_CENTER_TILE, GFC_BITMAPSKIN_SIDES_SCALE);
+		DestCombine		= GColorCombine(BlendSource,Disable);
+		Image			= GBitmap("FreeRealms/FR_Titlebar_center_max.tga", HVGrid, 1, 1, 0, 0);
+		Margin			= GRectMargin(0,0,0,0);
+	}
+}
+skin SF_CtrlTheme_FreeRealms_Control_Window_Skin_Standard_TitleBar_Minimized_CenterToItem_Winoff
+{
+	layer
+	{
+		LayerFlags		= GFlags(GCtrlBitmapSkin, GFC_BITMAPSKIN_CENTER_TILE, GFC_BITMAPSKIN_SIDES_SCALE);
+		DestCombine		= GColorCombine(BlendSource,Disable);
+		Image			= GBitmap("FreeRealms/FR_Titlebar_middle_claps.tga", GRect(0, 5, 172, 38) );
+		Margin			= GRectMargin(0,0,0,0);
+	}
+}
+skin SF_CtrlTheme_FreeRealms_Control_Window_Skin_Standard_TitleBar_Minimized_CenterToRight_Winoff
+{
+	layer
+	{
+		LayerFlags		= GFlags(GCtrlBitmapSkin, GFC_BITMAPSKIN_CENTER_TILE, GFC_BITMAPSKIN_SIDES_SCALE);
+		DestCombine		= GColorCombine(BlendSource,Disable);
+		Image			= GBitmap("FreeRealms/FR_Titlebar_corners_max.tga", HVGrid, 1, 2, 0, 1);
+		Margin			= GRectMargin(0,0,0,0);
+	}
+}
+skin SF_CtrlTheme_FreeRealms_Control_Window_Skin_Standard_TitleBar_Minimized_RightItem_Winoff
+{
+	layer
+	{
+		LayerFlags		= GFlags(GCtrlBitmapSkin, GFC_BITMAPSKIN_CENTER_TILE, GFC_BITMAPSKIN_SIDES_SCALE);
+		DestCombine		= GColorCombine(BlendSource,Disable);
+		Image			= GBitmap("FreeRealms/FR_Titlebar_corners_max.tga", HVGrid, 1, 2, 0, 1);
+		Margin			= GRectMargin(0,0,0,0);
+	}
+}
+
+//** Collapsed **
+
+skin SF_CtrlTheme_FreeRealms_Control_Window_Skin_Standard_TitleBar_Collapsed_LeftItem_Winoff
+{
+	layer
+	{
+		LayerFlags		= GFlags(GCtrlBitmapSkin, GFC_BITMAPSKIN_CENTER_TILE, GFC_BITMAPSKIN_SIDES_SCALE,
+												  GFC_BITMAPSKIN_BACKCAPS_REGION, GFC_BITMAPSKIN_REGION_TRANSPARENT, GFC_BITMAPSKIN_COLORKEY);
+		DestCombine		= GColorCombine(BlendSource,Disable);
+		Image			= GBitmap("FreeRealms/FR_Titlebar_corners_claps.tga", HVGrid, 1, 2, 0, 0);
+		Margin			= GRectMargin(0,0,0,0);
+		ColorKey		= GColor(0,0,0,0);
+		ColorKeyMax		= GColor(0,0,0,128);
+		ColorKeyMask	= GColor(0,0,0,255);
+	}
+	layer
+	{
+		LayerFlags		= GFlags(GCtrlBitmapSkin, GFC_BITMAPSKIN_CENTER_TILE, GFC_BITMAPSKIN_SIDES_SCALE, GFC_BITMAPSKIN_BACKCAPS_PARTIAL);
+		DestCombine		= GColorCombine(BlendSource,Disable);
+		Image			= GBitmap("FreeRealms/FR_Titlebar_corners_claps.tga", HVGrid, 1, 2, 0, 0);
+		Margin			= GRectMargin(0,0,0,0);
+	}
+}
+skin SF_CtrlTheme_FreeRealms_Control_Window_Skin_Standard_TitleBar_Collapsed_ItemToItem_Winoff
+{
+	layer
+	{
+		LayerFlags		= GFlags(GCtrlBitmapSkin, GFC_BITMAPSKIN_CENTER_TILE, GFC_BITMAPSKIN_SIDES_SCALE, 
+												  GFC_BITMAPSKIN_BACKCAPS_REGION, GFC_BITMAPSKIN_REGION_TRANSPARENT, GFC_BITMAPSKIN_COLORKEY);
+		DestCombine		= GColorCombine(BlendSource,Disable);
+		Image			= GBitmap("FreeRealms/FR_Titlebar_middle_claps.tga", HVGrid, 1, 1, 0, 0);
+		Margin			= GRectMargin(0,0,0,0);
+		ColorKey		= GColor(0,0,0,0);
+		ColorKeyMax		= GColor(0,0,0,128);
+		ColorKeyMask	= GColor(0,0,0,255);
+	}
+	layer
+	{
+		LayerFlags		= GFlags(GCtrlBitmapSkin, GFC_BITMAPSKIN_CENTER_TILE, GFC_BITMAPSKIN_SIDES_SCALE, GFC_BITMAPSKIN_BACKCAPS_PARTIAL);
+		DestCombine		= GColorCombine(BlendSource,Disable);
+		Image			= GBitmap("FreeRealms/FR_Titlebar_middle_claps.tga", HVGrid, 1, 1, 0, 0);
+		Margin			= GRectMargin(0,0,0,0);
+	}
+}
+skin SF_CtrlTheme_FreeRealms_Control_Window_Skin_Standard_TitleBar_Collapsed_ItemToRight_Winoff
+{
+	layer
+	{
+		LayerFlags		= GFlags(GCtrlBitmapSkin, GFC_BITMAPSKIN_CENTER_TILE, GFC_BITMAPSKIN_SIDES_SCALE,
+												  GFC_BITMAPSKIN_BACKCAPS_REGION, GFC_BITMAPSKIN_REGION_TRANSPARENT, GFC_BITMAPSKIN_COLORKEY);
+		DestCombine		= GColorCombine(BlendSource,Disable);
+		Image			= GBitmap("FreeRealms/FR_Titlebar_corners_claps.tga", HVGrid, 1, 2, 0, 1);
+		Margin			= GRectMargin(0,0,0,0);
+		ColorKey		= GColor(0,0,0,0);
+		ColorKeyMax		= GColor(0,0,0,128);
+		ColorKeyMask	= GColor(0,0,0,255);
+	}
+
+	layer
+	{
+		LayerFlags		= GFlags(GCtrlBitmapSkin, GFC_BITMAPSKIN_CENTER_TILE, GFC_BITMAPSKIN_SIDES_SCALE, GFC_BITMAPSKIN_BACKCAPS_PARTIAL);
+		DestCombine		= GColorCombine(BlendSource,Disable);
+		Image			= GBitmap("FreeRealms/FR_Titlebar_corners_claps.tga", HVGrid, 1, 2, 0, 1);
+		Margin			= GRectMargin(0,0,0,0);
+	}
+}
+skin SF_CtrlTheme_FreeRealms_Control_Window_Skin_Standard_TitleBar_Collapsed_LeftToCenter_Winoff
+{
+	layer
+	{
+		LayerFlags		= GFlags(GCtrlBitmapSkin, GFC_BITMAPSKIN_CENTER_TILE, GFC_BITMAPSKIN_SIDES_SCALE, 
+												  GFC_BITMAPSKIN_BACKCAPS_REGION, GFC_BITMAPSKIN_REGION_TRANSPARENT, GFC_BITMAPSKIN_COLORKEY);
+		DestCombine		= GColorCombine(BlendSource,Disable);
+		Image			= GBitmap("FreeRealms/FR_Titlebar_middle_claps.tga", HVGrid, 1, 1, 0, 0);
+		Margin			= GRectMargin(0,0,0,0);
+		ColorKey		= GColor(0,0,0,0);
+		ColorKeyMax		= GColor(0,0,0,128);
+		ColorKeyMask	= GColor(0,0,0,255);
+	}
+	layer
+	{
+		LayerFlags		= GFlags(GCtrlBitmapSkin, GFC_BITMAPSKIN_CENTER_TILE, GFC_BITMAPSKIN_SIDES_SCALE, GFC_BITMAPSKIN_BACKCAPS_PARTIAL);
+		DestCombine		= GColorCombine(BlendSource,Disable);
+		Image			= GBitmap("FreeRealms/FR_Titlebar_middle_claps.tga", HVGrid, 1, 1, 0, 0);
+		Margin			= GRectMargin(0,0,0,0);
+	}
+}
+skin SF_CtrlTheme_FreeRealms_Control_Window_Skin_Standard_TitleBar_Collapsed_ItemToCenter_Winoff
+{
+	layer
+	{
+		LayerFlags		= GFlags(GCtrlBitmapSkin, GFC_BITMAPSKIN_CENTER_TILE, GFC_BITMAPSKIN_SIDES_SCALE, 
+												  GFC_BITMAPSKIN_BACKCAPS_REGION, GFC_BITMAPSKIN_REGION_TRANSPARENT, GFC_BITMAPSKIN_COLORKEY);
+		DestCombine		= GColorCombine(BlendSource,Disable);
+		Image			= GBitmap("FreeRealms/FR_Titlebar_middle_claps.tga", HVGrid, 1, 1, 0, 0);
+		Margin			= GRectMargin(0,0,0,0);
+		ColorKey		= GColor(0,0,0,0);
+		ColorKeyMax		= GColor(0,0,0,128);
+		ColorKeyMask	= GColor(0,0,0,255);
+	}
+	layer
+	{
+		LayerFlags		= GFlags(GCtrlBitmapSkin, GFC_BITMAPSKIN_CENTER_TILE, GFC_BITMAPSKIN_SIDES_SCALE, GFC_BITMAPSKIN_BACKCAPS_PARTIAL);
+		DestCombine		= GColorCombine(BlendSource,Disable);
+		Image			= GBitmap("FreeRealms/FR_Titlebar_middle_claps.tga", HVGrid, 1, 1, 0, 0);
+		Margin			= GRectMargin(0,0,0,0);
+	}
+}
+skin SF_CtrlTheme_FreeRealms_Control_Window_Skin_Standard_TitleBar_Collapsed_CenterItem_Winoff
+{
+	layer
+	{
+		LayerFlags		= GFlags(GCtrlBitmapSkin, GFC_BITMAPSKIN_CENTER_TILE, GFC_BITMAPSKIN_SIDES_SCALE, 
+												  GFC_BITMAPSKIN_BACKCAPS_REGION, GFC_BITMAPSKIN_REGION_TRANSPARENT, GFC_BITMAPSKIN_COLORKEY);
+		DestCombine		= GColorCombine(BlendSource,Disable);
+		Image			= GBitmap("FreeRealms/FR_Titlebar03claps.tga", HVGrid, 1, 1, 0, 0);
+		Margin			= GRectMargin(0,0,0,0);
+		ColorKey		= GColor(0,0,0,0);
+		ColorKeyMax		= GColor(0,0,0,128);
+		ColorKeyMask	= GColor(0,0,0,255);
+	}
+	layer
+	{
+		LayerFlags		= GFlags(GCtrlBitmapSkin, GFC_BITMAPSKIN_CENTER_TILE, GFC_BITMAPSKIN_SIDES_SCALE, GFC_BITMAPSKIN_BACKCAPS_PARTIAL);
+		DestCombine		= GColorCombine(BlendSource,Disable);
+		Image			= GBitmap("FreeRealms/FR_Titlebar03claps.tga", HVGrid, 1, 1, 0, 0);
+		Margin			= GRectMargin(0,0,0,0);
+	}
+}
+skin SF_CtrlTheme_FreeRealms_Control_Window_Skin_Standard_TitleBar_Collapsed_CenterToItem_Winoff
+{
+	layer
+	{
+		LayerFlags		= GFlags(GCtrlBitmapSkin, GFC_BITMAPSKIN_CENTER_TILE, GFC_BITMAPSKIN_SIDES_SCALE, 
+												  GFC_BITMAPSKIN_BACKCAPS_REGION, GFC_BITMAPSKIN_REGION_TRANSPARENT, GFC_BITMAPSKIN_COLORKEY);
+		DestCombine		= GColorCombine(BlendSource,Disable);
+		Image			= GBitmap("FreeRealms/FR_Titlebar_middle_claps.tga", HVGrid, 1, 1, 0, 0);
+		Margin			= GRectMargin(0,0,0,0);
+		ColorKey		= GColor(0,0,0,0);
+		ColorKeyMax		= GColor(0,0,0,128);
+		ColorKeyMask	= GColor(0,0,0,255);
+	}
+	layer
+	{
+		LayerFlags		= GFlags(GCtrlBitmapSkin, GFC_BITMAPSKIN_CENTER_TILE, GFC_BITMAPSKIN_SIDES_SCALE, GFC_BITMAPSKIN_BACKCAPS_PARTIAL);
+		DestCombine		= GColorCombine(BlendSource,Disable);
+		Image			= GBitmap("FreeRealms/FR_Titlebar_middle_claps.tga", HVGrid, 1, 1, 0, 0);
+		Margin			= GRectMargin(0,0,0,0);
+	}
+}
+skin SF_CtrlTheme_FreeRealms_Control_Window_Skin_Standard_TitleBar_Collapsed_CenterToRight_Winoff
+{
+	layer
+	{
+		LayerFlags		= GFlags(GCtrlBitmapSkin, GFC_BITMAPSKIN_CENTER_TILE, GFC_BITMAPSKIN_SIDES_SCALE,
+												  GFC_BITMAPSKIN_BACKCAPS_REGION, GFC_BITMAPSKIN_REGION_TRANSPARENT, GFC_BITMAPSKIN_COLORKEY);
+		DestCombine		= GColorCombine(BlendSource,Disable);
+		Image			= GBitmap("FreeRealms/FR_Titlebar_corners_claps.tga", HVGrid, 1, 2, 0, 1);
+		Margin			= GRectMargin(0,0,0,0);
+		ColorKey		= GColor(0,0,0,0);
+		ColorKeyMax		= GColor(0,0,0,128);
+		ColorKeyMask	= GColor(0,0,0,255);
+	}
+
+	layer
+	{
+		LayerFlags		= GFlags(GCtrlBitmapSkin, GFC_BITMAPSKIN_CENTER_TILE, GFC_BITMAPSKIN_SIDES_SCALE, GFC_BITMAPSKIN_BACKCAPS_PARTIAL);
+		DestCombine		= GColorCombine(BlendSource,Disable);
+		Image			= GBitmap("FreeRealms/FR_Titlebar_corners_claps.tga", HVGrid, 1, 2, 0, 1);
+		Margin			= GRectMargin(0,0,0,0);
+	}
+}
+skin SF_CtrlTheme_FreeRealms_Control_Window_Skin_Standard_TitleBar_Collapsed_RightItem_Winoff
+{
+	layer
+	{
+		LayerFlags		= GFlags(GCtrlBitmapSkin, GFC_BITMAPSKIN_CENTER_TILE, GFC_BITMAPSKIN_SIDES_SCALE,
+												  GFC_BITMAPSKIN_BACKCAPS_REGION, GFC_BITMAPSKIN_REGION_TRANSPARENT, GFC_BITMAPSKIN_COLORKEY);
+		DestCombine		= GColorCombine(BlendSource,Disable);
+		Image			= GBitmap("FreeRealms/FR_Titlebar_corners_claps.tga", HVGrid, 1, 2, 0, 1);
+		Margin			= GRectMargin(0,0,0,0);
+		ColorKey		= GColor(0,0,0,0);
+		ColorKeyMax		= GColor(0,0,0,128);
+		ColorKeyMask	= GColor(0,0,0,255);
+	}
+
+	layer
+	{
+		LayerFlags		= GFlags(GCtrlBitmapSkin, GFC_BITMAPSKIN_CENTER_TILE, GFC_BITMAPSKIN_SIDES_SCALE, GFC_BITMAPSKIN_BACKCAPS_PARTIAL);
+		DestCombine		= GColorCombine(BlendSource,Disable);
+		Image			= GBitmap("FreeRealms/FR_Titlebar_corners_claps.tga", HVGrid, 1, 2, 0, 1);
+		Margin			= GRectMargin(0,0,0,0);
+	}
+}
+
+
+
+//*** Tool Titlebar ***
+
+// ** Normal
+
+skin SF_CtrlTheme_FreeRealms_Control_Window_Skin_Tool_TitleBar_Full_Default
+{
+	layer
+	{
+		LayerFlags		= GFlags(GCtrlBitmapSkin, GFC_BITMAPSKIN_CENTER_TILE, GFC_BITMAPSKIN_SIDES_SCALE);
+		DestCombine		= GColorCombine(BlendSource,Disable);
+		Image			= GBitmap("FreeRealms/FR_Tool_Titlebar_Collapsed.tga", GRect(0, 0, 157, 19) );
+		Margin			= GRectMargin(14,0,14,0);
+	}
+	layer
+	{
+		LayerFlags		= GFlags(GCtrlBitmapSkin, GFC_BITMAPSKIN_CENTER_SCALE, GFC_BITMAPSKIN_SIDES_SCALE, GFC_BITMAPSKIN_NOHITTEST);
+		DestCombine		= GColorCombine(Add,Disable);
+		FactorCombine	= GColorCombine(Modulate, Source);
+		FactorColor		= SF_CtrlTheme_FreeRealms_Control_Color_TitlebarGlow;
+		Image			= GBitmap("FreeRealms/FR_Tool_Titlebar_glow01.tga", HVGrid, 1, 1, 0, 0);
+		Margin			= GRectMargin(0,0,0,0);
+		Indent			= GRectMargin(0,15,0,0);
+	}
+}
+
+skin SF_CtrlTheme_FreeRealms_Control_Window_Skin_Tool_TitleBar_Full_Winoff
+{
+	layer
+	{
+		LayerFlags		= GFlags(GCtrlBitmapSkin, GFC_BITMAPSKIN_CENTER_TILE, GFC_BITMAPSKIN_SIDES_SCALE);
+		DestCombine		= GColorCombine(BlendSource,Disable);
+		Image			= GBitmap("FreeRealms/FR_Tool_Titlebar_Collapsed.tga", GRect(0, 0, 157, 19) );
+		Margin			= GRectMargin(14,0,14,0);
+	}
+	layer
+	{
+		LayerFlags		= GFlags(GCtrlBitmapSkin, GFC_BITMAPSKIN_CENTER_SCALE, GFC_BITMAPSKIN_SIDES_SCALE, GFC_BITMAPSKIN_NOHITTEST);
+		DestCombine		= GColorCombine(Add,Disable);
+		FactorCombine	= GColorCombine(Modulate, Source);
+		FactorColor		= SF_CtrlTheme_FreeRealms_Control_Color_TitlebarGlowWinoff;
+		Image			= GBitmap("FreeRealms/FR_Tool_Titlebar_glow01.tga", HVGrid, 1, 1, 0, 0);
+		Margin			= GRectMargin(0,0,0,0);
+		Indent			= GRectMargin(0,15,0,0);
+	}
+}
+
+//** Minimized
+
+skin SF_CtrlTheme_FreeRealms_Control_Window_Skin_Tool_TitleBar_Minimized_Full_Default
+{
+	layer
+	{
+		LayerFlags		= GFlags(GCtrlBitmapSkin, GFC_BITMAPSKIN_CENTER_TILE, GFC_BITMAPSKIN_SIDES_SCALE);
+		DestCombine		= GColorCombine(BlendSource,Disable);
+		Image			= GBitmap("FreeRealms/FR_Tool_Titlebar_Collapsed.tga", GRect(0, 0, 157, 19) );
+		Margin			= GRectMargin(14,0,14,0);
+	}
+}
+
+skin SF_CtrlTheme_FreeRealms_Control_Window_Skin_Tool_TitleBar_Minimized_Full_Winoff
+{
+	layer
+	{
+		LayerFlags		= GFlags(GCtrlBitmapSkin, GFC_BITMAPSKIN_CENTER_TILE, GFC_BITMAPSKIN_SIDES_SCALE);
+		DestCombine		= GColorCombine(BlendSource,Disable);
+		Image			= GBitmap("FreeRealms/FR_Tool_Titlebar_Collapsed.tga", GRect(0, 0, 157, 19) );
+		Margin			= GRectMargin(14,0,14,0);
+	}
+}
+
+
+//** Collapsed
+
+skin SF_CtrlTheme_FreeRealms_Control_Window_Skin_Tool_TitleBar_Collapsed_Full_Default
+{
+	layer
+	{
+		LayerFlags		= GFlags(GCtrlBitmapSkin, GFC_BITMAPSKIN_CENTER_TILE, GFC_BITMAPSKIN_SIDES_SCALE);
+		DestCombine		= GColorCombine(BlendSource,Disable);
+		Image			= GBitmap("FreeRealms/FR_Tool_Titlebar_Collapsed.tga", HVGrid, 1, 1, 0, 0);
+		Margin			= GRectMargin(14,0,14,0);
+	}
+}
+
+skin SF_CtrlTheme_FreeRealms_Control_Window_Skin_Tool_TitleBar_Collapsed_Full_Winoff
+{
+	layer
+	{
+		LayerFlags		= GFlags(GCtrlBitmapSkin, GFC_BITMAPSKIN_CENTER_TILE, GFC_BITMAPSKIN_SIDES_SCALE);
+		DestCombine		= GColorCombine(BlendSource,Disable);
+		Image			= GBitmap("FreeRealms/FR_Tool_Titlebar_Collapsed.tga", HVGrid, 1, 1, 0, 0);
+		Margin			= GRectMargin(14,0,14,0);
+	}
+}
+
+
+// *** Label styles
+
+style SF_CtrlTheme_FreeRealms_Control_TitleBar_Standard_Label_Style
+{
+	GFC_Control_Label_Size_Margin				=	GRectMargin(4,12,0,0);
+
+	GFC_Control_Flag_Mask_InvalidateControl		=	GFlags(GCtrl, GFC_CF_ACTIVE, GFC_CF_WINDOWACTIVE, GFC_CF_DISABLED, GFC_CF_TRANSPARENT, GFC_CF_TOPLAYER);
+
+	// ** Standard mapping to inherited title bar properties
+
+	GFC_Control_Label_Font_Text_Default			=	GFC_Control_StandardTitleBar_Style[GFC_Control_TitleBar_Font_Text];
+	GFC_Control_Label_Font_Text_Disable			=	GFC_Control_StandardTitleBar_Style[GFC_Control_TitleBar_Font_Text];
+	GFC_Control_Label_Font_Text_Winoff			=	GFC_Control_StandardTitleBar_Style[GFC_Control_TitleBar_Font_Text];
+	GFC_Control_Label_Font_Text_WinoffDisable	=	GFC_Control_StandardTitleBar_Style[GFC_Control_TitleBar_Font_Text];
+	
+	with GFC_Control_Label_Color
+	{
+		.Text_Default							=	GFC_Control_StandardTitleBar_Style[GFC_Control_TitleBar_Color_Text_Default];
+		.Text_Disable							=	GFC_Control_StandardTitleBar_Style[GFC_Control_TitleBar_Color_Text_Disable];
+		.Text_Winoff							=	GFC_Control_StandardTitleBar_Style[GFC_Control_TitleBar_Color_Text_Winoff];
+		.Text_WinoffDisable						=	GFC_Control_StandardTitleBar_Style[GFC_Control_TitleBar_Color_Text_WinoffDisable];
+												
+		.TextShadow_Default						=	GFC_Control_StandardTitleBar_Style[GFC_Control_TitleBar_Color_TextShadow_Default];
+		.TextShadow_Disable						=	GFC_Control_StandardTitleBar_Style[GFC_Control_TitleBar_Color_TextShadow_Disable];
+		.TextShadow_Winoff						=	GFC_Control_StandardTitleBar_Style[GFC_Control_TitleBar_Color_TextShadow_Winoff];
+		.TextShadow_WinoffDisable				=	GFC_Control_StandardTitleBar_Style[GFC_Control_TitleBar_Color_TextShadow_WinoffDisable];
+	}										
+												
+	with GFC_Control_Label_Combine				
+	{										
+		.Text_Default_Dest						=	GFC_Control_StandardTitleBar_Style[GFC_Control_TitleBar_Combine_Text_Default_Dest];
+		.Text_Default_Factor					=	GFC_Control_StandardTitleBar_Style[GFC_Control_TitleBar_Combine_Text_Default_Factor];
+		.Text_Disable_Dest						=	GFC_Control_StandardTitleBar_Style[GFC_Control_TitleBar_Combine_Text_Disable_Dest];
+		.Text_Disable_Factor					=	GFC_Control_StandardTitleBar_Style[GFC_Control_TitleBar_Combine_Text_Disable_Factor];
+		.Text_Winoff_Dest						=	GFC_Control_StandardTitleBar_Style[GFC_Control_TitleBar_Combine_Text_Winoff_Dest];
+		.Text_Winoff_Factor						=	GFC_Control_StandardTitleBar_Style[GFC_Control_TitleBar_Combine_Text_Winoff_Factor];
+		.Text_WinoffDisable_Dest				=	GFC_Control_StandardTitleBar_Style[GFC_Control_TitleBar_Combine_Text_WinoffDisable_Dest];
+		.Text_WinoffDisable_Factor				=	GFC_Control_StandardTitleBar_Style[GFC_Control_TitleBar_Combine_Text_WinoffDisable_Factor];
+												
+		.TextShadow_Default_Dest				=	GFC_Control_StandardTitleBar_Style[GFC_Control_TitleBar_Combine_TextShadow_Default_Dest];
+		.TextShadow_Default_Factor				=	GFC_Control_StandardTitleBar_Style[GFC_Control_TitleBar_Combine_TextShadow_Default_Factor];
+		.TextShadow_Disable_Dest				=	GFC_Control_StandardTitleBar_Style[GFC_Control_TitleBar_Combine_TextShadow_Disable_Dest];
+		.TextShadow_Disable_Factor				=	GFC_Control_StandardTitleBar_Style[GFC_Control_TitleBar_Combine_TextShadow_Disable_Factor];
+		.TextShadow_Winoff_Dest					=	GFC_Control_StandardTitleBar_Style[GFC_Control_TitleBar_Combine_TextShadow_Winoff_Dest];
+		.TextShadow_Winoff_Factor				=	GFC_Control_StandardTitleBar_Style[GFC_Control_TitleBar_Combine_TextShadow_Winoff_Factor];
+		.TextShadow_WinoffDisable_Dest			=	GFC_Control_StandardTitleBar_Style[GFC_Control_TitleBar_Combine_TextShadow_WinoffDisable_Dest];
+		.TextShadow_WinoffDisable_Factor		=	GFC_Control_StandardTitleBar_Style[GFC_Control_TitleBar_Combine_TextShadow_WinoffDisable_Factor];
+	}
+
+	map GFC_CtrlTheme_Bitmap_Control_Label		=	GFC_Control_DefaultLabel_Style;
+	map GFC_Control								=	GFC_Control_DefaultLabel_Style;
+}
+
+style SF_CtrlTheme_FreeRealms_Control_TitleBar_Dialog_Label_Style
+{
+	GFC_Control_Flag_Mask_InvalidateControl		=	GFlags(GCtrl, GFC_CF_ACTIVE, GFC_CF_WINDOWACTIVE, GFC_CF_DISABLED, GFC_CF_TRANSPARENT, GFC_CF_TOPLAYER);
+
+	GFC_Control_Label_Font_Text_Default			=	GFC_Control_DialogTitleBar_Style[GFC_Control_TitleBar_Font_Text];
+	GFC_Control_Label_Font_Text_Disable			=	GFC_Control_DialogTitleBar_Style[GFC_Control_TitleBar_Font_Text];
+	GFC_Control_Label_Font_Text_Winoff			=	GFC_Control_DialogTitleBar_Style[GFC_Control_TitleBar_Font_Text];
+	GFC_Control_Label_Font_Text_WinoffDisable	=	GFC_Control_DialogTitleBar_Style[GFC_Control_TitleBar_Font_Text];
+	
+	with GFC_Control_Label_Color
+	{
+		.Text_Default							=	GFC_Control_DialogTitleBar_Style[GFC_Control_TitleBar_Color_Text_Default];
+		.Text_Disable							=	GFC_Control_DialogTitleBar_Style[GFC_Control_TitleBar_Color_Text_Disable];
+		.Text_Winoff							=	GFC_Control_DialogTitleBar_Style[GFC_Control_TitleBar_Color_Text_Winoff];
+		.Text_WinoffDisable						=	GFC_Control_DialogTitleBar_Style[GFC_Control_TitleBar_Color_Text_WinoffDisable];
+												
+		.TextShadow_Default						=	GFC_Control_DialogTitleBar_Style[GFC_Control_TitleBar_Color_TextShadow_Default];
+		.TextShadow_Disable						=	GFC_Control_DialogTitleBar_Style[GFC_Control_TitleBar_Color_TextShadow_Disable];
+		.TextShadow_Winoff						=	GFC_Control_DialogTitleBar_Style[GFC_Control_TitleBar_Color_TextShadow_Winoff];
+		.TextShadow_WinoffDisable				=	GFC_Control_DialogTitleBar_Style[GFC_Control_TitleBar_Color_TextShadow_WinoffDisable];
+	}										
+												
+	with GFC_Control_Label_Combine				
+	{										
+		.Text_Default_Dest						=	GFC_Control_DialogTitleBar_Style[GFC_Control_TitleBar_Combine_Text_Default_Dest];
+		.Text_Default_Factor					=	GFC_Control_DialogTitleBar_Style[GFC_Control_TitleBar_Combine_Text_Default_Factor];
+		.Text_Disable_Dest						=	GFC_Control_DialogTitleBar_Style[GFC_Control_TitleBar_Combine_Text_Disable_Dest];
+		.Text_Disable_Factor					=	GFC_Control_DialogTitleBar_Style[GFC_Control_TitleBar_Combine_Text_Disable_Factor];
+		.Text_Winoff_Dest						=	GFC_Control_DialogTitleBar_Style[GFC_Control_TitleBar_Combine_Text_Winoff_Dest];
+		.Text_Winoff_Factor						=	GFC_Control_DialogTitleBar_Style[GFC_Control_TitleBar_Combine_Text_Winoff_Factor];
+		.Text_WinoffDisable_Dest				=	GFC_Control_DialogTitleBar_Style[GFC_Control_TitleBar_Combine_Text_WinoffDisable_Dest];
+		.Text_WinoffDisable_Factor				=	GFC_Control_DialogTitleBar_Style[GFC_Control_TitleBar_Combine_Text_WinoffDisable_Factor];
+												
+		.TextShadow_Default_Dest				=	GFC_Control_DialogTitleBar_Style[GFC_Control_TitleBar_Combine_TextShadow_Default_Dest];
+		.TextShadow_Default_Factor				=	GFC_Control_DialogTitleBar_Style[GFC_Control_TitleBar_Combine_TextShadow_Default_Factor];
+		.TextShadow_Disable_Dest				=	GFC_Control_DialogTitleBar_Style[GFC_Control_TitleBar_Combine_TextShadow_Disable_Dest];
+		.TextShadow_Disable_Factor				=	GFC_Control_DialogTitleBar_Style[GFC_Control_TitleBar_Combine_TextShadow_Disable_Factor];
+		.TextShadow_Winoff_Dest					=	GFC_Control_DialogTitleBar_Style[GFC_Control_TitleBar_Combine_TextShadow_Winoff_Dest];
+		.TextShadow_Winoff_Factor				=	GFC_Control_DialogTitleBar_Style[GFC_Control_TitleBar_Combine_TextShadow_Winoff_Factor];
+		.TextShadow_WinoffDisable_Dest			=	GFC_Control_DialogTitleBar_Style[GFC_Control_TitleBar_Combine_TextShadow_WinoffDisable_Dest];
+		.TextShadow_WinoffDisable_Factor		=	GFC_Control_DialogTitleBar_Style[GFC_Control_TitleBar_Combine_TextShadow_WinoffDisable_Factor];
+	}
+
+	map	SF_CtrlTheme_FreeRealms_Control			=	SF_CtrlTheme_FreeRealms_Control_TitleBar_Standard_Label_Style;
+	map GFC_CtrlTheme_Bitmap_Control_Label				=	SF_CtrlTheme_FreeRealms_Control_TitleBar_Standard_Label_Style;
+	map GFC_Control										=	SF_CtrlTheme_FreeRealms_Control_TitleBar_Standard_Label_Style;
+}
+
+
+style SF_CtrlTheme_FreeRealms_Control_TitleBar_Tool_Label_Style
+{				
+	GFC_Control_Label_Size_Margin				=	GRectMargin(4,0,4,0);
+	
+	GFC_Control_Flag_Mask_InvalidateControl		=	GFlags(GCtrl, GFC_CF_ACTIVE, GFC_CF_WINDOWACTIVE, GFC_CF_DISABLED, GFC_CF_TRANSPARENT, GFC_CF_TOPLAYER);
+
+	GFC_Control_Label_Font_Text_Default			=	GFC_Control_ToolTitleBar_Style[GFC_Control_TitleBar_Font_Text];
+	GFC_Control_Label_Font_Text_Disable			=	GFC_Control_ToolTitleBar_Style[GFC_Control_TitleBar_Font_Text];
+	GFC_Control_Label_Font_Text_Winoff			=	GFC_Control_ToolTitleBar_Style[GFC_Control_TitleBar_Font_Text];
+	GFC_Control_Label_Font_Text_WinoffDisable	=	GFC_Control_ToolTitleBar_Style[GFC_Control_TitleBar_Font_Text];
+	
+	with GFC_Control_Label_Color
+	{
+		.Text_Default							=	GFC_Control_ToolTitleBar_Style[GFC_Control_TitleBar_Color_Text_Default];
+		.Text_Disable							=	GFC_Control_ToolTitleBar_Style[GFC_Control_TitleBar_Color_Text_Disable];
+		.Text_Winoff							=	GFC_Control_ToolTitleBar_Style[GFC_Control_TitleBar_Color_Text_Winoff];
+		.Text_WinoffDisable						=	GFC_Control_ToolTitleBar_Style[GFC_Control_TitleBar_Color_Text_WinoffDisable];
+												
+		.TextShadow_Default						=	GFC_Control_ToolTitleBar_Style[GFC_Control_TitleBar_Color_TextShadow_Default];
+		.TextShadow_Disable						=	GFC_Control_ToolTitleBar_Style[GFC_Control_TitleBar_Color_TextShadow_Disable];
+		.TextShadow_Winoff						=	GFC_Control_ToolTitleBar_Style[GFC_Control_TitleBar_Color_TextShadow_Winoff];
+		.TextShadow_WinoffDisable				=	GFC_Control_ToolTitleBar_Style[GFC_Control_TitleBar_Color_TextShadow_WinoffDisable];
+	}										
+												
+	with GFC_Control_Label_Combine				
+	{										
+		.Text_Default_Dest						=	GFC_Control_ToolTitleBar_Style[GFC_Control_TitleBar_Combine_Text_Default_Dest];
+		.Text_Default_Factor					=	GFC_Control_ToolTitleBar_Style[GFC_Control_TitleBar_Combine_Text_Default_Factor];
+		.Text_Disable_Dest						=	GFC_Control_ToolTitleBar_Style[GFC_Control_TitleBar_Combine_Text_Disable_Dest];
+		.Text_Disable_Factor					=	GFC_Control_ToolTitleBar_Style[GFC_Control_TitleBar_Combine_Text_Disable_Factor];
+		.Text_Winoff_Dest						=	GFC_Control_ToolTitleBar_Style[GFC_Control_TitleBar_Combine_Text_Winoff_Dest];
+		.Text_Winoff_Factor						=	GFC_Control_ToolTitleBar_Style[GFC_Control_TitleBar_Combine_Text_Winoff_Factor];
+		.Text_WinoffDisable_Dest				=	GFC_Control_ToolTitleBar_Style[GFC_Control_TitleBar_Combine_Text_WinoffDisable_Dest];
+		.Text_WinoffDisable_Factor				=	GFC_Control_ToolTitleBar_Style[GFC_Control_TitleBar_Combine_Text_WinoffDisable_Factor];
+												
+		.TextShadow_Default_Dest				=	GFC_Control_ToolTitleBar_Style[GFC_Control_TitleBar_Combine_TextShadow_Default_Dest];
+		.TextShadow_Default_Factor				=	GFC_Control_ToolTitleBar_Style[GFC_Control_TitleBar_Combine_TextShadow_Default_Factor];
+		.TextShadow_Disable_Dest				=	GFC_Control_ToolTitleBar_Style[GFC_Control_TitleBar_Combine_TextShadow_Disable_Dest];
+		.TextShadow_Disable_Factor				=	GFC_Control_ToolTitleBar_Style[GFC_Control_TitleBar_Combine_TextShadow_Disable_Factor];
+		.TextShadow_Winoff_Dest					=	GFC_Control_ToolTitleBar_Style[GFC_Control_TitleBar_Combine_TextShadow_Winoff_Dest];
+		.TextShadow_Winoff_Factor				=	GFC_Control_ToolTitleBar_Style[GFC_Control_TitleBar_Combine_TextShadow_Winoff_Factor];
+		.TextShadow_WinoffDisable_Dest			=	GFC_Control_ToolTitleBar_Style[GFC_Control_TitleBar_Combine_TextShadow_WinoffDisable_Dest];
+		.TextShadow_WinoffDisable_Factor		=	GFC_Control_ToolTitleBar_Style[GFC_Control_TitleBar_Combine_TextShadow_WinoffDisable_Factor];
+	}
+							
+	map	SF_CtrlTheme_FreeRealms_Control			=	SF_CtrlTheme_FreeRealms_Control_TitleBar_Standard_Label_Style;
+	map GFC_CtrlTheme_Bitmap_Control_Label				=	SF_CtrlTheme_FreeRealms_Control_TitleBar_Standard_Label_Style;
+	map GFC_Control										=	SF_CtrlTheme_FreeRealms_Control_TitleBar_Standard_Label_Style;
+}
+
+
+
+//****** Normal Titlebar *****************************************************************************************************************************************
+
+	GFC_Control_StandardTitleBar_Style
+	{
+		.Size_BarThickness						=	60;
+		.Size_Margin							=	GRectMargin(0,0,0,0);		
+
+		.Font_Text								=	GFC_Control_StandardWindow_Style[GFC_Control_Window_Font_Title];
+		
+		with .Color
+		{
+			.Text_Default						=	GFC_Control_StandardWindow_Style[GFC_Control_Window_Color_Title_Default];
+			.Text_Disable						=	GFC_Control_StandardWindow_Style[GFC_Control_Window_Color_Title_Disable];
+			.Text_Winoff						=	GFC_Control_StandardWindow_Style[GFC_Control_Window_Color_Title_Winoff];
+			.Text_WinoffDisable					=	GFC_Control_StandardWindow_Style[GFC_Control_Window_Color_Title_WinoffDisable];
+
+			.TextShadow_Default					=	GFC_Control_StandardWindow_Style[GFC_Control_Window_Color_TitleShadow_Default];
+			.TextShadow_Disable					=	GFC_Control_StandardWindow_Style[GFC_Control_Window_Color_TitleShadow_Disable];
+			.TextShadow_Winoff					=	GFC_Control_StandardWindow_Style[GFC_Control_Window_Color_TitleShadow_Winoff];
+			.TextShadow_WinoffDisable			=	GFC_Control_StandardWindow_Style[GFC_Control_Window_Color_TitleShadow_WinoffDisable];
+		}
+											
+		with .Combine
+		{
+			.Text_Default_Dest					=	GFC_Control_StandardWindow_Style[GFC_Control_Window_Combine_Title_Default_Dest];
+			.Text_Default_Factor				=	GFC_Control_StandardWindow_Style[GFC_Control_Window_Combine_Title_Default_Factor];
+			.Text_Disable_Dest					=	GFC_Control_StandardWindow_Style[GFC_Control_Window_Combine_Title_Disable_Dest];
+			.Text_Disable_Factor				=	GFC_Control_StandardWindow_Style[GFC_Control_Window_Combine_Title_Disable_Factor];
+			.Text_Winoff_Dest					=	GFC_Control_StandardWindow_Style[GFC_Control_Window_Combine_Title_Winoff_Dest];
+			.Text_Winoff_Factor					=	GFC_Control_StandardWindow_Style[GFC_Control_Window_Combine_Title_Winoff_Factor];
+			.Text_WinoffDisable_Dest			=	GFC_Control_StandardWindow_Style[GFC_Control_Window_Combine_Title_WinoffDisable_Dest];
+			.Text_WinoffDisable_Factor			=	GFC_Control_StandardWindow_Style[GFC_Control_Window_Combine_Title_WinoffDisable_Factor];
+												
+			.TextShadow_Default_Dest			=	GFC_Control_StandardWindow_Style[GFC_Control_Window_Combine_TitleShadow_Default_Dest];
+			.TextShadow_Default_Factor			=	GFC_Control_StandardWindow_Style[GFC_Control_Window_Combine_TitleShadow_Default_Factor];
+			.TextShadow_Disable_Dest			=	GFC_Control_StandardWindow_Style[GFC_Control_Window_Combine_TitleShadow_Disable_Dest];
+			.TextShadow_Disable_Factor			=	GFC_Control_StandardWindow_Style[GFC_Control_Window_Combine_TitleShadow_Disable_Factor];
+			.TextShadow_Winoff_Dest				=	GFC_Control_StandardWindow_Style[GFC_Control_Window_Combine_TitleShadow_Winoff_Dest];
+			.TextShadow_Winoff_Factor			=	GFC_Control_StandardWindow_Style[GFC_Control_Window_Combine_TitleShadow_Winoff_Factor];
+			.TextShadow_WinoffDisable_Dest		=	GFC_Control_StandardWindow_Style[GFC_Control_Window_Combine_TitleShadow_WinoffDisable_Dest];
+			.TextShadow_WinoffDisable_Factor	=	GFC_Control_StandardWindow_Style[GFC_Control_Window_Combine_TitleShadow_WinoffDisable_Factor];
+		}
+
+		with .StyleId								
+		{
+			.Text								=	GPropertyId(SF_CtrlTheme_FreeRealms_Control_TitleBar_Standard_Label_Style);
+			.Border								=	GPropertyId(SF_CtrlTheme_FreeRealms_Control_TitleBar_Standard_Border_Style);
+			.CloseButton						=	GPropertyId(SF_CtrlTheme_FreeRealms_Control_TitleBar_Standard_CloseButton_Style);
+			.CollapseButton						=	GPropertyId(SF_CtrlTheme_FreeRealms_Control_TitleBar_Standard_CollapseButton_Style);
+			.CollapseRestoreButton				=	GPropertyId(SF_CtrlTheme_FreeRealms_Control_TitleBar_Standard_CollapseRestoreButton_Style);
+			.MinimizeButton						=	GPropertyId(SF_CtrlTheme_FreeRealms_Control_TitleBar_Standard_MinimizeButton_Style);
+			.MinimizeRestoreButton				=	GPropertyId(SF_CtrlTheme_FreeRealms_Control_TitleBar_Standard_MinimizeRestoreButton_Style);
+			.MaximizeButton						=	GPropertyId(SF_CtrlTheme_FreeRealms_Control_TitleBar_Standard_MaximizeButton_Style);
+			.MaximizeRestoreButton				=	GPropertyId(SF_CtrlTheme_FreeRealms_Control_TitleBar_Standard_MaximizeRestoreButton_Style);
+			.HelpButton							=	GPropertyId(SF_CtrlTheme_FreeRealms_Control_TitleBar_Standard_HelpButton_Style);
+		}
+
+		// Button styles
+		with GFC_CtrlTheme_Bitmap_Control_TitleBar
+		{
+			with .Flag
+			{
+				.CloseButton_Align				=	GFlags(GBitmapThemeAlign, GFC_BITMAPTHEME_ALIGN_RIGHT);
+				.MaximizeButton_Align			=	GFlags(GBitmapThemeAlign, GFC_BITMAPTHEME_ALIGN_RIGHT);
+				.MaximizeRestoreButton_Align	=	GFlags(GBitmapThemeAlign, GFC_BITMAPTHEME_ALIGN_RIGHT);
+				.MinimizeButton_Align			=	GFlags(GBitmapThemeAlign, GFC_BITMAPTHEME_ALIGN_RIGHT);
+				.MinimizeRestoreButton_Align	=	GFlags(GBitmapThemeAlign, GFC_BITMAPTHEME_ALIGN_RIGHT);
+				.CollapseButton_Align			=	GFlags(GBitmapThemeAlign, GFC_BITMAPTHEME_ALIGN_RIGHT);
+				.CollapseRestoreButton_Align	=	GFlags(GBitmapThemeAlign, GFC_BITMAPTHEME_ALIGN_RIGHT);
+				.HelpButton_Align				=	GFlags(GBitmapThemeAlign, GFC_BITMAPTHEME_ALIGN_RIGHT);
+
+				.Label_Align					=	GFlags(GBitmapThemeAlign, GFC_BITMAPTHEME_ALIGN_LEFT, GFC_BITMAPTHEME_STRETCHY);
+				.Image_Align					=	GFlags(GBitmapThemeAlign, GFC_BITMAPTHEME_ALIGN_LEFT);
+			}		
+
+			with .Size
+			{
+				with .CloseButton
+				{
+					.Index						=	6;
+					.Width						=	48;
+					.Spacing					=	0;
+				}								
+				with .MaximizeButton				
+				{								
+					.Index						=	5;
+					.Width						=	48;
+					.Spacing					=	0;
+				}								
+				with .MaximizeRestoreButton			
+				{								
+					.Index						=	5;
+					.Width						=	48;
+					.Spacing					=	0;
+				}								
+				with .MinimizeButton				
+				{								
+					.Index						=	4;				
+					.Width						=	48;
+					.Height						=       48;
+					.Spacing					=	0;
+				}								
+				with .MinimizeRestoreButton			
+				{								
+					.Index						=	4;
+					.Width						=	48;
+					.Spacing					=	0;
+				}								
+				with .CollapseButton				
+				{								
+					.Index						=	3;
+					.Width						=	48;
+					.Spacing					=	0;
+				}								
+				with .CollapseRestoreButton			
+				{								
+					.Index						=	3;
+					.Width						=	48;
+					.Spacing					=	0;
+				}								
+				with .HelpButton					
+				{								
+					.Index						=	2;
+					.Width						=	48;
+					.Spacing					=	0;
+				}								
+				with .Label							
+				{								
+					.Index						=	1;
+				}								
+				with .Image							
+				{								
+					.Index						=	0;
+				}
+
+				.LeftItem_Margin_Default		=	GRectMargin(60,0,0,0);
+				.LeftItem_Width_Default			=	0;
+				.CenterItem_Margin_Default		=	GRectMargin(60,0,60,0);
+				.CenterItem_Width_Default		=	62;
+				.RightItem_Margin_Default		=	GRectMargin(0,0,50,0);
+				.RightItem_Width_Default		=	60;
+			}
+			
+		}
+
+
+		with GFC_CtrlTheme_Bitmap_Control_TitleBar_Skin
+		{
+			.LeftItem_Default					=	SF_CtrlTheme_FreeRealms_Control_Window_Skin_Standard_TitleBar_LeftItem_Default;
+			.ItemToItem_Default					=	SF_CtrlTheme_FreeRealms_Control_Window_Skin_Standard_TitleBar_ItemToItem_Default;
+			.ItemToRight_Default				=	SF_CtrlTheme_FreeRealms_Control_Window_Skin_Standard_TitleBar_ItemToRight_Default;
+			.LeftToCenter_Default				=	SF_CtrlTheme_FreeRealms_Control_Window_Skin_Standard_TitleBar_LeftToCenter_Default;
+			.ItemToCenter_Default				=	SF_CtrlTheme_FreeRealms_Control_Window_Skin_Standard_TitleBar_ItemToCenter_Default;
+			.CenterItem_Default					=	SF_CtrlTheme_FreeRealms_Control_Window_Skin_Standard_TitleBar_CenterItem_Default;
+			.CenterToItem_Default				=	SF_CtrlTheme_FreeRealms_Control_Window_Skin_Standard_TitleBar_CenterToItem_Default;
+			.CenterToRight_Default				=	SF_CtrlTheme_FreeRealms_Control_Window_Skin_Standard_TitleBar_CenterToRight_Default;
+			.RightItem_Default					=	SF_CtrlTheme_FreeRealms_Control_Window_Skin_Standard_TitleBar_RightItem_Default;
+													
+			.LeftItem_Winoff					=	SF_CtrlTheme_FreeRealms_Control_Window_Skin_Standard_TitleBar_LeftItem_Winoff;
+			.ItemToItem_Winoff					=	SF_CtrlTheme_FreeRealms_Control_Window_Skin_Standard_TitleBar_ItemToItem_Winoff;
+			.ItemToRight_Winoff					=	SF_CtrlTheme_FreeRealms_Control_Window_Skin_Standard_TitleBar_ItemToRight_Winoff;
+			.LeftToCenter_Winoff				=	SF_CtrlTheme_FreeRealms_Control_Window_Skin_Standard_TitleBar_LeftToCenter_Winoff;
+			.ItemToCenter_Winoff				=	SF_CtrlTheme_FreeRealms_Control_Window_Skin_Standard_TitleBar_ItemToCenter_Winoff;
+			.CenterItem_Winoff					=	SF_CtrlTheme_FreeRealms_Control_Window_Skin_Standard_TitleBar_CenterItem_Winoff;
+			.CenterToItem_Winoff				=	SF_CtrlTheme_FreeRealms_Control_Window_Skin_Standard_TitleBar_CenterToItem_Winoff;
+			.CenterToRight_Winoff				=	SF_CtrlTheme_FreeRealms_Control_Window_Skin_Standard_TitleBar_CenterToRight_Winoff;
+			.RightItem_Winoff					=	SF_CtrlTheme_FreeRealms_Control_Window_Skin_Standard_TitleBar_RightItem_Winoff;
+		}
+
+		map SF_CtrlTheme_FreeRealms_Control					=	GFC_Control_DefaultTitleBar_Style;
+		map GFC_CtrlTheme_Bitmap_Control_TitleBar			=	GFC_Control_DefaultTitleBar_Style;	
+		map GFC_Control									=	GFC_Control_DefaultTitleBar_Style;	
+	}
+
+
+
+style SF_CtrlTheme_FreeRealms_Control_Window_Standard_TitleBar_Maximized_Style
+{
+	.Size_BarThickness					=	48;
+											
+	.StyleId_Border						=	GPropertyId(GFC_Control_EmptyBorder_Style);
+
+	GFC_Control_Flag_RegionClipParent	=	GFlags(GCtrl, GFC_CF_REGIONCLIP_PARENT);
+
+
+	with GFC_CtrlTheme_Bitmap_Control_TitleBar
+	{
+		with .Size
+		{
+			.LeftItem_Margin_Default		=	GRectMargin(35,0,0,3);
+			.CenterItem_Margin_Default		=	GRectMargin(38,0,38,0);
+			.CenterItem_Width_Default		=	62;
+			.RightItem_Margin_Default		=	GRectMargin(0,4,35,7);
+		}								
+											
+		with .Skin							
+		{								
+			.LeftItem_Default					=	SF_CtrlTheme_FreeRealms_Control_Window_Skin_Standard_TitleBar_Maximized_LeftItem_Default;
+			.ItemToItem_Default					=	SF_CtrlTheme_FreeRealms_Control_Window_Skin_Standard_TitleBar_Maximized_ItemToItem_Default;
+			.ItemToRight_Default				=	SF_CtrlTheme_FreeRealms_Control_Window_Skin_Standard_TitleBar_Maximized_ItemToRight_Default;
+			.LeftToCenter_Default				=	SF_CtrlTheme_FreeRealms_Control_Window_Skin_Standard_TitleBar_Maximized_LeftToCenter_Default;
+			.ItemToCenter_Default				=	SF_CtrlTheme_FreeRealms_Control_Window_Skin_Standard_TitleBar_Maximized_ItemToCenter_Default;
+			.CenterItem_Default					=	SF_CtrlTheme_FreeRealms_Control_Window_Skin_Standard_TitleBar_Maximized_CenterItem_Default;
+			.CenterToItem_Default				=	SF_CtrlTheme_FreeRealms_Control_Window_Skin_Standard_TitleBar_Maximized_CenterToItem_Default;
+			.CenterToRight_Default				=	SF_CtrlTheme_FreeRealms_Control_Window_Skin_Standard_TitleBar_Maximized_CenterToRight_Default;
+			.RightItem_Default					=	SF_CtrlTheme_FreeRealms_Control_Window_Skin_Standard_TitleBar_Maximized_RightItem_Default;
+													
+			.LeftItem_Winoff					=	SF_CtrlTheme_FreeRealms_Control_Window_Skin_Standard_TitleBar_Maximized_LeftItem_Winoff;
+			.ItemToItem_Winoff					=	SF_CtrlTheme_FreeRealms_Control_Window_Skin_Standard_TitleBar_Maximized_ItemToItem_Winoff;
+			.ItemToRight_Winoff					=	SF_CtrlTheme_FreeRealms_Control_Window_Skin_Standard_TitleBar_Maximized_ItemToRight_Winoff;
+			.LeftToCenter_Winoff				=	SF_CtrlTheme_FreeRealms_Control_Window_Skin_Standard_TitleBar_Maximized_LeftToCenter_Winoff;
+			.ItemToCenter_Winoff				=	SF_CtrlTheme_FreeRealms_Control_Window_Skin_Standard_TitleBar_Maximized_ItemToCenter_Winoff;
+			.CenterItem_Winoff					=	SF_CtrlTheme_FreeRealms_Control_Window_Skin_Standard_TitleBar_Maximized_CenterItem_Winoff;
+			.CenterToItem_Winoff				=	SF_CtrlTheme_FreeRealms_Control_Window_Skin_Standard_TitleBar_Maximized_CenterToItem_Winoff;
+			.CenterToRight_Winoff				=	SF_CtrlTheme_FreeRealms_Control_Window_Skin_Standard_TitleBar_Maximized_CenterToRight_Winoff;
+			.RightItem_Winoff					=	SF_CtrlTheme_FreeRealms_Control_Window_Skin_Standard_TitleBar_Maximized_RightItem_Winoff;
+		}
+	}
+
+	map SF_CtrlTheme_FreeRealms_Control						=	GFC_Control_StandardTitleBar_Style;
+	map GFC_CtrlTheme_Bitmap_Control_TitleBar				=	GFC_Control_StandardTitleBar_Style;	
+	map GFC_Control										=	GFC_Control_StandardTitleBar_Style;	
+}
+
+
+style SF_CtrlTheme_FreeRealms_Control_Window_Standard_TitleBar_Minimized_Style
+{
+	.Size_BarThickness					=	48;
+
+	GFC_Control_Flag_RegionClipParent	=	GFlags(GCtrl, GFC_CF_REGIONCLIP_PARENT);
+
+
+	with GFC_CtrlTheme_Bitmap_Control_TitleBar
+	{
+		with .Size
+		{
+			.LeftItem_Margin_Default		=	GRectMargin(35,0,0,3);
+			.CenterItem_Margin_Default		=	GRectMargin(0,0,0,0);
+			.CenterItem_Width_Default		=	0;
+			.RightItem_Margin_Default		=	GRectMargin(0,4,35,7);
+		}								
+											
+		with .Skin							
+		{								
+			.LeftItem_Default			=	SF_CtrlTheme_FreeRealms_Control_Window_Skin_Standard_TitleBar_Minimized_LeftItem_Default;
+			.ItemToItem_Default			=	SF_CtrlTheme_FreeRealms_Control_Window_Skin_Standard_TitleBar_Minimized_ItemToItem_Default;
+			.ItemToRight_Default		=	SF_CtrlTheme_FreeRealms_Control_Window_Skin_Standard_TitleBar_Minimized_ItemToRight_Default;
+			.RightItem_Default			=	SF_CtrlTheme_FreeRealms_Control_Window_Skin_Standard_TitleBar_Minimized_RightItem_Default;
+			.LeftItem_Winoff			=	SF_CtrlTheme_FreeRealms_Control_Window_Skin_Standard_TitleBar_Minimized_LeftItem_Winoff;
+			.ItemToItem_Winoff			=	SF_CtrlTheme_FreeRealms_Control_Window_Skin_Standard_TitleBar_Minimized_ItemToItem_Winoff;
+			.ItemToRight_Winoff			=	SF_CtrlTheme_FreeRealms_Control_Window_Skin_Standard_TitleBar_Minimized_ItemToRight_Winoff;
+			.RightItem_Winoff			=	SF_CtrlTheme_FreeRealms_Control_Window_Skin_Standard_TitleBar_Minimized_RightItem_Winoff;
+		}
+	}
+
+	map SF_CtrlTheme_FreeRealms_Control						=	GFC_Control_StandardTitleBar_Style;
+	map GFC_CtrlTheme_Bitmap_Control_TitleBar				=	GFC_Control_StandardTitleBar_Style;	
+	map GFC_Control										=	GFC_Control_StandardTitleBar_Style;	
+}
+
+
+style SF_CtrlTheme_FreeRealms_Control_Window_Standard_TitleBar_Collapsed_Style
+{
+	.Size_BarThickness					=	48;
+	
+	GFC_Control_Flag_RegionClipParent	=	GFlags(GCtrl, GFC_CF_REGIONCLIP_PARENT);
+
+
+	with GFC_CtrlTheme_Bitmap_Control_TitleBar
+	{		
+		with .Size
+		{
+			.LeftItem_Margin_Default		=	GRectMargin(35,0,0,10);
+			.CenterItem_Margin_Default		=	GRectMargin(38,0,38,0);
+			.CenterItem_Width_Default		=	62;
+			.RightItem_Margin_Default		=	GRectMargin(0,9,35,18);
+		}
+
+		with .Skin
+		{
+			.LeftItem_Default			=	SF_CtrlTheme_FreeRealms_Control_Window_Skin_Standard_TitleBar_Collapsed_LeftItem_Default;
+			.ItemToItem_Default			=	SF_CtrlTheme_FreeRealms_Control_Window_Skin_Standard_TitleBar_Collapsed_ItemToItem_Default;
+			.ItemToRight_Default		=	SF_CtrlTheme_FreeRealms_Control_Window_Skin_Standard_TitleBar_Collapsed_ItemToRight_Default;
+			.LeftToCenter_Default		=	SF_CtrlTheme_FreeRealms_Control_Window_Skin_Standard_TitleBar_Collapsed_LeftToCenter_Default;
+			.ItemToCenter_Default		=	SF_CtrlTheme_FreeRealms_Control_Window_Skin_Standard_TitleBar_Collapsed_ItemToCenter_Default;
+			.CenterItem_Default			=	SF_CtrlTheme_FreeRealms_Control_Window_Skin_Standard_TitleBar_Collapsed_CenterItem_Default;
+			.CenterToItem_Default		=	SF_CtrlTheme_FreeRealms_Control_Window_Skin_Standard_TitleBar_Collapsed_CenterToItem_Default;
+			.CenterToRight_Default		=	SF_CtrlTheme_FreeRealms_Control_Window_Skin_Standard_TitleBar_Collapsed_CenterToRight_Default;
+			.RightItem_Default			=	SF_CtrlTheme_FreeRealms_Control_Window_Skin_Standard_TitleBar_Collapsed_RightItem_Default;
+											
+			.LeftItem_Winoff			=	SF_CtrlTheme_FreeRealms_Control_Window_Skin_Standard_TitleBar_Collapsed_LeftItem_Winoff;
+			.ItemToItem_Winoff			=	SF_CtrlTheme_FreeRealms_Control_Window_Skin_Standard_TitleBar_Collapsed_ItemToItem_Winoff;
+			.ItemToRight_Winoff			=	SF_CtrlTheme_FreeRealms_Control_Window_Skin_Standard_TitleBar_Collapsed_ItemToRight_Winoff;
+			.LeftToCenter_Winoff		=	SF_CtrlTheme_FreeRealms_Control_Window_Skin_Standard_TitleBar_Collapsed_LeftToCenter_Winoff;
+			.ItemToCenter_Winoff		=	SF_CtrlTheme_FreeRealms_Control_Window_Skin_Standard_TitleBar_Collapsed_ItemToCenter_Winoff;
+			.CenterItem_Winoff			=	SF_CtrlTheme_FreeRealms_Control_Window_Skin_Standard_TitleBar_Collapsed_CenterItem_Winoff;
+			.CenterToItem_Winoff		=	SF_CtrlTheme_FreeRealms_Control_Window_Skin_Standard_TitleBar_Collapsed_CenterToItem_Winoff;
+			.CenterToRight_Winoff		=	SF_CtrlTheme_FreeRealms_Control_Window_Skin_Standard_TitleBar_Collapsed_CenterToRight_Winoff;
+			.RightItem_Winoff			=	SF_CtrlTheme_FreeRealms_Control_Window_Skin_Standard_TitleBar_Collapsed_RightItem_Winoff;
+		}
+	}
+
+	map SF_CtrlTheme_FreeRealms_Control					=	GFC_Control_StandardTitleBar_Style;
+	map GFC_CtrlTheme_Bitmap_Control_TitleBar			=	GFC_Control_StandardTitleBar_Style;	
+	map GFC_Control										=	GFC_Control_StandardTitleBar_Style;	
+}
+
+
+style SF_CtrlTheme_FreeRealms_Control_Window_Standard_TitleBar_SysBorderNormal_Style
+{
+	GFC_Control_Flag_RegionClipParent					=	0;	//GFlags(GCtrl, GFC_CF_REGIONCLIP_PARENT);
+
+	map SF_CtrlTheme_FreeRealms_Control					=	SF_CtrlTheme_FreeRealms_Control_Window_Standard_TitleBar_Maximized_Style;
+	map GFC_CtrlTheme_Bitmap_Control_TitleBar			=	SF_CtrlTheme_FreeRealms_Control_Window_Standard_TitleBar_Maximized_Style;	
+	map GFC_Control										=	SF_CtrlTheme_FreeRealms_Control_Window_Standard_TitleBar_Maximized_Style;	
+}
+
+
+
+//** Tool titlebar style
+
+	GFC_Control_ToolTitleBar_Style
+	{
+		.Size_BarThickness						=	16;
+		.Size_Margin							=	GRectMargin(0,0,0,0);		
+
+		.Font_Text								=	GFC_Control_ToolWindow_Style[GFC_Control_Window_Font_Title];
+		
+		with .Color
+		{
+			.Text_Default						=	GFC_Control_ToolWindow_Style[GFC_Control_Window_Color_Title_Default];
+			.Text_Disable						=	GFC_Control_ToolWindow_Style[GFC_Control_Window_Color_Title_Disable];
+			.Text_Winoff						=	GFC_Control_ToolWindow_Style[GFC_Control_Window_Color_Title_Winoff];
+			.Text_WinoffDisable					=	GFC_Control_ToolWindow_Style[GFC_Control_Window_Color_Title_WinoffDisable];
+
+			.TextShadow_Default					=	GFC_Control_ToolWindow_Style[GFC_Control_Window_Color_TitleShadow_Default];
+			.TextShadow_Disable					=	GFC_Control_ToolWindow_Style[GFC_Control_Window_Color_TitleShadow_Disable];
+			.TextShadow_Winoff					=	GFC_Control_ToolWindow_Style[GFC_Control_Window_Color_TitleShadow_Winoff];
+			.TextShadow_WinoffDisable			=	GFC_Control_ToolWindow_Style[GFC_Control_Window_Color_TitleShadow_WinoffDisable];
+		}
+											
+		with .Combine
+		{
+			.Text_Default_Dest					=	GFC_Control_ToolWindow_Style[GFC_Control_Window_Combine_Title_Default_Dest];
+			.Text_Default_Factor				=	GFC_Control_ToolWindow_Style[GFC_Control_Window_Combine_Title_Default_Factor];
+			.Text_Disable_Dest					=	GFC_Control_ToolWindow_Style[GFC_Control_Window_Combine_Title_Disable_Dest];
+			.Text_Disable_Factor				=	GFC_Control_ToolWindow_Style[GFC_Control_Window_Combine_Title_Disable_Factor];
+			.Text_Winoff_Dest					=	GFC_Control_ToolWindow_Style[GFC_Control_Window_Combine_Title_Winoff_Dest];
+			.Text_Winoff_Factor					=	GFC_Control_ToolWindow_Style[GFC_Control_Window_Combine_Title_Winoff_Factor];
+			.Text_WinoffDisable_Dest			=	GFC_Control_ToolWindow_Style[GFC_Control_Window_Combine_Title_WinoffDisable_Dest];
+			.Text_WinoffDisable_Factor			=	GFC_Control_ToolWindow_Style[GFC_Control_Window_Combine_Title_WinoffDisable_Factor];
+												
+			.TextShadow_Default_Dest			=	GFC_Control_ToolWindow_Style[GFC_Control_Window_Combine_TitleShadow_Default_Dest];
+			.TextShadow_Default_Factor			=	GFC_Control_ToolWindow_Style[GFC_Control_Window_Combine_TitleShadow_Default_Factor];
+			.TextShadow_Disable_Dest			=	GFC_Control_ToolWindow_Style[GFC_Control_Window_Combine_TitleShadow_Disable_Dest];
+			.TextShadow_Disable_Factor			=	GFC_Control_ToolWindow_Style[GFC_Control_Window_Combine_TitleShadow_Disable_Factor];
+			.TextShadow_Winoff_Dest				=	GFC_Control_ToolWindow_Style[GFC_Control_Window_Combine_TitleShadow_Winoff_Dest];
+			.TextShadow_Winoff_Factor			=	GFC_Control_ToolWindow_Style[GFC_Control_Window_Combine_TitleShadow_Winoff_Factor];
+			.TextShadow_WinoffDisable_Dest		=	GFC_Control_ToolWindow_Style[GFC_Control_Window_Combine_TitleShadow_WinoffDisable_Dest];
+			.TextShadow_WinoffDisable_Factor	=	GFC_Control_ToolWindow_Style[GFC_Control_Window_Combine_TitleShadow_WinoffDisable_Factor];
+		}
+
+		with .StyleId								
+		{
+			.Text								=	GPropertyId(SF_CtrlTheme_FreeRealms_Control_TitleBar_Tool_Label_Style);
+			.Border								=	GPropertyId(SF_CtrlTheme_FreeRealms_Control_TitleBar_Tool_Border_Normal_Style);
+			.CloseButton						=	GPropertyId(SF_CtrlTheme_FreeRealms_Control_TitleBar_Tool_CloseButton_Style);
+			.CollapseButton						=	GPropertyId(SF_CtrlTheme_FreeRealms_Control_TitleBar_Tool_CollapseButton_Style);
+			.CollapseRestoreButton				=	GPropertyId(SF_CtrlTheme_FreeRealms_Control_TitleBar_Tool_CollapseRestoreButton_Style);
+			.MinimizeButton						=	GPropertyId(SF_CtrlTheme_FreeRealms_Control_TitleBar_Tool_MinimizeButton_Style);
+			.MinimizeRestoreButton				=	GPropertyId(SF_CtrlTheme_FreeRealms_Control_TitleBar_Tool_MinimizeRestoreButton_Style);
+			.MaximizeButton						=	GPropertyId(SF_CtrlTheme_FreeRealms_Control_TitleBar_Tool_MaximizeButton_Style);
+			.MaximizeRestoreButton				=	GPropertyId(SF_CtrlTheme_FreeRealms_Control_TitleBar_Tool_MaximizeRestoreButton_Style);
+			.HelpButton							=	GPropertyId(SF_CtrlTheme_FreeRealms_Control_TitleBar_Tool_HelpButton_Style);
+		}
+
+		// Button styles
+		with GFC_CtrlTheme_Bitmap_Control_TitleBar
+		{
+			with .Flag
+			{
+				.CloseButton_Align				=	GFlags(GBitmapThemeAlign, GFC_BITMAPTHEME_ALIGN_RIGHT);
+				.MaximizeButton_Align			=	GFlags(GBitmapThemeAlign, GFC_BITMAPTHEME_ALIGN_RIGHT);
+				.MaximizeRestoreButton_Align	=	GFlags(GBitmapThemeAlign, GFC_BITMAPTHEME_ALIGN_RIGHT);
+				.MinimizeButton_Align			=	GFlags(GBitmapThemeAlign, GFC_BITMAPTHEME_ALIGN_RIGHT);
+				.MinimizeRestoreButton_Align	=	GFlags(GBitmapThemeAlign, GFC_BITMAPTHEME_ALIGN_RIGHT);
+				.CollapseButton_Align			=	GFlags(GBitmapThemeAlign, GFC_BITMAPTHEME_ALIGN_RIGHT);
+				.CollapseRestoreButton_Align	=	GFlags(GBitmapThemeAlign, GFC_BITMAPTHEME_ALIGN_RIGHT);
+				.HelpButton_Align				=	GFlags(GBitmapThemeAlign, GFC_BITMAPTHEME_ALIGN_RIGHT);
+
+				.Label_Align					=	GFlags(GBitmapThemeAlign, GFC_BITMAPTHEME_ALIGN_LEFT, GFC_BITMAPTHEME_STRETCHY);
+				.Image_Align					=	GFlags(GBitmapThemeAlign, GFC_BITMAPTHEME_ALIGN_LEFT);
+			}		
+
+			with .Size
+			{
+				with .CloseButton
+				{
+					.Index						=	6;
+					.Width						=	16;
+					.Spacing					=	0;
+				}								
+				with .MaximizeButton				
+				{								
+					.Index						=	5;
+					.Width						=	16;
+					.Spacing					=	0;
+				}								
+				with .MaximizeRestoreButton			
+				{								
+					.Index						=	5;
+					.Width						=	16;
+					.Spacing					=	0;
+				}								
+				with .MinimizeButton				
+				{								
+					.Index						=	4;				
+					.Width						=	16;
+					.Spacing					=	0;
+				}								
+				with .MinimizeRestoreButton			
+				{								
+					.Index						=	4;
+					.Width						=	16;
+					.Spacing					=	0;
+				}								
+				with .CollapseButton				
+				{								
+					.Index						=	3;
+					.Width						=	16;
+					.Spacing					=	0;
+				}								
+				with .CollapseRestoreButton			
+				{								
+					.Index						=	3;
+					.Width						=	16;
+					.Spacing					=	0;
+				}								
+				with .HelpButton					
+				{								
+					.Index						=	2;
+					.Width						=	16;
+					.Spacing					=	0;
+				}								
+				with .Label							
+				{								
+					.Index						=	1;
+				}								
+				with .Image							
+				{								
+					.Index						=	0;
+				}
+
+			}
+			
+			with .Skin								
+			{									
+				.Full_Default					=	SF_CtrlTheme_FreeRealms_Control_Window_Skin_Tool_TitleBar_Full_Default;
+				.Full_Winoff					=	SF_CtrlTheme_FreeRealms_Control_Window_Skin_Tool_TitleBar_Full_Winoff;
+			}
+		}
+		map SF_CtrlTheme_FreeRealms_Control					=	GFC_Control_DefaultTitleBar_Style;
+		map GFC_CtrlTheme_Bitmap_Control_TitleBar			=	GFC_Control_DefaultTitleBar_Style;	
+		map GFC_Control									=	GFC_Control_DefaultTitleBar_Style;	
+	}
+
+
+style SF_CtrlTheme_FreeRealms_Control_Window_Tool_TitleBar_Maximized_Style
+{
+	map SF_CtrlTheme_FreeRealms_Control						=	GFC_Control_ToolTitleBar_Style;
+	map GFC_CtrlTheme_Bitmap_Control_TitleBar				=	GFC_Control_ToolTitleBar_Style;	
+	map GFC_Control										=	GFC_Control_ToolTitleBar_Style;	
+}
+
+
+style SF_CtrlTheme_FreeRealms_Control_Window_Tool_TitleBar_Minimized_Style
+{
+	with GFC_CtrlTheme_Bitmap_Control_TitleBar
+	{		
+		with .Skin								
+		{									
+			.Full_Default					=	SF_CtrlTheme_FreeRealms_Control_Window_Skin_Tool_TitleBar_Minimized_Full_Default;
+			.Full_Winoff					=	SF_CtrlTheme_FreeRealms_Control_Window_Skin_Tool_TitleBar_Minimized_Full_Winoff;
+		}
+	}
+
+	map SF_CtrlTheme_FreeRealms_Control						=	GFC_Control_ToolTitleBar_Style;
+	map GFC_CtrlTheme_Bitmap_Control_TitleBar				=	GFC_Control_ToolTitleBar_Style;	
+	map GFC_Control										=	GFC_Control_ToolTitleBar_Style;	
+}
+
+
+style SF_CtrlTheme_FreeRealms_Control_Window_Tool_TitleBar_Collapsed_Style
+{
+	.Size_BarThickness					=	16;
+	.Size_Margin						=	GRectMargin(0,0,0,0);
+
+	with GFC_CtrlTheme_Bitmap_Control_TitleBar
+	{		
+		with .Skin								
+		{									
+			.Full_Default					=	SF_CtrlTheme_FreeRealms_Control_Window_Skin_Tool_TitleBar_Collapsed_Full_Default;
+			.Full_Winoff					=	SF_CtrlTheme_FreeRealms_Control_Window_Skin_Tool_TitleBar_Collapsed_Full_Winoff;
+		}
+	}
+
+	map SF_CtrlTheme_FreeRealms_Control					=	GFC_Control_ToolTitleBar_Style;
+	map GFC_CtrlTheme_Bitmap_Control_TitleBar			=	GFC_Control_ToolTitleBar_Style;	
+	map GFC_Control										=	GFC_Control_ToolTitleBar_Style;	
+}
+
+
+style SF_CtrlTheme_FreeRealms_Control_Window_Tool_TitleBar_SysBorderNormal_Style
+{
+	GFC_Control_Flag_RegionClipParent					=	0;	//GFlags(GCtrl, GFC_CF_REGIONCLIP_PARENT);
+
+	map SF_CtrlTheme_FreeRealms_Control					=	SF_CtrlTheme_FreeRealms_Control_Window_Tool_TitleBar_Maximized_Style;
+	map GFC_CtrlTheme_Bitmap_Control_TitleBar			=	SF_CtrlTheme_FreeRealms_Control_Window_Tool_TitleBar_Maximized_Style;	
+	map GFC_Control										=	SF_CtrlTheme_FreeRealms_Control_Window_Tool_TitleBar_Maximized_Style;	
+}
+
+}	// end GFC_Control_TitleBar
+
+
+//****** Normal Window ******
+
+	GFC_Control_StandardWindow_Style
+	{
+		GFC_Control_Flag_RegionClip					=	GFlags(GCtrl, GFC_CF_REGIONCLIP);
+		
+		GFC_Control_Flag_Mask_InvalidateControl		=	GFlags(GCtrl, GFC_CF_ACTIVE, GFC_CF_WINDOWACTIVE, GFC_CF_DISABLED, GFC_CF_TRANSPARENT, GFC_CF_TOPLAYER);
+
+
+		with GFC_CtrlTheme_Bitmap_Control_Window_StyleId
+		{
+			with .TitleBar
+			{
+				.Normal					=	GPropertyId(GFC_Control_StandardTitleBar_Style);
+				.Maximized				=	GPropertyId(SF_CtrlTheme_FreeRealms_Control_Window_Standard_TitleBar_Maximized_Style);	
+				.Minimized				=	GPropertyId(SF_CtrlTheme_FreeRealms_Control_Window_Standard_TitleBar_Minimized_Style);
+				.Collapsed				=	GPropertyId(SF_CtrlTheme_FreeRealms_Control_Window_Standard_TitleBar_Collapsed_Style);
+				.NoBorderNormal			=	.Normal;
+				.NoBorderMaximized		=	.Maximized;	
+				.NoBorderMinimized		=	.Minimized;	
+				.NoBorderCollapsed		=	.Collapsed;	
+				.SysBorderNormal		=	GPropertyId(SF_CtrlTheme_FreeRealms_Control_Window_Standard_TitleBar_SysBorderNormal_Style);	
+				.SysBorderMinimized		=	.SysBorderNormal;
+				.SysBorderMaximized		=	.SysBorderNormal;
+				.SysBorderCollapsed		=	.SysBorderNormal;
+			}							
+			with .InFrameBorder				
+			{							
+				.Normal					=	GPropertyId(SF_CtrlTheme_FreeRealms_Control_Window_Standard_InFrameBorder_Normal_Style);
+				.Maximized				=	GPropertyId(SF_CtrlTheme_FreeRealms_Control_Window_Standard_InFrameBorder_Normal_Style);
+				.Minimized				=	GPropertyId(GFC_Control_EmptyBorder_Style);
+				.Collapsed				=	GPropertyId(GFC_Control_EmptyBorder_Style);
+
+				.SysBorderCollapsed		=	GPropertyId(GFC_Control_EmptyBorder_Style);
+			}							
+											
+			.OuterBorder_Normal			=	GPropertyId(SF_CtrlTheme_FreeRealms_Control_Window_Standard_OuterBorder_Normal_Style);
+											
+			//.InnerBorder_Normal		=	GPropertyId(SF_CtrlTheme_FreeRealms_Control_Window_Standard_InnerBorder_Normal_Style);
+		}
+
+		map SF_CtrlTheme_FreeRealms_Control						=	GFC_Control_DefaultWindow_Style;
+		map GFC_CtrlTheme_Bitmap_Control_Window					=	GFC_Control_DefaultWindow_Style;
+		map GFC_Control											=	GFC_Control_DefaultWindow_Style;
+	}
+
+
+//****** Dialog Window ******
+
+	GFC_Control_DialogWindow_Style
+	{
+
+		map SF_CtrlTheme_FreeRealms_Control						=	GFC_Control_StandardWindow_Style;
+		map GFC_CtrlTheme_Bitmap_Control_Window					=	GFC_Control_StandardWindow_Style;
+		map GFC_Control											=	GFC_Control_StandardWindow_Style;
+	}
+
+
+//****** Tool Window ******
+
+	GFC_Control_ToolWindow_Style
+	{
+		with GFC_CtrlTheme_Bitmap_Control_Window_StyleId
+		{
+			with .TitleBar
+			{
+				.Normal					=	GPropertyId(GFC_Control_ToolTitleBar_Style);
+				.Maximized				=	GPropertyId(SF_CtrlTheme_FreeRealms_Control_Window_Tool_TitleBar_Maximized_Style);	
+				.Minimized				=	GPropertyId(SF_CtrlTheme_FreeRealms_Control_Window_Tool_TitleBar_Minimized_Style);
+				.Collapsed				=	GPropertyId(SF_CtrlTheme_FreeRealms_Control_Window_Tool_TitleBar_Collapsed_Style);
+				.NoBorderNormal			=	.Normal;
+				.NoBorderMaximized		=	.Maximized;	
+				.NoBorderMinimized		=	.Minimized;	
+				.NoBorderCollapsed		=	.Collapsed;	
+				.SysBorderNormal		=	GPropertyId(SF_CtrlTheme_FreeRealms_Control_Window_Tool_TitleBar_SysBorderNormal_Style);	
+				.SysBorderMinimized		=	.SysBorderNormal;
+				.SysBorderMaximized		=	.SysBorderNormal;
+				.SysBorderCollapsed		=	.SysBorderNormal;
+			}							
+			with .InFrameBorder				
+			{							
+				.Normal					=	GPropertyId(SF_CtrlTheme_FreeRealms_Control_Window_Tool_InFrameBorder_Normal_Style);
+				.Maximized				=	GPropertyId(SF_CtrlTheme_FreeRealms_Control_Window_Tool_InFrameBorder_Normal_Style);
+				.Minimized				=	GPropertyId(GFC_Control_EmptyBorder_Style);
+				.Collapsed				=	GPropertyId(GFC_Control_EmptyBorder_Style);
+
+				.SysBorderCollapsed		=	GPropertyId(GFC_Control_EmptyBorder_Style);
+			}							
+											
+			.OuterBorder_Normal			=	GPropertyId(SF_CtrlTheme_FreeRealms_Control_Window_Tool_OuterBorder_Normal_Style);
+		}
+
+		with GFC_CtrlTheme_Bitmap_Control_Window_Skin_Inner
+		{
+			.Default
+			{
+				layer
+				{
+					LayerFlags		=	GFlags(GCtrlBitmapSkin, GFC_BITMAPSKIN_CENTER_FILL, GFC_BITMAPSKIN_BACKCAPS_REGION);
+					CenterColor		=	SF_CtrlTheme_FreeRealms_Control_Color_Background;
+				}	
+				layer
+				{
+					LayerFlags		=	GFlags(GCtrlBitmapSkin, GFC_BITMAPSKIN_CENTER_FILL, GFC_BITMAPSKIN_BACKCAPS_PARTIAL);
+					DestCombine		=	GColorCombine(BlendSource, Disable);
+					CenterColor		=	SF_CtrlTheme_FreeRealms_Control_Color_Background;
+				}
+
+			}
+			.Winoff
+			{
+				layer
+				{
+					LayerFlags		=	GFlags(GCtrlBitmapSkin, GFC_BITMAPSKIN_CENTER_FILL, GFC_BITMAPSKIN_BACKCAPS_REGION);
+					CenterColor		=	SF_CtrlTheme_FreeRealms_Control_Color_Background;
+				}	
+				layer
+				{
+					LayerFlags		=	GFlags(GCtrlBitmapSkin, GFC_BITMAPSKIN_CENTER_FILL, GFC_BITMAPSKIN_BACKCAPS_PARTIAL);
+					DestCombine		=	GColorCombine(BlendSource, Disable);
+					CenterColor		=	SF_CtrlTheme_FreeRealms_Control_Color_Background;
+				}
+
+
+			}
+		}
+
+		with .Font						
+		{								
+			.Title								=	GFC_Control_Font_Fixed;
+			.Text							=	GFC_Control_Font_Fixed;			
+		}
+
+		map SF_CtrlTheme_FreeRealms_Control						=	GFC_Control_StandardWindow_Style;
+		map GFC_CtrlTheme_Bitmap_Control_Window					=	GFC_Control_StandardWindow_Style;
+		map GFC_Control											=	GFC_Control_StandardWindow_Style;
+	}
+	
+}

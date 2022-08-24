@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<Window Name="wndSSSHalftimeBoard" Type="Window" X="0" Y="0" Width="695" Height="678" ChildAlignH="Default" ChildAlignV="Default" AlignH="Undefined Property." AlignV="Undefined Property." SizingH="Undefined Property." SizingV="Undefined Property." HExpandParent="N/A" VExpandParent="N/A" Caption="wndRadialMenu" Sizeable="None" Moveable="False" AnchorX="Left" AnchorY="Top" Style="Dialog" Spacing="None" CloseBox="False" MinBox="False" MaxBox="False" CollapseBox="False" Visible="True" OuterBorder="False" InnerBorder="False" InnerFill="False" TitleBar="False" PopupMenu="False" InnerMoveable="False" HitTest="Children" Focus="False">
+    <Flashanim Name="swfSSSHalftimeBoard" Type="Flashanim" X="0" Y="0" Width="695" Height="678" AlignH="Default" AlignV="Default" SizingH="Default" SizingV="Default" HExpandParent="True" VExpandParent="True" File="UI\SSS_halftimeBoard.swf" />
+</Window>

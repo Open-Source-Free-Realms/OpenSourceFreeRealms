@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<TimeOfDay>
+  <Dawn StartTime="none" />
+  <Day StartTime="none" />
+  <Dusk StartTime="none" />
+  <Night StartTime="19:45" />
+</TimeOfDay>
+
+<Dome>
+    <Texture File="dome_bixie_hive.tga" />
+</Dome>
+
+<Horizon>
+    <Texture File="ring_blank.tga" />
+    <Position Bottom="6" Top="40" />
+</Horizon>
+
+<SunLight>
+    <Direction Heading="5" Pitch="65" />
+    <Color R="165" G="160" B="135" Brightness=".35" />
+    <Shadows Enabled="false" />
+</SunLight>
+
+<Ambient>
+    <Texture File="ambient_bixie_hive.tga" Brightness=".65"/>
+</Ambient>
+
+<Reflection>
+    <CubeMap File="reflection_bixie_hive.dds" Brightness="5"/>
+</Reflection>
+
+<Fog>
+    <Color R="113" G="8" B="73" />
+    <Range Near="0" Far="390" />
+    <FadeRange Near="200" Far="275" />
+</Fog>
+
+<Post>
+    <Bloom Strength=".25" />
+    <Haze Strength=".75" Distance="175" />
+</Post>

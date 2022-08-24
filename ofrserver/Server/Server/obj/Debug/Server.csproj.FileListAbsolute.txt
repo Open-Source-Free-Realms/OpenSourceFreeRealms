@@ -1,0 +1,16 @@
+D:\Landwalker\Landwalker Server\Landwalker Server.exe
+D:\Landwalker\Landwalker Server\Landwalker Server.pdb
+D:\Landwalker\Landwalker Server Assets\Server Stuff (Don't Touch)\Landwalker Server\obj\Debug\Server.csproj.AssemblyReference.cache
+D:\Landwalker\Landwalker Server Assets\Server Stuff (Don't Touch)\Landwalker Server\obj\Debug\Server.csproj.SuggestedBindingRedirects.cache
+D:\Landwalker\Landwalker Server Assets\Server Stuff (Don't Touch)\Landwalker Server\obj\Debug\Server.csproj.CoreCompileInputs.cache
+D:\Landwalker\Landwalker Server Assets\Server Stuff (Don't Touch)\Landwalker Server\obj\Debug\Server.csproj.CopyComplete
+D:\Landwalker\Landwalker Server Assets\Server Stuff (Don't Touch)\Landwalker Server\obj\Debug\Landwalker Server.exe
+D:\Landwalker\Landwalker Server Assets\Server Stuff (Don't Touch)\Landwalker Server\obj\Debug\Landwalker Server.pdb
+D:\Landwalker\bin\OFRServer.exe
+D:\Landwalker\bin\OFRServer.pdb
+D:\Landwalker\ofrserver\Server\Server\obj\Debug\Server.csproj.AssemblyReference.cache
+D:\Landwalker\ofrserver\Server\Server\obj\Debug\Server.csproj.SuggestedBindingRedirects.cache
+D:\Landwalker\ofrserver\Server\Server\obj\Debug\Server.csproj.CoreCompileInputs.cache
+D:\Landwalker\ofrserver\Server\Server\obj\Debug\Server.csproj.CopyComplete
+D:\Landwalker\ofrserver\Server\Server\obj\Debug\OFRServer.exe
+D:\Landwalker\ofrserver\Server\Server\obj\Debug\OFRServer.pdb

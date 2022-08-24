@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+
+<TimeOfDay>
+  <Dawn StartTime="none" />
+  <Day StartTime="none" />
+  <Dusk StartTime="none" />
+  <Night StartTime="19:45" />
+</TimeOfDay>
+
+<Dome>
+    <Texture File="dome_misty_mountain.tga" />
+</Dome>
+
+<Horizon>
+    <Texture File="ring_snowhill_12.dds" R="100" G="130" B="168" Opacity="0.5" />
+    <Position Bottom="-20" Top="55" />
+</Horizon>
+
+<SunLight>
+    <Direction Heading="210" Pitch="60" />
+    <Color R="200" G="160" B="180" Brightness=".2" />
+    <Shadows Enabled="true" />
+</SunLight>
+
+<Ambient>
+    <Texture File="ambient_misty_mountain.tga" Brightness="1"/>
+</Ambient>
+
+<Reflection>
+    <CubeMap File="reflection_outdoordefault.dds" Brightness="1" />
+</Reflection>
+
+<Fog>
+    <Color R="55" G="36" B="97" />
+    <Range Near="0" Far="300" />
+    <FadeRange Near="250" Far="500" />
+</Fog>
+
+<Post>
+    <Bloom Strength="3" />
+    <Haze Strength=".1" Distance="250" />
+</Post>

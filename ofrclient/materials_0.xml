@@ -1,0 +1,582 @@
+<?xml version="1.0" encoding="utf-8"?>
+<MaterialInfo>
+    <InputLayout Name ="Position">
+        <Entry Stream="0" Offset="0"  Type="Float3"   Usage="Position" UsageIndex="0" />
+    </InputLayout>
+    <InputLayout Name ="Color">
+        <Entry Stream="0" Offset="0"  Type="Float3"   Usage="Position" UsageIndex="0" />
+        <Entry Stream="0" Offset="12" Type="D3dcolor" Usage="Color"    UsageIndex="0" />
+    </InputLayout>
+    <InputLayout Name ="ColorSkin">
+        <Entry Stream="0" Offset="0"  Type="Float3"   Usage="Position"     UsageIndex="0" />
+        <Entry Stream="0" Offset="12" Type="Float3"   Usage="BlendWeight"  UsageIndex="0" />
+        <Entry Stream="0" Offset="24" Type="D3dcolor" Usage="BlendIndices" UsageIndex="0" />
+        <Entry Stream="0" Offset="40" Type="D3dcolor" Usage="Color"        UsageIndex="0" />
+    </InputLayout>
+    <InputLayout Name ="ColorUV">
+        <Entry Stream="0" Offset="0"  Type="Float3"   Usage="Position" UsageIndex="0" />
+        <Entry Stream="0" Offset="12" Type="D3dcolor" Usage="Color"    UsageIndex="0" />
+        <Entry Stream="0" Offset="16" Type="Float2"   Usage="Texcoord" UsageIndex="0" />
+    </InputLayout>
+    <InputLayout Name="ClrNrmUV">
+        <Entry Stream="0" Offset="0"  Type="Float3"   Usage="Position" UsageIndex="0" />
+        <Entry Stream="0" Offset="12" Type="Float3"   Usage="Normal"   UsageIndex="0" />
+        <Entry Stream="0" Offset="24" Type="D3dcolor" Usage="Color"    UsageIndex="0" />
+        <Entry Stream="0" Offset="28" Type="Float2"   Usage="Texcoord" UsageIndex="0" />
+        <Entry Stream="0" Offset="36" Type="D3dcolor" Usage="Color"    UsageIndex="1" />
+    </InputLayout>
+    <InputLayout Name="ClrNrmUV2">
+        <Entry Stream="0" Offset="0"  Type="Float3"   Usage="Position" UsageIndex="0" />
+        <Entry Stream="0" Offset="12" Type="Float3"   Usage="Normal"   UsageIndex="0" />
+        <Entry Stream="0" Offset="24" Type="D3dcolor" Usage="Color"    UsageIndex="0" />
+        <Entry Stream="0" Offset="28" Type="Float2"   Usage="Texcoord" UsageIndex="0" />
+        <Entry Stream="0" Offset="36" Type="Float2"   Usage="Texcoord" UsageIndex="1" />
+        <Entry Stream="0" Offset="44" Type="D3dcolor" Usage="Color"    UsageIndex="1" />
+    </InputLayout>
+    <InputLayout Name="BumpUV">
+        <Entry Stream="0" Offset="0"  Type="Float3"   Usage="Position"  UsageIndex="0" />
+        <Entry Stream="0" Offset="12" Type="Float3"   Usage="Normal"    UsageIndex="0" />
+        <Entry Stream="0" Offset="24" Type="Float3"   Usage="Tangent"   UsageIndex="0" />
+        <Entry Stream="0" Offset="36" Type="Float2"   Usage="Texcoord"  UsageIndex="0" />
+    </InputLayout>
+    <InputLayout Name="ClrNrmUVSkin">
+        <Entry Stream="0" Offset="0"  Type="Float3"   Usage="Position"     UsageIndex="0" />
+        <Entry Stream="0" Offset="12" Type="Float3"   Usage="BlendWeight"  UsageIndex="0" />
+        <Entry Stream="0" Offset="24" Type="D3dcolor" Usage="BlendIndices" UsageIndex="0" />
+        <Entry Stream="0" Offset="28" Type="Float3"   Usage="Normal"       UsageIndex="0" />
+        <Entry Stream="0" Offset="40" Type="D3dcolor" Usage="Color"        UsageIndex="0" />
+        <Entry Stream="0" Offset="44" Type="Float2"   Usage="Texcoord"     UsageIndex="0" />
+    </InputLayout>
+    <InputLayout Name="ClrNrmUV2Skin">
+        <Entry Stream="0" Offset="0"  Type="Float3"   Usage="Position"     UsageIndex="0" />
+        <Entry Stream="0" Offset="12" Type="Float3"   Usage="BlendWeight"  UsageIndex="0" />
+        <Entry Stream="0" Offset="24" Type="D3dcolor" Usage="BlendIndices" UsageIndex="0" />
+        <Entry Stream="0" Offset="28" Type="Float3"   Usage="Normal"       UsageIndex="0" />
+        <Entry Stream="0" Offset="40" Type="D3dcolor" Usage="Color"        UsageIndex="0" />
+        <Entry Stream="0" Offset="44" Type="Float2"   Usage="Texcoord"     UsageIndex="0" />
+        <Entry Stream="0" Offset="52" Type="Float2"   Usage="Texcoord"     UsageIndex="1" />
+    </InputLayout>
+    <InputLayout Name="BumpUVSkin">
+        <Entry Stream="0" Offset="0"  Type="Float3"   Usage="Position"      UsageIndex="0" />
+        <Entry Stream="0" Offset="12" Type="Float3"   Usage="BlendWeight"   UsageIndex="0" />
+        <Entry Stream="0" Offset="24" Type="D3dcolor" Usage="BlendIndices"  UsageIndex="0" />
+        <Entry Stream="0" Offset="28" Type="Float3"   Usage="Normal"        UsageIndex="0" />
+        <Entry Stream="0" Offset="40" Type="Float3"   Usage="Tangent"       UsageIndex="0" />
+        <Entry Stream="0" Offset="52" Type="Float2"   Usage="Texcoord"      UsageIndex="0" />
+    </InputLayout>
+    <InputLayout Name="RuntimeTerrain">
+        <Entry Stream="0" Offset="0"  Type="Float3"   Usage="Position" UsageIndex="0" />
+        <Entry Stream="0" Offset="12" Type="D3dcolor" Usage="Normal"   UsageIndex="0" />
+        <Entry Stream="0" Offset="16" Type="D3dcolor" Usage="Color"    UsageIndex="0" />
+        <Entry Stream="0" Offset="20" Type="D3dcolor" Usage="Color"    UsageIndex="1" />
+        <Entry Stream="0" Offset="24" Type="Short2"   Usage="Texcoord" UsageIndex="0" />
+        <Entry Stream="0" Offset="28" Type="Short2"   Usage="Texcoord" UsageIndex="1" />
+    </InputLayout>
+    <InputLayout Name="Flora">
+        <Entry Stream="0" Offset="0"  Type="Float3"   Usage="Position" UsageIndex="0" />
+        <Entry Stream="0" Offset="12" Type="Float1"   Usage="Color"    UsageIndex="0" />
+        <Entry Stream="0" Offset="16" Type="D3dcolor" Usage="Normal"   UsageIndex="0" />
+        <Entry Stream="0" Offset="20" Type="D3dcolor" Usage="Tangent"  UsageIndex="0" />
+        <Entry Stream="0" Offset="24" Type="Short2"   Usage="Texcoord" UsageIndex="0" />
+        <Entry Stream="0" Offset="28" Type="D3dcolor" Usage="Color"    UsageIndex="1" />
+    </InputLayout>
+    <InputLayout Name ="DebugText">
+        <Entry Stream="0" Offset="0"  Type="Float2"   Usage="Position"      UsageIndex="0" />
+        <Entry Stream="0" Offset="8"  Type="D3dcolor" Usage="Color"         UsageIndex="0" />
+        <Entry Stream="0" Offset="12" Type="Short2"   Usage="Texcoord"      UsageIndex="0" />
+        <Entry Stream="0" Offset="16" Type="Short2"   Usage="Texcoord"      UsageIndex="1" />
+    </InputLayout>
+    <InputLayout Name ="FontPrimitive">
+        <Entry Stream="0" Offset="0"  Type="Float3"   Usage="Position"      UsageIndex="0" />
+        <Entry Stream="0" Offset="12" Type="D3dcolor" Usage="Color"         UsageIndex="0" />
+        <Entry Stream="0" Offset="16" Type="Short4"   Usage="Texcoord"      UsageIndex="0" />
+        <Entry Stream="0" Offset="24" Type="Short4"   Usage="Texcoord"      UsageIndex="1" />
+    </InputLayout>
+    <InputLayout Name ="Pseudo3D">
+        <Entry Stream="0" Offset="0"  Type="Float3"   Usage="Position"      UsageIndex="0" />
+        <Entry Stream="0" Offset="12" Type="Float2"   Usage="Texcoord"      UsageIndex="0" />
+        <Entry Stream="0" Offset="20" Type="Float2"   Usage="Texcoord"      UsageIndex="1" />
+        <Entry Stream="0" Offset="28" Type="Float2"   Usage="Texcoord"      UsageIndex="2" />
+        <Entry Stream="0" Offset="36" Type="D3dcolor" Usage="Color"         UsageIndex="0" />
+    </InputLayout>
+    <InputLayout Name ="SpriteParticle">
+        <Entry Stream="0" Offset="0"  Type="Float3"   Usage="Position"      UsageIndex="0" />
+        <Entry Stream="0" Offset="12" Type="Short2"   Usage="Texcoord"      UsageIndex="0" />
+        <Entry Stream="0" Offset="16" Type="Float2"   Usage="Texcoord"      UsageIndex="1" />
+        <Entry Stream="0" Offset="24" Type="Float2"   Usage="Texcoord"      UsageIndex="2" />
+        <Entry Stream="0" Offset="32" Type="Float1"   Usage="Texcoord"      UsageIndex="3" />
+        <Entry Stream="0" Offset="36" Type="Float1"   Usage="Texcoord"      UsageIndex="4" />
+        <Entry Stream="0" Offset="40" Type="D3dcolor" Usage="Color"         UsageIndex="0" />
+    </InputLayout>
+    <InputLayout Name ="BeamParticle">
+        <Entry Stream="0" Offset="0"  Type="Float3"   Usage="Position"      UsageIndex="0" />
+        <Entry Stream="0" Offset="12" Type="Float3"   Usage="Texcoord"      UsageIndex="0" />
+        <Entry Stream="0" Offset="24" Type="Float3"   Usage="Texcoord"      UsageIndex="1" />
+        <Entry Stream="0" Offset="36" Type="Float1"   Usage="Texcoord"      UsageIndex="2" />
+        <Entry Stream="0" Offset="40" Type="Float1"   Usage="Texcoord"      UsageIndex="3" />
+        <Entry Stream="0" Offset="44" Type="D3dcolor" Usage="Color"         UsageIndex="0" />
+    </InputLayout>
+    <InputLayout Name ="Decal">
+        <Entry Stream="0" Offset="0"  Type="Float3"   Usage="Position" UsageIndex="0" />
+        <Entry Stream="0" Offset="12" Type="Float3"   Usage="Texcoord" UsageIndex="0" />
+        <Entry Stream="0" Offset="24" Type="D3dcolor" Usage="Color"    UsageIndex="0" />
+    </InputLayout>
+
+    <MaterialDefinition Name="Sky"              Type="Sky">
+        <DrawStyle Name="Normal" Effect="Shaders\Sky_0.fxo"                InputLayout="ColorUV" />
+    </MaterialDefinition>
+
+    <MaterialDefinition Name="FadeRigid" Type="ForwardOpaque">
+        <DrawStyle Name="Normal" Effect="Shaders\fadeRigid_0.fxo" InputLayout="ClrNrmUV" />
+    </MaterialDefinition>
+    <MaterialDefinition Name="FadeSkin" Type="ForwardOpaque">
+        <DrawStyle Name="Normal" Effect="Shaders\fadeSkin_0.fxo" InputLayout="ClrNrmUVSkin" />
+    </MaterialDefinition>
+
+    <MaterialDefinition Name="SimpleRigid"      Type="ForwardOpaque">
+        <Property Name="ArtistSelectable" />
+        <DrawStyle Name="Normal" Effect="Shaders\simpleRigid_0.fxo"            InputLayout="ClrNrmUV" />
+    </MaterialDefinition>
+    <MaterialDefinition Name="SimpleRigidNoShadow"      Type="ForwardOpaque">
+        <Property Name="ArtistSelectable" />
+        <DrawStyle Name="Normal" Effect="Shaders\simpleRigid_0.fxo"            InputLayout="ClrNrmUV" />
+    </MaterialDefinition>
+    <MaterialDefinition Name="SpecRigid"        Type="ForwardOpaque">
+        <Property Name="ArtistSelectable" />
+        <DrawStyle Name="Normal" Effect="Shaders\simpleRigid_0.fxo"              InputLayout="ClrNrmUV" />
+    </MaterialDefinition>
+    <MaterialDefinition Name="SpecGlowRigid"    Type="ForwardOpaque">
+        <Property Name="ArtistSelectable" />
+        <DrawStyle Name="Normal" Effect="Shaders\simpleRigid_0.fxo"          InputLayout="ClrNrmUV" />
+    </MaterialDefinition>
+    <MaterialDefinition Name="DualTextureRigid"    Type="ForwardOpaque">
+        <Property Name="ArtistSelectable" />
+        <DrawStyle Name="Normal" Effect="Shaders\dualTextureRigid_0.fxo"       InputLayout="ClrNrmUV2" />
+    </MaterialDefinition>
+    <MaterialDefinition Name="DualTextureRigidNoShadow"    Type="ForwardOpaque">
+        <Property Name="ArtistSelectable" />
+        <DrawStyle Name="Normal" Effect="Shaders\dualTextureRigid_0.fxo"       InputLayout="ClrNrmUV2" />
+    </MaterialDefinition>
+    <MaterialDefinition Name="DualTextureRigidGlow"    Type="ForwardOpaque">
+        <Property Name="ArtistSelectable" />
+        <DrawStyle Name="Normal" Effect="Shaders\dualTextureRigid_0.fxo"       InputLayout="ClrNrmUV2" />
+    </MaterialDefinition>
+    <MaterialDefinition Name="DualTextureRigidGlowNoShadow"    Type="ForwardOpaque">
+        <Property Name="ArtistSelectable" />
+        <DrawStyle Name="Normal" Effect="Shaders\dualTextureRigid_0.fxo"       InputLayout="ClrNrmUV2" />
+    </MaterialDefinition>
+    <MaterialDefinition Name="DualTextureRigidAlpha"    Type="ForwardOpaque">
+        <Property Name="ArtistSelectable" />
+        <DrawStyle Name="Normal" Effect="Shaders\dualTextureRigidAlpha_0.fxo"       InputLayout="ClrNrmUV2" />
+    </MaterialDefinition>
+    <MaterialDefinition Name="DualTextureSpecRigid"    Type="ForwardOpaque">
+        <Property Name="ArtistSelectable" />
+        <DrawStyle Name="Normal" Effect="Shaders\dualTextureRigid_0.fxo"   InputLayout="ClrNrmUV2" />
+    </MaterialDefinition>
+    <MaterialDefinition Name="DualTextureEnvRigid"    Type="ForwardOpaque">
+        <Property Name="ArtistSelectable" />
+        <DrawStyle Name="Normal" Effect="Shaders\dualTextureRigid_0.fxo"   InputLayout="ClrNrmUV2" />
+    </MaterialDefinition>
+    <MaterialDefinition Name="SpecGlowBumpRigid"    Type="ForwardOpaque">
+        <Property Name="ArtistSelectable" />
+        <DrawStyle Name="Normal" Effect="Shaders\simpleRigid_0.fxo"          InputLayout="BumpUV" />
+    </MaterialDefinition>
+    <MaterialDefinition Name="SimpleRigidAlphaTest" Type="ForwardOpaque">
+        <Property Name="ArtistSelectable" />
+        <Property Name="SemiTransparent" />
+        <DrawStyle Name="Normal" Effect="Shaders\simpleRigidAlphaTest_0.fxo"   InputLayout="ClrNrmUV" />
+    </MaterialDefinition>
+    <MaterialDefinition Name="GlowRigidAlphaTest"       Type="ForwardOpaque">
+        <Property Name="ArtistSelectable" />
+        <Property Name="SemiTransparent" />
+        <DrawStyle Name="Normal" Effect="Shaders\glowRigidAlphaTest_0.fxo"     InputLayout="ClrNrmUV" />
+    </MaterialDefinition>
+    <MaterialDefinition Name="SpecRigidAlphaTest"       Type="ForwardOpaque">
+        <Property Name="ArtistSelectable" />
+        <Property Name="SemiTransparent" />
+        <DrawStyle Name="Normal" Effect="Shaders\simpleRigidAlphaTest_0.fxo"     InputLayout="ClrNrmUV" />
+    </MaterialDefinition>
+    <MaterialDefinition Name="SpecGlowRigidAlphaTest"   Type="ForwardOpaque">
+        <Property Name="ArtistSelectable" />
+        <Property Name="SemiTransparent" />
+        <DrawStyle Name="Normal" Effect="Shaders\simpleRigidAlphaTest_0.fxo" InputLayout="ClrNrmUV" />
+    </MaterialDefinition>
+    <MaterialDefinition Name="TintMaskRigid"  Type="ForwardOpaque">
+        <Property Name="ArtistSelectable" />
+        <DrawStyle Name="Normal" Effect="Shaders\tintMaskRigid_0.fxo"          InputLayout="ClrNrmUV" />
+    </MaterialDefinition>
+    <MaterialDefinition Name="TintMaskRigidAlphaTest"  Type="ForwardOpaque">
+        <Property Name="ArtistSelectable" />
+        <DrawStyle Name="Normal" Effect="Shaders\tintMaskRigidAlphaTest_0.fxo" InputLayout="ClrNrmUV" />
+    </MaterialDefinition>
+    <MaterialDefinition Name="TintMaskSpecRigidAlphaTest"  Type="ForwardOpaque">
+        <Property Name="ArtistSelectable" />
+        <DrawStyle Name="Normal" Effect="Shaders\tintMaskRigidAlphaTest_0.fxo"  InputLayout="ClrNrmUV" />
+    </MaterialDefinition>
+    <MaterialDefinition Name="SwayRigidAlphaTest"      Type="ForwardOpaque">
+        <Property Name="ArtistSelectable" />
+        <DrawStyle Name="Normal" Effect="Shaders\simpleRigidAlphaTest_0.fxo"            InputLayout="ClrNrmUV" />
+    </MaterialDefinition>
+
+    <MaterialDefinition Name="GhostRigid" Type="Ghost">
+        <Property Name="ArtistSelectable" />
+        <Property Name="SemiTransparent" />
+        <DrawStyle Name="Pre" Effect="Shaders\ghostRigidBase_0.fxo"  InputLayout="ClrNrmUV" />
+        <DrawStyle Name="Normal" Effect="Shaders\ghostRigidAdd_0.fxo"  InputLayout="ClrNrmUV" />
+    </MaterialDefinition>
+    <MaterialDefinition Name="GlassRigid" Type="Glass">
+        <Property Name="ArtistSelectable" />
+        <Property Name="SemiTransparent" />
+        <DrawStyle Name="Normal" Effect="Shaders\glassRigid_0.fxo"  InputLayout="ClrNrmUV" />
+    </MaterialDefinition>
+    <MaterialDefinition Name="GlassRigidDepth" Type="Glass">
+        <Property Name="ArtistSelectable" />
+        <Property Name="SemiTransparent" />
+        <DrawStyle Name="Normal" Effect="Shaders\glassRigid_0.fxo"  InputLayout="ClrNrmUV" />
+        <DrawStyle Name="Pre" Effect="Shaders\glassRigidDepth_0.fxo"  InputLayout="ClrNrmUV" />
+    </MaterialDefinition>
+    <MaterialDefinition Name="SilhouetteRigid" Type="Silhouette">
+        <Property Name="ArtistSelectable" />
+        <Property Name="SemiTransparent" />
+        <DrawStyle Name="Pre"    Effect="Shaders\silhouetteRigidDepth_0.fxo" InputLayout="ClrNrmUV" />
+        <DrawStyle Name="Normal" Effect="Shaders\silhouetteRigid_0.fxo"   InputLayout="ClrNrmUV" />
+    </MaterialDefinition>
+
+    <MaterialDefinition Name="SimpleSkin"       Type="ForwardOpaque">
+        <Property Name="ArtistSelectable" />
+        <DrawStyle Name="Normal" Effect="Shaders\simpleSkin_0.fxo"             InputLayout="ClrNrmUVSkin" />
+    </MaterialDefinition>
+    <MaterialDefinition Name="SimpleRigidSkin" Type="ForwardOpaque">
+        <Property Name="ArtistSelectable" />
+        <DrawStyle Name="Normal" Effect="Shaders\simpleRigidSkin_0.fxo"             InputLayout="ClrNrmUVSkin" />
+    </MaterialDefinition>
+    <MaterialDefinition Name="SpecSkin"         Type="ForwardOpaque">
+        <Property Name="ArtistSelectable" />
+        <DrawStyle Name="Normal" Effect="Shaders\simpleSkin_0.fxo"               InputLayout="ClrNrmUVSkin" />
+    </MaterialDefinition>
+    <MaterialDefinition Name="SpecGlowSkin"     Type="ForwardOpaque">
+        <Property Name="ArtistSelectable" />
+        <DrawStyle Name="Normal" Effect="Shaders\simpleSkin_0.fxo"           InputLayout="ClrNrmUVSkin" />
+    </MaterialDefinition>
+    <MaterialDefinition Name="GlowSkin"         Type="ForwardOpaque">
+        <Property Name="ArtistSelectable" />
+        <DrawStyle Name="Normal" Effect="Shaders\simpleSkin_0.fxo"           InputLayout="ClrNrmUVSkin" />
+    </MaterialDefinition>
+    <MaterialDefinition Name="DualTextureSkin"  Type="ForwardOpaque">
+        <Property Name="ArtistSelectable" />
+        <DrawStyle Name="Normal" Effect="Shaders\dualTextureSkin_0.fxo"        InputLayout="ClrNrmUVSkin" />
+    </MaterialDefinition>
+    <MaterialDefinition Name="DualTextureSkin2UV"   Type="ForwardOpaque">
+        <Property Name="ArtistSelectable" />
+        <DrawStyle Name="Normal" Effect="Shaders\dualTextureSkin2UV_0.fxo"   InputLayout="ClrNrmUV2Skin" />
+    </MaterialDefinition>
+    <MaterialDefinition Name="DualTextureSpecSkin"  Type="ForwardOpaque">
+        <Property Name="ArtistSelectable" />
+        <DrawStyle Name="Normal" Effect="Shaders\dualTextureSkin_0.fxo"    InputLayout="ClrNrmUVSkin" />
+    </MaterialDefinition>
+    <MaterialDefinition Name="DualTextureEnvSkin"    Type="ForwardOpaque">
+        <Property Name="ArtistSelectable" />
+        <DrawStyle Name="Normal" Effect="Shaders\dualTextureSkin2UV_0.fxo"    InputLayout="ClrNrmUV2Skin" />
+    </MaterialDefinition>
+    <MaterialDefinition Name="TintMaskSkin"  Type="ForwardOpaque">
+        <Property Name="ArtistSelectable" />
+        <DrawStyle Name="Normal" Effect="Shaders\tintMaskSkin_0.fxo"           InputLayout="ClrNrmUVSkin" />
+    </MaterialDefinition>
+    <MaterialDefinition Name="TintMaskSkinAlphaTest"  Type="ForwardOpaque">
+        <Property Name="ArtistSelectable" />
+        <DrawStyle Name="Normal" Effect="Shaders\tintMaskSkinAlphaTest_0.fxo"  InputLayout="ClrNrmUVSkin" />
+    </MaterialDefinition>
+    <MaterialDefinition Name="TintMaskSpecSkinAlphaTest"  Type="ForwardOpaque">
+        <Property Name="ArtistSelectable" />
+        <DrawStyle Name="Normal" Effect="Shaders\tintMaskSkinAlphaTest_0.fxo"  InputLayout="ClrNrmUVSkin" />
+    </MaterialDefinition>
+    <MaterialDefinition Name="SpecGlowBumpSkin" Type="ForwardOpaque">
+        <Property Name="ArtistSelectable" />
+        <DrawStyle Name="Normal" Effect="Shaders\simpleSkin_0.fxo"           InputLayout="BumpUVSkin" />
+    </MaterialDefinition>
+    <MaterialDefinition Name="SimpleSkinAlphaTest"  Type="ForwardOpaque">
+        <Property Name="ArtistSelectable" />
+        <Property Name="SemiTransparent" />
+        <DrawStyle Name="Normal" Effect="Shaders\simpleSkinAlphaTest_0.fxo"    InputLayout="ClrNrmUVSkin" />
+    </MaterialDefinition>
+    <MaterialDefinition Name="GlowSkinAlphaTest"  Type="ForwardOpaque">
+        <Property Name="ArtistSelectable" />
+        <Property Name="SemiTransparent" />
+        <DrawStyle Name="Normal" Effect="Shaders\glowSkinAlphaTest_0.fxo"      InputLayout="ClrNrmUVSkin" />
+    </MaterialDefinition>
+    <MaterialDefinition Name="GlowTintMaskSkinAlphaTest"  Type="ForwardOpaque">
+        <Property Name="ArtistSelectable" />
+        <Property Name="SemiTransparent" />
+        <DrawStyle Name="Normal" Effect="Shaders\glowSkinAlphaTest_0.fxo"      InputLayout="ClrNrmUVSkin" />
+    </MaterialDefinition>
+    <MaterialDefinition Name="SpecSkinAlphaTest"  Type="ForwardOpaque">
+        <Property Name="ArtistSelectable" />
+        <Property Name="SemiTransparent" />
+        <DrawStyle Name="Normal" Effect="Shaders\simpleSkinAlphaTest_0.fxo"      InputLayout="ClrNrmUVSkin" />
+    </MaterialDefinition>
+    <MaterialDefinition Name="SpecGlowSkinAlphaTest"  Type="ForwardOpaque">
+        <Property Name="ArtistSelectable" />
+        <Property Name="SemiTransparent" />
+        <DrawStyle Name="Normal" Effect="Shaders\simpleSkinAlphaTest_0.fxo"  InputLayout="ClrNrmUVSkin" />
+    </MaterialDefinition>
+
+    <MaterialDefinition Name="SimpleRigidAlpha" Type="ForwardAlpha">
+        <Property Name="ArtistSelectable" />
+        <Property Name="SemiTransparent" />
+        <DrawStyle Name="Normal" Effect="Shaders\simpleRigid_0.fxo"        InputLayout="ClrNrmUV" />
+    </MaterialDefinition>
+    <MaterialDefinition Name="SimpleRigidAlphaBlend" Type="ForwardAlpha">
+        <Property Name="SemiTransparent" />
+        <DrawStyle Name="Normal" Effect="Shaders\simpleRigidBlend_0.fxo"        InputLayout="ClrNrmUV" />
+    </MaterialDefinition>
+    <MaterialDefinition Name="SimpleSkinAlphaBlend" Type="ForwardAlpha">
+        <Property Name="SemiTransparent" />
+        <DrawStyle Name="Normal" Effect="Shaders\simpleSkinBlend_0.fxo"        InputLayout="ClrNrmUVSkin" />
+    </MaterialDefinition>
+
+    <MaterialDefinition Name="SimpleRigidAlphaScreen" Type="ForwardAlpha">
+        <Property Name="ArtistSelectable" />
+        <Property Name="SemiTransparent" />
+        <DrawStyle Name="Normal" Effect="Shaders\simpleRigidScreen_0.fxo"        InputLayout="ClrNrmUV" />
+    </MaterialDefinition>
+    <MaterialDefinition Name="SimpleSkinAlphaScreen" Type="ForwardAlpha">
+        <Property Name="ArtistSelectable" />
+        <Property Name="SemiTransparent" />
+        <DrawStyle Name="Normal" Effect="Shaders\simpleSkinScreen_0.fxo"        InputLayout="ClrNrmUVSkin" />
+    </MaterialDefinition>
+
+    <MaterialDefinition Name="ModelTintRigid" Type="Primitive3D">
+        <Property Name="ArtistModelMaterialSelectable" />
+        <DrawStyle Name="Normal" Effect="Shaders\modelTintRigid_0.fxo" InputLayout="ClrNrmUV" />
+    </MaterialDefinition>
+    <MaterialDefinition Name="ModelTintSkin" Type="Primitive3D">
+        <Property Name="ArtistModelMaterialSelectable" />
+        <DrawStyle Name="Normal" Effect="Shaders\modelTintSkin_0.fxo" InputLayout="ClrNrmUVSkin" />
+    </MaterialDefinition>
+
+    <MaterialDefinition Name="HighlightRigid"          Type="Primitive3D">
+        <DrawStyle Name="Normal" Effect="Shaders\highlightRigid_0.fxo"   InputLayout="ClrNrmUV" />
+    </MaterialDefinition>
+    <MaterialDefinition Name="HighlightSkin"           Type="Primitive3D">
+        <DrawStyle Name="Normal" Effect="Shaders\highlightSkin_0.fxo"    InputLayout="ClrNrmUVSkin" />
+    </MaterialDefinition>
+
+    <MaterialDefinition Name="Primitive3D"      Type="Primitive3D">
+        <DrawStyle Name="Normal" Effect="Shaders\Primitive3D.fxo"        InputLayout="Color" />
+    </MaterialDefinition>
+    <MaterialDefinition Name="Primitive3DDepth"  Type="Primitive3DDepth">
+        <DrawStyle Name="Normal" Effect="Shaders\Primitive3DDepth.fxo"        InputLayout="Color" />
+    </MaterialDefinition>
+    <MaterialDefinition Name="PrimitivePseudo3DTexture" Type="Primitive3D">
+        <DrawStyle Name="Normal" Effect="Shaders\PrimitivePseudo3DTexture.fxo" InputLayout="Pseudo3D" />
+    </MaterialDefinition>
+    <MaterialDefinition Name="Primitive2D"      Type="Primitive2D">
+        <DrawStyle Name="Normal" Effect="Shaders\Primitive2D.fxo"         InputLayout="Color" />
+    </MaterialDefinition>
+    <MaterialDefinition Name="Primitive2DTexture" Type="Primitive2D">
+        <DrawStyle Name="Normal" Effect="Shaders\Primitive2DTexture.fxo"  InputLayout="ColorUV" />
+    </MaterialDefinition>
+    <MaterialDefinition Name="DebugText" Type="Primitive2D">
+        <DrawStyle Name="Normal" Effect="Shaders\DebugText.fxo"  InputLayout="DebugText" />
+    </MaterialDefinition>
+
+    <MaterialDefinition Name="FontPrimitive"    Type="Primitive3D">
+        <DrawStyle Name="Normal" Effect="Shaders\FontPrimitive_0.fxo"      InputLayout="FontPrimitive" />
+    </MaterialDefinition>
+
+    <MaterialDefinition Name="LitSpriteParticle" Type="Particle">
+        <DrawStyle Name="Normal" Effect="Shaders\LitSpriteParticle_0.fxo"  InputLayout="SpriteParticle" />
+    </MaterialDefinition>
+
+    <MaterialDefinition Name="SpriteParticle" Type="Particle">
+        <DrawStyle Name="Normal" Effect="Shaders\SpriteParticle_0.fxo"  InputLayout="SpriteParticle" />
+    </MaterialDefinition>
+
+    <MaterialDefinition Name="DistortSpriteParticle" Type="Particle">
+        <DrawStyle Name="Proxy" InputLayout="SpriteParticle" />
+    </MaterialDefinition>
+
+    <MaterialDefinition Name="BeamParticle"     Type="Particle">
+        <DrawStyle Name="Normal" Effect="Shaders\BeamParticle_0.fxo" InputLayout="BeamParticle" />
+    </MaterialDefinition>
+
+    <MaterialDefinition Name="Primitive3DTextureAlphaTest" Type="ForwardOpaque">
+        <DrawStyle Name="Normal" Effect="Shaders\Primitive3DTextureAlphaTest_0.fxo" InputLayout="ClrNrmUV" />
+    </MaterialDefinition>
+    <MaterialDefinition Name="Decal" Type="ForwardOpaque">
+        <DrawStyle Name="Normal" Effect="Shaders\decal_0.fxo" InputLayout="Decal" />
+    </MaterialDefinition>
+    <MaterialDefinition Name="Primitive2DTexture2" Type="Primitive2D">
+        <DrawStyle Name="Normal" Effect="Shaders\Primitive2DTexture.fxo"  InputLayout="ColorUV" />
+    </MaterialDefinition>
+    <MaterialDefinition Name="LightBeam" Type="Particle">
+        <Property Name="ArtistSelectable" />
+        <Property Name="SemiTransparent" />
+        <DrawStyle Name="Normal" Effect="Shaders\LightBeam_0.fxo"  InputLayout="ClrNrmUV" />
+    </MaterialDefinition>
+    <MaterialDefinition Name="LightBeamSkin" Type="Particle">
+        <Property Name="ArtistSelectable" />
+        <Property Name="SemiTransparent" />
+        <DrawStyle Name="Normal" Effect="Shaders\LightBeamSkin_0.fxo"  InputLayout="ClrNrmUVSkin" />
+    </MaterialDefinition>
+    <MaterialDefinition Name="GhostSkin" Type="Ghost">
+        <Property Name="ArtistSelectable" />
+        <Property Name="SemiTransparent" />
+        <DrawStyle Name="Pre" Effect="Shaders\ghostSkinBase_0.fxo"  InputLayout="ClrNrmUVSkin" />
+        <DrawStyle Name="Normal" Effect="Shaders\ghostSkinAdd_0.fxo"  InputLayout="ClrNrmUVSkin" />
+    </MaterialDefinition>
+
+    <MaterialDefinition Name="Crystal" Type="Refractive">
+        <Property Name="ArtistSelectable" />
+        <Property Name="SemiTransparent" />
+        <DrawStyle Name="Normal" Effect="Shaders\Crystal_0.fxo"  InputLayout="ClrNrmUV" />
+    </MaterialDefinition>
+
+    <MaterialDefinition Name="CrystalSkin" Type="Refractive">
+        <Property Name="ArtistSelectable" />
+        <Property Name="SemiTransparent" />
+        <DrawStyle Name="Normal" Effect="Shaders\CrystalSkin_0.fxo"  InputLayout="ClrNrmUVSkin" />
+    </MaterialDefinition>
+
+    <MaterialDefinition Name="Water" Type="Water">
+        <Property Name="ArtistSelectable" />
+        <Property Name="SemiTransparent" />
+        <DrawStyle Name="Normal" Effect="Shaders\Water_0.fxo"  InputLayout="ClrNrmUV" />
+    </MaterialDefinition>
+    <MaterialDefinition Name="WaterRigidSkin" Type="Water">
+        <Property Name="ArtistSelectable" />
+        <Property Name="SemiTransparent" />
+        <DrawStyle Name="Normal" Effect="Shaders\WaterRigidSkin_0.fxo"  InputLayout="ClrNrmUVSkin" />
+    </MaterialDefinition>
+
+    <MaterialDefinition Name="BubbleRigid" Type="ForwardAlpha">
+        <Property Name="ArtistSelectable" />
+        <Property Name="SemiTransparent" />
+        <DrawStyle Name="Normal" Effect="Shaders\BubbleRigid_0.fxo"  InputLayout="ClrNrmUV" />
+    </MaterialDefinition>
+
+    <MaterialDefinition Name="ShieldRigid" Type="Shield">
+        <Property Name="ArtistSelectable" />
+        <Property Name="SemiTransparent" />
+        <DrawStyle Name="Normal" Effect="Shaders\ShieldRigid_0.fxo"  InputLayout="BumpUV" />
+    </MaterialDefinition>
+    <MaterialDefinition Name="ShieldSkin" Type="Shield">
+        <Property Name="ArtistSelectable" />
+        <Property Name="SemiTransparent" />
+        <DrawStyle Name="Normal" Effect="Shaders\ShieldSkin_0.fxo"  InputLayout="BumpUVSkin" />
+    </MaterialDefinition>
+    
+    <MaterialDefinition Name="BubbleSkin" Type="ForwardAlpha">
+        <Property Name="ArtistSelectable" />
+        <Property Name="SemiTransparent" />
+        <DrawStyle Name="Normal" Effect="Shaders\BubbleSkin_0.fxo"  InputLayout="ClrNrmUVSkin" />
+    </MaterialDefinition>
+	
+    <MaterialDefinition Name="Waterfall" Type="Waterfall">
+        <Property Name="ArtistSelectable" />
+        <Property Name="SemiTransparent" />
+        <DrawStyle Name="Normal" Effect="Shaders\Waterfall_0.fxo"  InputLayout="ClrNrmUV" />
+    </MaterialDefinition>
+
+    <MaterialDefinition Name="EnvRigid"        Type="ForwardOpaque">
+        <Property Name="ArtistSelectable" />
+        <DrawStyle Name="Normal" Effect="Shaders\envRigid_0.fxo"     InputLayout="ClrNrmUV" />
+    </MaterialDefinition>
+    <MaterialDefinition Name="EnvSkin"  Type="ForwardOpaque">
+        <Property Name="ArtistSelectable" />
+        <DrawStyle Name="Normal" Effect="Shaders\envSkin_0.fxo"     InputLayout="ClrNrmUVSkin" />
+    </MaterialDefinition>
+
+    <MaterialDefinition Name="RuntimeTerrainFallback"   Type="ForwardTerrain">
+        <DrawStyle Name="Normal" Effect="Shaders\runtimeterrainfallback.fxo"     InputLayout="RuntimeTerrain" />
+    </MaterialDefinition>
+
+    <MaterialDefinition Name="Flora" Type="ForwardOpaque">
+        <DrawStyle Name="Normal" Effect="Shaders\flora_0.fxo" InputLayout="Flora" />
+    </MaterialDefinition>
+
+    <MaterialDefinition Name="ColorKeyPrimitive3D"  Type="ColorKey">
+        <DrawStyle Name="Normal" Effect="Shaders\ColorKey_0.fxo"        InputLayout="Color" />
+    </MaterialDefinition>
+    <MaterialDefinition Name="TransparencyKey" Type="ColorKey">
+        <DrawStyle Name="Normal" Effect="Shaders\TransparencyKey_0.fxo" InputLayout="Position" />
+    </MaterialDefinition>
+
+    <MaterialDefinition Name="Flash" Type="Flash"/>
+
+    <MaterialDefinition Name="WipeStatic" Type="WipeStatic"/>
+
+    <MaterialDefinition Name="Wipe" Type="Wipe">
+        <DrawStyle Name="Normal" Effect="Shaders\Wipe_0.fxo" InputLayout="Color" />
+    </MaterialDefinition>
+
+    <MaterialDefinition Name="GhostRigidDoubleSided" Type="Ghost">
+        <Property Name="ArtistSelectable" />
+        <Property Name="SemiTransparent" />
+        <DrawStyle Name="Pre" Effect="Shaders\ghostRigidDoubleSidedBase_0.fxo"  InputLayout="ClrNrmUV" />
+        <DrawStyle Name="Normal" Effect="Shaders\ghostRigidDoubleSidedAdd_0.fxo"  InputLayout="ClrNrmUV" />
+    </MaterialDefinition>
+    <MaterialDefinition Name="GhostSkinDoubleSided" Type="Ghost">
+        <Property Name="ArtistSelectable" />
+        <Property Name="SemiTransparent" />
+        <DrawStyle Name="Pre" Effect="Shaders\ghostSkinDoubleSidedBase_0.fxo"  InputLayout="ClrNrmUVSkin" />
+        <DrawStyle Name="Normal" Effect="Shaders\ghostSkinDoubleSidedAdd_0.fxo"  InputLayout="ClrNrmUVSkin" />
+    </MaterialDefinition>
+
+    <MaterialDefinition Name="BulletSimple" Type="Bullet">
+        <Property Name="ArtistSelectable" />
+        <Property Name="SemiTransparent" />
+        <DrawStyle Name="Normal" Effect="Shaders\bullet_0.fxo" InputLayout="ClrNrmUV" />
+    </MaterialDefinition>
+    <MaterialDefinition Name="Bullet" Type="Bullet">
+        <Property Name="ArtistSelectable" />
+        <Property Name="SemiTransparent" />
+        <DrawStyle Name="Proxy" InputLayout="ClrNrmUV" />
+    </MaterialDefinition>
+
+    <ParameterGroup Name="Application">
+        <Parameter Name="WireFrame"  Variable="WireFrame"    Type="Int" />
+        <Parameter Name="MipBias"    Variable="MipBias"      Type="Int" />
+        <Parameter Name="AllowNoise" Variable="AllowNoise"   Type="Int" />
+        <Parameter Name="Obscure"    Variable="PostObscure"  Type="Float" DefaultValue="0" />
+    </ParameterGroup>
+    <ParameterGroup Name="Fog">
+        <Parameter Name="Density"   Variable="FogDensity"   Type="Float" />
+        <Parameter Name="Range"     Variable="FogRange"     Type="Float" />
+        <Parameter Name="Near"      Variable="FogNear"      Type="Float" />
+        <Parameter Name="Far"       Variable="FogFar"       Type="Float"    DefaultValue="999999.0" />
+        <Parameter Name="Color"     Variable="FogColor"     Type="Float3"   DefaultW="1.0" />
+    </ParameterGroup>
+    <ParameterGroup Name="PointLight">
+        <Parameter Name="Position"  Variable="PointLightPosition"   Type="Float3" />
+        <Parameter Name="Range"     Variable="PointLightRange"      Type="Float"    DefaultValue="1.0"/>
+        <Parameter Name="Color"     Variable="PointLightColor"      Type="Float3"   DefaultValue="0.0"/>
+        <Parameter Name="Texture"   Variable="PointLightTexture"    Type="Texture" />
+    </ParameterGroup>
+    <ParameterGroup Name="DirectionalLight">
+        <Parameter Name="Direction" Variable="DirectionalLightDirection"    Type="Float3" DefaultX="0.f" DefaultY="-0.7071f" DefaultZ="-0.7071f" />
+        <Parameter Name="Basis"     Variable="DirectionalLightBasis"        Type="Float4x4" />
+        <Parameter Name="Color"     Variable="DirectionalLightColor"        Type="Float3" DefaultValue="1.f"/>
+        <Parameter Name="Texture"   Variable="DirectionalLightTexture"      Type="Texture" />
+    </ParameterGroup>
+    <ParameterGroup Name="SpotLight">
+        <Parameter Name="InverseWorldMatrix"    Variable="SpotLightMatrix"  Type="Float4x4" />
+        <Parameter Name="Range"                 Variable="SpotLightRange"   Type="Float" />
+        <Parameter Name="Color"                 Variable="SpotLightColor"   Type="Float3" />
+        <Parameter Name="Texture"               Variable="SpotLightTexture" Type="Texture" />
+    </ParameterGroup>
+    <ParameterGroup Name="SkyLight">
+        <Parameter Name="MeanAmbientColor"      Variable="SkyLightMeanAmbientColor" Type="Float3" />
+        <Parameter Name="InverseWorldMatrix"    Variable="SkyLightMatrix"           Type="Float4x4" />
+        <Parameter Name="Color"                 Variable="SkyLightColor"            Type="Float3" />
+        <Parameter Name="SpecularColor"         Variable="SkyLightSpecularColor"    Type="Float3" />
+        <Parameter Name="Diffuse"               Variable="SkyLightDiffuse"          Type="Texture" />
+        <Parameter Name="Specular"              Variable="SkyLightSpecular"         Type="Texture" />
+    </ParameterGroup>
+    <ParameterGroup Name="Post">
+        <Parameter Name="BloomStrength"         Variable="PostBloomStrength"    Type="Float" DefaultValue="0.75" />
+        <Parameter Name="HazeStrength"          Variable="PostHazeStrength"     Type="Float" DefaultValue="0.33"/>
+        <Parameter Name="HazeDepth"             Variable="PostHazeDepth"        Type="Float" DefaultValue="400.0"/>
+        <Parameter Name="Vignette"              Variable="PostVignette"         Type="Int"/>
+    </ParameterGroup>
+</MaterialInfo>

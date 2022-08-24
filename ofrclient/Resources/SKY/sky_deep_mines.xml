@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<TimeOfDay>
+  <Dawn StartTime="none" />
+  <Day StartTime="none" />
+  <Dusk StartTime="none" />
+  <Night StartTime="19:45" />
+</TimeOfDay>
+
+<Dome>
+    <Texture File="dome_deep_mines.tga" />
+</Dome>
+
+<Horizon>
+    <Texture File="ring_blank.tga" />
+    <Position Bottom="0" Top="45" />
+</Horizon>
+
+<SunLight>
+    <Direction Heading="190" Pitch="65" />
+    <Color R="255" G="32" B="64" Brightness=".4" />
+    <Shadows Enabled="false" />
+</SunLight>
+
+<Ambient>
+    <Texture File="ambient_deep_mines.tga" Brightness="1.1"/>
+</Ambient>
+
+<Fog>
+    <Color R="60" G="32" B="120" />
+    <Range Near="35" Far="120" /> 
+    <FadeRange Near="500" Far="550" />
+</Fog>
+
+<Post>
+    <Bloom Strength="1.25" />
+    <Haze Strength="1.0" Distance="200" />
+</Post>

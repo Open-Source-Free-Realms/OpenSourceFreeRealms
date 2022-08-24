@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+
+<TimeOfDay>
+  <Dawn StartTime="none" />
+  <Day StartTime="none" />
+  <Dusk StartTime="none" />
+  <Night StartTime="19:45" />
+</TimeOfDay>
+
+<Dome>
+    <Texture File="dome_memorial_cavern.tga" />
+</Dome>
+
+<Horizon>
+    <Texture File="ring_blank.tga" />
+    <Position Bottom="0" Top="45" />
+</Horizon>
+
+<SunLight>
+    <Direction Heading="5" Pitch="60" />
+    <Color R="170" G="155" B="125" Brightness=".85" />
+    <Shadows Enabled="false" />
+</SunLight>
+
+<Ambient>
+    <Texture File="ambient_memorial_cavern.tga" Brightness=".6"/>
+</Ambient>
+
+<Reflection>
+    <CubeMap File="reflection_memorial_cavern.dds" Brightness="1"/>
+</Reflection>
+
+<Fog>
+    <Color R="0" G="84" B="156" />
+    <Range Near="20" Far="250" />
+    <FadeRange Near="200" Far="250" />
+</Fog>
+
+<Post>
+    <Bloom Strength=".33" />
+    <Haze Strength=".2" Distance="105" />
+</Post>

@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<Window Name="wndBlendTest" Type="Window" X="96" Y="14" Width="600" Height="550" ChildAlignH="Default" ChildAlignV="Default" AlignH="Undefined Property." AlignV="Undefined Property." SizingH="Undefined Property." SizingV="Undefined Property." HExpandParent="N/A" VExpandParent="N/A" Caption="wndRadialMenu" Sizeable="None" Moveable="True" AnchorX="Left" AnchorY="Top" Style="Dialog" Spacing="None" CloseBox="False" MinBox="False" MaxBox="False" CollapseBox="False" Visible="True" OuterBorder="False" InnerBorder="False" InnerFill="False" TitleBar="True" PopupMenu="True" InnerMoveable="True" HitTest="True" Focus="True">
+  <Flashanim Name="swf" Type="Flashanim" X="0" Y="0" Width="600" Height="550" AlignH="Default" AlignV="Default" SizingH="Default" SizingV="Default" HExpandParent="True" VExpandParent="True" File="UI\blendmode_test.swf" />
+</Window>

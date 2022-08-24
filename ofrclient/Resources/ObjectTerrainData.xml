@@ -1,0 +1,34 @@
+<ObjectTerrainData Id="1" DataName="Snowhill" SkyFileName="sky_snowhill24.xml" MinimapTileset="FabledRealms" RoomType="0" AtlasName="sacredgrove" />
+<ObjectTerrainData Id="2" DataName="Briarwood" SkyFileName="sky_briarwood24.xml" MinimapTileset="FabledRealms" RoomType="0" AtlasName="sacredgrove" />
+<ObjectTerrainData Id="3" DataName="Wilds" SkyFileName="sky_wilds24.xml" MinimapTileset="FabledRealms" RoomType="0" AtlasName="sacredgrove" />
+<ObjectTerrainData Id="4" DataName="JewelCave" SkyFileName="sky_indoor.xml" MinimapTileset="JewelCave" RoomType="0" AtlasName="sacredgrove" />
+<ObjectTerrainData Id="6" DataName="Seaside" SkyFileName="sky_seaside24.xml" MinimapTileset="FabledRealms" RoomType="0" AtlasName="sacredgrove" />
+<ObjectTerrainData Id="7" DataName="MemorialCaverns" SkyFileName="sky_memorial_cavern.xml" MinimapTileset="MemorialCaverns" RoomType="0" AtlasName="sacredgrove" />
+<ObjectTerrainData Id="8" DataName="MemorialCavernsTransWilds" SkyFileName="sky_wilds24.xml" MinimapTileset="MemorialCaverns" RoomType="0" AtlasName="sacredgrove" />
+<ObjectTerrainData Id="9" DataName="JewelCaveTransSnowhill" SkyFileName="sky_snowhill24.xml" MinimapTileset="JewelCave" RoomType="0" AtlasName="sacredgrove" />
+<ObjectTerrainData Id="10" DataName="Blackspore" SkyFileName="sky_blackspore24.xml" MinimapTileset="FabledRealms" RoomType="0" AtlasName="sacredgrove" />
+<ObjectTerrainData Id="11" DataName="Seaside" SkyFileName="sky_seaside24.xml" MinimapTileset="FabledRealms" RoomType="0" AtlasName="sacredgrove" />
+<ObjectTerrainData Id="12" DataName="Merryvale" SkyFileName="sky_merryvale24.xml" MinimapTileset="FabledRealms" RoomType="0" AtlasName="sacredgrove" />
+<ObjectTerrainData Id="56" DataName="ShroudedGlade" SkyFileName="sky_shrouded_glade24.xml" MinimapTileset="FabledRealms" RoomType="0" AtlasName="sacredgrove" />
+<ObjectTerrainData Id="58" DataName="WildsCrossroads" SkyFileName="sky_wilds_crossroads24.xml" MinimapTileset="FabledRealms" RoomType="0" AtlasName="sacredgrove" />
+<ObjectTerrainData Id="67" DataName="Snowhill_Demo" SkyFileName="sky_snowhill_demo.xml" MinimapTileset="sh_dm_arena" RoomType="0" AtlasName="sacredgrove" />
+<ObjectTerrainData Id="68" DataName="BlacksporeCaveTransWilds" SkyFileName="sky_wilds24.xml" MinimapTileset="BlacksporeCave" RoomType="0" AtlasName="sacredgrove" />
+<ObjectTerrainData Id="69" DataName="BlacksporeCaveTransBlackspore" SkyFileName="sky_blackspore24.xml" MinimapTileset="BlacksporeCave" RoomType="0" AtlasName="sacredgrove" />
+<ObjectTerrainData Id="70" DataName="BlacksporeCoastline" SkyFileName="sky_blackspore24b.xml" MinimapTileset="FabledRealms" RoomType="0" AtlasName="sacredgrove" />
+<ObjectTerrainData Id="71" DataName="Wugachug" SkyFileName="sky_wugachug24.xml" MinimapTileset="FabledRealms" RoomType="0" AtlasName="sacredgrove" />
+<ObjectTerrainData Id="72" DataName="SanctuaryCaveTransShroudedGlade" SkyFileName="sky_wilds24.xml" MinimapTileset="FabledRealms" RoomType="0" AtlasName="sacredgrove" />
+<ObjectTerrainData Id="73" DataName="ShroudedGladeCaveTransSanctuary" SkyFileName="sky_shrouded_glade24.xml" MinimapTileset="FabledRealms" RoomType="0" AtlasName="sacredgrove" />
+<ObjectTerrainData Id="74" DataName="TreasureVault" SkyFileName="sky_treasure_trove_ent.xml" MinimapTileset="FabledRealms" RoomType="0" AtlasName="sacredgrove" />
+<ObjectTerrainData Id="75" DataName="KartCaverns" SkyFileName="sky_kartcavern_bbe.xml" MinimapTileset="sg_kt_track2" RoomType="0" AtlasName="sacredgrove" />
+<ObjectTerrainData Id="76" DataName="Hidden Valley" SkyFileName="sky_hidden_valley24.xml" MinimapTileset="FabledRealms" RoomType="0" AtlasName="sacredgrove" />
+<ObjectTerrainData Id="77" DataName="Pir_Seaside" SkyFileName="sky_pir_seaside_bbe.xml" MinimapTileset="FabledRealms" RoomType="0" AtlasName="sacredgrove" />
+<ObjectTerrainData Id="78" DataName="Wilds_Underwater" SkyFileName="sky_wilds_underwater_bbe.xml" MinimapTileset="FabledRealms" RoomType="0" AtlasName="sacredgrove" />
+<ObjectTerrainData Id="79" DataName="Briarwood_Underwater" SkyFileName="sky_briarwood_underwater_bbe.xml" MinimapTileset="FabledRealms" RoomType="0" AtlasName="sacredgrove" />
+<ObjectTerrainData Id="80" DataName="SnowHill_Underwater" SkyFileName="sky_snowhill_underwater_bbe.xml" MinimapTileset="FabledRealms" RoomType="0" AtlasName="sacredgrove" />
+<ObjectTerrainData Id="81" DataName="SnowHill_Batcave_Lot" SkyFileName="sky_snowhill24.xml" MinimapTileset="SnowHill_Batcave_Lot" RoomType="0" AtlasName="sacredgrove" />
+<ObjectTerrainData Id="82" DataName="ShroudedGloam" SkyFileName="sky_shrouded_gloam.xml" MinimapTileset="FabledRealms" RoomType="0" AtlasName="sacredgrove" />
+<ObjectTerrainData Id="83" DataName="SunstoneValley" SkyFileName="sky_sunstone_valley24.xml" MinimapTileset="FabledRealms" RoomType="0" AtlasName="sunstone" />
+<ObjectTerrainData Id="84" DataName="ShroudedGloamLot" SkyFileName="sky_shrouded_gloam.xml" MinimapTileset="hsg_emptylot_shrouded_gloam_01" RoomType="0" AtlasName="sacredgrove" />
+<ObjectTerrainData Id="85" DataName="NewbieZoneShowdown" SkyFileName="sky_memorial_cavern.xml" MinimapTileset="sg_newbiezone_showdown" RoomType="0" AtlasName="sacredgrove" />
+<ObjectTerrainData Id="86" DataName="NPXCavern" SkyFileName="sky_blackspore24.xml" MinimapTileset="sg_npx_cavern_01" RoomType="0" AtlasName="sacredgrove" />
+<ObjectTerrainData Id="87" DataName="DenOfSecrets" SkyFileName="sky_den_of_secrets.xml" RoomType="0" AtlasName="sacredgrove" />

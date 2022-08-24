@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="utf-8"?>
+<MaterialInfo>
+    <InputLayout Name ="Position">
+        <Entry Stream="0" Offset="0"  Type="Float3"   Usage="Position" UsageIndex="0" />
+   </InputLayout>
+    <InputLayout Name ="Color">
+        <Entry Stream="0" Offset="0"  Type="Float3"   Usage="Position" UsageIndex="0" />
+        <Entry Stream="0" Offset="12" Type="D3dcolor" Usage="Color"    UsageIndex="0" />
+    </InputLayout>
+    <InputLayout Name ="ColorUV">
+        <Entry Stream="0" Offset="0"  Type="Float3"   Usage="Position" UsageIndex="0" />
+        <Entry Stream="0" Offset="12" Type="D3dcolor" Usage="Color"    UsageIndex="0" />
+        <Entry Stream="0" Offset="16" Type="Float2"   Usage="Texcoord" UsageIndex="0" />
+    </InputLayout>
+    <InputLayout Name="ClrNrmUV">
+        <Entry Stream="0" Offset="0"  Type="Float3"   Usage="Position" UsageIndex="0" />
+        <Entry Stream="0" Offset="12" Type="Float3"   Usage="Normal"   UsageIndex="0" />
+        <Entry Stream="0" Offset="24" Type="D3dcolor" Usage="Color"    UsageIndex="0" />
+        <Entry Stream="0" Offset="28" Type="Float2"   Usage="Texcoord" UsageIndex="0" />
+        <Entry Stream="0" Offset="36" Type="D3dcolor" Usage="Color"    UsageIndex="1" />
+    </InputLayout>
+    <InputLayout Name="ClrNrmUV2">
+        <Entry Stream="0" Offset="0"  Type="Float3"   Usage="Position" UsageIndex="0" />
+        <Entry Stream="0" Offset="12" Type="Float3"   Usage="Normal"   UsageIndex="0" />
+        <Entry Stream="0" Offset="24" Type="D3dcolor" Usage="Color"    UsageIndex="0" />
+        <Entry Stream="0" Offset="28" Type="Float2"   Usage="Texcoord" UsageIndex="0" />
+        <Entry Stream="0" Offset="36" Type="Float2"   Usage="Texcoord" UsageIndex="1" />
+        <Entry Stream="0" Offset="44" Type="D3dcolor" Usage="Color"    UsageIndex="1" />
+    </InputLayout>
+    <InputLayout Name="BumpUV">
+        <Entry Stream="0" Offset="0"  Type="Float3"   Usage="Position"  UsageIndex="0" />
+        <Entry Stream="0" Offset="12" Type="Float3"   Usage="Normal"    UsageIndex="0" />
+        <Entry Stream="0" Offset="24" Type="Float3"   Usage="Tangent"   UsageIndex="0" />
+        <Entry Stream="0" Offset="36" Type="Float2"   Usage="Texcoord"  UsageIndex="0" />
+    </InputLayout>
+    <InputLayout Name="ClrNrmUVSkin">
+        <Entry Stream="0" Offset="0"  Type="Float3"   Usage="Position"     UsageIndex="0" />
+        <Entry Stream="0" Offset="12" Type="Float3"   Usage="BlendWeight"  UsageIndex="0" />
+        <Entry Stream="0" Offset="24" Type="D3dcolor" Usage="BlendIndices" UsageIndex="0" />
+        <Entry Stream="0" Offset="28" Type="Float3"   Usage="Normal"       UsageIndex="0" />
+        <Entry Stream="0" Offset="40" Type="D3dcolor" Usage="Color"        UsageIndex="0" />
+        <Entry Stream="0" Offset="44" Type="Float2"   Usage="Texcoord"     UsageIndex="0" />
+    </InputLayout>
+    <InputLayout Name="ClrNrmUV2Skin">
+        <Entry Stream="0" Offset="0"  Type="Float3"   Usage="Position"     UsageIndex="0" />
+        <Entry Stream="0" Offset="12" Type="Float3"   Usage="BlendWeight"  UsageIndex="0" />
+        <Entry Stream="0" Offset="24" Type="D3dcolor" Usage="BlendIndices" UsageIndex="0" />
+        <Entry Stream="0" Offset="28" Type="Float3"   Usage="Normal"       UsageIndex="0" />
+        <Entry Stream="0" Offset="40" Type="D3dcolor" Usage="Color"        UsageIndex="0" />
+        <Entry Stream="0" Offset="44" Type="Float2"   Usage="Texcoord"     UsageIndex="0" />
+        <Entry Stream="0" Offset="52" Type="Float2"   Usage="Texcoord"     UsageIndex="1" />
+    </InputLayout>
+    <InputLayout Name="BumpUVSkin">
+        <Entry Stream="0" Offset="0"  Type="Float3"   Usage="Position"      UsageIndex="0" />
+        <Entry Stream="0" Offset="12" Type="Float3"   Usage="BlendWeight"   UsageIndex="0" />
+        <Entry Stream="0" Offset="24" Type="D3dcolor" Usage="BlendIndices"  UsageIndex="0" />
+        <Entry Stream="0" Offset="28" Type="Float3"   Usage="Normal"        UsageIndex="0" />
+        <Entry Stream="0" Offset="40" Type="Float3"   Usage="Tangent"       UsageIndex="0" />
+        <Entry Stream="0" Offset="52" Type="Float2"   Usage="Texcoord"      UsageIndex="0" />
+    </InputLayout>
+    <InputLayout Name="Terrain">
+        <Entry Stream="0" Offset="0"  Type="Float3"   Usage="Position" UsageIndex="0" />
+        <Entry Stream="0" Offset="12" Type="D3dcolor" Usage="Normal"   UsageIndex="0" />
+        <Entry Stream="0" Offset="16" Type="D3dcolor" Usage="Color"    UsageIndex="0" />
+        <Entry Stream="0" Offset="20" Type="D3dcolor" Usage="Color"    UsageIndex="1" />
+        <Entry Stream="0" Offset="24" Type="Short2"   Usage="Texcoord" UsageIndex="0" />
+        <Entry Stream="0" Offset="28" Type="Short2"   Usage="Texcoord" UsageIndex="1" />
+    </InputLayout>
+    <InputLayout Name="RuntimeTerrain">
+        <Entry Stream="0" Offset="0"  Type="Float3"   Usage="Position" UsageIndex="0" />
+        <Entry Stream="0" Offset="12" Type="D3dcolor" Usage="Normal"   UsageIndex="0" />
+        <Entry Stream="0" Offset="16" Type="D3dcolor" Usage="Color"    UsageIndex="0" />
+        <Entry Stream="0" Offset="20" Type="D3dcolor" Usage="Color"    UsageIndex="1" />
+        <Entry Stream="0" Offset="24" Type="Short2"   Usage="Texcoord" UsageIndex="0" />
+        <Entry Stream="0" Offset="28" Type="Short2"   Usage="Texcoord" UsageIndex="1" />
+    </InputLayout>
+    <InputLayout Name="Flora">
+        <Entry Stream="0" Offset="0"  Type="Float3"   Usage="Position" UsageIndex="0" />
+        <Entry Stream="0" Offset="12" Type="Float1"   Usage="Color"    UsageIndex="0" />
+        <Entry Stream="0" Offset="16" Type="D3dcolor" Usage="Normal"   UsageIndex="0" />
+        <Entry Stream="0" Offset="20" Type="D3dcolor" Usage="Tangent"  UsageIndex="0" />
+        <Entry Stream="0" Offset="24" Type="Short2"   Usage="Texcoord" UsageIndex="0" />
+        <Entry Stream="0" Offset="28" Type="D3dcolor" Usage="Color"    UsageIndex="1" />
+    </InputLayout>
+    <InputLayout Name="Post">
+        <Entry Stream="0" Offset="0"  Type="Float4"   Usage="Position" UsageIndex="0" />
+        <Entry Stream="0" Offset="16" Type="Float2"   Usage="Texcoord" UsageIndex="0" />
+    </InputLayout>
+    <InputLayout Name ="DebugText">
+        <Entry Stream="0" Offset="0"  Type="Float2"   Usage="Position"      UsageIndex="0" />
+        <Entry Stream="0" Offset="8"  Type="D3dcolor" Usage="Color"         UsageIndex="0" />
+        <Entry Stream="0" Offset="12" Type="Short2"   Usage="Texcoord"      UsageIndex="0" />
+        <Entry Stream="0" Offset="16" Type="Short2"   Usage="Texcoord"      UsageIndex="1" />
+    </InputLayout>
+    <InputLayout Name ="FontPrimitive">
+        <Entry Stream="0" Offset="0"  Type="Float3"   Usage="Position"      UsageIndex="0" />
+        <Entry Stream="0" Offset="12" Type="D3dcolor" Usage="Color"         UsageIndex="0" />
+        <Entry Stream="0" Offset="16" Type="Short4"   Usage="Texcoord"      UsageIndex="0" />
+        <Entry Stream="0" Offset="24" Type="Short4"   Usage="Texcoord"      UsageIndex="1" />
+    </InputLayout>
+    <InputLayout Name ="Pseudo3D">
+        <Entry Stream="0" Offset="0"  Type="Float3"   Usage="Position"      UsageIndex="0" />
+        <Entry Stream="0" Offset="12" Type="Float2"   Usage="Texcoord"      UsageIndex="0" />
+        <Entry Stream="0" Offset="20" Type="Float2"   Usage="Texcoord"      UsageIndex="1" />
+        <Entry Stream="0" Offset="28" Type="Float2"   Usage="Texcoord"      UsageIndex="2" />
+        <Entry Stream="0" Offset="36" Type="D3dcolor" Usage="Color"         UsageIndex="0" />
+    </InputLayout>
+    <InputLayout Name ="SpriteParticle">
+        <Entry Stream="0" Offset="0"  Type="Float3"   Usage="Position"      UsageIndex="0" />
+        <Entry Stream="0" Offset="12" Type="Short2"   Usage="Texcoord"      UsageIndex="0" />
+        <Entry Stream="0" Offset="16" Type="Float2"   Usage="Texcoord"      UsageIndex="1" />
+        <Entry Stream="0" Offset="24" Type="Float2"   Usage="Texcoord"      UsageIndex="2" />
+        <Entry Stream="0" Offset="32" Type="Float1"   Usage="Texcoord"      UsageIndex="3" />
+        <Entry Stream="0" Offset="36" Type="Float1"   Usage="Texcoord"      UsageIndex="4" />
+        <Entry Stream="0" Offset="40" Type="D3dcolor" Usage="Color"         UsageIndex="0" />
+    </InputLayout>
+    <InputLayout Name ="BeamParticle">
+        <Entry Stream="0" Offset="0"  Type="Float3"   Usage="Position"      UsageIndex="0" />
+        <Entry Stream="0" Offset="12" Type="Float3"   Usage="Texcoord"      UsageIndex="0" />
+        <Entry Stream="0" Offset="24" Type="Float3"   Usage="Texcoord"      UsageIndex="1" />
+        <Entry Stream="0" Offset="36" Type="Float1"   Usage="Texcoord"      UsageIndex="2" />
+        <Entry Stream="0" Offset="40" Type="Float1"   Usage="Texcoord"      UsageIndex="3" />
+        <Entry Stream="0" Offset="44" Type="D3dcolor" Usage="Color"         UsageIndex="0" />
+    </InputLayout>
+    <InputLayout Name ="Decal">
+        <Entry Stream="0" Offset="0"  Type="Float3"   Usage="Position" UsageIndex="0" />
+        <Entry Stream="0" Offset="12" Type="Float3"   Usage="Texcoord" UsageIndex="0" />
+        <Entry Stream="0" Offset="24" Type="D3dcolor" Usage="Color"    UsageIndex="0" />
+    </InputLayout>
+
+    <MaterialDefinition Name="Terrain1DetailFlat"   Type="ForwardTerrain">
+        <DrawStyle Name="Normal" Effect="Shaders\terrain_1Detail_Def.fxo"     InputLayout="Terrain" />
+    </MaterialDefinition>
+    <MaterialDefinition Name="Terrain2DetailFlat"   Type="ForwardTerrain">
+        <DrawStyle Name="Normal" Effect="Shaders\terrain_2Detail_Def.fxo"     InputLayout="Terrain" />
+    </MaterialDefinition>
+    <MaterialDefinition Name="Terrain3DetailFlat"   Type="ForwardTerrain">
+        <DrawStyle Name="Normal" Effect="Shaders\terrain_3Detail_Def.fxo"     InputLayout="Terrain" />
+    </MaterialDefinition>
+    <MaterialDefinition Name="Terrain4DetailFlat"   Type="ForwardTerrain">
+        <DrawStyle Name="Normal" Effect="Shaders\terrain_4Detail_Def.fxo"     InputLayout="Terrain" />
+    </MaterialDefinition>
+    <MaterialDefinition Name="Terrain5DetailFlat"   Type="ForwardTerrain">
+        <DrawStyle Name="Normal" Effect="Shaders\terrain_5Detail_Def.fxo"     InputLayout="Terrain" />
+    </MaterialDefinition>
+    <MaterialDefinition Name="Terrain0DetailFlat"   Type="ForwardTerrain">
+        <DrawStyle Name="Normal" Effect="Shaders\terrain_0Detail.fxo"     InputLayout="Terrain" />
+    </MaterialDefinition>
+</MaterialInfo>

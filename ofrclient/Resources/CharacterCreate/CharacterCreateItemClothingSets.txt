@@ -1,0 +1,37 @@
+#ID^DESCRIPTION^DESCRIPTION_ID^ICON_ID^FEET_ITEM_ID^LEGS_ITEM_ID^CHEST_ITEM_ID^
+0^Pixie Female Clothing Set - Sporty^8577^3295^418^944^416^
+1^Pixie Female Clothing Set - Sporty^8577^3295^15852^948^15358^
+2^Pixie Female Clothing Set - Sporty^8577^3295^1158^417^939^
+3^Pixie Female Clothing Set - Party^8541^3298^395^396^394^
+4^Pixie Female Clothing Set - Party^8541^3298^1572^919^916^
+5^Pixie Female Clothing Set - Party^8541^3298^15814^16610^2182^
+6^Pixie Female Clothing Set - Casual^2875^3302^414^934^413^
+7^Pixie Female Clothing Set - Casual^2875^3302^930^937^926^
+8^Pixie Female Clothing Set - Casual^2875^3302^932^415^925^
+9^Human Female Clothing Set - Weekend Wear^429775^5154^76499^76498^76497^
+10^Human Female Clothing Set - Chic Cutie^429617^5147^76502^76501^76500^
+11^Human Female Clothing Set - Fall Fashion^429637^5151^76505^76504^76503^
+12^Human Male Clothing Set - Collar^8518^3540^17412^14964^28178^
+13^Human Male Clothing Set - Collar^8518^3540^17397^392^28216^
+14^Human Male Clothing Set - Collar^8518^3540^17403^14954^28439^
+15^Human Male Clothing Set - Hoodie^2493^3531^29017^189^76487^
+16^Human Male Clothing Set - Hoodie^2493^3531^76494^17974^199^
+17^Human Male Clothing Set - Hoodie^2493^3531^28721^17975^1026^
+18^Human Male Clothing Set - Tee Shirt^2494^3528^201^18207^17033^
+19^Human Male Clothing Set - Tee Shirt^2494^3528^201^28912^17043^
+20^Human Male Clothing Set - Tee Shirt^2494^3528^201^18179^28424^
+21^Pixie Male Clothing Set - Skater^8524^3528^423^28969^16960^
+22^Pixie Male Clothing Set - Skater^8524^3528^976^28969^28089^
+23^Pixie Male Clothing Set - Skater^8524^3528^978^29006^28426^
+24^Pixie Male Clothing Set - Fitted^8595^3533^420^392^965^
+25^Pixie Male Clothing Set - Fitted^8595^3533^420^14964^17108^
+26^Pixie Male Clothing Set - Fitted^8595^3533^420^392^28444^
+27^Pixie Male Clothing Set - Athletic^8608^3532^1849^14925^17061^
+28^Pixie Male Clothing Set - Athletic^8608^3532^17419^424^970^
+29^Pixie Male Clothing Set - Athletic^8608^3532^17403^14932^17063^
+30^Human Female Clothing Set - Carefree Cutie^429611^5154^77687^77691^77683^
+31^Human Female Clothing Set - Cheeky Fridays^429616^5154^77688^77692^77684^
+32^Human Female Clothing Set - Miss Manners^429685^5147^77689^77695^77679^
+33^Human Female Clothing Set - Trendsetter^429770^5147^77690^77696^77680^
+34^Human Female Clothing Set - Nifty Guise^429693^5151^77685^77693^77682^
+35^Human Female Clothing Set - Cozy Cutie^429625^5151^77686^77694^77681^

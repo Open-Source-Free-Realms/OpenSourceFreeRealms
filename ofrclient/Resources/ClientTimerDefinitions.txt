@@ -1,0 +1,16 @@
+#NAME^DURATION^IS_TIME_IN_GAME^IS_AUTO_START^IS_AUTO_REPEAT^SCRIPT^
+FTEDialogTimer^30^1^0^0^FirstTimeEventHandler.CloseDialog^
+FTEMarketplaceTimer^86400^1^1^1^npxTutorial.FTEMarketplaceTimer^
+FtesNPX3AutoClose^15^1^0^0^FirstTimeEvent.FtesNPX3AutoClose^
+FtesNPXGreatJob^4^1^0^0^FirstTimeEvent.FtesNPXGreatJob^
+FtesNpxBookOpen ^7^1^0^0^FirstTimeEvent.FtesNpxBookQuest^
+FtesNpxBookQuest ^7^1^0^0^FirstTimeEvent.FtesNpxBookSticker^
+FtesNpxBookSticker ^7^1^0^0^FirstTimeEvent.FtesNpxBookTab^
+FtesNpxBookTab ^7^1^0^0^FirstTimeEvent.FtesNpxBookExit^
+JoinOverworldReminder^300^1^0^1^FirstTimeEvent.newPlayerJoinOverworld^
+PetTimer^3^1^0^0^FirstTimeEvent.FtesPetClientTimerCall^
+SnsServerTimeout^5^1^0^0^SnsNetworks.ConnectionTimeout^
+StartingZoneLoadComplete^30^1^0^0^HUD.LeaveStartingZone^
+StartingZoneTimerStart^300^1^0^0^HUD.FiveMinutesInZone^
+TradeAcceptTimer^10^1^0^0^TradeConfirmation.EnableAcceptButton^
+WelcomeHandler_ResetFirstLogin^10^1^0^0^WelcomeHandler.ResetFirstLogin^

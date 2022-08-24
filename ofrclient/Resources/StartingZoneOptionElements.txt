@@ -1,0 +1,108 @@
+#ID^PARENT^TEXT^TOOLTIP^HAS_SUBMENU^SUBMENU^DEFAULTFUNC^VALUEFUNC^OPTION_NAME^OPTION_TYPE^CALLBACK^DISABLEDFUNC^PARAM1
+# order of subelements determine the display order
+
+# Base Tree
+base^^options_label_game_options^options_tooltip^1^base^0^0^0^tree
+
+# Game Play (base)
+g^base^options_label_gameplay^tooltip^1^gameplay^0^0^0^menu
+g1^gameplay^options_label_clicktomove^tooltip^0^0^0^Ui.GetClickToMove()^setClickToMove^toggle
+g2^gameplay^options_label_autoselect_new_questions^tooltip^0^0^0^Options:GetQuestAutoSwitchToggled()^toggleAutoSelectNewQuest^toggle
+g3^gameplay^options_label_mynameplate^tooltip^0^0^0^Options:CheckStoredOption("NamePlateSettings","ShowMyNamePlate",1)^setShowMyNamePlate^toggle
+g4^gameplay^options_label_invert_mouse^tooltip^0^0^0^Ui.GetMouseInvert()^setMouseInvert^toggle
+# g5^gameplay^"Show All Names"^tooltip^0^0^0^Options:CheckStoredOption("NamePlateSettings","ShowAllNamePlates",0)^setShowAllNamePlates^toggle
+# g6^gameplay^options_label_camera_control^tooltip^0^0^0^Options:CheckStoredOption("CameraController","Shown",1)^setShowCameraControl^toggle
+g7^gameplay^options_label_autocamera^tooltip^0^0^0^Ui.GetAutoCamera()^setAutoCamera^toggle
+g8^gameplay^options_label_interactionPrompt^tooltip^0^0^0^Options:CheckStoredOption("InteractionPrompt","Shown",1)^setInteractionPrompt^toggle
+# g11^gameplay^ShowChatAutoComplete^tooltip^0^0^0^Options:CheckStoredOption("Chat","ShowAutoComplete", 1)^setShowChatAutoComplete^toggle
+
+g10^gameplay^options_label_enableF10^tooltip^0^0^0^Options:GetAutoRefuseF10()^setAutoRefuseF10^toggle
+g11^gameplay^options_label_autoRefuseFriend^tooltip^0^0^0^Options:GetAutoRefuse(0)^setAutoRefuseFriend^toggle
+g12^gameplay^options_label_autoRefuseDuel^tooltip^0^0^0^Options:GetAutoRefuse(1)^setAutoRefuseDuel^toggle
+g13^gameplay^options_label_autoRefuseGuild^tooltip^0^0^0^Options:GetAutoRefuse(2)^setAutoRefuseGuild^toggle
+g14^gameplay^options_label_autoRefuseTrade^tooltip^0^0^0^Options:GetAutoRefuse(4)^setAutoRefuseTrade^toggle
+g15^gameplay^options_label_autoRefuseGroup^tooltip^0^0^0^Options:GetAutoRefuse(6)^setAutoRefuseGroup^toggle
+g16^gameplay^options_label_autoRefuseHouse^tooltip^0^0^0^Options:GetAutoRefuse(5)^setAutoRefuseHouse^toggle
+
+#g9^gameplay^KeyBinding^tooltip^0^0^0^1^showKeyBindings^button
+
+
+# g10^gameplay^KeyBinding^tooltip^0^0^0^1^showKeyBindings^menu
+
+
+# Audio (base)
+a^base^options_label_audio^tooltip^1^audiosettings^0^0^0^menu
+
+
+a1^audiosettings^options_label_master_volume^tooltip^0^0^0^Ui.GetMasterVolume(100)^setMasterVolume^slider^
+a2^audiosettings^options_label_music_volume^tooltip^0^0^0^Ui.GetMusicVolume(100)^setMusicVolume^slider^
+a3^audiosettings^options_label_effects_volume^tooltip^0^0^0^Ui.GetGameVolume(100)^setEffectsVolume^slider^
+a4^audiosettings^options_label_ui_sounds^tooltip^0^0^0^Ui.GetUiVolume(100)^setUiVolume^slider^
+
+a0^audiosettings^options_label_advanced_settings^tooltip^0^advancedaudiosettings^0^0^0^label
+a5^audiosettings^options_label_voices^tooltip^0^0^0^Ui.GetSoundChannels()^setSoundChannels^slider^^0^2
+a6^audiosettings^options_label_sound_quality^tooltip^0^0^0^Ui.GetSoundQuality()^setSoundQuality^slider^^0^2
+
+# Video (base)
+# Video: Screen Resolution Option are added to the screenres submenu in options.lua
+v^base^options_label_video^options_tooltip^1^videosettings^0^0^^menu
+v1^videosettings^options_label_windowed_mode^options_tooltip^0^0^^Ui.GetWindowed()^setWindowedMode^toggle
+v2^videosettings^options_label_screen_res^options_tooltip^1^screenres^0^0^^menu
+v3^videosettings^options_label_graphics_settings^options_tooltip^1^graphicsettings^0^0^^menu
+v8^graphicsettings^options_label_render_distance^options_tooltip^0^0^0^Ui.GetRenderDistanceInPercent()^setRenderDistance^slider^
+v9^graphicsettings^options_label_draw_flora^options_tooltip^0^0^0^Ui.GetFloraEnabled()^toggleFlora^toggle
+v10^graphicsettings^options_label_brightness^options_tooltip^0^0^0^Options:GetGammaPercent()^setGamma^slider^^Ui.GetWindowed()
+v4^graphicsettings^options_label_autodetect_settings^options_tooltip^0^0^0^Ui.IsGraphicsAuto()^useVideoAutoSettings^toggle
+v5^graphicsettings^options_label_graphic_quality^options_tooltip^0^0^0^Options:GetGraphicsQuality()^setVideoGrahicQuality^slider^^Ui.IsGraphicsAuto()^3
+v6^graphicsettings^options_label_texture_quality^options_tooltip^0^0^0^Options:GetTextureQuality()^setVideoTextureQuality^slider^^Ui.IsGraphicsAuto()^2
+v7^graphicsettings^options_label_shadow_quality^options_tooltip^0^0^0^Ui.GetShadowQuality()^setVideoShadowQuality^slider^^Ui.IsGraphicsAuto()^3
+
+
+
+# Video Capture (base)
+# NOTE: "Quality" as exposed to players means capture resolution to the video encoder, "Compression" as exposed to players means Quality to the video encoder
+vc^base^options_label_video_capture^tooltip^1^vidcapsettings^0^0^0^menu
+
+vc2^vidcapsettings^options_label_show_capture_ui^tooltip^0^0^0^Options:CheckStoredOption("VideoCapture","ShowVideoCaptureUI",1)^toggleVideoCaptureUI^toggle
+vc3^vidcapsettings^options_label_quality^tooltip^0^0^0^VideoCapture.GetVideoCaptureQuality()^setVideoCaptureQuality^slider^
+
+vc1^vidcapsettings^options_label_capture_res^tooltip^0^vidcapres^0^0^0^label
+
+vc4^vidcapsettings^options_label_low^tooltip^0^0^0^Options:CheckVideoCaptureResolution(1)^setVideoCaptureResolution^radio^1
+vc5^vidcapsettings^options_label_medium^tooltip^0^0^0^Options:CheckVideoCaptureResolution(2)^setVideoCaptureResolution^radio^2
+vc6^vidcapsettings^options_label_high^tooltip^0^0^0^Options:CheckVideoCaptureResolution(3)^setVideoCaptureResolution^radio^3
+
+# Chat (base)
+chat^base^tooltip_chat_settings^tooltip^1^chatsettings^0^0^0^menu
+
+# Minimap 
+m^base^options_label_minimap^tooltip^1^minimap^0^0^0^menu
+m1^minimap^tooltip_minimap_path_on^tooltip^0^0^0^Options:CheckShowMinimapPath()^setShowMinimapPath^toggle
+m2^minimap^tooltip_minimap_indicators_on^tooltip^0^0^0^Options:CheckShowIndicators()^setShowIndicators^toggle
+
+mm1^minimap^map_dots^tooltip^1^mm1^0^0^0^menu
+mm1a^mm1^3477^tooltip^0^0^0^Ui.GetUserOptionsValue("MinimapOptions","ShowShops",1)^SetOptionShowShops^toggle
+mm1b^mm1^3478^tooltip^0^0^0^Ui.GetUserOptionsValue("MinimapOptions","ShowQuests",1)^SetOptionShowQuests^toggle
+mm1c^mm1^minimapCombat^tooltip^0^0^0^Ui.GetUserOptionsValue("MinimapOptions","ShowCombat",1)^SetOptionShowCombat^toggle
+mm1d^mm1^3481^tooltip^0^0^0^Ui.GetUserOptionsValue("MinimapOptions","ShowGroup",1)^SetOptionShowGroup^toggle
+mm1e^mm1^3482^tooltip^0^0^0^Ui.GetUserOptionsValue("MinimapOptions","ShowFriends",1)^SetOptionShowFriends^toggle
+mm1f^mm1^3480^tooltip^0^0^0^Ui.GetUserOptionsValue("MinimapOptions","ShowMinigames",1)^SetOptionShowMinigames^toggle
+#mm1g^mm1^3483^tooltip^0^0^0^Ui.GetUserOptionsValue("MinimapOptions","ShowTrainers",1)^SetOptionShowTrainers^toggle
+mm1h^mm1^options_label_guildmembers^tooltip^0^0^0^Ui.GetUserOptionsValue("MinimapOptions","ShowGuildMembers",1)^SetOptionShowGuildMembers^toggle
+
+mm2^minimap^on_screen_arrows^tooltip^1^mm2^0^0^0^menu
+
+mm2a^mm2^3477^tooltip^0^0^0^Ui.GetUserOptionsValue("OnScreenIndicatorOptions","indicator_1",0)^SetIndicatorOption_1^toggle
+mm2b^mm2^3478^tooltip^0^0^0^Ui.GetUserOptionsValue("OnScreenIndicatorOptions","indicator_2",1)^SetIndicatorOption_2^toggle
+mm2c^mm2^minimapCombat^tooltip^0^0^0^Ui.GetUserOptionsValue("OnScreenIndicatorOptions","indicator_3",1)^SetIndicatorOption_3^toggle
+mm2d^mm2^3481^tooltip^0^0^0^Ui.GetUserOptionsValue("OnScreenIndicatorOptions","indicator_4",1)^SetIndicatorOption_4^toggle
+mm2e^mm2^3482^tooltip^0^0^0^Ui.GetUserOptionsValue("OnScreenIndicatorOptions","indicator_5",1)^SetIndicatorOption_5^toggle
+mm2f^mm2^3480^tooltip^0^0^0^Ui.GetUserOptionsValue("OnScreenIndicatorOptions","indicator_6",1)^SetIndicatorOption_6^toggle
+#mm2g^mm2^3483^tooltip^0^0^0^Ui.GetUserOptionsValue("OnScreenIndicatorOptions","indicator_7",0)^SetIndicatorOption_7^toggle
+mm2h^mm2^options_label_guildmembers^tooltip^0^0^0^Ui.GetUserOptionsValue("OnScreenIndicatorOptions","indicator_8",1)^SetIndicatorOption_8^toggle
+
+
+
+#example
+#g1^gameplay^options_label_clicktomove^tooltip^0^0^0^Ui.GetClickToMove()^setClickToMove^toggle
+

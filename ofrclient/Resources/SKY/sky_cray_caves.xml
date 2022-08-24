@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+
+<TimeOfDay>
+  <Dawn StartTime="none" />
+  <Day StartTime="none" />
+  <Dusk StartTime="none" />
+  <Night StartTime="19:45" />
+</TimeOfDay>
+
+<Dome>
+    <Texture File="dome_cray_caves.tga" />
+</Dome>
+
+<Horizon>
+    <Texture File="ring_blank.tga" />
+    <Position Bottom="0" Top="45" />
+</Horizon>
+
+<SunLight>
+    <Direction Heading="5" Pitch="45" />
+    <Color R="127" G="180" B="207" Brightness=".3" />
+    <Shadows Enabled="false" />
+</SunLight>
+
+<Ambient>
+    <Texture File="ambient_blackspore_21.tga" Brightness=".7"/>
+</Ambient>
+
+<Reflection>
+    <CubeMap File="reflection_memorial_cavern.dds" Brightness="1"/>
+</Reflection>
+
+<Fog>
+    <Color R="51" G="189" B="255" />
+    <Range Near="5" Far="200" />
+    <FadeRange Near="300" Far="350" />
+</Fog>
+
+<Post>
+    <Bloom Strength="11" />
+    <Haze Strength=".2" Distance="105" />
+</Post>

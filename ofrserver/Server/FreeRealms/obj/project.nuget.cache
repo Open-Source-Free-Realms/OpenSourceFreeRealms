@@ -1,0 +1,12 @@
+{
+  "version": 2,
+  "dgSpecHash": "/IdQDadfiNqoseIPvv3sDy2Vq2d26z9CU1JRzGOY/vkNsccxuUil3YbExeVHDK5O/QQa3Z0EMTA9gWmTSKjVBg==",
+  "success": true,
+  "projectFilePath": "D:\\Landwalker\\ofrserver\\Server\\FreeRealms\\FreeRealms.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\caleb\\.nuget\\packages\\dotnetzip\\1.10.1\\dotnetzip.1.10.1.nupkg.sha512",
+    "C:\\Users\\caleb\\.nuget\\packages\\log4net\\2.0.8\\log4net.2.0.8.nupkg.sha512",
+    "C:\\Users\\caleb\\.nuget\\packages\\newtonsoft.json\\11.0.1\\newtonsoft.json.11.0.1.nupkg.sha512"
+  ],
+  "logs": []
+}

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<Window Name="wndMiniGameEndStageScreen" Type="Window" X="0" Y="0" 
+        Width="800" Height="600" 
+        ChildAlignH="Default" ChildAlignV="Default" AlignH="Undefined Property." AlignV="Undefined Property." 
+        SizingH="Undefined Property." SizingV="Undefined Property." 
+        HExpandParent="N/A" VExpandParent="N/A" 
+        Caption="Minigame Caption;" 
+        Sizeable="None" Moveable="True" 
+        AnchorX="Left" AnchorY="Top" Style="Dialog" Spacing="None" 
+        CloseBox="False" 
+        MinBox="False" MaxBox="False" CollapseBox="False" 
+        Visible="True" 
+        OuterBorder="False" InnerBorder="False" InnerFill="False" 
+        TitleBar="False" PopupMenu="True" InnerMoveable="False" 
+        HitTest="Children" Focus="False" Alpha="255" Class=""  >
+    <Flashanim Name="swfMinigameEndStageScreen" Type="Flashanim" X="0" Y="0" Width="800" Height="600" 
+               AlignH="Default" AlignV="Default" 
+               SizingH="Default" SizingV="Default" 
+               HExpandParent="True" VExpandParent="True" 
+               File="UI\MinigameEndStageScreen.swf" 
+	       PreLoad="False" />
+</Window>
+
+  

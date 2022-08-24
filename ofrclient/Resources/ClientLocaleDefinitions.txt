@@ -1,0 +1,16 @@
+﻿#Locale^FilePath^FontName^WordDelimiters^IsSystemFont^KeepDelimiters^TranslationMode^Description
+1^UI\\Resource\\Fonts\\MSYH.ttf^Microsoft YaHei^。！？，^0^1^128^cT4LanguageSimplifiedChinese = FreeRealmsT4::ZH_CN
+2^UI\\Resource\\Fonts\\FreeRealms.ttf^FreeRealmsDemiBold^ ^0^0^0^cT4LanguageGerman = FreeRealmsT4::DE_DE
+3^UI\\Resource\\Fonts\\FreeRealms.ttf^FreeRealmsDemiBold^ ^0^0^0^cT4LanguageFrench = FreeRealmsT4::FR_FR
+4^UI\\Resource\\Fonts\\FreeRealms.ttf^FreeRealmsDemiBold^ ^0^0^0^cT4LanguageBritishEnglish = FreeRealmsT4::EN_GB
+5^ArialUni.ttf^Arial Unicode MS^ ^1^1^4^cT4LanguageJapanese = FreeRealmsT4::JA_JP
+6^ArialUni.ttf^Arial Unicode MS^ ^1^1^8^cT4LanguageKorean = FreeRealmsT4::KO_KR
+7^UI\\Resource\\Fonts\\MSYH.ttf^Microsoft YaHei^。！？，^0^1^128^cT4LanguageTraditionalChinese = FreeRealmsT4::ZH_TW
+8^UI\\Resource\\Fonts\\FreeRealms.ttf^FreeRealmsDemiBold^ ^0^0^0^cT4LanguageAmericanEnglish = FreeRealmsT4::EN_US
+9^UI\\Resource\\Fonts\\FreeRealms.ttf^FreeRealmsDemiBold^ ^0^0^0^cT4LanguageSpanish = FreeRealmsT4::ES_ES
+10^UI\\Resource\\Fonts\\FreeRealms.ttf^FreeRealmsDemiBold^ ^0^0^0^cT4LanguageItalian = FreeRealmsT4::IT_IT
+11^UI\\Resource\\Fonts\\FreeRealms.ttf^FreeRealmsDemiBold^ ^0^0^0^cT4LanguagePortugese = FreeRealmsT4::PT_PT
+12^ArialUni.ttf^Arial Unicode MS^ ^1^1^0^cT4LanguageRussian = FreeRealmsT4::RU_RU
+13^UI\\Resource\\Fonts\\FreeRealms.ttf^FreeRealmsDemiBold^ ^0^0^0^cT4LanguageSwedish = FreeRealmsT4::SV_SE
+14^UI\\Resource\\Fonts\\FreeRealms.ttf^FreeRealmsDemiBold^ ^0^0^0^cT4LanguageBrazilianPortugese = FreeRealmsT4::PT_BR
+15^UI\\Resource\\Fonts\\FreeRealms.ttf^FreeRealmsDemiBold^ ^0^0^0^cT4LanguageMexicanSpanish = FreeRealmsT4::ES_MX

@@ -1,0 +1,17 @@
+#GUID^ICON_ID^ICON_TINT^ITEM_ID^RACE^GENDER^NAME^DESCRIPTION^
+1000001^31553^-1^268^Pixie^Female^435805^Seafarer Face Type^
+1000002^31553^-1^15^Pixie^Female^435805^Mistpetal Face Type^
+1000003^31553^-1^16^Pixie^Female^435805^Sun Rose Face Type^
+1000004^31553^-1^17^Pixie^Female^435805^Flitterling Face Type^
+1000005^31562^-1^269^Pixie^Male^435806^Seafarer Face Type^
+1000006^31562^-1^12^Pixie^Male^435806^Returner Face Type^
+1000007^31562^-1^13^Pixie^Male^435806^Sun Walker Face Type^
+1000008^31562^-1^14^Pixie^Male^435806^Cloudpetal Face Type^
+1000009^31544^-1^270^Human^Male^435807^Seafarer Face Type^
+1000010^31544^-1^6^Human^Male^429712^Protector Face Type^
+1000011^31544^-1^7^Human^Male^435807^Wayfarer Face Type^
+1000012^31541^-1^8^Human^Male^429774^Seafarer Face Type^
+1000013^31535^-1^271^Human^Female^435808^Seafarer Face Type^
+1000014^31535^-1^9^Human^Female^435808^Moon Gazer Face Type^
+1000015^31535^-1^10^Human^Female^435808^Beach Comber Face Type^
+1000016^31535^-1^11^Human^Female^435808^Summerlie Face Type^

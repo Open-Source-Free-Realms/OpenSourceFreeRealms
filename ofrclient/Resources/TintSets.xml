@@ -1,0 +1,64 @@
+<TintSetList>
+    <!-- List of tint sets that are in use.                      -->
+    <!--                                                         -->
+    <!-- TintSet:  tintSetId:  unique ID number for the tint set -->
+    <!--           name:  user-friendly name for the tint set (uniqueness not guaranteed) -->
+    <!--                                                         -->
+    <TintSet tintSetId="1" name="dyetint">
+        <!--Tint ID's included in this TintSet.  Note: Tint Values are defined in Runtime/Client/Resources/Tints.xml -->
+        <!-- Note:  These are all of the "dyetint" tints from tints.xml -->
+        <Tint id="227" />
+        <Tint id="228" />
+        <Tint id="229" />
+        <Tint id="230" />
+        <Tint id="231" />
+        <Tint id="232" />
+        <Tint id="233" />
+        <Tint id="234" />
+        <Tint id="235" />
+        <Tint id="236" />
+        <Tint id="237" />
+        <Tint id="238" />
+        <Tint id="239" />
+        <Tint id="240" />
+        <Tint id="241" />
+        <Tint id="242" />
+        <Tint id="243" />
+        <Tint id="244" />
+        <Tint id="245" />
+        <Tint id="246" />
+        <Tint id="247" />
+        <Tint id="248" />
+        <Tint id="249" />
+        <Tint id="250" />
+        <Tint id="251" />
+        <Tint id="252" />
+        <Tint id="253" />
+        <Tint id="254" />
+        <Tint id="255" />
+        <Tint id="256" />
+        <Tint id="257" />
+        <Tint id="258" />
+        <Tint id="259" />
+        <Tint id="260" />
+        <Tint id="261" />
+        <Tint id="262" />
+        <Tint id="263" />
+        <Tint id="264" />
+    </TintSet>
+    <TintSet tintSetId="2" name="Vendor2 Example">
+        <!--Tint ID's included in this TintSet.  Note: Tint Values are defined in Runtime/Client/Resources/Tints.xml -->
+        <Tint id="13" />
+        <Tint id="57" />
+        <Tint id="149" />
+        <Tint id="15" />
+        <Tint id="123" />
+        <Tint id="2" />
+        <Tint id="3" />
+        <Tint id="89" />
+    </TintSet>
+    <TintSet tintSetId="3" name="Vendor3 Example">
+        <!--Tint ID's included in this TintSet.  Note: Tint Values are defined in Runtime/Client/Resources/Tints.xml -->
+        <Tint id="201" />
+    </TintSet>
+</TintSetList>

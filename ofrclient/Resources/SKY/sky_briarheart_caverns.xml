@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+
+<TimeOfDay>
+  <Dawn StartTime="none" />
+  <Day StartTime="none" />
+  <Dusk StartTime="none" />
+  <Night StartTime="19:45" />
+</TimeOfDay>
+
+<Dome>
+    <Texture File="Dome_Briarwood.tga" />
+</Dome>
+
+<Horizon>
+    <Texture File="Ring-CloudHoriz_bw.dds" />
+    <Position Bottom="6" Top="40" />
+</Horizon>
+
+<SunLight>
+    <Direction Heading="5" Pitch="35" />
+    <Color R="170" G="155" B="125" Brightness="0" />
+</SunLight>
+
+<Ambient>
+    <Texture File="ambient_briarheart_caverns.tga" Brightness=".95"/>
+</Ambient>
+
+<Fog>
+    <Color R="128" G="32" B="96" />
+    <Range Near="0" Far="100" />
+    <FadeRange Near="500" Far="575" />
+</Fog>
+
+<Post>
+    <Bloom Strength="2" />
+    <Haze Strength=".2" Distance="105" />
+</Post>

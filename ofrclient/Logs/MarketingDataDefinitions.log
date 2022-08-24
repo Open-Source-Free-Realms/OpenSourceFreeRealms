@@ -1,0 +1,22 @@
+2022-08-24	02:35:16		1661333712	287	4	4729775437	ClientInGamePurchaseStoreManager::Initialize - Starting up with automatic data reload enabled, dataPath=.\Resources\Marketing\, schemaFilepath=.\Resources\Marketing\\MarketingDataClientSchema.xml.
+2022-08-24	02:35:16		1661333712	288	4	4729775438	EnableAutomaticUpdates - enabled=0, dataRefreshHour=00:00GMT.
+2022-08-24	02:35:16		1661333712	289	4	4729775438	MarketingDataUpdater - Starting up, dataLoaderType=FlatFileLoader, reloadFileName=marketingdata.reload.txt.
+2022-08-24	02:35:24		1661333712	662	4	4729783102	MarketingDataUpdater - Load attempt, type=Forced.
+2022-08-24	02:35:24		1661333712	663	4	4729783102	Loading new marketing data.
+2022-08-24	02:35:24		1661333712	664	4	4729783103	LoadRecordSetFromFile beginning read .\Resources\Marketing\ClientStoreBillboards.txt
+2022-08-24	02:35:24		1661333712	665	4	4729783108	LoadRecordSetFromFile: file .\Resources\Marketing\ClientStoreBillboards.txt numberOfRows read: 2
+2022-08-24	02:35:24		1661333712	666	4	4729783108	LoadRecordSetFromFile beginning read .\Resources\Marketing\ClientStoreBillboardPanels.txt
+2022-08-24	02:35:24		1661333712	667	4	4729783112	LoadRecordSetFromFile: file .\Resources\Marketing\ClientStoreBillboardPanels.txt numberOfRows read: 6
+2022-08-24	02:35:24		1661333712	668	4	4729783112	LoadRecordSetFromFile beginning read .\Resources\Marketing\ClientStorePortalCategories.txt
+2022-08-24	02:35:24		1661333712	669	4	4729783116	LoadRecordSetFromFile: file .\Resources\Marketing\ClientStorePortalCategories.txt numberOfRows read: 6
+2022-08-24	02:35:24		1661333712	670	4	4729783116	LoadRecordSetFromFile beginning read .\Resources\Marketing\Configuration.txt
+2022-08-24	02:35:24		1661333712	671	4	4729783116	LoadRecordSetFromFile: file .\Resources\Marketing\Configuration.txt numberOfRows read: 0
+2022-08-24	02:35:24		1661333712	672	4	4729783116	MarketingDataUpdater - Next update will occur at 2022-08-25T00:05:00Z (PST)
+2022-08-24	02:35:24		1661333712	674	4	4729783120	MarketingDataUpdater - Marketing data load complete, result=1, totalTime=17 ms.
+2022-08-24	02:35:24		1661333712	675	4	4729783122	MarketingDataUpdater - HandleUpdateComplete
+2022-08-24	02:35:24		1661333712	676	4	4729783122	ClientInGamePurchaseStoreManager::OnDataUpdate - Loading new definition data from the data source.
+2022-08-24	02:35:24		1661333712	677	4	4729783122	SUCCESSFULLY loaded 6 storePortalCategory entry(s).
+2022-08-24	02:35:24		1661333712	678	4	4729783122	SUCCESSFULLY loaded 6 storeBillboardPanel entry(s).
+2022-08-24	02:35:24		1661333712	679	4	4729783122	SUCCESSFULLY loaded 2 storeBillboard entry(s).
+2022-08-24	02:35:24		1661333712	680	4	4729783122	ClientInGamePurchaseStoreManager::OnDataUpdate - Data load complete, totalTime=0 ms.
+2022-08-24	02:36:07		1661333712	10909	4	4729826253	MarketingDataUpdater - Shutting down.

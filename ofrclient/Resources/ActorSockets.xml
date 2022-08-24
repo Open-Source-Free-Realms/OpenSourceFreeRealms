@@ -1,0 +1,1548 @@
+<!-- Actor Sockets -->
+<ActorSockets>
+    <!-- Socket names:  These are referenced as "boneName" in Runtime/ActorTool/ActorBoneMap.xml -->
+    <Sockets>
+        <Socket name="HEAD" id="1" />
+        <Socket name="COG" id="2" />
+        <Socket name="ACCESSORY" id="3" />
+        <Socket name="R_WRIST" id="4" />
+        <Socket name="L_WRIST" id="5" />
+        <!-- EYE_FX change the scale of eyes to fit humans and fairies -->
+        <Socket name="R_EYE_FX" id="6" />
+        <Socket name="L_EYE_FX" id="7" />
+        <!-- Required sockets for all PC amd NPC skeletons -->
+        <Socket name="R_INDEXA" id="8" />
+        <Socket name="L_INDEXA" id="9" />
+        <Socket name="R_TOE" id="10" />
+        <Socket name="L_TOE" id="11" />
+        <Socket name="HEAD_FX" id="12" />
+        <Socket name="COG_UPPER" id="13" />
+        <Socket name="HEAD_ACCESSORY" id="14" />
+        <!-- Example socket for a model; feel free to replace -->
+        <Socket name="MODEL_SOCKET_TEST_HSG_DINING_CHAIR_01" id="15" />
+        <Socket name="MODEL_SOCKET_TEST2_HUMAN_M" id="16" />
+        <Socket name="MKT_BONANSAI_TREE_01_ROOT" id="17" />
+        
+        <!--   -->
+        <Socket name="SPINEUPPER" id="18" />
+        
+    </Sockets>
+    <!-- Socket definitions for each skeleton in the game -->
+    <!-- 1. If no matrix is specified for a given bone socket, then the identity matrix is assumed. -->
+    <!-- 2. Sockets can be defined for actors that *do not have a skeleton*.  -->
+    <!-- 3. Sockets can be based on either the model or skeleton but not both.  -->
+    <!-- 4. Each skeleton must have its own set of actor sockets.  -->
+    <!-- 5. Skeleton-based bone sockets have priority over model-based bone sockets.  -->
+    <ActorSockets>
+    <!-- ---------------------->
+    <!-- MODEL-BASED SOCKETS -->
+    <!-- ---------------------->
+    <!-- Model:  "name" (actor model name minus extension, e.g., "hsg_dining_chair_01.adr" becomes "hsg_dining_chair_01") -->
+    <!-- BoneSocket:  The socket is relative to the root of the model.  id=Socket Name id from the "Sockets" list above -->
+        <Model name="hsg_dining_chair_01">
+            <!-- MODEL_SOCKET_TEST_HSG_DINING_CHAIR_01 --> <BoneSocket id="15">
+                <HprOffset heading="0" pitch="0" roll="0" offsetX="0" offsetY="0" offsetZ="3" scaleX="1" scaleY="1" scaleZ="1" />
+            </BoneSocket>
+        </Model>
+        <Model name="human_m">
+            <!-- MODEL_SOCKET_TEST2_HUMAN_M --> <BoneSocket id="16">
+                <HprOffset heading="0" pitch="0" roll="0" offsetX="1" offsetY="0" offsetZ="0" scaleX="1" scaleY="1" scaleZ="1" />
+            </BoneSocket>
+        </Model>
+        <Model name="mkt_bonansai_tree_01">
+            <!-- MKT_BONANSAI_TREE_01_ROOT --> <BoneSocket id="17">
+                <HprOffset heading="0" pitch="0" roll="0" offsetX="0" offsetY="0" offsetZ="0" scaleX="1" scaleY="1" scaleZ="1" />
+            </BoneSocket>
+        </Model>
+        <Model name="hsg_checkpoint_01">
+            <!-- COG --> <BoneSocket id="2">
+                <HprOffset heading="0" pitch="0" roll="0" offsetX="0" offsetY="2.8" offsetZ="0" scaleX="1" scaleY="1" scaleZ="1" />
+            </BoneSocket>
+        </Model>
+        <Model name="hsg_checkpoint_02">
+            <!-- COG --> <BoneSocket id="2">
+                <HprOffset heading="0" pitch="0" roll="0" offsetX="0" offsetY="2.8" offsetZ="0" scaleX="1" scaleY="1" scaleZ="1" />
+            </BoneSocket>
+        </Model>
+        <Model name="teleporter_with_FX">
+            <!-- COG --> <BoneSocket id="2">
+                <HprOffset heading="0" pitch="0" roll="0" offsetX="0" offsetY="3.2" offsetZ="0" scaleX="1" scaleY="1" scaleZ="1" />
+            </BoneSocket>
+        </Model>
+        <Model name="mv_mana_drain01">
+            <!-- COG --> <BoneSocket id="18">
+                <HprOffset heading="0" pitch="0" roll="0" offsetX="0" offsetY="3.2" offsetZ="0" scaleX="1" scaleY="1" scaleZ="1" />
+            </BoneSocket>
+        </Model>
+    <!-- ------------------------->
+    <!-- SKELETON-BASED SOCKETS -->
+    <!-- ------------------------->
+        <Skeleton name="human_m">
+            <!-- COG --> <BoneSocket id="2" bone="COG">
+                <HprOffset heading="0" pitch="0" roll="0" offsetX="0" offsetY="0.25" offsetZ="0" scaleX="1" scaleY="1" scaleZ="1" />
+            </BoneSocket>
+            <!-- COG_UPPER --> <BoneSocket id="13" bone="COG">
+                <HprOffset heading="0" pitch="0" roll="0" offsetX="0" offsetY="0.25" offsetZ="0" scaleX="1" scaleY="1" scaleZ="1" />
+            </BoneSocket>
+            <!-- R_EYE_FX --> <BoneSocket id="6" bone="R_EYE">
+                <HprOffset heading="-10" pitch="10" roll="0" offsetX="0" offsetY="0" offsetZ=".03" scaleX=".7" scaleY=".7" scaleZ=".7" />
+            </BoneSocket>
+            <!-- L_EYE_FX --> <BoneSocket id="7" bone="L_EYE">
+                <HprOffset heading="10" pitch="10" roll="0" offsetX="0" offsetY="0" offsetZ=".03" scaleX=".7" scaleY=".7" scaleZ=".7" />
+            </BoneSocket>
+            <!-- HEAD_ACCESSORY --> <BoneSocket id="14" bone="HEAD">
+                <HprOffset heading="0" pitch="0" roll="0" offsetX="0" offsetY="0" offsetZ="0" scaleX="1" scaleY="1" scaleZ="1" />
+            </BoneSocket>
+            <!-- L_INDEXA --> <BoneSocket id="9" bone="L_INDEXA">
+                <HprOffset heading="-20" pitch="0" roll="0" offsetX="0" offsetY="0" offsetZ="0" scaleX="1" scaleY="1" scaleZ="1" />
+            </BoneSocket>
+            <!-- HEAD_FX --> <BoneSocket id="12" bone="HEAD">
+                <HprOffset heading="0" pitch="0" roll="0" offsetX="0" offsetY="0" offsetZ="0" scaleX="1" scaleY="1" scaleZ="1" />
+            </BoneSocket>
+        </Skeleton>
+        <Skeleton name="human_f">
+            <!-- COG --> <BoneSocket id="2" bone="COG">
+                <HprOffset heading="0" pitch="0" roll="0" offsetX="0" offsetY="0.25" offsetZ="0" scaleX="1" scaleY="1" scaleZ="1" />
+            </BoneSocket>
+            <!-- COG_UPPER --> <BoneSocket id="13" bone="COG">
+                <HprOffset heading="0" pitch="0" roll="0" offsetX="0" offsetY="0.25" offsetZ="0" scaleX="1" scaleY="1" scaleZ="1" />
+            </BoneSocket>
+            <!-- R_EYE_FX --> <BoneSocket id="6" bone="R_EYE">
+                <HprOffset heading="-10" pitch="10" roll="0" offsetX="0" offsetY="0" offsetZ=".03" scaleX=".7" scaleY=".7" scaleZ=".7" />
+            </BoneSocket>
+            <!-- L_EYE_FX --> <BoneSocket id="7" bone="L_EYE">
+                <HprOffset heading="10" pitch="10" roll="0" offsetX="0" offsetY="0" offsetZ=".03" scaleX=".7" scaleY=".7" scaleZ=".7" />
+            </BoneSocket>
+            <!-- HEAD_ACCESSORY --> <BoneSocket id="14" bone="HEAD">
+                <HprOffset heading="0" pitch="0" roll="0" offsetX="0" offsetY="0" offsetZ="0" scaleX="1" scaleY="1" scaleZ="1" />
+            </BoneSocket>
+            <!-- L_INDEXA --> <BoneSocket id="9" bone="L_INDEXA">
+                <HprOffset heading="-30" pitch="0" roll="0" offsetX="0" offsetY="0" offsetZ="0" scaleX="1" scaleY="1" scaleZ="1" />
+            </BoneSocket>
+            <!-- HEAD_FX --> <BoneSocket id="12" bone="HEAD">
+                <HprOffset heading="0" pitch="0" roll="0" offsetX="0" offsetY="0" offsetZ="0" scaleX="1" scaleY="1" scaleZ="1" />
+            </BoneSocket>
+        </Skeleton>
+        <Skeleton name="fairy_m">
+            <!-- COG --> <BoneSocket id="2" bone="COG">
+                <HprOffset heading="0" pitch="0" roll="0" offsetX="0" offsetY="0.35" offsetZ="0" scaleX="1" scaleY="1" scaleZ="1" />
+            </BoneSocket>
+            <!-- COG_UPPER --> <BoneSocket id="13" bone="COG">
+                <HprOffset heading="0" pitch="0" roll="0" offsetX="0" offsetY="0.35" offsetZ="0" scaleX="1" scaleY="1" scaleZ="1" />
+            </BoneSocket>
+            <!-- R_EYE_FX --> <BoneSocket id="6" bone="R_EYE">
+                <HprOffset heading="-10" pitch="10" roll="0" offsetX="0" offsetY="0" offsetZ=".04" scaleX="1.5" scaleY="1.5" scaleZ="1.5" />
+            </BoneSocket>
+            <!-- L_EYE_FX --> <BoneSocket id="7" bone="L_EYE">
+                <HprOffset heading="10" pitch="10" roll="0" offsetX="0" offsetY="0" offsetZ=".04" scaleX="1.5" scaleY="1.5" scaleZ="1.5" />
+            </BoneSocket>
+            <!-- HEAD_ACCESSORY --> <BoneSocket id="14" bone="HEAD">
+                <HprOffset heading="0" pitch="0" roll="0" offsetX="0" offsetY="-.04" offsetZ="-.03" scaleX="2.1" scaleY="2.1" scaleZ="2.1" />
+            </BoneSocket>
+            <!-- HEAD_FX --> <BoneSocket id="12" bone="HEAD">
+                <HprOffset heading="0" pitch="0" roll="0" offsetX="0" offsetY="-.04" offsetZ="-.03" scaleX="1.5" scaleY="1.5" scaleZ="1.5" />
+            </BoneSocket>
+        </Skeleton>
+        <Skeleton name="fairy_f">
+            <!-- COG --> <BoneSocket id="2" bone="COG">
+                <HprOffset heading="0" pitch="0" roll="0" offsetX="0" offsetY="0.35" offsetZ="0" scaleX="1" scaleY="1" scaleZ="1" />
+            </BoneSocket>
+            <!-- COG_UPPER --> <BoneSocket id="13" bone="COG">
+                <HprOffset heading="0" pitch="0" roll="0" offsetX="0" offsetY="0.35" offsetZ="0" scaleX="1" scaleY="1" scaleZ="1" />
+            </BoneSocket>
+            <!-- R_EYE_FX --> <BoneSocket id="6" bone="R_EYE">
+                <HprOffset heading="-10" pitch="10" roll="0" offsetX="0" offsetY="0" offsetZ=".04" scaleX="1.5" scaleY="1.5" scaleZ="1.5" />
+            </BoneSocket>
+            <!-- L_EYE_FX --> <BoneSocket id="7" bone="L_EYE">
+                <HprOffset heading="10" pitch="10" roll="0" offsetX="0" offsetY="0" offsetZ=".04" scaleX="1.5" scaleY="1.5" scaleZ="1.5" />
+            </BoneSocket>
+            <!-- HEAD_ACCESSORY --> <BoneSocket id="14" bone="HEAD">
+                <HprOffset heading="0" pitch="0" roll="0" offsetX="0" offsetY="-.04" offsetZ="-.03" scaleX="2.1" scaleY="2.1" scaleZ="2.1" />
+            </BoneSocket>
+            <!-- HEAD_FX --> <BoneSocket id="12" bone="HEAD">
+                <HprOffset heading="0" pitch="0" roll="0" offsetX="0" offsetY="-.04" offsetZ="-.03" scaleX="1.5" scaleY="1.5" scaleZ="1.5" />
+            </BoneSocket>
+        </Skeleton>
+    <!-- ---- -->
+    <!-- PETS -->
+    <!-- ---- -->
+        <Skeleton name="dog">
+            <BoneSocket id="3" bone="ROOT">
+                <Matrix>
+                    <Row col0="1" col1="0" col2="0" col3="0"/>
+                    <Row col0="0" col1="1" col2="0" col3="0"/>
+                    <Row col0="0" col1="0" col2="1" col3="0"/>
+                    <Row col0="0" col1="0" col2="0.55" col3="1"/>
+                </Matrix>
+            </BoneSocket>
+            <!-- HEAD --> <BoneSocket id="1" bone="HEAD">
+                <HprOffset heading="180" pitch="-20" roll="0" offsetX="0" offsetY="0" offsetZ="0" scaleX="1" scaleY="1" scaleZ="1" />
+            </BoneSocket>
+            <!-- R_INDEXA --> <BoneSocket id="8" bone="R_CLAW">
+                <HprOffset heading="0" pitch="0" roll="0" offsetX="0" offsetY="0" offsetZ="0" scaleX="1" scaleY="1" scaleZ="1" />
+            </BoneSocket>
+            <!-- L_INDEXA --> <BoneSocket id="9" bone="L_CLAW">
+                <HprOffset heading="0" pitch="0" roll="0" offsetX="0" offsetY="0" offsetZ="0" scaleX="1" scaleY="1" scaleZ="1" />
+            </BoneSocket>
+            <!-- HEAD_FX --> <BoneSocket id="12" bone="HEAD">
+                <HprOffset heading="180" pitch="-20" roll="0" offsetX="0" offsetY="0" offsetZ="0" scaleX="1" scaleY="1" scaleZ="1" />
+            </BoneSocket>
+            <!-- R_EYE_FX --> <BoneSocket id="6" bone="R_EYE">
+                <HprOffset heading="0" pitch="0" roll="0" offsetX="0" offsetY="0" offsetZ="0" scaleX="1" scaleY="1" scaleZ="1" />
+            </BoneSocket>
+            <!-- L_EYE_FX --> <BoneSocket id="7" bone="L_EYE">
+                <HprOffset heading="0" pitch="0" roll="0" offsetX="0" offsetY="0" offsetZ="0" scaleX="1" scaleY="1" scaleZ="1" />
+            </BoneSocket>
+            <!-- COG_UPPER --> <BoneSocket id="13" bone="COG">
+                <HprOffset heading="180" pitch="-90" roll="0" offsetX="0" offsetY=".2" offsetZ="0" scaleX="1" scaleY="1" scaleZ="1" />
+            </BoneSocket>
+            <!-- HEAD_ACCESSORY --> <BoneSocket id="14" bone="HEAD">
+                <HprOffset heading="180" pitch="-10" roll="0" offsetX="0" offsetY=".08" offsetZ="-.04" scaleX=".8" scaleY=".8" scaleZ=".8" />
+            </BoneSocket>
+        </Skeleton>
+        <Skeleton name="cat">
+            <BoneSocket id="3" bone="ROOT">
+                <Matrix>
+                    <Row col0="1" col1="0" col2="0" col3="0"/>
+                    <Row col0="0" col1="1" col2="0" col3="0"/>
+                    <Row col0="0" col1="0" col2="1" col3="0"/>
+                    <Row col0="0" col1="0" col2="0.67" col3="1"/>
+                </Matrix>
+            </BoneSocket>
+            <!-- HEAD --> <BoneSocket id="1" bone="HEAD">
+                <HprOffset heading="180" pitch="-70" roll="0" offsetX="0" offsetY="0" offsetZ="0" scaleX="1" scaleY="1" scaleZ="1" />
+            </BoneSocket>
+            <!-- R_INDEXA --> <BoneSocket id="8" bone="R_CLAW">
+                <HprOffset heading="0" pitch="0" roll="0" offsetX="0" offsetY="0" offsetZ="0" scaleX="1" scaleY="1" scaleZ="1" />
+            </BoneSocket>
+            <!-- L_INDEXA --> <BoneSocket id="9" bone="L_CLAW">
+                <HprOffset heading="0" pitch="0" roll="0" offsetX="0" offsetY="0" offsetZ="0" scaleX="1" scaleY="1" scaleZ="1" />
+            </BoneSocket>
+            <!-- HEAD_FX --> <BoneSocket id="12" bone="HEAD">
+                <HprOffset heading="180" pitch="-70" roll="0" offsetX="0" offsetY="0" offsetZ="0" scaleX="1" scaleY="1" scaleZ="1" />
+            </BoneSocket>
+            <!-- R_EYE_FX --> <BoneSocket id="6" bone="R_EYE">
+                <HprOffset heading="0" pitch="0" roll="0" offsetX="0" offsetY="0" offsetZ="0" scaleX="1" scaleY="1" scaleZ="1" />
+            </BoneSocket>
+            <!-- L_EYE_FX --> <BoneSocket id="7" bone="L_EYE">
+                <HprOffset heading="0" pitch="0" roll="0" offsetX="0" offsetY="0" offsetZ="0" scaleX="1" scaleY="1" scaleZ="1" />
+            </BoneSocket>
+            <!-- COG_UPPER --> <BoneSocket id="13" bone="COG">
+                <HprOffset heading="180" pitch="-100" roll="0" offsetX="0" offsetY=".2" offsetZ="0" scaleX="1" scaleY="1" scaleZ="1" />
+            </BoneSocket>
+            <!-- HEAD_ACCESSORY --> <BoneSocket id="14" bone="HEAD">
+                <HprOffset heading="180" pitch="-70" roll="0" offsetX="0" offsetY=".01" offsetZ="-.06" scaleX="1" scaleY="1" scaleZ="1" />
+            </BoneSocket>
+        </Skeleton>
+        <Skeleton name="feathereddrake">
+            <!-- HEAD --> <BoneSocket id="1" bone="HEAD">
+                <HprOffset heading="0" pitch="10" roll="0" offsetX="0" offsetY="0" offsetZ="0" scaleX="1" scaleY="1" scaleZ="1" />
+            </BoneSocket>
+            <!-- R_INDEXA --> <BoneSocket id="8" bone="R_WING_OUTERTIP">
+                <HprOffset heading="0" pitch="0" roll="0" offsetX="0" offsetY="0" offsetZ="0" scaleX="1" scaleY="1" scaleZ="1" />
+            </BoneSocket>
+            <!-- L_INDEXA --> <BoneSocket id="9" bone="L_WING_OUTERTIP">
+                <HprOffset heading="0" pitch="0" roll="0" offsetX="0" offsetY="0" offsetZ="0" scaleX="1" scaleY="1" scaleZ="1" />
+            </BoneSocket>
+            <!-- HEAD_FX --> <BoneSocket id="12" bone="HEAD">
+                <HprOffset heading="0" pitch="0" roll="0" offsetX="0" offsetY=".2" offsetZ="0" scaleX="1" scaleY="1" scaleZ="1" />
+            </BoneSocket>
+            <!-- R_TOE --> <BoneSocket id="10" bone="R_CLAW">
+                <HprOffset heading="0" pitch="0" roll="0" offsetX="0" offsetY="0" offsetZ="0" scaleX="1" scaleY="1" scaleZ="1" />
+            </BoneSocket>
+            <!-- L_TOE --> <BoneSocket id="11" bone="L_CLAW">
+                <HprOffset heading="0" pitch="0" roll="0" offsetX="0" offsetY="0" offsetZ="0" scaleX="1" scaleY="1" scaleZ="1" />
+            </BoneSocket>
+            <!-- COG_UPPER --> <BoneSocket id="13" bone="COG">
+                <HprOffset heading="0" pitch="0" roll="0" offsetX="0" offsetY=".2" offsetZ=".25" scaleX="1" scaleY="1" scaleZ="1" />
+            </BoneSocket>
+            <!-- HEAD_ACCESSORY --> <BoneSocket id="14" bone="HEAD">
+                <HprOffset heading="0" pitch="10" roll="0" offsetX="0" offsetY="-.05" offsetZ=".1" scaleX=".8" scaleY=".8" scaleZ=".8" />
+            </BoneSocket>
+        </Skeleton>
+        <Skeleton name="pony">
+            <!-- HEAD --> <BoneSocket id="1" bone="HEAD">
+                <HprOffset heading="0" pitch="20" roll="0" offsetX="0" offsetY="0" offsetZ="0" scaleX="1" scaleY="1" scaleZ="1" />
+            </BoneSocket>
+            <!-- R_INDEXA --> <BoneSocket id="8" bone="R_CLAW">
+                <HprOffset heading="0" pitch="0" roll="0" offsetX="0" offsetY="0" offsetZ="0" scaleX="1" scaleY="1" scaleZ="1" />
+            </BoneSocket>
+            <!-- L_INDEXA --> <BoneSocket id="9" bone="L_CLAW">
+                <HprOffset heading="0" pitch="0" roll="0" offsetX="0" offsetY="0" offsetZ="0" scaleX="1" scaleY="1" scaleZ="1" />
+            </BoneSocket>
+            <!-- HEAD_FX --> <BoneSocket id="12" bone="HEAD">
+                <HprOffset heading="0" pitch="0" roll="0" offsetX="0" offsetY=".4" offsetZ="0" scaleX="1" scaleY="1" scaleZ="1" />
+            </BoneSocket>
+            <!-- R_TOE --> <BoneSocket id="10" bone="R_TOE">
+                <HprOffset heading="0" pitch="0" roll="0" offsetX="0" offsetY="0" offsetZ="0" scaleX="1" scaleY="1" scaleZ="1" />
+            </BoneSocket>
+            <!-- L_TOE --> <BoneSocket id="11" bone="L_TOE">
+                <HprOffset heading="0" pitch="0" roll="0" offsetX="0" offsetY="0" offsetZ="0" scaleX="1" scaleY="1" scaleZ="1" />
+            </BoneSocket>
+            <!-- COG_UPPER --> <BoneSocket id="13" bone="COG">
+                <HprOffset heading="0" pitch="0" roll="0" offsetX="0" offsetY="-.1" offsetZ=".7" scaleX="1" scaleY="1" scaleZ="1" />
+            </BoneSocket>
+            <!-- HEAD_ACCESSORY --> <BoneSocket id="14" bone="HEAD">
+                <HprOffset heading="0" pitch="30" roll="0" offsetX="0" offsetY="-.05" offsetZ=".16" scaleX="1" scaleY="1" scaleZ="1" />
+            </BoneSocket>
+        </Skeleton>
+        <Skeleton name="pig">
+            <!-- His HEAD bone has a bad rotation -->
+            <!-- HEAD --> <BoneSocket id="1" bone="HEAD">
+                <HprOffset heading="-90" pitch="137" roll="0" offsetX="0" offsetY="0" offsetZ="0" scaleX="1" scaleY="1" scaleZ="1" />
+            </BoneSocket>
+            <!-- This gives him a COG bone, which he is missing. His ROOT bone is messed up, but his MASTER bone is fine -->
+            <!-- COG --> <BoneSocket id="2" bone="MASTER">
+                <HprOffset heading="0" pitch="0" roll="0" offsetX="0" offsetY="0.4" offsetZ="0.2" scaleX="1" scaleY="1" scaleZ="1" />
+            </BoneSocket>
+            <!-- R_INDEXA --> <BoneSocket id="8" bone="RFRONTTOE1">
+                <HprOffset heading="0" pitch="0" roll="0" offsetX="0" offsetY="0" offsetZ="0" scaleX="1" scaleY="1" scaleZ="1" />
+            </BoneSocket>
+            <!-- L_INDEXA --> <BoneSocket id="9" bone="LFRONTTOE1">
+                <HprOffset heading="0" pitch="0" roll="0" offsetX="0" offsetY="0" offsetZ="0" scaleX="1" scaleY="1" scaleZ="1" />
+            </BoneSocket>
+            <!-- R_TOE --> <BoneSocket id="10" bone="RTOE1">
+                <HprOffset heading="0" pitch="0" roll="0" offsetX="0" offsetY="0" offsetZ="0" scaleX="1" scaleY="1" scaleZ="1" />
+            </BoneSocket>
+            <!-- L_TOE --> <BoneSocket id="11" bone="LTOE1">
+                <HprOffset heading="0" pitch="0" roll="0" offsetX="0" offsetY="0" offsetZ="0" scaleX="1" scaleY="1" scaleZ="1" />
+            </BoneSocket>
+            <!-- HEAD_FX --> <BoneSocket id="12" bone="HEAD">
+                <HprOffset heading="-90" pitch="145" roll="0" offsetX=".1" offsetY="-.15" offsetZ="0" scaleX="1.3" scaleY="1.3" scaleZ="1.3" />
+            </BoneSocket>
+            <!-- COG_UPPER --> <BoneSocket id="13" bone="MASTER">
+                <HprOffset heading="0" pitch="0" roll="0" offsetX="0" offsetY=".4" offsetZ=".2" scaleX="1" scaleY="1" scaleZ="1" />
+            </BoneSocket>
+            <!-- HEAD_ACCESSORY --> <BoneSocket id="14" bone="HEAD">
+                <HprOffset heading="-90" pitch="167" roll="0" offsetX=".1" offsetY="-.05" offsetZ="0" scaleX="1" scaleY="1" scaleZ="1" />
+            </BoneSocket>
+        </Skeleton>
+        <Skeleton name="tyrannosaurus">
+            <!-- HEAD --> <BoneSocket id="1" bone="HEAD">
+                <HprOffset heading="0" pitch="0" roll="0" offsetX="0" offsetY=".1" offsetZ=".2" scaleX="1" scaleY="1" scaleZ="1" />
+            </BoneSocket>
+            <!-- R_INDEXA --> <BoneSocket id="8" bone="R_FLIPPERA">
+                <HprOffset heading="0" pitch="0" roll="0" offsetX="0" offsetY="0" offsetZ="0" scaleX="1" scaleY="1" scaleZ="1" />
+            </BoneSocket>
+            <!-- L_INDEXA --> <BoneSocket id="9" bone="L_FLIPPERA">
+                <HprOffset heading="0" pitch="0" roll="0" offsetX="0" offsetY="0" offsetZ="0" scaleX="1" scaleY="1" scaleZ="1" />
+            </BoneSocket>
+            <!-- HEAD_FX --> <BoneSocket id="12" bone="HEAD">
+                <HprOffset heading="0" pitch="-25" roll="0" offsetX="0" offsetY=".1" offsetZ=".1" scaleX=".7" scaleY=".7" scaleZ=".7" />
+            </BoneSocket>
+            <!-- R_TOE --> <BoneSocket id="10" bone="R_TOE_MID">
+                <HprOffset heading="0" pitch="0" roll="0" offsetX="0" offsetY="0" offsetZ="0" scaleX="1" scaleY="1" scaleZ="1" />
+            </BoneSocket>
+            <!-- L_TOE --> <BoneSocket id="11" bone="R_TOE_MID">
+                <HprOffset heading="0" pitch="0" roll="0" offsetX="0" offsetY="0" offsetZ="0" scaleX="1" scaleY="1" scaleZ="1" />
+            </BoneSocket>
+            <!-- COG_UPPER --> <BoneSocket id="13" bone="COG">
+                <HprOffset heading="0" pitch="0" roll="0" offsetX="0" offsetY=".1" offsetZ=".25" scaleX="1" scaleY="1" scaleZ="1" />
+            </BoneSocket>
+            <!-- HEAD_ACCESSORY --> <BoneSocket id="14" bone="HEAD">
+                <HprOffset heading="0" pitch="0" roll="0" offsetX="0" offsetY=".15" offsetZ=".35" scaleX=".7" scaleY=".7" scaleZ=".7" />
+            </BoneSocket>
+        </Skeleton>
+        <Skeleton name="reindeer">
+            <!-- HEAD --> <BoneSocket id="1" bone="HEAD">
+                <HprOffset heading="0" pitch="25" roll="0" offsetX="0" offsetY="0" offsetZ="0" scaleX="1" scaleY="1" scaleZ="1" />
+            </BoneSocket>
+            <!-- R_INDEXA --> <BoneSocket id="8" bone="R_CLAW">
+                <HprOffset heading="0" pitch="0" roll="0" offsetX="0" offsetY="0" offsetZ="0" scaleX="1" scaleY="1" scaleZ="1" />
+            </BoneSocket>
+            <!-- L_INDEXA --> <BoneSocket id="9" bone="L_CLAW">
+                <HprOffset heading="0" pitch="0" roll="0" offsetX="0" offsetY="0" offsetZ="0" scaleX="1" scaleY="1" scaleZ="1" />
+            </BoneSocket>
+            <!-- HEAD_FX --> <BoneSocket id="12" bone="HEAD">
+                <HprOffset heading="0" pitch="0" roll="0" offsetX="0" offsetY="0" offsetZ="0" scaleX="1" scaleY="1" scaleZ="1" />
+            </BoneSocket>
+            <!-- R_TOE --> <BoneSocket id="10" bone="R_TOE">
+                <HprOffset heading="0" pitch="0" roll="0" offsetX="0" offsetY="0" offsetZ="0" scaleX="1" scaleY="1" scaleZ="1" />
+            </BoneSocket>
+            <!-- L_TOE --> <BoneSocket id="11" bone="L_TOE">
+                <HprOffset heading="0" pitch="0" roll="0" offsetX="0" offsetY="0" offsetZ="0" scaleX="1" scaleY="1" scaleZ="1" />
+            </BoneSocket>
+            <!-- COG_UPPER --> <BoneSocket id="13" bone="COG">
+                <HprOffset heading="0" pitch="0" roll="0" offsetX="0" offsetY="-.2" offsetZ=".7" scaleX="1" scaleY="1" scaleZ="1" />
+            </BoneSocket>
+            <!-- HEAD_ACCESSORY --> <BoneSocket id="14" bone="HEAD">
+                <HprOffset heading="0" pitch="30" roll="0" offsetX="0" offsetY="-.11" offsetZ=".15" scaleX="1" scaleY="1" scaleZ="1" />
+            </BoneSocket>
+        </Skeleton>         
+        <Skeleton name="penguin_baby">
+            <!-- R_INDEXA --> <BoneSocket id="8" bone="RWRIST">
+                <HprOffset heading="0" pitch="0" roll="0" offsetX="0" offsetY="0" offsetZ="0" scaleX="1" scaleY="1" scaleZ="1" />
+            </BoneSocket>
+            <!-- L_INDEXA --> <BoneSocket id="9" bone="LEFTWRIST">
+                <HprOffset heading="0" pitch="0" roll="0" offsetX="0" offsetY="0" offsetZ="0" scaleX="1" scaleY="1" scaleZ="1" />
+            </BoneSocket>
+            <!-- R_TOE --> <BoneSocket id="10" bone="RIGHTTOES">
+                <HprOffset heading="0" pitch="0" roll="0" offsetX="0" offsetY="0" offsetZ="0" scaleX="1" scaleY="1" scaleZ="1" />
+            </BoneSocket>
+            <!-- L_TOE --> <BoneSocket id="11" bone="LEFTTOES">
+                <HprOffset heading="0" pitch="0" roll="0" offsetX="0" offsetY="0" offsetZ="0" scaleX="1" scaleY="1" scaleZ="1" />
+            </BoneSocket>
+            <!-- HEAD --> <BoneSocket id="1" bone="HEAD">
+                <HprOffset heading="90" pitch="0" roll="0" offsetX="0" offsetY="0" offsetZ="0" scaleX="1" scaleY="1" scaleZ="1" />
+            </BoneSocket>
+            <!-- HEAD_FX --> <BoneSocket id="12" bone="HEAD">
+                <HprOffset heading="90" pitch="0" roll="0" offsetX="0" offsetY="0" offsetZ="0" scaleX=".5" scaleY=".5" scaleZ=".5" />
+            </BoneSocket>
+            <!-- COG_UPPER --> <BoneSocket id="13" bone="COG">
+                <HprOffset heading="90" pitch="0" roll="0" offsetX="0" offsetY=".1" offsetZ="0" scaleX="1" scaleY="1" scaleZ="1" />
+            </BoneSocket>
+            <!-- HEAD_ACCESSORY --> <BoneSocket id="14" bone="HEAD">
+                <HprOffset heading="90" pitch="10" roll="0" offsetX="-.15" offsetY="-.05" offsetZ="0" scaleX=".6" scaleY=".6" scaleZ=".6" />
+            </BoneSocket>
+        </Skeleton>
+        <Skeleton name="blackwidow">
+            <!-- R_INDEXA --> <BoneSocket id="8" bone="R_LEG_04_E">
+                <HprOffset heading="0" pitch="0" roll="0" offsetX="0" offsetY="0" offsetZ="0" scaleX="1" scaleY="1" scaleZ="1" />
+            </BoneSocket>
+            <!-- L_INDEXA --> <BoneSocket id="9" bone="L_LEG_04_E">
+                <HprOffset heading="0" pitch="0" roll="0" offsetX="0" offsetY="0" offsetZ="0" scaleX="1" scaleY="1" scaleZ="1" />
+            </BoneSocket>
+            <!-- R_TOE --> <BoneSocket id="10" bone="R_LEG_01_E">
+                <HprOffset heading="0" pitch="0" roll="0" offsetX="0" offsetY="0" offsetZ="0" scaleX="1" scaleY="1" scaleZ="1" />
+            </BoneSocket>
+            <!-- L_TOE --> <BoneSocket id="11" bone="L_LEG_01_E">
+                <HprOffset heading="0" pitch="0" roll="0" offsetX="0" offsetY="0" offsetZ="0" scaleX="1" scaleY="1" scaleZ="1" />
+            </BoneSocket>
+            <!-- HEAD --> <BoneSocket id="1" bone="HEAD">
+                <HprOffset heading="-100" pitch="-180" roll="10" offsetX="0" offsetY="0" offsetZ="0" scaleX="1" scaleY="1" scaleZ="1" />
+            </BoneSocket>
+            <!-- HEAD_FX --> <BoneSocket id="12" bone="HEAD">
+                <HprOffset heading="-100" pitch="-180" roll="10" offsetX="-.1" offsetY="-.1" offsetZ="-.05" scaleX="2" scaleY="2" scaleZ="2" />
+            </BoneSocket>
+            <!-- COG_UPPER --> <BoneSocket id="13" bone="COG">
+                <HprOffset heading="-90" pitch="180" roll="0" offsetX=".2" offsetY="0" offsetZ="0" scaleX="1" scaleY="1" scaleZ="1" />
+            </BoneSocket>
+            <!-- HEAD_ACCESSORY --> <BoneSocket id="14" bone="HEAD">
+                <HprOffset heading="-100" pitch="180" roll="10" offsetX="0" offsetY="0" offsetZ="0" scaleX="2" scaleY="2" scaleZ="2" />
+            </BoneSocket>
+        </Skeleton>
+        <Skeleton name="bigcats">
+            <!-- R_INDEXA --> <BoneSocket id="8" bone="R_PAW">
+                <HprOffset heading="0" pitch="0" roll="0" offsetX="0" offsetY="0" offsetZ="0" scaleX="1" scaleY="1" scaleZ="1" />
+            </BoneSocket>
+            <!-- L_INDEXA --> <BoneSocket id="9" bone="L_PAW">
+                <HprOffset heading="0" pitch="0" roll="0" offsetX="0" offsetY="0" offsetZ="0" scaleX="1" scaleY="1" scaleZ="1" />
+            </BoneSocket>
+            <!-- R_TOE --> <BoneSocket id="10" bone="R_TOE">
+                <HprOffset heading="0" pitch="0" roll="0" offsetX="0" offsetY="0" offsetZ="0" scaleX="1" scaleY="1" scaleZ="1" />
+            </BoneSocket>
+            <!-- L_TOE --> <BoneSocket id="11" bone="L_TOE">
+                <HprOffset heading="0" pitch="0" roll="0" offsetX="0" offsetY="0" offsetZ="0" scaleX="1" scaleY="1" scaleZ="1" />
+            </BoneSocket>
+            <!-- HEAD --> <BoneSocket id="1" bone="HEAD">
+                <HprOffset heading="0" pitch="0" roll="0" offsetX="0" offsetY="0" offsetZ="0" scaleX="1" scaleY="1" scaleZ="1" />
+            </BoneSocket>
+            <!-- HEAD_FX --> <BoneSocket id="12" bone="HEAD">
+                <HprOffset heading="0" pitch="0" roll="0" offsetX="0" offsetY="0" offsetZ="0" scaleX="1" scaleY="1" scaleZ="1" />
+            </BoneSocket>
+            <!-- COG_UPPER --> <BoneSocket id="13" bone="COG">
+                <HprOffset heading="0" pitch="0" roll="0" offsetX="0" offsetY="0" offsetZ="0" scaleX="1" scaleY="1" scaleZ="1" />
+            </BoneSocket>
+            <!-- HEAD_ACCESSORY --> <BoneSocket id="14" bone="HEAD">
+                <HprOffset heading="0" pitch="20" roll="0" offsetX="0" offsetY="0" offsetZ="0" scaleX="1" scaleY="1" scaleZ="1" />
+            </BoneSocket>
+        </Skeleton>
+        <Skeleton name="groundhog">
+            <!-- R_INDEXA --> <BoneSocket id="8" bone="R_FLIPPERA">
+                <HprOffset heading="0" pitch="0" roll="0" offsetX="0" offsetY="0" offsetZ="0" scaleX="1" scaleY="1" scaleZ="1" />
+            </BoneSocket>
+            <!-- L_INDEXA --> <BoneSocket id="9" bone="L_FLIPPERA">
+                <HprOffset heading="0" pitch="0" roll="0" offsetX="0" offsetY="0" offsetZ="0" scaleX="1" scaleY="1" scaleZ="1" />
+            </BoneSocket>
+            <!-- R_TOE --> <BoneSocket id="10" bone="R_TOE">
+                <HprOffset heading="0" pitch="0" roll="0" offsetX="0" offsetY="0" offsetZ="0" scaleX="1" scaleY="1" scaleZ="1" />
+            </BoneSocket>
+            <!-- L_TOE --> <BoneSocket id="11" bone="L_TOE">
+                <HprOffset heading="0" pitch="0" roll="0" offsetX="0" offsetY="0" offsetZ="0" scaleX="1" scaleY="1" scaleZ="1" />
+            </BoneSocket>
+            <!-- HEAD --> <BoneSocket id="1" bone="HEAD">
+                <HprOffset heading="0" pitch="0" roll="0" offsetX="0" offsetY="0" offsetZ="0" scaleX="1" scaleY="1" scaleZ="1" />
+            </BoneSocket>
+            <!-- HEAD_FX --> <BoneSocket id="12" bone="HEAD">
+                <HprOffset heading="0" pitch="0" roll="0" offsetX="0.11" offsetY="0.15" offsetZ="-.05" scaleX="1" scaleY="1" scaleZ="1" />
+            </BoneSocket>
+            <!-- COG_UPPER --> <BoneSocket id="13" bone="COG">
+                <HprOffset heading="0" pitch="0" roll="0" offsetX="0" offsetY=".1" offsetZ="0" scaleX="1" scaleY="1" scaleZ="1" />
+            </BoneSocket>
+            <!-- HEAD_ACCESSORY --> <BoneSocket id="14" bone="HEAD">
+                <HprOffset heading="0" pitch="10" roll="0" offsetX="0" offsetY="-.02" offsetZ="-.08" scaleX=".7" scaleY=".7" scaleZ=".7" />
+            </BoneSocket>
+        </Skeleton>
+    <!-- ------- -->
+    <!-- OBJECTS -->
+    <!-- ------- -->
+        <Skeleton name="sg_mailbox_01">
+            <!-- COG --> <BoneSocket id="2" bone="BOX">
+                <HprOffset heading="0" pitch="0" roll="0" offsetX="0" offsetY="0" offsetZ="0" scaleX="1" scaleY="1" scaleZ="1" />
+            </BoneSocket>
+        </Skeleton>
+        <Skeleton name="gw_precursor_artifact_01">
+            <!-- R_INDEXA --> <BoneSocket id="8" bone="MASTER">
+                <HprOffset heading="0" pitch="0" roll="0" offsetX="0" offsetY="-1.5" offsetZ="0" scaleX="1" scaleY="1" scaleZ="1" />
+            </BoneSocket>
+            <!-- L_INDEXA --> <BoneSocket id="9" bone="SPIN">
+                <HprOffset heading="0" pitch="0" roll="0" offsetX="0" offsetY=".2" offsetZ="0" scaleX="1" scaleY="1" scaleZ="1" />
+            </BoneSocket>
+            <!-- L_WRIST --> <BoneSocket id="5" bone="MASTER">
+                <HprOffset heading="0" pitch="0" roll="0" offsetX="0" offsetY=".4" offsetZ="0" scaleX="1" scaleY="1" scaleZ="1" />
+            </BoneSocket>
+            <!-- COG --> <BoneSocket id="2" bone="MASTER">
+                <HprOffset heading="0" pitch="0" roll="0" offsetX="0" offsetY=".4" offsetZ="0" scaleX="1" scaleY="1" scaleZ="1" />
+            </BoneSocket>
+            <!-- COG_UPPER --> <BoneSocket id="13" bone="MASTER">
+                <HprOffset heading="0" pitch="0" roll="0" offsetX="0" offsetY=".4" offsetZ="0" scaleX="1" scaleY="1" scaleZ="1" />
+            </BoneSocket>
+        </Skeleton>
+        <Skeleton name="gw_precursor_artifact_02_combined">
+            <!-- R_INDEXA --> <BoneSocket id="8" bone="MASTER">
+                <HprOffset heading="0" pitch="0" roll="0" offsetX="0" offsetY="-1" offsetZ="0" scaleX="1" scaleY="1" scaleZ="1" />
+            </BoneSocket>
+            <!-- L_INDEXA --> <BoneSocket id="9" bone="MASTER">
+                <HprOffset heading="0" pitch="0" roll="0" offsetX="0" offsetY=".1" offsetZ="0" scaleX="1" scaleY="1" scaleZ="1" />
+            </BoneSocket>
+            <!-- L_WRIST --> <BoneSocket id="5" bone="MASTER">
+                <HprOffset heading="0" pitch="0" roll="0" offsetX="0" offsetY=".4" offsetZ="0" scaleX="1" scaleY="1" scaleZ="1" />
+            </BoneSocket>
+            <!-- COG --> <BoneSocket id="2" bone="MASTER">
+                <HprOffset heading="0" pitch="0" roll="0" offsetX="0" offsetY="-.47" offsetZ="0" scaleX="1" scaleY="1" scaleZ="1" />
+            </BoneSocket>
+            <!-- COG_UPPER --> <BoneSocket id="13" bone="MASTER">
+                <HprOffset heading="0" pitch="0" roll="0" offsetX="0" offsetY="-.47" offsetZ="0" scaleX="1" scaleY="1" scaleZ="1" />
+            </BoneSocket>
+        </Skeleton>
+    <!-- ---- -->        
+    <!-- NPCS -->        
+    <!-- ---- -->        
+        <Skeleton name="banshee_01">
+            <!-- R_TOE --> <BoneSocket id="10" bone="BOTTOM">
+                <HprOffset heading="0" pitch="0" roll="0" offsetX="0" offsetY="-.2" offsetZ="0" scaleX="1" scaleY="1" scaleZ="1" />
+            </BoneSocket>
+            <!-- L_TOE --> <BoneSocket id="11" bone="BOTTOM">
+                <HprOffset heading="0" pitch="0" roll="0" offsetX="0" offsetY=".2" offsetZ="0" scaleX="1" scaleY="1" scaleZ="1" />
+            </BoneSocket>
+            <!-- HEAD --> <BoneSocket id="1" bone="HEAD">
+                <HprOffset heading="90" pitch="60" roll="0" offsetX=".1" offsetY="0" offsetZ="0" scaleX="1" scaleY="1" scaleZ="1" />
+            </BoneSocket>
+            <!-- HEAD_FX --> <BoneSocket id="12" bone="HEAD">
+                <HprOffset heading="90" pitch="60" roll="0" offsetX=".2" offsetY="0" offsetZ="0" scaleX=".8" scaleY=".8" scaleZ=".8" />
+            </BoneSocket>
+            <!-- COG_UPPER --> <BoneSocket id="13" bone="COG">
+                <HprOffset heading="90" pitch="90" roll="0" offsetX=".3" offsetY="0" offsetZ="0" scaleX="1" scaleY="1" scaleZ="1" />
+            </BoneSocket>
+        </Skeleton>
+        <Skeleton name="bat">
+            <!-- R_INDEXA --> <BoneSocket id="8" bone="RIGHT_HAND">
+                <HprOffset heading="0" pitch="0" roll="0" offsetX="0" offsetY="0" offsetZ="0" scaleX="1" scaleY="1" scaleZ="1" />
+            </BoneSocket>
+            <!-- L_INDEXA --> <BoneSocket id="9" bone="LEFT_HAND">
+                <HprOffset heading="0" pitch="0" roll="0" offsetX="0" offsetY="0" offsetZ="0" scaleX="1" scaleY="1" scaleZ="1" />
+            </BoneSocket>
+            <!-- R_TOE --> <BoneSocket id="10" bone="RIGHT_TOE1">
+                <HprOffset heading="0" pitch="0" roll="0" offsetX="0" offsetY="0" offsetZ="0" scaleX="1" scaleY="1" scaleZ="1" />
+            </BoneSocket>
+            <!-- L_TOE --> <BoneSocket id="11" bone="LEFT_TOE1">
+                <HprOffset heading="0" pitch="0" roll="0" offsetX="0" offsetY="0" offsetZ="0" scaleX="1" scaleY="1" scaleZ="1" />
+            </BoneSocket>
+            <!-- HEAD --> <BoneSocket id="1" bone="HEAD">
+                <HprOffset heading="0" pitch="20" roll="0" offsetX="0" offsetY="-.05" offsetZ="0" scaleX="1" scaleY="1" scaleZ="1" />
+            </BoneSocket>
+            <!-- HEAD_FX --> <BoneSocket id="12" bone="HEAD">
+                <HprOffset heading="0" pitch="0" roll="0" offsetX="0" offsetY=".1" offsetZ="0" scaleX=".6" scaleY=".6" scaleZ=".6" />
+            </BoneSocket>
+            <!-- COG_UPPER --> <BoneSocket id="13" bone="COG">
+                <HprOffset heading="0" pitch="0" roll="0" offsetX="0" offsetY=".05" offsetZ="0" scaleX="1" scaleY="1" scaleZ="1" />
+            </BoneSocket>
+        </Skeleton>
+        <Skeleton name="bear_normal">
+            <!-- R_INDEXA --> <BoneSocket id="8" bone="R_FINGER">
+                <HprOffset heading="0" pitch="0" roll="0" offsetX="0" offsetY="0" offsetZ="0" scaleX="1" scaleY="1" scaleZ="1" />
+            </BoneSocket>
+            <!-- L_INDEXA --> <BoneSocket id="9" bone="L_FINGER">
+                <HprOffset heading="0" pitch="0" roll="0" offsetX="0" offsetY="0" offsetZ="0" scaleX="1" scaleY="1" scaleZ="1" />
+            </BoneSocket>
+            <!-- HEAD --> <BoneSocket id="1" bone="HEAD">
+                <HprOffset heading="0" pitch="25" roll="0" offsetX="0" offsetY=".4" offsetZ=".17" scaleX=".8" scaleY=".8" scaleZ=".8" />
+            </BoneSocket>
+            <!-- HEAD_FX --> <BoneSocket id="12" bone="HEAD">
+                <HprOffset heading="0" pitch="0" roll="0" offsetX="0" offsetY=".4" offsetZ=".17" scaleX=".8" scaleY=".8" scaleZ=".8" />
+            </BoneSocket>
+            <!-- COG_UPPER --> <BoneSocket id="13" bone="COG">
+                <HprOffset heading="0" pitch="0" roll="0" offsetX="0" offsetY="0" offsetZ=".5" scaleX="1.5" scaleY="1.5" scaleZ="1.5" />
+            </BoneSocket>
+        </Skeleton>
+        <Skeleton name="bear_vinegolem">
+            <!-- R_INDEXA --> <BoneSocket id="8" bone="R_HAND">
+                <HprOffset heading="0" pitch="0" roll="0" offsetX="0" offsetY="0" offsetZ="0" scaleX="1" scaleY="1" scaleZ="1" />
+            </BoneSocket>
+            <!-- L_INDEXA --> <BoneSocket id="9" bone="L_HAND">
+                <HprOffset heading="0" pitch="0" roll="0" offsetX="0" offsetY="0" offsetZ="0" scaleX="1" scaleY="1" scaleZ="1" />
+            </BoneSocket>
+            <!-- HEAD --> <BoneSocket id="1" bone="HEAD">
+                <HprOffset heading="0" pitch="25" roll="0" offsetX="0" offsetY="0" offsetZ="0" scaleX="1" scaleY="1" scaleZ="1" />
+            </BoneSocket>
+            <!-- HEAD_FX --> <BoneSocket id="12" bone="HEAD">
+                <HprOffset heading="0" pitch="0" roll="0" offsetX="0" offsetY=".4" offsetZ=".17" scaleX=".8" scaleY=".8" scaleZ=".8" />
+            </BoneSocket>
+            <!-- COG_UPPER --> <BoneSocket id="13" bone="COG">
+                <HprOffset heading="0" pitch="0" roll="0" offsetX="0" offsetY="0" offsetZ=".5" scaleX="1.5" scaleY="1.5" scaleZ="1.5" />
+            </BoneSocket>
+        </Skeleton>
+        <Skeleton name="birds">
+            <!-- R_INDEXA --> <BoneSocket id="8" bone="RIGHT_HAND">
+                <HprOffset heading="0" pitch="0" roll="0" offsetX="0" offsetY="0" offsetZ="0" scaleX="1" scaleY="1" scaleZ="1" />
+            </BoneSocket>
+            <!-- L_INDEXA --> <BoneSocket id="9" bone="LEFT_HAND">
+                <HprOffset heading="0" pitch="0" roll="0" offsetX="0" offsetY="0" offsetZ="0" scaleX="1" scaleY="1" scaleZ="1" />
+            </BoneSocket>
+            <!-- R_TOE --> <BoneSocket id="10" bone="RIGHT_TOE">
+                <HprOffset heading="0" pitch="0" roll="0" offsetX="0" offsetY="0" offsetZ="0" scaleX="1" scaleY="1" scaleZ="1" />
+            </BoneSocket>
+            <!-- L_TOE --> <BoneSocket id="11" bone="LEFT_TOE">
+                <HprOffset heading="0" pitch="0" roll="0" offsetX="0" offsetY="0" offsetZ="0" scaleX="1" scaleY="1" scaleZ="1" />
+            </BoneSocket>
+            <!-- HEAD --> <BoneSocket id="1" bone="HEAD">
+                <HprOffset heading="0" pitch="10" roll="0" offsetX="0" offsetY="0" offsetZ="0" scaleX="1" scaleY="1" scaleZ="1" />
+            </BoneSocket>
+            <!-- HEAD_FX --> <BoneSocket id="12" bone="HEAD">
+                <HprOffset heading="0" pitch="0" roll="0" offsetX="0" offsetY="0" offsetZ="0" scaleX="1" scaleY="1" scaleZ="1" />
+            </BoneSocket>
+            <!-- COG_UPPER --> <BoneSocket id="13" bone="COG">
+                <HprOffset heading="0" pitch="0" roll="0" offsetX="0" offsetY="0" offsetZ=".2" scaleX="1" scaleY="1" scaleZ="1" />
+            </BoneSocket>
+            <!-- HEAD_ACCESSORY --> <BoneSocket id="14" bone="HEAD">
+                <HprOffset heading="0" pitch="10" roll="0" offsetX="0" offsetY="-.02" offsetZ="-.03" scaleX="1" scaleY="1" scaleZ="1" />
+            </BoneSocket>
+        </Skeleton>
+        <Skeleton name="bixie">
+            <!-- R_INDEXA --> <BoneSocket id="8" bone="R_WRIST">
+                <HprOffset heading="0" pitch="0" roll="0" offsetX="0" offsetY="-.05" offsetZ="0" scaleX="1" scaleY="1" scaleZ="1" />
+            </BoneSocket>
+            <!-- L_INDEXA --> <BoneSocket id="9" bone="L_WRIST">
+                <HprOffset heading="0" pitch="0" roll="0" offsetX="0" offsetY=".05" offsetZ="0" scaleX="1" scaleY="1" scaleZ="1" />
+            </BoneSocket>
+            <!-- HEAD --> <BoneSocket id="1" bone="HEAD">
+                <HprOffset heading="0" pitch="0" roll="0" offsetX="0" offsetY="0" offsetZ="0" scaleX="1" scaleY="1" scaleZ="1" />
+            </BoneSocket>
+            <!-- HEAD_FX --> <BoneSocket id="12" bone="HEAD">
+                <HprOffset heading="0" pitch="0" roll="0" offsetX="0" offsetY=".1" offsetZ="0" scaleX="1" scaleY="1" scaleZ="1" />
+            </BoneSocket>
+            <!-- COG_UPPER --> <BoneSocket id="13" bone="COG">
+                <HprOffset heading="0" pitch="10" roll="0" offsetX="0" offsetY="0" offsetZ=".2" scaleX="1" scaleY="1" scaleZ="1" />
+            </BoneSocket>
+        </Skeleton>
+        <Skeleton name="butterfly">
+            <!-- R_INDEXA --> <BoneSocket id="8" bone="R_WING_END">
+                <HprOffset heading="0" pitch="0" roll="0" offsetX="0" offsetY="0" offsetZ="0" scaleX="1" scaleY="1" scaleZ="1" />
+            </BoneSocket>
+            <!-- L_INDEXA --> <BoneSocket id="9" bone="L_WING_END">
+                <HprOffset heading="0" pitch="0" roll="0" offsetX="0" offsetY="0" offsetZ="0" scaleX="1" scaleY="1" scaleZ="1" />
+            </BoneSocket>
+            <!-- R_TOE --> <BoneSocket id="10" bone="R_WING_END">
+                <HprOffset heading="0" pitch="0" roll="0" offsetX="0" offsetY=".2" offsetZ=".3" scaleX="1" scaleY="1" scaleZ="1" />
+            </BoneSocket>
+            <!-- L_TOE --> <BoneSocket id="11" bone="L_WING_END">
+                <HprOffset heading="0" pitch="0" roll="0" offsetX="0" offsetY="-.2" offsetZ="-.3" scaleX="1" scaleY="1" scaleZ="1" />
+            </BoneSocket>
+            <!-- HEAD_FX --> <BoneSocket id="12" bone="HEAD">
+                <HprOffset heading="0" pitch="0" roll="0" offsetX="0" offsetY=".4" offsetZ="0" scaleX=".5" scaleY=".5" scaleZ=".5" />
+            </BoneSocket>
+            <!-- COG_UPPER --> <BoneSocket id="13" bone="COG">
+                <HprOffset heading="0" pitch="0" roll="0" offsetX="0" offsetY="0" offsetZ="0" scaleX=".5" scaleY=".5" scaleZ=".5" />
+            </BoneSocket>
+        </Skeleton>
+        <Skeleton name="chick">
+            <!-- R_INDEXA --> <BoneSocket id="8" bone="RWING">
+                <HprOffset heading="0" pitch="0" roll="0" offsetX="-.03" offsetY=".05" offsetZ=".05" scaleX="1" scaleY="1" scaleZ="1" />
+            </BoneSocket>
+            <!-- L_INDEXA --> <BoneSocket id="9" bone="LWING">
+                <HprOffset heading="0" pitch="0" roll="0" offsetX=".03" offsetY="-.05" offsetZ="-.05" scaleX="1" scaleY="1" scaleZ="1" />
+            </BoneSocket>
+            <!-- R_TOE --> <BoneSocket id="10" bone="RTOE1">
+                <HprOffset heading="0" pitch="0" roll="0" offsetX="0" offsetY="0" offsetZ="0" scaleX="1" scaleY="1" scaleZ="1" />
+            </BoneSocket>
+            <!-- L_TOE --> <BoneSocket id="11" bone="LTOE1"> 
+                <HprOffset heading="0" pitch="0" roll="0" offsetX="0" offsetY="0" offsetZ="0" scaleX="1" scaleY="1" scaleZ="1" />
+            </BoneSocket>
+            <!-- HEAD --> <BoneSocket id="1" bone="HEAD">
+                <HprOffset heading="-90" pitch="-180" roll="0" offsetX="0" offsetY="0" offsetZ="0" scaleX="1" scaleY="1" scaleZ="1" />
+            </BoneSocket>
+            <!-- HEAD_FX --> <BoneSocket id="12" bone="HEAD">
+                <HprOffset heading="-90" pitch="-180" roll="0" offsetX="0" offsetY="0" offsetZ="0" scaleX=".7" scaleY=".7" scaleZ=".7" />
+            </BoneSocket>
+            <!-- COG_UPPER --> <BoneSocket id="13" bone="COG">
+                <HprOffset heading="-90" pitch="210" roll="0" offsetX="0" offsetY="0" offsetZ="0" scaleX="1" scaleY="1" scaleZ="1" />
+            </BoneSocket>
+        </Skeleton>
+        <Skeleton name="chicken">
+            <!-- R_INDEXA --> <BoneSocket id="8" bone="RWING">
+                <HprOffset heading="0" pitch="0" roll="0" offsetX="-.1" offsetY=".2" offsetZ=".2" scaleX="1" scaleY="1" scaleZ="1" />
+            </BoneSocket>
+            <!-- L_INDEXA --> <BoneSocket id="9" bone="LWING">
+                <HprOffset heading="0" pitch="0" roll="0" offsetX=".1" offsetY="-.2" offsetZ="-.2" scaleX="1" scaleY="1" scaleZ="1" />
+            </BoneSocket>
+            <!-- R_TOE --> <BoneSocket id="10" bone="RTOE1">
+                <HprOffset heading="0" pitch="0" roll="0" offsetX="0" offsetY="0" offsetZ="0" scaleX="1" scaleY="1" scaleZ="1" />
+            </BoneSocket>
+            <!-- L_TOE --> <BoneSocket id="11" bone="LTOE1">
+                <HprOffset heading="0" pitch="0" roll="0" offsetX="0" offsetY="0" offsetZ="0" scaleX="1" scaleY="1" scaleZ="1" />
+            </BoneSocket>
+            <!-- HEAD --> <BoneSocket id="1" bone="HEAD">
+                <HprOffset heading="-90" pitch="-180" roll="0" offsetX="0" offsetY="0" offsetZ="0" scaleX="1" scaleY="1" scaleZ="1" />
+            </BoneSocket>
+            <!-- HEAD_FX --> <BoneSocket id="12" bone="HEAD">
+                <HprOffset heading="-90" pitch="-180" roll="0" offsetX="0" offsetY="0" offsetZ="0" scaleX="1" scaleY="1" scaleZ="1" />
+            </BoneSocket>
+            <!-- COG_UPPER --> <BoneSocket id="13" bone="COG">
+                <HprOffset heading="-90" pitch="210" roll="0" offsetX=".2" offsetY=".1" offsetZ="0" scaleX="1" scaleY="1" scaleZ="1" />
+            </BoneSocket>
+        </Skeleton>
+        <Skeleton name="chugawug">
+            <!-- COG --> <BoneSocket id="2" bone="COG">
+                <HprOffset heading="0" pitch="0" roll="0" offsetX="0" offsetY="0.5" offsetZ="0" scaleX="1" scaleY="1" scaleZ="1" />
+            </BoneSocket>
+            <!-- COG_UPPER --> <BoneSocket id="13" bone="COG">
+                <HprOffset heading="0" pitch="0" roll="0" offsetX="0" offsetY=".3" offsetZ="0" scaleX="1.7" scaleY="1.7" scaleZ="1.7" />
+            </BoneSocket>
+            <!-- HEAD --> <BoneSocket id="1" bone="HEAD">
+                <HprOffset heading="0" pitch="0" roll="0" offsetX="0" offsetY=".1" offsetZ="0" scaleX="1" scaleY="1" scaleZ="1" />
+            </BoneSocket>
+            <!-- HEAD_FX --> <BoneSocket id="12" bone="HEAD">
+                <HprOffset heading="0" pitch="0" roll="0" offsetX="0" offsetY=".15" offsetZ="0" scaleX="1" scaleY="1" scaleZ="1" />
+            </BoneSocket>
+        </Skeleton>
+        <Skeleton name="cow">
+            <!-- R_INDEXA --> <BoneSocket id="8" bone="R_FINGERS">
+                <HprOffset heading="0" pitch="0" roll="0" offsetX="0" offsetY="0" offsetZ="0" scaleX="1" scaleY="1" scaleZ="1" />
+            </BoneSocket>
+            <!-- L_INDEXA --> <BoneSocket id="9" bone="L_FINGERS">
+                <HprOffset heading="0" pitch="0" roll="0" offsetX="0" offsetY="0" offsetZ="0" scaleX="1" scaleY="1" scaleZ="1" />
+            </BoneSocket>
+            <!-- HEAD --> <BoneSocket id="1" bone="HEAD">
+                <HprOffset heading="-90" pitch="125" roll="0" offsetX="0" offsetY="0" offsetZ="0" scaleX="1" scaleY="1" scaleZ="1" />
+            </BoneSocket>
+            <!-- HEAD_FX --> <BoneSocket id="12" bone="HEAD">
+                <HprOffset heading="-90" pitch="90" roll="0" offsetX="-.3" offsetY="0" offsetZ="0" scaleX="1" scaleY="1" scaleZ="1" />
+            </BoneSocket>
+            <!-- COG_UPPER --> <BoneSocket id="13" bone="COG">
+                <HprOffset heading="-90" pitch="0" roll="0" offsetX="-.5" offsetY="0" offsetZ="0" scaleX="1" scaleY="1" scaleZ="1" />
+            </BoneSocket>
+        </Skeleton>
+        <Skeleton name="cray">
+            <!-- R_INDEXA --> <BoneSocket id="8" bone="R_CLAW">
+                <HprOffset heading="0" pitch="0" roll="0" offsetX="0" offsetY="-.2" offsetZ="0" scaleX="1" scaleY="1" scaleZ="1" />
+            </BoneSocket>
+            <!-- L_INDEXA --> <BoneSocket id="9" bone="L_FINGERS">
+                <HprOffset heading="0" pitch="0" roll="0" offsetX="0" offsetY="0" offsetZ="0" scaleX="1" scaleY="1" scaleZ="1" />
+            </BoneSocket>
+            <!-- R_TOE --> <BoneSocket id="10" bone="R_BACKANKLE">
+                <HprOffset heading="0" pitch="0" roll="0" offsetX="0" offsetY="-.2" offsetZ=".1" scaleX="1" scaleY="1" scaleZ="1" />
+            </BoneSocket>
+            <!-- L_TOE --> <BoneSocket id="11" bone="R_FRONTANKLE">
+                <HprOffset heading="0" pitch="0" roll="0" offsetX="0" offsetY="-.2" offsetZ=".1" scaleX="1" scaleY="1" scaleZ="1" />
+            </BoneSocket>
+            <!-- HEAD --> <BoneSocket id="1" bone="HEAD">
+                <HprOffset heading="0" pitch="40" roll="0" offsetX="0" offsetY=".1" offsetZ=".1" scaleX="1" scaleY="1" scaleZ="1" />
+            </BoneSocket>
+            <!-- HEAD_FX --> <BoneSocket id="12" bone="HEAD">
+                <HprOffset heading="0" pitch="40" roll="0" offsetX="0" offsetY=".2" offsetZ=".2" scaleX="1" scaleY="1" scaleZ="1" />
+            </BoneSocket>
+            <!-- COG_UPPER --> <BoneSocket id="13" bone="COG">
+                <HprOffset heading="-90" pitch="0" roll="0" offsetX="0" offsetY=".5" offsetZ="0" scaleX="1.5" scaleY="1.5" scaleZ="1.5" />
+            </BoneSocket>
+        </Skeleton>
+        <Skeleton name="deer">
+            <!-- R_INDEXA --> <BoneSocket id="8" bone="RIGHTFRONTTOE1">
+                <HprOffset heading="0" pitch="0" roll="0" offsetX="0" offsetY="0" offsetZ="0" scaleX="1" scaleY="1" scaleZ="1" />
+            </BoneSocket>
+            <!-- L_INDEXA --> <BoneSocket id="9" bone="LEFTFRONTTOE1">
+                <HprOffset heading="0" pitch="0" roll="0" offsetX="0" offsetY="0" offsetZ="0" scaleX="1" scaleY="1" scaleZ="1" />
+            </BoneSocket>
+            <!-- R_TOE --> <BoneSocket id="10" bone="RIGHTTOE1">
+                <HprOffset heading="0" pitch="0" roll="0" offsetX="0" offsetY="0" offsetZ="0" scaleX="1" scaleY="1" scaleZ="1" />
+            </BoneSocket>
+            <!-- L_TOE --> <BoneSocket id="11" bone="LEFTTOE1">
+                <HprOffset heading="0" pitch="0" roll="0" offsetX="0" offsetY="0" offsetZ="0" scaleX="1" scaleY="1" scaleZ="1" />
+            </BoneSocket>
+            <!-- HEAD --> <BoneSocket id="1" bone="HEAD">
+                <HprOffset heading="0" pitch="40" roll="0" offsetX="0" offsetY=".05" offsetZ=".1" scaleX="1" scaleY="1" scaleZ="1" />
+            </BoneSocket>
+            <!-- HEAD_FX --> <BoneSocket id="12" bone="HEAD">
+                <HprOffset heading="0" pitch="0" roll="0" offsetX="0" offsetY=".1" offsetZ="0" scaleX="1" scaleY="1" scaleZ="1" />
+            </BoneSocket>
+            <!-- COG_UPPER --> <BoneSocket id="13" bone="COG">
+                <HprOffset heading="90" pitch="0" roll="0" offsetX=".2" offsetY="0" offsetZ="0" scaleX="1" scaleY="1" scaleZ="1" />
+            </BoneSocket>
+        </Skeleton>
+        <Skeleton name="duck_f_01">
+            <!-- R_INDEXA --> <BoneSocket id="8" bone="R_WING_TIP">
+                <HprOffset heading="0" pitch="0" roll="0" offsetX="0" offsetY="0" offsetZ="0" scaleX="1" scaleY="1" scaleZ="1" />
+            </BoneSocket>
+            <!-- L_INDEXA --> <BoneSocket id="9" bone="L_WING_TIP">
+                <HprOffset heading="0" pitch="0" roll="0" offsetX="0" offsetY="0" offsetZ="0" scaleX="1" scaleY="1" scaleZ="1" />
+            </BoneSocket>
+            <!-- R_TOE --> <BoneSocket id="10" bone="R_ANKLE">
+                <HprOffset heading="0" pitch="0" roll="0" offsetX="0" offsetY="0" offsetZ="0" scaleX="1" scaleY="1" scaleZ="1" />
+            </BoneSocket>
+            <!-- L_TOE --> <BoneSocket id="11" bone="L_ANKLE">
+                <HprOffset heading="0" pitch="0" roll="0" offsetX="0" offsetY="0" offsetZ="0" scaleX="1" scaleY="1" scaleZ="1" />
+            </BoneSocket>
+            <!-- HEAD --> <BoneSocket id="1" bone="HEAD">
+                <HprOffset heading="0" pitch="25" roll="0" offsetX="0" offsetY="0" offsetZ="0" scaleX="1" scaleY="1" scaleZ="1" />
+            </BoneSocket>
+            <!-- HEAD_FX --> <BoneSocket id="12" bone="HEAD">
+                <HprOffset heading="0" pitch="0" roll="0" offsetX="0" offsetY="0" offsetZ="0" scaleX=".3" scaleY=".3" scaleZ=".3" />
+            </BoneSocket>
+            <!-- COG_UPPER --> <BoneSocket id="13" bone="COG">
+                <HprOffset heading="180" pitch="-70" roll="0" offsetX="0" offsetY=".1" offsetZ="0" scaleX=".5" scaleY=".5" scaleZ=".5" />
+            </BoneSocket>
+        </Skeleton>
+        <Skeleton name="dwarf_m">
+            <!-- HEAD_FX --> <BoneSocket id="12" bone="HEAD">
+                <HprOffset heading="0" pitch="0" roll="0" offsetX="0" offsetY=".2" offsetZ="0" scaleX="1" scaleY="1" scaleZ="1" />
+            </BoneSocket>
+            <!-- COG_UPPER --> <BoneSocket id="13" bone="COG">
+                <HprOffset heading="0" pitch="0" roll="0" offsetX="0" offsetY=".5" offsetZ="0" scaleX="1" scaleY="1" scaleZ="1" />
+            </BoneSocket>
+        </Skeleton>
+        <Skeleton name="dwarfghost">
+            <!-- R_TOE --> <BoneSocket id="10" bone="TAILC">
+                <HprOffset heading="0" pitch="0" roll="0" offsetX=".2" offsetY="0" offsetZ="0" scaleX="1" scaleY="1" scaleZ="1" />
+            </BoneSocket>
+            <!-- L_TOE --> <BoneSocket id="11" bone="TAILC">
+                <HprOffset heading="0" pitch="0" roll="0" offsetX="-.2" offsetY="0" offsetZ="0" scaleX="1" scaleY="1" scaleZ="1" />
+            </BoneSocket>
+            <!-- HEAD_FX --> <BoneSocket id="12" bone="HEAD">
+                <HprOffset heading="0" pitch="0" roll="0" offsetX="0" offsetY=".2" offsetZ="0" scaleX="1" scaleY="1" scaleZ="1" />
+            </BoneSocket>
+            <!-- COG_UPPER --> <BoneSocket id="13" bone="COG">
+                <HprOffset heading="0" pitch="0" roll="0" offsetX="0" offsetY=".5" offsetZ="0" scaleX="1" scaleY="1" scaleZ="1" />
+            </BoneSocket>
+        </Skeleton>
+        <Skeleton name="enforcer_m">
+            <!-- HEAD_FX --> <BoneSocket id="12" bone="HEAD">
+                <HprOffset heading="0" pitch="0" roll="0" offsetX="0" offsetY=".1" offsetZ="0" scaleX=".7" scaleY=".7" scaleZ=".7" />
+            </BoneSocket>
+            <!-- COG_UPPER --> <BoneSocket id="13" bone="COG">
+                <HprOffset heading="0" pitch="0" roll="0" offsetX="0" offsetY=".3" offsetZ="0" scaleX="1" scaleY="1" scaleZ="1" />
+            </BoneSocket>
+        </Skeleton>
+        <Skeleton name="ewe">
+            <!-- R_INDEXA --> <BoneSocket id="8" bone="RIGHTFRONTTOE1">
+                <HprOffset heading="0" pitch="0" roll="0" offsetX="0" offsetY="0" offsetZ="0" scaleX="1" scaleY="1" scaleZ="1" />
+            </BoneSocket>
+            <!-- L_INDEXA --> <BoneSocket id="9" bone="LEFTFRONTTOE1">
+                <HprOffset heading="0" pitch="0" roll="0" offsetX="0" offsetY="0" offsetZ="0" scaleX="1" scaleY="1" scaleZ="1" />
+            </BoneSocket>
+            <!-- R_TOE --> <BoneSocket id="10" bone="RIGHTTOE">
+                <HprOffset heading="0" pitch="0" roll="0" offsetX="0" offsetY="0" offsetZ="0" scaleX="1" scaleY="1" scaleZ="1" />
+            </BoneSocket>
+            <!-- L_TOE --> <BoneSocket id="11" bone="LEFTTOE">
+                <HprOffset heading="0" pitch="0" roll="0" offsetX="0" offsetY="0" offsetZ="0" scaleX="1" scaleY="1" scaleZ="1" />
+            </BoneSocket>
+            <!-- HEAD --> <BoneSocket id="1" bone="HEAD">
+                <HprOffset heading="-90" pitch="110" roll="0" offsetX="0" offsetY="0" offsetZ="0" scaleX="1" scaleY="1" scaleZ="1" />
+            </BoneSocket>
+            <!-- HEAD_FX --> <BoneSocket id="12" bone="HEAD">
+                <HprOffset heading="-90" pitch="90" roll="0" offsetX="0" offsetY="0" offsetZ="0" scaleX="1" scaleY="1" scaleZ="1" />
+            </BoneSocket>
+            <!-- COG_UPPER --> <BoneSocket id="13" bone="COG">
+                <HprOffset heading="-90" pitch="180" roll="0" offsetX=".3" offsetY="0" offsetZ="0" scaleX="1" scaleY="1" scaleZ="1" />
+            </BoneSocket>
+            <!-- Fix for COG bone rotation -->
+            <!-- COG --> <BoneSocket id="2" bone="COG">
+                <HprOffset heading="-90" pitch="180" roll="0" offsetX=".3" offsetY="0" offsetZ="0" scaleX="1" scaleY="1" scaleZ="1" />
+            </BoneSocket>
+        </Skeleton>
+        <Skeleton name="faeriedrake">
+            <!-- This gives a COG bone-->
+            <!-- COG --> <BoneSocket id="2" bone="SPINE1">
+                <HprOffset heading="0" pitch="0" roll="0" offsetX="0" offsetY="0" offsetZ="0" scaleX="1" scaleY="1" scaleZ="1" />
+            </BoneSocket>
+            <!-- R_INDEXA --> <BoneSocket id="8" bone="RF1">
+                <HprOffset heading="0" pitch="0" roll="0" offsetX="0" offsetY="0" offsetZ="0" scaleX="1" scaleY="1" scaleZ="1" />
+            </BoneSocket>
+            <!-- L_INDEXA --> <BoneSocket id="9" bone="LF1">
+                <HprOffset heading="0" pitch="0" roll="0" offsetX="0" offsetY="0" offsetZ="0" scaleX="1" scaleY="1" scaleZ="1" />
+            </BoneSocket>
+            <!-- R_TOE --> <BoneSocket id="10" bone="RLTOE">
+                <HprOffset heading="0" pitch="0" roll="0" offsetX="0" offsetY="0" offsetZ="0" scaleX="1" scaleY="1" scaleZ="1" />
+            </BoneSocket>
+            <!-- L_TOE --> <BoneSocket id="11" bone="LRTOE1">
+                <HprOffset heading="0" pitch="0" roll="0" offsetX="0" offsetY="0" offsetZ="0" scaleX="1" scaleY="1" scaleZ="1" />
+            </BoneSocket>
+            <!-- HEAD --> <BoneSocket id="1" bone="HEAD">
+                <HprOffset heading="0" pitch="-90" roll="0" offsetX="0" offsetY="0" offsetZ="0" scaleX="1" scaleY="1" scaleZ="1" />
+            </BoneSocket>
+            <!-- HEAD_FX --> <BoneSocket id="12" bone="HEAD">
+                <HprOffset heading="0" pitch="-90" roll="0" offsetX="0" offsetY="0" offsetZ="0" scaleX="1" scaleY="1" scaleZ="1" />
+            </BoneSocket>
+            <!-- COG_UPPER --> <BoneSocket id="13" bone="SPINE1">
+                <HprOffset heading="0" pitch="0" roll="0" offsetX="0" offsetY=".1" offsetZ="0" scaleX="1" scaleY="1" scaleZ="1" />
+            </BoneSocket>
+        </Skeleton>
+        <Skeleton name="fairy_m_01">
+            <!-- HEAD_FX --> <BoneSocket id="12" bone="HEAD">
+                <HprOffset heading="0" pitch="0" roll="0" offsetX="0" offsetY=".2" offsetZ="0" scaleX="1" scaleY="1" scaleZ="1" />
+            </BoneSocket>
+            <!-- COG_UPPER --> <BoneSocket id="13" bone="COG">
+                <HprOffset heading="0" pitch="-40" roll="0" offsetX="0" offsetY=".4" offsetZ="0" scaleX="1" scaleY="1" scaleZ="1" />
+            </BoneSocket>
+        </Skeleton>
+        <Skeleton name="fairy_m_farmer_01">
+            <!-- HEAD_FX --> <BoneSocket id="12" bone="HEAD">
+                <HprOffset heading="0" pitch="0" roll="0" offsetX="0" offsetY=".35" offsetZ="0" scaleX="1" scaleY="1" scaleZ="1" />
+            </BoneSocket>
+            <!-- COG_UPPER --> <BoneSocket id="13" bone="COG">
+                <HprOffset heading="0" pitch="-40" roll="0" offsetX="0" offsetY=".4" offsetZ="0" scaleX="1" scaleY="1" scaleZ="1" />
+            </BoneSocket>
+        </Skeleton>
+        <Skeleton name="fairy_m_frostflutter_ghost">
+            <!-- HEAD_FX --> <BoneSocket id="12" bone="HEAD">
+                <HprOffset heading="0" pitch="0" roll="0" offsetX="0" offsetY=".2" offsetZ="0" scaleX="1" scaleY="1" scaleZ="1" />
+            </BoneSocket>
+            <!-- COG_UPPER --> <BoneSocket id="13" bone="COG">
+                <HprOffset heading="0" pitch="0" roll="0" offsetX="0" offsetY=".3" offsetZ=".1" scaleX="1" scaleY="1" scaleZ="1" />
+            </BoneSocket>
+        </Skeleton>
+        <Skeleton name="fairy_m_old_01">
+            <!-- HEAD_FX --> <BoneSocket id="12" bone="HEAD">
+                <HprOffset heading="0" pitch="0" roll="0" offsetX="0" offsetY=".2" offsetZ="0" scaleX="1" scaleY="1" scaleZ="1" />
+            </BoneSocket>
+            <!-- COG_UPPER --> <BoneSocket id="13" bone="COG">
+                <HprOffset heading="0" pitch="0" roll="0" offsetX="0" offsetY=".3" offsetZ=".1" scaleX="1" scaleY="1" scaleZ="1" />
+            </BoneSocket>
+        </Skeleton>
+        <Skeleton name="fairy_m_old_02">
+            <!-- HEAD_FX --> <BoneSocket id="12" bone="HEAD">
+                <HprOffset heading="0" pitch="0" roll="0" offsetX="0" offsetY=".2" offsetZ="0" scaleX="1" scaleY="1" scaleZ="1" />
+            </BoneSocket>
+            <!-- COG_UPPER --> <BoneSocket id="13" bone="COG">
+                <HprOffset heading="0" pitch="0" roll="0" offsetX="0" offsetY=".3" offsetZ=".1" scaleX="1" scaleY="1" scaleZ="1" />
+            </BoneSocket>
+        </Skeleton>
+        <Skeleton name="fairy_m_old_silversnow_01">
+            <!-- HEAD_FX --> <BoneSocket id="12" bone="HEAD">
+                <HprOffset heading="0" pitch="0" roll="0" offsetX="0" offsetY=".2" offsetZ="0" scaleX="1" scaleY="1" scaleZ="1" />
+            </BoneSocket>
+            <!-- COG_UPPER --> <BoneSocket id="13" bone="COG">
+                <HprOffset heading="0" pitch="0" roll="0" offsetX="0" offsetY=".3" offsetZ=".1" scaleX="1" scaleY="1" scaleZ="1" />
+            </BoneSocket>
+        </Skeleton>
+        <Skeleton name="fairy_sanctuary_m_01">
+            <!-- HEAD_FX --> <BoneSocket id="12" bone="HEAD">
+                <HprOffset heading="0" pitch="0" roll="0" offsetX="0" offsetY=".2" offsetZ="0" scaleX="1" scaleY="1" scaleZ="1" />
+            </BoneSocket>
+            <!-- COG_UPPER --> <BoneSocket id="13" bone="COG">
+                <HprOffset heading="0" pitch="-40" roll="0" offsetX="0" offsetY=".4" offsetZ="0" scaleX="1" scaleY="1" scaleZ="1" />
+            </BoneSocket>
+        </Skeleton>
+        <Skeleton name="fairychild_m">
+            <!-- HEAD_FX --> <BoneSocket id="12" bone="HEAD">
+                <HprOffset heading="0" pitch="0" roll="0" offsetX="0" offsetY=".2" offsetZ="0" scaleX="1" scaleY="1" scaleZ="1" />
+            </BoneSocket>
+            <!-- COG_UPPER --> <BoneSocket id="13" bone="COG">
+                <HprOffset heading="0" pitch="-40" roll="0" offsetX="0" offsetY=".2" offsetZ="0" scaleX="1" scaleY="1" scaleZ="1" />
+            </BoneSocket>
+        </Skeleton>
+        <Skeleton name="fish">
+            <!-- R_INDEXA --> <BoneSocket id="8" bone="R_FIN">
+                <HprOffset heading="0" pitch="0" roll="0" offsetX="0" offsetY="0" offsetZ="0" scaleX="1" scaleY="1" scaleZ="1" />
+            </BoneSocket>
+            <!-- L_INDEXA --> <BoneSocket id="9" bone="L_FIN">
+                <HprOffset heading="0" pitch="0" roll="0" offsetX="0" offsetY="0" offsetZ="0" scaleX="1" scaleY="1" scaleZ="1" />
+            </BoneSocket>
+            <!-- R_TOE --> <BoneSocket id="10" bone="TAIL_END">
+                <HprOffset heading="0" pitch="0" roll="0" offsetX="-.01" offsetY="0" offsetZ="0" scaleX="1" scaleY="1" scaleZ="1" />
+            </BoneSocket>
+            <!-- L_TOE --> <BoneSocket id="11" bone="TAIL_END">
+                <HprOffset heading="0" pitch="0" roll="0" offsetX=".01" offsetY="0" offsetZ="0" scaleX="1" scaleY="1" scaleZ="1" />
+            </BoneSocket>
+            <!-- HEAD --> <BoneSocket id="1" bone="HEAD">
+                <HprOffset heading="180" pitch="-90" roll="0" offsetX="0" offsetY="0" offsetZ="0" scaleX="1" scaleY="1" scaleZ="1" />
+            </BoneSocket>
+            <!-- HEAD_FX --> <BoneSocket id="12" bone="HEAD">
+                <HprOffset heading="180" pitch="-90" roll="0" offsetX="0" offsetY=".3" offsetZ=".2" scaleX=".3" scaleY=".3" scaleZ=".3" />
+            </BoneSocket>
+            <!-- COG_UPPER --> <BoneSocket id="13" bone="COG">
+                <HprOffset heading="180" pitch="-90" roll="0" offsetX="0" offsetY=".1" offsetZ="0" scaleX=".5" scaleY=".5" scaleZ=".5" />
+            </BoneSocket>
+        </Skeleton>
+        <Skeleton name="floren">
+            <!-- COG --> <BoneSocket id="2" bone="COG">
+                <HprOffset heading="0" pitch="0" roll="0" offsetX="0" offsetY="0.5" offsetZ="0" scaleX="1" scaleY="1" scaleZ="1" />
+            </BoneSocket>
+            <!-- HEAD_FX --> <BoneSocket id="12" bone="HEAD">
+                <HprOffset heading="0" pitch="0" roll="0" offsetX="0" offsetY=".3" offsetZ="0" scaleX="1" scaleY="1" scaleZ="1" />
+            </BoneSocket>
+            <!-- COG_UPPER --> <BoneSocket id="13" bone="COG">
+                <HprOffset heading="0" pitch="0" roll="0" offsetX="0" offsetY=".3" offsetZ="0" scaleX="2" scaleY="2" scaleZ="2" />
+            </BoneSocket>
+        </Skeleton>
+        <Skeleton name="forestgiant">
+            <!-- COG --> <BoneSocket id="2" bone="COG">
+                <HprOffset heading="0" pitch="0" roll="0" offsetX="0" offsetY="0.5" offsetZ="0" scaleX="1" scaleY="1" scaleZ="1" />
+            </BoneSocket>
+            <!-- HEAD --> <BoneSocket id="1" bone="HEAD">
+                <HprOffset heading="0" pitch="20" roll="0" offsetX="0" offsetY="0" offsetZ="0" scaleX="4" scaleY="4" scaleZ="4" />
+            </BoneSocket>
+            <!-- HEAD_FX --> <BoneSocket id="12" bone="HEAD">
+                <HprOffset heading="0" pitch="20" roll="0" offsetX="0" offsetY=".2" offsetZ="0" scaleX="4" scaleY="4" scaleZ="4" />
+            </BoneSocket>
+            <!-- COG_UPPER --> <BoneSocket id="13" bone="COG">
+                <HprOffset heading="0" pitch="0" roll="0" offsetX="0" offsetY=".3" offsetZ="0" scaleX="4" scaleY="4" scaleZ="4" />
+            </BoneSocket>
+        </Skeleton>
+        <Skeleton name="goat">
+            <!-- R_INDEXA --> <BoneSocket id="8" bone="RIGHTPHALANX">
+                <HprOffset heading="0" pitch="0" roll="0" offsetX="0" offsetY="0" offsetZ="0" scaleX="1" scaleY="1" scaleZ="1" />
+            </BoneSocket>
+            <!-- L_INDEXA --> <BoneSocket id="9" bone="LEFTPHALANX">
+                <HprOffset heading="0" pitch="0" roll="0" offsetX="0" offsetY="0" offsetZ="0" scaleX="1" scaleY="1" scaleZ="1" />
+            </BoneSocket>
+            <!-- R_TOE --> <BoneSocket id="10" bone="RIGHTHOOF">
+                <HprOffset heading="0" pitch="0" roll="0" offsetX="0" offsetY="0" offsetZ="0" scaleX="1" scaleY="1" scaleZ="1" />
+            </BoneSocket>
+            <!-- L_TOE --> <BoneSocket id="11" bone="LEFTHOOF">
+                <HprOffset heading="0" pitch="0" roll="0" offsetX="0" offsetY="0" offsetZ="0" scaleX="1" scaleY="1" scaleZ="1" />
+            </BoneSocket>
+            <!-- HEAD --> <BoneSocket id="1" bone="HEAD">
+                <HprOffset heading="-90" pitch="-100" roll="0" offsetX="0" offsetY="0" offsetZ="0" scaleX="1" scaleY="1" scaleZ="1" />
+            </BoneSocket>
+            <!-- HEAD_FX --> <BoneSocket id="12" bone="HEAD">
+                <HprOffset heading="-90" pitch="-100" roll="0" offsetX="0" offsetY=".1" offsetZ="0" scaleX="1" scaleY="1" scaleZ="1" />
+            </BoneSocket>
+            <!-- COG_UPPER --> <BoneSocket id="13" bone="COG">
+                <HprOffset heading="-90" pitch="180" roll="0" offsetX=".2" offsetY=".1" offsetZ="0" scaleX="1" scaleY="1" scaleZ="1" />
+            </BoneSocket>
+        </Skeleton>
+        <Skeleton name="graveelemental">
+            <!-- R_TOE --> <BoneSocket id="10" bone="TAIL_END">
+                <HprOffset heading="0" pitch="0" roll="0" offsetX="0" offsetY="0" offsetZ="-.05" scaleX="1" scaleY="1" scaleZ="1" />
+            </BoneSocket>
+            <!-- L_TOE --> <BoneSocket id="11" bone="TAIL_END">
+                <HprOffset heading="0" pitch="0" roll="0" offsetX="0" offsetY="0" offsetZ=".05" scaleX="1" scaleY="1" scaleZ="1" />
+            </BoneSocket>
+            <!-- HEAD --> <BoneSocket id="1" bone="HEAD">
+                <HprOffset heading="0" pitch="35" roll="0" offsetX="0" offsetY=".1" offsetZ="0" scaleX="1" scaleY="1" scaleZ="1" />
+            </BoneSocket>
+            <!-- HEAD_FX --> <BoneSocket id="12" bone="HEAD">
+                <HprOffset heading="0" pitch="35" roll="0" offsetX="0" offsetY=".3" offsetZ=".1" scaleX="1" scaleY="1" scaleZ="1" />
+            </BoneSocket>
+            <!-- COG_UPPER --> <BoneSocket id="13" bone="COG">
+                <HprOffset heading="0" pitch="0" roll="0" offsetX="0" offsetY=".2" offsetZ="0" scaleX="1.5" scaleY="1.5" scaleZ="1.5" />
+            </BoneSocket>
+        </Skeleton>
+        <Skeleton name="human_m_drummer">
+            <!-- HEAD_FX --> <BoneSocket id="12" bone="HEAD">
+                <HprOffset heading="0" pitch="0" roll="0" offsetX="0" offsetY="0" offsetZ="0" scaleX="1" scaleY="1" scaleZ="1" />
+            </BoneSocket>
+            <!-- COG_UPPER --> <BoneSocket id="13" bone="COG">
+                <HprOffset heading="0" pitch="0" roll="0" offsetX="0" offsetY=".3" offsetZ="0" scaleX="1" scaleY="1" scaleZ="1" />
+            </BoneSocket>
+        </Skeleton>
+        <Skeleton name="human_m_miner_01">
+            <!-- HEAD_FX --> <BoneSocket id="12" bone="HEAD">
+                <HprOffset heading="0" pitch="0" roll="0" offsetX="0" offsetY="0" offsetZ="0" scaleX="1" scaleY="1" scaleZ="1" />
+            </BoneSocket>
+            <!-- COG_UPPER --> <BoneSocket id="13" bone="COG">
+                <HprOffset heading="0" pitch="0" roll="0" offsetX="0" offsetY=".3" offsetZ="0" scaleX="1" scaleY="1" scaleZ="1" />
+            </BoneSocket>
+        </Skeleton>
+        <Skeleton name="human_rockstar_m_dsk">
+            <!-- HEAD_FX --> <BoneSocket id="12" bone="HEAD">
+                <HprOffset heading="0" pitch="0" roll="0" offsetX="0" offsetY="0" offsetZ="0" scaleX="1" scaleY="1" scaleZ="1" />
+            </BoneSocket>
+            <!-- COG_UPPER --> <BoneSocket id="13" bone="COG">
+                <HprOffset heading="0" pitch="0" roll="0" offsetX="0" offsetY=".3" offsetZ="0" scaleX="1" scaleY="1" scaleZ="1" />
+            </BoneSocket>
+        </Skeleton>
+        <Skeleton name="humanchild_m">
+            <!-- HEAD_FX --> <BoneSocket id="12" bone="HEAD">
+                <HprOffset heading="0" pitch="0" roll="0" offsetX="0" offsetY="0" offsetZ="0" scaleX="1" scaleY="1" scaleZ="1" />
+            </BoneSocket>
+            <!-- COG_UPPER --> <BoneSocket id="13" bone="COG">
+                <HprOffset heading="0" pitch="0" roll="0" offsetX="0" offsetY=".3" offsetZ="0" scaleX="1" scaleY="1" scaleZ="1" />
+            </BoneSocket>
+        </Skeleton>
+        <Skeleton name="humanelder">
+            <!-- HEAD_FX --> <BoneSocket id="12" bone="HEAD">
+                <HprOffset heading="0" pitch="0" roll="0" offsetX="0" offsetY="0" offsetZ="0" scaleX="1" scaleY="1" scaleZ="1" />
+            </BoneSocket>
+            <!-- COG_UPPER --> <BoneSocket id="13" bone="COG">
+                <HprOffset heading="0" pitch="0" roll="0" offsetX="0" offsetY=".3" offsetZ="0" scaleX="1" scaleY="1" scaleZ="1" />
+            </BoneSocket>
+        </Skeleton>
+        <Skeleton name="maneatingplant">
+            <!-- R_INDEXA --> <BoneSocket id="8" bone="R_ARMJ">
+                <HprOffset heading="0" pitch="0" roll="0" offsetX="0" offsetY="0" offsetZ="0" scaleX="1" scaleY="1" scaleZ="1" />
+            </BoneSocket>
+            <!-- L_INDEXA --> <BoneSocket id="9" bone="L_ARMJ">
+                <HprOffset heading="0" pitch="0" roll="0" offsetX="0" offsetY="0" offsetZ="0" scaleX="1" scaleY="1" scaleZ="1" />
+            </BoneSocket>
+            <!-- R_TOE --> <BoneSocket id="10" bone="R_MIDLEGC">
+                <HprOffset heading="0" pitch="0" roll="0" offsetX="0" offsetY="0" offsetZ="0" scaleX="1" scaleY="1" scaleZ="1" />
+            </BoneSocket>
+            <!-- L_TOE --> <BoneSocket id="11" bone="L_MIDLEGC">
+                <HprOffset heading="0" pitch="0" roll="0" offsetX="0" offsetY="0" offsetZ="0" scaleX="1" scaleY="1" scaleZ="1" />
+            </BoneSocket>
+            <!-- HEAD --> <BoneSocket id="1" bone="HEAD">
+                <HprOffset heading="0" pitch="0" roll="0" offsetX="0" offsetY="0" offsetZ=".25" scaleX="2" scaleY="2" scaleZ="2" />
+            </BoneSocket>
+            <!-- HEAD_FX --> <BoneSocket id="12" bone="HEAD">
+                <HprOffset heading="0" pitch="0" roll="0" offsetX="0" offsetY=".5" offsetZ=".3" scaleX="2" scaleY="2" scaleZ="2" />
+            </BoneSocket>
+            <!-- COG_UPPER --> <BoneSocket id="13" bone="COG">
+                <HprOffset heading="0" pitch="0" roll="0" offsetX="0" offsetY=".7" offsetZ="0" scaleX="1.5" scaleY="1.5" scaleZ="1.5" />
+            </BoneSocket>
+        </Skeleton>
+        <Skeleton name="meatball">
+            <!-- R_INDEXA --> <BoneSocket id="8" bone="COG">
+                <HprOffset heading="0" pitch="0" roll="0" offsetX="-.6" offsetY="0" offsetZ="0" scaleX="1" scaleY="1" scaleZ="1" />
+            </BoneSocket>
+            <!-- L_INDEXA --> <BoneSocket id="9" bone="COG">
+                <HprOffset heading="0" pitch="0" roll="0" offsetX=".6" offsetY="0" offsetZ="0" scaleX="1" scaleY="1" scaleZ="1" />
+            </BoneSocket>
+            <!-- R_TOE --> <BoneSocket id="10" bone="COG">
+                <HprOffset heading="0" pitch="0" roll="0" offsetX="-.4" offsetY="-.6" offsetZ="0" scaleX="1" scaleY="1" scaleZ="1" />
+            </BoneSocket>
+            <!-- L_TOE --> <BoneSocket id="11" bone="COG">
+                <HprOffset heading="0" pitch="0" roll="0" offsetX=".4" offsetY="-.6" offsetZ="0" scaleX="1" scaleY="1" scaleZ="1" />
+            </BoneSocket>
+            <!-- HEAD --> <BoneSocket id="1" bone="COG">
+                <HprOffset heading="0" pitch="0" roll="0" offsetX="0" offsetY=".3" offsetZ="0" scaleX="1" scaleY="1" scaleZ="1" />
+            </BoneSocket>
+            <!-- HEAD_FX --> <BoneSocket id="12" bone="COG">
+                <HprOffset heading="0" pitch="0" roll="0" offsetX="0" offsetY=".7" offsetZ="0" scaleX="1" scaleY="1" scaleZ="1" />
+            </BoneSocket>
+            <!-- COG_UPPER --> <BoneSocket id="13" bone="COG">
+                <HprOffset heading="0" pitch="0" roll="0" offsetX="0" offsetY="0" offsetZ="0" scaleX="2" scaleY="2" scaleZ="2" />
+            </BoneSocket>
+        </Skeleton>
+        <Skeleton name="necrowartzombie">
+            <!-- His HEAD bone has a bad rotation -->
+            <!-- HEAD --> <BoneSocket id="1" bone="HEAD">
+                <HprOffset heading="0" pitch="-120" roll="0" offsetX="0" offsetY="0.2" offsetZ="-0.2" scaleX="1" scaleY="1" scaleZ="1" />
+            </BoneSocket>
+            <!-- HEAD_FX --> <BoneSocket id="12" bone="HEAD">
+                <HprOffset heading="0" pitch="-120" roll="0" offsetX="0" offsetY="0.2" offsetZ="-.5" scaleX=".6" scaleY=".6" scaleZ=".6" />
+            </BoneSocket>
+            <!-- COG_UPPER --> <BoneSocket id="13" bone="COG">
+                <HprOffset heading="0" pitch="0" roll="0" offsetX="0" offsetY=".25" offsetZ="0" scaleX="1" scaleY="1" scaleZ="1" />
+            </BoneSocket>
+        </Skeleton>
+        <Skeleton name="penguin">
+            <!-- R_INDEXA --> <BoneSocket id="8" bone="RWRIST">
+                <HprOffset heading="0" pitch="0" roll="0" offsetX="0" offsetY="0" offsetZ="0" scaleX="1" scaleY="1" scaleZ="1" />
+            </BoneSocket>
+            <!-- L_INDEXA --> <BoneSocket id="9" bone="LEFTWRIST">
+                <HprOffset heading="0" pitch="0" roll="0" offsetX="0" offsetY="0" offsetZ="0" scaleX="1" scaleY="1" scaleZ="1" />
+            </BoneSocket>
+            <!-- R_TOE --> <BoneSocket id="10" bone="RIGHTTOES">
+                <HprOffset heading="0" pitch="0" roll="0" offsetX="0" offsetY="0" offsetZ="0" scaleX="1" scaleY="1" scaleZ="1" />
+            </BoneSocket>
+            <!-- L_TOE --> <BoneSocket id="11" bone="LEFTTOES">
+                <HprOffset heading="0" pitch="0" roll="0" offsetX="0" offsetY="0" offsetZ="0" scaleX="1" scaleY="1" scaleZ="1" />
+            </BoneSocket>
+            <!-- HEAD --> <BoneSocket id="1" bone="HEAD">
+                <HprOffset heading="90" pitch="0" roll="0" offsetX="0" offsetY="-.05" offsetZ="0" scaleX="1" scaleY="1" scaleZ="1" />
+            </BoneSocket>
+            <!-- HEAD_FX --> <BoneSocket id="12" bone="HEAD">
+                <HprOffset heading="90" pitch="0" roll="0" offsetX="0" offsetY="0" offsetZ="0" scaleX="1" scaleY="1" scaleZ="1" />
+            </BoneSocket>
+            <!-- COG_UPPER --> <BoneSocket id="13" bone="COG">
+                <HprOffset heading="90" pitch="0" roll="0" offsetX="0" offsetY=".2" offsetZ="0" scaleX="1" scaleY="1" scaleZ="1" />
+            </BoneSocket>
+        </Skeleton>
+        <Skeleton name="penguin_bert">
+            <!-- R_INDEXA --> <BoneSocket id="8" bone="RWRIST">
+                <HprOffset heading="0" pitch="0" roll="0" offsetX="0" offsetY="0" offsetZ="0" scaleX="1" scaleY="1" scaleZ="1" />
+            </BoneSocket>
+            <!-- L_INDEXA --> <BoneSocket id="9" bone="LEFTWRIST">
+                <HprOffset heading="0" pitch="0" roll="0" offsetX="0" offsetY="0" offsetZ="0" scaleX="1" scaleY="1" scaleZ="1" />
+            </BoneSocket>
+            <!-- R_TOE --> <BoneSocket id="10" bone="RIGHTTOES">
+                <HprOffset heading="0" pitch="0" roll="0" offsetX="0" offsetY="0" offsetZ="0" scaleX="1" scaleY="1" scaleZ="1" />
+            </BoneSocket>
+            <!-- L_TOE --> <BoneSocket id="11" bone="LEFTTOES">
+                <HprOffset heading="0" pitch="0" roll="0" offsetX="0" offsetY="0" offsetZ="0" scaleX="1" scaleY="1" scaleZ="1" />
+            </BoneSocket>
+            <!-- COG --> <BoneSocket id="2" bone="SPINE1">
+                <HprOffset heading="0" pitch="0" roll="0" offsetX="0" offsetY="0.5" offsetZ="0" scaleX="1" scaleY="1" scaleZ="1" />
+            </BoneSocket>
+            <!-- HEAD --> <BoneSocket id="1" bone="HEAD">
+                <HprOffset heading="-90" pitch="150" roll="0" offsetX="0" offsetY="0" offsetZ="0" scaleX="1" scaleY="1" scaleZ="1" />
+            </BoneSocket>
+            <!-- HEAD_FX --> <BoneSocket id="12" bone="HEAD">
+                <HprOffset heading="-90" pitch="150" roll="0" offsetX="0" offsetY="-.1" offsetZ="0" scaleX="1" scaleY="1" scaleZ="1" />
+            </BoneSocket>
+            <!-- COG_UPPER --> <BoneSocket id="13" bone="SPINE1">
+                <HprOffset heading="-90" pitch="-90" roll="0" offsetX=".1" offsetY="0" offsetZ="0" scaleX="1" scaleY="1" scaleZ="1" />
+            </BoneSocket>
+        </Skeleton>
+        <Skeleton name="penguin_ernie_lod0">
+            <!-- R_INDEXA --> <BoneSocket id="8" bone="RWRIST">
+                <HprOffset heading="0" pitch="0" roll="0" offsetX="0" offsetY="0" offsetZ="0" scaleX="1" scaleY="1" scaleZ="1" />
+            </BoneSocket>
+            <!-- L_INDEXA --> <BoneSocket id="9" bone="LEFTWRIST">
+                <HprOffset heading="0" pitch="0" roll="0" offsetX="0" offsetY="0" offsetZ="0" scaleX="1" scaleY="1" scaleZ="1" />
+            </BoneSocket>
+            <!-- R_TOE --> <BoneSocket id="10" bone="RIGHTTOES">
+                <HprOffset heading="0" pitch="0" roll="0" offsetX="0" offsetY="0" offsetZ="0" scaleX="1" scaleY="1" scaleZ="1" />
+            </BoneSocket>
+            <!-- L_TOE --> <BoneSocket id="11" bone="LEFTTOES">
+                <HprOffset heading="0" pitch="0" roll="0" offsetX="0" offsetY="0" offsetZ="0" scaleX="1" scaleY="1" scaleZ="1" />
+            </BoneSocket>
+            <!-- COG --> <BoneSocket id="2" bone="SPINE1">
+                <HprOffset heading="0" pitch="0" roll="0" offsetX="0" offsetY="0.5" offsetZ="0" scaleX="1" scaleY="1" scaleZ="1" />
+            </BoneSocket>
+            <!-- HEAD --> <BoneSocket id="1" bone="HEAD">
+                <HprOffset heading="90" pitch="0" roll="0" offsetX="0" offsetY="0" offsetZ="0" scaleX="1" scaleY="1" scaleZ="1" />
+            </BoneSocket>
+            <!-- HEAD_FX --> <BoneSocket id="12" bone="HEAD">
+                <HprOffset heading="90" pitch="0" roll="0" offsetX="0" offsetY="0" offsetZ="0" scaleX="1" scaleY="1" scaleZ="1" />
+            </BoneSocket>
+            <!-- COG_UPPER --> <BoneSocket id="13" bone="SPINE1">
+                <HprOffset heading="90" pitch="90" roll="0" offsetX="0" offsetY="0" offsetZ="0" scaleX="1" scaleY="1" scaleZ="1" />
+            </BoneSocket>
+        </Skeleton>
+        <Skeleton name="rabbit">
+            <!-- HEAD_FX --> <BoneSocket id="12" bone="HEAD">
+                <HprOffset heading="0" pitch="0" roll="0" offsetX="0" offsetY=".4" offsetZ=".2" scaleX=".3" scaleY=".3" scaleZ=".3" />
+            </BoneSocket>
+            <!-- COG_UPPER --> <BoneSocket id="13" bone="COG">
+                <HprOffset heading="0" pitch="0" roll="0" offsetX="0" offsetY=".07" offsetZ=".05" scaleX=".5" scaleY=".5" scaleZ=".5" />
+            </BoneSocket>
+        </Skeleton>
+        <Skeleton name="robgoblin">
+            <!-- COG --> <BoneSocket id="2" bone="COG">
+                <HprOffset heading="0" pitch="0" roll="0" offsetX="0" offsetY="0.5" offsetZ="0" scaleX="1" scaleY="1" scaleZ="1" />
+            </BoneSocket>
+            <!-- HEAD_FX --> <BoneSocket id="12" bone="HEAD">
+                <HprOffset heading="0" pitch="0" roll="0" offsetX="0" offsetY=".3" offsetZ=".1" scaleX="1" scaleY="1" scaleZ="1" />
+            </BoneSocket>
+            <!-- COG_UPPER --> <BoneSocket id="13" bone="COG">
+                <HprOffset heading="0" pitch="0" roll="0" offsetX="0" offsetY=".3" offsetZ="0" scaleX="1" scaleY="1" scaleZ="1" />
+            </BoneSocket>
+        </Skeleton>
+        <Skeleton name="robgoblin_m_mage">
+            <!-- HEAD_FX --> <BoneSocket id="12" bone="HEAD">
+                <HprOffset heading="0" pitch="0" roll="0" offsetX="0" offsetY=".3" offsetZ=".1" scaleX="1" scaleY="1" scaleZ="1" />
+            </BoneSocket>
+            <!-- COG_UPPER --> <BoneSocket id="13" bone="COG">
+                <HprOffset heading="0" pitch="0" roll="0" offsetX="0" offsetY=".3" offsetZ="0" scaleX="1" scaleY="1" scaleZ="1" />
+            </BoneSocket>
+        </Skeleton>
+        <Skeleton name="sasquatch">
+            <!-- COG --> <BoneSocket id="2" bone="COG">
+                <HprOffset heading="0" pitch="0" roll="0" offsetX="0" offsetY="0.5" offsetZ="0" scaleX="1" scaleY="1" scaleZ="1" />
+            </BoneSocket>
+            <!-- HEAD --> <BoneSocket id="1" bone="HEAD">
+                <HprOffset heading="0" pitch="35" roll="0" offsetX="0" offsetY="-.07" offsetZ=".1" scaleX="1" scaleY="1" scaleZ="1" />
+            </BoneSocket>
+            <!-- HEAD_FX --> <BoneSocket id="12" bone="HEAD">
+                <HprOffset heading="0" pitch="30" roll="0" offsetX="0" offsetY=".3" offsetZ=".4" scaleX="1" scaleY="1" scaleZ="1" />
+            </BoneSocket>
+            <!-- COG_UPPER --> <BoneSocket id="13" bone="COG">
+                <HprOffset heading="0" pitch="0" roll="0" offsetX="0" offsetY=".3" offsetZ="0" scaleX="1.5" scaleY="1.5" scaleZ="1.5" />
+            </BoneSocket>
+        </Skeleton>
+        <Skeleton name="shaggyspider">
+            <!-- R_INDEXA --> <BoneSocket id="8" bone="R1_TOES">
+                <HprOffset heading="0" pitch="0" roll="0" offsetX="0" offsetY="0" offsetZ="0" scaleX="1" scaleY="1" scaleZ="1" />
+            </BoneSocket>
+            <!-- L_INDEXA --> <BoneSocket id="9" bone="L1_TOES">
+                <HprOffset heading="0" pitch="0" roll="0" offsetX="0" offsetY="0" offsetZ="0" scaleX="1" scaleY="1" scaleZ="1" />
+            </BoneSocket>
+            <!-- R_TOE --> <BoneSocket id="10" bone="R3_TOES">
+                <HprOffset heading="0" pitch="0" roll="0" offsetX="0" offsetY="0" offsetZ="0" scaleX="1" scaleY="1" scaleZ="1" />
+            </BoneSocket>
+            <!-- L_TOE --> <BoneSocket id="11" bone="L3_TOES">
+                <HprOffset heading="0" pitch="0" roll="0" offsetX="0" offsetY="0" offsetZ="0" scaleX="1" scaleY="1" scaleZ="1" />
+            </BoneSocket>
+            <!-- HEAD --> <BoneSocket id="1" bone="HEAD">
+                <HprOffset heading="90" pitch="0" roll="0" offsetX=".3" offsetY="0" offsetZ="0" scaleX="1" scaleY="1" scaleZ="1" />
+            </BoneSocket>
+            <!-- HEAD_FX --> <BoneSocket id="12" bone="HEAD">
+                <HprOffset heading="90" pitch="0" roll="0" offsetX=".4" offsetY=".5" offsetZ="0" scaleX="1" scaleY="1" scaleZ="1" />
+            </BoneSocket>
+            <!-- COG_UPPER --> <BoneSocket id="13" bone="COG">
+                <HprOffset heading="-90" pitch="0" roll="0" offsetX="0" offsetY="0" offsetZ="0" scaleX="1" scaleY="1" scaleZ="1" />
+            </BoneSocket>
+        </Skeleton>
+        <Skeleton name="snake">
+            <!-- R_INDEXA --> <BoneSocket id="8" bone="SPINES2">
+                <HprOffset heading="0" pitch="0" roll="0" offsetX="-.05" offsetY="0" offsetZ="0" scaleX="1" scaleY="1" scaleZ="1" />
+            </BoneSocket>
+            <!-- L_INDEXA --> <BoneSocket id="9" bone="SPINES2">
+                <HprOffset heading="0" pitch="0" roll="0" offsetX=".1" offsetY="0" offsetZ="0" scaleX="1" scaleY="1" scaleZ="1" />
+            </BoneSocket>
+            <!-- R_TOE --> <BoneSocket id="10" bone="TAIL6">
+                <HprOffset heading="0" pitch="0" roll="0" offsetX="0" offsetY="0" offsetZ="0" scaleX="1" scaleY="1" scaleZ="1" />
+            </BoneSocket>
+            <!-- L_TOE --> <BoneSocket id="11" bone="TAIL6">
+                <HprOffset heading="0" pitch="0" roll="0" offsetX="0" offsetY="0" offsetZ="0" scaleX="1" scaleY="1" scaleZ="1" />
+            </BoneSocket>
+            <!-- HEAD --> <BoneSocket id="1" bone="HEAD">
+                <HprOffset heading="90" pitch="10" roll="0" offsetX=".1" offsetY="0" offsetZ="0" scaleX="1" scaleY="1" scaleZ="1" />
+            </BoneSocket>
+            <!-- HEAD_FX --> <BoneSocket id="12" bone="HEAD">
+                <HprOffset heading="90" pitch="10" roll="0" offsetX=".15" offsetY=".1" offsetZ="0" scaleX="1" scaleY="1" scaleZ="1" />
+            </BoneSocket>
+            <!-- COG_UPPER --> <BoneSocket id="13" bone="COG">
+                <HprOffset heading="45" pitch="0" roll="0" offsetX="0" offsetY=".5" offsetZ="0" scaleX="1" scaleY="1" scaleZ="1" />
+            </BoneSocket>
+        </Skeleton>
+        <Skeleton name="skeleton">
+            <!-- HEAD_FX --> <BoneSocket id="12" bone="HEAD">
+                <HprOffset heading="0" pitch="0" roll="0" offsetX="0" offsetY="0" offsetZ="0" scaleX="1" scaleY="1" scaleZ="1" />
+            </BoneSocket>
+            <!-- COG_UPPER --> <BoneSocket id="13" bone="COG">
+                <HprOffset heading="0" pitch="0" roll="0" offsetX="0" offsetY=".3" offsetZ="0" scaleX="1" scaleY="1" scaleZ="1" />
+            </BoneSocket>
+        </Skeleton>
+        <Skeleton name="snowman">
+            <BoneSocket id="4" bone="RHAND">
+                <Matrix>
+                    <Row col0="1" col1="0" col2="0" col3="0"/>
+                    <Row col0="0" col1="1" col2="0" col3="0"/>
+                    <Row col0="0" col1="0" col2="1" col3="0"/>
+                    <Row col0="0" col1="0" col2="0" col3="1"/>
+                </Matrix>
+            </BoneSocket>
+            <!-- COG --> <BoneSocket id="2" bone="COG">
+                <HprOffset heading="0" pitch="0" roll="0" offsetX="0" offsetY="1" offsetZ="0" scaleX="1" scaleY="1" scaleZ="1" />
+            </BoneSocket>
+            <!-- R_INDEXA --> <BoneSocket id="8" bone="RINDEX_1">
+                <HprOffset heading="0" pitch="0" roll="0" offsetX="0" offsetY="0" offsetZ="0" scaleX="1" scaleY="1" scaleZ="1" />
+            </BoneSocket>
+            <!-- L_INDEXA --> <BoneSocket id="9" bone="LINDEX_1">
+                <HprOffset heading="0" pitch="0" roll="0" offsetX="0" offsetY="0" offsetZ="0" scaleX="1" scaleY="1" scaleZ="1" />
+            </BoneSocket>
+            <!-- R_TOE --> <BoneSocket id="10" bone="ROOT">
+                <HprOffset heading="0" pitch="0" roll="0" offsetX="-.4" offsetY="0" offsetZ="0" scaleX="1" scaleY="1" scaleZ="1" />
+            </BoneSocket>
+            <!-- L_TOE --> <BoneSocket id="11" bone="ROOT">
+                <HprOffset heading="0" pitch="0" roll="0" offsetX=".4" offsetY="0" offsetZ="0" scaleX="1" scaleY="1" scaleZ="1" />
+            </BoneSocket>
+            <!-- HEAD_FX --> <BoneSocket id="12" bone="HEAD">
+                <HprOffset heading="0" pitch="0" roll="0" offsetX="0" offsetY="0" offsetZ="0" scaleX="1" scaleY="1" scaleZ="1" />
+            </BoneSocket>
+            <!-- COG_UPPER --> <BoneSocket id="13" bone="COG">
+                <HprOffset heading="0" pitch="0" roll="0" offsetX="0" offsetY="1" offsetZ="0" scaleX="1.2" scaleY="1.2" scaleZ="1.2" />
+            </BoneSocket>
+        </Skeleton>
+        <Skeleton name="snowmanboss">
+            <!-- R_TOE --> <BoneSocket id="10" bone="ROOT">
+                <HprOffset heading="0" pitch="0" roll="0" offsetX="-.75" offsetY="0" offsetZ="0" scaleX="1" scaleY="1" scaleZ="1" />
+            </BoneSocket>
+            <!-- L_TOE --> <BoneSocket id="11" bone="ROOT">
+                <HprOffset heading="0" pitch="0" roll="0" offsetX=".75" offsetY="0" offsetZ="0" scaleX="1" scaleY="1" scaleZ="1" />
+            </BoneSocket>
+            <!-- HEAD_FX --> <BoneSocket id="12" bone="HEAD">
+                <HprOffset heading="0" pitch="0" roll="0" offsetX="0" offsetY="0" offsetZ="0" scaleX="1.5" scaleY="1.5" scaleZ="1.5" />
+            </BoneSocket>
+            <!-- COG_UPPER --> <BoneSocket id="13" bone="COG">
+                <HprOffset heading="0" pitch="0" roll="0" offsetX="0" offsetY=".8" offsetZ="0" scaleX="1.5" scaleY="1.5" scaleZ="1.5" />
+            </BoneSocket>
+        </Skeleton>
+        <Skeleton name="spideregg">
+            <!-- HEAD --> <BoneSocket id="1" bone="EGG">
+                <HprOffset heading="0" pitch="0" roll="0" offsetX=".1" offsetY="1" offsetZ="0" scaleX="1" scaleY="1" scaleZ="1" />
+            </BoneSocket>
+            <!-- This gives a COG bone -->
+            <!-- COG --> <BoneSocket id="2" bone="EGG">
+                <HprOffset heading="0" pitch="0" roll="0" offsetX=".1" offsetY=".5" offsetZ="0" scaleX="1" scaleY="1" scaleZ="1" />
+            </BoneSocket>
+            <!-- R_INDEXA --> <BoneSocket id="8" bone="EGG">
+                <HprOffset heading="0" pitch="0" roll="0" offsetX="-.7" offsetY=".4" offsetZ="0" scaleX="1" scaleY="1" scaleZ="1" />
+            </BoneSocket>
+            <!-- L_INDEXA --> <BoneSocket id="9" bone="EGG">
+                <HprOffset heading="0" pitch="0" roll="0" offsetX=".7" offsetY="0" offsetZ="0" scaleX="1" scaleY="1" scaleZ="1" />
+            </BoneSocket>
+            <!-- R_TOE --> <BoneSocket id="10" bone="ROOT">
+                <HprOffset heading="0" pitch="0" roll="0" offsetX="-.5" offsetY=".3" offsetZ="0" scaleX="1" scaleY="1" scaleZ="1" />
+            </BoneSocket>
+            <!-- L_TOE --> <BoneSocket id="11" bone="ROOT">
+                <HprOffset heading="0" pitch="0" roll="0" offsetX=".5" offsetY="0" offsetZ="0" scaleX="1" scaleY="1" scaleZ="1" />
+            </BoneSocket>
+            <!-- HEAD_FX --> <BoneSocket id="12" bone="EGG">
+                <HprOffset heading="0" pitch="0" roll="0" offsetX=".1" offsetY=".5" offsetZ="0" scaleX="2" scaleY="2" scaleZ="2" />
+            </BoneSocket>
+            <!-- COG_UPPER --> <BoneSocket id="13" bone="EGG">
+                <HprOffset heading="0" pitch="0" roll="0" offsetX=".1" offsetY=".2" offsetZ="0" scaleX="2.5" scaleY="2.5" scaleZ="2.5" />
+            </BoneSocket>
+        </Skeleton>
+        <Skeleton name="tikihead_m_ozymandias">
+            <!-- HEAD --> <BoneSocket id="1" bone="HEAD">
+                <HprOffset heading="0" pitch="0" roll="0" offsetX="0" offsetY="0.2" offsetZ=".3" scaleX="3" scaleY="3" scaleZ="3" />
+            </BoneSocket>
+            <!-- R_INDEXA --> <BoneSocket id="8" bone="COG">
+                <HprOffset heading="0" pitch="0" roll="0" offsetX="-1.5" offsetY="2" offsetZ="0" scaleX="1" scaleY="1" scaleZ="1" />
+            </BoneSocket>
+            <!-- L_INDEXA --> <BoneSocket id="9" bone="COG">
+                <HprOffset heading="0" pitch="0" roll="0" offsetX="1.5" offsetY="2" offsetZ="0" scaleX="1" scaleY="1" scaleZ="1" />
+            </BoneSocket>
+            <!-- R_TOE --> <BoneSocket id="10" bone="ROOT">
+                <HprOffset heading="0" pitch="0" roll="0" offsetX="-1" offsetY=".2" offsetZ="0" scaleX="1" scaleY="1" scaleZ="1" />
+            </BoneSocket>
+            <!-- L_TOE --> <BoneSocket id="11" bone="ROOT">
+                <HprOffset heading="0" pitch="0" roll="0" offsetX="1" offsetY=".2" offsetZ="0" scaleX="1" scaleY="1" scaleZ="1" />
+            </BoneSocket>
+            <!-- HEAD_FX --> <BoneSocket id="12" bone="HEAD">
+                <HprOffset heading="0" pitch="0" roll="0" offsetX="0" offsetY=".8" offsetZ="0" scaleX="3" scaleY="3" scaleZ="3" />
+            </BoneSocket>
+            <!-- COG_UPPER --> <BoneSocket id="13" bone="COG">
+                <HprOffset heading="0" pitch="0" roll="0" offsetX="0" offsetY=".5" offsetZ="0" scaleX="4" scaleY="4" scaleZ="4" />
+            </BoneSocket>
+        </Skeleton>
+        <Skeleton name="toad">
+            <!-- R_INDEXA --> <BoneSocket id="8" bone="R_FINGERSA">
+                <HprOffset heading="0" pitch="0" roll="0" offsetX="0" offsetY="0" offsetZ="0" scaleX="1" scaleY="1" scaleZ="1" />
+            </BoneSocket>
+            <!-- L_INDEXA --> <BoneSocket id="9" bone="L_FINGERSA">
+                <HprOffset heading="0" pitch="0" roll="0" offsetX="0" offsetY="0" offsetZ="0" scaleX="1" scaleY="1" scaleZ="1" />
+            </BoneSocket>
+            <!-- HEAD_FX --> <BoneSocket id="12" bone="HEAD">
+                <HprOffset heading="0" pitch="0" roll="0" offsetX="0" offsetY=".5" offsetZ=".3" scaleX=".8" scaleY=".8" scaleZ=".8" />
+            </BoneSocket>
+            <!-- COG_UPPER --> <BoneSocket id="13" bone="COG">
+                <HprOffset heading="0" pitch="0" roll="0" offsetX="0" offsetY=".3" offsetZ=".05" scaleX="2" scaleY="2" scaleZ="2" />
+            </BoneSocket>
+        </Skeleton>
+        <Skeleton name="treeble">
+            <!-- HEAD_FX --> <BoneSocket id="12" bone="HEAD">
+                <HprOffset heading="0" pitch="0" roll="0" offsetX="0" offsetY=".2" offsetZ=".1" scaleX=".8" scaleY=".8" scaleZ=".8" />
+            </BoneSocket>
+            <!-- COG_UPPER --> <BoneSocket id="13" bone="COG">
+                <HprOffset heading="0" pitch="30" roll="0" offsetX="0" offsetY=".15" offsetZ=".13" scaleX="1" scaleY="1" scaleZ="1" />
+            </BoneSocket>
+        </Skeleton>
+        <Skeleton name="treesoldier">
+            <!-- COG --> <BoneSocket id="2" bone="COG">
+                <HprOffset heading="0" pitch="0" roll="0" offsetX="0" offsetY="0.5" offsetZ="0" scaleX="1" scaleY="1" scaleZ="1" />
+            </BoneSocket>
+            <!-- HEAD --> <BoneSocket id="1" bone="HEAD">
+                <HprOffset heading="0" pitch="20" roll="0" offsetX="0" offsetY="0" offsetZ="0" scaleX="3" scaleY="3" scaleZ="3" />
+            </BoneSocket>
+            <!-- HEAD_FX --> <BoneSocket id="12" bone="HEAD">
+                <HprOffset heading="0" pitch="20" roll="0" offsetX="0" offsetY=".4" offsetZ=".3" scaleX="3" scaleY="3" scaleZ="3" />
+            </BoneSocket>
+            <!-- COG_UPPER --> <BoneSocket id="13" bone="COG">
+                <HprOffset heading="0" pitch="0" roll="0" offsetX="0" offsetY=".5" offsetZ="-.1" scaleX="2.5" scaleY="2.5" scaleZ="2.5" />
+            </BoneSocket>
+        </Skeleton>
+        <Skeleton name="troll">
+            <!-- His HEAD bone has a bad rotation -->
+            <!-- HEAD --> <BoneSocket id="1" bone="HEAD">
+                <HprOffset heading="0" pitch="25" roll="0" offsetX="0" offsetY="0" offsetZ="0" scaleX="1" scaleY="1" scaleZ="1" />
+            </BoneSocket>
+            <!-- COG --> <BoneSocket id="2" bone="COG">
+                <HprOffset heading="0" pitch="0" roll="0" offsetX="0" offsetY="0.5" offsetZ="0" scaleX="1" scaleY="1" scaleZ="1" />
+            </BoneSocket>
+            <!-- HEAD_FX --> <BoneSocket id="12" bone="HEAD">
+                <HprOffset heading="0" pitch="25" roll="0" offsetX="0" offsetY=".2" offsetZ="0" scaleX=".8" scaleY=".8" scaleZ=".8" />
+            </BoneSocket>
+            <!-- COG_UPPER --> <BoneSocket id="13" bone="COG">
+                <HprOffset heading="23" pitch="0" roll="0" offsetX="0" offsetY=".25" offsetZ="0" scaleX="1" scaleY="1" scaleZ="1" />
+            </BoneSocket>
+        </Skeleton>
+        <Skeleton name="turtle">
+            <!-- R_INDEXA --> <BoneSocket id="8" bone="R_HAND">
+                <HprOffset heading="0" pitch="0" roll="0" offsetX="0" offsetY="0" offsetZ="0" scaleX="1" scaleY="1" scaleZ="1" />
+            </BoneSocket>
+            <!-- L_INDEXA --> <BoneSocket id="9" bone="L_HAND">
+                <HprOffset heading="0" pitch="0" roll="0" offsetX="0" offsetY="0" offsetZ="0" scaleX="1" scaleY="1" scaleZ="1" />
+            </BoneSocket>
+            <!-- HEAD --> <BoneSocket id="1" bone="HEAD">
+                <HprOffset heading="0" pitch="15" roll="0" offsetX="0" offsetY="-.05" offsetZ=".1" scaleX="1" scaleY="1" scaleZ="1" />
+            </BoneSocket>
+            <!-- HEAD_FX --> <BoneSocket id="12" bone="HEAD">
+                <HprOffset heading="0" pitch="0" roll="0" offsetX="0" offsetY=".2" offsetZ=".3" scaleX=".8" scaleY=".8" scaleZ=".8" />
+            </BoneSocket>
+            <!-- COG_UPPER --> <BoneSocket id="13" bone="COG">
+                <HprOffset heading="0" pitch="0" roll="0" offsetX="0" offsetY="0" offsetZ=".1" scaleX="1" scaleY="1" scaleZ="1" />
+            </BoneSocket>
+        </Skeleton>
+        <Skeleton name="vulture">
+            <!-- R_INDEXA --> <BoneSocket id="8" bone="RIGHTFINGERS">
+                <HprOffset heading="0" pitch="0" roll="0" offsetX="0" offsetY="0" offsetZ="0" scaleX="1" scaleY="1" scaleZ="1" />
+            </BoneSocket>
+            <!-- L_INDEXA --> <BoneSocket id="9" bone="LEFTFINGERS">
+                <HprOffset heading="0" pitch="0" roll="0" offsetX="0" offsetY="0" offsetZ="0" scaleX="1" scaleY="1" scaleZ="1" />
+            </BoneSocket>
+            <!-- R_TOE --> <BoneSocket id="10" bone="RIGHTLTOES">
+                <HprOffset heading="0" pitch="0" roll="0" offsetX="0" offsetY="0" offsetZ="0" scaleX="1" scaleY="1" scaleZ="1" />
+            </BoneSocket>
+            <!-- L_TOE --> <BoneSocket id="11" bone="LEFTRTOES">
+                <HprOffset heading="0" pitch="0" roll="0" offsetX="0" offsetY="0" offsetZ="0" scaleX="1" scaleY="1" scaleZ="1" />
+            </BoneSocket>
+            <!-- HEAD --> <BoneSocket id="1" bone="HEAD">
+                <HprOffset heading="0" pitch="20" roll="0" offsetX="0" offsetY="-.05" offsetZ=".1" scaleX="1" scaleY="1" scaleZ="1" />
+            </BoneSocket>
+            <!-- HEAD_FX --> <BoneSocket id="12" bone="HEAD">
+                <HprOffset heading="0" pitch="20" roll="0" offsetX="0" offsetY=".3" offsetZ=".4" scaleX=".5" scaleY=".5" scaleZ=".5" />
+            </BoneSocket>
+            <!-- COG_UPPER --> <BoneSocket id="13" bone="COG">
+                <HprOffset heading="0" pitch="45" roll="0" offsetX="0" offsetY=".1" offsetZ=".3" scaleX="1" scaleY="1" scaleZ="1" />
+            </BoneSocket>
+        </Skeleton>
+        <Skeleton name="wolves">
+            <!-- R_INDEXA --> <BoneSocket id="8" bone="R_FINGERSA">
+                <HprOffset heading="0" pitch="0" roll="0" offsetX="0" offsetY="0" offsetZ="0" scaleX="1" scaleY="1" scaleZ="1" />
+            </BoneSocket>
+            <!-- L_INDEXA --> <BoneSocket id="9" bone="L_FINGERSA">
+                <HprOffset heading="0" pitch="0" roll="0" offsetX="0" offsetY="0" offsetZ="0" scaleX="1" scaleY="1" scaleZ="1" />
+            </BoneSocket>
+            <!-- HEAD --> <BoneSocket id="1" bone="HEAD">
+                <HprOffset heading="0" pitch="20" roll="0" offsetX="0" offsetY="0" offsetZ=".2" scaleX="1" scaleY="1" scaleZ="1" />
+            </BoneSocket>
+            <!-- HEAD_FX --> <BoneSocket id="12" bone="HEAD">
+                <HprOffset heading="0" pitch="20" roll="0" offsetX="0" offsetY=".3" offsetZ=".3" scaleX=".7" scaleY=".7" scaleZ=".7" />
+            </BoneSocket>
+            <!-- COG_UPPER --> <BoneSocket id="13" bone="COG">
+                <HprOffset heading="0" pitch="0" roll="0" offsetX="0" offsetY="0" offsetZ=".7" scaleX="1" scaleY="1" scaleZ="1" />
+            </BoneSocket>
+        </Skeleton>
+        <Skeleton name="wraith">
+            <!-- R_TOE --> <BoneSocket id="10" bone="TAIL_END">
+                <HprOffset heading="0" pitch="0" roll="0" offsetX=".2" offsetY=".1" offsetZ="0" scaleX="1" scaleY="1" scaleZ="1" />
+            </BoneSocket>
+            <!-- L_TOE --> <BoneSocket id="11" bone="TAIL_END">
+                <HprOffset heading="0" pitch="0" roll="0" offsetX="-.2" offsetY=".1" offsetZ="0" scaleX="1" scaleY="1" scaleZ="1" />
+            </BoneSocket>
+            <!-- HEAD --> <BoneSocket id="1" bone="HEAD">
+                <HprOffset heading="0" pitch="30" roll="0" offsetX="0" offsetY="0" offsetZ="0" scaleX="1" scaleY="1" scaleZ="1" />
+            </BoneSocket>
+            <!-- HEAD_FX --> <BoneSocket id="12" bone="HEAD">
+                <HprOffset heading="0" pitch="20" roll="0" offsetX="0" offsetY=".1" offsetZ="0" scaleX=".8" scaleY=".8" scaleZ=".8" />
+            </BoneSocket>
+            <!-- COG_UPPER --> <BoneSocket id="13" bone="COG">
+                <HprOffset heading="0" pitch="0" roll="0" offsetX="0" offsetY=".1" offsetZ="0" scaleX="1" scaleY="1" scaleZ="1" />
+            </BoneSocket>
+            <!-- ACCESSORY --> <BoneSocket id="3" bone="TAIL_END">
+                <HprOffset heading="180" pitch="180" roll="0" offsetX="0" offsetY="0" offsetZ="0" scaleX="1" scaleY="1" scaleZ="1" />
+            </BoneSocket>
+        </Skeleton>
+        <Skeleton name="birds">
+            <!-- COG_UPPER --> <BoneSocket id="13" bone="COG">
+                <HprOffset heading="0" pitch="0" roll="0" offsetX="0" offsetY="0" offsetZ="0" scaleX="1" scaleY="1" scaleZ="1" />
+            </BoneSocket>
+            <!-- HEAD_FX --> <BoneSocket id="12" bone="HEAD">
+                <HprOffset heading="0" pitch="0" roll="0" offsetX="0" offsetY=".1" offsetZ="0" scaleX="1" scaleY="1" scaleZ="1" />
+            </BoneSocket>
+        </Skeleton>
+        <Skeleton name="monkey">
+            <!-- COG_UPPER --> <BoneSocket id="13" bone="COG">
+                <HprOffset heading="0" pitch="0" roll="0" offsetX="0" offsetY="0" offsetZ="0" scaleX="1" scaleY="1" scaleZ="1" />
+            </BoneSocket>
+            <!-- HEAD_FX --> <BoneSocket id="12" bone="HEAD">
+                <HprOffset heading="0" pitch="0" roll="0" offsetX="0" offsetY="0" offsetZ="0" scaleX="1" scaleY="1" scaleZ="1" />
+            </BoneSocket>
+        </Skeleton>
+    </ActorSockets>
+</ActorSockets>

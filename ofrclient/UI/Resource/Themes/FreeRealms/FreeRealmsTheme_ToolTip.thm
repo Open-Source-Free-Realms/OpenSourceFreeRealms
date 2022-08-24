@@ -1,0 +1,192 @@
+/********************************************************************** 
+
+Filename	:	FreeRealmsTheme_ToolTip.thm
+Content		:	FreeRealms - GToolTip control theme
+
+Licensees may use this file in accordance with the valid Scaleform
+GFC Commercial License Agreement provided with the software.
+
+This file is provided AS IS with NO WARRANTY OF ANY KIND, INCLUDING 
+THE WARRANTY OF DESIGN, MERCHANTABILITY AND FITNESS FOR ANY PURPOSE.
+
+For information regarding GFC Commercial License Agreements go to:
+	online - http://www.scaleform.com/licensing.html or
+	email  - sales@scaleform.com 
+
+**********************************************************************/
+
+// *** Main ToolTip control namespace 
+
+with GFC_Control_ToolTip
+{
+
+	GFC_Control_DefaultToolTip_Style
+	{
+		GFC_Control_Renderer_Control			=	GFC_CtrlTheme_Bitmap_Control_ToolTip_Renderer_Control;
+
+
+		with .Renderer
+		{
+			.Text								=	GFC_CtrlTheme_Bitmap_Control_ToolTip_Renderer_Text;
+		}									
+										
+		with GFC_Control_Flag
+		{									
+			// Base control flags							
+			.Transparent						=	GFlags(GCtrl, GFC_CF_TRANSPARENT);
+			.SolidInner							=	0;	//GFlags(GCtrl, GFC_CF_SOLIDINNER);
+			.SolidBackground					=	0;	//GFlags(GCtrl, GFC_CF_SOLIDBACKGROUND);
+			.RegionClip							=	GFlags(GCtrl, GFC_CF_REGIONCLIP);
+			.RegionClipParent					=	0;	//GFlags(GCtrl, GFC_CF_REGIONCLIP_PARENT);
+			.NoExternalWindow					=	GFlags(GCtrl, GFC_CF_NOEXTERNALWINDOW);
+			.HitTest							=	0;	//GFlags(GCtrl, GFC_CF_HITTEST);
+			.TopLayer							=	0;	//GFlags(GCtrl, GFC_CF_TOPLAYER);
+			.TopLayerBitmap						=	0;	//GFlags(GCtrl, GFC_CF_TOPLAYERBITMAP);
+			.BottomLayerBitmap					=	0;	//GFlags(GCtrl, GFC_CF_BOTTOMLAYERBITMAP);
+												
+			// Control flag change masks		
+			.Mask_InvalidateControl				=	GFlags(GCtrl, GFC_CF_DISABLED, GFC_CF_TRANSPARENT, GFC_CF_TOPLAYER);
+		}
+
+		with .Flag								
+		{									
+			// ToolTip flags										
+			.VAlign								=	GFlags(GToolTipCtrl, GFC_CF_TOOLTIP_VCENTER);
+			.HAlign								=	GFlags(GToolTipCtrl, GFC_CF_TOOLTIP_LEFT);
+			.Wrap								=	GFlags(GToolTipCtrl, GFC_CF_TOOLTIP_WRAP_WORD);
+			.Crop								=	GFlags(GToolTipCtrl, GFC_CF_TOOLTIP_CROP_CHAR);
+			.CropDotted							=	GFlags(GToolTipCtrl);
+			.Multiline							=	GFlags(GToolTipCtrl, GFC_CF_TOOLTIP_MULTILINE);
+
+			// ToolTip flag change masks
+			//.ToolTipMask_InvalidateControl	=	GFlags(GToolTipCtrl);
+		}							
+											
+		with .Color							
+		{								
+			.Inner								=	GFC_Control_Color_ToolTipInner;
+			.Border								=	GFC_Control_Color_ToolTipBorder;
+			.Text								=	SF_CtrlTheme_FreeRealms_Control_Color_InvertText;
+			.TextShadow							=	GFC_Control_Color_TextShadow_Default;
+		}								
+
+		with .Combine						
+		{								
+			.Inner								=	GFC_Control_Combine_Surface;
+			.Border								=	GFC_Control_Combine_Surface;
+			.Text_Dest							=	GFC_Control_Combine_Text_Default_Dest;
+			.Text_Factor						=	GFC_Control_Combine_Text_Default_Factor;
+			.TextShadow_Dest					=	GColorCombine(Disable,Disable);
+			.TextShadow_Factor					=	GColorCombine(Disable,Disable);
+		}
+
+		with .Size
+		{
+			.ExtraMargin						=	GRectMargin(14,4,14,5);
+			.BorderMargin						=	GRectMargin(0,0,0,0);
+			.MaxWidth							=	500;
+			.MaxHeight							=	0;
+		}
+
+		.Font_Text = GFC_Control_Font_Normal;
+
+
+		// ******* Initialize all the Bitmap theme ToolTip properties to avoid inheritance problems
+		
+		with GFC_CtrlTheme_Bitmap_Control_ToolTip_Skin
+		{
+			.Inner_Default			=	0;	
+			.Border_Default			=	0;
+		}
+
+		map GFC_Control			=	GFC_Control_DefaultControl_Style;
+	}	// end GFC_Control_DefaultToolTip_Style
+
+
+
+	// **** Normal ToolTip style
+	
+	GFC_Control_StandardToolTip_Style
+	{
+
+		// ToolTip border and inner bitmap skins	
+		with GFC_CtrlTheme_Bitmap_Control_ToolTip_Skin
+		{
+			.Border_Default			=	SF_CtrlTheme_FreeRealms_Control_Skin_Blank;
+
+
+			.Inner_Default
+			{
+				layer
+				{
+					LayerFlags		= GFlags(GCtrlBitmapSkin, GFC_BITMAPSKIN_CENTER_SCALE, GFC_BITMAPSKIN_SIDES_SCALE, GFC_BITMAPSKIN_BACKCAPS_REGION);
+					FactorCombine	= GColorCombine(Modulate, Source);
+					FactorColor		= SF_CtrlTheme_FreeRealms_Control_Color_Background;
+					Image			= GBitmap("FreeRealms/FR_ToolTipmsk.tga", HVGrid, 1, 1, 0, 0);
+					Margin			= GRectMargin(10,12,10,12);
+				}
+				layer
+				{
+					LayerFlags		= GFlags(GCtrlBitmapSkin, GFC_BITMAPSKIN_CENTER_SCALE, GFC_BITMAPSKIN_SIDES_SCALE, GFC_BITMAPSKIN_BACKCAPS_PARTIAL);
+					DestCombine		= GColorCombine(BlendSource,Disable);
+					FactorCombine	= GColorCombine(Modulate, Modulate);
+					FactorColor		= SF_CtrlTheme_FreeRealms_Control_Color_Background;
+					Image			= GBitmap("FreeRealms/FR_ToolTipmsk.tga", HVGrid, 1, 1, 0, 0);
+					Margin			= GRectMargin(10,12,10,12);
+				}
+				layer
+				{
+					LayerFlags		= GFlags(GCtrlBitmapSkin, GFC_BITMAPSKIN_CENTER_SCALE, GFC_BITMAPSKIN_SIDES_SCALE);
+					DestCombine		= GColorCombine(BlendSource,Disable);
+					FactorCombine	= GColorCombine(Modulate, Modulate);
+					FactorColor		= SF_CtrlTheme_FreeRealms_Control_Color_SurfaceRoll1;
+					Image			= GBitmap("FreeRealms/FR_ToolTip.tga", HVGrid, 1, 4, 0, 1);
+					Margin			= GRectMargin(10,12,10,12);
+				}
+				layer
+				{
+					LayerFlags		= GFlags(GCtrlBitmapSkin, GFC_BITMAPSKIN_CENTER_SCALE, GFC_BITMAPSKIN_SIDES_SCALE);
+					DestCombine		= GColorCombine(Add,Disable);
+					FactorCombine	= GColorCombine(Modulate, Source);
+					FactorColor		= SF_CtrlTheme_FreeRealms_Control_Color_SurfaceRoll2;
+					Image			= GBitmap("FreeRealms/FR_ToolTip.tga", HVGrid, 1, 4, 0, 2);
+					Margin			= GRectMargin(10,12,10,12);
+				}
+				layer
+				{
+					LayerFlags		= GFlags(GCtrlBitmapSkin, GFC_BITMAPSKIN_CENTER_EMPTY, GFC_BITMAPSKIN_SIDES_SCALE);
+					DestCombine		= GColorCombine(Add,Disable);
+					FactorCombine	= GColorCombine(Modulate, Source);
+					FactorColor		= SF_CtrlTheme_FreeRealms_Control_Color_Outline;
+					Image			= GBitmap("FreeRealms/FR_ToolTip.tga", HVGrid, 1, 4, 0, 3);
+					Margin			= GRectMargin(10,12,10,12);
+				}
+				layer
+				{
+					LayerFlags		= GFlags(GCtrlBitmapSkin, GFC_BITMAPSKIN_CENTER_SCALE, GFC_BITMAPSKIN_SIDES_SCALE, GFC_BITMAPSKIN_NOTVISIBLE,
+														  GFC_BITMAPSKIN_BACKCAPS_PARTIAL);
+					DestCombine		= GColorCombine(BlendSource,Disable);
+					Image			= GBitmap("FreeRealms/FR_ToolTipmsk.tga", HVGrid, 1, 1, 0, 0);
+					Margin			= GRectMargin(10,12,10,12);
+				}
+				layer
+				{
+					LayerFlags		= GFlags(GCtrlBitmapSkin, GFC_BITMAPSKIN_CENTER_SCALE, GFC_BITMAPSKIN_SIDES_SCALE, GFC_BITMAPSKIN_NOTVISIBLE,
+													  GFC_BITMAPSKIN_BACKCAPS_REGION, GFC_BITMAPSKIN_REGION_TRANSPARENT, GFC_BITMAPSKIN_COLORKEY);
+					DestCombine		= GColorCombine(BlendSource,Disable);
+					Image			= GBitmap("FreeRealms/FR_ToolTipmsk.tga", HVGrid, 1, 1, 0, 0);
+					Margin			= GRectMargin(10,12,10,12);
+					ColorKey		= GColor(0,0,0,0);
+					ColorKeyMax		= GColor(0,0,0,128);
+					ColorKeyMask	= GColor(0,0,0,255);
+				}
+			}
+		}
+		
+		map SF_CtrlTheme_FreeRealms_Control					=	GFC_Control_DefaultToolTip_Style;
+		map GFC_CtrlTheme_Bitmap_Control_ToolTip				=	GFC_Control_DefaultToolTip_Style;	
+		map GFC_Control											=	GFC_Control_DefaultToolTip_Style;
+	}
+
+}
+

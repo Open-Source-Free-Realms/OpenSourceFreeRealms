@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+
+<TimeOfDay>
+  <Dawn StartTime="none" />
+  <Day StartTime="none" />
+  <Dusk StartTime="none" />
+  <Night StartTime="19:45" />
+</TimeOfDay>
+
+<Dome>
+    <Texture File="dome_cracked_claw_caverns.tga" />
+</Dome>
+
+<Horizon>
+    <Texture File="ring_blank.tga" />
+    <Position Bottom="0" Top="45" />
+</Horizon>
+
+<SunLight>
+    <Direction Heading="180" Pitch="65" />
+    <Color R="170" G="60" B="125" Brightness="1.0" />
+    <Shadows Enabled="false" />
+</SunLight>
+
+<Ambient>
+    <Texture File="ambient_cracked_claw_caverns.tga" Brightness=".95"/>
+</Ambient>
+
+<Fog>
+    <Color R="10" G="200" B="255" />
+    <Range Near="16" Far="265" />
+    <FadeRange Near="25" Far="220" />
+</Fog>
+
+<Post>
+    <Bloom Strength="5" />
+    <Haze Strength="1.25" Distance="200" />
+</Post>

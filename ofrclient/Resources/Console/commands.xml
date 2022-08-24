@@ -1,0 +1,10 @@
+<comment>
+This file determines the autocomplete order of commands.
+</comment>
+<command name="say" />
+<command name="quit" />
+<command name="location" />
+<command name="whisper" />
+<command name="tell" />
+<command name="who" />
+<command name="groupsay"/>

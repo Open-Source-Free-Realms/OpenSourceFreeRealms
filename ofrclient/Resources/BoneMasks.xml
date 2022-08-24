@@ -1,0 +1,247 @@
+<!-- Bone Mask Types -->
+<!-- Each skeleton that requires bone masks must have its own set defined below. -->
+<BoneMaskTypes>
+    <!-- ****************** -->
+    <!-- Bone Mask Suffixes -->
+    <!-- ****************** -->
+    <BoneMaskSuffixes>
+        <Suffix name="lowerbody" />
+        <Suffix name="upperbody" />
+        <Suffix name="face" />
+        <Suffix name="upperface" />
+        <Suffix name="wholebody" />
+    </BoneMaskSuffixes>
+    <!-- -->
+    <!-- -->
+    <!-- ************************************************* -->
+    <!-- **                  human_m                    ** -->
+    <!-- ************************************************* -->
+    <!--                              -->
+    <!--human_m:  lower-body bone mask-->
+    <!--                              -->
+    <BoneMask name="human_m_lowerbody" >
+        <Bone name="pelvis" weight="1.0" />
+        <Bone name="L_hip" weight="1.0" />
+        <Bone name="L_knee" weight="1.0" />
+        <Bone name="L_ankle" weight="1.0" />
+        <Bone name="L_ball" weight="1.0" />
+        <Bone name="L_toe" weight="1.0" />
+        <Bone name="R_hip" weight="1.0" />
+        <Bone name="R_knee" weight="1.0" />
+        <Bone name="R_ankle" weight="1.0" />
+        <Bone name="R_ball" weight="1.0" />
+        <Bone name="R_toe" weight="1.0" />
+    </BoneMask>
+    <!--                              -->
+    <!--human_m:  upper-body bone mask-->
+    <!--                              -->
+    <BoneMask name="human_m_upperbody" >
+        <Bone name="neck" weight="1.0" />
+        <Bone name="head" weight="1.0" />
+        <Bone name="spineLower" weight="1.0" />
+        <Bone name="spineUpper" weight="1.0" />
+        <Bone name="L_clavicle" weight="1.0" />
+        <Bone name="L_shoulder" weight="1.0" />
+        <Bone name="L_elbow" weight="1.0" />
+        <Bone name="L_forearm" weight="1.0" />
+        <Bone name="L_wrist" weight="1.0" />
+        <Bone name="L_thumbA" weight="1.0" />
+        <Bone name="L_thumbB" weight="1.0" />
+        <Bone name="L_indexA" weight="1.0" />
+        <Bone name="L_indexB" weight="1.0" />
+        <Bone name="L_flipperA" weight="1.0" />
+        <Bone name="L_flipperB" weight="1.0" />
+        <Bone name="R_clavicle" weight="1.0" />
+        <Bone name="R_shoulder" weight="1.0" />
+        <Bone name="R_elbow" weight="1.0" />
+        <Bone name="R_forearm" weight="1.0" />
+        <Bone name="R_wrist" weight="1.0" />
+        <Bone name="R_thumbA" weight="1.0" />
+        <Bone name="R_thumbB" weight="1.0" />
+        <Bone name="R_indexA" weight="1.0" />
+        <Bone name="R_indexB" weight="1.0" />
+        <Bone name="R_flipperA" weight="1.0" />
+        <Bone name="R_flipperB" weight="1.0" />
+        <Bone name="R_weapon" weight="1.0" />
+        <Bone name="L_weapon" weight="1.0" />
+    </BoneMask>
+    <!--                        -->
+    <!--human_m:  face bone mask-->
+    <!--                        -->
+    <BoneMask name="human_m_face" >
+        <Bone name="L_brow" weight="1.0" />
+        <Bone name="R_brow" weight="1.0" />
+        <Bone name="L_eye" weight="1.0" />
+        <Bone name="R_eye" weight="1.0" />
+        <Bone name="L_eyeLid" weight="1.0" />
+        <Bone name="R_eyeLid" weight="1.0" />
+        <Bone name="nose" weight="1.0" />
+        <Bone name="lipUpper" weight="1.0" />
+        <Bone name="L_lipCorner" weight="1.0" />
+        <Bone name="R_lipCorner" weight="1.0" />
+        <Bone name="jaw" weight="1.0" />
+        <Bone name="lipLower" weight="1.0" />
+    </BoneMask>
+    <!--                                       -->
+    <!--human_m:  upper-body and face bone mask-->
+    <!--                                       -->
+    <BoneMask name="human_m_upperface" >
+        <Bone name="neck" weight="1.0" />
+        <Bone name="head" weight="1.0" />
+        <Bone name="spineLower" weight="1.0" />
+        <Bone name="spineUpper" weight="1.0" />
+        <Bone name="L_clavicle" weight="1.0" />
+        <Bone name="L_shoulder" weight="1.0" />
+        <Bone name="L_elbow" weight="1.0" />
+        <Bone name="L_forearm" weight="1.0" />
+        <Bone name="L_wrist" weight="1.0" />
+        <Bone name="L_thumbA" weight="1.0" />
+        <Bone name="L_thumbB" weight="1.0" />
+        <Bone name="L_indexA" weight="1.0" />
+        <Bone name="L_indexB" weight="1.0" />
+        <Bone name="L_flipperA" weight="1.0" />
+        <Bone name="L_flipperB" weight="1.0" />
+        <Bone name="R_clavicle" weight="1.0" />
+        <Bone name="R_shoulder" weight="1.0" />
+        <Bone name="R_elbow" weight="1.0" />
+        <Bone name="R_forearm" weight="1.0" />
+        <Bone name="R_wrist" weight="1.0" />
+        <Bone name="R_thumbA" weight="1.0" />
+        <Bone name="R_thumbB" weight="1.0" />
+        <Bone name="R_indexA" weight="1.0" />
+        <Bone name="R_indexB" weight="1.0" />
+        <Bone name="R_flipperA" weight="1.0" />
+        <Bone name="R_flipperB" weight="1.0" />
+        <Bone name="L_brow" weight="1.0" />
+        <Bone name="R_brow" weight="1.0" />
+        <Bone name="L_eye" weight="1.0" />
+        <Bone name="R_eye" weight="1.0" />
+        <Bone name="L_eyeLid" weight="1.0" />
+        <Bone name="R_eyeLid" weight="1.0" />
+        <Bone name="nose" weight="1.0" />
+        <Bone name="lipUpper" weight="1.0" />
+        <Bone name="L_lipCorner" weight="1.0" />
+        <Bone name="R_lipCorner" weight="1.0" />
+        <Bone name="jaw" weight="1.0" />
+        <Bone name="lipLower" weight="1.0" />
+        <Bone name="R_weapon" weight="1.0" />
+        <Bone name="L_weapon" weight="1.0" />
+    </BoneMask>
+    <!--                                       -->
+    <!--human_m:  whole body bone mask-->
+    <!--                                       -->
+    <BoneMask name="human_m_wholebody" >
+        <Bone name="cog" weight="1.0" />
+        <Bone name="pelvis" weight="1.0" />
+        <Bone name="L_hip" weight="1.0" />
+        <Bone name="L_knee" weight="1.0" />
+        <Bone name="L_ankle" weight="1.0" />
+        <Bone name="L_ball" weight="1.0" />
+        <Bone name="L_toe" weight="1.0" />
+        <Bone name="R_hip" weight="1.0" />
+        <Bone name="R_knee" weight="1.0" />
+        <Bone name="R_ankle" weight="1.0" />
+        <Bone name="R_ball" weight="1.0" />
+        <Bone name="R_toe" weight="1.0" />
+        <Bone name="neck" weight="1.0" />
+        <Bone name="head" weight="1.0" />
+        <Bone name="spineLower" weight="1.0" />
+        <Bone name="spineUpper" weight="1.0" />
+        <Bone name="L_clavicle" weight="1.0" />
+        <Bone name="L_shoulder" weight="1.0" />
+        <Bone name="L_elbow" weight="1.0" />
+        <Bone name="L_forearm" weight="1.0" />
+        <Bone name="L_wrist" weight="1.0" />
+        <Bone name="L_thumbA" weight="1.0" />
+        <Bone name="L_thumbB" weight="1.0" />
+        <Bone name="L_indexA" weight="1.0" />
+        <Bone name="L_indexB" weight="1.0" />
+        <Bone name="L_flipperA" weight="1.0" />
+        <Bone name="L_flipperB" weight="1.0" />
+        <Bone name="R_clavicle" weight="1.0" />
+        <Bone name="R_shoulder" weight="1.0" />
+        <Bone name="R_elbow" weight="1.0" />
+        <Bone name="R_forearm" weight="1.0" />
+        <Bone name="R_wrist" weight="1.0" />
+        <Bone name="R_thumbA" weight="1.0" />
+        <Bone name="R_thumbB" weight="1.0" />
+        <Bone name="R_indexA" weight="1.0" />
+        <Bone name="R_indexB" weight="1.0" />
+        <Bone name="R_flipperA" weight="1.0" />
+        <Bone name="R_flipperB" weight="1.0" />
+        <Bone name="L_brow" weight="1.0" />
+        <Bone name="R_brow" weight="1.0" />
+        <Bone name="L_eye" weight="1.0" />
+        <Bone name="R_eye" weight="1.0" />
+        <Bone name="L_eyeLid" weight="1.0" />
+        <Bone name="R_eyeLid" weight="1.0" />
+        <Bone name="nose" weight="1.0" />
+        <Bone name="lipUpper" weight="1.0" />
+        <Bone name="L_lipCorner" weight="1.0" />
+        <Bone name="R_lipCorner" weight="1.0" />
+        <Bone name="jaw" weight="1.0" />
+        <Bone name="lipLower" weight="1.0" />
+        <Bone name="R_weapon" weight="1.0" />
+        <Bone name="L_weapon" weight="1.0" />
+    </BoneMask>
+    <!-- ************************************************* -->
+    <!-- **                  human_m                    ** -->
+    <!-- ************************************************* -->
+    <!-- -->
+    <!-- -->
+    <!-- ************************************************* -->
+    <!-- **                  human_f                    ** -->
+    <!-- ************************************************* -->
+    <!--                              -->
+    <!--human_f:  lower-body bone mask-->
+    <!--                              -->
+    <BoneMask name="human_f_lowerbody" >
+        <Bone name="pelvis" weight="1.0" />
+        <Bone name="L_hip" weight="1.0" />
+        <Bone name="L_knee" weight="1.0" />
+        <Bone name="L_ankle" weight="1.0" />
+        <Bone name="L_ball" weight="1.0" />
+        <Bone name="L_toe" weight="1.0" />
+        <Bone name="R_hip" weight="1.0" />
+        <Bone name="R_knee" weight="1.0" />
+        <Bone name="R_ankle" weight="1.0" />
+        <Bone name="R_ball" weight="1.0" />
+        <Bone name="R_toe" weight="1.0" />
+    </BoneMask>
+    <!--                              -->
+    <!--human_f:  upper-body bone mask-->
+    <!--                              -->
+    <BoneMask name="human_f_upperbody" >
+        <Bone name="neck" weight="1.0" />
+        <Bone name="head" weight="1.0" />
+        <Bone name="spineLower" weight="1.0" />
+        <Bone name="spineUpper" weight="1.0" />
+        <Bone name="L_clavicle" weight="1.0" />
+        <Bone name="L_shoulder" weight="1.0" />
+        <Bone name="L_elbow" weight="1.0" />
+        <Bone name="L_forearm" weight="1.0" />
+        <Bone name="L_wrist" weight="1.0" />
+        <Bone name="L_thumbA" weight="1.0" />
+        <Bone name="L_thumbB" weight="1.0" />
+        <Bone name="L_indexA" weight="1.0" />
+        <Bone name="L_indexB" weight="1.0" />
+        <Bone name="L_flipperA" weight="1.0" />
+        <Bone name="L_flipperB" weight="1.0" />
+        <Bone name="R_clavicle" weight="1.0" />
+        <Bone name="R_shoulder" weight="1.0" />
+        <Bone name="R_elbow" weight="1.0" />
+        <Bone name="R_forearm" weight="1.0" />
+        <Bone name="R_wrist" weight="1.0" />
+        <Bone name="R_thumbA" weight="1.0" />
+        <Bone name="R_thumbB" weight="1.0" />
+        <Bone name="R_indexA" weight="1.0" />
+        <Bone name="R_indexB" weight="1.0" />
+        <Bone name="R_flipperA" weight="1.0" />
+        <Bone name="R_flipperB" weight="1.0" />
+        <Bone name="R_weapon" weight="1.0" />
+        <Bone name="L_weapon" weight="1.0" />
+    </BoneMask>
+    <!-- ************************************************* -->
+    <!-- **                  human_f                    ** -->
+    <!-- ************************************************* -->    
+</BoneMaskTypes>

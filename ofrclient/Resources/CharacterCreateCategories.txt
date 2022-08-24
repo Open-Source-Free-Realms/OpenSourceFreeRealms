@@ -1,0 +1,10 @@
+#CATEGORY_ID^CATEGORY_TITLE_ID^DATA_SOURCE_NAME_SUFFIX^RACE^GENDER
+1^434053^FaceType^All^All
+2^434046^SkinTone^All^All
+3^434047^HairStyle^All^All
+4^434048^HairColor^All^All
+5^434049^EyeColor^All^All
+6^434051^WingsPixie^Pixie^All
+7^156816^FaceHair^Human^Male
+8^434052^Clothes^All^All
+9^434050^FacePaint^All^All

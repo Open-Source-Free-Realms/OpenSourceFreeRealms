@@ -1,0 +1,407 @@
+/********************************************************************** 
+
+Filename	:	FreeRealmsTheme_DemoMenuBar.thm
+Content		:	FreeRealms - GMenu and GMenuBar control theme
+
+
+Licensees may use this file in accordance with the valid Scaleform
+GFC Commercial License Agreement provided with the software.
+
+This file is provided AS IS with NO WARRANTY OF ANY KIND, INCLUDING 
+THE WARRANTY OF DESIGN, MERCHANTABILITY AND FITNESS FOR ANY PURPOSE.
+
+For information regarding GFC Commercial License Agreements go to:
+	online - http://www.scaleform.com/licensing.html or
+	email  - sales@scaleform.com 
+
+**********************************************************************/
+
+
+
+// *** FreeRealms Demo Main Menu Bar 
+
+style SF_CtrlTheme_FreeRealms_Control_MenuBar_FreeRealmsDemoMenuBar_Style
+{
+	// Item skins
+	// NOTE: WHEN SETTING A BACKGROUND IN THE CONTROL,
+	// MAKE SURE THE FLAG "NOINNERFILL" IS SET TO "0".
+
+	GFC_Control_Flag_Transparent				=	GFlags(GCtrl, GFC_CF_TRANSPARENT);
+	
+	GFC_Control_MenuBar_Flag_NoInnerFill		=	0;	//GFlags(GMenuBarCtrl, GFC_CF_MENUBAR_NOINNERFILL);
+
+	GFC_Control_MenuBar_Size_MinimumHeight		=	22;
+	GFC_Control_MenuBar_Size_Margin				=	GRectMargin(14,11,14,11);
+
+	with GFC_CtrlTheme_Bitmap_Control_MenuBar_Skin_Inner
+	{
+		.Default
+		{
+			layer
+			{
+				LayerFlags		=	GFlags(GCtrlBitmapSkin, GFC_BITMAPSKIN_CENTER_FILL, GFC_BITMAPSKIN_BACKCAPS_REGION);
+				CenterColor		=	SF_CtrlTheme_FreeRealms_Control_Color_Background;
+				Indent			=	GRectMargin(0,12,0,12);	
+				TopFlags		=	GFlags(GCtrlBitmapSkinSection, GFC_BITMAPSKIN_SECTION_NOTVISIBLE);
+				BottomFlags		=	GFlags(GCtrlBitmapSkinSection, GFC_BITMAPSKIN_SECTION_NOTVISIBLE);
+			}			
+			layer
+			{
+				LayerFlags		=	GFlags(GCtrlBitmapSkin, GFC_BITMAPSKIN_CENTER_FILL,  GFC_BITMAPSKIN_SIDES_FILL, GFC_BITMAPSKIN_BACKCAPS_PARTIAL);
+				DestCombine		=	GColorCombine(BlendSource, Disable);
+				FactorCombine	=	GColorCombine(Disable, Disable);
+				CenterColor		=	SF_CtrlTheme_FreeRealms_Control_Color_Background;
+				FactorColor		=	SF_CtrlTheme_FreeRealms_Control_Color_Background;
+				Indent			=	GRectMargin(0,12,0,12);
+				TopFlags		=	GFlags(GCtrlBitmapSkinSection, GFC_BITMAPSKIN_SECTION_NOTVISIBLE);
+				BottomFlags		=	GFlags(GCtrlBitmapSkinSection, GFC_BITMAPSKIN_SECTION_NOTVISIBLE);
+			}
+				
+			layer
+			{
+				LayerFlags		=	GFlags(GCtrlBitmapSkin, GFC_BITMAPSKIN_CENTER_SCALE, GFC_BITMAPSKIN_SIDES_SCALE);
+				DestCombine		=	GColorCombine(Add,Disable);
+				FactorCombine	=	GColorCombine(Modulate, Source);
+				FactorColor		=	SF_CtrlTheme_FreeRealms_Control_Color_Outline;
+				Image			=	GBitmap("FreeRealms/FR_Demo/MenuTop_Sides.tga", HVGrid, 1, 1, 0, 0);
+				Indent			=	GRectMargin(0,12,0,12);
+			}					
+									
+			//Light 1				
+			layer					
+			{					
+				LayerFlags		=	GFlags(GCtrlBitmapSkin, GFC_BITMAPSKIN_TOPLAYER, GFC_BITMAPSKIN_NOHITTEST);
+				CenterFlags		=	GFlags(GCtrlBitmapSkinSection, GFC_BITMAPSKIN_SECTION_VSCALE, GFC_BITMAPSKIN_SECTION_HFIXED);
+				DestCombine		=	GColorCombine(Add,Disable);
+				FactorCombine	=	GColorCombine(Modulate, Source);
+				FactorColor		=	SF_CtrlTheme_FreeRealms_Control_Color_InBorderLight1;
+				Image			=	GBitmap("FreeRealms/FR_Demo/MenuTop_Light.tga", HVGrid, 4, 1, 0, 0);
+				Margin			=	GRectMargin(14,0,0,0);
+				Indent			=	GRectMargin(0,12,0,12);			
+			}					
+			layer					
+			{					
+				LayerFlags		=	GFlags(GCtrlBitmapSkin, GFC_BITMAPSKIN_TOPLAYER, GFC_BITMAPSKIN_NOHITTEST);
+				CenterFlags		=	GFlags(GCtrlBitmapSkinSection, GFC_BITMAPSKIN_SECTION_VSCALE, GFC_BITMAPSKIN_SECTION_HFIXED_RIGHT);
+				DestCombine		=	GColorCombine(Add,Disable);
+				FactorCombine	=	GColorCombine(Modulate, Source);
+				FactorColor		=	SF_CtrlTheme_FreeRealms_Control_Color_InBorderLight1;
+				Image			=	GBitmap("FreeRealms/FR_Demo/MenuTop_Light.tga", HVGrid, 4, 1, 3, 0);
+				Margin			=	GRectMargin(0,0,14,0);
+				Indent			=	GRectMargin(0,12,0,12);					
+			}					
+			//Light 2				
+			layer					
+			{					
+				LayerFlags		=	GFlags(GCtrlBitmapSkin, GFC_BITMAPSKIN_TOPLAYER, GFC_BITMAPSKIN_NOHITTEST);
+				CenterFlags		=	GFlags(GCtrlBitmapSkinSection, GFC_BITMAPSKIN_SECTION_VSCALE, GFC_BITMAPSKIN_SECTION_HFIXED);
+				DestCombine		=	GColorCombine(Add,Disable);
+				FactorCombine	=	GColorCombine(Modulate, Source);
+				FactorColor		=	SF_CtrlTheme_FreeRealms_Control_Color_InBorderLight2;
+				Image			=	GBitmap("FreeRealms/FR_Demo/MenuTop_Light.tga", HVGrid, 4, 1, 1, 0);
+				Margin			=	GRectMargin(14,12,0,12);
+				Indent			=	GRectMargin(0,12,0,12);					
+			}					
+			layer					
+			{					
+				LayerFlags		=	GFlags(GCtrlBitmapSkin, GFC_BITMAPSKIN_TOPLAYER, GFC_BITMAPSKIN_NOHITTEST);
+				CenterFlags		=	GFlags(GCtrlBitmapSkinSection, GFC_BITMAPSKIN_SECTION_VSCALE, GFC_BITMAPSKIN_SECTION_HFIXED_RIGHT);
+				DestCombine		=	GColorCombine(Add,Disable);
+				FactorCombine	=	GColorCombine(Modulate, Source);
+				FactorColor		=	SF_CtrlTheme_FreeRealms_Control_Color_InBorderLight2;
+				Image			=	GBitmap("FreeRealms/FR_Demo/MenuTop_Light.tga", HVGrid, 4, 1, 2, 0);
+				Margin			=	GRectMargin(0,12,14,12);
+				Indent			=	GRectMargin(0,12,0,12);					
+			}					
+			//Gradient				
+			layer					
+			{					
+				LayerFlags		=	GFlags(GCtrlBitmapSkin, GFC_BITMAPSKIN_CENTER_EMPTY, GFC_BITMAPSKIN_TOPLAYER, GFC_BITMAPSKIN_NOHITTEST);
+				CenterFlags		=	GFlags(GCtrlBitmapSkinSection, GFC_BITMAPSKIN_SECTION_VSCALE, GFC_BITMAPSKIN_SECTION_HFIXED);
+				DestCombine		=	GColorCombine(Add,Disable);
+				FactorCombine	=	GColorCombine(Modulate, Source);
+				FactorColor		=	SF_CtrlTheme_FreeRealms_Control_Color_InBorderGlow;
+				Image			=	GBitmap("FreeRealms/FR_Demo/MenuTop_Glow.tga", HVGrid, 2, 1, 1, 0);
+				Margin			=	GRectMargin(9,0,0,0);
+				Indent			=	GRectMargin(0,12,0,12);				
+			}					
+			layer					
+			{					
+				LayerFlags		=	GFlags(GCtrlBitmapSkin, GFC_BITMAPSKIN_CENTER_EMPTY, GFC_BITMAPSKIN_TOPLAYER, GFC_BITMAPSKIN_NOHITTEST);
+				CenterFlags		=	GFlags(GCtrlBitmapSkinSection, GFC_BITMAPSKIN_SECTION_VSCALE, GFC_BITMAPSKIN_SECTION_HFIXED_RIGHT);
+				DestCombine		=	GColorCombine(Add,Disable);
+				FactorCombine	=	GColorCombine(Modulate, Source);
+				FactorColor		=	SF_CtrlTheme_FreeRealms_Control_Color_InBorderGlow;
+				Image			=	GBitmap("FreeRealms/FR_Demo/MenuTop_Glow.tga", HVGrid, 2, 1, 0, 0);
+				Margin			=	GRectMargin(0,0,9,0);
+				Indent			=	GRectMargin(0,12,0,12);				
+			}					
+			// Big shine			
+			layer					
+			{					
+				LayerFlags		=	GFlags(GCtrlBitmapSkin, GFC_BITMAPSKIN_TOPLAYER, GFC_BITMAPSKIN_NOHITTEST, GFC_BITMAPSKIN_CENTER_SCALE);
+				DestCombine		=	GColorCombine(Add, Source);
+				FactorCombine	=	GColorCombine(Modulate, Disable);
+				FactorColor		=	SF_CtrlTheme_FreeRealms_Control_Color_BigShine;
+				Image			=	GBitmap("FreeRealms/FR_BigShine.tga", Vertical, 1, 0);
+				Indent			=	GRectMargin(0,12,0,12);	
+				TopFlags		=	GFlags(GCtrlBitmapSkinSection, GFC_BITMAPSKIN_SECTION_NOTVISIBLE);
+				BottomFlags		=	GFlags(GCtrlBitmapSkinSection, GFC_BITMAPSKIN_SECTION_NOTVISIBLE);
+			}					
+			layer					
+			{					
+				LayerFlags		=	GFlags(GCtrlBitmapSkin, GFC_BITMAPSKIN_TOPLAYER, GFC_BITMAPSKIN_NOHITTEST, GFC_BITMAPSKIN_CENTER_TILE);
+				DestCombine		=	GColorCombine(Add, Source);
+				FactorCombine	=	GColorCombine(Modulate, Disable);
+				FactorColor		=	SF_CtrlTheme_FreeRealms_Control_Color_BigLine;
+				Image			=	GBitmap("FreeRealms/FR_BigLine.tga", Vertical, 1, 0);
+				Indent			=	GRectMargin(0,12,0,12);	
+				TopFlags		=	GFlags(GCtrlBitmapSkinSection, GFC_BITMAPSKIN_SECTION_NOTVISIBLE);
+				BottomFlags		=	GFlags(GCtrlBitmapSkinSection, GFC_BITMAPSKIN_SECTION_NOTVISIBLE);
+			}
+		}
+		.Disable				=	.Default;
+		.Winoff
+		{
+			layer
+			{
+				LayerFlags		=	GFlags(GCtrlBitmapSkin, GFC_BITMAPSKIN_CENTER_FILL, GFC_BITMAPSKIN_BACKCAPS_REGION);
+				CenterColor		=	SF_CtrlTheme_FreeRealms_Control_Color_Background;
+				Indent			=	GRectMargin(0,12,0,12);	
+				TopFlags		=	GFlags(GCtrlBitmapSkinSection, GFC_BITMAPSKIN_SECTION_NOTVISIBLE);
+				BottomFlags		=	GFlags(GCtrlBitmapSkinSection, GFC_BITMAPSKIN_SECTION_NOTVISIBLE);
+			}					
+			layer
+			{
+				LayerFlags		=	GFlags(GCtrlBitmapSkin, GFC_BITMAPSKIN_CENTER_FILL,  GFC_BITMAPSKIN_SIDES_FILL, GFC_BITMAPSKIN_BACKCAPS_PARTIAL);
+				DestCombine		=	GColorCombine(BlendSource, Disable);
+				FactorCombine	=	GColorCombine(Disable, Disable);
+				CenterColor		=	SF_CtrlTheme_FreeRealms_Control_Color_Background;
+				FactorColor		=	SF_CtrlTheme_FreeRealms_Control_Color_Background;
+				Indent			=	GRectMargin(0,12,0,12);
+				TopFlags		=	GFlags(GCtrlBitmapSkinSection, GFC_BITMAPSKIN_SECTION_NOTVISIBLE);
+				BottomFlags		=	GFlags(GCtrlBitmapSkinSection, GFC_BITMAPSKIN_SECTION_NOTVISIBLE);
+			}
+
+			layer
+			{
+				LayerFlags		=	GFlags(GCtrlBitmapSkin, GFC_BITMAPSKIN_CENTER_SCALE, GFC_BITMAPSKIN_SIDES_SCALE);
+				DestCombine		=	GColorCombine(Add,Disable);
+				FactorCombine	=	GColorCombine(Modulate, Source);
+				FactorColor		=	SF_CtrlTheme_FreeRealms_Control_Color_Outline;
+				Image			=	GBitmap("FreeRealms/FR_Demo/MenuTop_Sides.tga", HVGrid, 1, 1, 0, 0);
+				Indent			=	GRectMargin(0,12,0,12);
+			}					
+			//Light 1				
+			layer					
+			{					
+				LayerFlags		=	GFlags(GCtrlBitmapSkin, GFC_BITMAPSKIN_TOPLAYER, GFC_BITMAPSKIN_NOHITTEST);
+				CenterFlags		=	GFlags(GCtrlBitmapSkinSection, GFC_BITMAPSKIN_SECTION_VSCALE, GFC_BITMAPSKIN_SECTION_HFIXED);
+				DestCombine		=	GColorCombine(Add,Disable);
+				FactorCombine	=	GColorCombine(Modulate, Source);
+				FactorColor		=	SF_CtrlTheme_FreeRealms_Control_Color_InBorderLight1Winoff;
+				Image			=	GBitmap("FreeRealms/FR_Demo/MenuTop_Light.tga", HVGrid, 4, 1, 0, 0);
+				Margin			=	GRectMargin(14,0,0,0);
+				Indent			=	GRectMargin(0,12,0,12);			
+			}					
+			layer					
+			{					
+				LayerFlags		=	GFlags(GCtrlBitmapSkin, GFC_BITMAPSKIN_TOPLAYER, GFC_BITMAPSKIN_NOHITTEST);
+				CenterFlags		=	GFlags(GCtrlBitmapSkinSection, GFC_BITMAPSKIN_SECTION_VSCALE, GFC_BITMAPSKIN_SECTION_HFIXED_RIGHT);
+				DestCombine		=	GColorCombine(Add,Disable);
+				FactorCombine	=	GColorCombine(Modulate, Source);
+				FactorColor		=	SF_CtrlTheme_FreeRealms_Control_Color_InBorderLight1Winoff;
+				Image			=	GBitmap("FreeRealms/FR_Demo/MenuTop_Light.tga", HVGrid, 4, 1, 3, 0);
+				Margin			=	GRectMargin(0,0,14,0);
+				Indent			=	GRectMargin(0,12,0,12);				
+			}					
+			//Light 2				
+			layer					
+			{					
+				LayerFlags		=	GFlags(GCtrlBitmapSkin, GFC_BITMAPSKIN_TOPLAYER, GFC_BITMAPSKIN_NOHITTEST);
+				CenterFlags		=	GFlags(GCtrlBitmapSkinSection, GFC_BITMAPSKIN_SECTION_VSCALE, GFC_BITMAPSKIN_SECTION_HFIXED);
+				DestCombine		=	GColorCombine(Add,Disable);
+				FactorCombine	=	GColorCombine(Modulate, Source);
+				FactorColor		=	SF_CtrlTheme_FreeRealms_Control_Color_InBorderLight2Winoff;
+				Image			=	GBitmap("FreeRealms/FR_Demo/MenuTop_Light.tga", HVGrid, 4, 1, 1, 0);
+				Margin			=	GRectMargin(14,0,0,0);
+				Indent			=	GRectMargin(0,12,0,12);				
+			}					
+			layer					
+			{					
+				LayerFlags		=	GFlags(GCtrlBitmapSkin, GFC_BITMAPSKIN_TOPLAYER, GFC_BITMAPSKIN_NOHITTEST);
+				CenterFlags		=	GFlags(GCtrlBitmapSkinSection, GFC_BITMAPSKIN_SECTION_VSCALE, GFC_BITMAPSKIN_SECTION_HFIXED_RIGHT);
+				DestCombine		=	GColorCombine(Add,Disable);
+				FactorCombine	=	GColorCombine(Modulate, Source);
+				FactorColor		=	SF_CtrlTheme_FreeRealms_Control_Color_InBorderLight2Winoff;
+				Image			=	GBitmap("FreeRealms/FR_Demo/MenuTop_Light.tga", HVGrid, 4, 1, 2, 0);
+				Margin			=	GRectMargin(0,0,14,0);
+				Indent			=	GRectMargin(0,12,0,12);				
+			}					
+			//Gradient				
+			layer					
+			{					
+				LayerFlags		=	GFlags(GCtrlBitmapSkin, GFC_BITMAPSKIN_CENTER_EMPTY, GFC_BITMAPSKIN_TOPLAYER, GFC_BITMAPSKIN_NOHITTEST);
+				CenterFlags		=	GFlags(GCtrlBitmapSkinSection, GFC_BITMAPSKIN_SECTION_VSCALE, GFC_BITMAPSKIN_SECTION_HFIXED);
+				DestCombine		=	GColorCombine(Add,Disable);
+				FactorCombine	=	GColorCombine(Modulate, Source);
+				FactorColor		=	SF_CtrlTheme_FreeRealms_Control_Color_InBorderGlowWinoff;
+				Image			=	GBitmap("FreeRealms/FR_Demo/MenuTop_Glow.tga", HVGrid, 2, 1, 1, 0);
+				Margin			=	GRectMargin(9,0,0,0);
+				Indent			=	GRectMargin(0,12,0,12);			
+			}					
+			layer					
+			{					
+				LayerFlags		=	GFlags(GCtrlBitmapSkin, GFC_BITMAPSKIN_CENTER_EMPTY, GFC_BITMAPSKIN_TOPLAYER, GFC_BITMAPSKIN_NOHITTEST);
+				CenterFlags		=	GFlags(GCtrlBitmapSkinSection, GFC_BITMAPSKIN_SECTION_VSCALE, GFC_BITMAPSKIN_SECTION_HFIXED_RIGHT);
+				DestCombine		=	GColorCombine(Add,Disable);
+				FactorCombine	=	GColorCombine(Modulate, Source);
+				FactorColor		=	SF_CtrlTheme_FreeRealms_Control_Color_InBorderGlowWinoff;
+				Image			=	GBitmap("FreeRealms/FR_Demo/MenuTop_Glow.tga", HVGrid, 2, 1, 0, 0);
+				Margin			=	GRectMargin(0,0,9,0);
+				Indent			=	GRectMargin(0,12,0,12);			
+			}					
+			// Big shine			
+			layer					
+			{					
+				LayerFlags		=	GFlags(GCtrlBitmapSkin, GFC_BITMAPSKIN_TOPLAYER, GFC_BITMAPSKIN_NOHITTEST, GFC_BITMAPSKIN_CENTER_SCALE);
+				DestCombine		=	GColorCombine(Add, Source);
+				FactorCombine	=	GColorCombine(Modulate, Disable);
+				FactorColor		=	SF_CtrlTheme_FreeRealms_Control_Color_BigShineWinoff;
+				Image			=	GBitmap("FreeRealms/FR_BigShine.tga", Vertical, 1, 0);
+				Indent			=	GRectMargin(0,12,0,12);	
+				TopFlags		=	GFlags(GCtrlBitmapSkinSection, GFC_BITMAPSKIN_SECTION_NOTVISIBLE);
+				BottomFlags		=	GFlags(GCtrlBitmapSkinSection, GFC_BITMAPSKIN_SECTION_NOTVISIBLE);
+			}
+			layer
+			{
+				LayerFlags		=	GFlags(GCtrlBitmapSkin, GFC_BITMAPSKIN_TOPLAYER, GFC_BITMAPSKIN_NOHITTEST, GFC_BITMAPSKIN_CENTER_TILE);
+				DestCombine		=	GColorCombine(Add, Source);
+				FactorCombine	=	GColorCombine(Modulate, Disable);
+				FactorColor		=	SF_CtrlTheme_FreeRealms_Control_Color_BigLineWinoff;
+				Image			=	GBitmap("FreeRealms/FR_BigLine.tga", Vertical, 1, 0);
+				Indent			=	GRectMargin(0,12,0,12);	
+				TopFlags		=	GFlags(GCtrlBitmapSkinSection, GFC_BITMAPSKIN_SECTION_NOTVISIBLE);
+				BottomFlags		=	GFlags(GCtrlBitmapSkinSection, GFC_BITMAPSKIN_SECTION_NOTVISIBLE);
+			}
+		}
+		.WinoffDisable			=	.Winoff;
+	}
+	
+	map SF_CtrlTheme_FreeRealms_Control						=	GFC_Control_StandardMenuBar_Style;
+	map GFC_CtrlTheme_Bitmap_Control_MenuBar				=	GFC_Control_StandardMenuBar_Style;
+	map GFC_Control											=	GFC_Control_StandardMenuBar_Style;
+}
+
+
+// *** FreeRealms Demo Main Menu Bar Buttons
+
+style SF_CtrlTheme_FreeRealms_Control_Button_FreeRealmsDemoMenuBarLeft_Style
+{
+	GFC_Control_Button_Size_BorderMargin	= GRectMargin(0,0,0,0);
+	GFC_Control_Button_Size_ExtraMargin	= GRectMargin(0,0,0,0);
+
+	with GFC_CtrlTheme_Bitmap_Control_Button_Skin
+	{
+		.Default
+		{
+			layer
+			{
+				LayerFlags		=	GFlags(GCtrlBitmapSkin, GFC_BITMAPSKIN_CENTER_SCALE, GFC_BITMAPSKIN_SIDES_SCALE);
+				DestCombine		=	GColorCombine(BlendSource, Disable);
+				Image			=	GBitmap("FreeRealms/FR_Demo/MenuTop.tga", HVGrid, 2, 1, 0, 0);
+				Margin			=	GRectMargin(0,0,0,0);
+				Indent			=	GRectMargin(61,2,0,2);
+			}					
+			layer					
+			{					
+				LayerFlags		=	GFlags(GCtrlBitmapSkin, GFC_BITMAPSKIN_CENTER_SCALE, GFC_BITMAPSKIN_SIDES_SCALE);
+				DestCombine		=	GColorCombine(Add, Disable);
+				FactorCombine	=	GColorCombine(Modulate, Source);
+				FactorColor		=	SF_CtrlTheme_FreeRealms_Control_Color_TitlebarGlow;
+				Image			=	GBitmap("FreeRealms/FR_Demo/MenuTop_Glow.tga", HVGrid, 2, 1, 0, 0);
+				Margin			=	GRectMargin(0,0,0,0);
+				Indent			=	GRectMargin(86,10,0,10);
+			}					
+			layer					
+			{					
+				LayerFlags		=	GFlags(GCtrlBitmapSkin, GFC_BITMAPSKIN_CENTER_SCALE, GFC_BITMAPSKIN_SIDES_SCALE);
+				DestCombine		=	GColorCombine(Add, Disable);
+				Image			=	GBitmap("FreeRealms/FR_Demo/MenuTop_Logo_Left.tga", HVGrid, 1, 2, 0, 0);
+				Margin			=	GRectMargin(0,0,0,0);
+				Indent			=	GRectMargin(3,0,35,0);
+			}					
+			layer					
+			{					
+				LayerFlags		=	GFlags(GCtrlBitmapSkin, GFC_BITMAPSKIN_CENTER_SCALE, GFC_BITMAPSKIN_SIDES_SCALE);
+				DestCombine		=	GColorCombine(Add, Disable);
+				Image			=	GBitmap("FreeRealms/FR_Demo/MenuTop_Logo_Left.tga", HVGrid, 1, 2, 0, 1);
+				Margin			=	GRectMargin(0,0,0,0);
+				Indent			=	GRectMargin(3,0,35,0);
+			}					
+		}						
+		.Rollover				=	.Default;
+		.Press					=	.Default;
+		.Disable				=	.Default;
+	}
+	
+	
+	map GFC_Control											= GFC_Control_DefaultButton_Style;
+	map GFC_CtrlTheme_Bitmap_Control_Button					= GFC_Control_DefaultButton_Style;
+	map SF_CtrlTheme_FreeRealms_Control						= GFC_Control_DefaultButton_Style;
+}
+
+style SF_CtrlTheme_FreeRealms_Control_Button_FreeRealmsDemoMenuBarRight_Style
+{
+	GFC_Control_Button_Size_BorderMargin	= GRectMargin(0,0,0,0);
+	GFC_Control_Button_Size_ExtraMargin	= GRectMargin(0,0,0,0);
+
+	with GFC_CtrlTheme_Bitmap_Control_Button_Skin
+	{
+		.Default
+		{
+			layer
+			{
+				LayerFlags		=	GFlags(GCtrlBitmapSkin, GFC_BITMAPSKIN_CENTER_SCALE, GFC_BITMAPSKIN_SIDES_SCALE);
+				DestCombine		=	GColorCombine(BlendSource, Disable);
+				Image			=	GBitmap("FreeRealms/FR_Demo/MenuTop.tga", HVGrid, 2, 1, 1, 0);
+				Margin			=	GRectMargin(0,0,0,0);
+				Indent			=	GRectMargin(0,2,61,2);
+			}					
+			layer					
+			{					
+				LayerFlags		=	GFlags(GCtrlBitmapSkin, GFC_BITMAPSKIN_CENTER_SCALE, GFC_BITMAPSKIN_SIDES_SCALE);
+				DestCombine		=	GColorCombine(Add, Disable);
+				FactorCombine	=	GColorCombine(Modulate, Source);
+				FactorColor		=	SF_CtrlTheme_FreeRealms_Control_Color_TitlebarGlow;
+				Image			=	GBitmap("FreeRealms/FR_Demo/MenuTop_Glow.tga", HVGrid, 2, 1, 1, 0);
+				Margin			=	GRectMargin(0,0,0,0);
+				Indent			=	GRectMargin(0,10,86,10);
+			}					
+			layer					
+			{					
+				LayerFlags		=	GFlags(GCtrlBitmapSkin, GFC_BITMAPSKIN_CENTER_SCALE, GFC_BITMAPSKIN_SIDES_SCALE);
+				DestCombine		=	GColorCombine(AddSmooth, Disable);
+				Image			=	GBitmap("FreeRealms/FR_Demo/MenuTop_Logo_Right.tga", HVGrid, 1, 2, 0, 0);
+				Margin			=	GRectMargin(0,0,0,0);
+				Indent			=	GRectMargin(35,0,3,0);
+			}					
+			layer					
+			{					
+				LayerFlags		=	GFlags(GCtrlBitmapSkin, GFC_BITMAPSKIN_CENTER_SCALE, GFC_BITMAPSKIN_SIDES_SCALE);
+				DestCombine		=	GColorCombine(Add, Disable);
+				Image			=	GBitmap("FreeRealms/FR_Demo/MenuTop_Logo_Right.tga", HVGrid, 1, 2, 0, 1);
+				Margin			=	GRectMargin(0,0,0,0);
+				Indent			=	GRectMargin(35,0,3,0);
+			}
+		}
+		.Rollover				=	.Default;
+		.Press					=	.Default;
+		.Disable				=	.Default;
+	}
+			
+	map GFC_Control											= GFC_Control_DefaultButton_Style;
+	map GFC_CtrlTheme_Bitmap_Control_Button					= GFC_Control_DefaultButton_Style;
+	map SF_CtrlTheme_FreeRealms_Control						= GFC_Control_DefaultButton_Style;
+}
+

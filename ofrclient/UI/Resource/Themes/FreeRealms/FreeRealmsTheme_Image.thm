@@ -1,0 +1,135 @@
+/********************************************************************** 
+
+Filename	:	FreeRealmsTheme_Image.thm
+Content		:	FreeRealms - GImage control theme
+
+
+Licensees may use this file in accordance with the valid Scaleform
+GFC Commercial License Agreement provided with the software.
+
+This file is provided AS IS with NO WARRANTY OF ANY KIND, INCLUDING 
+THE WARRANTY OF DESIGN, MERCHANTABILITY AND FITNESS FOR ANY PURPOSE.
+
+For information regarding GFC Commercial License Agreements go to:
+	online - http://www.scaleform.com/licensing.html or
+	email  - sales@scaleform.com 
+
+**********************************************************************/
+
+// *** Main Image control namespace 
+
+with GFC_Control_Image
+{
+
+	GFC_Control_DefaultImage_Style
+	{
+		GFC_Control_Renderer_Control		=	GFC_CtrlTheme_Bitmap_Control_Image_Renderer_Control;
+
+		.Renderer_Bitmap					=	GFC_CtrlTheme_Bitmap_Control_Image_Renderer_Bitmap;
+
+		with GFC_Control_Flag
+		{
+			// Base control flags
+			.Transparent					=	GFlags(GCtrl, GFC_CF_TRANSPARENT);
+			.SolidInner						=	0;	//GFlags(GCtrl, GFC_CF_SOLIDINNER);
+			.SolidBackground				=	0;	//GFlags(GCtrl, GFC_CF_SOLIDBACKGROUND);
+			.RegionClip						=	0;	//GFlags(GCtrl, GFC_CF_REGIONCLIP);
+			.RegionClipParent				=	0;	//GFlags(GCtrl, GFC_CF_REGIONCLIP_PARENT);
+			.NoExternalWindow				=	0;	//GFlags(GCtrl, GFC_CF_NOEXTERNALWINDOW);
+			.HitTest						=	0;	//GFlags(GCtrl, GFC_CF_HITTEST);
+			.TopLayer						=	0;	//GFlags(GCtrl, GFC_CF_TOPLAYER);
+			.TopLayerBitmap					=	0;	//GFlags(GCtrl, GFC_CF_TOPLAYERBITMAP);
+			.BottomLayerBitmap				=	0;	//GFlags(GCtrl, GFC_CF_BOTTOMLAYERBITMAP);
+											
+			// Control flag change masks	
+			.Mask_InvalidateControl			=	GFlags(GCtrl, GFC_CF_DISABLED, GFC_CF_TRANSPARENT, GFC_CF_TOPLAYER);
+		}									
+												
+		with .Color								
+		{									
+			.Inner							=	GFC_Control_Color_Surface;
+			.Margin							=	GFC_Control_Color_Surface;
+
+			.Bitmap_Default					=	GFC_Control_Color_Image_Default;
+			
+			// NOTE: There properties MUST map to the .Bitmap_Default in order for GImageCtrl to support
+			// assigning properties in code!
+			.Bitmap_Disable					=	.Bitmap_Default;
+			.Bitmap_Winoff					=	.Bitmap_Default;
+			.Bitmap_WinoffDisable			=	.Bitmap_Default;
+		}
+
+		with .Combine
+		{
+			.Inner							=	GFC_Control_Combine_Surface;
+			.Margin							=	GFC_Control_Combine_Surface;
+			
+			.Bitmap_Default_Dest			=	GFC_Control_Combine_Image_Default_Dest;
+			.Bitmap_Default_Factor			=	GFC_Control_Combine_Image_Default_Factor;
+
+			// NOTE: There properties MUST map to the .Bitmap_Default_* in order for GImageCtrl to support
+			// assigning properties in code!
+			.Bitmap_Disable_Dest			=	.Bitmap_Default_Dest;
+			.Bitmap_Disable_Factor			=	.Bitmap_Default_Factor;
+			.Bitmap_Winoff_Dest				=	.Bitmap_Default_Dest;
+			.Bitmap_Winoff_Factor			=	.Bitmap_Default_Factor;
+			.Bitmap_WinoffDisable_Dest		=	.Bitmap_Default_Dest;
+			.Bitmap_WinoffDisable_Factor	=	.Bitmap_Default_Factor;
+		}
+		
+		with .Size
+		{
+			.Margin							=	GRectMargin(0,0,0,0);
+		
+			// Bitmap sizes are only used by the bitmap skin (see below)
+			//.Bitmap						=	GSize(0,0);
+			//.BitmapMin					=	GSize(0,0);
+			//.BitmapMax					=	GSize(-1,-1);
+		}
+
+		// ******* Initialize all the Bitmap theme Image properties to avoid inheritance problems
+
+		with GFC_CtrlTheme_Bitmap_Control_Image_Skin
+		{
+			.Bitmap_Default	 				=	0;
+			.Bitmap_Disable		 			=	0;
+			.Bitmap_Winoff	 				=	0;
+			.Bitmap_WinoffDisable	 		=	0;
+		}
+
+		map GFC_Control			=	GFC_Control_DefaultControl_Style;
+	}	// end GFC_Control_DefaultImage_Style
+
+
+
+	// ** Normal image style
+	
+	GFC_Control_StandardImage_Style
+	{
+		// Image bitmap skins
+		// - skins can be used, instead of single layer bitmaps, by other controls
+		//   which contain image controls as children and want multiple layered images
+		
+		/*
+		with GFC_CtrlTheme_Bitmap_Control_Image_Skin_Bitmap
+		{
+			.Default
+			{
+				layer {
+				}
+			}
+			.Disable
+			{
+				layer {
+				}
+			}	
+		}
+		*/
+
+		map SF_CtrlTheme_FreeRealms_Control						=	GFC_Control_DefaultImage_Style;
+		map GFC_CtrlTheme_Bitmap_Control_Image					=	GFC_Control_DefaultImage_Style;
+		map GFC_Control											=	GFC_Control_DefaultImage_Style;
+	}															
+
+}
+

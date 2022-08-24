@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<Window Name="wndMessage" Type="Window" Caption="Message" Sizeable="None" Moveable="True" Width="150" Height="144" AnchorX="Left" AnchorY="Top" X="338" Y="215" Style="Dialog" Spacing="Form" CloseBox="False" MinBox="False" MaxBox="False" CollapseBox="False" Visible="True" OuterBorder="True" InnerBorder="True" InnerFill="True" TitleBar="True" PopupMenu="True" InnerMoveable="True" HitTest="True" Focus="False" ZLayer="255" >
+    <VBox Name="vbox" Type="VBox" X="8" Y="8" Width="112" Height="85" Spacing="Form" AutoExpand="Both">
+        <Label Type="Label" Caption="lblLabel" Multiline="False" Name="lblLabel" X="8" Y="8" Width="96" Height="18" AutoExpand="Both" />
+        <HBox Name="hbox" Type="HBox" X="8" Y="34" Width="96" Height="43" halign="Center" valign="Top" Spacing="Form" AutoExpand="Default">
+            <Button Name="btnOk" Caption="OK" X="8" Y="8" AutoExpand="None" Width="80" Height="27" IsToggle="False" ToggleValue="0" Visible="True" ImageDefault="" Type="Button" />
+        </HBox>
+    </VBox>
+</Window>

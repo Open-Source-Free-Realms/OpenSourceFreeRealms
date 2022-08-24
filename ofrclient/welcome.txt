@@ -1,0 +1,11 @@
+#---------------------
+# Welcome info.
+#
+#   # - comment line
+#   : - start a new subject
+#   & - specify language and country, for example "en us" (optional)
+#   otherwise it's another line of the current text body.
+#
+#---------------------------------------------------------------
+
+Hello

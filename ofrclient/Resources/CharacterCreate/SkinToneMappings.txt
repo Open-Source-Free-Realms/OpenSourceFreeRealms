@@ -1,0 +1,9 @@
+#ID^FILENAME^
+1^skintone1^
+2^skintone2^
+3^skintone3^
+4^skintone4^
+5^skintone5^
+6^skintone6^
+7^skintone7^
+8^skintone8^

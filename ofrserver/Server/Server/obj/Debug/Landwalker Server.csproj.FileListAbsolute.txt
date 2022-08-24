@@ -1,0 +1,8 @@
+C:\Users\Groaxy\Desktop\Landwalker\Landwalker Server\Landwalker Server.exe
+C:\Users\Groaxy\Desktop\Landwalker\Landwalker Server\Landwalker Server.pdb
+C:\Users\Groaxy\Desktop\Landwalker\Landwalker Server Assets\Server Stuff (Don't Touch)\Landwalker Server\obj\Debug\Landwalker Server.csproj.AssemblyReference.cache
+C:\Users\Groaxy\Desktop\Landwalker\Landwalker Server Assets\Server Stuff (Don't Touch)\Landwalker Server\obj\Debug\Landwalker Server.csproj.SuggestedBindingRedirects.cache
+C:\Users\Groaxy\Desktop\Landwalker\Landwalker Server Assets\Server Stuff (Don't Touch)\Landwalker Server\obj\Debug\Landwalker Server.csproj.CoreCompileInputs.cache
+C:\Users\Groaxy\Desktop\Landwalker\Landwalker Server Assets\Server Stuff (Don't Touch)\Landwalker Server\obj\Debug\Landwalker Server.csproj.CopyComplete
+C:\Users\Groaxy\Desktop\Landwalker\Landwalker Server Assets\Server Stuff (Don't Touch)\Landwalker Server\obj\Debug\Landwalker Server.exe
+C:\Users\Groaxy\Desktop\Landwalker\Landwalker Server Assets\Server Stuff (Don't Touch)\Landwalker Server\obj\Debug\Landwalker Server.pdb

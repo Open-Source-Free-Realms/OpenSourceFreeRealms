@@ -1,0 +1,3 @@
+Enum^Name
+0^RecipientPosition
+1^SourcePosition

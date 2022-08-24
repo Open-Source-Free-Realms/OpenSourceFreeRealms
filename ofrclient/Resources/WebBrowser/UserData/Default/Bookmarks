@@ -1,0 +1,22 @@
+{
+   "checksum": "c864f0d203d1d123e0a7d9a2cc2ce2af",
+   "roots": {
+      "bookmark_bar": {
+         "children": [  ],
+         "date_added": "0",
+         "date_modified": "0",
+         "id": "1",
+         "name": "Bookmarks bar",
+         "type": "folder"
+      },
+      "other": {
+         "children": [  ],
+         "date_added": "0",
+         "date_modified": "0",
+         "id": "2",
+         "name": "Other bookmarks",
+         "type": "folder"
+      }
+   },
+   "version": 1
+}

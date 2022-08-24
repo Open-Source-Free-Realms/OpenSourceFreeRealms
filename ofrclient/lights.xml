@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Lights>
+    <Definition Name="Directional" ParameterGroup="DirectionalLight" Material="DirectionalLight" />
+    <Definition Name="Point" ParameterGroup="PointLight" Material="PointLight" />
+    <Definition Name="Sky" ParameterGroup="SkyLight" Material="SkyLight" />
+    <Definition Name="Fog" ParameterGroup="Fog" Material="Fog" />
+    <Definition Name="Post" ParameterGroup="Post" Material="Post1" />
+    <Definition Name="PostViewfinder" ParameterGroup="Post" Material="PostViewfinder" />
+    <Definition Name="PostPhoto" ParameterGroup="Post" Material="PostPhoto" />
+    <Definition Name="PostViewfinderNightVision" ParameterGroup="Post" Material="PostViewfinderNightVision" />
+    <Definition Name="PostPhotoNightVision" ParameterGroup="Post" Material="PostPhotoNightVision" />
+</Lights>

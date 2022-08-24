@@ -1,0 +1,52 @@
+#ID^TEXTURE_ALIAS^
+0^none^
+1^skull^
+2^risingsun^
+3^moons^
+4^lightning^
+5^goth^
+6^bridge^
+8^bigstar^
+9^butterflys^
+10^colorstars^
+11^flames^
+12^leaves^
+13^swirls^
+14^grey^
+15^ocean^
+16^pale^
+17^smokeyeyes^
+18^sunrise^
+19^tan^
+20^floren^
+21^forest giant^
+22^purple mountain^
+23^blue warpaint^
+24^camo^
+25^bluemask^
+26^curlydaisy^
+27^purplestripes^
+28^bluedots^
+29^purpleiris^
+30^sunset^
+31^doll^
+32^blackcat^
+33^flower^
+34^cheetah^
+35^nightsky^
+36^wartywitch^
+37^stitchface^
+38^phantom^
+39^demon^
+40^viper^
+41^werewolf^
+42^bandit^
+43^red tusks^
+44^candycane^
+45^candycanesheart^
+46^gingerbread^
+47^rudolph^
+48^snowflakes^
+49^toysoldier^
+50^rudolph^
+51^toysoldier^

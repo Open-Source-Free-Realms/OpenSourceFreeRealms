@@ -1,0 +1,3 @@
+#billboard_id^location_id^
+1^1^
+2^2^

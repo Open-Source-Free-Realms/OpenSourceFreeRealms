@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "dgSpecHash": "jSWR9TwPgJBZ0ULI+ItrKBo40M/piAgTbM19mqQSyrTEDQtizYGxR6TsDwyfdRlPnItysu/GtRW41y4MfGi2iQ==",
+  "success": true,
+  "projectFilePath": "D:\\Landwalker\\ofrserver\\Gateway\\Gateway.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\caleb\\.nuget\\packages\\log4net\\2.0.8\\log4net.2.0.8.nupkg.sha512",
+    "C:\\Users\\caleb\\.nuget\\packages\\newtonsoft.json\\11.0.1\\newtonsoft.json.11.0.1.nupkg.sha512"
+  ],
+  "logs": []
+}

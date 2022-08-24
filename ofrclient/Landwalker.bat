@@ -1,0 +1,1 @@
+FreeRealms.exe inifile=ClientConfig.ini  Guid=1 Server=127.0.0.1:20260 Ticket=DWCq3TMkGwj9ZZt Internationalization:Locale=8 ShowMemberLoadingScreen=0 Country=US key=m80HqsRO9i4PjJSCOasVMg== CasSessionId=Jk6TeiRMc4Ba38NO

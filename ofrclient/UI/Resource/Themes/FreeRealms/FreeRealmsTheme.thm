@@ -1,0 +1,51 @@
+/********************************************************************** 
+
+Filename	:	FreeRealmsTheme.thm
+Content		:	FreeRealms main theme include file
+Authors		:	Matthew Higby & Sebastian Strzalkowski  
+
+
+Licensees may use this file in accordance with the valid Scaleform
+GFC Commercial License Agreement provided with the software.
+
+This file is provided AS IS with NO WARRANTY OF ANY KIND, INCLUDING 
+THE WARRANTY OF DESIGN, MERCHANTABILITY AND FITNESS FOR ANY PURPOSE.
+
+For information regarding GFC Commercial License Agreements go to:
+	online - http://www.scaleform.com/licensing.html or
+	email  - sales@scaleform.com 
+
+**********************************************************************/
+
+// *** Control Bitmap Theme file
+
+// Assume that the resource path is set correctly 
+
+// Setup common properties
+include "FreeRealmsTheme_Common.thm";
+
+// And control properties
+include "FreeRealmsTheme_Button.thm";
+include "FreeRealmsTheme_Scroll.thm";
+include "FreeRealmsTheme_Border.thm";
+include "FreeRealmsTheme_Edit.thm";
+include "FreeRealmsTheme_ComboBox.thm";
+include "FreeRealmsTheme_Menu.thm";
+include "FreeRealmsTheme_Window.thm";
+include "FreeRealmsTheme_Separator.thm";
+include "FreeRealmsTheme_SplitPanel.thm";
+include "FreeRealmsTheme_ScrollPanel.thm";
+include "FreeRealmsTheme_Image.thm";
+include "FreeRealmsTheme_Slider.thm";
+include "FreeRealmsTheme_Tab.thm";
+include "FreeRealmsTheme_Table.thm";
+include "FreeRealmsTheme_Tree.thm";
+include "FreeRealmsTheme_ToolTip.thm";
+include "FreeRealmsTheme_SizeGrip.thm";
+include "FreeRealmsTheme_Label.thm";
+include "FreeRealmsTheme_Panel.thm";
+include "FreeRealmsTheme_Progress.thm";
+
+// Custom FreeRealms Demo styles
+include "FreeRealmsTheme_FreeRealmsDemoMenuBar.thm";
+

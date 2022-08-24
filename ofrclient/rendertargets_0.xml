@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RenderTargets>
+
+    <RenderTarget Name="WipeStatic" Format="R5G6B5" Width="Backbuffer" Height="Backbuffer" />
+
+</RenderTargets>

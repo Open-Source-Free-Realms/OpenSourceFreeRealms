@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Pipeline DrawStyle="Depth">
+    <!-- Note: this pipeline doesn't specify requirements, but is designed to work alongside either pipeline_2 or pipeline_3 -->
+
+    <!-- Render opaque geometry to shadow map -->
+
+    <Parameter Name="DepthScale" Value="Float(1)" />
+    <Parameter Name="DepthOffset" Value="Float(0)" />
+
+    <Stage Name="Opaque" Type="Scene" Target="Backbuffer" ClearColor="0" ClearDepth="1.0" ClearStencil="0">
+        <Material Type="DeferredTerrain" />
+        <Material Type="DeferredOpaque" />
+        <Source Parameter="DepthScale" FXSemantic="DepthScale" />
+        <Source Parameter="DepthOffset" FXSemantic="DepthOffset" />
+    </Stage>
+
+    <!-- Filter shadow map -->
+
+    <Parameter Name="HorizontalStep" Value="Float2(0.0009766,0)" />
+    <Parameter Name="VerticalStep" Value="Float2(0,0.0009766)" />
+
+    <Stage Name="ShadowFilter1" Type="Quad" Target="ShadowMapFilter">
+        <Material Name="ShadowFilter" />
+        <Source Parameter="HorizontalStep" FXSemantic="Step" />
+        <Source Target="Backbuffer" FXSemantic="Source" />
+    </Stage>
+
+    <Stage Name="ShadowFilter2" Type="Quad" Target="Backbuffer">
+        <Material Name="ShadowFilter" />
+        <Source Parameter="VerticalStep" FXSemantic="Step" />
+        <Source Target="ShadowMapFilter" FXSemantic="Source" />
+    </Stage>
+
+</Pipeline>
