@@ -1,3 +1,4 @@
+# Server
 ofrserver/.vs/*
 ofrserver/Server/Server/obj/*
 bin/*
@@ -6,5 +7,9 @@ ofrserver/Server/FreeRealms/obj/*
 ofrserver/Server/LibSOE/obj/*
 ofrserver/Gateway/obj/*
 
+# Client
 ofrclient/Logs/*
 ofrclient/ThemeParseLog.txt
+
+# Client RE
+ofrclient/FreeRealms.exe.idb

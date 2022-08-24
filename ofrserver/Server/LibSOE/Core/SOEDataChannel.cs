@@ -68,7 +68,7 @@ namespace SOE.Core
         {
             // Setup a writer
             SOEWriter writer = new SOEWriter((ushort)SOEOPCodes.OUT_OF_ORDER_RELIABLE_DATA);
-            
+
             // Where abouts did the sending mess up?
             writer.AddUInt16(sequenceNumber);
 
@@ -265,7 +265,7 @@ namespace SOE.Core
             {
 				//BUG: Fixed Frgamented Packets. (04/10/2018)
                 BusySendingFragmentedPacket = true;
-				
+
                 SendFragmentedMessage(FragmentedQueue.Dequeue());
             }
 			else
