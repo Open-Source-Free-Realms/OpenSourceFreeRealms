@@ -1,4 +1,0 @@
-﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<Window Name="wndCommunicator" Type="Window" X="747" Y="77" Width="800" Height="600" ChildAlignH="Default" ChildAlignV="Default" AlignH="Undefined Property." AlignV="Undefined Property." SizingH="Undefined Property." SizingV="Undefined Property." HExpandParent="N/A" VExpandParent="N/A" Caption="Guild Dialog" Sizeable="None" Moveable="True" AnchorX="Left" AnchorY="Top" Style="Dialog" Spacing="None" CloseBox="False" MinBox="False" MaxBox="False" CollapseBox="False" Visible="False" OuterBorder="False" InnerBorder="False" InnerFill="False" TitleBar="False" PopupMenu="False" InnerMoveable="False" HitTest="Children" Focus="False" Alpha="255" ZLayer="170" Class="">
-  <Flashanim Name="swfCommunicator" Type="Flashanim" X="0" Y="0" Width="800" Height="600" AlignH="Default" AlignV="Center" SizingH="Minimum" SizingV="Default" HExpandParent="True" VExpandParent="True" File="UI\Communicator.swf" />
-</Window>

@@ -1,6 +1,0 @@
-#BLUEPRINT_ID^PROGRESSION_RANK_ID^DESCRIPTION
-1^2^prototype spiralmint seed (withered) - rshannon
-1^2^prototype spiralmint seed (withered) - rshannon
-1^0^
-1^0^
-1^0^

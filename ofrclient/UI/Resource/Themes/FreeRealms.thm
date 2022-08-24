@@ -1,9 +1,0 @@
-
-// *** Control Bitmap Theme file
-
-// Set the resource 
-resource_path	"UI/Resource";
-
-// Setup common properties
-include			"UI/Resource/Themes/FreeRealms/FreeRealmsTheme.thm";
-

@@ -1,3 +1,0 @@
-#KEY^EFFECT_ID
-Good^5098
-Bad^5099

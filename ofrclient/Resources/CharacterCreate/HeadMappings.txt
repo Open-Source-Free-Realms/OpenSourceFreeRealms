@@ -1,9 +1,0 @@
-#ID^FILENAME^
-1^<race>_<gender>_head_caucasian.adr^
-2^<race>_<gender>_head_african.adr^
-3^<race>_<gender>_head_asian.adr^
-4^<race>_<gender>_head_china.adr^
-5^fairy_f_head_china.adr^
-6^fairy_m_head_china.adr^
-7^human_m_head_china.adr^
-8^human_f_head_china.adr^

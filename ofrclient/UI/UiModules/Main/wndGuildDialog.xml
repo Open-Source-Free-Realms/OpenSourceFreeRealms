@@ -1,4 +1,0 @@
-﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<Window Name="wndGuildDialog" Type="Window" X="747" Y="77" Width="426" Height="500" ChildAlignH="Default" ChildAlignV="Default" AlignH="Undefined Property." AlignV="Undefined Property." SizingH="Undefined Property." SizingV="Undefined Property." HExpandParent="N/A" VExpandParent="N/A" Sizeable="None" Moveable="True" AnchorX="Left" AnchorY="Top" Style="Dialog" Spacing="None" CloseBox="False" MinBox="False" MaxBox="False" CollapseBox="False" Visible="True" OuterBorder="False" InnerBorder="False" InnerFill="False" TitleBar="False" PopupMenu="True" InnerMoveable="False" HitTest="Children" Alpha="255" ZLayer="170">
-  <Flashanim Name="swfGuildDialog" Type="Flashanim" X="0" Y="0" Width="426" Height="500" AlignH="Default" AlignV="Default" SizingH="Default" SizingV="Default" HExpandParent="True" VExpandParent="True" File="UI\guildDialog.swf" />
-</Window>
