@@ -35,7 +35,7 @@ namespace SOE.Core
             Manager = manager;
             Client = client;
             DataChannel = new SOEDataChannel(this);
-            
+
             // Session
             SessionStarted = false;
             Encryptable = false;
@@ -165,7 +165,7 @@ namespace SOE.Core
                 finalCRCBytes[place] = crcBytes[i];
                 place++;
             }
-            
+
             // Return the bytes we need to
             return finalCRCBytes;
         }

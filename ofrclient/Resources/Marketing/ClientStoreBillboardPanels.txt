@@ -1,7 +1,0 @@
-#store_billboard_id^name_id^image^image_tint^display_order^shortcut_id^shortcut_type^shortcut_value^store_id^oob_data^
-1^21088^56^0^2^35^3^116^1^<OobData view_requirement_id="0" content_id="0" is_members_only="0"/>^
-1^954^55^0^1^9^3^59^1^<OobData view_requirement_id="0" content_id="91"  is_members_only="0" />^
-1^2170^91^0^1^36^3^83^1^<OobData view_requirement_id="0" content_id="92" is_members_only="0"/>^
-1^27547^6900^0^3^34^3^139^1^<OobData view_requirement_id="0" content_id="0" is_members_only="0"/>^
-2^0^49^0^200^15^4^0^1^<OobData view_requirement_id="0" content_id="0" is_members_only="0"/>^
-2^0^48^0^0^33^3^59^1^<OobData view_requirement_id="0" content_id="0" is_members_only="1"/>^

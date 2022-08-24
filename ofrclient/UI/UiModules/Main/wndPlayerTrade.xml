@@ -1,5 +1,0 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<Window Name="wndPlayerTrade" Type="Window" X="230" Y="13" Width="1024" Height="768" ChildAlignH="Default" ChildAlignV="Default" AlignH="Undefined Property." AlignV="Undefined Property." SizingH="Undefined Property." SizingV="Undefined Property." HExpandParent="N/A" VExpandParent="N/A" Caption="wndInventory" Sizeable="None" Moveable="True" AnchorX="Left" AnchorY="Top" Style="Standard" Spacing="None" CloseBox="False" MinBox="False" MaxBox="False" CollapseBox="False" Visible="True" OuterBorder="False" InnerBorder="False" InnerFill="False" TitleBar="False" PopupMenu="False" InnerMoveable="False" HitTest="True" Focus="True" Alpha="255" Class="" ZLayer="99">
-    <Flashanim Name="swfPlayerTrade" Type="Flashanim" X="0" Y="0" Width="1024" Height="768" AlignH="Default" AlignV="Default" SizingH="Default" SizingV="Default" HExpandParent="True" VExpandParent="True" File="UI\player_trade.swf" Focus="" PrimCount="12"/>
-</Window>
-

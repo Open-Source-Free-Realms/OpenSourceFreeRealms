@@ -1,4 +1,0 @@
-﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<Window Name="wndMinGaq" Type="Window" X="96" Y="14" Width="90" Height="90" ChildAlignH="Default" ChildAlignV="Default" AlignH="Undefined Property." AlignV="Undefined Property." SizingH="Undefined Property." SizingV="Undefined Property." HExpandParent="N/A" VExpandParent="N/A" Caption="wndRadialMenu" Sizeable="None" Moveable="True" AnchorX="Left" AnchorY="Top" Style="Dialog" Spacing="None" CloseBox="False" MinBox="False" MaxBox="False" CollapseBox="False" Visible="True" OuterBorder="False" InnerBorder="False" InnerFill="False" TitleBar="False" PopupMenu="True" InnerMoveable="False" HitTest="Children" Focus="True" ZLayer="250">
-  <Flashanim Name="swfMinGaq" Type="Flashanim" X="0" Y="0" Width="90" Height="90" AlignH="Default" AlignV="Default" SizingH="Default" SizingV="Default" HExpandParent="True" VExpandParent="True" File="UI\minigaq.swf" />
-</Window>

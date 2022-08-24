@@ -1,4 +1,0 @@
-﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<Window Name="wndHousingEditButton" Type="Window" X="0" Y="0" Width="300" Height="50" ChildAlignH="Default" ChildAlignV="Default" AlignH="Undefined Property." AlignV="Undefined Property." SizingH="Undefined Property." SizingV="Undefined Property." HExpandParent="N/A" VExpandParent="N/A" Caption="" Sizeable="None" Moveable="True" AnchorX="Left" AnchorY="Top" Style="Dialog" Spacing="None" CloseBox="False" MinBox="False" MaxBox="False" CollapseBox="False" Visible="True" OuterBorder="False" InnerBorder="False" InnerFill="False" TitleBar="False" PopupMenu="False" InnerMoveable="False" HitTest="Children" Focus="False" Alpha="255" Class="">
-  <Flashanim Name="swfHousingEditButton" Type="Flashanim" X="0" Y="0" Width="50" Height="50" AlignH="Default" AlignV="Center" SizingH="Minimum" SizingV="Default" HExpandParent="True" VExpandParent="True" File="UI\housingEditButton.swf" />
-</Window>
