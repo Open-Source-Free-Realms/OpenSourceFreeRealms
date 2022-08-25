@@ -62,9 +62,9 @@ namespace Gateway.Login
             beginZoning.AddASCIIString("FabledRealms");
             beginZoning.AddHostUInt32(2u);
             /* Sanctuary Spawn */
-            beginZoning.AddFloat(-1474.5752f); // Y
-            beginZoning.AddFloat(-35.42862f); // Z
-            beginZoning.AddFloat(390.74472f); // X
+            //beginZoning.AddFloat(-1414.643433f); // Y
+            //beginZoning.AddFloat(-27.634825f); // Z
+            //beginZoning.AddFloat(351.556366f); // X
             /* Snowhill Spawn */
             //beginZoning.AddFloat(57.21518f); // Y
             //beginZoning.AddFloat(32.185225f); // Z
@@ -81,6 +81,58 @@ namespace Gateway.Login
             //beginZoning.AddFloat(249.473679f); // Y
             //beginZoning.AddFloat(25.058430f); // Z
             //beginZoning.AddFloat(391.374268f); // X
+            /* Briarwood Tangltrack Speedway */
+            //beginZoning.AddFloat(-272.087799f); // Y
+            //beginZoning.AddFloat(-58.801582f); // Z
+            //beginZoning.AddFloat(1953.353516f); // X
+            /* Blackspore Spawn */
+            //beginZoning.AddFloat(-2136.874756f); // Y
+            //beginZoning.AddFloat(-32.999825f); // Z
+            //beginZoning.AddFloat(1041.905884f); // X
+            /* Cobblestone Cooking Table */
+            //beginZoning.AddFloat(-1829.011108f); // Y
+            //beginZoning.AddFloat(-42.408981f); // Z
+            //beginZoning.AddFloat(440.056641f); // X
+            /* Blackspore Cobblestone Entrance */
+            //beginZoning.AddFloat(-1871.115234f); // Y
+            //beginZoning.AddFloat(-24.938211f); // Z
+            //beginZoning.AddFloat(661.045227f); // X
+            /* Seaside Spawn */
+            beginZoning.AddFloat(-636.959595f); // Y
+            beginZoning.AddFloat(9.192503f); // Z
+            beginZoning.AddFloat(-1041.651611f); // X
+            /* Seaside Near Racetrack */
+            //beginZoning.AddFloat(-168.822693f); // Y
+            //beginZoning.AddFloat(-40.262146f); // Z
+            //beginZoning.AddFloat(-1200.149048f); // X
+            /* Cursed Graveyard */
+            //beginZoning.AddFloat(-1162.087158f); // Y
+            //beginZoning.AddFloat(-41.126991f); // Z
+            //beginZoning.AddFloat(747.685913f); // X
+            /* Sam Potts */
+            //beginZoning.AddFloat(-1291.609741f); // Y
+            //beginZoning.AddFloat(-15.031226f); // Z
+            //beginZoning.AddFloat(286.071045f); // X
+            /* Sanctuary Checkers & Chess */
+            //beginZoning.AddFloat(-1089.872803f); // Y
+            //beginZoning.AddFloat(6.144023f); // Z
+            //beginZoning.AddFloat(406.337952f); // X
+            /* Sanctuary Palace Entrance */
+            //beginZoning.AddFloat(-1051.563965f); // Y
+            //beginZoning.AddFloat(4.643000f); // Z
+            //beginZoning.AddFloat(305.907990f); // X
+            /* Pirates Plunder */
+            //beginZoning.AddFloat(-477.607239f); // Y
+            //beginZoning.AddFloat(-44.985340f); // Z
+            //beginZoning.AddFloat(-1324.719971f); // X
+            /* Snowhill Far Outside */
+            //beginZoning.AddFloat(656.324951f); // Y
+            //beginZoning.AddFloat(53.549999f); // Z
+            //beginZoning.AddFloat(735.703247f); // X
+            /* Middle of Sanctuary */
+            //beginZoning.AddFloat(-1290.196777f); // Y
+            //beginZoning.AddFloat(-15.009213f); // Z
+            //beginZoning.AddFloat(308.966248f); // X
             beginZoning.AddFloat(0f);
             for (uint num = 0u; num < 4; num++)
             {

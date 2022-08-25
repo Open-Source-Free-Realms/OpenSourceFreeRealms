@@ -33,10 +33,10 @@
   <ItemGroup>
     <Reference Include="FreeRealms, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\Server Stuff (Don't Touch)\FreeRealms\obj\Debug\FreeRealms.dll</HintPath>
+      <HintPath>..\References\FreeRealms.dll</HintPath>
     </Reference>
     <Reference Include="LibSOE">
-      <HintPath>..\Server Stuff (Don't Touch)\LibSOE\obj\Debug\LibSOE.dll</HintPath>
+      <HintPath>C:\Users\Groaxy\Desktop\Landwalker\Landwalker Server\LibSOE.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />

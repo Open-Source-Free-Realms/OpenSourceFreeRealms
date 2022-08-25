@@ -10,4 +10,7 @@
     <FallbackCulture>en-US</FallbackCulture>
     <VerifyUploadedFiles>false</VerifyUploadedFiles>
   </PropertyGroup>
+  <PropertyGroup>
+    <ReferencePath>E:\OpenFreeRealms\ofrserver\References\</ReferencePath>
+  </PropertyGroup>
 </Project>
