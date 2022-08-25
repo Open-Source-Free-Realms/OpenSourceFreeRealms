@@ -2,11 +2,8 @@
 using System.IO;
 using System.Linq;
 using System.Collections.Generic;
-
 using Ionic.Zlib;
-
 using log4net;
-
 using SOE.Interfaces;
 
 namespace SOE.Core

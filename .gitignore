@@ -6,3 +6,4 @@ bin/*
 ofrserver/Server/FreeRealms/obj/*
 ofrserver/Server/LibSOE/obj/*
 ofrserver/Gateway/obj/*
+ofrclient/*

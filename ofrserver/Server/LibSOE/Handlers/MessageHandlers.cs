@@ -2,7 +2,6 @@
 using System.Linq;
 using System.Reflection;
 using System.Collections.Generic;
-
 using SOE.Interfaces;
 
 namespace SOE.Core

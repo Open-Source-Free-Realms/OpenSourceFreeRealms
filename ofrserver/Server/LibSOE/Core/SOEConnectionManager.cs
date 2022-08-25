@@ -2,9 +2,7 @@
 using System.Net;
 using System.Threading;
 using System.Collections.Generic;
-
 using log4net;
-
 using SOE.Interfaces;
 
 namespace SOE.Core

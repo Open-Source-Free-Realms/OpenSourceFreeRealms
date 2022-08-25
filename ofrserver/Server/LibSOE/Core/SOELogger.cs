@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-
 using log4net;
 using log4net.Core;
 using log4net.Filter;

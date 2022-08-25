@@ -3,7 +3,6 @@ using System.IO;
 using System.Linq;
 using System.Reflection;
 using System.Collections.Generic;
-
 using log4net;
 
 namespace SOE.Core

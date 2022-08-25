@@ -5,9 +5,7 @@ using System.Threading;
 using System.Net.Sockets;
 using System.Collections.Generic;
 using System.Collections.Concurrent;
-
 using log4net;
-
 using SOE.Interfaces;
 
 namespace SOE.Core

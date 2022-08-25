@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Linq;
 using System.Net;
-
 using SOE.Interfaces;
 
 namespace SOE.Core
