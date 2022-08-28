@@ -54,6 +54,7 @@ namespace Gateway.Login
             soeClient.SendMessage(new SOEWriter(new SOEMessage(ClientGatewayBasePackets.PacketTunneledClientPacket, StringToByteArray(/* ZoneDoneSendingInitialData */ "050001020000000E00"))).GetFinalSOEMessage(soeClient));
             ClientUpdatePacketDoneSendingPreloadCharacters(soeClient);
             //soeClient.SendMessage(new SOEWriter(new SOEMessage(ClientGatewayBasePackets.PacketTunneledClientPacket, StringToByteArray(/* EncounterOverworldCombatPacket */ "0500010D00000029008400000000000000000001"))).GetFinalSOEMessage(soeClient));
+            SendPacketMOTD(soeClient);
         }
 
         public static void SendClientBeginZoning(SOEClient soeClient)
@@ -218,5 +219,58 @@ namespace Gateway.Login
             soeClient.SendMessage(tunneledClient.GetFinalSOEMessage(soeClient));
         }
 
+        public static void SendPacketMOTD(SOEClient soeClient)
+        {
+            var packet = new SOEWriter(BasePackets.PacketMOTD, true);
+
+            packet.AddASCIIString("Test MOTD"); //MOTD title
+            packet.AddASCIIString("Test MOTD message"); //Message
+
+            var rawBytes = packet.GetRaw();
+
+            var tunneledClient = new SOEWriter((ushort)ClientGatewayBasePackets.PacketTunneledClientPacket, true);
+
+            tunneledClient.AddBoolean(true);
+            tunneledClient.AddHostUInt32((uint)rawBytes.Length);
+
+            tunneledClient.AddBytes(rawBytes);
+
+            soeClient.SendMessage(tunneledClient.GetFinalSOEMessage(soeClient));
+        }
+
+        public static void SendSelfToClient(SOEClient soeClient)
+        {
+            var packet = new SOEWriter(BasePackets.PacketSendSelfToClient, true);
+
+            packet.AddInt64(1);
+            packet.AddInt64(1);
+
+            var rawBytes = packet.GetRaw();
+
+            var tunneledClient = new SOEWriter((ushort)ClientGatewayBasePackets.PacketTunneledClientPacket, true);
+
+            tunneledClient.AddBoolean(true);
+            tunneledClient.AddHostUInt32((uint)rawBytes.Length);
+
+            tunneledClient.AddBytes(rawBytes);
+
+            soeClient.SendMessage(tunneledClient.GetFinalSOEMessage(soeClient));
+        }
+
+        public static void SendClientIsReady(SOEClient soeClient)
+        {
+            var packet = new SOEWriter(BasePackets.PacketClientIsReady, true);
+
+            var rawBytes = packet.GetRaw();
+
+            var tunneledClient = new SOEWriter((ushort)ClientGatewayBasePackets.PacketTunneledClientPacket, true);
+
+            tunneledClient.AddBoolean(true);
+            tunneledClient.AddHostUInt32((uint)rawBytes.Length);
+
+            tunneledClient.AddBytes(rawBytes);
+
+            soeClient.SendMessage(tunneledClient.GetFinalSOEMessage(soeClient));
+        }
     }
 }
