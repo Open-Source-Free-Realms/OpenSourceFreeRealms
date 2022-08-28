@@ -143,7 +143,7 @@
         public static class AnnouncementBasePackets
         {
             public const ushort AnnouncementDataRequestPacket = 1;
-            public const ushort AnnouncementDataSendPacket = 2;
+            public const byte AnnouncementDataSendPacket = 2;
             public const ushort AnnouncementAdminSendAll = 3;
             public const ushort MemberPanelDataSendPacket = 4;
         }
