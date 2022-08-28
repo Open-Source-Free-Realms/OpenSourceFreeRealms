@@ -16,7 +16,7 @@ namespace LandwalkerServer
 
         static void Main(string[] args)
         {
-            StartGame();
+            //StartGame();
 
             Options = new ServerOptions();
 
@@ -37,7 +37,7 @@ namespace LandwalkerServer
         }
 
 
-        public static void StartGame()
+        /*public static void StartGame()
         {
             var process = new Process();
             process.StartInfo.WorkingDirectory = @"..\ofrclient\";
@@ -46,8 +46,8 @@ namespace LandwalkerServer
             process.StartInfo.UseShellExecute = false;
             process.StartInfo.CreateNoWindow = true;
             process.Start();
-        }
-        
+        }*/
+
         static void Configure()
         {
             Servers = new Dictionary<string, SOEServer>();
