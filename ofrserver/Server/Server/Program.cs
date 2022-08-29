@@ -88,7 +88,7 @@ namespace LandwalkerServer
 
                     // Make a new config
                     Dictionary<string, dynamic> serverConfig = new Dictionary<string, dynamic>();
-                    
+
                     // Go through the server properties
                     foreach (var propertyKeyval in server)
                     {
@@ -135,7 +135,23 @@ namespace LandwalkerServer
                         Console.WriteLine("Invalid configuration! Two servers cannot have the same name!");
                         Environment.Exit(0);
                     }
+                        
                 }
+
+                try
+                {
+                    if (Options.Webhost)
+                    {
+                        Webhost host = new Webhost();
+                        Console.WriteLine("Starting Webhost.");
+                        host.Start(Options.Verbose);
+                    }
+                }
+                catch (Exception e)
+                {
+                    Console.WriteLine(e.Message);
+                }
+
             }
         }
     }
