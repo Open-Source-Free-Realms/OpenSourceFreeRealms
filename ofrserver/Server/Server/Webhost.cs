@@ -10,7 +10,7 @@ namespace LandwalkerServer
 {
     public class Webhost
     {
-        int Port = 80;
+        int Port = 1033;
         string webRoot = "http";
         private HttpListener _listener;
 
