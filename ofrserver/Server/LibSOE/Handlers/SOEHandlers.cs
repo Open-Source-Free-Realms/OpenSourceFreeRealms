@@ -82,47 +82,30 @@ namespace SOE.Core
             sender.SendPacket(pong);
         }
 
-        [SOEMessageHandler("MULTI_MESSAGE", (ushort)SOEOPCodes.MULTI_MESSAGE)]
-        public void HandleMultiData(SOEClient sender, SOEMessage message)
+        public void HandleMultiData(SOEClient sender, SOEPacket packet)
         {
             // Setup a reader and skip the OpCode
-            SOEReader reader = new SOEReader(message);
+            SOEReader reader = new SOEReader(packet);
             int offset = 2;
 
             // Get the data length
-            int dataLength = message.GetLength();
+            int dataLength = packet.GetLength();
 
             // Get the packets
             while (offset < dataLength)
             {
                 // Message size
                 int MessageSize = reader.ReadByte();
-                byte extendedMessageAmount = 0;
-
-                // If the first byte is 0xFF then:
-                // Read how many bytes to add, and then add that many
-                if (MessageSize == 0xFF)
-                {
-                    // How many bytes are there?
-                    extendedMessageAmount = reader.ReadByte();
-
-                    // Add that many bytes
-                    for (int i = 0; i < extendedMessageAmount; i++)
-                    {
-                        MessageSize += reader.ReadByte();
-                    }
-
-                    extendedMessageAmount++;
-                }
 
                 // Read the Message data from the size
-                byte[] data = reader.ReadBytes(MessageSize);
+                var opCode = reader.ReadUInt16();
+                byte[] data = reader.ReadBytes(MessageSize - 2);
 
                 // Handle the Message
-                sender.ReceiveMessage(data);
-                
+                HandlePacket(sender, new SOEPacket(opCode, data));
+
                 // Move along
-                offset += MessageSize + extendedMessageAmount + 1;
+                offset += MessageSize + 1;
             }
         }
     }

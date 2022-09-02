@@ -8,3 +8,4 @@ ofrserver/Server/LibSOE/obj/*
 ofrserver/Gateway/obj/*
 ofrclient/*
 Web Assets.7z
+ofrserver/Server/Server/Program.cs

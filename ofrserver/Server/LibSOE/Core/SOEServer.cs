@@ -63,9 +63,9 @@ namespace SOE.Core
             {"ShortAppName", "SOE"},
 
             // Threading toggles
-            {"WantDynamicThreading", true},
-            {"WantPacketThreading", true},
-            {"WantMessageThreading", true},
+            {"WantDynamicThreading", false},
+            {"WantPacketThreading", false},
+            {"WantMessageThreading", false},
 
             // Threading settings
             {"ServerThreadSleep", 13},

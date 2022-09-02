@@ -164,6 +164,7 @@ namespace SOE.Core
             }
         }
 
+        // Existing Function
         private void ReceiveMessage(SOEPacket packet)
         {
             SOEReader reader = new SOEReader(packet);
@@ -180,11 +181,63 @@ namespace SOE.Core
             Acknowledge(sequenceNumber);
             LastReceivedSequenceNumber = sequenceNumber;
 
-            // Get the SOEMessage
-            byte[] data = reader.ReadToEnd();
+            if (reader.PeekUShort() == (ushort)SOEOPCodes.MULTI_MESSAGE)
+            {
+                byte[] data = reader.ReadToEnd();
+                ReceiveMultiMessage(data);
+            }
+            else
+            {
+                // Get the SOEMessage
+                byte[] data = reader.ReadToEnd();
 
-            // Handle!
-            Client.ReceiveMessage(data);
+                // Handle!
+                Client.ReceiveMessage(data);
+            }
+        }
+
+        // New Function
+        private void ReceiveMultiMessage(byte[] multiData)
+        {
+            // Setup a reader and skip the OpCode
+            SOEReader reader = new SOEReader(multiData);
+            reader.ReadUInt16();
+            int offset = 2;
+
+            // Get the data length
+            int dataLength = multiData.Length;
+
+            // Get the packets
+            while (offset < dataLength)
+            {
+                // Message size
+                int MessageSize = reader.ReadByte();
+
+                // If the first byte is 0xFF then:
+                // Read how many bytes to add, and then add that many
+                if (MessageSize == 0xFF)
+                {
+                    // How many bytes are there?
+                    MessageSize = reader.ReadUInt16();
+
+                    // If the second byte is 0xFF then:
+                    // Read how many bytes to add, and then add that many
+                    if (MessageSize == 0xFF)
+                    {
+                        // How many bytes are there?
+                        MessageSize = reader.ReadInt32();
+                    }
+                }
+
+                // Read the Message data from the size
+                byte[] data = reader.ReadBytes(MessageSize);
+
+                // Handle the Message
+                Client.ReceiveMessage(data);
+
+                // Move along
+                offset += MessageSize + 1;
+            }
         }
 
         public void Receive(SOEPacket packet)

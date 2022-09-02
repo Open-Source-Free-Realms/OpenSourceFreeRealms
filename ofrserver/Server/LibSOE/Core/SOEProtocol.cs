@@ -176,10 +176,7 @@ namespace SOE.Core
                     break;
 
                 case SOEOPCodes.MULTI:
-                    Console.WriteLine("MULTI!");
-
-                    // TODO
-                    //File.WriteAllBytes( Path.GetRandomFileName(), packet.GetRaw() );
+                    HandleMultiData(sender, packet);
                     break;
 
                 case SOEOPCodes.DISCONNECT:

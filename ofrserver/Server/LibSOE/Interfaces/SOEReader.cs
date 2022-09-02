@@ -153,5 +153,14 @@ namespace SOE.Interfaces
             long length = (Stream.Length - exclude) - Stream.Position;
             return ReadBytes((int)length);
         }
+
+        public ushort PeekUShort()
+        {
+            var value = ReadUInt16();
+
+            Stream.Seek(-2, SeekOrigin.Current);
+
+            return value;
+        }
     }
 }
