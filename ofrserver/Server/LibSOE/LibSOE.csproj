@@ -45,6 +45,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Core\PacketCodes.cs" />
     <Compile Include="Core\SOEClient.cs" />
     <Compile Include="Core\SOEConnectionManager.cs" />
     <Compile Include="Core\SOEDataChannel.cs" />
