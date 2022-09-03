@@ -16,8 +16,6 @@ namespace LandwalkerServer
 
         static void Main(string[] args)
         {
-            //StartGame();
-
             Options = new ServerOptions();
 
             // Successful parse?
@@ -35,18 +33,6 @@ namespace LandwalkerServer
             }
             Process.GetCurrentProcess().WaitForExit();
         }
-
-
-        /*public static void StartGame()
-        {
-            var process = new Process();
-            process.StartInfo.WorkingDirectory = @"..\ofrclient\";
-            process.StartInfo.FileName = @"..\ofrclient\FreeRealms.exe";
-            process.StartInfo.Arguments = "inifile=ClientConfig.ini  Guid=1 Server=127.0.0.1:20260 Ticket=DWCq3TMkGwj9ZZt Internationalization:Locale=8 ShowMemberLoadingScreen=0 Country=US key=m80HqsRO9i4PjJSCOasVMg== CasSessionId=Jk6TeiRMc4Ba38NO";
-            process.StartInfo.UseShellExecute = false;
-            process.StartInfo.CreateNoWindow = true;
-            process.Start();
-        }*/
 
         static void Configure()
         {
