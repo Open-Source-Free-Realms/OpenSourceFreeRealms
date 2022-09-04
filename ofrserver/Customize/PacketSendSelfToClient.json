@@ -1,14 +1,14 @@
 {
-  "Unknown": 665338923,
+  "Unknown": 1,
   "PlayerGUID": 1,
-  "Unknown3": 1,
-  "HeadMapping": "<race>_<gender>_head_caucasian.adr",
-  "HairMapping": "<race>_m_hair_fauxhawk_<hairtype>.adr",
-  "Unknown6": 78,
-  "Unknown7": 54,
+  "PlayerModel": 60,
+  "PlayerHead": "<race>_<gender>_head_caucasian.adr",
+  "PlayerHair": "<race>_f_hair_long_<hairtype>.adr",
+  "HairColor": 5,
+  "EyeColor": 1,
   "Skintone": "skintone3",
-  "FacePaint": "none",
-  "Unknown10": "",
+  "FacePaint": "blackcat",
+  "HumanBeardsPixieWings": "",
   "Unknown11": 1,
   "Unknown12": 5,
   "Unknown13": 3,
@@ -31,34 +31,35 @@
   "Unknown26": 0,
   "FirstName": "Open Source",
   "LastName": "Free Realms",
-  "Unknown29": 100,
+  "Coins": 0,
   "AccountBirthday": 1261854072,
   "AccountAge": 0,
   "AccountPlayTime": 0,
   "Unknown33": false,
   "Unknown34": true,
-  "Unknown35": 2,
+  "MembershipStatus": 0,
   "Unknown36": true,
   "Unknown37": 217,
   "Unknown38": 2,
   "Unknown39": 0,
   "Unknown40": 0,
-  "Unknown41": 1455,
+  "Unknown41": 1,
   "Unknown42": false,
   "Unknown43": 3,
   "Unknown44": 5,
   "ClientPcProfiles": [
     {
+      "comment": "Start of Adventurer",
       "Unknown": 1,
-      "Unknown2": 2836,
-      "Unknown3": 2837,
+      "JobName": 2836,
+      "JobDescription": 2837,
       "Unknown4": 1,
-      "Unknown5": 1334,
+      "JobIcon": 1334,
       "Unknown6": 4,
-      "Unknown7": 19,
-      "Unknown8": 21,
-      "Unknown9": false,
-      "Unknown10": 1,
+      "JobBadge": 19,
+      "JobBadgeBorder": 21,
+      "MembersOnly": false,
+      "IsCombat": 1,
       "ItemClassData": [
         {
           "Item1": 1,
@@ -255,9 +256,9 @@
       "Unknown13": 1931819892,
       "Unknown14": false,
       "Unknown15": 0,
-      "Unknown16": 20,
-      "Unknown17": 0,
-      "Unknown18": 24700,
+      "JobLevel": 20,
+      "JobLevelXP": 0,
+      "JobLevelTotalXP": 24700,
       "Unknown19": 0,
       "Unknown20": 0,
       "$comment": "Start of Inventory, You can change these values to equip",
@@ -266,8 +267,8 @@
           "$comment": "Head",
           "Item1": 1,
           "Item2": {
-            "Unknown": 0,
-            "Unknown2": 1
+            "ItemGUID": 0,
+            "Category": 1
           }
         },
         {
@@ -282,40 +283,40 @@
           "$comment": "Shirt",
           "Item1": 3,
           "Item2": {
-            "Unknown": 2746,
-            "Unknown2": 3
+            "ItemGUID": 2746,
+            "Category": 3
           }
         },
         {
           "$comment": "Pants",
           "Item1": 4,
           "Item2": {
-            "Unknown": 4087,
-            "Unknown2": 4
+            "ItemGUID": 4350,
+            "Category": 4
           }
         },
         {
           "$comment": "Shoes",
           "Item1": 5,
           "Item2": {
-            "Unknown": 4568,
-            "Unknown2": 5
+            "ItemGUID": 4568,
+            "Category": 5
           }
         },
         {
           "$comment": "Back",
           "Item1": 6,
           "Item2": {
-            "Unknown": 3715,
-            "Unknown2": 6
+            "ItemGUID": 3715,
+            "Category": 6
           }
         },
         {
           "$comment": "Weapon",
           "Item1": 7,
           "Item2": {
-            "Unknown": 0,
-            "Unknown2": 7
+            "ItemGUID": 2332,
+            "Category": 7
           }
         },
         {
@@ -327,11 +328,27 @@
           }
         },
         {
+          "$comment": "Power Shard",
+          "Item1": 12,
+          "Item2": {
+            "ItemGUID": 0,
+            "Category": 12
+          }
+        },
+        {
+          "$comment": "Flair Shard",
+          "Item1": 13,
+          "Item2": {
+            "ItemGUID": 4020,
+            "Category": 13
+          }
+        },
+        {
           "$comment": "Costume",
           "Item1": 17,
           "Item2": {
-            "Unknown": 0,
-            "Unknown2": 17
+            "ItemGUID": 0,
+            "Category": 17
           }
         }
       ],
@@ -463,19 +480,21 @@
           "Unknown9": 0,
           "Unknown10": 0
         }
-      ]
+      ],
+      "comment1": "End of Adventurer"
     },
     {
+      "comment": "Start of Ninja",
       "Unknown": 2,
-      "Unknown2": 3100,
-      "Unknown3": 3101,
+      "JobName": 3100,
+      "JobDescription": 3101,
       "Unknown4": 2,
-      "Unknown5": 1342,
+      "JobIcon": 1342,
       "Unknown6": 3,
-      "Unknown7": 10,
-      "Unknown8": 1,
-      "Unknown9": false,
-      "Unknown10": 2,
+      "JobBadge": 10,
+      "JobBadgeBorder": 1,
+      "MembersOnly": false,
+      "IsCombat": 2,
       "ItemClassData": [
         {
           "Item1": 2,
@@ -651,66 +670,66 @@
       "Unknown13": 1699,
       "Unknown14": true,
       "Unknown15": 0,
-      "Unknown16": 20,
-      "Unknown17": 0,
-      "Unknown18": 24700,
+      "JobLevel": 20,
+      "JobLevelXP": 0,
+      "JobLevelTotalXP": 24700,
       "Unknown19": 0,
       "Unknown20": 0,
       "Items": [
         {
           "Item1": 1,
           "Item2": {
-            "Unknown": 2494,
-            "Unknown2": 1
+            "ItemGUID": 2494,
+            "Category": 1
           }
         },
         {
           "Item1": 2,
           "Item2": {
-            "Unknown": 1489,
-            "Unknown2": 2
+            "ItemGUID": 1489,
+            "Category": 2
           }
         },
         {
           "Item1": 3,
           "Item2": {
-            "Unknown": 1491,
-            "Unknown2": 3
+            "ItemGUID": 1491,
+            "Category": 3
           }
         },
         {
           "Item1": 4,
           "Item2": {
-            "Unknown": 2490,
-            "Unknown2": 4
+            "ItemGUID": 2490,
+            "Category": 4
           }
         },
         {
           "Item1": 5,
           "Item2": {
-            "Unknown": 1487,
-            "Unknown2": 5
+            "ItemGUID": 1487,
+            "Category": 5
           }
         },
         {
           "Item1": 6,
           "Item2": {
-            "Unknown": 2495,
-            "Unknown2": 6
+            "ItemGUID": 2495,
+            "Category": 6
           }
         },
         {
           "Item1": 7,
           "Item2": {
-            "Unknown": 4043,
-            "Unknown2": 7
+            "ItemGUID": 4043,
+            "Category": 7
           }
         },
         {
           "Item1": 8,
           "Item2": {
-            "Unknown": 1509,
-            "Unknown2": 8
+            "ItemGUID": 1509,
+            "Category": 8
           }
         }
       ],
@@ -890,19 +909,21 @@
           "Unknown9": 0,
           "Unknown10": 0
         }
-      ]
+      ],
+      "comment1": "End of Ninja"
     },
     {
+      "comment": "Start of Postman",
       "Unknown": 4,
-      "Unknown2": 3237,
-      "Unknown3": 3238,
+      "JobName": 3237,
+      "JobDescription": 3238,
       "Unknown4": 3,
-      "Unknown5": 1339,
+      "JobIcon": 1339,
       "Unknown6": 4,
-      "Unknown7": 11,
-      "Unknown8": 2,
-      "Unknown9": false,
-      "Unknown10": 3,
+      "JobBadge": 11,
+      "JobBadgeBorder": 2,
+      "MembersOnly": false,
+      "IsCombat": 3,
       "ItemClassData": [
         {
           "Item1": 3,
@@ -1057,45 +1078,45 @@
       "Unknown13": 1699,
       "Unknown14": true,
       "Unknown15": 0,
-      "Unknown16": 20,
-      "Unknown17": 0,
-      "Unknown18": 24700,
+      "JobLevel": 20,
+      "JobLevelXP": 0,
+      "JobLevelTotalXP": 24700,
       "Unknown19": 0,
       "Unknown20": 0,
       "Items": [
         {
           "Item1": 1,
           "Item2": {
-            "Unknown": 4475,
-            "Unknown2": 1
+            "ItemGUID": 4475,
+            "Category": 1
           }
         },
         {
           "Item1": 2,
           "Item2": {
-            "Unknown": 4472,
-            "Unknown2": 2
+            "ItemGUID": 4472,
+            "Category": 2
           }
         },
         {
           "Item1": 3,
           "Item2": {
-            "Unknown": 4474,
-            "Unknown2": 3
+            "ItemGUID": 4474,
+            "Category": 3
           }
         },
         {
           "Item1": 4,
           "Item2": {
-            "Unknown": 4471,
-            "Unknown2": 4
+            "ItemGUID": 4471,
+            "Category": 4
           }
         },
         {
           "Item1": 5,
           "Item2": {
-            "Unknown": 4473,
-            "Unknown2": 5
+            "ItemGUID": 4473,
+            "Category": 5
           }
         }
       ],
@@ -1227,19 +1248,21 @@
           "Unknown9": 0,
           "Unknown10": 0
         }
-      ]
+      ],
+      "comment1": "End of Postman"
     },
     {
+      "comment": "Start of Medic",
       "Unknown": 11,
-      "Unknown2": 2278,
-      "Unknown3": 2279,
+      "JobName": 2278,
+      "JobDescription": 2279,
       "Unknown4": 2,
-      "Unknown5": 1340,
+      "JobIcon": 1340,
       "Unknown6": 15,
-      "Unknown7": 13,
-      "Unknown8": 9,
-      "Unknown9": false,
-      "Unknown10": 4,
+      "JobBadge": 13,
+      "JobBadgeBorder": 9,
+      "MembersOnly": false,
+      "IsCombat": 4,
       "ItemClassData": [
         {
           "Item1": 7,
@@ -1408,73 +1431,73 @@
       "Unknown13": 1768703266,
       "Unknown14": false,
       "Unknown15": 0,
-      "Unknown16": 16,
-      "Unknown17": 15,
-      "Unknown18": 16033,
+      "JobLevel": 20,
+      "JobLevelXP": 0,
+      "JobLevelTotalXP": 24700,
       "Unknown19": 0,
       "Unknown20": 0,
       "Items": [
         {
           "Item1": 1,
           "Item2": {
-            "Unknown": 4273,
-            "Unknown2": 1
+            "ItemGUID": 4273,
+            "Category": 1
           }
         },
         {
           "Item1": 2,
           "Item2": {
-            "Unknown": 4274,
-            "Unknown2": 2
+            "ItemGUID": 4274,
+            "Category": 2
           }
         },
         {
           "Item1": 3,
           "Item2": {
-            "Unknown": 4276,
-            "Unknown2": 3
+            "ItemGUID": 4276,
+            "Category": 3
           }
         },
         {
           "Item1": 4,
           "Item2": {
-            "Unknown": 4277,
-            "Unknown2": 4
+            "ItemGUID": 4277,
+            "Category": 4
           }
         },
         {
           "Item1": 5,
           "Item2": {
-            "Unknown": 4275,
-            "Unknown2": 5
+            "ItemGUID": 4275,
+            "Category": 5
           }
         },
         {
           "Item1": 6,
           "Item2": {
-            "Unknown": 4278,
-            "Unknown2": 6
+            "ItemGUID": 4278,
+            "Category": 6
           }
         },
         {
           "Item1": 7,
           "Item2": {
-            "Unknown": 4279,
-            "Unknown2": 7
+            "ItemGUID": 4279,
+            "Category": 7
           }
         },
         {
           "Item1": 8,
           "Item2": {
-            "Unknown": 1701,
-            "Unknown2": 8
+            "ItemGUID": 1701,
+            "Category": 8
           }
         },
         {
           "Item1": 12,
           "Item2": {
-            "Unknown": 1536,
-            "Unknown2": 12
+            "ItemGUID": 1536,
+            "Category": 12
           }
         }
       ],
@@ -1654,19 +1677,21 @@
           "Unknown9": 0,
           "Unknown10": 0
         }
-      ]
+      ],
+      "comment1": "End of Medic"
     },
     {
+      "comment": "Start of Wizard",
       "Unknown": 12,
-      "Unknown2": 2280,
-      "Unknown3": 2281,
+      "JobName": 2280,
+      "JobDescription": 2281,
       "Unknown4": 2,
-      "Unknown5": 1343,
+      "JobIcon": 1343,
       "Unknown6": 14,
-      "Unknown7": 12,
-      "Unknown8": 8,
-      "Unknown9": false,
-      "Unknown10": 5,
+      "JobBadge": 12,
+      "JobBadgeBorder": 8,
+      "MembersOnly": false,
+      "IsCombat": 5,
       "ItemClassData": [
         {
           "Item1": 8,
@@ -1821,73 +1846,73 @@
       "Unknown13": 1699,
       "Unknown14": false,
       "Unknown15": 0,
-      "Unknown16": 12,
-      "Unknown17": 66,
-      "Unknown18": 9900,
+      "JobLevel": 20,
+      "JobLevelXP": 0,
+      "JobLevelTotalXP": 24700,
       "Unknown19": 0,
       "Unknown20": 0,
       "Items": [
         {
           "Item1": 1,
           "Item2": {
-            "Unknown": 1891,
-            "Unknown2": 1
+            "ItemGUID": 1891,
+            "Category": 1
           }
         },
         {
           "Item1": 2,
           "Item2": {
-            "Unknown": 1967,
-            "Unknown2": 2
+            "ItemGUID": 1967,
+            "Category": 2
           }
         },
         {
           "Item1": 3,
           "Item2": {
-            "Unknown": 1641,
-            "Unknown2": 3
+            "ItemGUID": 1641,
+            "Category": 3
           }
         },
         {
           "Item1": 4,
           "Item2": {
-            "Unknown": 1966,
-            "Unknown2": 4
+            "ItemGUID": 1966,
+            "Category": 4
           }
         },
         {
           "Item1": 5,
           "Item2": {
-            "Unknown": 1968,
-            "Unknown2": 5
+            "ItemGUID": 1968,
+            "Category": 5
           }
         },
         {
           "Item1": 6,
           "Item2": {
-            "Unknown": 1923,
-            "Unknown2": 6
+            "ItemGUID": 1923,
+            "Category": 6
           }
         },
         {
           "Item1": 7,
           "Item2": {
-            "Unknown": 1911,
-            "Unknown2": 7
+            "ItemGUID": 1911,
+            "Category": 7
           }
         },
         {
           "Item1": 8,
           "Item2": {
-            "Unknown": 1534,
-            "Unknown2": 8
+            "ItemGUID": 1534,
+            "Category": 8
           }
         },
         {
           "Item1": 12,
           "Item2": {
-            "Unknown": 1640,
-            "Unknown2": 12
+            "ItemGUID": 1640,
+            "Category": 12
           }
         }
       ],
@@ -2067,19 +2092,21 @@
           "Unknown9": 0,
           "Unknown10": 0
         }
-      ]
+      ],
+      "comment1": "End of Wizard"
     },
     {
+      "comment": "Start of Miner",
       "Unknown": 14,
-      "Unknown2": 2470,
-      "Unknown3": 2471,
+      "JobName": 2470,
+      "JobDescription": 2471,
       "Unknown4": 9,
-      "Unknown5": 1341,
+      "JobIcon": 1341,
       "Unknown6": 4,
-      "Unknown7": 11,
-      "Unknown8": 2,
-      "Unknown9": false,
-      "Unknown10": 6,
+      "JobBadge": 11,
+      "JobBadgeBorder": 2,
+      "MembersOnly": false,
+      "IsCombat": 6,
       "ItemClassData": [
         {
           "Item1": 12,
@@ -2241,73 +2268,73 @@
       "Unknown13": 1668180256,
       "Unknown14": false,
       "Unknown15": 0,
-      "Unknown16": 6,
-      "Unknown17": 93,
-      "Unknown18": 2433,
+      "JobLevel": 20,
+      "JobLevelXP": 0,
+      "JobLevelTotalXP": 24700,
       "Unknown19": 0,
       "Unknown20": 0,
       "Items": [
         {
           "Item1": 1,
           "Item2": {
-            "Unknown": 1908,
-            "Unknown2": 1
+            "ItemGUID": 1908,
+            "Category": 1
           }
         },
         {
           "Item1": 2,
           "Item2": {
-            "Unknown": 1993,
-            "Unknown2": 2
+            "ItemGUID": 1993,
+            "Category": 2
           }
         },
         {
           "Item1": 3,
           "Item2": {
-            "Unknown": 1906,
-            "Unknown2": 3
+            "ItemGUID": 1906,
+            "Category": 3
           }
         },
         {
           "Item1": 4,
           "Item2": {
-            "Unknown": 1905,
-            "Unknown2": 4
+            "ItemGUID": 1905,
+            "Category": 4
           }
         },
         {
           "Item1": 5,
           "Item2": {
-            "Unknown": 1907,
-            "Unknown2": 5
+            "ItemGUID": 1907,
+            "Category": 5
           }
         },
         {
           "Item1": 7,
           "Item2": {
-            "Unknown": 1213,
-            "Unknown2": 7
+            "ItemGUID": 1213,
+            "Category": 7
           }
         },
         {
           "Item1": 8,
           "Item2": {
-            "Unknown": 3981,
-            "Unknown2": 8
+            "ItemGUID": 3981,
+            "Category": 8
           }
         },
         {
           "Item1": 12,
           "Item2": {
-            "Unknown": 1997,
-            "Unknown2": 12
+            "ItemGUID": 1997,
+            "Category": 12
           }
         },
         {
           "Item1": 13,
           "Item2": {
-            "Unknown": 1686,
-            "Unknown2": 13
+            "ItemGUID": 1686,
+            "Category": 13
           }
         }
       ],
@@ -2439,19 +2466,21 @@
           "Unknown9": 0,
           "Unknown10": 0
         }
-      ]
+      ],
+      "comment1": "End of Miner"
     },
     {
+      "comment": "Start of Blacksmith",
       "Unknown": 16,
-      "Unknown2": 2614,
-      "Unknown3": 2615,
+      "JobName": 2614,
+      "JobDescription": 2615,
       "Unknown4": 12,
-      "Unknown5": 1336,
+      "JobIcon": 1336,
       "Unknown6": 4,
-      "Unknown7": 11,
-      "Unknown8": 2,
-      "Unknown9": false,
-      "Unknown10": 7,
+      "JobBadge": 11,
+      "JobBadgeBorder": 2,
+      "MembersOnly": false,
+      "IsCombat": 7,
       "ItemClassData": [
         {
           "Item1": 14,
@@ -2613,59 +2642,59 @@
       "Unknown13": 1684957510,
       "Unknown14": false,
       "Unknown15": 0,
-      "Unknown16": 1,
-      "Unknown17": 78,
-      "Unknown18": 234,
+      "JobLevel": 20,
+      "JobLevelXP": 0,
+      "JobLevelTotalXP": 24700,
       "Unknown19": 0,
       "Unknown20": 0,
       "Items": [
         {
           "Item1": 1,
           "Item2": {
-            "Unknown": 36,
-            "Unknown2": 1
+            "ItemGUID": 36,
+            "Category": 1
           }
         },
         {
           "Item1": 2,
           "Item2": {
-            "Unknown": 35,
-            "Unknown2": 2
+            "ItemGUID": 35,
+            "Category": 2
           }
         },
         {
           "Item1": 3,
           "Item2": {
-            "Unknown": 31,
-            "Unknown2": 3
+            "ItemGUID": 31,
+            "Category": 3
           }
         },
         {
           "Item1": 4,
           "Item2": {
-            "Unknown": 34,
-            "Unknown2": 4
+            "ItemGUID": 34,
+            "Category": 4
           }
         },
         {
           "Item1": 5,
           "Item2": {
-            "Unknown": 32,
-            "Unknown2": 5
+            "ItemGUID": 32,
+            "Category": 5
           }
         },
         {
           "Item1": 7,
           "Item2": {
-            "Unknown": 1280,
-            "Unknown2": 7
+            "ItemGUID": 1280,
+            "Category": 7
           }
         },
         {
           "Item1": 13,
           "Item2": {
-            "Unknown": 1686,
-            "Unknown2": 13
+            "ItemGUID": 1686,
+            "Category": 13
           }
         }
       ],
@@ -2797,19 +2826,21 @@
           "Unknown9": 0,
           "Unknown10": 0
         }
-      ]
+      ],
+      "comment1": "End of Blacksmith"
     },
     {
+      "comment": "Start of Warrior",
       "Unknown": 32,
-      "Unknown2": 4664,
-      "Unknown3": 4665,
+      "JobName": 4664,
+      "JobDescription": 4665,
       "Unknown4": 2,
-      "Unknown5": 21594,
+      "JobIcon": 21594,
       "Unknown6": 31,
-      "Unknown7": 10,
-      "Unknown8": 1,
-      "Unknown9": false,
-      "Unknown10": 8,
+      "JobBadge": 10,
+      "JobBadgeBorder": 1,
+      "MembersOnly": false,
+      "IsCombat": 8,
       "ItemClassData": [
         {
           "Item1": 15,
@@ -2971,73 +3002,73 @@
       "Unknown13": 1699,
       "Unknown14": false,
       "Unknown15": 0,
-      "Unknown16": 20,
-      "Unknown17": 0,
-      "Unknown18": 24700,
+      "JobLevel": 20,
+      "JobLevelXP": 0,
+      "JobLevelTotalXP": 24700,
       "Unknown19": 0,
       "Unknown20": 0,
       "Items": [
         {
           "Item1": 1,
           "Item2": {
-            "Unknown": 3044,
-            "Unknown2": 1
+            "ItemGUID": 3044,
+            "Category": 1
           }
         },
         {
           "Item1": 2,
           "Item2": {
-            "Unknown": 3670,
-            "Unknown2": 2
+            "ItemGUID": 3670,
+            "Category": 2
           }
         },
         {
           "Item1": 3,
           "Item2": {
-            "Unknown": 1760,
-            "Unknown2": 3
+            "ItemGUID": 1760,
+            "Category": 3
           }
         },
         {
           "Item1": 4,
           "Item2": {
-            "Unknown": 3668,
-            "Unknown2": 4
+            "ItemGUID": 3668,
+            "Category": 4
           }
         },
         {
           "Item1": 5,
           "Item2": {
-            "Unknown": 3671,
-            "Unknown2": 5
+            "ItemGUID": 3671,
+            "Category": 5
           }
         },
         {
           "Item1": 6,
           "Item2": {
-            "Unknown": 3672,
-            "Unknown2": 6
+            "ItemGUID": 3672,
+            "Category": 6
           }
         },
         {
           "Item1": 7,
           "Item2": {
-            "Unknown": 3151,
-            "Unknown2": 7
+            "ItemGUID": 3151,
+            "Category": 7
           }
         },
         {
           "Item1": 8,
           "Item2": {
-            "Unknown": 2076,
-            "Unknown2": 8
+            "ItemGUID": 2076,
+            "Category": 8
           }
         },
         {
           "Item1": 12,
           "Item2": {
-            "Unknown": 3048,
-            "Unknown2": 12
+            "ItemGUID": 3048,
+            "Category": 12
           }
         }
       ],
@@ -3217,19 +3248,21 @@
           "Unknown9": 0,
           "Unknown10": 0
         }
-      ]
+      ],
+      "comment1": "End of Warrior"
     },
     {
+      "comment": "Start of Archer",
       "Unknown": 35,
-      "Unknown2": 4822,
-      "Unknown3": 4823,
+      "JobName": 4822,
+      "JobDescription": 4823,
       "Unknown4": 2,
-      "Unknown5": 1335,
+      "JobIcon": 1335,
       "Unknown6": 7,
-      "Unknown7": 32,
-      "Unknown8": 33,
-      "Unknown9": false,
-      "Unknown10": 9,
+      "JobBadge": 32,
+      "JobBadgeBorder": 33,
+      "MembersOnly": false,
+      "IsCombat": 9,
       "ItemClassData": [
         {
           "Item1": 16,
@@ -3384,66 +3417,66 @@
       "Unknown13": 1952531806,
       "Unknown14": false,
       "Unknown15": 0,
-      "Unknown16": 20,
-      "Unknown17": 0,
-      "Unknown18": 24700,
+      "JobLevel": 20,
+      "JobLevelXP": 0,
+      "JobLevelTotalXP": 24700,
       "Unknown19": 0,
       "Unknown20": 0,
       "Items": [
         {
           "Item1": 2,
           "Item2": {
-            "Unknown": 1078,
-            "Unknown2": 2
+            "ItemGUID": 1078,
+            "Category": 2
           }
         },
         {
           "Item1": 3,
           "Item2": {
-            "Unknown": 1269,
-            "Unknown2": 3
+            "ItemGUID": 1269,
+            "Category": 3
           }
         },
         {
           "Item1": 4,
           "Item2": {
-            "Unknown": 1239,
-            "Unknown2": 4
+            "ItemGUID": 1239,
+            "Category": 4
           }
         },
         {
           "Item1": 5,
           "Item2": {
-            "Unknown": 1344,
-            "Unknown2": 5
+            "ItemGUID": 1344,
+            "Category": 5
           }
         },
         {
           "Item1": 6,
           "Item2": {
-            "Unknown": 1270,
-            "Unknown2": 6
+            "ItemGUID": 1270,
+            "Category": 6
           }
         },
         {
           "Item1": 7,
           "Item2": {
-            "Unknown": 3713,
-            "Unknown2": 7
+            "ItemGUID": 3713,
+            "Category": 7
           }
         },
         {
           "Item1": 8,
           "Item2": {
-            "Unknown": 1382,
-            "Unknown2": 8
+            "ItemGUID": 1382,
+            "Category": 8
           }
         },
         {
           "Item1": 12,
           "Item2": {
-            "Unknown": 1381,
-            "Unknown2": 12
+            "ItemGUID": 1381,
+            "Category": 12
           }
         }
       ],
@@ -3623,19 +3656,21 @@
           "Unknown9": 0,
           "Unknown10": 0
         }
-      ]
+      ],
+      "comment1": "End of Archer"
     },
     {
+      "comment": "Start of Brawler",
       "Unknown": 43,
-      "Unknown2": 2873,
-      "Unknown3": 3234,
+      "JobName": 2873,
+      "JobDescription": 3234,
       "Unknown4": 2,
-      "Unknown5": 1337,
+      "JobIcon": 1337,
       "Unknown6": 4,
-      "Unknown7": 10,
-      "Unknown8": 1,
-      "Unknown9": false,
-      "Unknown10": 12,
+      "JobBadge": 10,
+      "JobBadgeBorder": 1,
+      "MembersOnly": false,
+      "IsCombat": 12,
       "ItemClassData": [
         {
           "Item1": 5,
@@ -3818,66 +3853,66 @@
       "Unknown13": 1632903269,
       "Unknown14": false,
       "Unknown15": 0,
-      "Unknown16": 16,
-      "Unknown17": 44,
-      "Unknown18": 16625,
+      "JobLevel": 20,
+      "JobLevelXP": 0,
+      "JobLevelTotalXP": 24700,
       "Unknown19": 0,
       "Unknown20": 0,
       "Items": [
         {
           "Item1": 1,
           "Item2": {
-            "Unknown": 1663,
-            "Unknown2": 1
+            "ItemGUID": 1663,
+            "Category": 1
           }
         },
         {
           "Item1": 2,
           "Item2": {
-            "Unknown": 2608,
-            "Unknown2": 2
+            "ItemGUID": 2608,
+            "Category": 2
           }
         },
         {
           "Item1": 3,
           "Item2": {
-            "Unknown": 2609,
-            "Unknown2": 3
+            "ItemGUID": 2609,
+            "Category": 3
           }
         },
         {
           "Item1": 4,
           "Item2": {
-            "Unknown": 2607,
-            "Unknown2": 4
+            "ItemGUID": 2607,
+            "Category": 4
           }
         },
         {
           "Item1": 5,
           "Item2": {
-            "Unknown": 2610,
-            "Unknown2": 5
+            "ItemGUID": 2610,
+            "Category": 5
           }
         },
         {
           "Item1": 7,
           "Item2": {
-            "Unknown": 4235,
-            "Unknown2": 7
+            "ItemGUID": 4235,
+            "Category": 7
           }
         },
         {
           "Item1": 8,
           "Item2": {
-            "Unknown": 1561,
-            "Unknown2": 8
+            "ItemGUID": 1561,
+            "Category": 8
           }
         },
         {
           "Item1": 12,
           "Item2": {
-            "Unknown": 2414,
-            "Unknown2": 12
+            "ItemGUID": 2414,
+            "Category": 12
           }
         }
       ],
@@ -4057,19 +4092,21 @@
           "Unknown9": 0,
           "Unknown10": 0
         }
-      ]
+      ],
+      "comment1": "End of Brawler"
     },
     {
+      "comment": "Start of Chef",
       "Unknown": 45,
-      "Unknown2": 2856,
-      "Unknown3": 2857,
+      "JobName": 2856,
+      "JobDescription": 2857,
       "Unknown4": 10,
-      "Unknown5": 156,
+      "JobIcon": 156,
       "Unknown6": 4,
-      "Unknown7": 11,
-      "Unknown8": 2,
-      "Unknown9": false,
-      "Unknown10": 13,
+      "JobBadge": 11,
+      "JobBadgeBorder": 2,
+      "MembersOnly": false,
+      "IsCombat": 13,
       "ItemClassData": [
         {
           "Item1": 21,
@@ -4231,66 +4268,66 @@
       "Unknown13": 1699,
       "Unknown14": true,
       "Unknown15": 0,
-      "Unknown16": 20,
-      "Unknown17": 0,
-      "Unknown18": 24700,
+      "JobLevel": 20,
+      "JobLevelXP": 0,
+      "JobLevelTotalXP": 24700,
       "Unknown19": 0,
       "Unknown20": 0,
       "Items": [
         {
           "Item1": 1,
           "Item2": {
-            "Unknown": 2740,
-            "Unknown2": 1
+            "ItemGUID": 2740,
+            "Category": 1
           }
         },
         {
           "Item1": 3,
           "Item2": {
-            "Unknown": 2742,
-            "Unknown2": 3
+            "ItemGUID": 2742,
+            "Category": 3
           }
         },
         {
           "Item1": 4,
           "Item2": {
-            "Unknown": 2739,
-            "Unknown2": 4
+            "ItemGUID": 2739,
+            "Category": 4
           }
         },
         {
           "Item1": 5,
           "Item2": {
-            "Unknown": 2741,
-            "Unknown2": 5
+            "ItemGUID": 2741,
+            "Category": 5
           }
         },
         {
           "Item1": 7,
           "Item2": {
-            "Unknown": 2777,
-            "Unknown2": 7
+            "ItemGUID": 2777,
+            "Category": 7
           }
         },
         {
           "Item1": 8,
           "Item2": {
-            "Unknown": 2736,
-            "Unknown2": 8
+            "ItemGUID": 2736,
+            "Category": 8
           }
         },
         {
           "Item1": 12,
           "Item2": {
-            "Unknown": 2942,
-            "Unknown2": 12
+            "ItemGUID": 2942,
+            "Category": 12
           }
         },
         {
           "Item1": 13,
           "Item2": {
-            "Unknown": 2748,
-            "Unknown2": 13
+            "ItemGUID": 2748,
+            "Category": 13
           }
         }
       ],
@@ -4422,19 +4459,21 @@
           "Unknown9": 0,
           "Unknown10": 0
         }
-      ]
+      ],
+      "comment1": "End of Chef"
     },
     {
+      "comment": "Start of Kart Driver",
       "Unknown": 48,
-      "Unknown2": 2917,
-      "Unknown3": 2918,
+      "JobName": 2917,
+      "JobDescription": 2918,
       "Unknown4": 5,
-      "Unknown5": 20725,
+      "JobIcon": 20725,
       "Unknown6": 4,
-      "Unknown7": 46,
-      "Unknown8": 7494,
-      "Unknown9": false,
-      "Unknown10": 10,
+      "JobBadge": 46,
+      "JobBadgeBorder": 7494,
+      "MembersOnly": false,
+      "IsCombat": 10,
       "ItemClassData": [
         {
           "Item1": 24,
@@ -4554,38 +4593,38 @@
       "Unknown13": 1699,
       "Unknown14": true,
       "Unknown15": 0,
-      "Unknown16": 5,
-      "Unknown17": 13,
-      "Unknown18": 1795,
+      "JobLevel": 20,
+      "JobLevelXP": 0,
+      "JobLevelTotalXP": 24700,
       "Unknown19": 0,
       "Unknown20": 0,
       "Items": [
         {
           "Item1": 1,
           "Item2": {
-            "Unknown": 2747,
-            "Unknown2": 1
+            "ItemGUID": 2747,
+            "Category": 1
           }
         },
         {
           "Item1": 3,
           "Item2": {
-            "Unknown": 443,
-            "Unknown2": 3
+            "ItemGUID": 443,
+            "Category": 3
           }
         },
         {
           "Item1": 4,
           "Item2": {
-            "Unknown": 64,
-            "Unknown2": 4
+            "ItemGUID": 64,
+            "Category": 4
           }
         },
         {
           "Item1": 5,
           "Item2": {
-            "Unknown": 65,
-            "Unknown2": 5
+            "ItemGUID": 65,
+            "Category": 5
           }
         }
       ],
@@ -4717,19 +4756,21 @@
           "Unknown9": 0,
           "Unknown10": 0
         }
-      ]
+      ],
+      "comment1": "End of Kart Driver"
     },
     {
+      "comment": "Start of Demo Derby Driver",
       "Unknown": 49,
-      "Unknown2": 2919,
-      "Unknown3": 2920,
+      "JobName": 2919,
+      "JobDescription": 2920,
       "Unknown4": 7,
-      "Unknown5": 8059,
+      "JobIcon": 8059,
       "Unknown6": 4,
-      "Unknown7": 46,
-      "Unknown8": 7494,
-      "Unknown9": false,
-      "Unknown10": 11,
+      "JobBadge": 46,
+      "JobBadgeBorder": 7494,
+      "MembersOnly": false,
+      "IsCombat": 11,
       "ItemClassData": [
         {
           "Item1": 22,
@@ -4849,38 +4890,38 @@
       "Unknown13": 1699,
       "Unknown14": true,
       "Unknown15": 0,
-      "Unknown16": 1,
-      "Unknown17": 16,
-      "Unknown18": 50,
+      "JobLevel": 20,
+      "JobLevelXP": 0,
+      "JobLevelTotalXP": 24700,
       "Unknown19": 0,
       "Unknown20": 0,
       "Items": [
         {
           "Item1": 1,
           "Item2": {
-            "Unknown": 73,
-            "Unknown2": 1
+            "ItemGUID": 73,
+            "Category": 1
           }
         },
         {
           "Item1": 3,
           "Item2": {
-            "Unknown": 75,
-            "Unknown2": 3
+            "ItemGUID": 75,
+            "Category": 3
           }
         },
         {
           "Item1": 4,
           "Item2": {
-            "Unknown": 74,
-            "Unknown2": 4
+            "ItemGUID": 74,
+            "Category": 4
           }
         },
         {
           "Item1": 5,
           "Item2": {
-            "Unknown": 76,
-            "Unknown2": 5
+            "ItemGUID": 76,
+            "Category": 5
           }
         }
       ],
@@ -5012,19 +5053,21 @@
           "Unknown9": 0,
           "Unknown10": 0
         }
-      ]
+      ],
+      "comment1": "End of Demo Derby Driver"
     },
     {
+      "comment": "Start of Soccer Star",
       "Unknown": 52,
-      "Unknown2": 4650,
-      "Unknown3": 2920,
+      "JobName": 4650,
+      "JobDescription": 2920,
       "Unknown4": 8,
-      "Unknown5": 20743,
+      "JobIcon": 20743,
       "Unknown6": 4,
-      "Unknown7": 4842,
-      "Unknown8": 21,
-      "Unknown9": false,
-      "Unknown10": 16,
+      "JobBadge": 4842,
+      "JobBadgeBorder": 21,
+      "MembersOnly": false,
+      "IsCombat": 16,
       "ItemClassData": [
         {
           "Item1": 69,
@@ -5165,52 +5208,52 @@
       "Unknown13": 1699,
       "Unknown14": false,
       "Unknown15": 0,
-      "Unknown16": 1,
-      "Unknown17": 67,
-      "Unknown18": 202,
+      "JobLevel": 20,
+      "JobLevelXP": 0,
+      "JobLevelTotalXP": 24700,
       "Unknown19": 0,
       "Unknown20": 0,
       "Items": [
         {
           "Item1": 1,
           "Item2": {
-            "Unknown": 2037,
-            "Unknown2": 1
+            "ItemGUID": 2037,
+            "Category": 1
           }
         },
         {
           "Item1": 3,
           "Item2": {
-            "Unknown": 2039,
-            "Unknown2": 3
+            "ItemGUID": 2039,
+            "Category": 3
           }
         },
         {
           "Item1": 4,
           "Item2": {
-            "Unknown": 2036,
-            "Unknown2": 4
+            "ItemGUID": 2036,
+            "Category": 4
           }
         },
         {
           "Item1": 5,
           "Item2": {
-            "Unknown": 2038,
-            "Unknown2": 5
+            "ItemGUID": 2038,
+            "Category": 5
           }
         },
         {
           "Item1": 6,
           "Item2": {
-            "Unknown": 2035,
-            "Unknown2": 6
+            "ItemGUID": 2035,
+            "Category": 6
           }
         },
         {
           "Item1": 13,
           "Item2": {
-            "Unknown": 1686,
-            "Unknown2": 13
+            "ItemGUID": 1686,
+            "Category": 13
           }
         }
       ],
@@ -5342,19 +5385,21 @@
           "Unknown9": 0,
           "Unknown10": 0
         }
-      ]
+      ],
+      "comment1": "End of Soccer Star"
     },
     {
+      "comment": "Start of Card Duelist",
       "Unknown": 120,
-      "Unknown2": 2410,
-      "Unknown3": 2411,
+      "JobName": 2410,
+      "JobDescription": 2411,
       "Unknown4": 17,
-      "Unknown5": 396,
+      "JobIcon": 396,
       "Unknown6": 4,
-      "Unknown7": 1783,
-      "Unknown8": 1782,
-      "Unknown9": false,
-      "Unknown10": 15,
+      "JobBadge": 1783,
+      "JobBadgeBorder": 1782,
+      "MembersOnly": false,
+      "IsCombat": 15,
       "ItemClassData": [
         {
           "Item1": 1,
@@ -5537,66 +5582,66 @@
       "Unknown13": 1768187250,
       "Unknown14": false,
       "Unknown15": 0,
-      "Unknown16": 4,
-      "Unknown17": 40,
-      "Unknown18": 1400,
+      "JobLevel": 20,
+      "JobLevelXP": 0,
+      "JobLevelTotalXP": 24700,
       "Unknown19": 0,
       "Unknown20": 0,
       "Items": [
         {
           "Item1": 1,
           "Item2": {
-            "Unknown": 3292,
-            "Unknown2": 1
+            "ItemGUID": 3292,
+            "Category": 1
           }
         },
         {
           "Item1": 2,
           "Item2": {
-            "Unknown": 4150,
-            "Unknown2": 2
+            "ItemGUID": 4150,
+            "Category": 2
           }
         },
         {
           "Item1": 3,
           "Item2": {
-            "Unknown": 1184,
-            "Unknown2": 3
+            "ItemGUID": 1184,
+            "Category": 3
           }
         },
         {
           "Item1": 4,
           "Item2": {
-            "Unknown": 1778,
-            "Unknown2": 4
+            "ItemGUID": 1778,
+            "Category": 4
           }
         },
         {
           "Item1": 5,
           "Item2": {
-            "Unknown": 4332,
-            "Unknown2": 5
+            "ItemGUID": 4332,
+            "Category": 5
           }
         },
         {
           "Item1": 6,
           "Item2": {
-            "Unknown": 3715,
-            "Unknown2": 6
+            "ItemGUID": 3715,
+            "Category": 6
           }
         },
         {
           "Item1": 7,
           "Item2": {
-            "Unknown": 2792,
-            "Unknown2": 7
+            "ItemGUID": 2792,
+            "Category": 7
           }
         },
         {
           "Item1": 13,
           "Item2": {
-            "Unknown": 2327,
-            "Unknown2": 13
+            "ItemGUID": 2327,
+            "Category": 13
           }
         }
       ],
@@ -5728,19 +5773,21 @@
           "Unknown9": 0,
           "Unknown10": 0
         }
-      ]
+      ],
+      "comment1": "End of Card Duelist"
     },
     {
+      "comment": "Start of Fisherman",
       "Unknown": 137,
-      "Unknown2": 20178,
-      "Unknown3": 407842,
+      "JobName": 20178,
+      "JobDescription": 407842,
       "Unknown4": 21,
-      "Unknown5": 20740,
+      "JobIcon": 20740,
       "Unknown6": 4,
-      "Unknown7": 4843,
-      "Unknown8": 5885,
-      "Unknown9": false,
-      "Unknown10": 17,
+      "JobBadge": 4843,
+      "JobBadgeBorder": 5885,
+      "MembersOnly": false,
+      "IsCombat": 17,
       "ItemClassData": [
         {
           "Item1": 69,
@@ -5874,52 +5921,52 @@
       "Unknown13": 924,
       "Unknown14": false,
       "Unknown15": 0,
-      "Unknown16": 20,
-      "Unknown17": 0,
-      "Unknown18": 7225,
+      "JobLevel": 20,
+      "JobLevelXP": 0,
+      "JobLevelTotalXP": 7225,
       "Unknown19": 0,
       "Unknown20": 0,
       "Items": [
         {
           "Item1": 1,
           "Item2": {
-            "Unknown": 1745,
-            "Unknown2": 1
+            "ItemGUID": 1745,
+            "Category": 1
           }
         },
         {
           "Item1": 3,
           "Item2": {
-            "Unknown": 1750,
-            "Unknown2": 3
+            "ItemGUID": 1750,
+            "Category": 3
           }
         },
         {
           "Item1": 4,
           "Item2": {
-            "Unknown": 1737,
-            "Unknown2": 4
+            "ItemGUID": 1737,
+            "Category": 4
           }
         },
         {
           "Item1": 5,
           "Item2": {
-            "Unknown": 1742,
-            "Unknown2": 5
+            "ItemGUID": 1742,
+            "Category": 5
           }
         },
         {
           "Item1": 7,
           "Item2": {
-            "Unknown": 1746,
-            "Unknown2": 7
+            "ItemGUID": 1746,
+            "Category": 7
           }
         },
         {
           "Item1": 13,
           "Item2": {
-            "Unknown": 1686,
-            "Unknown2": 13
+            "ItemGUID": 1686,
+            "Category": 13
           }
         }
       ],
@@ -6051,7 +6098,8 @@
           "Unknown9": 0,
           "Unknown10": 0
         }
-      ]
+      ],
+      "comment1": "End of Fisherman"
     }
   ],
   "Unknown45": 1,
@@ -59487,7 +59535,7 @@
     {
       "Unknown2": false,
       "Guid": 2327,
-      "Count": 2,
+      "Count": 1,
       "ConsumedCount": 0,
       "LastCastTime": 2147483647,
       "ItemStruct": {
@@ -61130,7 +61178,7 @@
       },
       "Unknown": 0,
       "Definition": 32530,
-      "Tint": 0
+      "Tint": 559
     },
     {
       "Unknown2": false,
@@ -68634,7 +68682,7 @@
       },
       "Unknown": 0,
       "Definition": 17891,
-      "Tint": 236
+      "Tint": 1
     },
     {
       "Unknown2": false,
@@ -68810,6 +68858,22 @@
       },
       "Unknown": 0,
       "Definition": 15950,
+      "Tint": 262
+    },
+    {
+      "Unknown2": false,
+      "Guid": 1251251,
+      "Count": 1,
+      "ConsumedCount": 0,
+      "LastCastTime": 2147483647,
+      "ItemStruct": {
+        "HasItemStruct": false,
+        "RentalExpirationTime": 0,
+        "RentalUpsellsSent": 0,
+        "MarketplaceBundleId": 0
+      },
+      "Unknown": 0,
+      "Definition": 15951,
       "Tint": 262
     },
     {
@@ -81123,144 +81187,11 @@
   },
   "Acquaintances": [
     {
-      "Unknown": 5427555334967640257,
-      "Unknown2": "Epic Candy",
-      "Unknown3": 1,
-      "Unknown4": 1290803681,
-      "Unknown5": false
-    },
-    {
-      "Unknown": 5427592264107732545,
-      "Unknown2": "Firejon",
-      "Unknown3": 1,
-      "Unknown4": 1290803223,
-      "Unknown5": false
-    },
-    {
-      "Unknown": 5427615054880270993,
-      "Unknown2": "Tristan Wolflance",
-      "Unknown3": 1,
-      "Unknown4": 1287346041,
-      "Unknown5": false
-    },
-    {
-      "Unknown": 5427625259079303409,
-      "Unknown2": "Daniel Toadsaber",
-      "Unknown3": 1,
-      "Unknown4": 1301692277,
-      "Unknown5": false
-    },
-    {
-      "Unknown": 5427625259096932177,
-      "Unknown2": "Kendall Flamestone",
-      "Unknown3": 1,
-      "Unknown4": 1290803223,
-      "Unknown5": false
-    },
-    {
-      "Unknown": 5427625259098737249,
-      "Unknown2": "Neil Diamondmusic",
-      "Unknown3": 2,
-      "Unknown4": 1300149973,
-      "Unknown5": false
-    },
-    {
-      "Unknown": 5427641206060885521,
-      "Unknown2": "Jessie Paws",
-      "Unknown3": 1,
-      "Unknown4": 1290800528,
-      "Unknown5": false
-    },
-    {
-      "Unknown": 5427646508278892593,
-      "Unknown2": "Jayden Spiketrader",
-      "Unknown3": 1,
-      "Unknown4": 1287344887,
-      "Unknown5": false
-    },
-    {
-      "Unknown": 5427649213749314753,
-      "Unknown2": "Phillip1 Goldenhero",
-      "Unknown3": 1,
-      "Unknown4": 1290800533,
-      "Unknown5": false
-    },
-    {
-      "Unknown": 5427673862640209153,
-      "Unknown2": "Kenneth Royalspy1",
-      "Unknown3": 1,
-      "Unknown4": 1288718412,
-      "Unknown5": false
-    },
-    {
-      "Unknown": 5427721195976955521,
-      "Unknown2": "Ripley Rustspinner",
-      "Unknown3": 2,
-      "Unknown4": 1286596483,
-      "Unknown5": false
-    },
-    {
-      "Unknown": 5427721195977966865,
-      "Unknown2": "Ricky Swiftbeach",
-      "Unknown3": 1,
-      "Unknown4": 1293762762,
-      "Unknown5": false
-    },
-    {
-      "Unknown": 5427724927070619953,
-      "Unknown2": "Emil Silverbolt",
-      "Unknown3": 1,
-      "Unknown4": 1286073572,
-      "Unknown5": false
-    },
-    {
-      "Unknown": 5427724927082064177,
-      "Unknown2": "Patrick Mooserkunder",
-      "Unknown3": 1,
-      "Unknown4": 1299696419,
-      "Unknown5": false
-    },
-    {
-      "Unknown": 5427745256780630545,
-      "Unknown2": "Trent Swiftflare",
-      "Unknown3": 1,
-      "Unknown4": 1295051893,
-      "Unknown5": false
-    },
-    {
-      "Unknown": 5427745256802648833,
-      "Unknown2": "Trevor Dazzlestinger",
-      "Unknown3": 1,
-      "Unknown4": 1293762762,
-      "Unknown5": false
-    },
-    {
-      "Unknown": 5427767715383426609,
-      "Unknown2": "Juan Amazingchaser",
-      "Unknown3": 2,
-      "Unknown4": 1298242690,
-      "Unknown5": false
-    },
-    {
-      "Unknown": 5427790504932906657,
-      "Unknown2": "Tiffany Earthpark",
-      "Unknown3": 1,
-      "Unknown4": 1301688800,
-      "Unknown5": false
-    },
-    {
-      "Unknown": 5427793033318091281,
-      "Unknown2": "John Cleverclaw2",
-      "Unknown3": 1,
-      "Unknown4": 1301882810,
-      "Unknown5": false
-    },
-    {
-      "Unknown": 5427793033319690481,
-      "Unknown2": "Jeremy Sharpbill",
-      "Unknown3": 2,
-      "Unknown4": 1301607537,
-      "Unknown5": false
+      "PlayerGUID": 2,
+      "PlayerName": "OSFR",
+      "Unknown3": 0,
+      "PlayerBirthdate": 1290803681,
+      "Online": false
     }
   ],
   "Recipes": [
@@ -85668,334 +85599,334 @@
   "Unknown48": 0,
   "Mounts": [
     {
-      "Unknown": 1030,
-      "Unknown2": 442674,
-      "Unknown3": 8556,
+      "MountNumber": 1030,
+      "MountName": 442674,
+      "MountDescription": 8556,
       "Unknown4": 0,
       "Unknown5": false,
       "Unknown6": 0,
-      "Unknown7": "",
-      "Unknown8": false,
-      "Unknown9": true
+      "MountColor": "",
+      "FlyTraining": false,
+      "AbleToFly": true
     },
     {
-      "Unknown": 1029,
-      "Unknown2": 385,
-      "Unknown3": 7700,
+      "MountNumber": 1029,
+      "MountName": 385,
+      "MountDescription": 7700,
       "Unknown4": 0,
       "Unknown5": false,
       "Unknown6": 0,
-      "Unknown7": "",
-      "Unknown8": false,
-      "Unknown9": false
+      "MountColor": "",
+      "FlyTraining": false,
+      "AbleToFly": false
     },
     {
-      "Unknown": 1028,
-      "Unknown2": 852,
-      "Unknown3": 7928,
+      "MountNumber": 1028,
+      "MountName": 852,
+      "MountDescription": 7928,
       "Unknown4": 0,
       "Unknown5": false,
       "Unknown6": 249,
-      "Unknown7": "dyetint",
-      "Unknown8": false,
-      "Unknown9": false
+      "MountColor": "dyetint",
+      "FlyTraining": false,
+      "AbleToFly": false
     },
     {
-      "Unknown": 1027,
-      "Unknown2": 378,
-      "Unknown3": 7665,
+      "MountNumber": 1027,
+      "MountName": 378,
+      "MountDescription": 7665,
       "Unknown4": 0,
       "Unknown5": false,
       "Unknown6": 553,
-      "Unknown7": "dyetint",
-      "Unknown8": false,
-      "Unknown9": false
+      "MountColor": "dyetint",
+      "FlyTraining": false,
+      "AbleToFly": false
     },
     {
-      "Unknown": 1026,
-      "Unknown2": 374,
-      "Unknown3": 6873,
+      "MountNumber": 1026,
+      "MountName": 374,
+      "MountDescription": 6873,
       "Unknown4": 0,
       "Unknown5": false,
       "Unknown6": 249,
-      "Unknown7": "dyetint",
-      "Unknown8": false,
-      "Unknown9": false
+      "MountColor": "dyetint",
+      "FlyTraining": false,
+      "AbleToFly": false
     },
     {
-      "Unknown": 1025,
-      "Unknown2": 372,
-      "Unknown3": 6937,
+      "MountNumber": 1025,
+      "MountName": 372,
+      "MountDescription": 6937,
       "Unknown4": 0,
       "Unknown5": false,
       "Unknown6": 249,
-      "Unknown7": "dyetint",
-      "Unknown8": true,
-      "Unknown9": false
+      "MountColor": "dyetint",
+      "FlyTraining": true,
+      "AbleToFly": false
     },
     {
-      "Unknown": 1024,
-      "Unknown2": 435557,
-      "Unknown3": 7484,
+      "MountNumber": 1024,
+      "MountName": 435557,
+      "MountDescription": 7484,
       "Unknown4": 0,
       "Unknown5": false,
       "Unknown6": 0,
-      "Unknown7": "dyetint",
-      "Unknown8": true,
-      "Unknown9": false
+      "MountColor": "dyetint",
+      "FlyTraining": true,
+      "AbleToFly": false
     },
     {
-      "Unknown": 1023,
-      "Unknown2": 6408,
-      "Unknown3": 6854,
+      "MountNumber": 1023,
+      "MountName": 6408,
+      "MountDescription": 6854,
       "Unknown4": 0,
       "Unknown5": false,
       "Unknown6": 92,
-      "Unknown7": "bubblegum",
-      "Unknown8": false,
-      "Unknown9": false
+      "MountColor": "bubblegum",
+      "FlyTraining": false,
+      "AbleToFly": false
     },
     {
-      "Unknown": 1022,
-      "Unknown2": 435431,
-      "Unknown3": 7401,
+      "MountNumber": 1022,
+      "MountName": 435431,
+      "MountDescription": 7401,
       "Unknown4": 0,
       "Unknown5": false,
       "Unknown6": 0,
-      "Unknown7": "",
-      "Unknown8": false,
-      "Unknown9": false
+      "MountColor": "",
+      "FlyTraining": false,
+      "AbleToFly": false
     },
     {
-      "Unknown": 1021,
-      "Unknown2": 6764,
-      "Unknown3": 6977,
+      "MountNumber": 1021,
+      "MountName": 6764,
+      "MountDescription": 6977,
       "Unknown4": 0,
       "Unknown5": false,
       "Unknown6": 249,
-      "Unknown7": "dyetint",
-      "Unknown8": false,
-      "Unknown9": false
+      "MountColor": "dyetint",
+      "FlyTraining": false,
+      "AbleToFly": false
     },
     {
-      "Unknown": 1020,
-      "Unknown2": 6966,
-      "Unknown3": 7296,
+      "MountNumber": 1020,
+      "MountName": 6966,
+      "MountDescription": 7296,
       "Unknown4": 0,
       "Unknown5": false,
       "Unknown6": 249,
-      "Unknown7": "dyetint",
-      "Unknown8": false,
-      "Unknown9": false
+      "MountColor": "dyetint",
+      "FlyTraining": false,
+      "AbleToFly": false
     },
     {
-      "Unknown": 1019,
-      "Unknown2": 434170,
-      "Unknown3": 7056,
+      "MountNumber": 1019,
+      "MountName": 434170,
+      "MountDescription": 7056,
       "Unknown4": 0,
       "Unknown5": false,
       "Unknown6": 0,
-      "Unknown7": "dyetint",
-      "Unknown8": true,
-      "Unknown9": false
+      "MountColor": "dyetint",
+      "FlyTraining": true,
+      "AbleToFly": false
     },
     {
-      "Unknown": 1018,
-      "Unknown2": 6806,
-      "Unknown3": 7015,
+      "MountNumber": 1018,
+      "MountName": 6806,
+      "MountDescription": 7015,
       "Unknown4": 0,
       "Unknown5": false,
       "Unknown6": 0,
-      "Unknown7": "dyetint",
-      "Unknown8": false,
-      "Unknown9": false
+      "MountColor": "dyetint",
+      "FlyTraining": false,
+      "AbleToFly": false
     },
     {
-      "Unknown": 1017,
-      "Unknown2": 4897,
-      "Unknown3": 6294,
+      "MountNumber": 1017,
+      "MountName": 4897,
+      "MountDescription": 6294,
       "Unknown4": 0,
       "Unknown5": true,
       "Unknown6": 246,
-      "Unknown7": "dyetint",
-      "Unknown8": true,
-      "Unknown9": false
+      "MountColor": "dyetint",
+      "FlyTraining": true,
+      "AbleToFly": false
     },
     {
-      "Unknown": 1016,
-      "Unknown2": 22959,
-      "Unknown3": 6978,
+      "MountNumber": 1016,
+      "MountName": 22959,
+      "MountDescription": 6978,
       "Unknown4": 0,
       "Unknown5": false,
       "Unknown6": 117,
-      "Unknown7": "snow",
-      "Unknown8": false,
-      "Unknown9": false
+      "MountColor": "snow",
+      "FlyTraining": false,
+      "AbleToFly": false
     },
     {
-      "Unknown": 1015,
-      "Unknown2": 6605,
-      "Unknown3": 6922,
+      "MountNumber": 1015,
+      "MountName": 6605,
+      "MountDescription": 6922,
       "Unknown4": 0,
       "Unknown5": false,
       "Unknown6": 0,
-      "Unknown7": "",
-      "Unknown8": false,
-      "Unknown9": false
+      "MountColor": "",
+      "FlyTraining": false,
+      "AbleToFly": false
     },
     {
-      "Unknown": 1014,
-      "Unknown2": 6403,
-      "Unknown3": 6838,
+      "MountNumber": 1014,
+      "MountName": 6403,
+      "MountDescription": 6838,
       "Unknown4": 0,
       "Unknown5": false,
       "Unknown6": 0,
-      "Unknown7": "sapphire",
-      "Unknown8": false,
-      "Unknown9": false
+      "MountColor": "sapphire",
+      "FlyTraining": false,
+      "AbleToFly": false
     },
     {
-      "Unknown": 1013,
-      "Unknown2": 6230,
-      "Unknown3": 6820,
+      "MountNumber": 1013,
+      "MountName": 6230,
+      "MountDescription": 6820,
       "Unknown4": 0,
       "Unknown5": false,
       "Unknown6": 0,
-      "Unknown7": "",
-      "Unknown8": false,
-      "Unknown9": false
+      "MountColor": "",
+      "FlyTraining": false,
+      "AbleToFly": false
     },
     {
-      "Unknown": 1012,
-      "Unknown2": 6408,
-      "Unknown3": 6854,
+      "MountNumber": 1012,
+      "MountName": 6408,
+      "MountDescription": 6854,
       "Unknown4": 0,
       "Unknown5": false,
       "Unknown6": 0,
-      "Unknown7": "skyblue",
-      "Unknown8": false,
-      "Unknown9": false
+      "MountColor": "skyblue",
+      "FlyTraining": false,
+      "AbleToFly": false
     },
     {
-      "Unknown": 1011,
-      "Unknown2": 6305,
-      "Unknown3": 6821,
+      "MountNumber": 1011,
+      "MountName": 6305,
+      "MountDescription": 6821,
       "Unknown4": 0,
       "Unknown5": false,
       "Unknown6": 0,
-      "Unknown7": "snow",
-      "Unknown8": false,
-      "Unknown9": false
+      "MountColor": "snow",
+      "FlyTraining": false,
+      "AbleToFly": false
     },
     {
-      "Unknown": 1010,
-      "Unknown2": 6369,
-      "Unknown3": 6825,
+      "MountNumber": 1010,
+      "MountName": 6369,
+      "MountDescription": 6825,
       "Unknown4": 0,
       "Unknown5": false,
       "Unknown6": 0,
-      "Unknown7": "blizzard",
-      "Unknown8": false,
-      "Unknown9": false
+      "MountColor": "blizzard",
+      "FlyTraining": false,
+      "AbleToFly": false
     },
     {
-      "Unknown": 1009,
-      "Unknown2": 6231,
-      "Unknown3": 6802,
+      "MountNumber": 1009,
+      "MountName": 6231,
+      "MountDescription": 6802,
       "Unknown4": 0,
       "Unknown5": false,
       "Unknown6": 0,
-      "Unknown7": "",
-      "Unknown8": false,
-      "Unknown9": false
+      "MountColor": "",
+      "FlyTraining": false,
+      "AbleToFly": false
     },
     {
-      "Unknown": 1008,
-      "Unknown2": 5635,
-      "Unknown3": 6658,
+      "MountNumber": 1008,
+      "MountName": 5635,
+      "MountDescription": 6658,
       "Unknown4": 0,
       "Unknown5": false,
       "Unknown6": 0,
-      "Unknown7": "skyblue",
-      "Unknown8": false,
-      "Unknown9": false
+      "MountColor": "skyblue",
+      "FlyTraining": false,
+      "AbleToFly": false
     },
     {
-      "Unknown": 1007,
-      "Unknown2": 6182,
-      "Unknown3": 6703,
+      "MountNumber": 1007,
+      "MountName": 6182,
+      "MountDescription": 6703,
       "Unknown4": 0,
       "Unknown5": false,
       "Unknown6": 0,
-      "Unknown7": "pumpkin",
-      "Unknown8": false,
-      "Unknown9": false
+      "MountColor": "pumpkin",
+      "FlyTraining": false,
+      "AbleToFly": false
     },
     {
-      "Unknown": 1006,
-      "Unknown2": 6847,
-      "Unknown3": 6459,
+      "MountNumber": 1006,
+      "MountName": 6847,
+      "MountDescription": 6459,
       "Unknown4": 0,
       "Unknown5": false,
       "Unknown6": 0,
-      "Unknown7": "skyblue",
-      "Unknown8": false,
-      "Unknown9": false
+      "MountColor": "skyblue",
+      "FlyTraining": false,
+      "AbleToFly": false
     },
     {
-      "Unknown": 1005,
-      "Unknown2": 5218,
-      "Unknown3": 6457,
+      "MountNumber": 1005,
+      "MountName": 5218,
+      "MountDescription": 6457,
       "Unknown4": 0,
       "Unknown5": false,
       "Unknown6": 0,
-      "Unknown7": "",
-      "Unknown8": false,
-      "Unknown9": false
+      "MountColor": "",
+      "FlyTraining": false,
+      "AbleToFly": false
     },
     {
-      "Unknown": 1004,
-      "Unknown2": 5219,
-      "Unknown3": 6456,
+      "MountNumber": 1004,
+      "MountName": 5219,
+      "MountDescription": 6456,
       "Unknown4": 0,
       "Unknown5": false,
       "Unknown6": 0,
-      "Unknown7": "",
-      "Unknown8": false,
-      "Unknown9": false
+      "MountColor": "",
+      "FlyTraining": false,
+      "AbleToFly": false
     },
     {
-      "Unknown": 1003,
-      "Unknown2": 4831,
-      "Unknown3": 6355,
+      "MountNumber": 1003,
+      "MountName": 4831,
+      "MountDescription": 6355,
       "Unknown4": 0,
       "Unknown5": false,
       "Unknown6": 0,
-      "Unknown7": "deepred",
-      "Unknown8": false,
-      "Unknown9": false
+      "MountColor": "deepred",
+      "FlyTraining": false,
+      "AbleToFly": false
     },
     {
-      "Unknown": 1002,
-      "Unknown2": 4897,
-      "Unknown3": 6294,
+      "MountNumber": 1002,
+      "MountName": 4897,
+      "MountDescription": 6294,
       "Unknown4": 0,
       "Unknown5": false,
       "Unknown6": 0,
-      "Unknown7": "scales-blue",
-      "Unknown8": true,
-      "Unknown9": false
+      "MountColor": "scales-blue",
+      "FlyTraining": true,
+      "AbleToFly": false
     },
     {
-      "Unknown": 1001,
-      "Unknown2": 5572,
-      "Unknown3": 6075,
+      "MountNumber": 1001,
+      "MountName": 5572,
+      "MountDescription": 6075,
       "Unknown4": 0,
       "Unknown5": false,
       "Unknown6": 0,
-      "Unknown7": "goldtips-black",
-      "Unknown8": true,
-      "Unknown9": false
+      "MountColor": "goldtips-black",
+      "FlyTraining": true,
+      "AbleToFly": false
     },
     {
       "Unknown": 1000,
@@ -86006,7 +85937,7 @@
       "Unknown6": 0,
       "Unknown7": "trexbasic-blue",
       "Unknown8": false,
-      "Unknown9": false
+      "AbleToFly": false
     }
   ],
   "ActionBars": [
@@ -86018,10 +85949,10 @@
           {
             "Item1": 0,
             "Item2": {
-              "Unknown": false,
+              "ItemEmpty": false,
               "Unknown2": 543,
               "Unknown3": 0,
-              "Unknown4": 422910,
+              "ItemName": 422910,
               "Unknown5": 1,
               "Unknown6": 2,
               "Unknown7": 0,
@@ -86030,7 +85961,7 @@
               "Unknown10": 0,
               "Unknown11": 0,
               "Unknown12": 0,
-              "Unknown13": 59,
+              "ItemQuanity": 59,
               "Unknown14": true,
               "Unknown15": 1789747881
             }
@@ -86038,10 +85969,10 @@
           {
             "Item1": 1,
             "Item2": {
-              "Unknown": false,
+              "ItemEmpty": false,
               "Unknown2": 777,
               "Unknown3": 0,
-              "Unknown4": 422913,
+              "ItemName": 422913,
               "Unknown5": 1,
               "Unknown6": 2,
               "Unknown7": 0,
@@ -86050,7 +85981,7 @@
               "Unknown10": 0,
               "Unknown11": 0,
               "Unknown12": 0,
-              "Unknown13": 28,
+              "ItemQuanity": 28,
               "Unknown14": true,
               "Unknown15": 2147483647
             }
@@ -86058,10 +85989,10 @@
           {
             "Item1": 2,
             "Item2": {
-              "Unknown": false,
+              "ItemEmpty": false,
               "Unknown2": 544,
               "Unknown3": 0,
-              "Unknown4": 422907,
+              "ItemName": 422907,
               "Unknown5": 1,
               "Unknown6": 2,
               "Unknown7": 0,
@@ -86070,7 +86001,7 @@
               "Unknown10": 0,
               "Unknown11": 0,
               "Unknown12": 0,
-              "Unknown13": 33,
+              "ItemQuanity": 33,
               "Unknown14": true,
               "Unknown15": 1789690881
             }
@@ -86078,10 +86009,10 @@
           {
             "Item1": 3,
             "Item2": {
-              "Unknown": true,
+              "ItemEmpty": true,
               "Unknown2": 0,
               "Unknown3": 0,
-              "Unknown4": 0,
+              "ItemName": 0,
               "Unknown5": 0,
               "Unknown6": 0,
               "Unknown7": 0,
@@ -86090,7 +86021,7 @@
               "Unknown10": 0,
               "Unknown11": 0,
               "Unknown12": 0,
-              "Unknown13": 0,
+              "ItemQuanity": 0,
               "Unknown14": false,
               "Unknown15": 0
             }

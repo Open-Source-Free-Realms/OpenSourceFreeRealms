@@ -70,14 +70,14 @@ namespace Gateway.Login
             SendInitializationParameters(soeClient);
             SendZoneDetails(soeClient);
             SendClientGameSettings(soeClient);
-            SendAnnouncementData(soeClient);
-            SendAnnouncementData(soeClient);
+            //SendAnnouncementData(soeClient);
+            //SendAnnouncementData(soeClient);
             SendPlayerUpdateItemDefinitions(soeClient);
             SendSelfToClient(soeClient);
-            SendUnknownPacket(soeClient);
+            //SendUnknownPacket(soeClient);
             SendPacketPointOfInterestDefinitionReply(soeClient);
-            SendPacketPOIChangeMessage(soeClient);
-            SendClientBeginZoning(soeClient);
+            //SendPacketPOIChangeMessage(soeClient);
+            //SendClientBeginZoning(soeClient);
             SendPacketZoneDoneSendingInitialData(soeClient);
             SendClientUpdatePacketDoneSendingPreloadCharacters(soeClient);
             SendPacketMOTD(soeClient);
@@ -234,13 +234,13 @@ namespace Gateway.Login
                 playerUpdateItemDefinitions.AddHostInt32(clientItemDefinition.Unknown6);
                 playerUpdateItemDefinitions.AddHostInt32(clientItemDefinition.Unknown7);
                 playerUpdateItemDefinitions.AddHostInt32(clientItemDefinition.Unknown8);
-                playerUpdateItemDefinitions.AddHostInt32(clientItemDefinition.Unknown9);
+                playerUpdateItemDefinitions.AddHostInt32(clientItemDefinition.Category);
 
                 playerUpdateItemDefinitions.AddBoolean(clientItemDefinition.Unknown10);
                 playerUpdateItemDefinitions.AddBoolean(clientItemDefinition.Unknown11);
 
-                playerUpdateItemDefinitions.AddASCIIString(clientItemDefinition.Unknown12);
-                playerUpdateItemDefinitions.AddASCIIString(clientItemDefinition.Unknown13);
+                playerUpdateItemDefinitions.AddASCIIString(clientItemDefinition.ModelBase);
+                playerUpdateItemDefinitions.AddASCIIString(clientItemDefinition.ModelTexture);
 
                 playerUpdateItemDefinitions.AddHostInt32(clientItemDefinition.Unknown14);
                 playerUpdateItemDefinitions.AddHostInt32(clientItemDefinition.Unknown15);
@@ -263,7 +263,7 @@ namespace Gateway.Login
 
                 playerUpdateItemDefinitions.AddBoolean(clientItemDefinition.Unknown28);
 
-                playerUpdateItemDefinitions.AddASCIIString(clientItemDefinition.Unknown29);
+                playerUpdateItemDefinitions.AddASCIIString(clientItemDefinition.ModelColor);
 
                 playerUpdateItemDefinitions.AddBoolean(clientItemDefinition.Unknown30);
 
@@ -272,7 +272,7 @@ namespace Gateway.Login
                 playerUpdateItemDefinitions.AddHostInt32(clientItemDefinition.Unknown33);
                 playerUpdateItemDefinitions.AddHostInt32(clientItemDefinition.Unknown34);
 
-                playerUpdateItemDefinitions.AddHostInt32(clientItemDefinition.Unknown35);
+                playerUpdateItemDefinitions.AddHostInt32(clientItemDefinition.ResellValue);
                 playerUpdateItemDefinitions.AddHostInt32(clientItemDefinition.Unknown36);
                 playerUpdateItemDefinitions.AddHostInt32(clientItemDefinition.Unknown37);
                 playerUpdateItemDefinitions.AddHostInt32(clientItemDefinition.Unknown38);

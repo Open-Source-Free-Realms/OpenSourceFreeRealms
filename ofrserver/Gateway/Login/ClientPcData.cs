@@ -21,14 +21,14 @@ namespace Gateway.Login
 
             bw.Write(clientPcData.Unknown);
             bw.Write(clientPcData.PlayerGUID);
-            bw.Write(clientPcData.Unknown3);
-            WriteString(bw, clientPcData.HeadMapping);
-            WriteString(bw, clientPcData.HairMapping);
-            bw.Write(clientPcData.Unknown6);
-            bw.Write(clientPcData.Unknown7);
+            bw.Write(clientPcData.PlayerModel);
+            WriteString(bw, clientPcData.PlayerHead);
+            WriteString(bw, clientPcData.PlayerHair);
+            bw.Write(clientPcData.HairColor);
+            bw.Write(clientPcData.EyeColor);
             WriteString(bw, clientPcData.Skintone);
             WriteString(bw, clientPcData.FacePaint);
-            WriteString(bw, clientPcData.Unknown10);
+            WriteString(bw, clientPcData.HumanBeardsPixieWings);
             bw.Write(clientPcData.Unknown11);
             bw.Write(clientPcData.Unknown12);
             bw.Write(clientPcData.Unknown13);
@@ -46,13 +46,13 @@ namespace Gateway.Login
             bw.Write(clientPcData.Unknown26);
             WriteString(bw, clientPcData.FirstName);
             WriteString(bw, clientPcData.LastName);
-            bw.Write(clientPcData.Unknown29);
+            bw.Write(clientPcData.Coins);
             bw.Write(clientPcData.AccountBirthday);
             bw.Write(clientPcData.AccountAge);
             bw.Write(clientPcData.AccountPlayTime);
             bw.Write(clientPcData.Unknown33);
             bw.Write(clientPcData.Unknown34);
-            bw.Write(clientPcData.Unknown35);
+            bw.Write(clientPcData.MembershipStatus);
             bw.Write(clientPcData.Unknown36);
             bw.Write(clientPcData.Unknown37);
             bw.Write(clientPcData.Unknown38);
@@ -68,15 +68,15 @@ namespace Gateway.Login
             foreach (var clientPcProfile in clientPcData.ClientPcProfiles)
             {
                 bw.Write(clientPcProfile.Unknown);
-                bw.Write(clientPcProfile.Unknown2);
-                bw.Write(clientPcProfile.Unknown3);
+                bw.Write(clientPcProfile.JobName);
+                bw.Write(clientPcProfile.JobDescription);
                 bw.Write(clientPcProfile.Unknown4);
-                bw.Write(clientPcProfile.Unknown5);
+                bw.Write(clientPcProfile.JobIcon);
                 bw.Write(clientPcProfile.Unknown6);
-                bw.Write(clientPcProfile.Unknown7);
-                bw.Write(clientPcProfile.Unknown8);
-                bw.Write(clientPcProfile.Unknown9);
-                bw.Write(clientPcProfile.Unknown10);
+                bw.Write(clientPcProfile.JobBadge);
+                bw.Write(clientPcProfile.JobBadgeBorder);
+                bw.Write(clientPcProfile.MembersOnly);
+                bw.Write(clientPcProfile.IsCombat);
 
                 bw.Write(clientPcProfile.ItemClassData.Count);
 
@@ -92,9 +92,9 @@ namespace Gateway.Login
                 bw.Write(clientPcProfile.Unknown13);
                 bw.Write(clientPcProfile.Unknown14);
                 bw.Write(clientPcProfile.Unknown15);
-                bw.Write(clientPcProfile.Unknown16);
-                bw.Write(clientPcProfile.Unknown17);
-                bw.Write(clientPcProfile.Unknown18);
+                bw.Write(clientPcProfile.JobLevel);
+                bw.Write(clientPcProfile.JobLevelXP);
+                bw.Write(clientPcProfile.JobLevelTotalXP);
                 bw.Write(clientPcProfile.Unknown19);
                 bw.Write(clientPcProfile.Unknown20);
 
@@ -103,8 +103,8 @@ namespace Gateway.Login
                 foreach (var profileItem in clientPcProfile.Items)
                 {
                     bw.Write(profileItem.Item1);
-                    bw.Write(profileItem.Item2.Unknown);
-                    bw.Write(profileItem.Item2.Unknown2);
+                    bw.Write(profileItem.Item2.ItemGUID);
+                    bw.Write(profileItem.Item2.Category);
 
                 }
 
@@ -311,11 +311,11 @@ namespace Gateway.Login
 
             foreach (var acquaintances in clientPcData.Acquaintances)
             {
-                bw.Write(acquaintances.Unknown);
-                WriteString(bw, acquaintances.Unknown2);
+                bw.Write(acquaintances.PlayerGUID);
+                WriteString(bw, acquaintances.PlayerName);
                 bw.Write(acquaintances.Unknown3);
-                bw.Write(acquaintances.Unknown4);
-                bw.Write(acquaintances.Unknown5);
+                bw.Write(acquaintances.PlayerBirthdate);
+                bw.Write(acquaintances.Online);
 
             }
 
@@ -364,15 +364,15 @@ namespace Gateway.Login
 
             foreach (var mounts in clientPcData.Mounts)
             {
-                bw.Write(mounts.Unknown);
-                bw.Write(mounts.Unknown2);
-                bw.Write(mounts.Unknown3);
+                bw.Write(mounts.MountNumber);
+                bw.Write(mounts.MountName);
+                bw.Write(mounts.MountDescription);
                 bw.Write(mounts.Unknown4);
                 bw.Write(mounts.Unknown5);
                 bw.Write(mounts.Unknown6);
-                WriteString(bw, mounts.Unknown7);
-                bw.Write(mounts.Unknown8);
-                bw.Write(mounts.Unknown9);
+                WriteString(bw, mounts.MountColor);
+                bw.Write(mounts.FlyTraining);
+                bw.Write(mounts.AbleToFly);
             }
 
             bw.Write(clientPcData.ActionBars.Count);
@@ -648,10 +648,10 @@ namespace Gateway.Login
 
         public class ActionBarSlot
         {
-            public bool Unknown { get; set; }
+            public bool ItemEmpty { get; set; }
             public int Unknown2 { get; set; }
             public int Unknown3 { get; set; }
-            public int Unknown4 { get; set; }
+            public int ItemName { get; set; }
             public int Unknown5 { get; set; }
             public int Unknown6 { get; set; }
             public int Unknown7 { get; set; }
@@ -660,16 +660,16 @@ namespace Gateway.Login
             public int Unknown10 { get; set; }
             public int Unknown11 { get; set; }
             public int Unknown12 { get; set; }
-            public int Unknown13 { get; set; }
+            public int ItemQuanity { get; set; }
             public bool Unknown14 { get; set; }
             public int Unknown15 { get; set; }
 
             public void Serialize(BinaryWriter bw)
             {
-                bw.Write(Unknown);
+                bw.Write(ItemEmpty);
                 bw.Write(Unknown2);
                 bw.Write(Unknown3);
-                bw.Write(Unknown4);
+                bw.Write(ItemName);
                 bw.Write(Unknown5);
                 bw.Write(Unknown6);
                 bw.Write(Unknown7);
@@ -678,7 +678,7 @@ namespace Gateway.Login
                 bw.Write(Unknown10);
                 bw.Write(Unknown11);
                 bw.Write(Unknown12);
-                bw.Write(Unknown13);
+                bw.Write(ItemQuanity);
                 bw.Write(Unknown14);
                 bw.Write(Unknown15);
             }
@@ -705,15 +705,15 @@ namespace Gateway.Login
 
         public class PacketMountInfo
         {
-            public int Unknown { get; set; }
-            public int Unknown2 { get; set; }
-            public int Unknown3 { get; set; }
+            public int MountNumber { get; set; }
+            public int MountName { get; set; }
+            public int MountDescription { get; set; }
             public long Unknown4 { get; set; }
             public bool Unknown5 { get; set; }
             public int Unknown6 { get; set; }
-            public string Unknown7 { get; set; } = string.Empty;
-            public bool Unknown8 { get; set; }
-            public bool Unknown9 { get; set; }
+            public string MountColor { get; set; } = string.Empty;
+            public bool FlyTraining { get; set; }
+            public bool AbleToFly { get; set; }
         }
 
         public class PetTrickInfo
@@ -964,11 +964,11 @@ namespace Gateway.Login
 
         public class Acquaintance
         {
-            public long Unknown { get; set; }
-            public string Unknown2 { get; set; } = string.Empty;
+            public long PlayerGUID { get; set; }
+            public string PlayerName { get; set; } = string.Empty;
             public int Unknown3 { get; set; }
-            public long Unknown4 { get; set; }
-            public bool Unknown5 { get; set; }
+            public long PlayerBirthdate { get; set; }
+            public bool Online { get; set; }
         }
 
         public class UnknownStruct4
@@ -1333,22 +1333,22 @@ namespace Gateway.Login
 
         public class ProfileItem
         {
-            public int Unknown { get; set; }
-            public int Unknown2 { get; set; }
+            public int ItemGUID { get; set; }
+            public int Category { get; set; }
         }
 
         public class ClientPcProfile
         {
             public int Unknown { get; set; }
-            public int Unknown2 { get; set; }
-            public int Unknown3 { get; set; }
+            public int JobName { get; set; }
+            public int JobDescription { get; set; }
             public int Unknown4 { get; set; }
-            public int Unknown5 { get; set; }
+            public int JobIcon { get; set; }
             public int Unknown6 { get; set; }
-            public int Unknown7 { get; set; }
-            public int Unknown8 { get; set; }
-            public bool Unknown9 { get; set; }
-            public int Unknown10 { get; set; }
+            public int JobBadge { get; set; }
+            public int JobBadgeBorder { get; set; }
+            public bool MembersOnly { get; set; }
+            public int IsCombat { get; set; }
 
             public List<(int, ProfileItemClassData)> ItemClassData { get; set; } = new List<(int, ProfileItemClassData)>();
 
@@ -1357,9 +1357,9 @@ namespace Gateway.Login
             public int Unknown13 { get; set; }
             public bool Unknown14 { get; set; }
             public int Unknown15 { get; set; }
-            public int Unknown16 { get; set; }
-            public int Unknown17 { get; set; }
-            public int Unknown18 { get; set; }
+            public int JobLevel { get; set; }
+            public int JobLevelXP { get; set; }
+            public int JobLevelTotalXP { get; set; }
             public int Unknown19 { get; set; }
             public int Unknown20 { get; set; }
 
@@ -1375,14 +1375,14 @@ namespace Gateway.Login
         {
             public long Unknown { get; set; }
             public long PlayerGUID { get; set; }
-            public int Unknown3 { get; set; }
-            public string HeadMapping { get; set; } = string.Empty;
-            public string HairMapping { get; set; } = string.Empty;
-            public int Unknown6 { get; set; }
-            public int Unknown7 { get; set; }
+            public int PlayerModel { get; set; }
+            public string PlayerHead { get; set; } = string.Empty;
+            public string PlayerHair { get; set; } = string.Empty;
+            public int HairColor { get; set; }
+            public int EyeColor { get; set; }
             public string Skintone { get; set; } = string.Empty;
             public string FacePaint { get; set; } = string.Empty;
-            public string Unknown10 { get; set; } = string.Empty;
+            public string HumanBeardsPixieWings { get; set; } = string.Empty;
             public int Unknown11 { get; set; }
             public int Unknown12 { get; set; }
             public int Unknown13 { get; set; }
@@ -1395,13 +1395,13 @@ namespace Gateway.Login
             public int Unknown26 { get; set; }
             public string FirstName { get; set; } = string.Empty;
             public string LastName { get; set; } = string.Empty;
-            public int Unknown29 { get; set; }
+            public int Coins { get; set; }
             public long AccountBirthday { get; set; }
             public int AccountAge { get; set; }
             public int AccountPlayTime { get; set; }
             public bool Unknown33 { get; set; }
             public bool Unknown34 { get; set; }
-            public int Unknown35 { get; set; }
+            public int MembershipStatus { get; set; }
             public bool Unknown36 { get; set; }
             public int Unknown37 { get; set; }
             public int Unknown38 { get; set; }

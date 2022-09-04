@@ -31,11 +31,11 @@ namespace Gateway
         public int Unknown6 { get; set; }
         public int Unknown7 { get; set; }
         public int Unknown8 { get; set; }
-        public int Unknown9 { get; set; }
+        public int Category { get; set; }
         public bool Unknown10 { get; set; }
         public bool Unknown11 { get; set; }
-        public string Unknown12 { get; set; }
-        public string Unknown13 { get; set; }
+        public string ModelBase { get; set; }
+        public string ModelTexture { get; set; }
         public int Unknown14 { get; set; }
         public int Unknown15 { get; set; }
         public int Unknown16 { get; set; }
@@ -51,7 +51,7 @@ namespace Gateway
         public bool Unknown26 { get; set; }
         public int Unknown27 { get; set; }
         public bool Unknown28 { get; set; }
-        public string Unknown29 { get; set; }
+        public string ModelColor { get; set; }
         public bool Unknown30 { get; set; }
         public int Unknown31 { get; set; }
         public int Unknown32 { get; set; }
@@ -69,7 +69,7 @@ namespace Gateway
 
     public class ClientItemDefinition : BaseItemDefinition
     {
-        public int Unknown35 { get; set; }
+        public int ResellValue { get; set; }
         public int Unknown36 { get; set; }
         public int Unknown37 { get; set; }
         public int Unknown38 { get; set; }
