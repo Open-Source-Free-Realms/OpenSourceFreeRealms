@@ -1,11 +1,9 @@
 # Server
 ofrserver/.vs/*
 ofrserver/Server/Server/obj/*
-bin/*
-
 ofrserver/Server/FreeRealms/obj/*
 ofrserver/Server/LibSOE/obj/*
 ofrserver/Gateway/obj/*
+ofrjsonmaker/*
 ofrclient/*
-Web Assets.7z
-ofrserver/Server/Server/Program.cs
+bin/*

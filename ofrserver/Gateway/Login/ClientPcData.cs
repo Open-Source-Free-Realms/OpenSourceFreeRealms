@@ -67,10 +67,10 @@ namespace Gateway.Login
 
             foreach (var clientPcProfile in clientPcData.ClientPcProfiles)
             {
-                bw.Write(clientPcProfile.Unknown);
+                bw.Write(clientPcProfile.JobGUID);
                 bw.Write(clientPcProfile.JobName);
                 bw.Write(clientPcProfile.JobDescription);
-                bw.Write(clientPcProfile.Unknown4);
+                bw.Write(clientPcProfile.EnableAbility);
                 bw.Write(clientPcProfile.JobIcon);
                 bw.Write(clientPcProfile.Unknown6);
                 bw.Write(clientPcProfile.JobBadge);
@@ -170,9 +170,9 @@ namespace Gateway.Login
                 bw.Write(unknownSet2.Unknown2);
             }
 
-            bw.Write(clientPcData.Unknown3List.Count);
+            bw.Write(clientPcData.PlayerCollections.Count);
 
-            foreach (var unknownSet3 in clientPcData.Unknown3List)
+            foreach (var unknownSet3 in clientPcData.PlayerCollections)
             {
                 bw.Write(unknownSet3.Unknown);
                 bw.Write(unknownSet3.Unknown2);
@@ -366,11 +366,11 @@ namespace Gateway.Login
             {
                 bw.Write(mounts.MountNumber);
                 bw.Write(mounts.MountName);
-                bw.Write(mounts.MountDescription);
+                bw.Write(mounts.MountIcon);
                 bw.Write(mounts.Unknown4);
-                bw.Write(mounts.Unknown5);
-                bw.Write(mounts.Unknown6);
-                WriteString(bw, mounts.MountColor);
+                bw.Write(mounts.MembersOnly);
+                bw.Write(mounts.MountColor);
+                WriteString(bw, mounts.MountTexture);
                 bw.Write(mounts.FlyTraining);
                 bw.Write(mounts.AbleToFly);
             }
@@ -425,7 +425,7 @@ namespace Gateway.Login
             clientPcData.VehicleStruct.Serialize(bw);
             clientPcData.PlayerTitleStruct.Serialize(bw);
 
-            bw.Write(clientPcData.Unknown50);
+            bw.Write(clientPcData.VIPLevel);
             bw.Write(clientPcData.Unknown51);
             bw.Write(clientPcData.Unknown52);
 
@@ -459,14 +459,14 @@ namespace Gateway.Login
         {
             public int Unknown { get; set; }
             public int Unknown2 { get; set; }
-            public int Unknown3 { get; set; }
+            public int TitleName { get; set; }
             public int Unknown4 { get; set; }
 
             public void Serialize(BinaryWriter bw)
             {
                 bw.Write(Unknown);
                 bw.Write(Unknown2);
-                bw.Write(Unknown3);
+                bw.Write(TitleName);
                 bw.Write(Unknown4);
             }
         }
@@ -649,14 +649,14 @@ namespace Gateway.Login
         public class ActionBarSlot
         {
             public bool ItemEmpty { get; set; }
-            public int Unknown2 { get; set; }
+            public int Icon { get; set; }
             public int Unknown3 { get; set; }
             public int ItemName { get; set; }
             public int Unknown5 { get; set; }
             public int Unknown6 { get; set; }
             public int Unknown7 { get; set; }
             public int Unknown8 { get; set; }
-            public bool Unknown9 { get; set; }
+            public bool Usable { get; set; }
             public int Unknown10 { get; set; }
             public int Unknown11 { get; set; }
             public int Unknown12 { get; set; }
@@ -667,14 +667,14 @@ namespace Gateway.Login
             public void Serialize(BinaryWriter bw)
             {
                 bw.Write(ItemEmpty);
-                bw.Write(Unknown2);
+                bw.Write(Icon);
                 bw.Write(Unknown3);
                 bw.Write(ItemName);
                 bw.Write(Unknown5);
                 bw.Write(Unknown6);
                 bw.Write(Unknown7);
                 bw.Write(Unknown8);
-                bw.Write(Unknown9);
+                bw.Write(Usable);
                 bw.Write(Unknown10);
                 bw.Write(Unknown11);
                 bw.Write(Unknown12);
@@ -707,11 +707,11 @@ namespace Gateway.Login
         {
             public int MountNumber { get; set; }
             public int MountName { get; set; }
-            public int MountDescription { get; set; }
+            public int MountIcon { get; set; }
             public long Unknown4 { get; set; }
-            public bool Unknown5 { get; set; }
-            public int Unknown6 { get; set; }
-            public string MountColor { get; set; } = string.Empty;
+            public bool MembersOnly { get; set; }
+            public int MountColor { get; set; }
+            public string MountTexture { get; set; } = string.Empty;
             public bool FlyTraining { get; set; }
             public bool AbleToFly { get; set; }
         }
@@ -1274,7 +1274,7 @@ namespace Gateway.Login
             public int Unknown2 { get; set; }
         }
 
-        public class UnknownStruct3
+        public class Collections
         {
             public int Unknown { get; set; }
             public int Unknown2 { get; set; }
@@ -1339,10 +1339,10 @@ namespace Gateway.Login
 
         public class ClientPcProfile
         {
-            public int Unknown { get; set; }
+            public int JobGUID { get; set; }
             public int JobName { get; set; }
             public int JobDescription { get; set; }
-            public int Unknown4 { get; set; }
+            public int EnableAbility { get; set; }
             public int JobIcon { get; set; }
             public int Unknown6 { get; set; }
             public int JobBadge { get; set; }
@@ -1417,7 +1417,7 @@ namespace Gateway.Login
             public int Unknown45 { get; set; }
 
             public List<UnknownStruct2> Unknown2List { get; set; } = new List<UnknownStruct2>();
-            public List<UnknownStruct3> Unknown3List { get; set; } = new List<UnknownStruct3>();
+            public List<Collections> PlayerCollections { get; set; } = new List<Collections>();
             public List<ClientItem> ClientItems { get; set; } = new List<ClientItem>();
 
             public int Unknown46 { get; set; }
@@ -1451,7 +1451,7 @@ namespace Gateway.Login
             public VehicleStruct VehicleStruct { get; set; } = new VehicleStruct();
             public PlayerTitleStruct PlayerTitleStruct { get; set; } = new PlayerTitleStruct();
 
-            public int Unknown50 { get; set; }
+            public int VIPLevel { get; set; }
             public int Unknown51 { get; set; }
             public int Unknown52 { get; set; }
 

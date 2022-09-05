@@ -236,24 +236,24 @@ namespace Gateway.Login
                 playerUpdateItemDefinitions.AddHostInt32(clientItemDefinition.Unknown8);
                 playerUpdateItemDefinitions.AddHostInt32(clientItemDefinition.Category);
 
-                playerUpdateItemDefinitions.AddBoolean(clientItemDefinition.Unknown10);
-                playerUpdateItemDefinitions.AddBoolean(clientItemDefinition.Unknown11);
+                playerUpdateItemDefinitions.AddBoolean(clientItemDefinition.CannotTrade);
+                playerUpdateItemDefinitions.AddBoolean(clientItemDefinition.CannotResell);
 
                 playerUpdateItemDefinitions.AddASCIIString(clientItemDefinition.ModelBase);
                 playerUpdateItemDefinitions.AddASCIIString(clientItemDefinition.ModelTexture);
 
-                playerUpdateItemDefinitions.AddHostInt32(clientItemDefinition.Unknown14);
+                playerUpdateItemDefinitions.AddHostInt32(clientItemDefinition.GenderLocked);
                 playerUpdateItemDefinitions.AddHostInt32(clientItemDefinition.Unknown15);
                 playerUpdateItemDefinitions.AddHostInt32(clientItemDefinition.Unknown16);
 
-                playerUpdateItemDefinitions.AddBoolean(clientItemDefinition.Unknown17);
+                playerUpdateItemDefinitions.AddBoolean(clientItemDefinition.MembersOnly);
                 playerUpdateItemDefinitions.AddBoolean(clientItemDefinition.Unknown18);
 
                 playerUpdateItemDefinitions.AddHostInt32(clientItemDefinition.Unknown19);
                 playerUpdateItemDefinitions.AddHostInt32(clientItemDefinition.Unknown20);
                 playerUpdateItemDefinitions.AddHostInt32(clientItemDefinition.Unknown21);
                 playerUpdateItemDefinitions.AddHostInt32(clientItemDefinition.Unknown22);
-                playerUpdateItemDefinitions.AddHostInt32(clientItemDefinition.Unknown23);
+                playerUpdateItemDefinitions.AddHostInt32(clientItemDefinition.TextColor);
                 playerUpdateItemDefinitions.AddHostInt32(clientItemDefinition.Unknown24);
                 playerUpdateItemDefinitions.AddHostInt32(clientItemDefinition.Unknown25);
 
@@ -328,7 +328,6 @@ namespace Gateway.Login
 
             var SendSelfToClientData = ClientPcData.ReadFromJSON(@"..\ofrserver\Customize\PacketSendSelfToClient.json");
 
-            
             var rawBytes = SendSelfToClientData;
 
             var sendSelfToClient = new SOEWriter((ushort)BasePackets.PacketSendSelfToClient, true);
@@ -452,10 +451,6 @@ namespace Gateway.Login
             //beginZoning.AddFloat(-2100f); // Y
             //beginZoning.AddFloat(60f); // Z
             //beginZoning.AddFloat(-100f); // X
-            /* China Spawn */
-            //beginZoning.AddFloat(1404.619019f); // Y
-            //beginZoning.AddFloat(100.112000f); // Z
-            //beginZoning.AddFloat(751.302002f); // X
             beginZoning.AddFloat(0f);
             for (uint num = 0u; num < 4; num++)
             {

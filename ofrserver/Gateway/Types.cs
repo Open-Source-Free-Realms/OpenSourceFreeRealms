@@ -32,20 +32,20 @@ namespace Gateway
         public int Unknown7 { get; set; }
         public int Unknown8 { get; set; }
         public int Category { get; set; }
-        public bool Unknown10 { get; set; }
-        public bool Unknown11 { get; set; }
+        public bool CannotTrade { get; set; }
+        public bool CannotResell { get; set; }
         public string ModelBase { get; set; }
         public string ModelTexture { get; set; }
-        public int Unknown14 { get; set; }
+        public int GenderLocked { get; set; }
         public int Unknown15 { get; set; }
         public int Unknown16 { get; set; }
-        public bool Unknown17 { get; set; }
+        public bool MembersOnly { get; set; }
         public bool Unknown18 { get; set; }
         public int Unknown19 { get; set; }
         public int Unknown20 { get; set; }
         public int Unknown21 { get; set; }
         public int Unknown22 { get; set; }
-        public int Unknown23 { get; set; }
+        public int TextColor { get; set; }
         public int Unknown24 { get; set; }
         public int Unknown25 { get; set; }
         public bool Unknown26 { get; set; }
