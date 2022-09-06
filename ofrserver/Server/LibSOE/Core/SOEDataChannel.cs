@@ -52,9 +52,6 @@ namespace SOE.Core
             // Setup a writer
             SOEWriter writer = new SOEWriter((ushort)SOEOPCodes.ACK_RELIABLE_DATA);
 
-            // Compressed? (Always false)
-            writer.AddBoolean(false);
-
             // Add the sequence number
             writer.AddUInt16(sequenceNumber);
 
