@@ -77,7 +77,7 @@ namespace SOE.Core
         {
             // Setup a reader
             SOEReader reader = new SOEReader(packet);
-            reader.ReadUInt16();
+           // reader.ReadUInt16();
 
             // Have we already started a fragmented packet?
             if (StartedFragmentedPacket)
@@ -86,7 +86,7 @@ namespace SOE.Core
                 FragmentsTillAck--;
 
                 // Get our sequence number
-                uint previousFragmentSequenceNumber = FragmentSequenceNumber;
+                uint previousFragmentSequenceNumber = (uint)FragmentSequenceNumber - 1;
                 FragmentSequenceNumber = reader.ReadUInt16();
 
                 // Did we get a correct sequence number?
@@ -94,13 +94,14 @@ namespace SOE.Core
                 {
                     // Out of order!
                     ReceivedSequenceOutOfOrder(FragmentSequenceNumber);
+                    Log.InfoFormat("Line 97, OpCode: " + packet.GetOpCode() + ", Sequence number: " + FragmentSequenceNumber + ", LastReceivedSequenceNumber: " + LastReceivedSequenceNumber);
                     return;
                 }
 
                 // Append the rest of the packet to the fragmented data
                 for (int i = 4; i < FragmentedData.Length; i++)
                 {
-                    FragmentedData[ReceivedFragmentsSize] = reader.ReadByte();
+                    FragmentedData[i] = reader.ReadByte();
                     ReceivedFragmentsSize++;
                 }
             }
@@ -110,11 +111,14 @@ namespace SOE.Core
                 FragmentSequenceNumber = reader.ReadUInt16();
                 uint totalSize = reader.ReadUInt32();
 
+                LastReceivedSequenceNumber = (ushort)(FragmentSequenceNumber - 1);
+
                 // Is this a valid sequence number?
                 if ((FragmentSequenceNumber != LastReceivedSequenceNumber + 1) && (FragmentSequenceNumber != 0))
                 {
                     // Out of order!
                     ReceivedSequenceOutOfOrder(FragmentSequenceNumber);
+                    Log.InfoFormat("Line 119, OpCode: " + packet.GetOpCode() + ", Sequence number: " + FragmentSequenceNumber + ", LastReceivedSequenceNumber: " + LastReceivedSequenceNumber);
                     return;
                 }
 
@@ -127,7 +131,7 @@ namespace SOE.Core
                 // Append the rest of the packet to the fragmented data
                 for (int i = 8; i < FragmentedData.Length; i++)
                 {
-                    FragmentedData[ReceivedFragmentsSize] = reader.ReadByte();
+                    FragmentedData[i] = reader.ReadByte();
                     ReceivedFragmentsSize++;
                 }
 
@@ -168,15 +172,17 @@ namespace SOE.Core
 
             // Have we received in order?
             ushort sequenceNumber = reader.ReadUInt16();
-            if ((sequenceNumber != LastReceivedSequenceNumber + 1) && (sequenceNumber != 0))
-            {
-                ReceivedSequenceOutOfOrder(sequenceNumber);
-                return;
-            }
 
             // Acknowledge
             Acknowledge(sequenceNumber);
-            LastReceivedSequenceNumber = sequenceNumber;
+            LastReceivedSequenceNumber = (ushort)(sequenceNumber - 1);
+
+            if ((sequenceNumber != LastReceivedSequenceNumber + 1) && (sequenceNumber != 0))
+            {
+                ReceivedSequenceOutOfOrder(sequenceNumber);
+                Log.InfoFormat("Line 181, OpCode: " + packet.GetOpCode() + ", Sequence number: " + sequenceNumber + ", LastReceivedSequenceNumber: " + LastReceivedSequenceNumber);
+                return;
+            }
 
             if (reader.PeekUShort() == (ushort)SOEOPCodes.MULTI_MESSAGE)
             {
