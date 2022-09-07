@@ -64184,6 +64184,65 @@
     "Unknown34": 0
   },
   {
+    "ResellValue": 800,
+    "Unknown36": 0,
+    "Unknown37": 0,
+    "Unknown38": 0,
+    "ClientItemStatDefinitions": {},
+    "ItemAbilityEntries": [
+      {
+        "Unknown": 0,
+        "Unknown2": 5562,
+        "Unknown3": 0,
+        "Unknown4": 38211
+      },
+      {
+        "Unknown": 1,
+        "Unknown2": 5558,
+        "Unknown3": 0,
+        "Unknown4": 21065
+      }
+    ],
+    "Unknown": 712591751,
+    "Unknown2": 0,
+    "Unknown3": 0,
+    "IconData": {
+      "Unknown": 3897,
+      "Unknown2": 0
+    },
+    "Unknown4": 0,
+    "Unknown5": 0,
+    "Unknown6": 8000,
+    "Unknown7": 149,
+    "Unknown8": 0,
+    "Category": 7,
+    "CannotTrade": true,
+    "CannotResell": true,
+    "ModelBase": "misc_ar_ag_weapon_towerwieldablestaff.adr",
+    "ModelTexture": "towerwieldable-gold",
+    "GenderLocked": 0,
+    "Unknown15": 1,
+    "Unknown16": 12,
+    "MembersOnly": false,
+    "Unknown18": false,
+    "Unknown19": 0,
+    "Unknown20": 0,
+    "Unknown21": 0,
+    "Unknown22": 0,
+    "TextColor": 3,
+    "Unknown24": 0,
+    "Unknown25": 0,
+    "Unknown26": false,
+    "Unknown27": -1,
+    "Unknown28": false,
+    "ModelColor": "dyetint",
+    "Unknown30": false,
+    "Unknown31": 10,
+    "Unknown32": 0,
+    "Unknown33": 0,
+    "Unknown34": 0
+  },
+  {
     "ResellValue": 50,
     "Unknown36": 0,
     "Unknown37": 0,

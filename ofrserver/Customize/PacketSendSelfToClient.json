@@ -15,9 +15,9 @@
   "Unknown14": 0,
   "Unknown15": 0,
   "PlayerPosition": [
-    -750.0,
-    14.581582,
-    900.0,
+    500.000000,
+    71.423123,
+    1775.000000,
     1.0
   ],
   "CameraRotation": [
@@ -315,7 +315,7 @@
           "comment": "Weapon",
           "Item1": 7,
           "Item2": {
-            "ItemGUID": 0,
+            "ItemGUID": 19257819,
             "Category": 7
           }
         },
@@ -49802,6 +49802,23 @@
       },
       "Unknown": 0,
       "Definition": 21394,
+      "Tint": 0
+    },
+    {
+      "comment": "Defender Staff",
+      "Unknown2": false,
+      "Guid": 19257819,
+      "Count": 1,
+      "ConsumedCount": 0,
+      "LastCastTime": 2147483647,
+      "ItemStruct": {
+        "HasItemStruct": false,
+        "RentalExpirationTime": 0,
+        "RentalUpsellsSent": 0,
+        "MarketplaceBundleId": 0
+      },
+      "Unknown": 0,
+      "Definition": 712591751,
       "Tint": 0
     },
     {
