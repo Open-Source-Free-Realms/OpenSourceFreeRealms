@@ -55,6 +55,9 @@ namespace SOE.Core
             // Add the sequence number
             writer.AddUInt16(sequenceNumber);
 
+            //After the packet was acknowledged, we update the last received sequence number with the current one. -Hero
+            LastReceivedSequenceNumber = sequenceNumber;
+
             // Send the packet
             SOEPacket packet = writer.GetFinalSOEPacket(Client, true, true);
             Client.SendPacket(packet);
@@ -77,7 +80,6 @@ namespace SOE.Core
         {
             // Setup a reader
             SOEReader reader = new SOEReader(packet);
-           // reader.ReadUInt16();
 
             // Have we already started a fragmented packet?
             if (StartedFragmentedPacket)
@@ -86,11 +88,9 @@ namespace SOE.Core
                 FragmentsTillAck--;
 
                 // Get our sequence number
-                uint previousFragmentSequenceNumber = (uint)FragmentSequenceNumber - 1;
                 FragmentSequenceNumber = reader.ReadUInt16();
-
                 // Did we get a correct sequence number?
-                if (FragmentSequenceNumber != previousFragmentSequenceNumber + 1)
+                if (FragmentSequenceNumber != LastReceivedSequenceNumber + 1)
                 {
                     // Out of order!
                     ReceivedSequenceOutOfOrder(FragmentSequenceNumber);
@@ -110,8 +110,6 @@ namespace SOE.Core
                 // We're expecting the starting packet
                 FragmentSequenceNumber = reader.ReadUInt16();
                 uint totalSize = reader.ReadUInt32();
-
-                LastReceivedSequenceNumber = (ushort)(FragmentSequenceNumber - 1);
 
                 // Is this a valid sequence number?
                 if ((FragmentSequenceNumber != LastReceivedSequenceNumber + 1) && (FragmentSequenceNumber != 0))
@@ -175,9 +173,8 @@ namespace SOE.Core
 
             // Acknowledge
             Acknowledge(sequenceNumber);
-            LastReceivedSequenceNumber = (ushort)(sequenceNumber - 1);
 
-            if ((sequenceNumber != LastReceivedSequenceNumber + 1) && (sequenceNumber != 0))
+            if ((sequenceNumber != LastReceivedSequenceNumber) && (sequenceNumber != 0))
             {
                 ReceivedSequenceOutOfOrder(sequenceNumber);
                 Log.InfoFormat("Line 181, OpCode: " + packet.GetOpCode() + ", Sequence number: " + sequenceNumber + ", LastReceivedSequenceNumber: " + LastReceivedSequenceNumber);
