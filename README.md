@@ -8,7 +8,7 @@
 </p>
 
 <p align="center">
-Open Source Free Realms is a reversed engineered walking emmulator for a now sunset game called Free Realms!
+Open Source Free Realms is a reversed engineered walking emulator for a now sunset game called Free Realms!
 </p>
 
 # Installation
@@ -28,7 +28,7 @@ Open Source Free Realms is a reversed engineered walking emmulator for a now sun
 
 # Customization
 You can freely customize your character within the PacketSendSelfToClient.json and ClientItemDefinitions.json
-These 2 document are half documented so feel free to explore yourself or ask on the discord.
+These 2 documents are half documented so feel free to explore yourself or ask on the discord.
 
 # Tasks
 - [x] Fix Disconnects with the current library
