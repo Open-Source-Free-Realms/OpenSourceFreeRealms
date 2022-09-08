@@ -1,9 +1,9 @@
 {
   "Unknown": 665338923,
   "PlayerGUID": 1,
-  "PlayerModel": 60,
+  "PlayerModel": 1,
   "PlayerHead": "<race>_<gender>_head_caucasian.adr",
-  "PlayerHair": "<race>_f_hair_longcurly_<hairtype>.adr",
+  "PlayerHair": "<race>_m_hair_shaggy_<hairtype>.adr",
   "HairColor": 559,
   "EyeColor": 514,
   "Skintone": "skintone3",
@@ -15,9 +15,9 @@
   "Unknown14": 0,
   "Unknown15": 0,
   "PlayerPosition": [
-    500.000000,
-    71.423123,
-    1775.000000,
+    -1414.643433,
+    -27.634825,
+    351.556366,
     1.0
   ],
   "CameraRotation": [
@@ -53,11 +53,11 @@
       "JobGUID": 1,
       "JobName": 2836,
       "JobDescription": 2837,
-      "EnableAbility": 1,
+      "EnableAbility": 0,
       "JobIcon": 1334,
       "Unknown6": 4,
-      "JobBadge": 19,
-      "JobBadgeBorder": 21,
+      "JobBadgeBorder": 19,
+      "JobBadge": 21,
       "MembersOnly": false,
       "IsCombat": 0,
       "ItemClassData": [
@@ -291,7 +291,7 @@
           "comment": "Pants",
           "Item1": 4,
           "Item2": {
-            "ItemGUID": 48298258,
+            "ItemGUID": 14000,
             "Category": 4
           }
         },
@@ -315,7 +315,7 @@
           "comment": "Weapon",
           "Item1": 7,
           "Item2": {
-            "ItemGUID": 19257819,
+            "ItemGUID": 14001,
             "Category": 7
           }
         },
@@ -339,7 +339,7 @@
           "comment": "Flair Shard",
           "Item1": 13,
           "Item2": {
-            "ItemGUID": 0,
+            "ItemGUID": 4020,
             "Category": 13
           }
         },
@@ -491,8 +491,8 @@
       "EnableAbility": 2,
       "JobIcon": 1342,
       "Unknown6": 3,
-      "JobBadge": 10,
-      "JobBadgeBorder": 1,
+      "JobBadgeBorder": 10,
+      "JobBadge": 1,
       "MembersOnly": false,
       "IsCombat": 2,
       "ItemClassData": [
@@ -920,8 +920,8 @@
       "Unknown4": 3,
       "JobIcon": 1339,
       "Unknown6": 4,
-      "JobBadge": 11,
-      "JobBadgeBorder": 2,
+      "JobBadgeBorder": 11,
+      "JobBadge": 2,
       "MembersOnly": false,
       "IsCombat": 3,
       "ItemClassData": [
@@ -1259,8 +1259,8 @@
       "EnableAbility": 2,
       "JobIcon": 1340,
       "Unknown6": 15,
-      "JobBadge": 13,
-      "JobBadgeBorder": 9,
+      "JobBadgeBorder": 13,
+      "JobBadge": 9,
       "MembersOnly": false,
       "IsCombat": 4,
       "ItemClassData": [
@@ -1688,8 +1688,8 @@
       "EnableAbility": 2,
       "JobIcon": 1343,
       "Unknown6": 14,
-      "JobBadge": 12,
-      "JobBadgeBorder": 8,
+      "JobBadgeBorder": 12,
+      "JobBadge": 8,
       "MembersOnly": false,
       "IsCombat": 5,
       "ItemClassData": [
@@ -2103,8 +2103,8 @@
       "EnableAbility": 9,
       "JobIcon": 1341,
       "Unknown6": 4,
-      "JobBadge": 11,
-      "JobBadgeBorder": 2,
+      "JobBadgeBorder": 11,
+      "JobBadge": 2,
       "MembersOnly": false,
       "IsCombat": 6,
       "ItemClassData": [
@@ -2477,8 +2477,8 @@
       "EnableAbility": 12,
       "JobIcon": 1336,
       "Unknown6": 4,
-      "JobBadge": 11,
-      "JobBadgeBorder": 2,
+      "JobBadgeBorder": 11,
+      "JobBadge": 2,
       "MembersOnly": false,
       "IsCombat": 7,
       "ItemClassData": [
@@ -2837,8 +2837,8 @@
       "EnableAbility": 2,
       "JobIcon": 21594,
       "Unknown6": 31,
-      "JobBadge": 10,
-      "JobBadgeBorder": 1,
+      "JobBadgeBorder": 10,
+      "JobBadge": 1,
       "MembersOnly": false,
       "IsCombat": 8,
       "ItemClassData": [
@@ -3259,8 +3259,8 @@
       "EnableAbility": 2,
       "JobIcon": 1335,
       "Unknown6": 7,
-      "JobBadge": 32,
-      "JobBadgeBorder": 33,
+      "JobBadgeBorder": 32,
+      "JobBadge": 33,
       "MembersOnly": false,
       "IsCombat": 9,
       "ItemClassData": [
@@ -3667,8 +3667,8 @@
       "EnableAbility": 2,
       "JobIcon": 1337,
       "Unknown6": 4,
-      "JobBadge": 10,
-      "JobBadgeBorder": 1,
+      "JobBadgeBorder": 10,
+      "JobBadge": 1,
       "MembersOnly": false,
       "IsCombat": 12,
       "ItemClassData": [
@@ -4103,8 +4103,8 @@
       "EnableAbility": 10,
       "JobIcon": 156,
       "Unknown6": 4,
-      "JobBadge": 11,
-      "JobBadgeBorder": 2,
+      "JobBadgeBorder": 11,
+      "JobBadge": 2,
       "MembersOnly": false,
       "IsCombat": 13,
       "ItemClassData": [
@@ -4470,8 +4470,8 @@
       "EnableAbility": 5,
       "JobIcon": 20725,
       "Unknown6": 4,
-      "JobBadge": 46,
-      "JobBadgeBorder": 7494,
+      "JobBadgeBorder": 46,
+      "JobBadge": 7494,
       "MembersOnly": false,
       "IsCombat": 10,
       "ItemClassData": [
@@ -4767,8 +4767,8 @@
       "EnableAbility": 7,
       "JobIcon": 8059,
       "Unknown6": 4,
-      "JobBadge": 46,
-      "JobBadgeBorder": 7494,
+      "JobBadgeBorder": 46,
+      "JobBadge": 7494,
       "MembersOnly": false,
       "IsCombat": 11,
       "ItemClassData": [
@@ -5064,8 +5064,8 @@
       "EnableAbility": 8,
       "JobIcon": 20743,
       "Unknown6": 4,
-      "JobBadge": 4842,
-      "JobBadgeBorder": 21,
+      "JobBadgeBorder": 4842,
+      "JobBadge": 21,
       "MembersOnly": false,
       "IsCombat": 16,
       "ItemClassData": [
@@ -5396,8 +5396,8 @@
       "Unknown4": 17,
       "JobIcon": 396,
       "EnableAbility": 4,
-      "JobBadge": 1783,
-      "JobBadgeBorder": 1782,
+      "JobBadgeBorder": 1783,
+      "JobBadge": 1782,
       "MembersOnly": false,
       "IsCombat": 15,
       "ItemClassData": [
@@ -5784,8 +5784,8 @@
       "EnableAbility": 21,
       "JobIcon": 20740,
       "Unknown6": 4,
-      "JobBadge": 4843,
-      "JobBadgeBorder": 5885,
+      "JobBadgeBorder": 4843,
+      "JobBadge": 5885,
       "MembersOnly": false,
       "IsCombat": 17,
       "ItemClassData": [
@@ -49453,6 +49453,57 @@
   ],
   "ClientItems": [
     {
+      "comment": "Goth Pants",
+      "Unknown2": false,
+      "Guid": 14000,
+      "Count": 1,
+      "ConsumedCount": 0,
+      "LastCastTime": 2147483647,
+      "ItemStruct": {
+        "HasItemStruct": false,
+        "RentalExpirationTime": 0,
+        "RentalUpsellsSent": 0,
+        "MarketplaceBundleId": 0
+      },
+      "Unknown": 0,
+      "Definition": 14000,
+      "Tint": 264
+    },
+    {
+      "comment": "Defender Staff",
+      "Unknown2": false,
+      "Guid": 14001,
+      "Count": 1,
+      "ConsumedCount": 0,
+      "LastCastTime": 2147483647,
+      "ItemStruct": {
+      "HasItemStruct": false,
+      "RentalExpirationTime": 0,
+      "RentalUpsellsSent": 0,
+      "MarketplaceBundleId": 0
+    },
+      "Unknown": 0,
+      "Definition": 14001,
+      "Tint": 0
+    },
+    {
+      "comment": "Black Skinnies",
+      "Unknown2": false,
+      "Guid": 14002,
+      "Count": 1,
+      "ConsumedCount": 0,
+      "LastCastTime": 2147483647,
+      "ItemStruct": {
+        "HasItemStruct": false,
+        "RentalExpirationTime": 0,
+        "RentalUpsellsSent": 0,
+        "MarketplaceBundleId": 0
+      },
+      "Unknown": 0,
+      "Definition": 78143,
+      "Tint": 264
+    },
+    {
       "Unknown2": false,
       "Guid": 2,
       "Count": 1,
@@ -49802,23 +49853,6 @@
       },
       "Unknown": 0,
       "Definition": 21394,
-      "Tint": 0
-    },
-    {
-      "comment": "Defender Staff",
-      "Unknown2": false,
-      "Guid": 19257819,
-      "Count": 1,
-      "ConsumedCount": 0,
-      "LastCastTime": 2147483647,
-      "ItemStruct": {
-        "HasItemStruct": false,
-        "RentalExpirationTime": 0,
-        "RentalUpsellsSent": 0,
-        "MarketplaceBundleId": 0
-      },
-      "Unknown": 0,
-      "Definition": 712591751,
       "Tint": 0
     },
     {
@@ -70556,22 +70590,6 @@
       "Unknown": 0,
       "Definition": 78143,
       "Tint": 237
-    },
-    {
-      "Unknown2": false,
-      "Guid": 48298258,
-      "Count": 1,
-      "ConsumedCount": 0,
-      "LastCastTime": 2147483647,
-      "ItemStruct": {
-        "HasItemStruct": false,
-        "RentalExpirationTime": 0,
-        "RentalUpsellsSent": 0,
-        "MarketplaceBundleId": 0
-      },
-      "Unknown": 0,
-      "Definition": 78143,
-      "Tint": 264
     },
     {
       "Unknown2": false,

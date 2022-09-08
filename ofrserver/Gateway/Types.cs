@@ -16,7 +16,7 @@ namespace Gateway
 
     public class IconData
     {
-        public int Unknown { get; set; }
+        public int Icon { get; set; }
         public int Unknown2 { get; set; }
     }
 
@@ -29,7 +29,7 @@ namespace Gateway
         public int Unknown4 { get; set; }
         public int Unknown5 { get; set; }
         public int Unknown6 { get; set; }
-        public int Unknown7 { get; set; }
+        public int JobGUID { get; set; }
         public int Unknown8 { get; set; }
         public int Category { get; set; }
         public bool CannotTrade { get; set; }
@@ -37,7 +37,7 @@ namespace Gateway
         public string ModelBase { get; set; }
         public string ModelTexture { get; set; }
         public int GenderLocked { get; set; }
-        public int Unknown15 { get; set; }
+        public int CategoryLocked { get; set; }
         public int Unknown16 { get; set; }
         public bool MembersOnly { get; set; }
         public bool Unknown18 { get; set; }
