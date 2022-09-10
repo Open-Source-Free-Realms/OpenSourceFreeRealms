@@ -7,7 +7,7 @@
     "ClientItemStatDefinitions": {},
     "ItemAbilityEntries": [],
     "Unknown": 14000,
-    "Unknown2": 0,
+    "Unknown2": 4517443,
     "Unknown3": 0,
     "IconData": {
       "Icon": 4313,
@@ -68,7 +68,7 @@
     "CannotTrade": true,
     "CannotResell": true,
     "ModelBase": "misc_ar_ag_weapon_towerwieldablestaff.adr",
-    "ModelTexture": "towerwieldable-silver",
+    "ModelTexture": "",
     "GenderLocked": 0,
     "CategoryLocked": 1,
     "Unknown16": 1,
