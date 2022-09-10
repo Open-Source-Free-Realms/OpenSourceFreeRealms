@@ -15,9 +15,9 @@
   "Unknown14": 0,
   "Unknown15": 0,
   "PlayerPosition": [
-    -1414.643433,
-    -27.634825,
-    351.556366,
+    -1829.011108,
+    -42.408981,
+    440.056641,
     1.0
   ],
   "CameraRotation": [
@@ -470,7 +470,7 @@
       "UnknownSet": [
         {
           "Unknown": 0,
-          "Unknown2": false,
+          "Unknown2": true,
           "Unknown3": 0,
           "Unknown4": 0,
           "Unknown5": 0,

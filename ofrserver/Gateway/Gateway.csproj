@@ -52,6 +52,12 @@
     <Compile Include="Gateway.cs" />
     <Compile Include="Login\LoginManager.cs" />
     <Compile Include="Login\ClientPcData.cs" />
+    <Compile Include="MapChat\Chat.cs" />
+    <Compile Include="MapChat\Map.cs" />
+    <Compile Include="Player\NPC.cs" />
+    <Compile Include="Player\PC.cs" />
+    <Compile Include="Player\PlayerCode.cs" />
+    <Compile Include="Player\UpdateStats.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Types.cs" />
   </ItemGroup>

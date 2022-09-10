@@ -54,6 +54,7 @@
          PacketSetLocale = 88,
          PacketSetClientArea = 89,
          PacketZoneTeleportRequest = 90,
+         PacketZoneTeleportResponse = 91,
          PacketWorldShutdownNotice = 92,
          PacketLoadWelcomeScreen = 93,
          BaseShipCombatPacket = 94,
