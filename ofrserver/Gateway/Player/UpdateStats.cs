@@ -22,7 +22,7 @@ namespace Gateway.Player
             updateMP.AddHostUInt16((ushort)BaseClientUpdatePackets.ClientUpdatePacketMana);
             updateMP.AddHostInt32(100);
             updateMP.AddHostInt32(100);
-            updateMP.AddBoolean(false);
+            updateMP.AddBoolean(true);
             LoginManager.SendTunneledClientPacket(soeClient, updateMP.GetRaw());
         }
 
@@ -36,11 +36,11 @@ namespace Gateway.Player
             LoginManager.SendTunneledClientPacket(soeClient, LoginManager.StringToByteArray(/* ClientUpdatePacketAddEffectTag */"26001000040000005500000004000000350B000008000000000000000000000000000000100E00000091CA73956ACC524B000000000000000001000000A20F000000000000000000000000000000000000000001272D00000054B80600DB070000"));
         }
 
-        public static void SendAbilityPacketAbilityDefinition(SOEClient soeClient)
+        public static void SendAbilityPacketSetDefinition(SOEClient soeClient)
         {
-            var setDefinition = new SOEWriter((ushort)BasePackets.BaseAbilityPacket, true);
-            setDefinition.AddHostUInt16((ushort)BaseAbilityPackets.AbilityPacketSetDefinition);
-            LoginManager.SendTunneledClientPacket(soeClient, LoginManager.StringToByteArray(/* AbilityPacketSetDefinition */"2400050001000000080000000000000000000000000000000000000000000000000000000000000000000000"));
+            //var setDefinition = new SOEWriter((ushort)BasePackets.BaseAbilityPacket, true);
+            //setDefinition.AddHostUInt16((ushort)BaseAbilityPackets.AbilityPacketSetDefinition);
+            LoginManager.SendTunneledClientPacket(soeClient, LoginManager.StringToByteArray(/* AbilityPacketSetDefinition */"24000500010000000800000000000000000000000000000003000000301200000000000043690000AF590000040000000000A0410100000030120000000000000100000000000000000000000000000000"));
         }
     }
 }

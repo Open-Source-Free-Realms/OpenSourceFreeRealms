@@ -7,5 +7,8 @@ namespace Gateway.Player
 {
     internal class PC
     {
+        public static void SendPlayerUpdatePacketAddPc(SOEClient soeClient)
+        {
+        }
     }
 }

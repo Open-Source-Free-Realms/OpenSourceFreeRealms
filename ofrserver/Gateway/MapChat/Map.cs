@@ -18,5 +18,10 @@ namespace Gateway.MapChat
             //TODO
             LoginManager.SendTunneledClientPacket(soeClient, LoginManager.StringToByteArray(/* PacketPOIChangeMessage */ "0500010E0000006800AB0D00000500000023010000"));
         }
+
+        public static void SendObjectiveTargetUpdatePacket(SOEClient soeClient)
+        {
+            LoginManager.SendTunneledClientPacket(soeClient, LoginManager.StringToByteArray(/* Quest Marker */"2F000E017B10CEC614CA943E01000000320000006027000068BF06000CA7B9C3CB9AA4C2C62E16450000803F05000000"));
+        }
     }
 }

@@ -25,7 +25,7 @@ namespace Gateway.Player
                 playerUpdateItemDefinitions.AddHostInt32(clientItemDefinition.Unknown3);
 
                 playerUpdateItemDefinitions.AddHostInt32(clientItemDefinition.IconData.Icon);
-                playerUpdateItemDefinitions.AddHostInt32(clientItemDefinition.IconData.Unknown2);
+                playerUpdateItemDefinitions.AddHostInt32(clientItemDefinition.IconData.IconColor);
 
                 playerUpdateItemDefinitions.AddHostInt32(clientItemDefinition.Unknown4);
                 playerUpdateItemDefinitions.AddHostInt32(clientItemDefinition.Unknown5);
