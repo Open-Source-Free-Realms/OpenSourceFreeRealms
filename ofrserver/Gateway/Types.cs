@@ -17,7 +17,7 @@ namespace Gateway
     public class IconData
     {
         public int Icon { get; set; }
-        public int Unknown2 { get; set; }
+        public int IconColor { get; set; }
     }
 
     public class BaseItemDefinition
