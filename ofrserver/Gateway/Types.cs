@@ -80,20 +80,20 @@ namespace Gateway
 
     public class PointOfInterestDefinition
     {
-        public int Unknown { get; set; }
-        public int Unknown2 { get; set; }
+        public int GUID { get; set; }
+        public int Name { get; set; }
         public int Unknown3 { get; set; }
         public float PositionX { get; set; }
         public float PositionY { get; set; }
         public float PositionZ { get; set; }
-        public float SpawnOffset { get; set; }
-        public int Unknown8 { get; set; }
-        public int Unknown9 { get; set; }
-        public int Unknown10 { get; set; }
+        public float Unknown7 { get; set; }
+        public int Icon { get; set; }
+        public int TeleportIndicator { get; set; }
+        public int Unlocked { get; set; }
         public int Unknown11 { get; set; }
         public int Unknown12 { get; set; }
         public int Unknown13 { get; set; }
         public int Unknown15 { get; set; }
-        public string Unknown14 { get; set; }
+        public string Zone { get; set; }
     }
 }
