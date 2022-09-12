@@ -137,6 +137,12 @@ namespace SOE.Interfaces
             AddBytes(Message);
         }
 
+        public void AddHostInt64(long value)
+        {
+            byte[] Message = BitConverter.GetBytes(value).ToArray();
+            AddBytes(Message);
+        }
+
         public void AddNullTerminatedString(string value)
         {
             value += (char)0x0;

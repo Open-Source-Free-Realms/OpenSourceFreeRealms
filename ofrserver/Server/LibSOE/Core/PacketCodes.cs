@@ -54,6 +54,7 @@
          PacketSetLocale = 88,
          PacketSetClientArea = 89,
          PacketZoneTeleportRequest = 90,
+         PacketZoneTeleportResponse = 91,
          PacketWorldShutdownNotice = 92,
          PacketLoadWelcomeScreen = 93,
          BaseShipCombatPacket = 94,
@@ -75,7 +76,7 @@
          OneTimeSessionRequestPacket = 117,
          OneTimeSessionResponsePacket = 118,
          PacketZoneSafeTeleportRequest = 122,
-         PlayerUpdatePacketUpdatePositon = 125,
+         PlayerUpdatePacketUpdatePosition = 125,
          PlayerUpdatePacketCameraUpdate = 126,
          BaseHousingPacket = 127,
          BaseGuildPacket = 129,
@@ -137,8 +138,8 @@
 
     public enum ActivityManagerBasePackets
     {
+         ActivityProfileListPacket = 1,
          ActivityJoinErrorPacket = 2,
-         ActivityProfileListPacket = 3
     };
 
     public enum AnnouncementBasePackets

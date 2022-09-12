@@ -17,7 +17,7 @@ namespace Gateway
     public class IconData
     {
         public int Icon { get; set; }
-        public int Unknown2 { get; set; }
+        public int IconColor { get; set; }
     }
 
     public class BaseItemDefinition
@@ -76,5 +76,24 @@ namespace Gateway
 
         public Dictionary<int, ClientItemStatDefinition> ClientItemStatDefinitions { get; set; }
         public List<ItemAbilityEntry> ItemAbilityEntries { get; set; }
+    }
+
+    public class PointOfInterestDefinition
+    {
+        public int Unknown { get; set; }
+        public int Unknown2 { get; set; }
+        public int Unknown3 { get; set; }
+        public float PositionX { get; set; }
+        public float PositionY { get; set; }
+        public float PositionZ { get; set; }
+        public float SpawnOffset { get; set; }
+        public int Unknown8 { get; set; }
+        public int Unknown9 { get; set; }
+        public int Unknown10 { get; set; }
+        public int Unknown11 { get; set; }
+        public int Unknown12 { get; set; }
+        public int Unknown13 { get; set; }
+        public int Unknown15 { get; set; }
+        public string Unknown14 { get; set; }
     }
 }

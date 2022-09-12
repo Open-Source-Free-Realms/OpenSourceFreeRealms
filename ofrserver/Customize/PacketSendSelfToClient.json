@@ -4,8 +4,8 @@
   "PlayerModel": 1,
   "PlayerHead": "<race>_<gender>_head_caucasian.adr",
   "PlayerHair": "<race>_m_hair_shaggy_<hairtype>.adr",
-  "HairColor": 559,
-  "EyeColor": 514,
+  "HairColor": 116,
+  "EyeColor": 262,
   "Skintone": "skintone3",
   "FacePaint": "none",
   "HumanBeardsPixieWings": "",
@@ -275,7 +275,7 @@
           "comment": "Gloves",
           "Item1": 2,
           "Item2": {
-            "ItemGUID": 4150,
+            "ItemGUID": 0,
             "Category": 2
           }
         },
@@ -283,7 +283,7 @@
           "comment": "Shirt",
           "Item1": 3,
           "Item2": {
-            "ItemGUID": 4561,
+            "ItemGUID": 14003,
             "Category": 3
           }
         },
@@ -299,7 +299,7 @@
           "comment": "Shoes",
           "Item1": 5,
           "Item2": {
-            "ItemGUID": 4332,
+            "ItemGUID": 14004,
             "Category": 5
           }
         },
@@ -307,7 +307,7 @@
           "comment": "Back",
           "Item1": 6,
           "Item2": {
-            "ItemGUID": 3715,
+            "ItemGUID": 0,
             "Category": 6
           }
         },
@@ -470,7 +470,7 @@
       "UnknownSet": [
         {
           "Unknown": 0,
-          "Unknown2": false,
+          "Unknown2": true,
           "Unknown3": 0,
           "Unknown4": 0,
           "Unknown5": 0,
@@ -49467,7 +49467,7 @@
       },
       "Unknown": 0,
       "Definition": 14000,
-      "Tint": 264
+      "Tint": 0
     },
     {
       "comment": "Defender Staff",
@@ -49502,6 +49502,40 @@
       "Unknown": 0,
       "Definition": 78143,
       "Tint": 264
+    },
+    {
+      "comment": "New Hoodie",
+      "Unknown2": false,
+      "Guid": 14003,
+      "Count": 1,
+      "ConsumedCount": 0,
+      "LastCastTime": 2147483647,
+      "ItemStruct": {
+      "HasItemStruct": false,
+      "RentalExpirationTime": 0,
+      "RentalUpsellsSent": 0,
+      "MarketplaceBundleId": 0
+    },
+      "Unknown": 0,
+      "Definition": 14003,
+      "Tint": 0
+    },
+    {
+      "comment": "New Shoes",
+      "Unknown2": false,
+      "Guid": 14004,
+      "Count": 1,
+      "ConsumedCount": 0,
+      "LastCastTime": 2147483647,
+      "ItemStruct": {
+      "HasItemStruct": false,
+      "RentalExpirationTime": 0,
+      "RentalUpsellsSent": 0,
+      "MarketplaceBundleId": 0
+    },
+      "Unknown": 0,
+      "Definition": 14004,
+      "Tint": 0
     },
     {
       "Unknown2": false,
