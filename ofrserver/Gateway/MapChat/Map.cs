@@ -16,20 +16,20 @@ namespace Gateway.MapChat
                 // Indicate we have more definitions
                 packetPointOfInterestDefinitionReply.AddBoolean(true);
 
-                packetPointOfInterestDefinitionReply.AddHostInt32(pointOfInterestDefinition.Unknown);
-                packetPointOfInterestDefinitionReply.AddHostInt32(pointOfInterestDefinition.Unknown2);
+                packetPointOfInterestDefinitionReply.AddHostInt32(pointOfInterestDefinition.GUID);
+                packetPointOfInterestDefinitionReply.AddHostInt32(pointOfInterestDefinition.Name);
                 packetPointOfInterestDefinitionReply.AddHostInt32(pointOfInterestDefinition.Unknown3);
                 packetPointOfInterestDefinitionReply.AddFloat(pointOfInterestDefinition.PositionX);
                 packetPointOfInterestDefinitionReply.AddFloat(pointOfInterestDefinition.PositionY);
                 packetPointOfInterestDefinitionReply.AddFloat(pointOfInterestDefinition.PositionZ);
-                packetPointOfInterestDefinitionReply.AddFloat(pointOfInterestDefinition.SpawnOffset);
-                packetPointOfInterestDefinitionReply.AddHostInt32(pointOfInterestDefinition.Unknown8);
-                packetPointOfInterestDefinitionReply.AddHostInt32(pointOfInterestDefinition.Unknown9);
-                packetPointOfInterestDefinitionReply.AddHostInt32(pointOfInterestDefinition.Unknown10);
+                packetPointOfInterestDefinitionReply.AddFloat(pointOfInterestDefinition.Unknown7);
+                packetPointOfInterestDefinitionReply.AddHostInt32(pointOfInterestDefinition.Icon);
+                packetPointOfInterestDefinitionReply.AddHostInt32(pointOfInterestDefinition.TeleportIndicator);
+                packetPointOfInterestDefinitionReply.AddHostInt32(pointOfInterestDefinition.Unlocked);
                 packetPointOfInterestDefinitionReply.AddHostInt32(pointOfInterestDefinition.Unknown11);
                 packetPointOfInterestDefinitionReply.AddHostInt32(pointOfInterestDefinition.Unknown12);
                 packetPointOfInterestDefinitionReply.AddHostInt32(pointOfInterestDefinition.Unknown13);
-                packetPointOfInterestDefinitionReply.AddASCIIString(pointOfInterestDefinition.Unknown14);
+                packetPointOfInterestDefinitionReply.AddASCIIString(pointOfInterestDefinition.Zone);
                 packetPointOfInterestDefinitionReply.AddHostInt32(pointOfInterestDefinition.Unknown15);
             }
 
