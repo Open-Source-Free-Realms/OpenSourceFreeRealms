@@ -12,13 +12,11 @@ namespace Gateway.Player
     {
         public static void SendPlayerUpdateItemDefinitions(SOEClient soeClient)
         {
-            var clientItemDefinitions = JsonConvert.DeserializeObject<List<ClientItemDefinition>>(File.ReadAllText(@"..\ofrserver\Customize\ClientItemDefinitions.json"));
-
             var playerUpdateItemDefinitions = new SOEWriter();
 
-            playerUpdateItemDefinitions.AddHostInt32(clientItemDefinitions.Count);
+            playerUpdateItemDefinitions.AddHostInt32(LoginManager.ClientItemDefinitions.Count);
 
-            foreach (var clientItemDefinition in clientItemDefinitions)
+            foreach (var clientItemDefinition in LoginManager.ClientItemDefinitions)
             {
                 playerUpdateItemDefinitions.AddHostInt32(clientItemDefinition.Unknown);
                 playerUpdateItemDefinitions.AddHostInt32(clientItemDefinition.Unknown2);
