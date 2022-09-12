@@ -14,7 +14,7 @@ Open Source Free Realms is a reversed engineered walking emulator for a now suns
 # Installation
  - Download XAMPP, This will allow you start up a local server for you to run around in. : https://www.apachefriends.org/
 
- - Download the new OSFR server from the releases tab: https://github.com/OpenFreeRealms/OpenFreeRealms/releases/tag/v1.0
+ - Download the new OSFR server from the releases tab: https://github.com/OpenFreeRealms/OpenFreeRealms/releases
 
  - After installing XAMPP and OSFR navigate to "C:/xampp/htdocs" and drop the "OSFR" folder inside. This is already preset for future proofing other players.
 
