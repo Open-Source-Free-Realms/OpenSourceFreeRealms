@@ -301,9 +301,9 @@ namespace Gateway.Login
 
             soeWriter.AddHostUInt16((ushort)BaseClientUpdatePackets.ClientUpdatePacketUpdateLocation);
 
-            soeWriter.AddFloat(pointOfInterestDefinition.PositionX + pointOfInterestDefinition.SpawnOffset);
-            soeWriter.AddFloat(pointOfInterestDefinition.PositionY + pointOfInterestDefinition.SpawnOffset);
-            soeWriter.AddFloat(pointOfInterestDefinition.PositionZ + pointOfInterestDefinition.SpawnOffset);
+            soeWriter.AddFloat(pointOfInterestDefinition.PositionX);
+            soeWriter.AddFloat(pointOfInterestDefinition.PositionY);
+            soeWriter.AddFloat(pointOfInterestDefinition.PositionZ);
             soeWriter.AddFloat(1.0f);
 
             soeWriter.AddFloat(0.0f);
