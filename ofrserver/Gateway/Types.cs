@@ -16,8 +16,8 @@ namespace Gateway
 
     public class IconData
     {
-        public int Unknown { get; set; }
-        public int Unknown2 { get; set; }
+        public int Icon { get; set; }
+        public int IconColor { get; set; }
     }
 
     public class BaseItemDefinition
@@ -29,7 +29,7 @@ namespace Gateway
         public int Unknown4 { get; set; }
         public int Unknown5 { get; set; }
         public int Unknown6 { get; set; }
-        public int Unknown7 { get; set; }
+        public int JobGUID { get; set; }
         public int Unknown8 { get; set; }
         public int Category { get; set; }
         public bool CannotTrade { get; set; }
@@ -37,7 +37,7 @@ namespace Gateway
         public string ModelBase { get; set; }
         public string ModelTexture { get; set; }
         public int GenderLocked { get; set; }
-        public int Unknown15 { get; set; }
+        public int CategoryLocked { get; set; }
         public int Unknown16 { get; set; }
         public bool MembersOnly { get; set; }
         public bool Unknown18 { get; set; }
@@ -76,5 +76,24 @@ namespace Gateway
 
         public Dictionary<int, ClientItemStatDefinition> ClientItemStatDefinitions { get; set; }
         public List<ItemAbilityEntry> ItemAbilityEntries { get; set; }
+    }
+
+    public class PointOfInterestDefinition
+    {
+        public int GUID { get; set; }
+        public int Name { get; set; }
+        public int Unknown3 { get; set; }
+        public float PositionX { get; set; }
+        public float PositionY { get; set; }
+        public float PositionZ { get; set; }
+        public float Unknown7 { get; set; }
+        public int Icon { get; set; }
+        public int TeleportIndicator { get; set; }
+        public int Unlocked { get; set; }
+        public int Unknown11 { get; set; }
+        public int Unknown12 { get; set; }
+        public int Unknown13 { get; set; }
+        public int Unknown15 { get; set; }
+        public string Zone { get; set; }
     }
 }

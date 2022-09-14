@@ -73,8 +73,8 @@ namespace Gateway.Login
                 bw.Write(clientPcProfile.EnableAbility);
                 bw.Write(clientPcProfile.JobIcon);
                 bw.Write(clientPcProfile.Unknown6);
-                bw.Write(clientPcProfile.JobBadge);
                 bw.Write(clientPcProfile.JobBadgeBorder);
+                bw.Write(clientPcProfile.JobBadge);
                 bw.Write(clientPcProfile.MembersOnly);
                 bw.Write(clientPcProfile.IsCombat);
 
@@ -1345,8 +1345,8 @@ namespace Gateway.Login
             public int EnableAbility { get; set; }
             public int JobIcon { get; set; }
             public int Unknown6 { get; set; }
-            public int JobBadge { get; set; }
             public int JobBadgeBorder { get; set; }
+            public int JobBadge { get; set; }
             public bool MembersOnly { get; set; }
             public int IsCombat { get; set; }
 
