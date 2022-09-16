@@ -1,6 +1,7 @@
 ﻿using System.IO;
 using System.Text;
 using System.Collections.Generic;
+using System;
 
 namespace SOE.Interfaces
 {
@@ -106,6 +107,12 @@ namespace SOE.Interfaces
         {
             byte[] buffer = ReadBytes(4);
             return buffer[3] << 24 | buffer[2] << 16 | buffer[1] << 8 | buffer[0];
+        }
+
+        public float ReadSingle()
+        {
+            byte[] buffer = ReadBytes(4);
+            return BitConverter.ToSingle(buffer, 0);
         }
 
         public string ReadNullTerminatedString()

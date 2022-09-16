@@ -121,8 +121,13 @@ namespace Gateway.Player
 
         public static void SendSelfToClient(SOEClient soeClient)
         {
+            string fileName = "Fallback";
+            if (File.Exists($@"..\ofrserver\Customize\PacketSendSelfToClient\{soeClient.GetClientID()}.json"))
+            {
+                fileName = soeClient.GetClientID().ToString();
+            }
 
-            var SendSelfToClientData = ClientPcData.ReadFromJSON(@"..\ofrserver\Customize\PacketSendSelfToClient.json");
+            var SendSelfToClientData = ClientPcData.ReadFromJSON($@"..\ofrserver\Customize\PacketSendSelfToClient\{fileName}.json");
 
             var rawBytes = SendSelfToClientData;
 
