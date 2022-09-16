@@ -11,8 +11,8 @@ namespace Gateway.Player
         {
             var updateHP = new SOEWriter((ushort)BasePackets.BaseClientUpdatePacket, true);
             updateHP.AddHostUInt16((ushort)BaseClientUpdatePackets.ClientUpdatePacketHitpoints);
-            updateHP.AddHostInt32(2500);
-            updateHP.AddHostInt32(2500);
+            updateHP.AddHostInt32(400);
+            updateHP.AddHostInt32(400);
             LoginManager.SendTunneledClientPacket(soeClient, updateHP.GetRaw());
         }
 
@@ -40,7 +40,7 @@ namespace Gateway.Player
         {
             //var setDefinition = new SOEWriter((ushort)BasePackets.BaseAbilityPacket, true);
             //setDefinition.AddHostUInt16((ushort)BaseAbilityPackets.AbilityPacketSetDefinition);
-            LoginManager.SendTunneledClientPacket(soeClient, LoginManager.StringToByteArray(/* AbilityPacketSetDefinition */"24000500010000000800000000000000000000000000000003000000301200000000000043690000AF590000040000000000A0410100000030120000000000000100000000000000000000000000000000"));
+            LoginManager.SendTunneledClientPacket(soeClient, LoginManager.StringToByteArray(/* AbilityPacketSetDefinition */"2400050001000000080000000000000000000000000000000000000000000000000000000000000000000000"));
         }
     }
 }

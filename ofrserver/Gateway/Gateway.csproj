@@ -55,7 +55,7 @@
     <Compile Include="MapChat\Chat.cs" />
     <Compile Include="MapChat\Map.cs" />
     <Compile Include="Player\NPC.cs" />
-    <Compile Include="Player\PlayerCharacter.cs" />
+    <Compile Include="Player\PC.cs" />
     <Compile Include="Player\PlayerCode.cs" />
     <Compile Include="Player\UpdateStats.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

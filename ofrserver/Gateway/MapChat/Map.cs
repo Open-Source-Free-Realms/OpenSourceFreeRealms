@@ -16,20 +16,20 @@ namespace Gateway.MapChat
                 // Indicate we have more definitions
                 packetPointOfInterestDefinitionReply.AddBoolean(true);
 
-                packetPointOfInterestDefinitionReply.AddHostInt32(pointOfInterestDefinition.GUID);
-                packetPointOfInterestDefinitionReply.AddHostInt32(pointOfInterestDefinition.Name);
-                packetPointOfInterestDefinitionReply.AddHostInt32(pointOfInterestDefinition.Unknown3);
-                packetPointOfInterestDefinitionReply.AddFloat(pointOfInterestDefinition.PositionX);
-                packetPointOfInterestDefinitionReply.AddFloat(pointOfInterestDefinition.PositionY);
-                packetPointOfInterestDefinitionReply.AddFloat(pointOfInterestDefinition.PositionZ);
-                packetPointOfInterestDefinitionReply.AddFloat(pointOfInterestDefinition.Unknown7);
-                packetPointOfInterestDefinitionReply.AddHostInt32(pointOfInterestDefinition.Icon);
-                packetPointOfInterestDefinitionReply.AddHostInt32(pointOfInterestDefinition.TeleportIndicator);
-                packetPointOfInterestDefinitionReply.AddHostInt32(pointOfInterestDefinition.Unlocked);
+                packetPointOfInterestDefinitionReply.AddHostInt32(pointOfInterestDefinition.Id);
+                packetPointOfInterestDefinitionReply.AddHostInt32(pointOfInterestDefinition.NameId);
+                packetPointOfInterestDefinitionReply.AddHostInt32(pointOfInterestDefinition.LocationId);
+                packetPointOfInterestDefinitionReply.AddFloat(pointOfInterestDefinition.X);
+                packetPointOfInterestDefinitionReply.AddFloat(pointOfInterestDefinition.Y);
+                packetPointOfInterestDefinitionReply.AddFloat(pointOfInterestDefinition.Z);
+                packetPointOfInterestDefinitionReply.AddFloat(pointOfInterestDefinition.Heading);
+                packetPointOfInterestDefinitionReply.AddHostInt32(pointOfInterestDefinition.IconId);
+                packetPointOfInterestDefinitionReply.AddHostInt32(pointOfInterestDefinition.NotificationType);
+                packetPointOfInterestDefinitionReply.AddHostInt32(pointOfInterestDefinition.SubNameId);
                 packetPointOfInterestDefinitionReply.AddHostInt32(pointOfInterestDefinition.Unknown11);
-                packetPointOfInterestDefinitionReply.AddHostInt32(pointOfInterestDefinition.Unknown12);
-                packetPointOfInterestDefinitionReply.AddHostInt32(pointOfInterestDefinition.Unknown13);
-                packetPointOfInterestDefinitionReply.AddASCIIString(pointOfInterestDefinition.Zone);
+                packetPointOfInterestDefinitionReply.AddHostInt32(pointOfInterestDefinition.BreadCrumbQuestId);
+                packetPointOfInterestDefinitionReply.AddHostInt32(pointOfInterestDefinition.TeleportLocationId);
+                packetPointOfInterestDefinitionReply.AddASCIIString(pointOfInterestDefinition.AtlasName);
                 packetPointOfInterestDefinitionReply.AddHostInt32(pointOfInterestDefinition.Unknown15);
             }
 
