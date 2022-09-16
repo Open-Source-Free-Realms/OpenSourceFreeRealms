@@ -16,47 +16,47 @@ namespace Gateway
 
     public class IconData
     {
-        public int Icon { get; set; }
-        public int IconColor { get; set; }
+        public int Id { get; set; }
+        public int TintId { get; set; }
     }
 
     public class BaseItemDefinition
     {
-        public int Unknown { get; set; }
-        public int Unknown2 { get; set; }
-        public int Unknown3 { get; set; }
+        public int Id { get; set; }
+        public int NameId { get; set; }
+        public int DescriptionId { get; set; }
         public IconData IconData { get; set; }
         public int Unknown4 { get; set; }
         public int Unknown5 { get; set; }
-        public int Unknown6 { get; set; }
-        public int JobGUID { get; set; }
-        public int Unknown8 { get; set; }
-        public int Category { get; set; }
-        public bool CannotTrade { get; set; }
-        public bool CannotResell { get; set; }
-        public string ModelBase { get; set; }
-        public string ModelTexture { get; set; }
-        public int GenderLocked { get; set; }
-        public int CategoryLocked { get; set; }
-        public int Unknown16 { get; set; }
+        public int Cost { get; set; }
+        public int Class { get; set; }
+        public int ProfileOverride { get; set; }
+        public int Slot { get; set; }
+        public bool NoTrade { get; set; }
+        public bool NoSale { get; set; }
+        public string ModelName { get; set; }
+        public string TextureAlias { get; set; }
+        public int GenderUsage { get; set; }
+        public int Type { get; set; }
+        public int CategoryId { get; set; }
         public bool MembersOnly { get; set; }
-        public bool Unknown18 { get; set; }
-        public int Unknown19 { get; set; }
-        public int Unknown20 { get; set; }
-        public int Unknown21 { get; set; }
-        public int Unknown22 { get; set; }
-        public int TextColor { get; set; }
-        public int Unknown24 { get; set; }
-        public int Unknown25 { get; set; }
-        public bool Unknown26 { get; set; }
-        public int Unknown27 { get; set; }
-        public bool Unknown28 { get; set; }
-        public string ModelColor { get; set; }
-        public bool Unknown30 { get; set; }
-        public int Unknown31 { get; set; }
-        public int Unknown32 { get; set; }
-        public int Unknown33 { get; set; }
-        public int Unknown34 { get; set; }
+        public bool NonMiniGame { get; set; }
+        public int WeaponTrailEffectId { get; set; }
+        public int CompositeEffectId { get; set; }
+        public int PowerRating { get; set; }
+        public int MinProfileRank { get; set; }
+        public int Rarity { get; set; }
+        public int ActivatableAbilityId { get; set; }
+        public int PassiveAbilityId { get; set; }
+        public bool SingleUse { get; set; }
+        public int MaxStackSize { get; set; }
+        public bool IsTintable { get; set; }
+        public string TintAlias { get; set; }
+        public bool ForceDisablePreview { get; set; }
+        public int MemberDiscount { get; set; }
+        public int VipRankRequired { get; set; }
+        public int RaceSetId { get; set; }
+        public int ClientEquipReqSetId { get; set; }
     }
 
     public class ItemAbilityEntry
@@ -80,20 +80,20 @@ namespace Gateway
 
     public class PointOfInterestDefinition
     {
-        public int GUID { get; set; }
-        public int Name { get; set; }
-        public int Unknown3 { get; set; }
-        public float PositionX { get; set; }
-        public float PositionY { get; set; }
-        public float PositionZ { get; set; }
-        public float Unknown7 { get; set; }
-        public int Icon { get; set; }
-        public int TeleportIndicator { get; set; }
-        public int Unlocked { get; set; }
+        public int Id { get; set; }
+        public int NameId { get; set; }
+        public int LocationId { get; set; }
+        public float X { get; set; }
+        public float Y { get; set; }
+        public float Z { get; set; }
+        public float Heading { get; set; }
+        public int IconId { get; set; }
+        public int NotificationType { get; set; }
+        public int SubNameId { get; set; }
         public int Unknown11 { get; set; }
-        public int Unknown12 { get; set; }
-        public int Unknown13 { get; set; }
+        public int BreadCrumbQuestId { get; set; }
+        public int TeleportLocationId { get; set; }
         public int Unknown15 { get; set; }
-        public string Zone { get; set; }
+        public string AtlasName { get; set; }
     }
 }
