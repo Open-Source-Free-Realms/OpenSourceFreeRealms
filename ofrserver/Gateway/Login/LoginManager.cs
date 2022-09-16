@@ -17,11 +17,13 @@ namespace Gateway.Login
     public static class LoginManager
     {
         private static ILog _log;
-
         public static SOEServer _server;
+        private static Random _random = new Random();
 
         public static List<ClientItemDefinition> ClientItemDefinitions;
         public static List<PointOfInterestDefinition> PointOfInterestDefinitions;
+
+        private static List<PlayerCharacter> PlayerCharacters;
 
         public static void Start(SOEServer soeServer = null)
         {
@@ -34,7 +36,9 @@ namespace Gateway.Login
             ClientItemDefinitions = new List<ClientItemDefinition>();
             PointOfInterestDefinitions = new List<PointOfInterestDefinition>();
 
-            if(File.Exists(@"..\ofrserver\Customize\ClientItemDefinitions.json"))
+            PlayerCharacters = new List<PlayerCharacter>();
+
+            if (File.Exists(@"..\ofrserver\Customize\ClientItemDefinitions.json"))
                 ClientItemDefinitions = JsonConvert.DeserializeObject<List<ClientItemDefinition>>(File.ReadAllText(@"..\ofrserver\Customize\ClientItemDefinitions.json"));
 
             if (File.Exists(@"..\ofrserver\Customize\PointOfInterestDefinitions.json"))
@@ -52,7 +56,22 @@ namespace Gateway.Login
             SendClientGameSettings(soeClient);
             SendAnnouncementData(soeClient);
             PlayerCode.SendPlayerUpdateItemDefinitions(soeClient);
-            PlayerCode.SendSelfToClient(soeClient);
+
+            string path = $@"..\ofrserver\Customize\PacketSendSelfToClient\Fallback.json";
+            if (File.Exists($@"..\ofrserver\Customize\PacketSendSelfToClient\{soeClient.GetClientID()}.json"))
+                path = $@"..\ofrserver\Customize\PacketSendSelfToClient\{soeClient.GetClientID()}.json";
+
+            ClientPcDatas pcData = JsonConvert.DeserializeObject<ClientPcDatas>(File.ReadAllText(path), new JsonSerializerSettings()
+            {
+                TypeNameHandling = TypeNameHandling.Auto
+            });
+            pcData.PlayerGUID = soeClient.GetClientID();
+            pcData.FirstName = "Player";
+            pcData.LastName = soeClient.GetClientID().ToString();
+            PlayerCode.SendSelfToClient(soeClient, pcData);
+            PlayerCharacter character = new PlayerCharacter(soeClient, pcData);
+
+            PlayerCharacters.Add(character);
         }
 
         public static void SendLoginReply(SOEClient soeClient)
@@ -167,9 +186,12 @@ namespace Gateway.Login
                     HandlePlayerUpdatePacketUpdatePosition(soeClient, reader);
                     break;
 
+                case (ushort)BasePackets.PlayerUpdatePacketCameraUpdate:
+                    break;
+
                 default:
                     var data = reader.ReadToEnd();
-                    _log.Info($"HandleTunneledClientPacket OpCode: {opCode}\n{BitConverter.ToString(data).Replace("-", "")}");
+                    //_log.Info($"HandleTunneledClientPacket OpCode: {opCode}\n{BitConverter.ToString(data).Replace("-", "")}");
                     break;
             }
         }
@@ -194,12 +216,9 @@ namespace Gateway.Login
             PlayerCode.SendClientUpdatePacketDoneSendingPreloadCharacters(soeClient);
             SendPacketMOTD(soeClient);
 
-            foreach (SOEClient otherClient in _server.ConnectionManager.Clients)
-            {
-                //if (soeClient == otherClient) continue;
-                SendPlayerUpdatePacketAddPc(soeClient, otherClient.GetClientID());
-                SendPlayerUpdatePacketAddPc(otherClient, soeClient.GetClientID());
-            }
+            foreach (PlayerCharacter otherCharacter in PlayerCharacters)
+                if (soeClient.GetClientID() != otherCharacter.client.GetClientID())
+                    otherCharacter.SpawnPcFor(soeClient);
         }
 
         public static void SendPacketLoadWelcomeScreen(SOEClient soeClient)
@@ -327,7 +346,7 @@ namespace Gateway.Login
 
                 default:
                     var data = reader.ReadToEnd();
-                    _log.Info($"HandleTunneledClientWorldPacket OpCode: {opCode}\n{BitConverter.ToString(data).Replace("-", "")}");
+                    //_log.Info($"HandleTunneledClientWorldPacket OpCode: {opCode}\n{BitConverter.ToString(data).Replace("-", "")}");
                     break;
             }
         }
@@ -344,7 +363,7 @@ namespace Gateway.Login
 
                 default:
                     var data = reader.ReadToEnd();
-                    _log.Info($"HandleBaseCommandPacket OpCode: {opCode}\n{BitConverter.ToString(data).Replace("-", "")}");
+                    //_log.Info($"HandleBaseCommandPacket OpCode: {opCode}\n{BitConverter.ToString(data).Replace("-", "")}");
                     break;
             }
         }
@@ -373,149 +392,33 @@ namespace Gateway.Login
 
         private static void SendPlayerUpdatePacketAddPc(SOEClient target, long playerGUID)
         {
-            string fileName = "Fallback";
-            if (File.Exists($@"..\ofrserver\Customize\PacketSendSelfToClient\{playerGUID}.json"))
-            {
-                fileName = playerGUID.ToString();
-            }
-
-            var clientPcData = JsonConvert.DeserializeObject<ClientPcDatas>(File.ReadAllText($@"..\ofrserver\Customize\PacketSendSelfToClient\{fileName}.json"), new JsonSerializerSettings()
-            {
-                TypeNameHandling = TypeNameHandling.Auto
-            });
-
-            var addPc = new SOEWriter((ushort)BasePackets.BasePlayerUpdatePacket, true);
-
-            addPc.AddHostUInt16((ushort)BasePlayerUpdatePackets.PlayerUpdatePacketAddPc);
-            addPc.AddInt64(playerGUID); // Player GUID
-
-            addPc.AddHostInt32(0); // Unknown Zero 1
-            addPc.AddHostInt32(0); // Unknown Zero 2
-            addPc.AddHostInt32(0); // Unknown Zero 3
-
-            addPc.AddASCIIString(clientPcData.FirstName);
-            addPc.AddASCIIString(clientPcData.LastName);
-
-            addPc.AddHostInt32(1); // Unknown 1
-            addPc.AddHostInt32(408679); // Unknown 2
-            addPc.AddHostInt32(13951728); // Unknown 3
-            addPc.AddHostInt32(1); // Unknown 4
-
-            Random random = new Random();
-            for (var i = 0; i < clientPcData.PlayerPosition.Length; i++) // Position
-                addPc.AddFloat(clientPcData.PlayerPosition[i]);
-
-            for (var i = 0; i < 4; i++) // Rotation
-                addPc.AddFloat(0.0f);
-
-            List<(int, ProfileItem)> profileItems = clientPcData.ClientPcProfiles[0].Items; // 0 means adventurer
-            List<ClientItemDefinition> equippedItems = new List<ClientItemDefinition>();
-            foreach ((int, ProfileItem) item in profileItems)
-            {
-                int itemGuid = item.Item2.ItemGUID;
-                ClientItemDefinition itemDefintion = ClientItemDefinitions.Find(x => (x.Unknown == itemGuid));
-                if (itemDefintion != null)
-                    equippedItems.Add(itemDefintion);
-            }
-
-            for (var i = 0; i < equippedItems.Count; i++)
-            {
-                ClientItemDefinition item = equippedItems[i];
-                if (i == 0)
-                    addPc.AddHostInt32(equippedItems.Count);
-                else
-                    addPc.AddHostInt32(i);
-                addPc.AddASCIIString(item.ModelBase);
-                addPc.AddASCIIString(item.ModelTexture);
-                addPc.AddASCIIString(item.ModelColor);
-                addPc.AddHostInt64(item.IconData.IconColor);
-            }
-
-            addPc.AddHostInt32(equippedItems.Count + 1);
-            addPc.AddASCIIString(clientPcData.PlayerHead);
-            addPc.AddASCIIString(clientPcData.PlayerHair);
-            addPc.AddHostInt32(clientPcData.HairColor);
-            addPc.AddHostInt32(clientPcData.EyeColor);
-            addPc.AddHostInt32(1); // Color for HumanBeardsPixieWings, which is one of the unknowns.
-            addPc.AddASCIIString(clientPcData.Skintone);
-            addPc.AddASCIIString(clientPcData.FacePaint);
-            addPc.AddASCIIString(clientPcData.HumanBeardsPixieWings);
-
-            // "Normal" from "Ani"
-            // 000000410001000000000001000000AA2805285500D82FFF28DD0701000000000000000000000000000000000000000200000002000000EF0100000200000000000000000000000000C842100E000000B11674BFD9E8524B7E0A0000F20E00000000000000000000000000000000000000000000000000000001012700000059EE0000170000000000000000000000000000000000000000C15DD1798C9C534BC8020000C80200000100000000000000000000000000000000000000000000000000010000000000000000FFFFFFFFFFFFFFFF000000000000000055559540000000000000000000000000
-
-            // "Rizan"
-            // 0000004100010000000000010000000E4F2DF7E604F0F0E84BDD077800000000000000000000000000000000000000000000000000000000000000FFFFFFFFFFFFFFFF00000000000000007DD20740000000000000000000000000
-
-            // John
-            // 00000041010100000000000100000044402DF7AC0BF0F0E84BDD070100000000000000000000000000000000000000010000000200000059EE000017000000000000000000000000000000000000000011968EB0E2F1534B3E0100003E0100000100000000000000000000000000000000000000000000000000010000000000000000FFFFFFFFFFFFFFFF0000000000000000FAA40F40000000000000000000000000
-
-            // "Normal" from "Sir Edwards"
-            // 0000004100010000000000010000002951557C2913887B0042DD070100000000000000000000000000000000000000010000000200000059EE0000170000000000000000000000000000000000000000513959474185524B94000000940000000100000000000000000000000000000000000000000000000000010000000000000000FFFFFFFFFFFFFFFF00000000000000000000A040000000000000000000000000
-
-            // Sareh
-            // 0000004100010000000000010000000E4F2DF7E604F0F0E84BDD070100000000000000000000000000000000000000000000000000000000000000FFFFFFFFFFFFFFFF00000000000000000000A040000000000000000000000000
-
-            // "Street fighter with dark aura" from "DRAGONMASTER SHERLOCK"
-            // 000000410001000000000000000000010000003D00000001000000C3CB0100000000000200000002000000EF0100000200000000000000000000000000C842100E000000513959474185524B4B810100FB000000000000000000000000000000000000000000000000000000000101050000002CC3000002000000000000000000000000000000FE06000000513959474185524B67000000FB0000000100000081140000000000000000000000000000000000000001010000000000000000FFFFFFFFFFFFFFFF00000000000000000000A040000000000000000000000000
-
-            // gabriella earthlydream "The Sniper Extraordinaire"
-            // 00000041010100000000000000000001000000000000000000000000000000000000000200000002000000EF0100000200000000000000000000000000C842100E000000614FDA8378CF534BE9030000E90300000000000000000000000000000000000000000000000000000001010300000059EE0000170000000000000000000000000000000000000000614FDA8378CF534B0B0000000B00000001000000000000000000000000000000000000000000000000000112000000308175000000000001000000000000001D000000CDCC8C40000000000000000000000000
-
-            // David - Revived Effect
-            // 000000410001000000000001000000494BBD67130060605A4BDD0701000000000000000000000000000000000000000400000002000000EF0100000200000000000000000000000000C842100E000000B10373BB545C534BD6010000D60100000000000000000000000000000000000000000000000000000001010300000059EE0000170000000000000000000000000000000000000000B10373BB545C534BD6010000D601000001000000000000000000000000000000000000000000000000000104000000340B00000200000000000000000000000000C842100E000000B10373BB545C534BD6010000D601000001000000A20F00000000000000000000000000000000000000000105000000350B000008000000000000000000000000000000100E000000B10373BB545C534BD6010000D601000001000000A20F0000000000000000000000000000000000000000010000000000000000FFFFFFFFFFFFFFFF000000001900000000000000000000000000000000000000
-
-            // Unorthodox
-            // 000000410001000000000001000000C048C990BD0014977D48DD07010000000600000003000000BB380000000000000100000002000000EF0100000200000000000000000000000000C842100E000000A1AE55254314534B6A0A00006A0A00000000000000000000000000000000000000000000000000000001010000000000000000FFFFFFFFFFFFFFFF000000000000000000000000000000000000000000000000
-
-            // Wendy Snowydream
-            // 0000004100010000000000010000002643FDCF0C0120C82A42DD07780000003D00000001000000C3CB0100000000000400000002000000EF0100000200000000000000000000000000C842100E000000A1ED10AD7CE6524B61000000610000000000000000000000000000000000000000000000000000000001010300000059EE0000170000000000000000000000000000000000000000A1ED10AD7CE6524B610000006100000001000000000000000000000000000000000000000000000000000104000000340B00000200000000000000000000000000C842100E000000A1ED10AD7CE6524B610000006100000001000000A20F00000000000000000000000000000000000000000105000000350B000008000000000000000000000000000000100E000000A1ED10AD7CE6524B610000006100000001000000A20F0000000000000000000000000000000000000000010000000000000000FFFFFFFFFFFFFFFF00000000000000000000A040000000000000000000000000
-
-            byte[] otherUnknownBytes = StringToByteArray("0000004100010000000000010000002951557C2913887B0042DD070100000000000000000000000000000000000000010000000200000059EE0000170000000000000000000000000000000000000000513959474185524B94000000940000000100000000000000000000000000000000000000000000000000010000000000000000FFFFFFFFFFFFFFFF00000000000000000000A040000000000000000000000000");
-            addPc.AddBytes(otherUnknownBytes);
-
-            _log.Debug($"AddPc: {BitConverter.ToString(addPc.GetRaw()).Replace("-", "")}");
-
-            SendTunneledClientPacket(target, addPc.GetRaw());
+            
         }
 
-        public static void HandlePlayerUpdatePacketUpdatePosition(SOEClient soeClient, SOEReader reader)
+        private static void HandlePlayerUpdatePacketUpdatePosition(SOEClient soeClient, SOEReader reader)
         {
-            long PlayerGUID = reader.ReadUInt64();
-
-            float[] PlayerPosition = new float[4];
+            uint PlayerGUID = reader.ReadHostUInt64();
+            float[] PlayerPosition = new float[3];
             for (var i = 0; i < PlayerPosition.Length; i++)
                 PlayerPosition[i] = reader.ReadSingle();
+            float[] PlayerRotation = new float[3];
+            for (var i = 0; i < PlayerRotation.Length; i++)
+                PlayerRotation[i] = reader.ReadSingle();
 
-            float[] PlayerOrientation = new float[4];
-            for (var i = 0; i < PlayerOrientation.Length; i++)
-                PlayerOrientation[i] = reader.ReadSingle();
+            byte CharacterState = reader.ReadByte();
+            byte Unknown = reader.ReadByte();
 
-            byte PlayerState = reader.ReadByte();
-            byte unknown = reader.ReadByte();
-
-            var soeWriter = new SOEWriter((ushort)BasePackets.PlayerUpdatePacketUpdatePosition, true);
-
-
-            soeWriter.AddInt64(soeClient.GetClientID()); // PlayerGUID
-
-            for (var i = 0; i < PlayerPosition.Length; i++)
-                soeWriter.AddFloat(PlayerPosition[i]);
-
-            for (var i = 0; i < PlayerOrientation.Length; i++)
-                soeWriter.AddFloat(PlayerOrientation[i]);
-
-            soeWriter.AddByte(PlayerState);
-            soeWriter.AddByte(unknown);
-
-            foreach (SOEClient otherClient in _server.ConnectionManager.Clients)
+            PlayerCharacter character = PlayerCharacters.Find(x => x.playerGUID == PlayerGUID);
+            if (character != null)
             {
-                //if (soeClient == otherClient) continue;
-                SendTunneledClientPacket(otherClient, soeWriter.GetRaw());
-                _log.Info($"HandlePlayerUpdatePacketUpdatePosition {soeClient.GetClientID()} -> {otherClient.GetClientID()}");
+                character.position = PlayerPosition;
+                character.rotation = PlayerRotation;
+                character.characterState = CharacterState;
+                character.unknown = Unknown;
+                character.BroadcastPlayerUpdatePacketUpdatePosition();
             }
 
-            //_log.Info($"HandlePlayerUpdatePacketUpdatePosition:\n\t- PlayerGUID: {PlayerGUID}\n\t- PlayerPosition:\n\t\tX: {PlayerPosition[0]}\n\t\tY: {PlayerPosition[1]}\n\t\tZ: {PlayerPosition[2]}\n\t- PlayerOrientation:\n\t\tX: {PlayerOrientation[0]}\n\t\tY: {PlayerOrientation[1]}\n\t\tZ: {PlayerOrientation[2]}\n\t- PlayerState: {PlayerState}\n\t- Unknown: {unknown}");
+            _log.Info($"HandlePlayerUpdatePacketUpdatePosition:\n\t- PlayerGUID: {BitConverter.ToString(BitConverter.GetBytes(PlayerGUID)).Replace("-", "")}, Spawned: {character != null}\n\t- PlayerPosition:\n\t\tX: {PlayerPosition[0]}\n\t\tY: {PlayerPosition[1]}\n\t\tZ: {PlayerPosition[2]}\n\t- PlayerOrientation:\n\t\tX: {PlayerRotation[0]}\n\t\tY: {PlayerRotation[1]}\n\t\tZ: {PlayerRotation[2]}\n\t- PlayerState: {CharacterState}\n\t- Unknown: {Unknown}");
         }
 
         public static void SendTunneledClientWorldPacket(SOEClient soeClient, byte[] rawBytes)

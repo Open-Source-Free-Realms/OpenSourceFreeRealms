@@ -5,6 +5,8 @@ using Gateway.Login;
 using System.IO;
 using Newtonsoft.Json;
 using System.Collections.Generic;
+using static Gateway.Login.ClientPcData;
+using System;
 
 namespace Gateway.Player
 {
@@ -119,17 +121,9 @@ namespace Gateway.Player
         }
 
 
-        public static void SendSelfToClient(SOEClient soeClient)
+        public static void SendSelfToClient(SOEClient soeClient, ClientPcDatas pcData)
         {
-            string fileName = "Fallback";
-            if (File.Exists($@"..\ofrserver\Customize\PacketSendSelfToClient\{soeClient.GetClientID()}.json"))
-            {
-                fileName = soeClient.GetClientID().ToString();
-            }
-
-            var SendSelfToClientData = ClientPcData.ReadFromJSON($@"..\ofrserver\Customize\PacketSendSelfToClient\{fileName}.json");
-
-            var rawBytes = SendSelfToClientData;
+            var rawBytes = ReadFromPcData(pcData);
 
             var sendSelfToClient = new SOEWriter((ushort)BasePackets.PacketSendSelfToClient, true);
 

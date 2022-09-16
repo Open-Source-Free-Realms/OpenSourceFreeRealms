@@ -109,6 +109,12 @@ namespace SOE.Interfaces
             return buffer[3] << 24 | buffer[2] << 16 | buffer[1] << 8 | buffer[0];
         }
 
+        public long ReadHostInt64()
+        {
+            byte[] buffer = ReadBytes(8);
+            return (buffer[0] << 56 | buffer[1] << 48 | buffer[2] << 40 | buffer[3] << 32 | buffer[4] << 24 | buffer[5] << 16 | buffer[6] << 8 | buffer[7]);
+        }
+
         public float ReadSingle()
         {
             byte[] buffer = ReadBytes(4);

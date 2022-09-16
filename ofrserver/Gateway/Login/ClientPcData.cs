@@ -9,13 +9,8 @@ namespace Gateway.Login
     internal static class ClientPcData
     {
 
-        public static byte[] ReadFromJSON(string filename)
+        public static byte[] ReadFromPcData(ClientPcDatas clientPcData)
         {
-            var clientPcData = JsonConvert.DeserializeObject<ClientPcDatas>(File.ReadAllText(filename), new JsonSerializerSettings()
-            {
-                TypeNameHandling = TypeNameHandling.Auto
-            });
-
             var ms = new MemoryStream();
             var bw = new BinaryWriter(ms);
 
