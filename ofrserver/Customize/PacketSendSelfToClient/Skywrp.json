@@ -1,12 +1,12 @@
 {
   "Unknown": 665338923,
   "PlayerGUID": 1,
-  "PlayerModel": 1,
+  "PlayerModel": 60,
   "PlayerHead": "<race>_<gender>_head_caucasian.adr",
   "PlayerHair": "<race>_m_hair_shaggy_<hairtype>.adr",
-  "HairColor": 116,
-  "EyeColor": 262,
-  "Skintone": "skintone3",
+  "HairColor": 264,
+  "EyeColor": 254,
+  "Skintone": "skintone4",
   "FacePaint": "none",
   "HumanBeardsPixieWings": "",
   "Unknown11": 1,
@@ -29,8 +29,8 @@
   "Unknown24": 0,
   "Unknown25": 0,
   "Unknown26": 0,
-  "FirstName": "Open Source",
-  "LastName": "Free Realms",
+  "FirstName": "Skywrp",
+  "LastName": "",
   "Coins": 0,
   "AccountBirthday": 1261854072,
   "AccountAge": 0,
@@ -275,7 +275,7 @@
           "comment": "Gloves",
           "Item1": 2,
           "Item2": {
-            "ItemGUID": 0,
+            "ItemGUID": 4150,
             "Category": 2
           }
         },
@@ -283,7 +283,7 @@
           "comment": "Shirt",
           "Item1": 3,
           "Item2": {
-            "ItemGUID": 14003,
+            "ItemGUID": 2005,
             "Category": 3
           }
         },
@@ -299,7 +299,7 @@
           "comment": "Shoes",
           "Item1": 5,
           "Item2": {
-            "ItemGUID": 14004,
+            "ItemGUID": 4332,
             "Category": 5
           }
         },
@@ -307,7 +307,7 @@
           "comment": "Back",
           "Item1": 6,
           "Item2": {
-            "ItemGUID": 0,
+            "ItemGUID": 3796,
             "Category": 6
           }
         },
@@ -58543,7 +58543,7 @@
       },
       "Unknown": 0,
       "Definition": 76336,
-      "Tint": 250
+      "Tint": 264
     },
     {
       "Unknown2": false,
@@ -65695,7 +65695,7 @@
       },
       "Unknown": 0,
       "Definition": 17246,
-      "Tint": 0
+      "Tint": 264
     },
     {
       "Unknown2": false,

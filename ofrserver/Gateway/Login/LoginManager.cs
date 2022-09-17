@@ -10,6 +10,7 @@ using Newtonsoft.Json;
 using System.IO;
 using System.Linq;
 using static Gateway.Login.ClientPcData;
+using System.Threading;
 
 namespace Gateway.Login
 {
@@ -23,6 +24,11 @@ namespace Gateway.Login
         public static List<PointOfInterestDefinition> PointOfInterestDefinitions;
 
         private static List<PlayerCharacter> PlayerCharacters;
+
+        private static double CalculateMagnitude(float[] pos0, float[] pos1)
+        {
+            return Math.Sqrt(Math.Pow(pos1[0] - pos0[0], 2) + Math.Pow(pos1[1] - pos0[1], 2) + Math.Pow(pos1[2] - pos0[2], 2));
+        }
 
         public static void Start(SOEServer soeServer = null)
         {
@@ -42,12 +48,52 @@ namespace Gateway.Login
 
             if (File.Exists(@"..\ofrserver\Customize\PointOfInterestDefinitions.json"))
                 PointOfInterestDefinitions = JsonConvert.DeserializeObject<List<PointOfInterestDefinition>>(File.ReadAllText(@"..\ofrserver\Customize\PointOfInterestDefinitions.json"));
+
+            Thread characterReplicationThread = new Thread((characterReplicationThreadStart) =>
+            {
+                while (_server.Running)
+                {
+                    int now = (int)(DateTime.UtcNow - new DateTime(1970, 1, 1)).TotalSeconds;
+                    List<SOEClient> Clients = _server.ConnectionManager.Clients;
+                    for (int i = 0; i < Clients.Count; i++)
+                    {
+                        if (Clients[i] == null) continue;
+                        SOEClient client = Clients[i];
+                        foreach (PlayerCharacter character in PlayerCharacters)
+                            if (client != character.client)
+                                character.SendPlayerUpdatePacketUpdatePosition(client);
+                    }
+
+                    Thread.Sleep(1000);
+                }
+            });
+            characterReplicationThread.Name = "LoginManager::CharacterReplicationThread";
+            characterReplicationThread.Start();
+
+            _server.ConnectionManager.OnDisconnect += HandleDisconnect;
+        }
+
+        private static void HandleDisconnect(SOEClient soeClient)
+        {
+            PlayerCharacter character = PlayerCharacters.Find(x => x.client == soeClient);
+            if (character == null) return;
+            character.Dispose();
+            PlayerCharacters.Remove(character);
         }
 
         [SOEMessageHandler("PacketLogin", (ushort)ClientGatewayBasePackets.PacketLogin, "CGAPI_527")]
         public static void HandleLoginRequest(SOEClient soeClient, SOEMessage message)
         {
-            PlayerCode.SendEncounterOverworldCombat(soeClient);
+            SOEReader soeReader = new SOEReader(message);
+
+            string ticket = soeReader.ReadASCIIString();
+            ulong playerGUID = soeReader.ReadHostUInt64();
+            string version = soeReader.ReadASCIIString();
+            int unknown = soeReader.ReadHostInt32();
+
+            _log.Debug($"Login Request from {soeClient.GetClientAddress()}:\n\t - Ticket: {ticket}\n\t - GUID: {playerGUID}\n\t - Version: {version}\n\t - Unknown: {unknown}");
+
+            //PlayerCode.SendEncounterOverworldCombat(soeClient);
             soeClient.SendMessage(new SOEWriter(new SOEMessage((ushort)ClientGatewayBasePackets.PacketClientIsHosted, StringToByteArray("0700"))).GetFinalSOEMessage(soeClient));
             SendLoginReply(soeClient);
             SendInitializationParameters(soeClient);
@@ -56,17 +102,29 @@ namespace Gateway.Login
             SendAnnouncementData(soeClient);
             PlayerCode.SendPlayerUpdateItemDefinitions(soeClient);
 
+            bool overrideName = true;
             string path = $@"..\ofrserver\Customize\PacketSendSelfToClient\Fallback.json";
-            if (File.Exists($@"..\ofrserver\Customize\PacketSendSelfToClient\{soeClient.GetClientID()}.json"))
-                path = $@"..\ofrserver\Customize\PacketSendSelfToClient\{soeClient.GetClientID()}.json";
+            if (File.Exists($@"..\ofrserver\Customize\PacketSendSelfToClient\{ticket}.json"))
+            {
+                _log.Debug($"Found {ticket}.json!");
+                overrideName = false;
+                path = $@"..\ofrserver\Customize\PacketSendSelfToClient\{ticket}.json";
+            }
+            else
+            {
+                _log.Warn($"Was not able to find {ticket}.json!");
+            }
 
             ClientPcDatas pcData = JsonConvert.DeserializeObject<ClientPcDatas>(File.ReadAllText(path), new JsonSerializerSettings()
             {
                 TypeNameHandling = TypeNameHandling.Auto
             });
-            pcData.PlayerGUID = soeClient.GetClientID();
-            pcData.FirstName = "Player";
-            pcData.LastName = soeClient.GetClientID().ToString();
+            pcData.PlayerGUID = soeClient.GetSessionID();
+            if (overrideName)
+            {
+                pcData.FirstName = ticket;
+                pcData.LastName = $"(#{soeClient.GetClientID()})";
+            }
             PlayerCode.SendSelfToClient(soeClient, pcData);
             PlayerCharacter character = new PlayerCharacter(soeClient, pcData);
 
@@ -173,6 +231,10 @@ namespace Gateway.Login
                     HandlePacketClientIsReady(soeClient);
                     break;
 
+                case (ushort)BasePackets.BaseChatPacket:
+                    HandleBaseChatPacket(soeClient, reader);
+                    break;
+
                 case (ushort)BasePackets.PacketZoneTeleportRequest:
                     HandlePacketZoneTeleportRequest(soeClient, reader);
                     break;
@@ -214,9 +276,24 @@ namespace Gateway.Login
             PlayerCode.SendClientUpdatePacketDoneSendingPreloadCharacters(soeClient);
             SendPacketMOTD(soeClient);
 
-            foreach (PlayerCharacter otherCharacter in PlayerCharacters)
-                if (soeClient.GetClientID() != otherCharacter.client.GetClientID())
-                    otherCharacter.SpawnPcFor(soeClient);
+
+            PlayerCharacter ourCharacter = PlayerCharacters.Find(x => x.client == soeClient);
+
+            // spawn others' characters for our new player
+            foreach (PlayerCharacter theirCharacter in PlayerCharacters)
+                if (theirCharacter.client != soeClient) // character's client isn't us
+                    theirCharacter.SpawnPcFor(soeClient); // spawn their character for us
+
+            if (ourCharacter != null)
+            {
+                // spawn our character for other players
+                List<SOEClient> Clients = _server.ConnectionManager.Clients;
+                for (int i = 0; i < Clients.Count; i++)
+                {
+                    if (Clients[i] == null || Clients[i] == soeClient) continue; // client is connected and isn't us
+                    ourCharacter.SpawnPcFor(Clients[i]); // spawn our character for other player
+                }
+            }
         }
 
         public static void SendPacketLoadWelcomeScreen(SOEClient soeClient)
@@ -303,7 +380,7 @@ namespace Gateway.Login
             var unknown2 = reader.ReadHostUInt32();
             var unknown3 = reader.ReadBoolean();
 
-            _log.Info($"HandlePacketGameTimeSync Time: {time}, Unknown2: {unknown2}, Unknown3: {unknown3} ");
+            //_log.Info($"HandlePacketGameTimeSync Time: {time}, Unknown2: {unknown2}, Unknown3: {unknown3} ");
 
             var soeWriter = new SOEWriter((ushort)BasePackets.PacketGameTimeSync, true);
 
@@ -344,7 +421,7 @@ namespace Gateway.Login
 
                 default:
                     var data = reader.ReadToEnd();
-                    _log.Info($"HandleTunneledClientPacket OpCode: {opCode}\n{BitConverter.ToString(data).Replace("-", "")}");
+                    //_log.Info($"HandleTunneledClientPacket OpCode: {opCode}\n{BitConverter.ToString(data).Replace("-", "")}");
                     break;
             }
         }
@@ -361,7 +438,7 @@ namespace Gateway.Login
 
                 default:
                     var data = reader.ReadToEnd();
-                    _log.Info($"HandleBaseCommandPacket OpCode: {opCode}\n{BitConverter.ToString(data).Replace("-", "")}");
+                    //_log.Info($"HandleBaseCommandPacket OpCode: {opCode}\n{BitConverter.ToString(data).Replace("-", "")}");
                     break;
             }
         }
@@ -388,11 +465,6 @@ namespace Gateway.Login
             SendTunneledClientPacket(soeClient, soeWriter.GetRaw()); */
         }
 
-        private static void SendPlayerUpdatePacketAddPc(SOEClient target, long playerGUID)
-        {
-            
-        }
-
         private static void HandlePlayerUpdatePacketUpdatePosition(SOEClient soeClient, SOEReader reader)
         {
             uint PlayerGUID = reader.ReadHostUInt64();
@@ -406,18 +478,52 @@ namespace Gateway.Login
             byte CharacterState = reader.ReadByte();
             byte Unknown = reader.ReadByte();
 
-            PlayerCharacter character = PlayerCharacters.Find(x => x.playerGUID == PlayerGUID);
+            PlayerCharacter character = PlayerCharacters.Find(x => x.client == soeClient);
             if (character != null)
             {
                 character.position = PlayerPosition;
                 character.rotation = PlayerRotation;
                 character.characterState = CharacterState;
                 character.unknown = Unknown;
-                character.BroadcastPlayerUpdatePacketUpdatePosition();
             }
 
-            _log.Info($"HandlePlayerUpdatePacketUpdatePosition:\n\t- PlayerGUID: {BitConverter.ToString(BitConverter.GetBytes(PlayerGUID)).Replace("-", "")}, Spawned: {character != null}\n\t- PlayerPosition:\n\t\tX: {PlayerPosition[0]}\n\t\tY: {PlayerPosition[1]}\n\t\tZ: {PlayerPosition[2]}\n\t- PlayerOrientation:\n\t\tX: {PlayerRotation[0]}\n\t\tY: {PlayerRotation[1]}\n\t\tZ: {PlayerRotation[2]}\n\t- PlayerState: {CharacterState}\n\t- Unknown: {Unknown}");
+            //_log.Info($"HandlePlayerUpdatePacketUpdatePosition:\n\t- PlayerGUID: {BitConverter.ToString(BitConverter.GetBytes(PlayerGUID)).Replace("-", "")}, Spawned: {character != null}\n\t- PlayerPosition:\n\t\tX: {PlayerPosition[0]}\n\t\tY: {PlayerPosition[1]}\n\t\tZ: {PlayerPosition[2]}\n\t- PlayerOrientation:\n\t\tX: {PlayerRotation[0]}\n\t\tY: {PlayerRotation[1]}\n\t\tZ: {PlayerRotation[2]}\n\t- PlayerState: {CharacterState}\n\t- Unknown: {Unknown}");
         }
+        private static void HandleBaseChatPacket(SOEClient soeClient, SOEReader reader)
+        {
+            var subOpCode = reader.ReadHostUInt16();
+            _log.Debug($"HandleBaseChatPacket:\n\t- Client ID: {soeClient.GetClientID()}\n\t - SubOpCode: {subOpCode}");
+            switch (subOpCode)
+            {
+                case (ushort)BaseChatPackets.PacketChat:
+                    HandlePacketChat(soeClient, reader);
+                    break;
+                case (ushort)BaseChatPackets.ChatPacketEnterArea:
+                    break;
+                case (ushort)BaseChatPackets.ChatPacketDebugChat:
+                    break;
+                case (ushort)BaseChatPackets.ChatPacketFromStringId:
+                    break;
+                case (ushort)BaseChatPackets.TellEchoPacket:
+                    break;
+            }
+        }
+
+        private static void HandlePacketChat(SOEClient soeClient, SOEReader reader)
+        {
+            ushort unknown = reader.ReadUInt16();
+            ulong PlayerGUID = reader.ReadUInt64();
+            var unknown2 = reader.ReadBytes(48);
+            string message = reader.ReadASCIIString();
+            var unknown3 = reader.ReadToEnd();
+
+            _log.Debug($"HandlePacketChat:\n\t- Client ID: {soeClient.GetClientID()}\n\t - PlayerGUID: {PlayerGUID}\n\t - Message: {message}");
+
+            PlayerCharacter character = PlayerCharacters.Find(x => x.client == soeClient);
+            if (character == null) return;
+            character.SendPacketChat(soeClient, message);
+        }
+
 
         public static void SendTunneledClientWorldPacket(SOEClient soeClient, byte[] rawBytes)
         {

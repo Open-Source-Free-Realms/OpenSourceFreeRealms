@@ -259,7 +259,7 @@ namespace SOE.Core
                 // File.WriteAllBytes(Path.GetRandomFileName(), packet.GetRaw());
 
                 // TODO: Handle repeat-until-acknowledged and all that comes with it.
-                Log.InfoFormat("(Client {0}) Data Ack", Client.GetClientID());
+                //Log.InfoFormat("(Client {0}) Data Ack", Client.GetClientID());
             }
             else
             {

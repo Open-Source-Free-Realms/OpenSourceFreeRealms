@@ -194,7 +194,7 @@ namespace SOE.Core
                     break;
 
                 default:
-                    Log.InfoFormat("Received Unknown SOEPacket 0x{0:X2}!", packet.GetOpCode());
+                    //Log.InfoFormat("Received Unknown SOEPacket 0x{0:X2}!", packet.GetOpCode());
                     break;
             }
         }
@@ -223,7 +223,7 @@ namespace SOE.Core
             {
                 // Log
                 string messageName = MessageHandlers.Protocol2MessageName[protocolString][message.GetOpCode()];
-                Log.InfoFormat("Received 0x{0:X}, {1}_{2}!", message.GetOpCode(), gameName, messageName);
+                //Log.InfoFormat("Received 0x{0:X}, {1}_{2}!", message.GetOpCode(), gameName, messageName);
 
                 // Handle it
                 MessageHandlers.GetHandler(protocolString, message.GetOpCode())(sender, message);
@@ -231,7 +231,7 @@ namespace SOE.Core
             else
             {
                 // Log
-                Log.InfoFormat("Received Unknown SOEMessage {0}!", message.GetOpCode());
+                //Log.InfoFormat("Received Unknown SOEMessage {0}!", message.GetOpCode());
                 foreach (byte b in message.GetRaw())
                 {
                     Console.Write("0x{0:X2} ", b);

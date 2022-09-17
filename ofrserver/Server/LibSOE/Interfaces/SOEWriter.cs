@@ -358,7 +358,7 @@ namespace SOE.Interfaces
 
             // Make our message
             SOEMessage message = new SOEMessage(OpCode, GetRaw());
-
+            
             // Does this message have to be fragmented?
             if (Data.Count > client.GetBufferSize())
             {
