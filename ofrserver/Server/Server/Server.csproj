@@ -80,8 +80,11 @@
     <PackageReference Include="CommandLineParser">
       <Version>1.9.71</Version>
     </PackageReference>
+    <PackageReference Include="MySql.Data">
+      <Version>8.0.30</Version>
+    </PackageReference>
     <PackageReference Include="Newtonsoft.Json">
-      <Version>11.0.1</Version>
+      <Version>13.0.1</Version>
     </PackageReference>
   </ItemGroup>
   <ItemGroup>

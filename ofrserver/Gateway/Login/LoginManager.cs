@@ -18,17 +18,11 @@ namespace Gateway.Login
     {
         private static ILog _log;
         public static SOEServer _server;
-        private static Random _random = new Random();
 
         public static List<ClientItemDefinition> ClientItemDefinitions;
         public static List<PointOfInterestDefinition> PointOfInterestDefinitions;
 
         private static List<PlayerCharacter> PlayerCharacters;
-
-        private static double CalculateMagnitude(float[] pos0, float[] pos1)
-        {
-            return Math.Sqrt(Math.Pow(pos1[0] - pos0[0], 2) + Math.Pow(pos1[1] - pos0[1], 2) + Math.Pow(pos1[2] - pos0[2], 2));
-        }
 
         public static void Start(SOEServer soeServer = null)
         {
@@ -92,6 +86,15 @@ namespace Gateway.Login
             int unknown = soeReader.ReadHostInt32();
 
             _log.Debug($"Login Request from {soeClient.GetClientAddress()}:\n\t - Ticket: {ticket}\n\t - GUID: {playerGUID}\n\t - Version: {version}\n\t - Unknown: {unknown}");
+
+            /*
+            bool success = DatabaseManager.AttemptLogin(playerGUID, ticket);
+            if (!success)
+            {
+                soeClient.Disconnect((ushort)SOEDisconnectReason.ConnectionRefused);
+                return;
+            }
+            */
 
             //PlayerCode.SendEncounterOverworldCombat(soeClient);
             soeClient.SendMessage(new SOEWriter(new SOEMessage((ushort)ClientGatewayBasePackets.PacketClientIsHosted, StringToByteArray("0700"))).GetFinalSOEMessage(soeClient));
