@@ -1,14 +1,14 @@
 {
   "Unknown": 665338923,
-  "PlayerGUID": 1,
-  "PlayerModel": 60,
+  "PlayerGUID": 69420,
+  "PlayerModel": 1,
   "PlayerHead": "<race>_<gender>_head_caucasian.adr",
-  "PlayerHair": "<race>_m_hair_shaggy_<hairtype>.adr",
-  "HairColor": 264,
-  "EyeColor": 254,
-  "Skintone": "skintone4",
+  "PlayerHair": "<race>_m_hair_fauxhawk_<hairtype>.adr",
+  "HairColor": 236,
+  "EyeColor": 249,
+  "Skintone": "skintone1",
   "FacePaint": "none",
-  "HumanBeardsPixieWings": "",
+  "HumanBeardsPixieWings": "human_m_facialhair_beard.adr",
   "Unknown11": 1,
   "Unknown12": 5,
   "Unknown13": 3,
@@ -32,7 +32,7 @@
   "FirstName": "Skywrp",
   "LastName": "",
   "Coins": 0,
-  "AccountBirthday": 1261854072,
+  "AccountBirthday": 0,
   "AccountAge": 0,
   "AccountPlayTime": 0,
   "Unknown33": false,
@@ -262,7 +262,7 @@
       "Unknown19": 0,
       "Unknown20": 0,
       "$comment": "Start of Inventory, You can change these values to equip",
-      "Items": [ 
+      "Items": [
         {
           "comment": "Head",
           "Item1": 1,
@@ -275,7 +275,7 @@
           "comment": "Gloves",
           "Item1": 2,
           "Item2": {
-            "ItemGUID": 4150,
+            "ItemGUID": 0,
             "Category": 2
           }
         },
@@ -283,7 +283,7 @@
           "comment": "Shirt",
           "Item1": 3,
           "Item2": {
-            "ItemGUID": 2005,
+            "ItemGUID": 14003,
             "Category": 3
           }
         },
@@ -299,7 +299,7 @@
           "comment": "Shoes",
           "Item1": 5,
           "Item2": {
-            "ItemGUID": 4332,
+            "ItemGUID": 14004,
             "Category": 5
           }
         },
@@ -307,7 +307,7 @@
           "comment": "Back",
           "Item1": 6,
           "Item2": {
-            "ItemGUID": 3796,
+            "ItemGUID": 0,
             "Category": 6
           }
         },
@@ -49477,11 +49477,11 @@
       "ConsumedCount": 0,
       "LastCastTime": 2147483647,
       "ItemStruct": {
-      "HasItemStruct": false,
-      "RentalExpirationTime": 0,
-      "RentalUpsellsSent": 0,
-      "MarketplaceBundleId": 0
-    },
+        "HasItemStruct": false,
+        "RentalExpirationTime": 0,
+        "RentalUpsellsSent": 0,
+        "MarketplaceBundleId": 0
+      },
       "Unknown": 0,
       "Definition": 14001,
       "Tint": 0
@@ -49511,11 +49511,11 @@
       "ConsumedCount": 0,
       "LastCastTime": 2147483647,
       "ItemStruct": {
-      "HasItemStruct": false,
-      "RentalExpirationTime": 0,
-      "RentalUpsellsSent": 0,
-      "MarketplaceBundleId": 0
-    },
+        "HasItemStruct": false,
+        "RentalExpirationTime": 0,
+        "RentalUpsellsSent": 0,
+        "MarketplaceBundleId": 0
+      },
       "Unknown": 0,
       "Definition": 14003,
       "Tint": 0
@@ -49528,11 +49528,11 @@
       "ConsumedCount": 0,
       "LastCastTime": 2147483647,
       "ItemStruct": {
-      "HasItemStruct": false,
-      "RentalExpirationTime": 0,
-      "RentalUpsellsSent": 0,
-      "MarketplaceBundleId": 0
-    },
+        "HasItemStruct": false,
+        "RentalExpirationTime": 0,
+        "RentalUpsellsSent": 0,
+        "MarketplaceBundleId": 0
+      },
       "Unknown": 0,
       "Definition": 14004,
       "Tint": 0
@@ -58543,7 +58543,7 @@
       },
       "Unknown": 0,
       "Definition": 76336,
-      "Tint": 264
+      "Tint": 250
     },
     {
       "Unknown2": false,
@@ -65695,7 +65695,7 @@
       },
       "Unknown": 0,
       "Definition": 17246,
-      "Tint": 264
+      "Tint": 0
     },
     {
       "Unknown2": false,
