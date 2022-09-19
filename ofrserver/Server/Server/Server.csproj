@@ -102,5 +102,10 @@
   <ItemGroup>
     <Content Include="OpenRealms.ico" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Config.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
