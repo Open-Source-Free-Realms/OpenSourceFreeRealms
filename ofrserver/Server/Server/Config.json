@@ -1,0 +1,40 @@
+[
+    /*
+        Gateway server --
+        Accepts user connections, authenticates them, and then transfers them to the world server.
+    */
+    {
+        // Basic information
+        "Name": "Gateway",
+        "Port": 20260,
+        "ID": 4001,
+        
+        // Application information
+        "AppName": "FreeRealms",
+        "ShortAppName": "FR",
+
+        "Application": {
+            "ClientVersion": "1.910.1.530630"
+        },
+        
+        // Server components
+        "Roles": [
+            "Gateway.dll"
+        ],
+        
+        "ConnectionManager": {
+            "MaxConnections": 100
+        },
+
+        "Protocol": {
+            "ProtocolString": "CGAPI_527"
+        },
+        
+        // Logging
+        "Logger": {
+            "WantColors": true,
+            "WantLibraryLogging": true,
+            "Filename": "./Logs/GatewayEventLog-{0:dd-MM-yyyy-hh-mm}.log"
+        }
+    }
+]

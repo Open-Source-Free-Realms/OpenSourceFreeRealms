@@ -5,6 +5,7 @@ using Gateway.Login;
 using System.IO;
 using Newtonsoft.Json;
 using System.Collections.Generic;
+using static Gateway.Login.ClientPcData;
 
 namespace Gateway.Player
 {
@@ -18,56 +19,42 @@ namespace Gateway.Player
 
             foreach (var clientItemDefinition in LoginManager.ClientItemDefinitions)
             {
-                playerUpdateItemDefinitions.AddHostInt32(clientItemDefinition.Unknown);
-                playerUpdateItemDefinitions.AddHostInt32(clientItemDefinition.Unknown2);
-                playerUpdateItemDefinitions.AddHostInt32(clientItemDefinition.Unknown3);
-
-                playerUpdateItemDefinitions.AddHostInt32(clientItemDefinition.IconData.Icon);
-                playerUpdateItemDefinitions.AddHostInt32(clientItemDefinition.IconData.IconColor);
-
+                playerUpdateItemDefinitions.AddHostInt32(clientItemDefinition.Id);
+                playerUpdateItemDefinitions.AddHostInt32(clientItemDefinition.NameId);
+                playerUpdateItemDefinitions.AddHostInt32(clientItemDefinition.DescriptionId);
+                playerUpdateItemDefinitions.AddHostInt32(clientItemDefinition.IconData.Id);
+                playerUpdateItemDefinitions.AddHostInt32(clientItemDefinition.IconData.TintId);
                 playerUpdateItemDefinitions.AddHostInt32(clientItemDefinition.Unknown4);
                 playerUpdateItemDefinitions.AddHostInt32(clientItemDefinition.Unknown5);
-                playerUpdateItemDefinitions.AddHostInt32(clientItemDefinition.Unknown6);
-                playerUpdateItemDefinitions.AddHostInt32(clientItemDefinition.JobGUID);
-                playerUpdateItemDefinitions.AddHostInt32(clientItemDefinition.Unknown8);
-                playerUpdateItemDefinitions.AddHostInt32(clientItemDefinition.Category);
-
-                playerUpdateItemDefinitions.AddBoolean(clientItemDefinition.CannotTrade);
-                playerUpdateItemDefinitions.AddBoolean(clientItemDefinition.CannotResell);
-
-                playerUpdateItemDefinitions.AddASCIIString(clientItemDefinition.ModelBase);
-                playerUpdateItemDefinitions.AddASCIIString(clientItemDefinition.ModelTexture);
-
-                playerUpdateItemDefinitions.AddHostInt32(clientItemDefinition.GenderLocked);
-                playerUpdateItemDefinitions.AddHostInt32(clientItemDefinition.CategoryLocked);
-                playerUpdateItemDefinitions.AddHostInt32(clientItemDefinition.Unknown16);
-
+                playerUpdateItemDefinitions.AddHostInt32(clientItemDefinition.Cost);
+                playerUpdateItemDefinitions.AddHostInt32(clientItemDefinition.Class);
+                playerUpdateItemDefinitions.AddHostInt32(clientItemDefinition.ProfileOverride);
+                playerUpdateItemDefinitions.AddHostInt32(clientItemDefinition.Slot);
+                playerUpdateItemDefinitions.AddBoolean(clientItemDefinition.NoTrade);
+                playerUpdateItemDefinitions.AddBoolean(clientItemDefinition.NoSale);
+                playerUpdateItemDefinitions.AddASCIIString(clientItemDefinition.ModelName);
+                playerUpdateItemDefinitions.AddASCIIString(clientItemDefinition.TextureAlias);
+                playerUpdateItemDefinitions.AddHostInt32(clientItemDefinition.GenderUsage);
+                playerUpdateItemDefinitions.AddHostInt32(clientItemDefinition.Type);
+                playerUpdateItemDefinitions.AddHostInt32(clientItemDefinition.CategoryId);
                 playerUpdateItemDefinitions.AddBoolean(clientItemDefinition.MembersOnly);
-                playerUpdateItemDefinitions.AddBoolean(clientItemDefinition.Unknown18);
-
-                playerUpdateItemDefinitions.AddHostInt32(clientItemDefinition.Unknown19);
-                playerUpdateItemDefinitions.AddHostInt32(clientItemDefinition.Unknown20);
-                playerUpdateItemDefinitions.AddHostInt32(clientItemDefinition.Unknown21);
-                playerUpdateItemDefinitions.AddHostInt32(clientItemDefinition.Unknown22);
-                playerUpdateItemDefinitions.AddHostInt32(clientItemDefinition.TextColor);
-                playerUpdateItemDefinitions.AddHostInt32(clientItemDefinition.Unknown24);
-                playerUpdateItemDefinitions.AddHostInt32(clientItemDefinition.Unknown25);
-
-                playerUpdateItemDefinitions.AddBoolean(clientItemDefinition.Unknown26);
-
-                playerUpdateItemDefinitions.AddHostInt32(clientItemDefinition.Unknown27);
-
-                playerUpdateItemDefinitions.AddBoolean(clientItemDefinition.Unknown28);
-
-                playerUpdateItemDefinitions.AddASCIIString(clientItemDefinition.ModelColor);
-
-                playerUpdateItemDefinitions.AddBoolean(clientItemDefinition.Unknown30);
-
-                playerUpdateItemDefinitions.AddHostInt32(clientItemDefinition.Unknown31);
-                playerUpdateItemDefinitions.AddHostInt32(clientItemDefinition.Unknown32);
-                playerUpdateItemDefinitions.AddHostInt32(clientItemDefinition.Unknown33);
-                playerUpdateItemDefinitions.AddHostInt32(clientItemDefinition.Unknown34);
-
+                playerUpdateItemDefinitions.AddBoolean(clientItemDefinition.NonMiniGame);
+                playerUpdateItemDefinitions.AddHostInt32(clientItemDefinition.WeaponTrailEffectId);
+                playerUpdateItemDefinitions.AddHostInt32(clientItemDefinition.CompositeEffectId);
+                playerUpdateItemDefinitions.AddHostInt32(clientItemDefinition.PowerRating);
+                playerUpdateItemDefinitions.AddHostInt32(clientItemDefinition.MinProfileRank);
+                playerUpdateItemDefinitions.AddHostInt32(clientItemDefinition.Rarity);
+                playerUpdateItemDefinitions.AddHostInt32(clientItemDefinition.ActivatableAbilityId);
+                playerUpdateItemDefinitions.AddHostInt32(clientItemDefinition.PassiveAbilityId);
+                playerUpdateItemDefinitions.AddBoolean(clientItemDefinition.SingleUse);
+                playerUpdateItemDefinitions.AddHostInt32(clientItemDefinition.MaxStackSize);
+                playerUpdateItemDefinitions.AddBoolean(clientItemDefinition.IsTintable);
+                playerUpdateItemDefinitions.AddASCIIString(clientItemDefinition.TintAlias);
+                playerUpdateItemDefinitions.AddBoolean(clientItemDefinition.ForceDisablePreview);
+                playerUpdateItemDefinitions.AddHostInt32(clientItemDefinition.MemberDiscount);
+                playerUpdateItemDefinitions.AddHostInt32(clientItemDefinition.VipRankRequired);
+                playerUpdateItemDefinitions.AddHostInt32(clientItemDefinition.RaceSetId);
+                playerUpdateItemDefinitions.AddHostInt32(clientItemDefinition.ClientEquipReqSetId);
                 playerUpdateItemDefinitions.AddHostInt32(clientItemDefinition.ResellValue);
                 playerUpdateItemDefinitions.AddHostInt32(clientItemDefinition.Unknown36);
                 playerUpdateItemDefinitions.AddHostInt32(clientItemDefinition.Unknown37);
@@ -119,12 +106,9 @@ namespace Gateway.Player
         }
 
 
-        public static void SendSelfToClient(SOEClient soeClient)
+        public static void SendSelfToClient(SOEClient soeClient, ClientPcDatas pcData)
         {
-
-            var SendSelfToClientData = ClientPcData.ReadFromJSON(@"..\ofrserver\Customize\PacketSendSelfToClient.json");
-
-            var rawBytes = SendSelfToClientData;
+            var rawBytes = ReadFromPcData(pcData);
 
             var sendSelfToClient = new SOEWriter((ushort)BasePackets.PacketSendSelfToClient, true);
 
