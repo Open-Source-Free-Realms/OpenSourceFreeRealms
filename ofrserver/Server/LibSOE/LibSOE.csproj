@@ -70,9 +70,6 @@
     <PackageReference Include="log4net">
       <Version>2.0.15</Version>
     </PackageReference>
-    <PackageReference Include="MySql.Data">
-      <Version>8.0.30</Version>
-    </PackageReference>
     <PackageReference Include="Newtonsoft.Json">
       <Version>13.0.1</Version>
     </PackageReference>
