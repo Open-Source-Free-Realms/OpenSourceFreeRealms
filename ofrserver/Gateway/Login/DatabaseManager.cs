@@ -20,6 +20,7 @@ namespace Gateway.Login
 
         public static void Start(SOEServer soeServer = null)
         {
+            /*
             _server = soeServer ?? Gateway.Server;
 
             _log = _server.Logger.GetLogger("DatabaseManager");
@@ -35,10 +36,12 @@ namespace Gateway.Login
             command.Connection = _db;
 
             _log.Info("Service constructed");
+            */
         }
 
         public static bool AttemptLogin(ulong guid, string ticket)
         {
+            /*
             command.CommandText = $"SELECT * FROM `session_tickets` WHERE {guid}";
             MySqlDataReader reader = command.ExecuteReader();
 
@@ -58,6 +61,8 @@ namespace Gateway.Login
             reader.Close();
 
             return success;
+            */
+            return true;
         }
     }
 }

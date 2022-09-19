@@ -12,10 +12,11 @@ using static Gateway.Login.ClientPcData;
 
 namespace Gateway.Player
 {
-    internal class PlayerCharacter : IDisposable
+    public class PlayerCharacter : IDisposable
     {
         private static SOEServer _server = Gateway.Server;
         private static ILog _log = _server.Log;
+        private static Random _random = new Random();
 
         public readonly SOEClient client;
         public readonly uint playerGUID;
@@ -28,7 +29,7 @@ namespace Gateway.Player
         public float[] lastBroadcastedPosition;
         public int lastBroadcastedTime;
 
-        protected ClientPcDatas CharacterData;
+        public ClientPcDatas CharacterData;
 
         public PlayerCharacter(SOEClient soeClient, ClientPcDatas characterData)
         {
@@ -224,27 +225,64 @@ namespace Gateway.Player
             LoginManager.SendTunneledClientPacket(soeClient, soeWriter2.GetRaw());
             */
         }
-
-        public void SendPacketChat(SOEClient soeClient, string message)
+        private double Magnitude(float[] pos0, float[] pos1)
         {
-            _log.Debug($"{CharacterData.FirstName} {CharacterData.LastName} ({soeClient.GetClientAddress()}) said \"{message}\"");
+            return Math.Sqrt(
+                Math.Pow(pos1[0] - pos0[0], 2) +
+                Math.Pow(pos1[1] - pos0[1], 2) +
+                Math.Pow(pos1[2] - pos0[2], 2)
+            );
+        }
+
+        public void SendPacketChat(SOEClient sender, ushort messageType, ulong guid1, ulong guid2, string message, string targetFirst, string targetLast)
+        {
             var packetChat = new SOEWriter((ushort)BasePackets.BaseChatPacket, true);
             packetChat.AddHostUInt16((ushort)BaseChatPackets.PacketChat);
-            packetChat.AddHostUInt16(0);
-            packetChat.AddHostUInt64(playerGUID); // Player GUID
 
-            packetChat.AddBytes(LoginManager.StringToByteArray("48362C00DA71657D000000000000000000000000"));
+            packetChat.AddHostUInt16(messageType);
+            packetChat.AddHostUInt64(playerGUID); // Sender's Character GUID
+            packetChat.AddHostUInt64(guid2);
+
+            for (int i = 0; i < 3; i++)
+                packetChat.AddHostInt32(0);
             packetChat.AddASCIIString(CharacterData.FirstName);
             packetChat.AddASCIIString(CharacterData.LastName);
-            packetChat.AddBytes(LoginManager.StringToByteArray("0000000000000000000000000000000000000000"));
+
+            for (int i = 0; i < 3; i++)
+                packetChat.AddHostInt32(0);
+            packetChat.AddASCIIString(targetFirst);
+            packetChat.AddASCIIString(targetLast);
+
             packetChat.AddASCIIString(message);
-            packetChat.AddBytes(LoginManager.StringToByteArray("4FC10D436EECBB413078B7430000803F000000000000000002000000"));
+
+            for (var i = 0; i < position.Length; i++) // Position
+                packetChat.AddFloat(position[i]);
+            packetChat.AddFloat(1.0f);
+
+
+            packetChat.AddHostUInt64(0);
+            packetChat.AddHostUInt32(2);
+            if (messageType == 8)
+                packetChat.AddHostUInt32(0);
 
             List<SOEClient> Clients = _server.ConnectionManager.Clients;
+
+            PlayerCharacter targetCharacter = LoginManager.PlayerCharacters.Find(x => x.CharacterData.FirstName == targetFirst && x.CharacterData.LastName == targetLast);
+            if (messageType == 1)
+            {
+                if (targetCharacter != null) return; // player disconnected, don't leak
+                Clients = new List<SOEClient>();
+                Clients.Add(sender);
+                Clients.Add(targetCharacter.client);
+            }
             for (int i = 0; i < Clients.Count; i++)
             {
                 if (Clients[i] == null) continue;
-                LoginManager.SendTunneledClientPacket(Clients[i], packetChat.GetRaw());
+                SOEClient otherClient = Clients[i];
+                PlayerCharacter otherCharacter = LoginManager.PlayerCharacters.Find(x => x.client == otherClient);
+                if (otherCharacter == null) continue;
+                if (Magnitude(position, otherCharacter.position) <= 50.0)
+                    LoginManager.SendTunneledClientPacket(otherClient, packetChat.GetRaw());
             }
         }
     }

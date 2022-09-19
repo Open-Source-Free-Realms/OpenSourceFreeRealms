@@ -21,8 +21,9 @@ namespace Gateway.Login
 
         public static List<ClientItemDefinition> ClientItemDefinitions;
         public static List<PointOfInterestDefinition> PointOfInterestDefinitions;
+        public static List<string> WordBlacklist;
 
-        private static List<PlayerCharacter> PlayerCharacters;
+        public static List<PlayerCharacter> PlayerCharacters;
 
         public static void Start(SOEServer soeServer = null)
         {
@@ -122,11 +123,11 @@ namespace Gateway.Login
             {
                 TypeNameHandling = TypeNameHandling.Auto
             });
-            pcData.PlayerGUID = soeClient.GetSessionID();
+            pcData.PlayerGUID = soeClient.GetClientID();
             if (overrideName)
             {
                 pcData.FirstName = ticket;
-                pcData.LastName = $"(#{soeClient.GetClientID()})";
+                pcData.LastName = ""; //$"(#{soeClient.GetClientID()})";
             }
             PlayerCode.SendSelfToClient(soeClient, pcData);
             PlayerCharacter character = new PlayerCharacter(soeClient, pcData);
@@ -388,7 +389,7 @@ namespace Gateway.Login
             var soeWriter = new SOEWriter((ushort)BasePackets.PacketGameTimeSync, true);
 
             soeWriter.AddHostInt64(DateTimeOffset.Now.ToUnixTimeSeconds());
-            soeWriter.AddHostInt32(0);
+            soeWriter.AddHostInt32(8);
             soeWriter.AddBoolean(false);
 
             SendTunneledClientPacket(soeClient, soeWriter.GetRaw());
@@ -514,17 +515,46 @@ namespace Gateway.Login
 
         private static void HandlePacketChat(SOEClient soeClient, SOEReader reader)
         {
-            ushort unknown = reader.ReadUInt16();
-            ulong PlayerGUID = reader.ReadUInt64();
-            var unknown2 = reader.ReadBytes(48);
-            string message = reader.ReadASCIIString();
-            var unknown3 = reader.ReadToEnd();
+            ushort messageType = reader.ReadHostUInt16();
+            ulong guid1 = reader.ReadHostUInt64();
+            ulong guid2 = reader.ReadHostUInt64();
 
-            _log.Debug($"HandlePacketChat:\n\t- Client ID: {soeClient.GetClientID()}\n\t - PlayerGUID: {PlayerGUID}\n\t - Message: {message}");
+            for (int i = 0; i < 3; i++)
+                reader.ReadHostInt32(); // unknown in player information struct
+            string senderFirstName = reader.ReadASCIIString();
+            string senderLastName = reader.ReadASCIIString();
+
+            for (int i = 0; i < 3; i++)
+                reader.ReadHostInt32(); // unknown in player information struct
+            string targetFirstName = reader.ReadASCIIString();
+            string targetLastName = reader.ReadASCIIString();
+
+            string message = reader.ReadASCIIString();
+
+            float[] position = new float[4];
+            for (int i = 0; i < 4; i++)
+                position[i] = reader.ReadSingle();
+
+            ulong unknown2 = reader.ReadHostUInt64();
+            int unknown3 = reader.ReadHostInt32();
+
+            int? unknown4;
+            if (messageType == 8)
+                unknown4 = reader.ReadHostInt32();
+
+
 
             PlayerCharacter character = PlayerCharacters.Find(x => x.client == soeClient);
             if (character == null) return;
-            character.SendPacketChat(soeClient, message);
+            _log.Debug($"Client #{soeClient.GetClientID()} sent a PacketChat:" +
+                $"\n\t- Their Character's GUID: {character.playerGUID}" +
+                $"\n\t- GUID #1: {guid1}" +
+                $"\n\t- GUID #2: {guid2}" +
+                $"\n\t- Message Type: {messageType}" +
+                $"\n\t- Recipient: {targetFirstName} {targetLastName}" +
+                $"\n\t- Message: \"{message}\"" +
+                $"\n\t- Position: [{position[0]}, {position[1]}, {position[2]}, {position[3]}");
+            character.SendPacketChat(soeClient, messageType, guid1, guid2, message, targetFirstName, targetLastName);
         }
 
 
