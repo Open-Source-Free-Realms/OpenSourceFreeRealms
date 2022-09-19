@@ -20,6 +20,7 @@ namespace Gateway.Login
 
         public static List<ClientItemDefinition> ClientItemDefinitions;
         public static List<PointOfInterestDefinition> PointOfInterestDefinitions;
+        public static ClientPcData.ClientPcDatas PlayerData;
 
         public static void Start(SOEServer soeServer = null)
         {
@@ -31,12 +32,16 @@ namespace Gateway.Login
 
             ClientItemDefinitions = new List<ClientItemDefinition>();
             PointOfInterestDefinitions = new List<PointOfInterestDefinition>();
+            PlayerData = new ClientPcData.ClientPcDatas();
 
             if(File.Exists(@"..\ofrserver\Customize\ClientItemDefinitions.json"))
                 ClientItemDefinitions = JsonConvert.DeserializeObject<List<ClientItemDefinition>>(File.ReadAllText(@"..\ofrserver\Customize\ClientItemDefinitions.json"));
 
             if (File.Exists(@"..\ofrserver\Customize\PointOfInterestDefinitions.json"))
                 PointOfInterestDefinitions = JsonConvert.DeserializeObject<List<PointOfInterestDefinition>>(File.ReadAllText(@"..\ofrserver\Customize\PointOfInterestDefinitions.json"));
+            
+            if (File.Exists(@"..\ofrserver\Customize\PacketSendSelfToClient.json"))
+                PlayerData = JsonConvert.DeserializeObject<ClientPcData.ClientPcDatas>(File.ReadAllText(@"..\ofrserver\Customize\PacketSendSelfToClient.json"));
         }
 
         [SOEMessageHandler("PacketLogin", (ushort)ClientGatewayBasePackets.PacketLogin, "CGAPI_527")]
@@ -161,6 +166,13 @@ namespace Gateway.Login
                     HandlePacketGameTimeSync(soeClient, reader);
                     break;
 
+               /* case (ushort)BasePackets.BaseQuickChatPacket:
+                    break;*/
+
+                case (ushort)BasePackets.BaseInventoryPacket:
+                    HandleInventoryPacket(soeClient, reader);
+                    break;
+
                 default:
                     var data = reader.ReadToEnd();
                     _log.Info($"HandleTunneledClientPacket OpCode: {opCode}\n{BitConverter.ToString(data).Replace("-", "")}");
@@ -235,6 +247,101 @@ namespace Gateway.Login
             packet.AddASCIIString("Welcome, this is 100% a test build and anything seen here will be subject to change or break! If you happen to stumble across and aren't in our discord please join :) https://discord.gg/bd4junaw -OSFR"); //Message
 
             SendTunneledClientPacket(soeClient, packet.GetRaw());
+        }
+
+        private static void HandleInventoryPacket(SOEClient client, SOEReader reader)
+        {
+
+            var OpCode = reader.ReadHostUInt16();
+            var GUID = reader.ReadHostInt32();
+
+            switch (OpCode)
+            {
+                case (ushort)BaseInventoryPackets.InventoryPacketEquipByGuid:
+                    var clientItem = PlayerData.ClientItems.Find(cItem => cItem.Guid == GUID);
+                    var clientItemDef = ClientItemDefinitions.Find(cItemDef => cItemDef.Id == clientItem.Definition);
+
+                    var tint = clientItem.Tint;
+
+                    var packet = new SOEWriter((ushort)BasePackets.BasePlayerUpdatePacket, true);
+                    packet.AddHostUInt16((ushort)BasePlayerUpdatePackets.PlayerUpdatePacketEquipItemChange);
+                    packet.AddHostInt64(PlayerData.PlayerGUID);
+                    packet.AddHostInt32(clientItem.Guid);
+                    packet.AddASCIIString(clientItemDef.ModelName);
+                    packet.AddASCIIString(clientItemDef.TextureAlias);
+                    packet.AddASCIIString(clientItemDef.TintAlias);
+                    
+                    if (tint == 0)
+                    {
+                        packet.AddHostInt32(clientItemDef.IconData.TintId);
+                    }
+                    else
+                    {
+                        packet.AddHostInt32(tint);
+                    }
+                    
+                    packet.AddHostInt32(clientItemDef.CompositeEffectId);
+                    packet.AddHostInt32(clientItemDef.Slot);
+                    
+                    packet.AddHostInt32(0); //item stat def?
+                    packet.AddHostInt32(clientItemDef.Class);
+                    packet.AddHostInt32(0);
+
+                    SendTunneledClientPacket(client, packet.GetRaw());
+                    SendClientUpdatePacketEquipItem(client, clientItem.Guid);
+                    break;
+
+                default:
+                    break;
+            }
+        }
+
+        private static void HandleUpdateFlairEffect(SOEClient client, int guid, int effectid)
+        {
+            var clientItem = PlayerData.ClientItems.Find(cItem => cItem.Guid == guid);
+            var clientItemDef = ClientItemDefinitions.Find(cItemDef => cItemDef.Id == clientItem.Definition);
+
+            var packet = new SOEWriter((ushort)BasePackets.BasePlayerUpdatePacket, true);
+            packet.AddHostUInt16((ushort)BasePlayerUpdatePackets.PlayerUpdatePacketSlotCompositeEffectOverride);
+            packet.AddHostUInt64((ulong)PlayerData.PlayerGUID);
+            packet.AddHostInt32(clientItemDef.Slot);
+            packet.AddHostUInt32((uint)effectid);
+
+            SendTunneledClientPacket(client, packet.GetRaw());
+
+        }
+
+        private static void SendClientUpdatePacketEquipItem(SOEClient client, int guid)
+        {
+            var clientItem = PlayerData.ClientItems.Find(cItem => cItem.Guid == guid);
+            var clientItemDef = ClientItemDefinitions.Find(cItemDef => cItemDef.Id == clientItem.Definition);
+
+            var tint = clientItem.Tint;
+
+            var packet = new SOEWriter((ushort)BasePackets.BaseClientUpdatePacket, true);
+            packet.AddHostUInt16((ushort)BaseClientUpdatePackets.ClientUpdatePacketEquipItem);
+            packet.AddHostInt32(clientItem.Guid);
+            packet.AddASCIIString(clientItemDef.ModelName);
+            packet.AddASCIIString(clientItemDef.TextureAlias);
+            packet.AddASCIIString(clientItemDef.TintAlias);
+
+            if (tint == 0)
+            {
+                packet.AddHostInt32(clientItemDef.IconData.TintId);
+            }
+            else
+            {
+                packet.AddHostInt32(tint);
+            }
+
+            packet.AddHostInt32(clientItemDef.CompositeEffectId);
+            packet.AddHostInt32(clientItemDef.Slot);
+            packet.AddHostInt32(0); // item stat def?
+            packet.AddHostInt32(clientItemDef.Class);
+            packet.AddBoolean(clientItemDef.MembersOnly);
+
+            SendTunneledClientPacket(client, packet.GetRaw());
+
         }
 
         private static void HandlePacketZoneTeleportRequest(SOEClient soeClient, SOEReader reader)

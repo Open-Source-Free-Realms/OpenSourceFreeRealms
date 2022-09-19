@@ -6,7 +6,7 @@ using Newtonsoft.Json;
 
 namespace Gateway.Login
 {
-    internal static class ClientPcData
+    public static class ClientPcData
     {
 
         public static byte[] ReadFromJSON(string filename)

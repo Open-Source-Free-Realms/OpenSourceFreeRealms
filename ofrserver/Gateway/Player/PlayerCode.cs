@@ -23,7 +23,7 @@ namespace Gateway.Player
                 playerUpdateItemDefinitions.AddHostInt32(clientItemDefinition.DescriptionId);
                 playerUpdateItemDefinitions.AddHostInt32(clientItemDefinition.IconData.Id);
                 playerUpdateItemDefinitions.AddHostInt32(clientItemDefinition.IconData.TintId);
-                playerUpdateItemDefinitions.AddHostInt32(clientItemDefinition.Unknown4);
+                playerUpdateItemDefinitions.AddHostInt32(clientItemDefinition.Tint);
                 playerUpdateItemDefinitions.AddHostInt32(clientItemDefinition.Unknown5);
                 playerUpdateItemDefinitions.AddHostInt32(clientItemDefinition.Cost);
                 playerUpdateItemDefinitions.AddHostInt32(clientItemDefinition.Class);
