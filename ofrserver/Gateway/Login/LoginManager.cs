@@ -244,7 +244,7 @@ namespace Gateway.Login
             var packet = new SOEWriter((ushort)BasePackets.PacketMOTD, true);
 
             packet.AddASCIIString("Welcome to OSFR!"); //MOTD title
-            packet.AddASCIIString("Welcome, this is 100% a test build and anything seen here will be subject to change or break! If you happen to stumble across and aren't in our discord please join :) https://discord.gg/bd4junaw -OSFR"); //Message
+            packet.AddASCIIString("Welcome, this is a test build and anything seen here will be subject to change or break! If you happen to stumble across and aren't in our discord, please join. https://discord.gg/bd4junaw"); //Message
 
             SendTunneledClientPacket(soeClient, packet.GetRaw());
         }
@@ -387,7 +387,7 @@ namespace Gateway.Login
 
             soeWriter.AddHostInt64(DateTimeOffset.Now.ToUnixTimeSeconds());
             soeWriter.AddHostInt32(0);
-            soeWriter.AddBoolean(false);
+            soeWriter.AddBoolean(true);
 
             SendTunneledClientPacket(soeClient, soeWriter.GetRaw());
         }
