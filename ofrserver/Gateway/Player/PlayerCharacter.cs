@@ -109,7 +109,14 @@ namespace Gateway.Player
             foreach ((int, ProfileItem) item in profileItems)
             {
                 int itemGUID = item.Item2.ItemGUID;
-                ClientItemDefinition itemDefintion = LoginManager.ClientItemDefinitions.Find(x => (x.Id == itemGUID));
+
+                var clientItem = CharacterData.ClientItems.Find(x => x.Guid == itemGUID);
+
+                if (clientItem == null)
+                    continue;
+
+                ClientItemDefinition itemDefintion = LoginManager.ClientItemDefinitions.Find(x => x.Id == clientItem.Definition);
+
                 if (itemDefintion != null)
                     equippedItems.Add(itemDefintion);
             }
@@ -121,7 +128,8 @@ namespace Gateway.Player
                 addPc.AddASCIIString(item.ModelName);
                 addPc.AddASCIIString(item.TextureAlias);
                 addPc.AddASCIIString(item.TintAlias);
-                addPc.AddHostInt64(item.IconData.TintId);
+                addPc.AddHostInt32(item.IconData.TintId);
+                addPc.AddHostInt32(0);
                 addPc.AddHostInt32(i + 1);
             }
 
