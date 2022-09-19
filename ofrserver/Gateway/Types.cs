@@ -26,7 +26,7 @@ namespace Gateway
         public int NameId { get; set; }
         public int DescriptionId { get; set; }
         public IconData IconData { get; set; }
-        public int Unknown4 { get; set; }
+        public int Tint { get; set; } //Tint
         public int Unknown5 { get; set; }
         public int Cost { get; set; }
         public int Class { get; set; }
