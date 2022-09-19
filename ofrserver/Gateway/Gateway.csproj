@@ -50,7 +50,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Gateway.cs" />
-    <Compile Include="Login\DatabaseManager.cs" />
     <Compile Include="Login\LoginManager.cs" />
     <Compile Include="Login\ClientPcData.cs" />
     <Compile Include="MapChat\Chat.cs" />

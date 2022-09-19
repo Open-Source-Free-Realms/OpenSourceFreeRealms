@@ -53,7 +53,6 @@
     <Compile Include="Core\SOEProtocol.cs" />
     <Compile Include="Core\SOERoleManager.cs" />
     <Compile Include="Core\SOEServer.cs" />
-    <Compile Include="Database\IDatabaseBackend.cs" />
     <Compile Include="Globals\SOEDisconnectReasons.cs" />
     <Compile Include="Globals\SOEOpCodes.cs" />
     <Compile Include="Handlers\MessageHandlers.cs" />

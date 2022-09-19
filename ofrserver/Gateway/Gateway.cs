@@ -20,7 +20,6 @@ namespace Gateway
             _log.Info("Constructing gateway...");
 
             // Construct our managers
-            DatabaseManager.Start();
             LoginManager.Start();
 
             // Finish!
