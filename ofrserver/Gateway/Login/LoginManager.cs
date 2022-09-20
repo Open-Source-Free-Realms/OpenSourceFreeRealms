@@ -323,7 +323,7 @@ namespace Gateway.Login
 
             packet.AddHostInt32(clientItemDef.Slot);
 
-            packet.AddHostInt32(clientItemDef.Type); //item stat def?
+            packet.AddHostInt32(clientItemDef.Type);
             packet.AddHostInt32(clientItemDef.Class);
             packet.AddHostInt32(0);
 
@@ -363,7 +363,7 @@ namespace Gateway.Login
             packet.AddHostInt32(flairEffect);
             packet.AddHostInt32(weaponItemDef.Slot);
 
-            packet.AddHostInt32(weaponItemDef.Type); //item stat def?
+            packet.AddHostInt32(weaponItemDef.Type);
             packet.AddHostInt32(weaponItemDef.Class);
             packet.AddHostInt32(0);
 
@@ -371,8 +371,43 @@ namespace Gateway.Login
             weaponItemDef.CompositeEffectId = flairEffect;
 
             SendTunneledClientPacket(client, packet.GetRaw());
+            SendFlairEquip(client, flairGuid);
             SendClientUpdatePacketEquipItem(client, weaponItem.Guid);
         } 
+
+        private static void SendFlairEquip(SOEClient client, int guid)
+        {
+            var flairItem = PlayerData.ClientItems.Find(fItem => fItem.Guid == guid);
+            var flairItemDef = ClientItemDefinitions.Find(fItemDef => fItemDef.Id == flairItem.Definition);
+
+            var packet = new SOEWriter((ushort)BasePackets.BasePlayerUpdatePacket, true);
+            packet.AddHostUInt16((ushort)BasePlayerUpdatePackets.PlayerUpdatePacketEquipItemChange);
+            packet.AddHostInt64(PlayerData.PlayerGUID);
+            packet.AddHostInt32(flairItem.Guid);
+            packet.AddASCIIString(flairItemDef.ModelName);
+            packet.AddASCIIString(flairItemDef.TextureAlias);
+            packet.AddASCIIString(flairItemDef.TintAlias);
+
+            if (flairItem.Tint == 0)
+            {
+                packet.AddHostInt32(flairItemDef.IconData.TintId);
+            }
+            else
+            {
+                packet.AddHostInt32(flairItem.Tint);
+            }
+
+            packet.AddHostInt32(flairItemDef.CompositeEffectId);
+            packet.AddHostInt32(flairItemDef.Slot);
+
+            packet.AddHostInt32(flairItemDef.Type);
+            packet.AddHostInt32(flairItemDef.Class);
+            packet.AddHostInt32(0);
+
+            SendTunneledClientPacket(client, packet.GetRaw());
+            SendClientUpdatePacketEquipItem(client, flairItem.Guid);
+
+        }
 
         private static void SendClientUpdatePacketEquipItem(SOEClient client, int guid)
         {
@@ -399,7 +434,7 @@ namespace Gateway.Login
 
             packet.AddHostInt32(clientItemDef.CompositeEffectId);
             packet.AddHostInt32(clientItemDef.Slot);
-            packet.AddHostInt32(clientItemDef.Type); // item stat def?
+            packet.AddHostInt32(clientItemDef.Type);
             packet.AddHostInt32(clientItemDef.Class);
             packet.AddBoolean(clientItemDef.MembersOnly);
 
