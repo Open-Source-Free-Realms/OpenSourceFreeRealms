@@ -261,34 +261,15 @@ namespace Gateway.Login
                     var clientItem = PlayerData.ClientItems.Find(cItem => cItem.Guid == GUID);
                     var clientItemDef = ClientItemDefinitions.Find(cItemDef => cItemDef.Id == clientItem.Definition);
 
-                    var tint = clientItem.Tint;
-
-                    var packet = new SOEWriter((ushort)BasePackets.BasePlayerUpdatePacket, true);
-                    packet.AddHostUInt16((ushort)BasePlayerUpdatePackets.PlayerUpdatePacketEquipItemChange);
-                    packet.AddHostInt64(PlayerData.PlayerGUID);
-                    packet.AddHostInt32(clientItem.Guid);
-                    packet.AddASCIIString(clientItemDef.ModelName);
-                    packet.AddASCIIString(clientItemDef.TextureAlias);
-                    packet.AddASCIIString(clientItemDef.TintAlias);
-                    
-                    if (tint == 0)
+                    if (clientItemDef.Slot == 13)
                     {
-                        packet.AddHostInt32(clientItemDef.IconData.TintId);
+                        SendItemFlairEffect(client, GUID, clientItemDef.CompositeEffectId);
                     }
                     else
                     {
-                        packet.AddHostInt32(tint);
+                        SendEquipItemByGuid(client, GUID);
                     }
-                    
-                    packet.AddHostInt32(clientItemDef.CompositeEffectId);
-                    packet.AddHostInt32(clientItemDef.Slot);
-                    
-                    packet.AddHostInt32(0); //item stat def?
-                    packet.AddHostInt32(clientItemDef.Class);
-                    packet.AddHostInt32(0);
 
-                    SendTunneledClientPacket(client, packet.GetRaw());
-                    SendClientUpdatePacketEquipItem(client, clientItem.Guid);
                     break;
 
                 default:
@@ -296,20 +277,95 @@ namespace Gateway.Login
             }
         }
 
-        private static void HandleUpdateFlairEffect(SOEClient client, int guid, int effectid)
+        private static void SendEquipItemByGuid(SOEClient client, int guid)
         {
             var clientItem = PlayerData.ClientItems.Find(cItem => cItem.Guid == guid);
             var clientItemDef = ClientItemDefinitions.Find(cItemDef => cItemDef.Id == clientItem.Definition);
+            var tint = clientItem.Tint;
+            var equipped = PlayerData.ClientPcProfiles[0].Items.Find(x => x.Item2.Category == clientItemDef.Slot);
+
+            var equippedFlair = PlayerData.ClientPcProfiles[0].Items.Find(x => x.Item2.Category == 13);
+            var flairItem = PlayerData.ClientItems.Find(x => x.Guid == equippedFlair.Item2.ItemGUID);
+            var flairItemDef = ClientItemDefinitions.Find(x => x.Id == flairItem.Definition);
 
             var packet = new SOEWriter((ushort)BasePackets.BasePlayerUpdatePacket, true);
-            packet.AddHostUInt16((ushort)BasePlayerUpdatePackets.PlayerUpdatePacketSlotCompositeEffectOverride);
-            packet.AddHostUInt64((ulong)PlayerData.PlayerGUID);
+            packet.AddHostUInt16((ushort)BasePlayerUpdatePackets.PlayerUpdatePacketEquipItemChange);
+            packet.AddHostInt64(PlayerData.PlayerGUID);
+            packet.AddHostInt32(clientItem.Guid);
+            packet.AddASCIIString(clientItemDef.ModelName);
+            packet.AddASCIIString(clientItemDef.TextureAlias);
+            packet.AddASCIIString(clientItemDef.TintAlias);
+
+            if (tint == 0)
+            {
+                packet.AddHostInt32(clientItemDef.IconData.TintId);
+            }
+            else
+            {
+                packet.AddHostInt32(tint);
+            }
+
+            if (clientItemDef.Slot == 7 && equippedFlair.Item2.ItemGUID !=0)
+            {
+                packet.AddHostInt32(flairItemDef.CompositeEffectId);
+            }
+            else
+            {
+                packet.AddHostInt32(clientItemDef.CompositeEffectId);
+            }
+
             packet.AddHostInt32(clientItemDef.Slot);
-            packet.AddHostUInt32((uint)effectid);
+
+            packet.AddHostInt32(0); //item stat def?
+            packet.AddHostInt32(clientItemDef.Class);
+            packet.AddHostInt32(0);
+
+            equipped.Item2.ItemGUID = clientItem.Guid;
 
             SendTunneledClientPacket(client, packet.GetRaw());
+            SendClientUpdatePacketEquipItem(client, clientItem.Guid);
 
         }
+
+        private static void SendItemFlairEffect(SOEClient client, int flairGuid, int flairEffect)
+        {
+            var weapon = PlayerData.ClientPcProfiles[0].Items.Find(x => x.Item2.Category == 7);
+            var weaponItem = PlayerData.ClientItems.Find(wItem => wItem.Guid == weapon.Item2.ItemGUID);
+            var weaponItemDef = ClientItemDefinitions.Find(wItemDef => wItemDef.Id == weaponItem.Definition);
+            var tint = weaponItem.Tint;
+
+            var equippedFlair = PlayerData.ClientPcProfiles[0].Items.Find(x => x.Item2.Category == 13);
+
+            var packet = new SOEWriter((ushort)BasePackets.BasePlayerUpdatePacket, true);
+            packet.AddHostUInt16((ushort)BasePlayerUpdatePackets.PlayerUpdatePacketEquipItemChange);
+            packet.AddHostInt64(PlayerData.PlayerGUID);
+            packet.AddHostInt32(weaponItem.Guid);
+            packet.AddASCIIString(weaponItemDef.ModelName);
+            packet.AddASCIIString(weaponItemDef.TextureAlias);
+            packet.AddASCIIString(weaponItemDef.TintAlias);
+
+            if (tint == 0)
+            {
+                packet.AddHostInt32(weaponItemDef.IconData.TintId);
+            }
+            else
+            {
+                packet.AddHostInt32(tint);
+            }
+
+            packet.AddHostInt32(flairEffect);
+            packet.AddHostInt32(weaponItemDef.Slot);
+
+            packet.AddHostInt32(0); //item stat def?
+            packet.AddHostInt32(weaponItemDef.Class);
+            packet.AddHostInt32(0);
+
+            equippedFlair.Item2.ItemGUID = flairGuid;
+            weaponItemDef.CompositeEffectId = flairEffect;
+
+            SendTunneledClientPacket(client, packet.GetRaw());
+            SendClientUpdatePacketEquipItem(client, weaponItem.Guid);
+        } 
 
         private static void SendClientUpdatePacketEquipItem(SOEClient client, int guid)
         {
