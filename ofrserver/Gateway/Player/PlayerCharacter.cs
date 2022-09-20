@@ -118,7 +118,12 @@ namespace Gateway.Player
                 ClientItemDefinition itemDefintion = LoginManager.ClientItemDefinitions.Find(x => x.Id == clientItem.Definition);
 
                 if (itemDefintion != null)
+                {
+                    if (clientItem.Tint != 0)
+                        itemDefintion.IconData.TintId = clientItem.Tint;
+
                     equippedItems.Add(itemDefintion);
+                }
             }
 
             addPc.AddHostInt32(equippedItems.Count);
@@ -129,7 +134,7 @@ namespace Gateway.Player
                 addPc.AddASCIIString(item.TextureAlias);
                 addPc.AddASCIIString(item.TintAlias);
                 addPc.AddHostInt32(item.IconData.TintId);
-                addPc.AddHostInt32(0);
+                addPc.AddHostInt32(item.CompositeEffectId);
                 addPc.AddHostInt32(i + 1);
             }
 
