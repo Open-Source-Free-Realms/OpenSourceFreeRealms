@@ -339,7 +339,7 @@
           "comment": "Flair Shard",
           "Item1": 13,
           "Item2": {
-            "ItemGUID": 4020,
+            "ItemGUID": 0,
             "Category": 13
           }
         },

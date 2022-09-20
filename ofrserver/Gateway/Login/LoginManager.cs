@@ -279,14 +279,21 @@ namespace Gateway.Login
 
         private static void SendEquipItemByGuid(SOEClient client, int guid)
         {
+            ClientItemDefinition flairItemDef = null;
+            ClientPcData.ClientItem flairItem = null;
+
+
             var clientItem = PlayerData.ClientItems.Find(cItem => cItem.Guid == guid);
             var clientItemDef = ClientItemDefinitions.Find(cItemDef => cItemDef.Id == clientItem.Definition);
             var tint = clientItem.Tint;
             var equipped = PlayerData.ClientPcProfiles[0].Items.Find(x => x.Item2.Category == clientItemDef.Slot);
 
             var equippedFlair = PlayerData.ClientPcProfiles[0].Items.Find(x => x.Item2.Category == 13);
-            var flairItem = PlayerData.ClientItems.Find(x => x.Guid == equippedFlair.Item2.ItemGUID);
-            var flairItemDef = ClientItemDefinitions.Find(x => x.Id == flairItem.Definition);
+            if (equippedFlair.Item2.ItemGUID != 0)
+            {
+                flairItem = PlayerData.ClientItems.Find(x => x.Guid == equippedFlair.Item2.ItemGUID);
+                flairItemDef = ClientItemDefinitions.Find(x => x.Id == flairItem.Definition);
+            }
 
             var packet = new SOEWriter((ushort)BasePackets.BasePlayerUpdatePacket, true);
             packet.AddHostUInt16((ushort)BasePlayerUpdatePackets.PlayerUpdatePacketEquipItemChange);
@@ -305,7 +312,7 @@ namespace Gateway.Login
                 packet.AddHostInt32(tint);
             }
 
-            if (clientItemDef.Slot == 7 && equippedFlair.Item2.ItemGUID !=0)
+            if (clientItemDef.Slot == 7 && flairItemDef != null)
             {
                 packet.AddHostInt32(flairItemDef.CompositeEffectId);
             }
@@ -316,7 +323,7 @@ namespace Gateway.Login
 
             packet.AddHostInt32(clientItemDef.Slot);
 
-            packet.AddHostInt32(0); //item stat def?
+            packet.AddHostInt32(clientItemDef.Type); //item stat def?
             packet.AddHostInt32(clientItemDef.Class);
             packet.AddHostInt32(0);
 
@@ -356,7 +363,7 @@ namespace Gateway.Login
             packet.AddHostInt32(flairEffect);
             packet.AddHostInt32(weaponItemDef.Slot);
 
-            packet.AddHostInt32(0); //item stat def?
+            packet.AddHostInt32(weaponItemDef.Type); //item stat def?
             packet.AddHostInt32(weaponItemDef.Class);
             packet.AddHostInt32(0);
 
@@ -392,7 +399,7 @@ namespace Gateway.Login
 
             packet.AddHostInt32(clientItemDef.CompositeEffectId);
             packet.AddHostInt32(clientItemDef.Slot);
-            packet.AddHostInt32(0); // item stat def?
+            packet.AddHostInt32(clientItemDef.Type); // item stat def?
             packet.AddHostInt32(clientItemDef.Class);
             packet.AddBoolean(clientItemDef.MembersOnly);
 
