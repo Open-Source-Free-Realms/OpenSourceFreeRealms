@@ -251,6 +251,10 @@ namespace Gateway.Login
                     HandlePlayerUpdatePacketUpdatePosition(soeClient, reader);
                     break;
 
+                case (ushort)BasePackets.BaseQuickChatPacket:
+                    HandleBaseQuickChatPacket(soeClient, reader);
+                    break;
+
                 case (ushort)BasePackets.PlayerUpdatePacketCameraUpdate:
                     break;
 
@@ -557,6 +561,38 @@ namespace Gateway.Login
             character.SendPacketChat(soeClient, messageType, guid1, guid2, message, targetFirstName, targetLastName);
         }
 
+        private static void HandleBaseQuickChatPacket(SOEClient soeClient, SOEReader reader)
+        {
+            var subOpCode = reader.ReadHostUInt16();
+
+            switch (subOpCode)
+            {
+                case (ushort)BaseQuickChatPackets.QuickChatSendChatToChannelPacket:
+                    HandleQuickChatSendChatToChannelPacket(soeClient, reader);
+                    break;
+            }
+        }
+
+        private static void HandleQuickChatSendChatToChannelPacket(SOEClient soeClient, SOEReader reader)
+        {
+            var commandId = reader.ReadHostInt32();
+            _ = reader.ReadHostInt64();
+
+            // UnknownStruct3
+            _ = reader.ReadHostInt32();
+            _ = reader.ReadHostInt32();
+            _ = reader.ReadHostInt32();
+            _ = reader.ReadASCIIString();
+            _ = reader.ReadASCIIString();
+
+            var channelId = reader.ReadHostInt16();
+            _ = reader.ReadHostInt32();
+            var guildGuid = reader.ReadHostInt64();
+
+            PlayerCharacter character = PlayerCharacters.Find(x => x.client == soeClient);
+
+            character.SendQuickChatSendChatToChannelPacket(soeClient, commandId, channelId, guildGuid);
+        }
 
         public static void SendTunneledClientWorldPacket(SOEClient soeClient, byte[] rawBytes)
         {

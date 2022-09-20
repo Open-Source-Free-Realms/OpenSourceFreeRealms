@@ -298,5 +298,44 @@ namespace Gateway.Player
                     LoginManager.SendTunneledClientPacket(otherClient, packetChat.GetRaw());
             }
         }
+
+        public void SendQuickChatSendChatToChannelPacket(SOEClient sender, int commandId, short channelId, long guildGuid)
+        {
+            var senderCharacter = LoginManager.PlayerCharacters.Find(x => x.client == sender);
+
+            if(senderCharacter == null)
+                return;
+
+            foreach (var soeClient in _server.ConnectionManager.Clients)
+            {
+                var playerCharacter = LoginManager.PlayerCharacters.Find(x => x.client == soeClient);
+
+                if (playerCharacter == null)
+                    continue;
+
+                if (Magnitude(position, playerCharacter.position) > 200.0f && soeClient != sender)
+                    continue;
+
+                var quickChatPacket = new SOEWriter((ushort)BasePackets.BaseQuickChatPacket, true);
+
+                quickChatPacket.AddHostUInt16((ushort)BaseQuickChatPackets.QuickChatSendChatToChannelPacket);
+
+                quickChatPacket.AddHostInt32(commandId);
+                quickChatPacket.AddHostInt64(senderCharacter.playerGUID);
+
+                // UnknownStruct3
+                quickChatPacket.AddHostInt32(senderCharacter.CharacterData.Unknown24);
+                quickChatPacket.AddHostInt32(senderCharacter.CharacterData.Unknown25);
+                quickChatPacket.AddHostInt32(senderCharacter.CharacterData.Unknown26);
+                quickChatPacket.AddASCIIString(senderCharacter.CharacterData.FirstName);
+                quickChatPacket.AddASCIIString(senderCharacter.CharacterData.LastName);
+
+                quickChatPacket.AddHostInt16(channelId);
+                quickChatPacket.AddHostInt32(0);
+                quickChatPacket.AddHostInt64(guildGuid);
+
+                LoginManager.SendTunneledClientPacket(soeClient, quickChatPacket.GetRaw());
+            }
+        }
     }
 }
