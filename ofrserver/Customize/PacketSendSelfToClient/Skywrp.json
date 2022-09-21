@@ -1,12 +1,12 @@
 {
   "Unknown": 665338923,
   "PlayerGUID": 1,
-  "PlayerModel": 1,
+  "PlayerModel": 60,
   "PlayerHead": "<race>_<gender>_head_caucasian.adr",
-  "PlayerHair": "<race>_m_hair_shaggy_<hairtype>.adr",
-  "HairColor": 116,
-  "EyeColor": 262,
-  "Skintone": "skintone3",
+  "PlayerHair": "<race>_f_hair_longcurly_<hairtype>.adr",
+  "HairColor": 264,
+  "EyeColor": 254,
+  "Skintone": "skintone8",
   "FacePaint": "none",
   "HumanBeardsPixieWings": "",
   "Unknown11": 1,
@@ -29,8 +29,8 @@
   "Unknown24": 0,
   "Unknown25": 0,
   "Unknown26": 0,
-  "FirstName": "Open Source",
-  "LastName": "Free Realms",
+  "FirstName": "Skywrp",
+  "LastName": "",
   "Coins": 0,
   "AccountBirthday": 1261854072,
   "AccountAge": 0,
@@ -256,7 +256,7 @@
       "Unknown13": 1931819892,
       "Unknown14": false,
       "Unknown15": 0,
-      "JobLevel": 1,
+      "JobLevel": 20,
       "JobLevelXP": 0,
       "JobLevelTotalXP": 0,
       "Unknown19": 0,
@@ -275,7 +275,7 @@
           "comment": "Gloves",
           "Item1": 2,
           "Item2": {
-            "ItemGUID": 0,
+            "ItemGUID": 4150,
             "Category": 2
           }
         },
@@ -283,7 +283,7 @@
           "comment": "Shirt",
           "Item1": 3,
           "Item2": {
-            "ItemGUID": 14003,
+            "ItemGUID": 2005,
             "Category": 3
           }
         },
@@ -291,7 +291,7 @@
           "comment": "Pants",
           "Item1": 4,
           "Item2": {
-            "ItemGUID": 14000,
+            "ItemGUID": 14002,
             "Category": 4
           }
         },
@@ -299,7 +299,7 @@
           "comment": "Shoes",
           "Item1": 5,
           "Item2": {
-            "ItemGUID": 14004,
+            "ItemGUID": 4332,
             "Category": 5
           }
         },
@@ -307,7 +307,7 @@
           "comment": "Back",
           "Item1": 6,
           "Item2": {
-            "ItemGUID": 0,
+            "ItemGUID": 3796,
             "Category": 6
           }
         },
@@ -315,7 +315,7 @@
           "comment": "Weapon",
           "Item1": 7,
           "Item2": {
-            "ItemGUID": 14001,
+            "ItemGUID": 1243,
             "Category": 7
           }
         },
@@ -339,7 +339,7 @@
           "comment": "Flair Shard",
           "Item1": 13,
           "Item2": {
-            "ItemGUID": 4020,
+            "ItemGUID": 1480,
             "Category": 13
           }
         },
@@ -670,7 +670,7 @@
       "Unknown13": 1699,
       "Unknown14": true,
       "Unknown15": 0,
-      "JobLevel": 1,
+      "JobLevel": 20,
       "JobLevelXP": 0,
       "JobLevelTotalXP": 0,
       "Unknown19": 0,
@@ -1078,7 +1078,7 @@
       "Unknown13": 1699,
       "Unknown14": true,
       "Unknown15": 0,
-      "JobLevel": 1,
+      "JobLevel": 20,
       "JobLevelXP": 0,
       "JobLevelTotalXP": 0,
       "Unknown19": 0,
@@ -1431,7 +1431,7 @@
       "Unknown13": 1768703266,
       "Unknown14": false,
       "Unknown15": 0,
-      "JobLevel": 1,
+      "JobLevel": 20,
       "JobLevelXP": 0,
       "JobLevelTotalXP": 0,
       "Unknown19": 0,
@@ -1846,7 +1846,7 @@
       "Unknown13": 1699,
       "Unknown14": false,
       "Unknown15": 0,
-      "JobLevel": 1,
+      "JobLevel": 20,
       "JobLevelXP": 0,
       "JobLevelTotalXP": 0,
       "Unknown19": 0,
@@ -2268,7 +2268,7 @@
       "Unknown13": 1668180256,
       "Unknown14": false,
       "Unknown15": 0,
-      "JobLevel": 1,
+      "JobLevel": 20,
       "JobLevelXP": 0,
       "JobLevelTotalXP": 0,
       "Unknown19": 0,
@@ -2642,7 +2642,7 @@
       "Unknown13": 1684957510,
       "Unknown14": false,
       "Unknown15": 0,
-      "JobLevel": 1,
+      "JobLevel": 20,
       "JobLevelXP": 0,
       "JobLevelTotalXP": 0,
       "Unknown19": 0,
@@ -3002,7 +3002,7 @@
       "Unknown13": 1699,
       "Unknown14": false,
       "Unknown15": 0,
-      "JobLevel": 1,
+      "JobLevel": 20,
       "JobLevelXP": 0,
       "JobLevelTotalXP": 0,
       "Unknown19": 0,
@@ -3417,7 +3417,7 @@
       "Unknown13": 1952531806,
       "Unknown14": false,
       "Unknown15": 0,
-      "JobLevel": 1,
+      "JobLevel": 20,
       "JobLevelXP": 0,
       "JobLevelTotalXP": 0,
       "Unknown19": 0,
@@ -3853,7 +3853,7 @@
       "Unknown13": 1632903269,
       "Unknown14": false,
       "Unknown15": 0,
-      "JobLevel": 1,
+      "JobLevel": 20,
       "JobLevelXP": 0,
       "JobLevelTotalXP": 0,
       "Unknown19": 0,
@@ -4268,7 +4268,7 @@
       "Unknown13": 1699,
       "Unknown14": true,
       "Unknown15": 0,
-      "JobLevel": 1,
+      "JobLevel": 20,
       "JobLevelXP": 0,
       "JobLevelTotalXP": 0,
       "Unknown19": 0,
@@ -4593,7 +4593,7 @@
       "Unknown13": 1699,
       "Unknown14": true,
       "Unknown15": 0,
-      "JobLevel": 1,
+      "JobLevel": 20,
       "JobLevelXP": 0,
       "JobLevelTotalXP": 0,
       "Unknown19": 0,
@@ -4890,7 +4890,7 @@
       "Unknown13": 1699,
       "Unknown14": true,
       "Unknown15": 0,
-      "JobLevel": 1,
+      "JobLevel": 20,
       "JobLevelXP": 0,
       "JobLevelTotalXP": 0,
       "Unknown19": 0,
@@ -5208,7 +5208,7 @@
       "Unknown13": 1699,
       "Unknown14": false,
       "Unknown15": 0,
-      "JobLevel": 1,
+      "JobLevel": 20,
       "JobLevelXP": 0,
       "JobLevelTotalXP": 0,
       "Unknown19": 0,
@@ -5582,7 +5582,7 @@
       "Unknown13": 1768187250,
       "Unknown14": false,
       "Unknown15": 0,
-      "JobLevel": 1,
+      "JobLevel": 20,
       "JobLevelXP": 0,
       "JobLevelTotalXP": 0,
       "Unknown19": 0,
@@ -5921,7 +5921,7 @@
       "Unknown13": 924,
       "Unknown14": false,
       "Unknown15": 0,
-      "JobLevel": 1,
+      "JobLevel": 20,
       "JobLevelXP": 0,
       "JobLevelTotalXP": 0,
       "Unknown19": 0,
@@ -52799,7 +52799,7 @@
       },
       "Unknown": 0,
       "Definition": 75025,
-      "Tint": 0
+      "Tint": 264
     },
     {
       "Unknown2": false,
@@ -58543,7 +58543,7 @@
       },
       "Unknown": 0,
       "Definition": 76336,
-      "Tint": 250
+      "Tint": 264
     },
     {
       "Unknown2": false,
@@ -65695,7 +65695,7 @@
       },
       "Unknown": 0,
       "Definition": 17246,
-      "Tint": 0
+      "Tint": 264
     },
     {
       "Unknown2": false,
@@ -87223,7 +87223,7 @@
     ],
     "Unknown": 0
   },
-  "VIPLevel": 6.0,
+  "VIPLevel": 5.0,
   "Unknown51": 0,
   "Unknown52": 81,
   "ClientNudges": []

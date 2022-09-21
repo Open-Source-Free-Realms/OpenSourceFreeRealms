@@ -243,6 +243,10 @@ namespace Gateway.Login
                     HandlePacketZoneTeleportRequest(soeClient, reader);
                     break;
 
+                case (ushort)BasePackets.PacketZoneSafeTeleportRequest:
+                    HandlePacketZoneSafeTeleportRequest(soeClient);
+                    break;
+
                 case (ushort)BasePackets.PacketGameTimeSync:
                     HandlePacketGameTimeSync(soeClient, reader);
                     break;
@@ -362,6 +366,12 @@ namespace Gateway.Login
             if (pointOfInterestDefinition is null)
                 return;
 
+            if (pointOfInterestDefinition.Id == 6)
+            {
+                TeleportToCondo(soeClient);
+            }
+            else
+            {
             var soeWriter = new SOEWriter((ushort)BasePackets.BaseClientUpdatePacket, true);
 
             soeWriter.AddHostUInt16((ushort)BaseClientUpdatePackets.ClientUpdatePacketUpdateLocation);
@@ -380,6 +390,125 @@ namespace Gateway.Login
             soeWriter.AddByte(1);
 
             SendTunneledClientPacket(soeClient, soeWriter.GetRaw());
+            }
+
+        }
+
+        public static void HandlePacketZoneSafeTeleportRequest(SOEClient soeClient)
+        {
+
+/*            var soeWriter = new SOEWriter((ushort)BasePackets.BaseClientUpdatePacket, true);
+            soeWriter.AddHostUInt16((ushort)BaseClientUpdatePackets.ClientUpdatePacketUpdateLocation);
+            soeWriter.AddFloat(-1414.636f);
+            soeWriter.AddFloat(-27.631f);
+            soeWriter.AddFloat(351.567f);
+            soeWriter.AddFloat(0f);
+            soeWriter.AddFloat(0.0f);
+            soeWriter.AddFloat(0.0f);
+            soeWriter.AddFloat(0.0f);
+            soeWriter.AddFloat(0.0f);
+
+            soeWriter.AddBoolean(true);
+            soeWriter.AddByte(1);
+            SendTunneledClientPacket(soeClient, soeWriter.GetRaw());*/
+
+            SOEWriter beginZoning = new SOEWriter((ushort)BasePackets.PacketClientBeginZoning, true);
+            beginZoning.AddASCIIString("FabledRealms");
+            beginZoning.AddHostUInt32(2u);
+            beginZoning.AddFloat(-1414.636f);
+            beginZoning.AddFloat(-27.631f);
+            beginZoning.AddFloat(351.567f);
+            beginZoning.AddFloat(0f);
+            for (uint num = 0u; num < 4; num++)
+            {
+                beginZoning.AddHostUInt32(20 * num);
+            }
+            beginZoning.AddASCIIString("");
+            beginZoning.AddBoolean(false);
+            beginZoning.AddByte(2);
+            beginZoning.AddHostUInt32(5u);
+            beginZoning.AddHostUInt32(4u);
+            beginZoning.AddHostUInt32(5u);
+            beginZoning.AddBoolean(false);
+            beginZoning.AddBoolean(false);
+
+            SendTunneledClientPacket(soeClient, beginZoning.GetRaw());
+
+        }
+
+        private static void TeleportToBoatLot(SOEClient soeClient)
+        {
+            SOEWriter beginZoning = new SOEWriter((ushort)BasePackets.PacketClientBeginZoning, true);
+            beginZoning.AddASCIIString("hsg_emptylot_boat_01");
+            beginZoning.AddHostUInt32(2u);
+            beginZoning.AddFloat(390f); // X
+            beginZoning.AddFloat(33.5f); // Y
+            beginZoning.AddFloat(425f); // Z
+            beginZoning.AddFloat(0f);
+            for (uint num = 0u; num < 4; num++)
+            {
+                beginZoning.AddHostUInt32(20 * num);
+            }
+            beginZoning.AddASCIIString("");
+            beginZoning.AddBoolean(false);
+            beginZoning.AddByte(2);
+            beginZoning.AddHostUInt32(5u);
+            beginZoning.AddHostUInt32(4u);
+            beginZoning.AddHostUInt32(5u);
+            beginZoning.AddBoolean(false);
+            beginZoning.AddBoolean(false);
+
+            SendTunneledClientPacket(soeClient, beginZoning.GetRaw());
+        }
+
+        private static void TeleportToCoinClimb(SOEClient soeClient)
+        {
+            SOEWriter beginZoning = new SOEWriter((ushort)BasePackets.PacketClientBeginZoning, true);
+            beginZoning.AddASCIIString("sg_coin_cloud_climb");
+            beginZoning.AddHostUInt32(2u);
+            beginZoning.AddFloat(150f); // X
+            beginZoning.AddFloat(5f); // Y
+            beginZoning.AddFloat(100f); // Z
+            beginZoning.AddFloat(0f);
+            for (uint num = 0u; num < 4; num++)
+            {
+                beginZoning.AddHostUInt32(20 * num);
+            }
+            beginZoning.AddASCIIString("");
+            beginZoning.AddBoolean(false);
+            beginZoning.AddByte(2);
+            beginZoning.AddHostUInt32(5u);
+            beginZoning.AddHostUInt32(4u);
+            beginZoning.AddHostUInt32(5u);
+            beginZoning.AddBoolean(false);
+            beginZoning.AddBoolean(false);
+
+            SendTunneledClientPacket(soeClient, beginZoning.GetRaw());
+        }
+
+        private static void TeleportToCondo(SOEClient soeClient)
+        {
+            SOEWriter beginZoning = new SOEWriter((ushort)BasePackets.PacketClientBeginZoning, true);
+            beginZoning.AddASCIIString("farming_briarwood_farmstead_01");
+            beginZoning.AddHostUInt32(2u);
+            beginZoning.AddFloat(67.5f); // X
+            beginZoning.AddFloat(25f); // Y
+            beginZoning.AddFloat(130f); // Z
+            beginZoning.AddFloat(0f);
+            for (uint num = 0u; num < 4; num++)
+            {
+                beginZoning.AddHostUInt32(20 * num);
+            }
+            beginZoning.AddASCIIString("");
+            beginZoning.AddBoolean(false);
+            beginZoning.AddByte(2);
+            beginZoning.AddHostUInt32(5u);
+            beginZoning.AddHostUInt32(4u);
+            beginZoning.AddHostUInt32(5u);
+            beginZoning.AddBoolean(false);
+            beginZoning.AddBoolean(false);
+
+            SendTunneledClientPacket(soeClient, beginZoning.GetRaw());
         }
 
         private static void HandlePacketGameTimeSync(SOEClient soeClient, SOEReader reader)

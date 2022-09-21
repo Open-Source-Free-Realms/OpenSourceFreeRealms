@@ -1446,7 +1446,7 @@ namespace Gateway.Login
             public VehicleStruct VehicleStruct { get; set; } = new VehicleStruct();
             public PlayerTitleStruct PlayerTitleStruct { get; set; } = new PlayerTitleStruct();
 
-            public int VIPLevel { get; set; }
+            public float VIPLevel { get; set; }
             public int Unknown51 { get; set; }
             public int Unknown52 { get; set; }
 

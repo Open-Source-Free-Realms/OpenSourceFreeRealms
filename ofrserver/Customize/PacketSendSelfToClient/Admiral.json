@@ -1,12 +1,12 @@
 {
   "Unknown": 665338923,
   "PlayerGUID": 1,
-  "PlayerModel": 1,
+  "PlayerModel": 60,
   "PlayerHead": "<race>_<gender>_head_caucasian.adr",
-  "PlayerHair": "<race>_m_hair_shaggy_<hairtype>.adr",
-  "HairColor": 116,
-  "EyeColor": 262,
-  "Skintone": "skintone3",
+  "PlayerHair": "<race>_f_hair_fullbangs_<hairtype>.adr",
+  "HairColor": 190,
+  "EyeColor": 330,
+  "Skintone": "skintone2",
   "FacePaint": "none",
   "HumanBeardsPixieWings": "",
   "Unknown11": 1,
@@ -29,8 +29,8 @@
   "Unknown24": 0,
   "Unknown25": 0,
   "Unknown26": 0,
-  "FirstName": "Open Source",
-  "LastName": "Free Realms",
+  "FirstName": "Admiral",
+  "LastName": "",
   "Coins": 0,
   "AccountBirthday": 1261854072,
   "AccountAge": 0,
@@ -275,7 +275,7 @@
           "comment": "Gloves",
           "Item1": 2,
           "Item2": {
-            "ItemGUID": 0,
+            "ItemGUID": 4150,
             "Category": 2
           }
         },
@@ -283,7 +283,7 @@
           "comment": "Shirt",
           "Item1": 3,
           "Item2": {
-            "ItemGUID": 14003,
+            "ItemGUID": 1353,
             "Category": 3
           }
         },
@@ -291,7 +291,7 @@
           "comment": "Pants",
           "Item1": 4,
           "Item2": {
-            "ItemGUID": 14000,
+            "ItemGUID": 1143,
             "Category": 4
           }
         },
@@ -299,7 +299,7 @@
           "comment": "Shoes",
           "Item1": 5,
           "Item2": {
-            "ItemGUID": 14004,
+            "ItemGUID": 0,
             "Category": 5
           }
         },
@@ -315,7 +315,7 @@
           "comment": "Weapon",
           "Item1": 7,
           "Item2": {
-            "ItemGUID": 14001,
+            "ItemGUID": 0,
             "Category": 7
           }
         },
@@ -339,7 +339,7 @@
           "comment": "Flair Shard",
           "Item1": 13,
           "Item2": {
-            "ItemGUID": 4020,
+            "ItemGUID": 0,
             "Category": 13
           }
         },
@@ -51935,7 +51935,7 @@
       },
       "Unknown": 0,
       "Definition": 76088,
-      "Tint": 0
+      "Tint": 1
     },
     {
       "Unknown2": false,
@@ -53455,7 +53455,7 @@
       },
       "Unknown": 0,
       "Definition": 77421,
-      "Tint": 0
+      "Tint": 1
     },
     {
       "Unknown2": false,
@@ -66943,7 +66943,7 @@
       },
       "Unknown": 0,
       "Definition": 68876,
-      "Tint": 0
+      "Tint": 190
     },
     {
       "Unknown2": false,
@@ -87223,7 +87223,7 @@
     ],
     "Unknown": 0
   },
-  "VIPLevel": 6.0,
+  "VIPLevel": 5.0,
   "Unknown51": 0,
   "Unknown52": 81,
   "ClientNudges": []

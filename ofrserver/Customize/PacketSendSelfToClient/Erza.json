@@ -1,13 +1,13 @@
 {
   "Unknown": 665338923,
   "PlayerGUID": 1,
-  "PlayerModel": 1,
+  "PlayerModel": 60,
   "PlayerHead": "<race>_<gender>_head_caucasian.adr",
-  "PlayerHair": "<race>_m_hair_shaggy_<hairtype>.adr",
-  "HairColor": 116,
-  "EyeColor": 262,
-  "Skintone": "skintone3",
-  "FacePaint": "none",
+  "PlayerHair": "<race>_f_hair_lowpigtail_<hairtype>.adr",
+  "HairColor": 233,
+  "EyeColor": 248,
+  "Skintone": "skintone2",
+  "FacePaint": "smokeyeyes",
   "HumanBeardsPixieWings": "",
   "Unknown11": 1,
   "Unknown12": 5,
@@ -29,8 +29,8 @@
   "Unknown24": 0,
   "Unknown25": 0,
   "Unknown26": 0,
-  "FirstName": "Open Source",
-  "LastName": "Free Realms",
+  "FirstName": "Erza",
+  "LastName": "",
   "Coins": 0,
   "AccountBirthday": 1261854072,
   "AccountAge": 0,
@@ -256,7 +256,7 @@
       "Unknown13": 1931819892,
       "Unknown14": false,
       "Unknown15": 0,
-      "JobLevel": 1,
+      "JobLevel": 20,
       "JobLevelXP": 0,
       "JobLevelTotalXP": 0,
       "Unknown19": 0,
@@ -275,7 +275,7 @@
           "comment": "Gloves",
           "Item1": 2,
           "Item2": {
-            "ItemGUID": 0,
+            "ItemGUID": 2786,
             "Category": 2
           }
         },
@@ -283,7 +283,7 @@
           "comment": "Shirt",
           "Item1": 3,
           "Item2": {
-            "ItemGUID": 14003,
+            "ItemGUID": 1560,
             "Category": 3
           }
         },
@@ -291,7 +291,7 @@
           "comment": "Pants",
           "Item1": 4,
           "Item2": {
-            "ItemGUID": 14000,
+            "ItemGUID": 14002,
             "Category": 4
           }
         },
@@ -299,7 +299,7 @@
           "comment": "Shoes",
           "Item1": 5,
           "Item2": {
-            "ItemGUID": 14004,
+            "ItemGUID": 1565,
             "Category": 5
           }
         },
@@ -315,7 +315,7 @@
           "comment": "Weapon",
           "Item1": 7,
           "Item2": {
-            "ItemGUID": 14001,
+            "ItemGUID": 1706,
             "Category": 7
           }
         },
@@ -339,7 +339,7 @@
           "comment": "Flair Shard",
           "Item1": 13,
           "Item2": {
-            "ItemGUID": 4020,
+            "ItemGUID": 1480,
             "Category": 13
           }
         },
@@ -670,7 +670,7 @@
       "Unknown13": 1699,
       "Unknown14": true,
       "Unknown15": 0,
-      "JobLevel": 1,
+      "JobLevel": 20,
       "JobLevelXP": 0,
       "JobLevelTotalXP": 0,
       "Unknown19": 0,
@@ -1078,7 +1078,7 @@
       "Unknown13": 1699,
       "Unknown14": true,
       "Unknown15": 0,
-      "JobLevel": 1,
+      "JobLevel": 20,
       "JobLevelXP": 0,
       "JobLevelTotalXP": 0,
       "Unknown19": 0,
@@ -1431,7 +1431,7 @@
       "Unknown13": 1768703266,
       "Unknown14": false,
       "Unknown15": 0,
-      "JobLevel": 1,
+      "JobLevel": 20,
       "JobLevelXP": 0,
       "JobLevelTotalXP": 0,
       "Unknown19": 0,
@@ -1846,7 +1846,7 @@
       "Unknown13": 1699,
       "Unknown14": false,
       "Unknown15": 0,
-      "JobLevel": 1,
+      "JobLevel": 20,
       "JobLevelXP": 0,
       "JobLevelTotalXP": 0,
       "Unknown19": 0,
@@ -2268,7 +2268,7 @@
       "Unknown13": 1668180256,
       "Unknown14": false,
       "Unknown15": 0,
-      "JobLevel": 1,
+      "JobLevel": 20,
       "JobLevelXP": 0,
       "JobLevelTotalXP": 0,
       "Unknown19": 0,
@@ -2642,7 +2642,7 @@
       "Unknown13": 1684957510,
       "Unknown14": false,
       "Unknown15": 0,
-      "JobLevel": 1,
+      "JobLevel": 20,
       "JobLevelXP": 0,
       "JobLevelTotalXP": 0,
       "Unknown19": 0,
@@ -3002,7 +3002,7 @@
       "Unknown13": 1699,
       "Unknown14": false,
       "Unknown15": 0,
-      "JobLevel": 1,
+      "JobLevel": 20,
       "JobLevelXP": 0,
       "JobLevelTotalXP": 0,
       "Unknown19": 0,
@@ -3417,7 +3417,7 @@
       "Unknown13": 1952531806,
       "Unknown14": false,
       "Unknown15": 0,
-      "JobLevel": 1,
+      "JobLevel": 20,
       "JobLevelXP": 0,
       "JobLevelTotalXP": 0,
       "Unknown19": 0,
@@ -3853,7 +3853,7 @@
       "Unknown13": 1632903269,
       "Unknown14": false,
       "Unknown15": 0,
-      "JobLevel": 1,
+      "JobLevel": 20,
       "JobLevelXP": 0,
       "JobLevelTotalXP": 0,
       "Unknown19": 0,
@@ -4268,7 +4268,7 @@
       "Unknown13": 1699,
       "Unknown14": true,
       "Unknown15": 0,
-      "JobLevel": 1,
+      "JobLevel": 20,
       "JobLevelXP": 0,
       "JobLevelTotalXP": 0,
       "Unknown19": 0,
@@ -4593,7 +4593,7 @@
       "Unknown13": 1699,
       "Unknown14": true,
       "Unknown15": 0,
-      "JobLevel": 1,
+      "JobLevel": 20,
       "JobLevelXP": 0,
       "JobLevelTotalXP": 0,
       "Unknown19": 0,
@@ -4890,7 +4890,7 @@
       "Unknown13": 1699,
       "Unknown14": true,
       "Unknown15": 0,
-      "JobLevel": 1,
+      "JobLevel": 20,
       "JobLevelXP": 0,
       "JobLevelTotalXP": 0,
       "Unknown19": 0,
@@ -5208,7 +5208,7 @@
       "Unknown13": 1699,
       "Unknown14": false,
       "Unknown15": 0,
-      "JobLevel": 1,
+      "JobLevel": 20,
       "JobLevelXP": 0,
       "JobLevelTotalXP": 0,
       "Unknown19": 0,
@@ -5582,7 +5582,7 @@
       "Unknown13": 1768187250,
       "Unknown14": false,
       "Unknown15": 0,
-      "JobLevel": 1,
+      "JobLevel": 20,
       "JobLevelXP": 0,
       "JobLevelTotalXP": 0,
       "Unknown19": 0,
@@ -5921,7 +5921,7 @@
       "Unknown13": 924,
       "Unknown14": false,
       "Unknown15": 0,
-      "JobLevel": 1,
+      "JobLevel": 20,
       "JobLevelXP": 0,
       "JobLevelTotalXP": 0,
       "Unknown19": 0,
@@ -52799,7 +52799,7 @@
       },
       "Unknown": 0,
       "Definition": 75025,
-      "Tint": 0
+      "Tint": 263
     },
     {
       "Unknown2": false,
@@ -53471,7 +53471,7 @@
       },
       "Unknown": 0,
       "Definition": 76402,
-      "Tint": 0
+      "Tint": 259
     },
     {
       "Unknown2": false,
@@ -54111,7 +54111,7 @@
       },
       "Unknown": 0,
       "Definition": 76249,
-      "Tint": 0
+      "Tint": 259
     },
     {
       "Unknown2": false,
@@ -55295,7 +55295,7 @@
       },
       "Unknown": 0,
       "Definition": 75859,
-      "Tint": 250
+      "Tint": 264
     },
     {
       "Unknown2": false,
@@ -55359,7 +55359,7 @@
       },
       "Unknown": 0,
       "Definition": 75872,
-      "Tint": 0
+      "Tint": 264
     },
     {
       "Unknown2": false,
@@ -56639,7 +56639,7 @@
       },
       "Unknown": 0,
       "Definition": 77447,
-      "Tint": 0
+      "Tint": 264
     },
     {
       "Unknown2": false,
@@ -56911,7 +56911,7 @@
       },
       "Unknown": 0,
       "Definition": 68501,
-      "Tint": 0
+      "Tint": 264
     },
     {
       "Unknown2": false,
@@ -57183,7 +57183,7 @@
       },
       "Unknown": 0,
       "Definition": 13670,
-      "Tint": 227
+      "Tint": 264
     },
     {
       "Unknown2": false,
@@ -57615,7 +57615,7 @@
       },
       "Unknown": 0,
       "Definition": 76109,
-      "Tint": 228
+      "Tint": 264
     },
     {
       "Unknown2": false,
@@ -57631,7 +57631,7 @@
       },
       "Unknown": 0,
       "Definition": 76108,
-      "Tint": 228
+      "Tint": 259
     },
     {
       "Unknown2": false,
@@ -58063,7 +58063,7 @@
       },
       "Unknown": 0,
       "Definition": 13675,
-      "Tint": 249
+      "Tint": 264
     },
     {
       "Unknown2": false,
@@ -58991,7 +58991,7 @@
       },
       "Unknown": 0,
       "Definition": 13656,
-      "Tint": 249
+      "Tint": 259
     },
     {
       "Unknown2": false,
@@ -60303,7 +60303,7 @@
       },
       "Unknown": 0,
       "Definition": 13659,
-      "Tint": 227
+      "Tint": 259
     },
     {
       "Unknown2": false,
@@ -60607,7 +60607,7 @@
       },
       "Unknown": 0,
       "Definition": 75895,
-      "Tint": 250
+      "Tint": 259
     },
     {
       "Unknown2": false,
@@ -60623,7 +60623,7 @@
       },
       "Unknown": 0,
       "Definition": 75896,
-      "Tint": 250
+      "Tint": 259
     },
     {
       "Unknown2": false,
@@ -61535,7 +61535,7 @@
       },
       "Unknown": 0,
       "Definition": 56734,
-      "Tint": 0
+      "Tint": 264
     },
     {
       "Unknown2": false,
@@ -64911,7 +64911,7 @@
       },
       "Unknown": 0,
       "Definition": 9119,
-      "Tint": 9
+      "Tint": 259
     },
     {
       "Unknown2": false,
@@ -67775,7 +67775,7 @@
       },
       "Unknown": 0,
       "Definition": 76121,
-      "Tint": 250
+      "Tint": 259
     },
     {
       "Unknown2": false,
@@ -67791,7 +67791,7 @@
       },
       "Unknown": 0,
       "Definition": 76120,
-      "Tint": 250
+      "Tint": 259
     },
     {
       "Unknown2": false,
@@ -67823,7 +67823,7 @@
       },
       "Unknown": 0,
       "Definition": 76125,
-      "Tint": 250
+      "Tint": 259
     },
     {
       "Unknown2": false,
@@ -67839,7 +67839,7 @@
       },
       "Unknown": 0,
       "Definition": 75089,
-      "Tint": 250
+      "Tint": 259
     },
     {
       "Unknown2": false,
@@ -68175,7 +68175,7 @@
       },
       "Unknown": 0,
       "Definition": 17888,
-      "Tint": 258
+      "Tint": 259
     },
     {
       "Unknown2": false,
@@ -70767,7 +70767,7 @@
       },
       "Unknown": 0,
       "Definition": 13141,
-      "Tint": 0
+      "Tint": 259
     },
     {
       "Unknown2": false,
@@ -87223,7 +87223,7 @@
     ],
     "Unknown": 0
   },
-  "VIPLevel": 6.0,
+  "VIPLevel": 5.0,
   "Unknown51": 0,
   "Unknown52": 81,
   "ClientNudges": []

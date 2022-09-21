@@ -1,13 +1,13 @@
 {
   "Unknown": 665338923,
   "PlayerGUID": 1,
-  "PlayerModel": 1,
+  "PlayerModel": 60,
   "PlayerHead": "<race>_<gender>_head_caucasian.adr",
-  "PlayerHair": "<race>_m_hair_shaggy_<hairtype>.adr",
-  "HairColor": 116,
-  "EyeColor": 262,
-  "Skintone": "skintone3",
-  "FacePaint": "none",
+  "PlayerHair": "<race>_f_hair_lowpigtail_<hairtype>.adr",
+  "HairColor": 258,
+  "EyeColor": 191,
+  "Skintone": "skintone1",
+  "FacePaint": "blackcat",
   "HumanBeardsPixieWings": "",
   "Unknown11": 1,
   "Unknown12": 5,
@@ -29,8 +29,8 @@
   "Unknown24": 0,
   "Unknown25": 0,
   "Unknown26": 0,
-  "FirstName": "Open Source",
-  "LastName": "Free Realms",
+  "FirstName": "nyaddie",
+  "LastName": "",
   "Coins": 0,
   "AccountBirthday": 1261854072,
   "AccountAge": 0,
@@ -267,7 +267,7 @@
           "comment": "Head",
           "Item1": 1,
           "Item2": {
-            "ItemGUID": 0,
+            "ItemGUID": 1079,
             "Category": 1
           }
         },
@@ -275,7 +275,7 @@
           "comment": "Gloves",
           "Item1": 2,
           "Item2": {
-            "ItemGUID": 0,
+            "ItemGUID": 4150,
             "Category": 2
           }
         },
@@ -283,7 +283,7 @@
           "comment": "Shirt",
           "Item1": 3,
           "Item2": {
-            "ItemGUID": 14003,
+            "ItemGUID": 4534,
             "Category": 3
           }
         },
@@ -291,7 +291,7 @@
           "comment": "Pants",
           "Item1": 4,
           "Item2": {
-            "ItemGUID": 14000,
+            "ItemGUID": 14002,
             "Category": 4
           }
         },
@@ -299,7 +299,7 @@
           "comment": "Shoes",
           "Item1": 5,
           "Item2": {
-            "ItemGUID": 14004,
+            "ItemGUID": 4332,
             "Category": 5
           }
         },
@@ -307,7 +307,7 @@
           "comment": "Back",
           "Item1": 6,
           "Item2": {
-            "ItemGUID": 0,
+            "ItemGUID": 3796,
             "Category": 6
           }
         },
@@ -315,7 +315,7 @@
           "comment": "Weapon",
           "Item1": 7,
           "Item2": {
-            "ItemGUID": 14001,
+            "ItemGUID": 1764,
             "Category": 7
           }
         },
@@ -339,7 +339,7 @@
           "comment": "Flair Shard",
           "Item1": 13,
           "Item2": {
-            "ItemGUID": 4020,
+            "ItemGUID": 1257,
             "Category": 13
           }
         },
@@ -49553,6 +49553,22 @@
       "Definition": 76476,
       "Tint": 232
     },
+	{
+      "Unknown2": false,
+      "Guid": 0541,
+      "Count": 1,
+      "ConsumedCount": 0,
+      "LastCastTime": 2147483647,
+      "ItemStruct": {
+        "HasItemStruct": false,
+        "RentalExpirationTime": 0,
+        "RentalUpsellsSent": 0,
+        "MarketplaceBundleId": 0
+      },
+      "Unknown": 0,
+      "Definition": 42039,
+      "Tint": 257
+    },
     {
       "Unknown2": false,
       "Guid": 4,
@@ -49632,6 +49648,22 @@
       "Unknown": 0,
       "Definition": 13197,
       "Tint": 0
+    },
+	{
+      "Unknown2": false,
+      "Guid": 0543,
+      "Count": 1,
+      "ConsumedCount": 0,
+      "LastCastTime": 2147483647,
+      "ItemStruct": {
+        "HasItemStruct": false,
+        "RentalExpirationTime": 0,
+        "RentalUpsellsSent": 0,
+        "MarketplaceBundleId": 0
+      },
+      "Unknown": 0,
+      "Definition": 42041,
+      "Tint": 237
     },
     {
       "Unknown2": false,
@@ -52287,22 +52319,6 @@
       },
       "Unknown": 0,
       "Definition": 9246,
-      "Tint": 0
-    },
-    {
-      "Unknown2": false,
-      "Guid": 1184,
-      "Count": 1,
-      "ConsumedCount": 0,
-      "LastCastTime": 2147483647,
-      "ItemStruct": {
-        "HasItemStruct": true,
-        "RentalExpirationTime": 0,
-        "RentalUpsellsSent": 0,
-        "MarketplaceBundleId": 4134
-      },
-      "Unknown": 0,
-      "Definition": 77416,
       "Tint": 0
     },
     {
@@ -57231,7 +57247,7 @@
       },
       "Unknown": 0,
       "Definition": 13671,
-      "Tint": 249
+      "Tint": 515
     },
     {
       "Unknown2": false,
@@ -57568,6 +57584,23 @@
       "Unknown": 0,
       "Definition": 75345,
       "Tint": 0
+    },
+	{
+      "comment": "punk pants",
+      "Unknown2": false,
+      "Guid": 5032,
+      "Count": 1,
+      "ConsumedCount": 0,
+      "LastCastTime": 2147483647,
+      "ItemStruct": {
+        "HasItemStruct": false,
+        "RentalExpirationTime": 0,
+        "RentalUpsellsSent": 0,
+        "MarketplaceBundleId": 0
+      },
+      "Unknown": 0,
+      "Definition": 420666,
+      "Tint": 330
     },
     {
       "Unknown2": false,
@@ -60735,7 +60768,7 @@
       },
       "Unknown": 0,
       "Definition": 56746,
-      "Tint": 0
+      "Tint": 264
     },
     {
       "Unknown2": false,
@@ -63009,6 +63042,22 @@
       "Definition": 63903,
       "Tint": 0
     },
+	 {
+      "Unknown2": false,
+      "Guid": 0550,
+      "Count": 1,
+      "ConsumedCount": 0,
+      "LastCastTime": 2147483647,
+      "ItemStruct": {
+        "HasItemStruct": false,
+        "RentalExpirationTime": 0,
+        "RentalUpsellsSent": 0,
+        "MarketplaceBundleId": 0
+      },
+      "Unknown": 0,
+      "Definition": 42048,
+      "Tint": 249
+    },
     {
       "Unknown2": false,
       "Guid": 3103,
@@ -64703,7 +64752,7 @@
       },
       "Unknown": 0,
       "Definition": 17615,
-      "Tint": 0
+      "Tint": 365
     },
     {
       "Unknown2": false,
@@ -65569,6 +65618,22 @@
       "Definition": 60825,
       "Tint": 0
     },
+	{
+      "Unknown2": false,
+      "Guid": 0536,
+      "Count": 1,
+      "ConsumedCount": 0,
+      "LastCastTime": 2147483647,
+      "ItemStruct": {
+        "HasItemStruct": false,
+        "RentalExpirationTime": 0,
+        "RentalUpsellsSent": 0,
+        "MarketplaceBundleId": 0
+      },
+      "Unknown": 0,
+      "Definition": 42033,
+      "Tint": 365
+    },
     {
       "Unknown2": false,
       "Guid": 3775,
@@ -66257,22 +66322,7 @@
       "Definition": 2269,
       "Tint": 0
     },
-    {
-      "Unknown2": false,
-      "Guid": 4044,
-      "Count": 1,
-      "ConsumedCount": 0,
-      "LastCastTime": 2147483647,
-      "ItemStruct": {
-        "HasItemStruct": false,
-        "RentalExpirationTime": 0,
-        "RentalUpsellsSent": 0,
-        "MarketplaceBundleId": 0
-      },
-      "Unknown": 0,
-      "Definition": 17709,
-      "Tint": 228
-    },
+	
     {
       "Unknown2": false,
       "Guid": 4045,
@@ -67905,7 +67955,7 @@
       "Definition": 75085,
       "Tint": 250
     },
-    {
+	{
       "Unknown2": false,
       "Guid": 4284,
       "Count": 1,
@@ -69619,6 +69669,22 @@
     },
     {
       "Unknown2": false,
+      "Guid": 0551,
+      "Count": 1,
+      "ConsumedCount": 0,
+      "LastCastTime": 2147483647,
+      "ItemStruct": {
+        "HasItemStruct": false,
+        "RentalExpirationTime": 0,
+        "RentalUpsellsSent": 0,
+        "MarketplaceBundleId": 0
+      },
+      "Unknown": 0,
+      "Definition": 42049,
+      "Tint": 0
+    },
+	{
+      "Unknown2": false,
       "Guid": 4430,
       "Count": 1,
       "ConsumedCount": 0,
@@ -69631,6 +69697,22 @@
       },
       "Unknown": 0,
       "Definition": 36685,
+      "Tint": 0
+    },
+	{
+      "Unknown2": false,
+      "Guid": 99997,
+      "Count": 1,
+      "ConsumedCount": 0,
+      "LastCastTime": 2147483647,
+      "ItemStruct": {
+        "HasItemStruct": false,
+        "RentalExpirationTime": 0,
+        "RentalUpsellsSent": 0,
+        "MarketplaceBundleId": 0
+      },
+      "Unknown": 0,
+      "Definition": 42050,
       "Tint": 0
     },
     {
@@ -70593,6 +70675,38 @@
       "Definition": 68877,
       "Tint": 0
     },
+	 {
+      "Unknown2": false,
+      "Guid": 0544,
+      "Count": 2,
+      "ConsumedCount": 0,
+      "LastCastTime": 2147483647,
+      "ItemStruct": {
+        "HasItemStruct": false,
+        "RentalExpirationTime": 0,
+        "RentalUpsellsSent": 0,
+        "MarketplaceBundleId": 0
+      },
+      "Unknown": 0,
+      "Definition": 42042,
+      "Tint": 0
+    },
+	{
+      "Unknown2": false,
+      "Guid": 0545,
+      "Count": 2,
+      "ConsumedCount": 0,
+      "LastCastTime": 2147483647,
+      "ItemStruct": {
+        "HasItemStruct": false,
+        "RentalExpirationTime": 0,
+        "RentalUpsellsSent": 0,
+        "MarketplaceBundleId": 0
+      },
+      "Unknown": 0,
+      "Definition": 42043,
+      "Tint": 303
+    },
     {
       "Unknown2": false,
       "Guid": 4519,
@@ -70640,6 +70754,22 @@
       "Unknown": 0,
       "Definition": 76553,
       "Tint": 0
+    },
+	{
+      "Unknown2": false,
+      "Guid": 0547,
+      "Count": 1,
+      "ConsumedCount": 0,
+      "LastCastTime": 2147483647,
+      "ItemStruct": {
+        "HasItemStruct": false,
+        "RentalExpirationTime": 0,
+        "RentalUpsellsSent": 0,
+        "MarketplaceBundleId": 0
+      },
+      "Unknown": 0,
+      "Definition": 42045,
+      "Tint": 252
     },
     {
       "Unknown2": false,
@@ -70767,7 +70897,7 @@
       },
       "Unknown": 0,
       "Definition": 13141,
-      "Tint": 0
+      "Tint": 515
     },
     {
       "Unknown2": false,
@@ -70912,6 +71042,55 @@
       "Unknown": 0,
       "Definition": 29947,
       "Tint": 0
+    },
+	{
+      "Unknown2": false,
+      "Guid": 99998,
+      "Count": 1,
+      "ConsumedCount": 0,
+      "LastCastTime": 2147483647,
+      "ItemStruct": {
+        "HasItemStruct": false,
+        "RentalExpirationTime": 0,
+        "RentalUpsellsSent": 0,
+        "MarketplaceBundleId": 0
+      },
+      "Unknown": 0,
+      "Definition": 42031,
+      "Tint": 515
+    },
+	{
+      "Unknown2": false,
+      "Guid": 0535,
+      "Count": 1,
+      "ConsumedCount": 0,
+      "LastCastTime": 2147483647,
+      "ItemStruct": {
+        "HasItemStruct": false,
+        "RentalExpirationTime": 0,
+        "RentalUpsellsSent": 0,
+        "MarketplaceBundleId": 0
+      },
+      "Unknown": 0,
+      "Definition": 42032,
+      "Tint": 365
+    },
+	
+	{
+      "Unknown2": false,
+      "Guid": 0542,
+      "Count": 1,
+      "ConsumedCount": 0,
+      "LastCastTime": 2147483647,
+      "ItemStruct": {
+        "HasItemStruct": false,
+        "RentalExpirationTime": 0,
+        "RentalUpsellsSent": 0,
+        "MarketplaceBundleId": 0
+      },
+      "Unknown": 0,
+      "Definition": 42040,
+      "Tint": 257
     },
     {
       "Unknown2": true,
@@ -71136,6 +71315,22 @@
       "Unknown": 0,
       "Definition": 38822,
       "Tint": 0
+    },
+	{
+      "Unknown2": false,
+      "Guid": 0517,
+      "Count": 1,
+      "ConsumedCount": 0,
+      "LastCastTime": 2147483647,
+      "ItemStruct": {
+        "HasItemStruct": false,
+        "RentalExpirationTime": 0,
+        "RentalUpsellsSent": 0,
+        "MarketplaceBundleId": 0
+      },
+      "Unknown": 0,
+      "Definition": 69422,
+      "Tint": 330
     },
     {
       "Unknown2": false,
@@ -71377,6 +71572,39 @@
       "Definition": 76938,
       "Tint": 0
     },
+	{
+      "Unknown2": false,
+      "Guid": 69420,
+      "Count": 1,
+      "ConsumedCount": 0,
+      "LastCastTime": 2147483647,
+      "ItemStruct": {
+        "HasItemStruct": false,
+        "RentalExpirationTime": 0,
+        "RentalUpsellsSent": 0,
+        "MarketplaceBundleId": 0
+      },
+      "Unknown": 0,
+      "Definition": 42051,
+      "Tint": 515
+    },
+	  {
+      "Unknown2": false,
+      "Guid": 0554,
+      "Count": 1,
+      "ConsumedCount": 0,
+      "LastCastTime": 2147483647,
+      "ItemStruct": {
+        "HasItemStruct": false,
+        "RentalExpirationTime": 0,
+        "RentalUpsellsSent": 0,
+        "MarketplaceBundleId": 0
+      },
+      "Unknown": 0,
+      "Definition": 42052,
+      "Tint": 249
+    },
+	
     {
       "Unknown2": false,
       "Guid": 4574,
@@ -71408,6 +71636,38 @@
       "Unknown": 0,
       "Definition": 68951,
       "Tint": 0
+    },
+	{
+      "Unknown2": false,
+      "Guid": 0515,
+      "Count": 1,
+      "ConsumedCount": 0,
+      "LastCastTime": 2147483647,
+      "ItemStruct": {
+        "HasItemStruct": false,
+        "RentalExpirationTime": 0,
+        "RentalUpsellsSent": 0,
+        "MarketplaceBundleId": 0
+      },
+      "Unknown": 0,
+      "Definition": 69420,
+      "Tint": 105
+    },
+	{
+      "Unknown2": false,
+      "Guid": 99999,
+      "Count": 1,
+      "ConsumedCount": 0,
+      "LastCastTime": 2147483647,
+      "ItemStruct": {
+        "HasItemStruct": false,
+        "RentalExpirationTime": 0,
+        "RentalUpsellsSent": 0,
+        "MarketplaceBundleId": 0
+      },
+      "Unknown": 0,
+      "Definition": 69421,
+      "Tint": 267
     },
     {
       "Unknown2": false,
@@ -71569,6 +71829,22 @@
       "Definition": 78557,
       "Tint": 0
     },
+	{
+      "Unknown2": false,
+      "Guid": 13000,
+      "Count": 1,
+      "ConsumedCount": 0,
+      "LastCastTime": 2147483647,
+      "ItemStruct": {
+        "HasItemStruct": false,
+        "RentalExpirationTime": 0,
+        "RentalUpsellsSent": 0,
+        "MarketplaceBundleId": 0
+      },
+      "Unknown": 0,
+      "Definition": 0515,
+      "Tint": 191
+    },
     {
       "Unknown2": false,
       "Guid": 4587,
@@ -71648,6 +71924,86 @@
       "Unknown": 0,
       "Definition": 78397,
       "Tint": 0
+    },
+    {
+      "Unknown2": false,
+      "Guid": 0555,
+      "Count": 1,
+      "ConsumedCount": 0,
+      "LastCastTime": 2147483647,
+      "ItemStruct": {
+        "HasItemStruct": false,
+        "RentalExpirationTime": 0,
+        "RentalUpsellsSent": 0,
+        "MarketplaceBundleId": 0
+      },
+      "Unknown": 0,
+      "Definition": 42053,
+      "Tint": 407
+    },
+    {
+      "Unknown2": false,
+      "Guid": 0556,
+      "Count": 1,
+      "ConsumedCount": 0,
+      "LastCastTime": 2147483647,
+      "ItemStruct": {
+        "HasItemStruct": false,
+        "RentalExpirationTime": 0,
+        "RentalUpsellsSent": 0,
+        "MarketplaceBundleId": 0
+      },
+      "Unknown": 0,
+      "Definition": 42054,
+      "Tint": 249
+    },
+    {
+      "Unknown2": false,
+      "Guid": 0557,
+      "Count": 1,
+      "ConsumedCount": 0,
+      "LastCastTime": 2147483647,
+      "ItemStruct": {
+        "HasItemStruct": false,
+        "RentalExpirationTime": 0,
+        "RentalUpsellsSent": 0,
+        "MarketplaceBundleId": 0
+      },
+      "Unknown": 0,
+      "Definition": 42055,
+      "Tint": 365
+    },
+    {
+      "Unknown2": false,
+      "Guid": 0560,
+      "Count": 1,
+      "ConsumedCount": 0,
+      "LastCastTime": 2147483647,
+      "ItemStruct": {
+        "HasItemStruct": false,
+        "RentalExpirationTime": 0,
+        "RentalUpsellsSent": 0,
+        "MarketplaceBundleId": 0
+      },
+      "Unknown": 0,
+      "Definition": 42058,
+      "Tint": 365
+    },
+    {
+      "Unknown2": false,
+      "Guid": 99996,
+      "Count": 1,
+      "ConsumedCount": 0,
+      "LastCastTime": 2147483647,
+      "ItemStruct": {
+        "HasItemStruct": true,
+        "RentalExpirationTime": 0,
+        "RentalUpsellsSent": 0,
+        "MarketplaceBundleId": 4258
+      },
+      "Unknown": 0,
+      "Definition": 42059,
+      "Tint": 127
     }
   ],
   "Unknown46": 1,
@@ -87223,7 +87579,7 @@
     ],
     "Unknown": 0
   },
-  "VIPLevel": 6.0,
+  "VIPLevel": 5.0,
   "Unknown51": 0,
   "Unknown52": 81,
   "ClientNudges": []
