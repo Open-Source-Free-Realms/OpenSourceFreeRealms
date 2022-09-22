@@ -6102,7 +6102,7 @@
       "comment1": "End of Fisherman"
     }
   ],
-  "Unknown45": 1,
+  "Class": 1,
   "Unknown2List": [
     {
       "Unknown": 2,
@@ -71650,7 +71650,7 @@
       "Tint": 0
     }
   ],
-  "Unknown46": 1,
+  "GenderFilter": 2,
   "ClientQuestData": {
     "ClientQuests": [
       {
@@ -82219,10 +82219,10 @@
       "Unknown": 2,
       "Unknown2": true,
       "Unknown3": 652,
-      "Unknown4": 1112801280,
-      "Unknown5": 1118093944,
-      "Unknown6": 0,
-      "Unknown7": 1077557705,
+      "Food": 53.0,
+      "Groom": 82.37982,
+      "Exercise": 0.0,
+      "Happiness": 2.909777,
       "Unknown8": false,
       "PetTricks": [
         {
@@ -82378,11 +82378,11 @@
           }
         }
       ],
-      "Unknown9": "Captain Zeus",
+      "PetName": "Captain Zeus",
       "Unknown10": 103980,
       "Unknown11": 0,
-      "Unknown12": "lightmark-chocolate",
-      "Unknown13": 3211,
+      "TextureAlias": "lightmark-chocolate",
+      "IconId": 3211,
       "Unknown14": false,
       "Unknown15": 0,
       "Unknown16": false,
@@ -82407,10 +82407,10 @@
       "Unknown": 3,
       "Unknown2": true,
       "Unknown3": 653,
-      "Unknown4": 1120403456,
-      "Unknown5": 1120403456,
-      "Unknown6": 0,
-      "Unknown7": 1077689404,
+      "Food": 100.0,
+      "Groom": 100.0,
+      "Exercise": 0.0,
+      "Happiness": 2.9411764,
       "Unknown8": false,
       "PetTricks": [
         {
@@ -82503,11 +82503,11 @@
           }
         }
       ],
-      "Unknown9": "Captain Zax",
+      "PetName": "Captain Zax",
       "Unknown10": 420571,
       "Unknown11": 0,
-      "Unknown12": "trex-barndoor",
-      "Unknown13": 5857,
+      "TextureAlias": "trex-barndoor",
+      "IconId": 5857,
       "Unknown14": false,
       "Unknown15": 0,
       "Unknown16": false,
@@ -82532,10 +82532,10 @@
       "Unknown": 4,
       "Unknown2": true,
       "Unknown3": 653,
-      "Unknown4": 1119748096,
-      "Unknown5": 1120403456,
-      "Unknown6": 0,
-      "Unknown7": 1077683042,
+      "Food": 95.0,
+      "Groom": 100.0,
+      "Exercise": 0.0,
+      "Happiness": 2.9396596,
       "Unknown8": false,
       "PetTricks": [
         {
@@ -82628,11 +82628,11 @@
           }
         }
       ],
-      "Unknown9": "Colonel Boss",
+      "PetName": "Colonel Boss",
       "Unknown10": 24435,
       "Unknown11": 0,
-      "Unknown12": "goldtips-red",
-      "Unknown13": 5606,
+      "TextureAlias": "goldtips-red",
+      "IconId": 5606,
       "Unknown14": false,
       "Unknown15": 0,
       "Unknown16": false,
@@ -82657,10 +82657,10 @@
       "Unknown": 5,
       "Unknown2": true,
       "Unknown3": 652,
-      "Unknown4": 1120141312,
-      "Unknown5": 1120403456,
-      "Unknown6": 0,
-      "Unknown7": 1077686936,
+      "Food": 98.0,
+      "Groom": 100.0,
+      "Exercise": 0.0,
+      "Happiness": 2.940588,
       "Unknown8": false,
       "PetTricks": [
         {
@@ -82816,11 +82816,11 @@
           }
         }
       ],
-      "Unknown9": "Ultra Shadow",
+      "PetName": "Ultra Shadow",
       "Unknown10": 18855,
       "Unknown11": 0,
-      "Unknown12": "ghost-blue",
-      "Unknown13": 3804,
+      "TextureAlias": "ghost-blue",
+      "IconId": 3804,
       "Unknown14": false,
       "Unknown15": 0,
       "Unknown16": false,
@@ -82845,10 +82845,10 @@
       "Unknown": 6,
       "Unknown2": true,
       "Unknown3": 653,
-      "Unknown4": 1120403456,
-      "Unknown5": 1120362677,
-      "Unknown6": 0,
-      "Unknown7": 1077689026,
+      "Food": 100.0,
+      "Groom": 99.68888,
+      "Exercise": 0.0,
+      "Happiness": 2.9410863,
       "Unknown8": false,
       "PetTricks": [
         {
@@ -83004,11 +83004,11 @@
           }
         }
       ],
-      "Unknown9": "Royal Rex",
+      "PetName": "Royal Rex",
       "Unknown10": 103989,
       "Unknown11": 0,
-      "Unknown12": "spots-brown",
-      "Unknown13": 3199,
+      "TextureAlias": "spots-brown",
+      "IconId": 3199,
       "Unknown14": false,
       "Unknown15": 0,
       "Unknown16": false,
@@ -83033,10 +83033,10 @@
       "Unknown": 11,
       "Unknown2": true,
       "Unknown3": 653,
-      "Unknown4": 1120403456,
-      "Unknown5": 1120327525,
-      "Unknown6": 0,
-      "Unknown7": 1077688699,
+      "Food": 100.0,
+      "Groom": 99.42069,
+      "Exercise": 0.0,
+      "Happiness": 2.9410083,
       "Unknown8": false,
       "PetTricks": [
         {
@@ -83129,11 +83129,11 @@
           }
         }
       ],
-      "Unknown9": "Zap",
+      "PetName": "Zap",
       "Unknown10": 4868,
       "Unknown11": 0,
-      "Unknown12": "groudhog-blue",
-      "Unknown13": 6254,
+      "TextureAlias": "groudhog-blue",
+      "IconId": 6254,
       "Unknown14": false,
       "Unknown15": 0,
       "Unknown16": false,
@@ -83158,10 +83158,10 @@
       "Unknown": 12,
       "Unknown2": false,
       "Unknown3": 653,
-      "Unknown4": 1120403456,
-      "Unknown5": 1120403456,
-      "Unknown6": 1120403456,
-      "Unknown7": 1120403456,
+      "Food": 100.0,
+      "Groom": 100.0,
+      "Exercise": 100.0,
+      "Happiness": 100.0,
       "Unknown8": false,
       "PetTricks": [],
       "ItemGuids": [
@@ -83211,11 +83211,11 @@
           }
         }
       ],
-      "Unknown9": "",
+      "PetName": "",
       "Unknown10": 4259,
       "Unknown11": 0,
-      "Unknown12": "",
-      "Unknown13": 6088,
+      "TextureAlias": "",
+      "IconId": 6088,
       "Unknown14": true,
       "Unknown15": 0,
       "Unknown16": false,
@@ -83240,10 +83240,10 @@
       "Unknown": 13,
       "Unknown2": false,
       "Unknown3": 653,
-      "Unknown4": 1120403456,
-      "Unknown5": 1120403456,
-      "Unknown6": 1120403456,
-      "Unknown7": 1120403456,
+      "Food": 100.0,
+      "Groom": 100.0,
+      "Exercise": 100.0,
+      "Happiness": 100.0,
       "Unknown8": false,
       "PetTricks": [],
       "ItemGuids": [
@@ -83293,11 +83293,11 @@
           }
         }
       ],
-      "Unknown9": "Zinx",
+      "PetName": "Zinx",
       "Unknown10": 4743,
       "Unknown11": 0,
-      "Unknown12": "",
-      "Unknown13": 6082,
+      "TextureAlias": "",
+      "IconId": 6082,
       "Unknown14": true,
       "Unknown15": 0,
       "Unknown16": false,
@@ -83322,10 +83322,10 @@
       "Unknown": 20,
       "Unknown2": false,
       "Unknown3": 653,
-      "Unknown4": 1120403456,
-      "Unknown5": 1120403456,
-      "Unknown6": 1120403456,
-      "Unknown7": 1120403456,
+      "Food": 100.0,
+      "Groom": 100.0,
+      "Exercise": 100.0,
+      "Happiness": 100.0,
       "Unknown8": false,
       "PetTricks": [],
       "ItemGuids": [
@@ -83375,11 +83375,11 @@
           }
         }
       ],
-      "Unknown9": "",
+      "PetName": "",
       "Unknown10": 6215,
       "Unknown11": 0,
-      "Unknown12": "",
-      "Unknown13": 6411,
+      "TextureAlias": "",
+      "IconId": 6411,
       "Unknown14": true,
       "Unknown15": 0,
       "Unknown16": false,
@@ -83404,10 +83404,10 @@
       "Unknown": 23,
       "Unknown2": true,
       "Unknown3": 653,
-      "Unknown4": 1119748096,
-      "Unknown5": 1120290371,
-      "Unknown6": 0,
-      "Unknown7": 1077681990,
+      "Food": 95.0,
+      "Groom": 99.13723,
+      "Exercise": 0.0,
+      "Happiness": 2.9394088,
       "Unknown8": false,
       "PetTricks": [
         {
@@ -83500,11 +83500,11 @@
           }
         }
       ],
-      "Unknown9": "Hurricane",
+      "PetName": "Hurricane",
       "Unknown10": 4698,
       "Unknown11": 0,
-      "Unknown12": "furry-red",
-      "Unknown13": 5944,
+      "TextureAlias": "furry-red",
+      "IconId": 5944,
       "Unknown14": false,
       "Unknown15": 0,
       "Unknown16": false,
@@ -83529,10 +83529,10 @@
       "Unknown": 25,
       "Unknown2": false,
       "Unknown3": 653,
-      "Unknown4": 1120403456,
-      "Unknown5": 1120310114,
-      "Unknown6": 0,
-      "Unknown7": 1077688536,
+      "Food": 100.0,
+      "Groom": 99.28786,
+      "Exercise": 0.0,
+      "Happiness": 2.9409695,
       "Unknown8": false,
       "PetTricks": [
         {
@@ -83625,11 +83625,11 @@
           }
         }
       ],
-      "Unknown9": "",
+      "PetName": "",
       "Unknown10": 5427,
       "Unknown11": 0,
-      "Unknown12": "",
-      "Unknown13": 6479,
+      "TextureAlias": "",
+      "IconId": 6479,
       "Unknown14": false,
       "Unknown15": 0,
       "Unknown16": false,
@@ -83654,10 +83654,10 @@
       "Unknown": 27,
       "Unknown2": false,
       "Unknown3": 653,
-      "Unknown4": 1120403456,
-      "Unknown5": 1120403456,
-      "Unknown6": 1120403456,
-      "Unknown7": 1120403456,
+      "Food": 100.0,
+      "Groom": 100.0,
+      "Exercise": 100.0,
+      "Happiness": 100.0,
       "Unknown8": false,
       "PetTricks": [],
       "ItemGuids": [
@@ -83707,11 +83707,11 @@
           }
         }
       ],
-      "Unknown9": "",
+      "PetName": "",
       "Unknown10": 5450,
       "Unknown11": 0,
-      "Unknown12": "snow",
-      "Unknown13": 6434,
+      "TextureAlias": "snow",
+      "IconId": 6434,
       "Unknown14": true,
       "Unknown15": 0,
       "Unknown16": false,
@@ -83736,10 +83736,10 @@
       "Unknown": 32,
       "Unknown2": false,
       "Unknown3": 653,
-      "Unknown4": 1120403456,
-      "Unknown5": 1120403456,
-      "Unknown6": 1120403456,
-      "Unknown7": 1120403456,
+      "Food": 100.0,
+      "Groom": 100.0,
+      "Exercise": 100.0,
+      "Happiness": 100.0,
       "Unknown8": false,
       "PetTricks": [],
       "ItemGuids": [
@@ -83789,11 +83789,11 @@
           }
         }
       ],
-      "Unknown9": "",
+      "PetName": "",
       "Unknown10": 5630,
       "Unknown11": 0,
-      "Unknown12": "",
-      "Unknown13": 6622,
+      "TextureAlias": "",
+      "IconId": 6622,
       "Unknown14": true,
       "Unknown15": 0,
       "Unknown16": false,
@@ -83818,10 +83818,10 @@
       "Unknown": 34,
       "Unknown2": false,
       "Unknown3": 653,
-      "Unknown4": 1120403456,
-      "Unknown5": 1120403456,
-      "Unknown6": 1120403456,
-      "Unknown7": 1120403456,
+      "Food": 100.0,
+      "Groom": 100.0,
+      "Exercise": 100.0,
+      "Happiness": 100.0,
       "Unknown8": false,
       "PetTricks": [],
       "ItemGuids": [
@@ -83871,11 +83871,11 @@
           }
         }
       ],
-      "Unknown9": "",
+      "PetName": "",
       "Unknown10": 5630,
       "Unknown11": 0,
-      "Unknown12": "",
-      "Unknown13": 6623,
+      "TextureAlias": "",
+      "IconId": 6623,
       "Unknown14": true,
       "Unknown15": 0,
       "Unknown16": false,
@@ -83900,10 +83900,10 @@
       "Unknown": 47,
       "Unknown2": true,
       "Unknown3": 653,
-      "Unknown4": 1120403456,
-      "Unknown5": 1120403456,
-      "Unknown6": 1120403456,
-      "Unknown7": 1120403456,
+      "Food": 100.0,
+      "Groom": 100.0,
+      "Exercise": 100.0,
+      "Happiness": 100.0,
       "Unknown8": true,
       "PetTricks": [],
       "ItemGuids": [
@@ -83953,11 +83953,11 @@
           }
         }
       ],
-      "Unknown9": "Ace",
+      "PetName": "Ace",
       "Unknown10": 6415,
       "Unknown11": 0,
-      "Unknown12": "",
-      "Unknown13": 6860,
+      "TextureAlias": "",
+      "IconId": 6860,
       "Unknown14": true,
       "Unknown15": 0,
       "Unknown16": false,
@@ -83982,10 +83982,10 @@
       "Unknown": 48,
       "Unknown2": false,
       "Unknown3": 653,
-      "Unknown4": 1119879168,
-      "Unknown5": 1120313553,
-      "Unknown6": 0,
-      "Unknown7": 1077683532,
+      "Food": 96.0,
+      "Groom": 99.314095,
+      "Exercise": 0.0,
+      "Happiness": 2.9397764,
       "Unknown8": false,
       "PetTricks": [
         {
@@ -84141,11 +84141,11 @@
           }
         }
       ],
-      "Unknown9": "",
+      "PetName": "",
       "Unknown10": 141366,
       "Unknown11": 0,
-      "Unknown12": "black",
-      "Unknown13": 44,
+      "TextureAlias": "black",
+      "IconId": 44,
       "Unknown14": false,
       "Unknown15": 0,
       "Unknown16": false,
@@ -84170,10 +84170,10 @@
       "Unknown": 49,
       "Unknown2": false,
       "Unknown3": 652,
-      "Unknown4": 1120403456,
-      "Unknown5": 1120403456,
-      "Unknown6": 0,
-      "Unknown7": 1077689404,
+      "Food": 100.0,
+      "Groom": 100.0,
+      "Exercise": 0.0,
+      "Happiness": 2.9411764,
       "Unknown8": false,
       "PetTricks": [
         {
@@ -84329,11 +84329,11 @@
           }
         }
       ],
-      "Unknown9": "",
+      "PetName": "",
       "Unknown10": 6373,
       "Unknown11": 0,
-      "Unknown12": "raincloud",
-      "Unknown13": 4457,
+      "TextureAlias": "raincloud",
+      "IconId": 4457,
       "Unknown14": false,
       "Unknown15": 0,
       "Unknown16": false,
@@ -84358,10 +84358,10 @@
       "Unknown": 51,
       "Unknown2": false,
       "Unknown3": 653,
-      "Unknown4": 1119485952,
-      "Unknown5": 1102117049,
-      "Unknown6": 0,
-      "Unknown7": 1077269329,
+      "Food": 93.0,
+      "Groom": 22.121447,
+      "Exercise": 0.0,
+      "Happiness": 2.8410227,
       "Unknown8": false,
       "PetTricks": [
         {
@@ -84454,11 +84454,11 @@
           }
         }
       ],
-      "Unknown9": "",
+      "PetName": "",
       "Unknown10": 6270,
       "Unknown11": 0,
-      "Unknown12": "base_grey",
-      "Unknown13": 6873,
+      "TextureAlias": "base_grey",
+      "IconId": 6873,
       "Unknown14": false,
       "Unknown15": 0,
       "Unknown16": false,
@@ -84483,10 +84483,10 @@
       "Unknown": 54,
       "Unknown2": false,
       "Unknown3": 653,
-      "Unknown4": 1120403456,
-      "Unknown5": 1120403456,
-      "Unknown6": 1120403456,
-      "Unknown7": 1120403456,
+      "Food": 100.0,
+      "Groom": 100.0,
+      "Exercise": 100.0,
+      "Happiness": 100.0,
       "Unknown8": false,
       "PetTricks": [],
       "ItemGuids": [
@@ -84536,11 +84536,11 @@
           }
         }
       ],
-      "Unknown9": "",
+      "PetName": "",
       "Unknown10": 16635,
       "Unknown11": 0,
-      "Unknown12": "",
-      "Unknown13": 6939,
+      "TextureAlias": "",
+      "IconId": 6939,
       "Unknown14": true,
       "Unknown15": 0,
       "Unknown16": false,
@@ -84565,10 +84565,10 @@
       "Unknown": 55,
       "Unknown2": false,
       "Unknown3": 653,
-      "Unknown4": 1120403456,
-      "Unknown5": 1120403456,
-      "Unknown6": 1120403456,
-      "Unknown7": 1120403456,
+      "Food": 100.0,
+      "Groom": 100.0,
+      "Exercise": 100.0,
+      "Happiness": 100.0,
       "Unknown8": true,
       "PetTricks": [],
       "ItemGuids": [
@@ -84618,11 +84618,11 @@
           }
         }
       ],
-      "Unknown9": "",
+      "PetName": "",
       "Unknown10": 118985,
       "Unknown11": 0,
-      "Unknown12": "",
-      "Unknown13": 6983,
+      "TextureAlias": "",
+      "IconId": 6983,
       "Unknown14": true,
       "Unknown15": 0,
       "Unknown16": false,
@@ -84647,10 +84647,10 @@
       "Unknown": 56,
       "Unknown2": false,
       "Unknown3": 652,
-      "Unknown4": 1120403456,
-      "Unknown5": 1120403456,
-      "Unknown6": 0,
-      "Unknown7": 1077689404,
+      "Food": 100.0,
+      "Groom": 100.0,
+      "Exercise": 0.0,
+      "Happiness": 2.9411764,
       "Unknown8": false,
       "PetTricks": [
         {
@@ -84806,11 +84806,11 @@
           }
         }
       ],
-      "Unknown9": "",
+      "PetName": "",
       "Unknown10": 389081,
       "Unknown11": 0,
-      "Unknown12": "white",
-      "Unknown13": 3206,
+      "TextureAlias": "white",
+      "IconId": 3206,
       "Unknown14": false,
       "Unknown15": 0,
       "Unknown16": false,
@@ -84835,10 +84835,10 @@
       "Unknown": 57,
       "Unknown2": false,
       "Unknown3": 653,
-      "Unknown4": 1119485952,
-      "Unknown5": 1119485952,
-      "Unknown6": 0,
-      "Unknown7": 1077671224,
+      "Food": 93.0,
+      "Groom": 93.0,
+      "Exercise": 0.0,
+      "Happiness": 2.936842,
       "Unknown8": false,
       "PetTricks": [
         {
@@ -84931,11 +84931,11 @@
           }
         }
       ],
-      "Unknown9": "",
+      "PetName": "",
       "Unknown10": 5057,
       "Unknown11": 0,
-      "Unknown12": "basic-brown",
-      "Unknown13": 5614,
+      "TextureAlias": "basic-brown",
+      "IconId": 5614,
       "Unknown14": false,
       "Unknown15": 0,
       "Unknown16": false,
@@ -84960,10 +84960,10 @@
       "Unknown": 58,
       "Unknown2": false,
       "Unknown3": 653,
-      "Unknown4": 1120403456,
-      "Unknown5": 1120403456,
-      "Unknown6": 1120403456,
-      "Unknown7": 1120403456,
+      "Food": 100.0,
+      "Groom": 100.0,
+      "Exercise": 100.0,
+      "Happiness": 100.0,
       "Unknown8": false,
       "PetTricks": [],
       "ItemGuids": [
@@ -85013,11 +85013,11 @@
           }
         }
       ],
-      "Unknown9": "",
+      "PetName": "",
       "Unknown10": 10467,
       "Unknown11": 0,
-      "Unknown12": "",
-      "Unknown13": 7039,
+      "TextureAlias": "",
+      "IconId": 7039,
       "Unknown14": true,
       "Unknown15": 0,
       "Unknown16": false,
@@ -85042,10 +85042,10 @@
       "Unknown": 59,
       "Unknown2": false,
       "Unknown3": 0,
-      "Unknown4": 1116733440,
-      "Unknown5": 1117388800,
-      "Unknown6": 0,
-      "Unknown7": 1077606801,
+      "Food": 72.0,
+      "Groom": 77.0,
+      "Exercise": 0.0,
+      "Happiness": 2.9214823,
       "Unknown8": false,
       "PetTricks": [
         {
@@ -85138,11 +85138,11 @@
           }
         }
       ],
-      "Unknown9": "",
+      "PetName": "",
       "Unknown10": 6574,
       "Unknown11": 0,
-      "Unknown12": "0",
-      "Unknown13": 6955,
+      "TextureAlias": "0",
+      "IconId": 6955,
       "Unknown14": false,
       "Unknown15": 0,
       "Unknown16": false,
@@ -85167,10 +85167,10 @@
       "Unknown": 60,
       "Unknown2": false,
       "Unknown3": 653,
-      "Unknown4": 1118830592,
-      "Unknown5": 1119485952,
-      "Unknown6": 0,
-      "Unknown7": 1077663861,
+      "Food": 88.0,
+      "Groom": 93.0,
+      "Exercise": 0.0,
+      "Happiness": 2.9350865,
       "Unknown8": false,
       "PetTricks": [
         {
@@ -85263,11 +85263,11 @@
           }
         }
       ],
-      "Unknown9": "",
+      "PetName": "",
       "Unknown10": 6369,
       "Unknown11": 0,
-      "Unknown12": "dyetint",
-      "Unknown13": 7058,
+      "TextureAlias": "dyetint",
+      "IconId": 7058,
       "Unknown14": false,
       "Unknown15": 0,
       "Unknown16": false,
@@ -85292,10 +85292,10 @@
       "Unknown": 61,
       "Unknown2": false,
       "Unknown3": 653,
-      "Unknown4": 1120403456,
-      "Unknown5": 1120403456,
-      "Unknown6": 0,
-      "Unknown7": 1077689404,
+      "Food": 100.0,
+      "Groom": 100.0,
+      "Exercise": 0.0,
+      "Happiness": 2.9411764,
       "Unknown8": false,
       "PetTricks": [
         {
@@ -85388,11 +85388,11 @@
           }
         }
       ],
-      "Unknown9": "",
+      "PetName": "",
       "Unknown10": 5072,
       "Unknown11": 231,
-      "Unknown12": "dyetint",
-      "Unknown13": 6620,
+      "TextureAlias": "dyetint",
+      "IconId": 6620,
       "Unknown14": false,
       "Unknown15": 0,
       "Unknown16": false,
@@ -85417,10 +85417,10 @@
       "Unknown": 62,
       "Unknown2": false,
       "Unknown3": 653,
-      "Unknown4": 1120403456,
-      "Unknown5": 1120403456,
-      "Unknown6": 0,
-      "Unknown7": 1077689404,
+      "Food": 100.0,
+      "Groom": 100.0,
+      "Exercise": 0.0,
+      "Happiness": 2.9411764,
       "Unknown8": false,
       "PetTricks": [
         {
@@ -85513,11 +85513,11 @@
           }
         }
       ],
-      "Unknown9": "",
+      "PetName": "",
       "Unknown10": 435557,
       "Unknown11": 0,
-      "Unknown12": "dyetint",
-      "Unknown13": 7080,
+      "TextureAlias": "dyetint",
+      "IconId": 7080,
       "Unknown14": false,
       "Unknown15": 0,
       "Unknown16": false,
@@ -85542,10 +85542,10 @@
       "Unknown": 63,
       "Unknown2": false,
       "Unknown3": 653,
-      "Unknown4": 1120403456,
-      "Unknown5": 1120403456,
-      "Unknown6": 0,
-      "Unknown7": 1077689404,
+      "Food": 100.0,
+      "Groom": 100.0,
+      "Exercise": 0.0,
+      "Happiness": 2.9411764,
       "Unknown8": false,
       "PetTricks": [
         {
@@ -85638,11 +85638,11 @@
           }
         }
       ],
-      "Unknown9": "",
+      "PetName": "",
       "Unknown10": 389,
       "Unknown11": 0,
-      "Unknown12": "",
-      "Unknown13": 7675,
+      "TextureAlias": "",
+      "IconId": 7675,
       "Unknown14": false,
       "Unknown15": 0,
       "Unknown16": false,
@@ -87143,87 +87143,87 @@
   "PlayerTitleStruct": {
     "PlayerTitles": [
       {
-        "Unknown": 5,
-        "Unknown2": 3,
-        "Unknown3": 14522,
+        "Id": 5,
+        "Place": 3,
+        "TitleName": 14522,
         "Unknown4": 0
       },
       {
-        "Unknown": 6,
-        "Unknown2": 3,
-        "Unknown3": 14523,
+        "Id": 6,
+        "Place": 3,
+        "TitleName": 14523,
         "Unknown4": 0
       },
       {
-        "Unknown": 10,
-        "Unknown2": 1,
-        "Unknown3": 14527,
+        "Id": 10,
+        "Place": 1,
+        "TitleName": 14527,
         "Unknown4": 0
       },
       {
-        "Unknown": 13,
-        "Unknown2": 3,
-        "Unknown3": 14530,
+        "Id": 13,
+        "Place": 3,
+        "TitleName": 14530,
         "Unknown4": 0
       },
       {
-        "Unknown": 18,
-        "Unknown2": 3,
-        "Unknown3": 14535,
+        "Id": 18,
+        "Place": 3,
+        "TitleName": 14535,
         "Unknown4": 0
       },
       {
-        "Unknown": 21,
-        "Unknown2": 3,
-        "Unknown3": 14538,
+        "Id": 21,
+        "Place": 3,
+        "TitleName": 14538,
         "Unknown4": 0
       },
       {
-        "Unknown": 24,
-        "Unknown2": 3,
-        "Unknown3": 14541,
+        "Id": 24,
+        "Place": 3,
+        "TitleName": 14541,
         "Unknown4": 0
       },
       {
-        "Unknown": 63,
-        "Unknown2": 1,
-        "Unknown3": 117710,
+        "Id": 63,
+        "Place": 1,
+        "TitleName": 117710,
         "Unknown4": 0
       },
       {
-        "Unknown": 77,
-        "Unknown2": 1,
-        "Unknown3": 10391,
+        "Id": 77,
+        "Place": 1,
+        "TitleName": 10391,
         "Unknown4": 0
       },
       {
-        "Unknown": 78,
-        "Unknown2": 1,
-        "Unknown3": 10392,
+        "Id": 78,
+        "Place": 1,
+        "TitleName": 10392,
         "Unknown4": 0
       },
       {
-        "Unknown": 79,
-        "Unknown2": 1,
-        "Unknown3": 10393,
+        "Id": 79,
+        "Place": 1,
+        "TitleName": 10393,
         "Unknown4": 0
       },
       {
-        "Unknown": 80,
-        "Unknown2": 1,
-        "Unknown3": 10394,
+        "Id": 80,
+        "Place": 1,
+        "TitleName": 10394,
         "Unknown4": 0
       },
       {
-        "Unknown": 81,
-        "Unknown2": 1,
-        "Unknown3": 10395,
+        "Id": 81,
+        "Place": 1,
+        "TitleName": 10395,
         "Unknown4": 0
       }
     ],
-    "Unknown": 0
+    "Title": 0
   },
-  "VIPLevel": 6.0,
+  "VIPLevel": 5.0,
   "Unknown51": 0,
   "Unknown52": 81,
   "ClientNudges": []

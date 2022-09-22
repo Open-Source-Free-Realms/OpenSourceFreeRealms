@@ -104,7 +104,7 @@ namespace Gateway.Player
                 addPc.AddFloat(rotation[i]);
             addPc.AddFloat(0.0f);
 
-            var clientPcProfile = CharacterData.ClientPcProfiles.Find(x => x.JobGUID == CharacterData.Unknown45);
+            var clientPcProfile = CharacterData.ClientPcProfiles.Find(x => x.JobGUID == CharacterData.Class);
             if (clientPcProfile == null)
                 return;
             List<ClientItemDefinition> equippedItems = new List<ClientItemDefinition>();
@@ -160,7 +160,7 @@ namespace Gateway.Player
             addPc.AddHostInt32(0); // GuildGUID Count
             // TODO: Guilds
 
-            addPc.AddHostInt32(CharacterData.Unknown45); // Job/Class, Placeholder for Adventurer
+            addPc.AddHostInt32(CharacterData.Class); // Class
 
             addPc.AddHostInt32(0); // PlayerTitle.GUID
             addPc.AddHostInt32(0); // PlayerTitle.Unknown2

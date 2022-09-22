@@ -127,7 +127,7 @@ namespace Gateway.Login
             if (overrideName)
             {
                 pcData.FirstName = ticket;
-                pcData.LastName = ""; //$"(#{soeClient.GetClientID()})";
+                pcData.LastName = "";
             }
             PlayerCode.SendSelfToClient(soeClient, pcData);
             PlayerCharacter character = new PlayerCharacter(soeClient, pcData);
@@ -368,7 +368,7 @@ namespace Gateway.Login
 
             if (pointOfInterestDefinition.Id == 6)
             {
-                TeleportToCondo(soeClient);
+                TeleportToBoatLot(soeClient);
             }
             else
             {

@@ -6,8 +6,8 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{FFB3E48F-4E1E-4EEB-B614-EA3C922DBD5C}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>OFRServer</RootNamespace>
-    <AssemblyName>OFRServer</AssemblyName>
+    <RootNamespace>OSFRServer</RootNamespace>
+    <AssemblyName>OSFRServer</AssemblyName>
     <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
