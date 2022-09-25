@@ -256,7 +256,7 @@
       "Unknown13": 1931819892,
       "Unknown14": false,
       "Unknown15": 0,
-      "JobLevel": 1,
+      "JobLevel": 20,
       "JobLevelXP": 0,
       "JobLevelTotalXP": 0,
       "Unknown19": 0,
@@ -339,7 +339,7 @@
           "comment": "Flair Shard",
           "Item1": 13,
           "Item2": {
-            "ItemGUID": 4020,
+            "ItemGUID": 0,
             "Category": 13
           }
         },
@@ -670,7 +670,7 @@
       "Unknown13": 1699,
       "Unknown14": true,
       "Unknown15": 0,
-      "JobLevel": 1,
+      "JobLevel": 20,
       "JobLevelXP": 0,
       "JobLevelTotalXP": 0,
       "Unknown19": 0,
@@ -1078,7 +1078,7 @@
       "Unknown13": 1699,
       "Unknown14": true,
       "Unknown15": 0,
-      "JobLevel": 1,
+      "JobLevel": 20,
       "JobLevelXP": 0,
       "JobLevelTotalXP": 0,
       "Unknown19": 0,
@@ -1431,7 +1431,7 @@
       "Unknown13": 1768703266,
       "Unknown14": false,
       "Unknown15": 0,
-      "JobLevel": 1,
+      "JobLevel": 20,
       "JobLevelXP": 0,
       "JobLevelTotalXP": 0,
       "Unknown19": 0,
@@ -1846,7 +1846,7 @@
       "Unknown13": 1699,
       "Unknown14": false,
       "Unknown15": 0,
-      "JobLevel": 1,
+      "JobLevel": 20,
       "JobLevelXP": 0,
       "JobLevelTotalXP": 0,
       "Unknown19": 0,
@@ -2268,7 +2268,7 @@
       "Unknown13": 1668180256,
       "Unknown14": false,
       "Unknown15": 0,
-      "JobLevel": 1,
+      "JobLevel": 20,
       "JobLevelXP": 0,
       "JobLevelTotalXP": 0,
       "Unknown19": 0,
@@ -2642,7 +2642,7 @@
       "Unknown13": 1684957510,
       "Unknown14": false,
       "Unknown15": 0,
-      "JobLevel": 1,
+      "JobLevel": 20,
       "JobLevelXP": 0,
       "JobLevelTotalXP": 0,
       "Unknown19": 0,
@@ -3002,7 +3002,7 @@
       "Unknown13": 1699,
       "Unknown14": false,
       "Unknown15": 0,
-      "JobLevel": 1,
+      "JobLevel": 20,
       "JobLevelXP": 0,
       "JobLevelTotalXP": 0,
       "Unknown19": 0,
@@ -3417,7 +3417,7 @@
       "Unknown13": 1952531806,
       "Unknown14": false,
       "Unknown15": 0,
-      "JobLevel": 1,
+      "JobLevel": 20,
       "JobLevelXP": 0,
       "JobLevelTotalXP": 0,
       "Unknown19": 0,
@@ -3853,7 +3853,7 @@
       "Unknown13": 1632903269,
       "Unknown14": false,
       "Unknown15": 0,
-      "JobLevel": 1,
+      "JobLevel": 20,
       "JobLevelXP": 0,
       "JobLevelTotalXP": 0,
       "Unknown19": 0,
@@ -4268,7 +4268,7 @@
       "Unknown13": 1699,
       "Unknown14": true,
       "Unknown15": 0,
-      "JobLevel": 1,
+      "JobLevel": 20,
       "JobLevelXP": 0,
       "JobLevelTotalXP": 0,
       "Unknown19": 0,
@@ -4593,7 +4593,7 @@
       "Unknown13": 1699,
       "Unknown14": true,
       "Unknown15": 0,
-      "JobLevel": 1,
+      "JobLevel": 20,
       "JobLevelXP": 0,
       "JobLevelTotalXP": 0,
       "Unknown19": 0,
@@ -4890,7 +4890,7 @@
       "Unknown13": 1699,
       "Unknown14": true,
       "Unknown15": 0,
-      "JobLevel": 1,
+      "JobLevel": 20,
       "JobLevelXP": 0,
       "JobLevelTotalXP": 0,
       "Unknown19": 0,
@@ -5208,7 +5208,7 @@
       "Unknown13": 1699,
       "Unknown14": false,
       "Unknown15": 0,
-      "JobLevel": 1,
+      "JobLevel": 20,
       "JobLevelXP": 0,
       "JobLevelTotalXP": 0,
       "Unknown19": 0,
@@ -5582,7 +5582,7 @@
       "Unknown13": 1768187250,
       "Unknown14": false,
       "Unknown15": 0,
-      "JobLevel": 1,
+      "JobLevel": 20,
       "JobLevelXP": 0,
       "JobLevelTotalXP": 0,
       "Unknown19": 0,
@@ -5921,7 +5921,7 @@
       "Unknown13": 924,
       "Unknown14": false,
       "Unknown15": 0,
-      "JobLevel": 1,
+      "JobLevel": 20,
       "JobLevelXP": 0,
       "JobLevelTotalXP": 0,
       "Unknown19": 0,
@@ -64911,7 +64911,7 @@
       },
       "Unknown": 0,
       "Definition": 9119,
-      "Tint": 9
+      "Tint": 0
     },
     {
       "Unknown2": false,
@@ -86191,560 +86191,7 @@
     }
   ],
   "NameChanges": [],
-  "CharacterStats": [
-    {
-      "Item1": 0,
-      "Item2": {
-        "Unknown": 0,
-        "Unknown2": 0,
-        "Unknown3": 0
-      }
-    },
-    {
-      "Item1": 1,
-      "Item2": {
-        "Unknown": 1,
-        "Unknown2": 0,
-        "Unknown3": 0
-      }
-    },
-    {
-      "Item1": 2,
-      "Item2": {
-        "Unknown": 2,
-        "Unknown2": 1,
-        "Unknown3": 0
-      }
-    },
-    {
-      "Item1": 3,
-      "Item2": {
-        "Unknown": 3,
-        "Unknown2": 1,
-        "Unknown3": 0
-      }
-    },
-    {
-      "Item1": 4,
-      "Item2": {
-        "Unknown": 4,
-        "Unknown2": 0,
-        "Unknown3": 0
-      }
-    },
-    {
-      "Item1": 5,
-      "Item2": {
-        "Unknown": 5,
-        "Unknown2": 0,
-        "Unknown3": 0
-      }
-    },
-    {
-      "Item1": 6,
-      "Item2": {
-        "Unknown": 6,
-        "Unknown2": 0,
-        "Unknown3": 0
-      }
-    },
-    {
-      "Item1": 7,
-      "Item2": {
-        "Unknown": 7,
-        "Unknown2": 0,
-        "Unknown3": 0
-      }
-    },
-    {
-      "Item1": 8,
-      "Item2": {
-        "Unknown": 8,
-        "Unknown2": 0,
-        "Unknown3": 0
-      }
-    },
-    {
-      "Item1": 9,
-      "Item2": {
-        "Unknown": 9,
-        "Unknown2": 0,
-        "Unknown3": 0
-      }
-    },
-    {
-      "Item1": 10,
-      "Item2": {
-        "Unknown": 10,
-        "Unknown2": 1,
-        "Unknown3": 0
-      }
-    },
-    {
-      "Item1": 11,
-      "Item2": {
-        "Unknown": 11,
-        "Unknown2": 0,
-        "Unknown3": 0
-      }
-    },
-    {
-      "Item1": 12,
-      "Item2": {
-        "Unknown": 12,
-        "Unknown2": 1,
-        "Unknown3": 0
-      }
-    },
-    {
-      "Item1": 13,
-      "Item2": {
-        "Unknown": 13,
-        "Unknown2": 0,
-        "Unknown3": 0
-      }
-    },
-    {
-      "Item1": 14,
-      "Item2": {
-        "Unknown": 14,
-        "Unknown2": 0,
-        "Unknown3": 0
-      }
-    },
-    {
-      "Item1": 15,
-      "Item2": {
-        "Unknown": 15,
-        "Unknown2": 0,
-        "Unknown3": 0
-      }
-    },
-    {
-      "Item1": 16,
-      "Item2": {
-        "Unknown": 16,
-        "Unknown2": 0,
-        "Unknown3": 0
-      }
-    },
-    {
-      "Item1": 17,
-      "Item2": {
-        "Unknown": 17,
-        "Unknown2": 0,
-        "Unknown3": 0
-      }
-    },
-    {
-      "Item1": 18,
-      "Item2": {
-        "Unknown": 18,
-        "Unknown2": 0,
-        "Unknown3": 0
-      }
-    },
-    {
-      "Item1": 19,
-      "Item2": {
-        "Unknown": 19,
-        "Unknown2": 0,
-        "Unknown3": 0
-      }
-    },
-    {
-      "Item1": 20,
-      "Item2": {
-        "Unknown": 20,
-        "Unknown2": 1,
-        "Unknown3": 0
-      }
-    },
-    {
-      "Item1": 21,
-      "Item2": {
-        "Unknown": 21,
-        "Unknown2": 0,
-        "Unknown3": 0
-      }
-    },
-    {
-      "Item1": 22,
-      "Item2": {
-        "Unknown": 22,
-        "Unknown2": 1,
-        "Unknown3": 0
-      }
-    },
-    {
-      "Item1": 23,
-      "Item2": {
-        "Unknown": 23,
-        "Unknown2": 0,
-        "Unknown3": 0
-      }
-    },
-    {
-      "Item1": 24,
-      "Item2": {
-        "Unknown": 24,
-        "Unknown2": 0,
-        "Unknown3": 0
-      }
-    },
-    {
-      "Item1": 25,
-      "Item2": {
-        "Unknown": 25,
-        "Unknown2": 0,
-        "Unknown3": 0
-      }
-    },
-    {
-      "Item1": 26,
-      "Item2": {
-        "Unknown": 26,
-        "Unknown2": 0,
-        "Unknown3": 0
-      }
-    },
-    {
-      "Item1": 27,
-      "Item2": {
-        "Unknown": 27,
-        "Unknown2": 0,
-        "Unknown3": 0
-      }
-    },
-    {
-      "Item1": 28,
-      "Item2": {
-        "Unknown": 28,
-        "Unknown2": 0,
-        "Unknown3": 0
-      }
-    },
-    {
-      "Item1": 29,
-      "Item2": {
-        "Unknown": 29,
-        "Unknown2": 0,
-        "Unknown3": 0
-      }
-    },
-    {
-      "Item1": 30,
-      "Item2": {
-        "Unknown": 30,
-        "Unknown2": 0,
-        "Unknown3": 0
-      }
-    },
-    {
-      "Item1": 31,
-      "Item2": {
-        "Unknown": 31,
-        "Unknown2": 0,
-        "Unknown3": 0
-      }
-    },
-    {
-      "Item1": 32,
-      "Item2": {
-        "Unknown": 32,
-        "Unknown2": 0,
-        "Unknown3": 0
-      }
-    },
-    {
-      "Item1": 33,
-      "Item2": {
-        "Unknown": 33,
-        "Unknown2": 0,
-        "Unknown3": 0
-      }
-    },
-    {
-      "Item1": 34,
-      "Item2": {
-        "Unknown": 34,
-        "Unknown2": 1,
-        "Unknown3": 0
-      }
-    },
-    {
-      "Item1": 35,
-      "Item2": {
-        "Unknown": 35,
-        "Unknown2": 0,
-        "Unknown3": 0
-      }
-    },
-    {
-      "Item1": 36,
-      "Item2": {
-        "Unknown": 36,
-        "Unknown2": 0,
-        "Unknown3": 0
-      }
-    },
-    {
-      "Item1": 37,
-      "Item2": {
-        "Unknown": 37,
-        "Unknown2": 0,
-        "Unknown3": 0
-      }
-    },
-    {
-      "Item1": 38,
-      "Item2": {
-        "Unknown": 38,
-        "Unknown2": 0,
-        "Unknown3": 0
-      }
-    },
-    {
-      "Item1": 39,
-      "Item2": {
-        "Unknown": 39,
-        "Unknown2": 0,
-        "Unknown3": 0
-      }
-    },
-    {
-      "Item1": 40,
-      "Item2": {
-        "Unknown": 40,
-        "Unknown2": 0,
-        "Unknown3": 0
-      }
-    },
-    {
-      "Item1": 41,
-      "Item2": {
-        "Unknown": 41,
-        "Unknown2": 0,
-        "Unknown3": 0
-      }
-    },
-    {
-      "Item1": 42,
-      "Item2": {
-        "Unknown": 42,
-        "Unknown2": 0,
-        "Unknown3": 0
-      }
-    },
-    {
-      "Item1": 43,
-      "Item2": {
-        "Unknown": 43,
-        "Unknown2": 0,
-        "Unknown3": 0
-      }
-    },
-    {
-      "Item1": 44,
-      "Item2": {
-        "Unknown": 44,
-        "Unknown2": 0,
-        "Unknown3": 0
-      }
-    },
-    {
-      "Item1": 45,
-      "Item2": {
-        "Unknown": 45,
-        "Unknown2": 0,
-        "Unknown3": 0
-      }
-    },
-    {
-      "Item1": 46,
-      "Item2": {
-        "Unknown": 46,
-        "Unknown2": 0,
-        "Unknown3": 0
-      }
-    },
-    {
-      "Item1": 47,
-      "Item2": {
-        "Unknown": 47,
-        "Unknown2": 0,
-        "Unknown3": 0
-      }
-    },
-    {
-      "Item1": 48,
-      "Item2": {
-        "Unknown": 48,
-        "Unknown2": 0,
-        "Unknown3": 0
-      }
-    },
-    {
-      "Item1": 49,
-      "Item2": {
-        "Unknown": 49,
-        "Unknown2": 0,
-        "Unknown3": 0
-      }
-    },
-    {
-      "Item1": 50,
-      "Item2": {
-        "Unknown": 50,
-        "Unknown2": 0,
-        "Unknown3": 0
-      }
-    },
-    {
-      "Item1": 51,
-      "Item2": {
-        "Unknown": 51,
-        "Unknown2": 0,
-        "Unknown3": 0
-      }
-    },
-    {
-      "Item1": 52,
-      "Item2": {
-        "Unknown": 52,
-        "Unknown2": 0,
-        "Unknown3": 0
-      }
-    },
-    {
-      "Item1": 53,
-      "Item2": {
-        "Unknown": 53,
-        "Unknown2": 1,
-        "Unknown3": 0
-      }
-    },
-    {
-      "Item1": 54,
-      "Item2": {
-        "Unknown": 54,
-        "Unknown2": 0,
-        "Unknown3": 0
-      }
-    },
-    {
-      "Item1": 55,
-      "Item2": {
-        "Unknown": 55,
-        "Unknown2": 0,
-        "Unknown3": 0
-      }
-    },
-    {
-      "Item1": 56,
-      "Item2": {
-        "Unknown": 56,
-        "Unknown2": 1,
-        "Unknown3": 0
-      }
-    },
-    {
-      "Item1": 57,
-      "Item2": {
-        "Unknown": 57,
-        "Unknown2": 1,
-        "Unknown3": 0
-      }
-    },
-    {
-      "Item1": 58,
-      "Item2": {
-        "Unknown": 58,
-        "Unknown2": 0,
-        "Unknown3": 0
-      }
-    },
-    {
-      "Item1": 59,
-      "Item2": {
-        "Unknown": 59,
-        "Unknown2": 1,
-        "Unknown3": 0
-      }
-    },
-    {
-      "Item1": 60,
-      "Item2": {
-        "Unknown": 60,
-        "Unknown2": 1,
-        "Unknown3": 0
-      }
-    },
-    {
-      "Item1": 61,
-      "Item2": {
-        "Unknown": 61,
-        "Unknown2": 1,
-        "Unknown3": 0
-      }
-    },
-    {
-      "Item1": 62,
-      "Item2": {
-        "Unknown": 62,
-        "Unknown2": 1,
-        "Unknown3": 0
-      }
-    },
-    {
-      "Item1": 63,
-      "Item2": {
-        "Unknown": 63,
-        "Unknown2": 1,
-        "Unknown3": 0
-      }
-    },
-    {
-      "Item1": 64,
-      "Item2": {
-        "Unknown": 64,
-        "Unknown2": 0,
-        "Unknown3": 0
-      }
-    },
-    {
-      "Item1": 65,
-      "Item2": {
-        "Unknown": 65,
-        "Unknown2": 0,
-        "Unknown3": 0
-      }
-    },
-    {
-      "Item1": 66,
-      "Item2": {
-        "Unknown": 66,
-        "Unknown2": 0,
-        "Unknown3": 0
-      }
-    },
-    {
-      "Item1": 67,
-      "Item2": {
-        "Unknown": 67,
-        "Unknown2": 1,
-        "Unknown3": 0
-      }
-    },
-    {
-      "Item1": 68,
-      "Item2": {
-        "Unknown": 68,
-        "Unknown2": 1,
-        "Unknown3": 0
-      }
-    }
-  ],
+  "CharacterStats": [],
   "VehicleStruct": {
     "Unknown": 7,
     "VehicleLoadouts": [

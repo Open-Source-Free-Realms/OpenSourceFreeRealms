@@ -9,6 +9,7 @@ namespace Gateway.Player
     {
         public static void SendPlayerUpdatePacketAddPc(SOEClient soeClient)
         {
+
         }
     }
 }
