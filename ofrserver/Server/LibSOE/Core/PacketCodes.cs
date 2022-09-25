@@ -87,7 +87,7 @@
          BaseVehicleLoadoutPacket = 137,
          BaseFishingPacket = 138,
          BaseVehiclePartPacket = 139,
-        // EncounterMatchmaking::BaseMatchmakingPacket = 141,
+         BaseMatchmakingPacket = 141,
          PacketClientLuaMetrics = 142,
          BaseReaptingActivityPacket = 143,
          PacketClientGameSettings = 144,
@@ -117,7 +117,7 @@
          BaseFactoryPacket = 188,
          PacketMembershipSubscriptionInfo = 189,
          PacketCleintCaisNotification = 190,
-        // NameChange::BaseNameChangePacket = 192,
+         BaseNameChangePacket = 192,
          AnnouncementBasePacket = 193,
          WallOfDataBasePacket = 194,
          PacketClientSettings = 195,
@@ -192,7 +192,7 @@
     public enum BaseActivityServicePackets
     {
         BaseActivityPacket = 1,
-         BaseScheduledActivityPacket = 2
+        BaseScheduledActivityPacket = 2
     };
     public enum BaseActivityPackets
     {
@@ -998,7 +998,6 @@
     {
         // BaseTaskPacket = -1,
         
-
          CinematicStartLookAtPacket = 16,
          ExecuteScriptPacket = 7,
          ExecuteScriptWithStringParamsPacket = 8,
@@ -1103,8 +1102,7 @@
          ClientActivityLaunchPacketActivityCanceled = 6,
          ClientActivityLaunchPacketActivityLaunched = 5,
          ClientActivityLaunchPacketAddMember = 7,
-        // ClientActivityLaunchPacketInviteDetails<SoeUtil::List<ClientActivityLaunchMember,-1>> = 1,
-        // ClientActivityLaunchPacketInviteDetails<SoeUtil::List<ClientActivityLaunchPacketMember,-1>> = 1,
+         ClientActivityLaunchPacketInviteDetails = 1,
          ClientActivityLaunchPacketInviteMemberReply = 2,
          ClientActivityLaunchPacketInviteMemberRequest = 20,
          ClientActivityLaunchPacketInviteMemberResult = 3,
@@ -1129,22 +1127,22 @@
          ClientPathRequestPacket = 1
     };
 
-    //public enum EncounterMatchmaking::BaseMatchmakingPackets
-    //{
-    //     EncounterMatchmaking::ListQueuesRequestPacket = 1,
-    //     EncounterMatchmaking::ListQueuesResponsePacket = 2,
-    //     EncounterMatchmaking::AddMatchRequestPacket = 3,
-    //     EncounterMatchmaking::AddMatchRequestResponsePacket = 4,
-    //     EncounterMatchmaking::ClearMatchRequestPacket = 5, 
-    //     EncounterMatchmaking::CancelMatchRequestPacket = 6,
-    //     EncounterMatchmaking::MatchInvitationRequestPacket = 7,
-    //     EncounterMatchmaking::MatchInvitationResponsePacket = 8,
-    //     EncounterMatchmaking::SelectQueueForUserPacket = 9,
-    //     EncounterMatchmaking::QueueStatsRequestPacket = 10,
-    //     EncounterMatchmaking::QueueStatsResponsePacket = 11,
-    //     EncounterMatchmaking::MatchmakingServerStatusPacket = 12,
-    //     EncounterMatchmaking::RemoveParticipantFromQueueResponsePacket = 13,
-    //}
+    public enum BaseMatchmakingPackets
+    {
+        ListQueuesRequestPacket = 1,
+        ListQueuesResponsePacket = 2,
+        AddMatchRequestPacket = 3,
+        AddMatchRequestResponsePacket = 4,
+        ClearMatchRequestPacket = 5, 
+        CancelMatchRequestPacket = 6,
+        MatchInvitationRequestPacket = 7,
+        MatchInvitationResponsePacket = 8,
+        SelectQueueForUserPacket = 9,
+        QueueStatsRequestPacket = 10,
+        QueueStatsResponsePacket = 11,
+        MatchmakingServerStatusPacket = 12,
+        RemoveParticipantFromQueueResponsePacket = 13,
+    }
 
     public enum JobCustomizationBasePackets
     {
@@ -1175,15 +1173,15 @@
          MysteryChestInfoReplyPacket = 2
     };
 
-    //public enum NameChange::BaseNameChangePacket
-    //{
-    //     NameChange::CheckNamePacket = 1,
-    //     NameChange::CheckNameResponsePacket = 2,
-    //     NameChange::ChangeNameRequestPacket = 3,
-    //     NameChange::NameChangeResponsePacket = 4,
-    //     NameChange::ChangeNameRequestStatusPacket = 5,
-    //     NameChange::CheckNameStatusResponsePacket = 6,
-    //}
+    public enum BaseNameChangePackets
+    {
+          CheckNamePacket = 1,
+          CheckNameResponsePacket = 2,
+          ChangeNameRequestPacket = 3,
+          NameChangeResponsePacket = 4,
+          ChangeNameRequestStatusPacket = 5,
+          CheckNameStatusResponsePacket = 6,
+    }
 
     public enum NudgeBasePackets
     {
@@ -1192,54 +1190,54 @@
 
     public enum PacketBaseInGamePurchases
     {
-         PacketInGamePurchaseGiftNotification = 0,
-        // PacketInGamePurchasePreviewOrder<GameCommerce::ClientInGamePurchaseOrder> = 1,
-         PacketInGamePurchasePreviewOrderResponse = 2,
-        // PacketInGamePurchasePlaceOrderPacket<GameCommerce::ClientInGamePurchaseOrder> = 3,
-         PacketInGamePurchasePlaceOrderResponse = 4,
-         PacketInGamePurchaseStoreBundleBase = 5,
-         PacketInGamePurchaseStoreBundleCategoryGroups = 6,
-         PacketInGamePurchaseStoreBundleCategories = 7,
-        // PacketInGamePurchaseExclusivePartnerStoreBundles<SoeUtil::HashList<AppStoreBundleDefinition,32,-1>> = 8,
-         PacketInGamePurchaseStoreBundleGroups = 9,
-         PacketInGamePurchaseWalletInfoRequest = 10,
-         PacketInGamePurchaseWalletInfoResponse = 11,
-         PacketInGamePurchaseServerStatusRequest = 12,
-         PacketInGamePurchaseServerStatusResponse = 13,
-         PacketInGamePurchaseStationCashProductsRequest = 14,
-         PacketInGamePurchaseStationCashProductsResponse = 15,
-         PacketInGamePurchaseCurrencyCodesRequest = 16,
-         PacketInGamePurchaseCurrencyCodesResponse = 17,
-         PacketInGamePurchaseStateCodesRequest = 18,
-         PacketInGamePurchaseStateCodesResponse = 19,
-         PacketInGamePurchaseCountryCodesRequest = 20,
-         PacketInGamePurchaseCountryCodesResponse = 21,
-         PacketInGamePurchaseSubscriptionProductsRequest = 22,
-         PacketInGamePurchaseSubscriptionProductsResponse = 23,
-         PacketInGamePurchaseEnableMarketplace = 24,
-         PacketInGamePurchaseAccountInfoRequest = 25,
-         PacketInGamePurchaseAccountInfoResponse = 26,
-         PacketInGamePurchaseStoreBundleContentRequest = 27,
-         PacketInGamePurchaseStoreBundleContentResponse = 28,
-        // PacketInGamePurchaseStoreClientStatistics<GameCommerce::ClientInGamePurchaseOrder> = 29,
-         PacketInGamePurchaseDisplayMannequinStoreBundles = 31,
-        // PacketInGamePurchaseIOTD<AppStoreBundleDefinition> = 32,
-         PacketInGamePurchaseStoreEnablePaymentSources = 33,
-        // PacketInGamePurchasePlaceOrderClientTicket<GameCommerce::ClientInGamePurchaseOrder> = 36,
-         InGamePurchaseUpdateItemRequirementsRequest = 38,
-         InGamePurchaseUpdateItemRequirementsReply = 39,
-         InGamePurchaseUpdateSaleDisplay = 40,
-        // PacketInGamePurchaseBOTD<AppStoreBundleDefinition> = 41,
-         InGamePurchaseMerchantListPacket = 42,
-         InGamePurchaseBuyBundleFromMerchantRequest = 43,
-         InGamePurchaseBuyBundleFromMerchantResponse = 44,
-         InGamePurchaseUpdateMerchantSellBundleQuantityAvailableForPurchase = 45
+        PacketInGamePurchaseGiftNotification = 0,
+        PacketInGamePurchasePreviewOrder = 1,
+        PacketInGamePurchasePreviewOrderResponse = 2,
+        PacketInGamePurchasePlaceOrderPacket= 3,
+        PacketInGamePurchasePlaceOrderResponse = 4,
+        PacketInGamePurchaseStoreBundleBase = 5,
+        PacketInGamePurchaseStoreBundleCategoryGroups = 6,
+        PacketInGamePurchaseStoreBundleCategories = 7,
+        PacketInGamePurchaseExclusivePartnerStoreBundles = 8,
+        PacketInGamePurchaseStoreBundleGroups = 9,
+        PacketInGamePurchaseWalletInfoRequest = 10,
+        PacketInGamePurchaseWalletInfoResponse = 11,
+        PacketInGamePurchaseServerStatusRequest = 12,
+        PacketInGamePurchaseServerStatusResponse = 13,
+        PacketInGamePurchaseStationCashProductsRequest = 14,
+        PacketInGamePurchaseStationCashProductsResponse = 15,
+        PacketInGamePurchaseCurrencyCodesRequest = 16,
+        PacketInGamePurchaseCurrencyCodesResponse = 17,
+        PacketInGamePurchaseStateCodesRequest = 18,
+        PacketInGamePurchaseStateCodesResponse = 19,
+        PacketInGamePurchaseCountryCodesRequest = 20,
+        PacketInGamePurchaseCountryCodesResponse = 21,
+        PacketInGamePurchaseSubscriptionProductsRequest = 22,
+        PacketInGamePurchaseSubscriptionProductsResponse = 23,
+        PacketInGamePurchaseEnableMarketplace = 24,
+        PacketInGamePurchaseAccountInfoRequest = 25,
+        PacketInGamePurchaseAccountInfoResponse = 26,
+        PacketInGamePurchaseStoreBundleContentRequest = 27,
+        PacketInGamePurchaseStoreBundleContentResponse = 28,
+        PacketInGamePurchaseStoreClientStatistics = 29,
+        PacketInGamePurchaseDisplayMannequinStoreBundles = 31,
+        PacketInGamePurchaseIOTD = 32,
+        PacketInGamePurchaseStoreEnablePaymentSources = 33,
+        PacketInGamePurchasePlaceOrderClientTicket = 36,
+        InGamePurchaseUpdateItemRequirementsRequest = 38,
+        InGamePurchaseUpdateItemRequirementsReply = 39,
+        InGamePurchaseUpdateSaleDisplay = 40,
+        PacketInGamePurchaseBOTD = 41,
+        InGamePurchaseMerchantListPacket = 42,
+        InGamePurchaseBuyBundleFromMerchantRequest = 43,
+        InGamePurchaseBuyBundleFromMerchantResponse = 44,
+        InGamePurchaseUpdateMerchantSellBundleQuantityAvailableForPurchase = 45
     };
 
     public enum PacketInGamePurchaseStoreBundleBases
     {
-        // PacketInGamePurchaseStoreBundles<AppStoreBundleDefinition> = 1,
-        // PacketInGamePurchaseStoreBundleUpdate<AppStoreBundleDefinition> = 2,
+        PacketInGamePurchaseStoreBundles = 1,
+        PacketInGamePurchaseStoreBundleUpdate = 2,
     };
 
     public enum PacketInviteAndStartMiniGamePackets
