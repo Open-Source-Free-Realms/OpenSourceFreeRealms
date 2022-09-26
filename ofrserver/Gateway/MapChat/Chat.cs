@@ -2,13 +2,11 @@
 using SOE.Interfaces;
 using SOE;
 using Gateway.Login;
-using static Gateway.Login.ClientPcData;
 
 namespace Gateway.MapChat
 {
     public class Chat
     {
-        public static ClientPcDatas CharacterData;
         public static void SendQuickChatPacket(SOEClient soeClient)
         {
             //TODO
@@ -21,16 +19,18 @@ namespace Gateway.MapChat
             packetChat.AddHostUInt16((ushort)BaseChatPackets.PacketChat);
 
             packetChat.AddHostUInt16(messageType);
-            packetChat.AddHostInt64(1); // Sender's Character GUID
+            packetChat.AddHostInt64(LoginManager.PlayerData.PlayerGUID); // Sender's Character GUID
             packetChat.AddHostUInt64(guid2);
 
-            for (int i = 0; i < 3; i++)
-                packetChat.AddHostInt32(0);
-            packetChat.AddASCIIString("OSFR");
-            packetChat.AddASCIIString("");
+            packetChat.AddHostInt32(LoginManager.PlayerData.Unknown24);
+            packetChat.AddHostInt32(LoginManager.PlayerData.Unknown25);
+            packetChat.AddHostInt32(LoginManager.PlayerData.Unknown26);
+            packetChat.AddASCIIString(LoginManager.PlayerData.FirstName);
+            packetChat.AddASCIIString(LoginManager.PlayerData.LastName);
 
-            for (int i = 0; i < 3; i++)
-                packetChat.AddHostInt32(0);
+            packetChat.AddHostInt32(0);
+            packetChat.AddHostInt32(0);
+            packetChat.AddHostInt32(0);
             packetChat.AddASCIIString(targetFirst);
             packetChat.AddASCIIString(targetLast);
 
@@ -56,14 +56,14 @@ namespace Gateway.MapChat
             quickChatPacket.AddHostUInt16((ushort)BaseQuickChatPackets.QuickChatSendChatToChannelPacket);
 
             quickChatPacket.AddHostInt32(commandId);
-            quickChatPacket.AddHostInt64(1);
+            quickChatPacket.AddHostInt64(LoginManager.PlayerData.PlayerGUID);
 
             // UnknownStruct3
-            quickChatPacket.AddHostInt32(0);
-            quickChatPacket.AddHostInt32(0);
-            quickChatPacket.AddHostInt32(0);
-            quickChatPacket.AddASCIIString("OSFR");
-            quickChatPacket.AddASCIIString("");
+            quickChatPacket.AddHostInt32(LoginManager.PlayerData.Unknown24);
+            quickChatPacket.AddHostInt32(LoginManager.PlayerData.Unknown25);
+            quickChatPacket.AddHostInt32(LoginManager.PlayerData.Unknown26);
+            quickChatPacket.AddASCIIString(LoginManager.PlayerData.FirstName);
+            quickChatPacket.AddASCIIString(LoginManager.PlayerData.LastName);
 
             quickChatPacket.AddHostInt16(channelId);
             quickChatPacket.AddHostInt32(0);

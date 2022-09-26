@@ -186,6 +186,14 @@ namespace Gateway.Login
                     HandleBaseChatPacket(soeClient, reader);
                     break;
 
+                case (ushort)BasePackets.PlayerUpdatePacketUpdatePosition:
+                    HandlePlayerUpdatePacketUpdatePosition(reader);
+                    break;
+
+                case (ushort)BasePackets.PlayerUpdatePacketCameraUpdate:
+                    HandlePlayerUpdatePacketCameraUpdate(reader);
+                    break;
+
                 default:
                     var data = reader.ReadToEnd();
                     _log.Info($"HandleTunneledClientPacket OpCode: {opCode}\n{BitConverter.ToString(data).Replace("-", "")}");
@@ -332,7 +340,7 @@ namespace Gateway.Login
 
             packet.AddHostInt32(clientItemDef.Type);
             packet.AddHostInt32(clientItemDef.Class);
-            packet.AddHostInt32(0);
+            packet.AddHostInt32(clientItemDef.GenderUsage);
 
             equipped.Item2.ItemGUID = clientItem.Guid;
 
@@ -372,7 +380,7 @@ namespace Gateway.Login
 
             packet.AddHostInt32(weaponItemDef.Type);
             packet.AddHostInt32(weaponItemDef.Class);
-            packet.AddHostInt32(0);
+            packet.AddHostInt32(weaponItemDef.GenderUsage);
 
             equippedFlair.Item2.ItemGUID = flairGuid;
             weaponItemDef.CompositeEffectId = flairEffect;
@@ -409,7 +417,7 @@ namespace Gateway.Login
 
             packet.AddHostInt32(flairItemDef.Type);
             packet.AddHostInt32(flairItemDef.Class);
-            packet.AddHostInt32(0);
+            packet.AddHostInt32(flairItemDef.GenderUsage);
 
             SendTunneledClientPacket(client, packet.GetRaw());
             SendClientUpdatePacketEquipItem(client, flairItem.Guid);
@@ -531,9 +539,9 @@ namespace Gateway.Login
 
             switch (SubOpCode)
             {
-                case (byte)MountBasePackets.PacketMountList:
-                    SendMountList(client);
-                    break;
+                //case (byte)MountBasePackets.PacketMountList:
+                //    SendMountList(client);
+                //    break;
 
                 case (byte)MountBasePackets.PacketMountSpawn:
                     SendPacketMountResponse(client);
@@ -548,33 +556,33 @@ namespace Gateway.Login
             }
         }
 
-        private static void SendMountList(SOEClient soeClient)
-        {
-            //var clientItems = PlayerData.ClientItems.Find(cItem => cItem.Guid == guid);
-            //var mountItem = PlayerData.Mounts.Find(mItem => mItem.Unknown4 == clientItems.Guid);
-
-            var mountList = new SOEWriter((ushort)BasePackets.MountBasePacket, true);
-            mountList.AddByte((byte)MountBasePackets.PacketMountList);
-
-            mountList.AddHostInt32(1030);
-            mountList.AddHostInt32(442674);
-            mountList.AddHostInt32(8556);
-            mountList.AddHostInt64(40908498342510626);
-            mountList.AddBoolean(false);
-            mountList.AddHostInt32(0);
-            mountList.AddHostUInt16(0);
-            mountList.AddASCIIString("");
-            mountList.AddBoolean(false);
-            mountList.AddBoolean(true);
-
-            SendTunneledClientPacket(soeClient, mountList.GetRaw());
-        }
+        //private static void SendMountList(SOEClient soeClient)
+        //{
+        //    //var clientItems = PlayerData.ClientItems.Find(cItem => cItem.Guid == guid);
+        //    //var mountItem = PlayerData.Mounts.Find(mItem => mItem.Unknown4 == clientItems.Guid);
+        //
+        //    var mountList = new SOEWriter((ushort)BasePackets.MountBasePacket, true);
+        //    mountList.AddByte((byte)MountBasePackets.PacketMountList);
+        //
+        //    mountList.AddHostInt32(1030);
+        //    mountList.AddHostInt32(442674);
+        //    mountList.AddHostInt32(8556);
+        //    mountList.AddHostInt64(40908498342510626);
+        //    mountList.AddBoolean(false);
+        //    mountList.AddHostInt32(0);
+        //    mountList.AddHostUInt16(0);
+        //    mountList.AddASCIIString("");
+        //    mountList.AddBoolean(false);
+        //    mountList.AddBoolean(true);
+        //
+        //    SendTunneledClientPacket(soeClient, mountList.GetRaw());
+        //}
 
         private static void SendPacketMountResponse(SOEClient soeClient)
         {
             var addMount = new SOEWriter((ushort)BasePackets.BasePlayerUpdatePacket, true);
             addMount.AddHostUInt16((ushort)BasePlayerUpdatePackets.PlayerUpdatePacketAddNpc);
-            addMount.AddHostUInt64(2);
+            addMount.AddHostUInt64(127851728951); // MountGuid
             addMount.AddHostInt32(442674); // Name ID
             addMount.AddHostInt32(4590); // Model ID
             addMount.AddBoolean(false);
@@ -689,8 +697,8 @@ namespace Gateway.Login
             
             mountResponse.AddByte((byte)MountBasePackets.PacketMountResponse);
 
-            mountResponse.AddHostUInt64(1);
-            mountResponse.AddHostUInt64(2);
+            mountResponse.AddHostInt64(PlayerData.PlayerGUID);
+            mountResponse.AddHostUInt64(127851728951); // MountGuid
             mountResponse.AddHostInt32(0);
             mountResponse.AddHostInt32(1); // Queue Position
             mountResponse.AddHostInt32(1);
@@ -703,7 +711,7 @@ namespace Gateway.Login
 
             updatePacketUpdateStat.AddHostUInt16((byte)BaseClientUpdatePackets.ClientUpdatePacketUpdateStat);
 
-            updatePacketUpdateStat.AddHostInt64(1);
+            updatePacketUpdateStat.AddHostInt64(PlayerData.PlayerGUID);
 
             // CharacterStat Count
             updatePacketUpdateStat.AddHostInt32(9);
@@ -753,7 +761,7 @@ namespace Gateway.Login
             var disMount = new SOEWriter((ushort)BasePackets.MountBasePacket, true);
             disMount.AddByte((byte)MountBasePackets.PacketDismountResponse);
 
-            disMount.AddHostUInt64(1);
+            disMount.AddHostInt64(PlayerData.PlayerGUID);
             disMount.AddHostInt32(46);
 
             SendTunneledClientPacket(soeClient, disMount.GetRaw());
@@ -762,7 +770,7 @@ namespace Gateway.Login
 
             updatePacketUpdateStat.AddHostUInt16((byte)BaseClientUpdatePackets.ClientUpdatePacketUpdateStat);
 
-            updatePacketUpdateStat.AddHostInt64(1);
+            updatePacketUpdateStat.AddHostInt64(PlayerData.PlayerGUID);
 
             // CharacterStat Count
             updatePacketUpdateStat.AddHostInt32(3);
@@ -786,7 +794,7 @@ namespace Gateway.Login
             removeMount.AddHostUInt16((ushort)BasePlayerUpdatePackets.PlayerUpdatePacketRemovePlayer);
             
             removeMount.AddHostUInt16(1);
-            removeMount.AddHostUInt64(2);
+            removeMount.AddHostUInt64(127851728951); // MountGuid
 
             removeMount.AddBoolean(false);
             removeMount.AddHostInt32(0);
@@ -803,7 +811,7 @@ namespace Gateway.Login
             var unknown2 = reader.ReadHostUInt32();
             var unknown3 = reader.ReadBoolean();
 
-            _log.Info($"HandlePacketGameTimeSync Time: {time}, Unknown2: {unknown2}, Unknown3: {unknown3} ");
+            //_log.Info($"HandlePacketGameTimeSync Time: {time}, Unknown2: {unknown2}, Unknown3: {unknown3} ");
 
             var soeWriter = new SOEWriter((ushort)BasePackets.PacketGameTimeSync, true);
 
@@ -817,7 +825,7 @@ namespace Gateway.Login
         private static void HandleBaseChatPacket(SOEClient soeClient, SOEReader reader)
         {
             var subOpCode = reader.ReadHostUInt16();
-            _log.Debug($"HandleBaseChatPacket:\n\t- Client ID: {soeClient.GetClientID()}\n\t - SubOpCode: {subOpCode}");
+            //_log.Debug($"HandleBaseChatPacket:\n\t- Client ID: {soeClient.GetClientID()}\n\t - SubOpCode: {subOpCode}");
             switch (subOpCode)
             {
                 case (ushort)BaseChatPackets.PacketChat:
@@ -897,6 +905,39 @@ namespace Gateway.Login
             Chat.SendQuickChatSendChatToChannelPacket(soeClient, commandId, channelId, guildGuid);
         }
 
+        private static void HandlePlayerUpdatePacketUpdatePosition(SOEReader reader)
+        {
+            var PlayerGUID = reader.ReadHostUInt64();
+            var PositionX = reader.ReadSingle();
+            var PositionY = reader.ReadSingle();
+            var PositionZ = reader.ReadSingle();
+            var RotationX = reader.ReadSingle();
+            var RotationY = reader.ReadSingle();
+            var RotationZ = reader.ReadSingle();
+            byte CharacterState = reader.ReadByte();
+            byte Unknown = reader.ReadByte();
+
+
+            _log.Info($"PlayerPosition:\n\t\t" +
+                $"X: {PositionX}\n\t\t" +
+                $"Y: {PositionY}\n\t\t" +
+                $"Z: {PositionZ}\n\t\t");
+        }
+
+        private static void HandlePlayerUpdatePacketCameraUpdate(SOEReader reader)
+        {
+            var Unknown = reader.ReadHostUInt64();
+            var Useless1 = reader.ReadSingle();
+            var Pitch = reader.ReadSingle();
+            var Useless2 = reader.ReadSingle();
+            var Yaw = reader.ReadSingle();
+
+            _log.Info($"CameraOrientation:\n\t\t" +
+                $"Pitch: {Pitch}\n\t\t" +
+                $"Yaw: {Yaw}\n\t\t");
+
+        }
+
         public static void SendTunneledClientPacket(SOEClient soeClient, byte[] rawBytes)
         {
             var tunneledClient = new SOEWriter((ushort)ClientGatewayBasePackets.PacketTunneledClientPacket, true);
@@ -927,7 +968,7 @@ namespace Gateway.Login
 
                 default:
                     var data = reader.ReadToEnd();
-                    _log.Info($"HandleTunneledClientPacket OpCode: {opCode}\n{BitConverter.ToString(data).Replace("-", "")}");
+                    //_log.Info($"HandleTunneledClientPacket OpCode: {opCode}\n{BitConverter.ToString(data).Replace("-", "")}");
                     break;
             }
         }
@@ -944,7 +985,7 @@ namespace Gateway.Login
 
                 default:
                     var data = reader.ReadToEnd();
-                    _log.Info($"HandleBaseCommandPacket OpCode: {opCode}\n{BitConverter.ToString(data).Replace("-", "")}");
+                    //_log.Info($"HandleBaseCommandPacket OpCode: {opCode}\n{BitConverter.ToString(data).Replace("-", "")}");
                     break;
             }
         }
