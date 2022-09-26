@@ -820,13 +820,9 @@
 
     public enum BaseQuickChatPackets
     {
-         QuickChatSendChatPacketBase = 0,
-         QuickChatSendDataPacket = 1
-    };
-    public enum QuickChatSendChatPacketBases
-    {
-        QuickChatSendChatToChannelPacket = 3,
-        QuickChatSendTellPacket = 2
+        QuickChatSendDataPacket = 1,
+        QuickChatSendTellPacket = 2,
+        QuickChatSendChatToChannelPacket = 3
     };
 
     public enum BaseRatingPackets

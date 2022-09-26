@@ -3,7 +3,7 @@
   "PlayerGUID": 1,
   "PlayerModel": 1,
   "PlayerHead": "<race>_<gender>_head_caucasian.adr",
-  "PlayerHair": "<race>_m_hair_shaggy_<hairtype>.adr",
+  "PlayerHair": "<race>_m_hair_forward_<hairtype>.adr",
   "HairColor": 116,
   "EyeColor": 262,
   "Skintone": "skintone3",
@@ -283,7 +283,7 @@
           "comment": "Shirt",
           "Item1": 3,
           "Item2": {
-            "ItemGUID": 14003,
+            "ItemGUID": 4540,
             "Category": 3
           }
         },
@@ -291,7 +291,7 @@
           "comment": "Pants",
           "Item1": 4,
           "Item2": {
-            "ItemGUID": 14000,
+            "ItemGUID": 2486,
             "Category": 4
           }
         },
@@ -299,7 +299,7 @@
           "comment": "Shoes",
           "Item1": 5,
           "Item2": {
-            "ItemGUID": 14004,
+            "ItemGUID": 4568,
             "Category": 5
           }
         },
@@ -315,7 +315,7 @@
           "comment": "Weapon",
           "Item1": 7,
           "Item2": {
-            "ItemGUID": 14001,
+            "ItemGUID": 0,
             "Category": 7
           }
         },
@@ -49453,91 +49453,6 @@
   ],
   "ClientItems": [
     {
-      "comment": "Goth Pants",
-      "Unknown2": false,
-      "Guid": 14000,
-      "Count": 1,
-      "ConsumedCount": 0,
-      "LastCastTime": 2147483647,
-      "ItemStruct": {
-        "HasItemStruct": false,
-        "RentalExpirationTime": 0,
-        "RentalUpsellsSent": 0,
-        "MarketplaceBundleId": 0
-      },
-      "Unknown": 0,
-      "Definition": 14000,
-      "Tint": 0
-    },
-    {
-      "comment": "Defender Staff",
-      "Unknown2": false,
-      "Guid": 14001,
-      "Count": 1,
-      "ConsumedCount": 0,
-      "LastCastTime": 2147483647,
-      "ItemStruct": {
-      "HasItemStruct": false,
-      "RentalExpirationTime": 0,
-      "RentalUpsellsSent": 0,
-      "MarketplaceBundleId": 0
-    },
-      "Unknown": 0,
-      "Definition": 14001,
-      "Tint": 0
-    },
-    {
-      "comment": "Black Skinnies",
-      "Unknown2": false,
-      "Guid": 14002,
-      "Count": 1,
-      "ConsumedCount": 0,
-      "LastCastTime": 2147483647,
-      "ItemStruct": {
-        "HasItemStruct": false,
-        "RentalExpirationTime": 0,
-        "RentalUpsellsSent": 0,
-        "MarketplaceBundleId": 0
-      },
-      "Unknown": 0,
-      "Definition": 78143,
-      "Tint": 264
-    },
-    {
-      "comment": "New Hoodie",
-      "Unknown2": false,
-      "Guid": 14003,
-      "Count": 1,
-      "ConsumedCount": 0,
-      "LastCastTime": 2147483647,
-      "ItemStruct": {
-      "HasItemStruct": false,
-      "RentalExpirationTime": 0,
-      "RentalUpsellsSent": 0,
-      "MarketplaceBundleId": 0
-    },
-      "Unknown": 0,
-      "Definition": 14003,
-      "Tint": 0
-    },
-    {
-      "comment": "New Shoes",
-      "Unknown2": false,
-      "Guid": 14004,
-      "Count": 1,
-      "ConsumedCount": 0,
-      "LastCastTime": 2147483647,
-      "ItemStruct": {
-      "HasItemStruct": false,
-      "RentalExpirationTime": 0,
-      "RentalUpsellsSent": 0,
-      "MarketplaceBundleId": 0
-    },
-      "Unknown": 0,
-      "Definition": 14004,
-      "Tint": 0
-    },
-    {
       "Unknown2": false,
       "Guid": 2,
       "Count": 1,
@@ -71648,6 +71563,38 @@
       "Unknown": 0,
       "Definition": 78397,
       "Tint": 0
+    },
+    {
+      "Unknown2": false,
+      "Guid": 4592,
+      "Count": 1,
+      "ConsumedCount": 0,
+      "LastCastTime": 2147483647,
+      "ItemStruct": {
+        "HasItemStruct": false,
+        "RentalExpirationTime": 0,
+        "RentalUpsellsSent": 0,
+        "MarketplaceBundleId": 0
+      },
+      "Unknown": 0,
+      "Definition": 68878,
+      "Tint": 0
+    },
+    {
+      "Unknown2": false,
+      "Guid": 4593,
+      "Count": 1,
+      "ConsumedCount": 0,
+      "LastCastTime": 2147483647,
+      "ItemStruct": {
+      "HasItemStruct": false,
+      "RentalExpirationTime": 0,
+      "RentalUpsellsSent": 0,
+      "MarketplaceBundleId": 0
+    },
+      "Unknown": 0,
+      "Definition": 56757,
+      "Tint": 0
     }
   ],
   "GenderFilter": 1,
@@ -86191,7 +86138,560 @@
     }
   ],
   "NameChanges": [],
-  "CharacterStats": [],
+  "CharacterStats": [
+    {
+      "Item1": 0,
+      "Item2": {
+        "Unknown": 0,
+        "Unknown2": 0,
+        "Unknown3": 0
+      }
+    },
+    {
+      "Item1": 1,
+      "Item2": {
+        "Unknown": 1,
+        "Unknown2": 0,
+        "Unknown3": 0
+      }
+    },
+    {
+      "Item1": 2,
+      "Item2": {
+        "Unknown": 2,
+        "Unknown2": 1,
+        "Unknown3": 0
+      }
+    },
+    {
+      "Item1": 3,
+      "Item2": {
+        "Unknown": 3,
+        "Unknown2": 1,
+        "Unknown3": 0
+      }
+    },
+    {
+      "Item1": 4,
+      "Item2": {
+        "Unknown": 4,
+        "Unknown2": 0,
+        "Unknown3": 0
+      }
+    },
+    {
+      "Item1": 5,
+      "Item2": {
+        "Unknown": 5,
+        "Unknown2": 0,
+        "Unknown3": 0
+      }
+    },
+    {
+      "Item1": 6,
+      "Item2": {
+        "Unknown": 6,
+        "Unknown2": 0,
+        "Unknown3": 0
+      }
+    },
+    {
+      "Item1": 7,
+      "Item2": {
+        "Unknown": 7,
+        "Unknown2": 0,
+        "Unknown3": 0
+      }
+    },
+    {
+      "Item1": 8,
+      "Item2": {
+        "Unknown": 8,
+        "Unknown2": 0,
+        "Unknown3": 0
+      }
+    },
+    {
+      "Item1": 9,
+      "Item2": {
+        "Unknown": 9,
+        "Unknown2": 0,
+        "Unknown3": 0
+      }
+    },
+    {
+      "Item1": 10,
+      "Item2": {
+        "Unknown": 10,
+        "Unknown2": 1,
+        "Unknown3": 0
+      }
+    },
+    {
+      "Item1": 11,
+      "Item2": {
+        "Unknown": 11,
+        "Unknown2": 0,
+        "Unknown3": 0
+      }
+    },
+    {
+      "Item1": 12,
+      "Item2": {
+        "Unknown": 12,
+        "Unknown2": 1,
+        "Unknown3": 0
+      }
+    },
+    {
+      "Item1": 13,
+      "Item2": {
+        "Unknown": 13,
+        "Unknown2": 0,
+        "Unknown3": 0
+      }
+    },
+    {
+      "Item1": 14,
+      "Item2": {
+        "Unknown": 14,
+        "Unknown2": 0,
+        "Unknown3": 0
+      }
+    },
+    {
+      "Item1": 15,
+      "Item2": {
+        "Unknown": 15,
+        "Unknown2": 0,
+        "Unknown3": 0
+      }
+    },
+    {
+      "Item1": 16,
+      "Item2": {
+        "Unknown": 16,
+        "Unknown2": 0,
+        "Unknown3": 0
+      }
+    },
+    {
+      "Item1": 17,
+      "Item2": {
+        "Unknown": 17,
+        "Unknown2": 0,
+        "Unknown3": 0
+      }
+    },
+    {
+      "Item1": 18,
+      "Item2": {
+        "Unknown": 18,
+        "Unknown2": 0,
+        "Unknown3": 0
+      }
+    },
+    {
+      "Item1": 19,
+      "Item2": {
+        "Unknown": 19,
+        "Unknown2": 0,
+        "Unknown3": 0
+      }
+    },
+    {
+      "Item1": 20,
+      "Item2": {
+        "Unknown": 20,
+        "Unknown2": 1,
+        "Unknown3": 0
+      }
+    },
+    {
+      "Item1": 21,
+      "Item2": {
+        "Unknown": 21,
+        "Unknown2": 0,
+        "Unknown3": 0
+      }
+    },
+    {
+      "Item1": 22,
+      "Item2": {
+        "Unknown": 22,
+        "Unknown2": 1,
+        "Unknown3": 0
+      }
+    },
+    {
+      "Item1": 23,
+      "Item2": {
+        "Unknown": 23,
+        "Unknown2": 0,
+        "Unknown3": 0
+      }
+    },
+    {
+      "Item1": 24,
+      "Item2": {
+        "Unknown": 24,
+        "Unknown2": 0,
+        "Unknown3": 0
+      }
+    },
+    {
+      "Item1": 25,
+      "Item2": {
+        "Unknown": 25,
+        "Unknown2": 0,
+        "Unknown3": 0
+      }
+    },
+    {
+      "Item1": 26,
+      "Item2": {
+        "Unknown": 26,
+        "Unknown2": 0,
+        "Unknown3": 0
+      }
+    },
+    {
+      "Item1": 27,
+      "Item2": {
+        "Unknown": 27,
+        "Unknown2": 0,
+        "Unknown3": 0
+      }
+    },
+    {
+      "Item1": 28,
+      "Item2": {
+        "Unknown": 28,
+        "Unknown2": 0,
+        "Unknown3": 0
+      }
+    },
+    {
+      "Item1": 29,
+      "Item2": {
+        "Unknown": 29,
+        "Unknown2": 0,
+        "Unknown3": 0
+      }
+    },
+    {
+      "Item1": 30,
+      "Item2": {
+        "Unknown": 30,
+        "Unknown2": 0,
+        "Unknown3": 0
+      }
+    },
+    {
+      "Item1": 31,
+      "Item2": {
+        "Unknown": 31,
+        "Unknown2": 0,
+        "Unknown3": 0
+      }
+    },
+    {
+      "Item1": 32,
+      "Item2": {
+        "Unknown": 32,
+        "Unknown2": 0,
+        "Unknown3": 0
+      }
+    },
+    {
+      "Item1": 33,
+      "Item2": {
+        "Unknown": 33,
+        "Unknown2": 0,
+        "Unknown3": 0
+      }
+    },
+    {
+      "Item1": 34,
+      "Item2": {
+        "Unknown": 34,
+        "Unknown2": 1,
+        "Unknown3": 0
+      }
+    },
+    {
+      "Item1": 35,
+      "Item2": {
+        "Unknown": 35,
+        "Unknown2": 0,
+        "Unknown3": 0
+      }
+    },
+    {
+      "Item1": 36,
+      "Item2": {
+        "Unknown": 36,
+        "Unknown2": 0,
+        "Unknown3": 0
+      }
+    },
+    {
+      "Item1": 37,
+      "Item2": {
+        "Unknown": 37,
+        "Unknown2": 0,
+        "Unknown3": 0
+      }
+    },
+    {
+      "Item1": 38,
+      "Item2": {
+        "Unknown": 38,
+        "Unknown2": 0,
+        "Unknown3": 0
+      }
+    },
+    {
+      "Item1": 39,
+      "Item2": {
+        "Unknown": 39,
+        "Unknown2": 0,
+        "Unknown3": 0
+      }
+    },
+    {
+      "Item1": 40,
+      "Item2": {
+        "Unknown": 40,
+        "Unknown2": 0,
+        "Unknown3": 0
+      }
+    },
+    {
+      "Item1": 41,
+      "Item2": {
+        "Unknown": 41,
+        "Unknown2": 0,
+        "Unknown3": 0
+      }
+    },
+    {
+      "Item1": 42,
+      "Item2": {
+        "Unknown": 42,
+        "Unknown2": 0,
+        "Unknown3": 0
+      }
+    },
+    {
+      "Item1": 43,
+      "Item2": {
+        "Unknown": 43,
+        "Unknown2": 0,
+        "Unknown3": 0
+      }
+    },
+    {
+      "Item1": 44,
+      "Item2": {
+        "Unknown": 44,
+        "Unknown2": 0,
+        "Unknown3": 0
+      }
+    },
+    {
+      "Item1": 45,
+      "Item2": {
+        "Unknown": 45,
+        "Unknown2": 0,
+        "Unknown3": 0
+      }
+    },
+    {
+      "Item1": 46,
+      "Item2": {
+        "Unknown": 46,
+        "Unknown2": 0,
+        "Unknown3": 0
+      }
+    },
+    {
+      "Item1": 47,
+      "Item2": {
+        "Unknown": 47,
+        "Unknown2": 0,
+        "Unknown3": 0
+      }
+    },
+    {
+      "Item1": 48,
+      "Item2": {
+        "Unknown": 48,
+        "Unknown2": 0,
+        "Unknown3": 0
+      }
+    },
+    {
+      "Item1": 49,
+      "Item2": {
+        "Unknown": 49,
+        "Unknown2": 0,
+        "Unknown3": 0
+      }
+    },
+    {
+      "Item1": 50,
+      "Item2": {
+        "Unknown": 50,
+        "Unknown2": 0,
+        "Unknown3": 0
+      }
+    },
+    {
+      "Item1": 51,
+      "Item2": {
+        "Unknown": 51,
+        "Unknown2": 0,
+        "Unknown3": 0
+      }
+    },
+    {
+      "Item1": 52,
+      "Item2": {
+        "Unknown": 52,
+        "Unknown2": 0,
+        "Unknown3": 0
+      }
+    },
+    {
+      "Item1": 53,
+      "Item2": {
+        "Unknown": 53,
+        "Unknown2": 1,
+        "Unknown3": 0
+      }
+    },
+    {
+      "Item1": 54,
+      "Item2": {
+        "Unknown": 54,
+        "Unknown2": 0,
+        "Unknown3": 0
+      }
+    },
+    {
+      "Item1": 55,
+      "Item2": {
+        "Unknown": 55,
+        "Unknown2": 0,
+        "Unknown3": 0
+      }
+    },
+    {
+      "Item1": 56,
+      "Item2": {
+        "Unknown": 56,
+        "Unknown2": 1,
+        "Unknown3": 0
+      }
+    },
+    {
+      "Item1": 57,
+      "Item2": {
+        "Unknown": 57,
+        "Unknown2": 1,
+        "Unknown3": 0
+      }
+    },
+    {
+      "Item1": 58,
+      "Item2": {
+        "Unknown": 58,
+        "Unknown2": 0,
+        "Unknown3": 0
+      }
+    },
+    {
+      "Item1": 59,
+      "Item2": {
+        "Unknown": 59,
+        "Unknown2": 1,
+        "Unknown3": 0
+      }
+    },
+    {
+      "Item1": 60,
+      "Item2": {
+        "Unknown": 60,
+        "Unknown2": 1,
+        "Unknown3": 0
+      }
+    },
+    {
+      "Item1": 61,
+      "Item2": {
+        "Unknown": 61,
+        "Unknown2": 1,
+        "Unknown3": 0
+      }
+    },
+    {
+      "Item1": 62,
+      "Item2": {
+        "Unknown": 62,
+        "Unknown2": 1,
+        "Unknown3": 0
+      }
+    },
+    {
+      "Item1": 63,
+      "Item2": {
+        "Unknown": 63,
+        "Unknown2": 1,
+        "Unknown3": 0
+      }
+    },
+    {
+      "Item1": 64,
+      "Item2": {
+        "Unknown": 64,
+        "Unknown2": 0,
+        "Unknown3": 0
+      }
+    },
+    {
+      "Item1": 65,
+      "Item2": {
+        "Unknown": 65,
+        "Unknown2": 0,
+        "Unknown3": 0
+      }
+    },
+    {
+      "Item1": 66,
+      "Item2": {
+        "Unknown": 66,
+        "Unknown2": 0,
+        "Unknown3": 0
+      }
+    },
+    {
+      "Item1": 67,
+      "Item2": {
+        "Unknown": 67,
+        "Unknown2": 1,
+        "Unknown3": 0
+      }
+    },
+    {
+      "Item1": 68,
+      "Item2": {
+        "Unknown": 68,
+        "Unknown2": 1,
+        "Unknown3": 0
+      }
+    }
+  ],
   "VehicleStruct": {
     "Unknown": 7,
     "VehicleLoadouts": [
