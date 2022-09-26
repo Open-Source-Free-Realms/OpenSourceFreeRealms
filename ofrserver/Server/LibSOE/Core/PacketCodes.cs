@@ -782,11 +782,6 @@
          PlayerUpdateProfileNameplateImageIdPacket = 71
     };
 
-    public enum PlayerUpdatePacketRemovePlayerG
-    {
-        PlayerUpdatePacketRemovePlayerGracefully = 1
-    };
-
     public enum BaseProgressiveQuestPackets
     {
          ProgressiveQuestClientDataPacket = 1,

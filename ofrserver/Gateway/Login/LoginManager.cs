@@ -178,7 +178,7 @@ namespace Gateway.Login
                     HandleInventoryPacket(soeClient, reader);
                     break;
 
-                case (ushort)MountBasePackets.PacketMountRequest:
+                case (ushort)BasePackets.MountBasePacket:
                     HandlePacketMount(soeClient, reader);
                     break;
 
@@ -524,13 +524,20 @@ namespace Gateway.Login
 
         private static void HandlePacketMount(SOEClient client, SOEReader reader)
         {
-
             var SubOpCode = reader.ReadByte();
 
             switch (SubOpCode)
             {
+                case (byte)MountBasePackets.PacketMountList:
+                    SendMountList(client);
+                    break;
+
                 case (byte)MountBasePackets.PacketMountSpawn:
                     SendPacketMountResponse(client);
+                    break;
+
+                case (byte)MountBasePackets.PacketDismountRequest:
+                    SendPacketDismountResponse(client);
                     break;
 
                 default:
@@ -538,22 +545,253 @@ namespace Gateway.Login
             }
         }
 
+        private static void SendMountList(SOEClient soeClient)
+        {
+            //var clientItems = PlayerData.ClientItems.Find(cItem => cItem.Guid == guid);
+            //var mountItem = PlayerData.Mounts.Find(mItem => mItem.Unknown4 == clientItems.Guid);
+
+            var mountList = new SOEWriter((ushort)BasePackets.MountBasePacket, true);
+            mountList.AddByte((byte)MountBasePackets.PacketMountList);
+
+            mountList.AddHostInt32(1030);
+            mountList.AddHostInt32(442674);
+            mountList.AddHostInt32(8556);
+            mountList.AddHostInt64(40908498342510626);
+            mountList.AddBoolean(false);
+            mountList.AddHostInt32(0);
+            mountList.AddHostUInt16(0);
+            mountList.AddASCIIString("");
+            mountList.AddBoolean(false);
+            mountList.AddBoolean(true);
+
+            SendTunneledClientPacket(soeClient, mountList.GetRaw());
+        }
+
         private static void SendPacketMountResponse(SOEClient soeClient)
         {
-                    SendTunneledClientPacket(soeClient, StringToByteArray("A800051F0000000604000032C106006C210000220000001056910000000000000000000000010504000081010000141E0000000000000000000000000000000000000000000404000054030000F81E0000000000000000000000F90000000700000064796574696E740000030400007A010000F11D0000000000000000000000290200000700000064796574696E7400000204000076010000D91A0000000000000000000000F90000000700000064796574696E7400000104000074010000191B0000000000000000000000F90000000700000064796574696E7401000004000065A506003C1D0000000000000000000000000000000700000064796574696E740100FF03000008190000C61A00000000000000000000005C00000009000000627562626C6567756D0000FE030000E7A40600E91C000000000000000000000000000000000000000000FD0300006C1A0000411B0000000000000000000000F90000000700000064796574696E740000FC030000361B0000801C0000000000000000000000F90000000700000064796574696E740000FB030000FA9F0600901B0000000000000000000000000000000700000064796574696E740100FA030000961A0000671B0000000000000000000000000000000700000064796574696E740000F90300002113000096180000000000000000000001F60000000700000064796574696E740100F8030000AF590000421B00000000000000000000007500000004000000736E6F770000F7030000CD1900000A1B000000000000000000000000000000000000000000F603000003190000B61A0000000000000000000000000000000800000073617070686972650000F503000056180000A41A000000000000000000000000000000000000000000F403000008190000C61A00000000000000000000000000000007000000736B79626C75650000F3030000A1180000A51A00000000000000000000000000000004000000736E6F770000F2030000E1180000A91A00000000000000000000000000000008000000626C697A7A6172640000F103000057180000921A000000000000000000000000000000000000000000F003000003160000021A00000000000000000000000000000007000000736B79626C75650000EF030000261800002F1A0000000000000000000000000000000700000070756D706B696E0000EE030000BF1A00003B1900000000000000000000000000000007000000736B79626C75650000ED030000621400003919000000000000000000000000000000000000000000EC030000631400003819000000000000000000000000000000000000000000EB030000DF120000D31800000000000000000000000000000007000000646565707265640000EA0300002113000096180000000000000000000000000000000B0000007363616C65732D626C75650100E9030000C4150000BB170000000000000000000000000000000E000000676F6C64746970732D626C61636B0100E8030000C2150000BA170000000000000000000000000000000E0000007472657862617369632D626C75650000"));
-                    SendTunneledClientPacket(soeClient, StringToByteArray("23000200220000001056910032C10600EE11000000673C0600F0E2D400010000000000803F1002B5BF09804041636793430000803F00000000000000000000803F000000000100000000000000010000000C0000006A65745F636F6D62696E657200000000000000000100000000000000000000000000000000010000000000000000000000000000000000000000000064000000FFFFFFFFFFFFFFFFFFFFFFFF00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000FFFFFFFF6C2100000100000000000000000200000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000"));
+            var addMount = new SOEWriter((ushort)BasePackets.BasePlayerUpdatePacket, true);
+            addMount.AddHostUInt16((ushort)BasePlayerUpdatePackets.PlayerUpdatePacketAddNpc);
+            addMount.AddHostUInt64(2);
+            addMount.AddHostInt32(442674); // Name ID
+            addMount.AddHostInt32(4590); // Model ID
+            addMount.AddBoolean(false);
+            addMount.AddHostInt32(408679);
+            addMount.AddHostInt32(13951728);
+            addMount.AddHostInt32(1);
+            addMount.AddFloat(1.0f);
 
-                    var mountResponse = new SOEWriter((byte)MountBasePackets.PacketMountResponse, true);
+            // Position
+            addMount.AddFloat(0f);
+            addMount.AddFloat(0f);
+            addMount.AddFloat(0f);
+            addMount.AddFloat(1.0f);
 
-                    mountResponse.AddHostUInt64(1);
-                    mountResponse.AddHostUInt64(40908498342510626);
-                    mountResponse.AddHostUInt32(0);
-                    mountResponse.AddHostUInt32(1); // Queue Position
-                    mountResponse.AddHostUInt32(0);
-                    mountResponse.AddHostUInt32(46);
-                    mountResponse.AddHostUInt32(1);
+            //Rotation
+            addMount.AddFloat(0f);
+            addMount.AddFloat(0f);
+            addMount.AddFloat(1f);
+            addMount.AddFloat(0f);
 
-                    SendTunneledClientPacket(soeClient, mountResponse.GetRaw());
+            addMount.AddHostInt32(1);
+
+            addMount.AddHostInt32(0); // CharacterAttachmentDataCount
+            addMount.AddHostInt32(1);
+
+            addMount.AddASCIIString("jet_combiner");
+            addMount.AddASCIIString("dyetint");
+            addMount.AddHostInt32(0);
+            addMount.AddBoolean(true);
+            addMount.AddHostInt32(0);
+            addMount.AddHostInt32(0);
+            addMount.AddHostInt32(0);
+            addMount.AddASCIIString(""); // Custom Name
+            addMount.AddBoolean(true); // NameDisabled
+            addMount.AddHostInt32(0);
+            addMount.AddFloat(0.0f);
+            addMount.AddFloat(0.0f);
+            addMount.AddHostInt32(0);
+            addMount.AddBoolean(false);
+            addMount.AddFloat(0.0f);
+            addMount.AddBoolean(false);
+            addMount.AddHostInt32(100);
+            addMount.AddHostInt32(-1);
+            addMount.AddHostInt32(-1);
+            addMount.AddHostInt32(-1);
+            addMount.AddBoolean(false);
+            addMount.AddBoolean(false);
+            addMount.AddHostInt32(-1);
+            addMount.AddHostInt32(0);
+            addMount.AddHostInt32(0);
+
+            addMount.AddHostInt32(0); // EffectTagsCount
+
+            addMount.AddBoolean(false);
+            addMount.AddHostInt32(0);
+            addMount.AddBoolean(false);
+            addMount.AddBoolean(false);
+            addMount.AddBoolean(false);
+            addMount.AddBoolean(false);
+
+            addMount.AddHostInt32(0); // UnknownStruct2
+            addMount.AddHostInt32(0);
+            addMount.AddASCIIString("");
+            addMount.AddASCIIString("");
+            addMount.AddHostInt32(0);
+            addMount.AddASCIIString("");
+
+            addMount.AddFloat(0.0f);
+            addMount.AddFloat(0.0f);
+            addMount.AddFloat(0.0f);
+            addMount.AddFloat(0.0f);
+
+            addMount.AddHostInt32(-1);
+            addMount.AddHostInt32(0);
+            addMount.AddBoolean(true);
+            addMount.AddHostInt64(0);
+            addMount.AddHostInt32(2);
+            addMount.AddFloat(0.0f);
+
+            addMount.AddHostInt32(0); // Target
+
+            addMount.AddHostInt32(0); // CharacterVariables
+
+            addMount.AddHostInt32(0);
+            addMount.AddFloat(0.0f);
+
+            addMount.AddFloat(0.0f); // Unknown54, float[4]
+            addMount.AddFloat(0.0f);
+            addMount.AddFloat(0.0f);
+            addMount.AddFloat(0.0f);
+
+            addMount.AddHostInt32(0);
+            addMount.AddFloat(0.0f);
+            addMount.AddFloat(0.0f);
+            addMount.AddFloat(0.0f);
+            addMount.AddASCIIString("");
+            addMount.AddASCIIString("");
+            addMount.AddASCIIString("");
+            addMount.AddBoolean(false);
+            addMount.AddHostInt32(0);
+            addMount.AddHostInt32(0);
+            addMount.AddHostInt32(0);
+            addMount.AddHostInt32(8);
+            addMount.AddHostInt32(0);
+            addMount.AddHostInt32(3442);
+            addMount.AddFloat(0.0f);
+            addMount.AddHostInt32(0);
+
+            SendTunneledClientPacket(soeClient, addMount.GetRaw());
+
+            var mountResponse = new SOEWriter((ushort)BasePackets.MountBasePacket, true);
+            
+            mountResponse.AddByte((byte)MountBasePackets.PacketMountResponse);
+
+            mountResponse.AddHostUInt64(1);
+            mountResponse.AddHostUInt64(2);
+            mountResponse.AddHostInt32(0);
+            mountResponse.AddHostInt32(1); // Queue Position
+            mountResponse.AddHostInt32(1);
+            mountResponse.AddHostInt32(46);
+            mountResponse.AddHostInt32(0);
+
+            SendTunneledClientPacket(soeClient, mountResponse.GetRaw());
+
+            var updatePacketUpdateStat = new SOEWriter((ushort)BasePackets.BaseClientUpdatePacket, true);
+
+            updatePacketUpdateStat.AddHostUInt16((byte)BaseClientUpdatePackets.ClientUpdatePacketUpdateStat);
+
+            updatePacketUpdateStat.AddHostInt64(1);
+
+            // CharacterStat Count
+            updatePacketUpdateStat.AddHostInt32(9);
+
+            updatePacketUpdateStat.AddHostInt32(2);
+            updatePacketUpdateStat.AddHostInt32(1);
+            updatePacketUpdateStat.AddFloat(12.5f);
+
+            updatePacketUpdateStat.AddHostInt32(59);
+            updatePacketUpdateStat.AddHostInt32(1);
+            updatePacketUpdateStat.AddFloat(12f);
+
+            updatePacketUpdateStat.AddHostInt32(60);
+            updatePacketUpdateStat.AddHostInt32(1);
+            updatePacketUpdateStat.AddFloat(6f);
+
+            updatePacketUpdateStat.AddHostInt32(61);
+            updatePacketUpdateStat.AddHostInt32(1);
+            updatePacketUpdateStat.AddFloat(22f);
+
+            updatePacketUpdateStat.AddHostInt32(62);
+            updatePacketUpdateStat.AddHostInt32(1);
+            updatePacketUpdateStat.AddFloat(0.75f);
+
+            updatePacketUpdateStat.AddHostInt32(63);
+            updatePacketUpdateStat.AddHostInt32(1);
+            updatePacketUpdateStat.AddFloat(3f);
+
+            updatePacketUpdateStat.AddHostInt32(64);
+            updatePacketUpdateStat.AddHostInt32(0);
+            updatePacketUpdateStat.AddHostInt32(1);
+
+            updatePacketUpdateStat.AddHostInt32(67);
+            updatePacketUpdateStat.AddHostInt32(1);
+            updatePacketUpdateStat.AddFloat(4f);
+
+            updatePacketUpdateStat.AddHostInt32(68);
+            updatePacketUpdateStat.AddHostInt32(1);
+            updatePacketUpdateStat.AddFloat(5f);
+
+            SendTunneledClientPacket(soeClient, updatePacketUpdateStat.GetRaw());
+        }
+
+        private static void SendPacketDismountResponse(SOEClient soeClient)
+        {
+
+            var disMount = new SOEWriter((ushort)BasePackets.MountBasePacket, true);
+            disMount.AddByte((byte)MountBasePackets.PacketDismountResponse);
+
+            disMount.AddHostUInt64(1);
+            disMount.AddHostInt32(46);
+
+            SendTunneledClientPacket(soeClient, disMount.GetRaw());
+
+            var updatePacketUpdateStat = new SOEWriter((ushort)BasePackets.BaseClientUpdatePacket, true);
+
+            updatePacketUpdateStat.AddHostUInt16((byte)BaseClientUpdatePackets.ClientUpdatePacketUpdateStat);
+
+            updatePacketUpdateStat.AddHostInt64(1);
+
+            // CharacterStat Count
+            updatePacketUpdateStat.AddHostInt32(3);
+
+            updatePacketUpdateStat.AddHostInt32(2);
+            updatePacketUpdateStat.AddHostInt32(1);
+            updatePacketUpdateStat.AddFloat(8f);
+
+            updatePacketUpdateStat.AddHostInt32(64);
+            updatePacketUpdateStat.AddHostInt32(0);
+            updatePacketUpdateStat.AddHostInt32(0);
+
+            updatePacketUpdateStat.AddHostInt32(68);
+            updatePacketUpdateStat.AddHostInt32(1);
+            updatePacketUpdateStat.AddFloat(0f);
+
+            SendTunneledClientPacket(soeClient, updatePacketUpdateStat.GetRaw());
+
+            var removeMount = new SOEWriter((ushort)BasePackets.BasePlayerUpdatePacket, true);
+
+            removeMount.AddHostUInt16((ushort)BasePlayerUpdatePackets.PlayerUpdatePacketRemovePlayer);
+            
+            removeMount.AddHostUInt16(1);
+            removeMount.AddHostUInt64(2);
+
+            removeMount.AddBoolean(false);
+            removeMount.AddHostInt32(0);
+            removeMount.AddHostInt32(0);
+            removeMount.AddHostInt32(46);
+            removeMount.AddHostInt32(1000);
+
+            SendTunneledClientPacket(soeClient, removeMount.GetRaw());
         }
 
         private static void HandlePacketGameTimeSync(SOEClient soeClient, SOEReader reader)
