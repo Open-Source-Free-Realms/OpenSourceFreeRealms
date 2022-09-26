@@ -40,6 +40,9 @@ namespace Gateway.Login
 
             if (File.Exists(@"..\ofrserver\Customize\PointOfInterestDefinitions.json"))
                 PointOfInterestDefinitions = JsonConvert.DeserializeObject<List<PointOfInterestDefinition>>(File.ReadAllText(@"..\ofrserver\Customize\PointOfInterestDefinitions.json"));
+
+            if (File.Exists(@"..\ofrserver\Customize\PacketSendSelfToClient.json"))
+                PlayerData = JsonConvert.DeserializeObject<ClientPcData.ClientPcDatas>(File.ReadAllText(@"..\ofrserver\Customize\PacketSendSelfToClient.json"));
         }
 
         [SOEMessageHandler("PacketLogin", (ushort)ClientGatewayBasePackets.PacketLogin, "CGAPI_527")]
