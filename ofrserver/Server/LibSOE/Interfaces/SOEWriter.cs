@@ -113,6 +113,12 @@ namespace SOE.Interfaces
             AddBytes(Message);
         }
 
+        public void AddHostInt16(short value)
+        {
+            byte[] Message = BitConverter.GetBytes(value).ToArray();
+            AddBytes(Message);
+        }
+
         public void AddHostUInt16(ushort value)
         {
             byte[] Message = BitConverter.GetBytes(value).ToArray();

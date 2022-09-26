@@ -92,16 +92,7 @@ namespace Gateway.Player
 
             basePlayerUpdate.AddBytes(rawBytes);
 
-            rawBytes = basePlayerUpdate.GetRaw();
-
-            var tunneledClient = new SOEWriter((ushort)ClientGatewayBasePackets.PacketTunneledClientPacket, true);
-
-            tunneledClient.AddBoolean(true);
-            tunneledClient.AddHostInt32(rawBytes.Length);
-
-            tunneledClient.AddBytes(rawBytes);
-
-            soeClient.SendMessage(tunneledClient.GetFinalSOEMessage(soeClient));
+            LoginManager.SendTunneledClientPacket(soeClient, basePlayerUpdate.GetRaw());
         }
 
 
@@ -118,16 +109,7 @@ namespace Gateway.Player
 
             sendSelfToClient.AddBytes(rawBytes);
 
-            rawBytes = sendSelfToClient.GetRaw();
-
-            var tunneledClient = new SOEWriter((ushort)ClientGatewayBasePackets.PacketTunneledClientPacket, true);
-
-            tunneledClient.AddBoolean(true);
-            tunneledClient.AddHostUInt32((uint)rawBytes.Length);
-
-            tunneledClient.AddBytes(rawBytes);
-
-            soeClient.SendMessage(tunneledClient.GetFinalSOEMessage(soeClient));
+            LoginManager.SendTunneledClientPacket(soeClient, sendSelfToClient.GetRaw());
         }
 
         public static void SendClientUpdatePacketDoneSendingPreloadCharacters(SOEClient soeClient)
@@ -138,16 +120,7 @@ namespace Gateway.Player
 
             baseClientUpdate.AddBoolean(false);
 
-            var rawBytes = baseClientUpdate.GetRaw();
-
-            var tunneledClient = new SOEWriter((ushort)ClientGatewayBasePackets.PacketTunneledClientPacket, true);
-
-            tunneledClient.AddBoolean(true);
-            tunneledClient.AddHostUInt32((uint)rawBytes.Length);
-
-            tunneledClient.AddBytes(rawBytes);
-
-            soeClient.SendMessage(tunneledClient.GetFinalSOEMessage(soeClient));
+            LoginManager.SendTunneledClientPacket(soeClient, baseClientUpdate.GetRaw());
         }
 
         public static void SendEncounterOverworldCombat(SOEClient soeClient)
@@ -160,16 +133,7 @@ namespace Gateway.Player
             baseEncounter.AddHostUInt32(0);
             baseEncounter.AddBoolean(true);
 
-            var rawBytes = baseEncounter.GetRaw();
-
-            var tunneledClient = new SOEWriter((ushort)ClientGatewayBasePackets.PacketTunneledClientPacket, true);
-
-            tunneledClient.AddBoolean(true);
-            tunneledClient.AddHostUInt32((uint)rawBytes.Length);
-
-            tunneledClient.AddBytes(rawBytes);
-
-            soeClient.SendMessage(tunneledClient.GetFinalSOEMessage(soeClient));
+            LoginManager.SendTunneledClientPacket(soeClient, baseEncounter.GetRaw());
         }
     }
 }

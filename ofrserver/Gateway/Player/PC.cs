@@ -1,15 +1,18 @@
-﻿using SOE.Core;
-using SOE.Interfaces;
+﻿using Gateway.Login;
+using log4net;
+using Newtonsoft.Json;
 using SOE;
-using Gateway.Login;
+using SOE.Core;
+using SOE.Interfaces;
+using System;
+using System.Collections.Generic;
+using System.IO;
+using System.Threading;
+using static Gateway.Login.ClientPcData;
 
 namespace Gateway.Player
 {
-    internal class PC
+    internal class Player
     {
-        public static void SendPlayerUpdatePacketAddPc(SOEClient soeClient)
-        {
-
-        }
     }
 }
