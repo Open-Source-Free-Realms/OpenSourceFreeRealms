@@ -18,7 +18,7 @@ namespace Server
         {
             AppDomain.CurrentDomain.UnhandledException += (sender, e) =>
             {
-                File.WriteAllText("UnhandledException.log", e.ExceptionObject.ToString());
+                File.WriteAllText("Logs/UnhandledException.log", e.ExceptionObject.ToString());
             };
             Options = new ServerOptions();
 

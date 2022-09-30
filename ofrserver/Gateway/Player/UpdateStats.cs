@@ -5,7 +5,7 @@ using Gateway.Login;
 
 namespace Gateway.Player
 {
-    internal class UpdateStats
+    public static class UpdateStats
     {
         public static void SendClientUpdatePacketHitpoints(SOEClient soeClient)
         {
@@ -41,6 +41,24 @@ namespace Gateway.Player
             //var setDefinition = new SOEWriter((ushort)BasePackets.BaseAbilityPacket, true);
             //setDefinition.AddHostUInt16((ushort)BaseAbilityPackets.AbilityPacketSetDefinition);
             LoginManager.SendTunneledClientPacket(soeClient, LoginManager.StringToByteArray(/* AbilityPacketSetDefinition */"2400050001000000080000000000000000000000000000000000000000000000000000000000000000000000"));
+        }
+
+        public static void SendUpdatePacketUpdateStat(SOEClient soeClient)
+        {
+            var updatePacketUpdateStat = new SOEWriter((ushort)BasePackets.BaseClientUpdatePacket, true);
+
+            updatePacketUpdateStat.AddHostUInt16((byte)BaseClientUpdatePackets.ClientUpdatePacketUpdateStat);
+
+            updatePacketUpdateStat.AddHostInt64(LoginManager.PlayerData.PlayerGUID);
+
+            // CharacterStat Count
+            updatePacketUpdateStat.AddHostInt32(1);
+
+            updatePacketUpdateStat.AddHostInt32(2);
+            updatePacketUpdateStat.AddHostInt32(1);
+            updatePacketUpdateStat.AddFloat(8f);
+
+            LoginManager.SendTunneledClientPacket(soeClient, updatePacketUpdateStat.GetRaw());
         }
     }
 }

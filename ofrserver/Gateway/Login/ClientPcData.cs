@@ -311,11 +311,11 @@ namespace Gateway.Login
 
             foreach (var acquaintances in clientPcData.Acquaintances)
             {
-                bw.Write(acquaintances.PlayerGUID);
-                WriteString(bw, acquaintances.PlayerName);
-                bw.Write(acquaintances.Unknown3);
-                bw.Write(acquaintances.PlayerBirthdate);
-                bw.Write(acquaintances.Online);
+                bw.Write(acquaintances.Guid);
+                WriteString(bw, acquaintances.Name);
+                bw.Write(acquaintances.Type);
+                bw.Write(acquaintances.HowLongAgo);
+                bw.Write(acquaintances.IsOnline);
 
             }
 
@@ -367,10 +367,11 @@ namespace Gateway.Login
                 bw.Write(mounts.MountNumber);
                 bw.Write(mounts.MountName);
                 bw.Write(mounts.MountIcon);
-                bw.Write(mounts.Unknown4);
+                bw.Write(mounts.MountId);
+                bw.Write(mounts.MountGUID);
                 bw.Write(mounts.MembersOnly);
-                bw.Write(mounts.MountColor);
-                WriteString(bw, mounts.MountTexture);
+                bw.Write(mounts.MountTintId);
+                WriteString(bw, mounts.MountTintAlias);
                 bw.Write(mounts.FlyTraining);
                 bw.Write(mounts.AbleToFly);
             }
@@ -708,10 +709,11 @@ namespace Gateway.Login
             public int MountNumber { get; set; }
             public int MountName { get; set; }
             public int MountIcon { get; set; }
-            public long Unknown4 { get; set; }
+            public int MountId { get; set; }
+            public int MountGUID { get; set; }
             public bool MembersOnly { get; set; }
-            public int MountColor { get; set; }
-            public string MountTexture { get; set; } = string.Empty;
+            public int MountTintId { get; set; }
+            public string MountTintAlias { get; set; } = string.Empty;
             public bool FlyTraining { get; set; }
             public bool AbleToFly { get; set; }
         }
@@ -964,11 +966,11 @@ namespace Gateway.Login
 
         public class Acquaintance
         {
-            public long PlayerGUID { get; set; }
-            public string PlayerName { get; set; } = string.Empty;
-            public int Unknown3 { get; set; }
-            public long PlayerBirthdate { get; set; }
-            public bool Online { get; set; }
+            public long Guid { get; set; }
+            public string Name { get; set; } = string.Empty;
+            public int Type { get; set; }
+            public long HowLongAgo { get; set; }
+            public bool IsOnline { get; set; }
         }
 
         public class UnknownStruct4
