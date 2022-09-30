@@ -31,10 +31,6 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="FreeRealms, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\bin\FreeRealms.dll</HintPath>
-    </Reference>
     <Reference Include="LibSOE, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\bin\LibSOE.dll</HintPath>
@@ -42,6 +38,8 @@
     <Reference Include="PresentationCore" />
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Numerics" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -53,9 +51,10 @@
     <Compile Include="Gateway.cs" />
     <Compile Include="Login\LoginManager.cs" />
     <Compile Include="Login\ClientPcData.cs" />
-    <Compile Include="MapChat\Chat.cs" />
+    <Compile Include="MapChat\ChatSystem.cs" />
     <Compile Include="MapChat\Map.cs" />
-    <Compile Include="Player\NPC.cs" />
+    <Compile Include="NPC\MountSystem.cs" />
+    <Compile Include="NPC\NPCSystem.cs" />
     <Compile Include="Player\PC.cs" />
     <Compile Include="Player\PlayerCode.cs" />
     <Compile Include="Player\UpdateStats.cs" />
@@ -70,5 +69,6 @@
       <Version>11.0.1</Version>
     </PackageReference>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

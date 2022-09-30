@@ -2,13 +2,12 @@
 using SOE.Interfaces;
 using SOE;
 using Gateway.Login;
-using System.IO;
-using Newtonsoft.Json;
-using System.Collections.Generic;
+using Gateway.MapChat;
+using log4net;
 
 namespace Gateway.Player
 {
-    internal class PlayerCode
+    public static class PlayerCode
     {
         public static void SendPlayerUpdateItemDefinitions(SOEClient soeClient)
         {
@@ -110,6 +109,7 @@ namespace Gateway.Player
             sendSelfToClient.AddBytes(rawBytes);
 
             LoginManager.SendTunneledClientPacket(soeClient, sendSelfToClient.GetRaw());
+
         }
 
         public static void SendClientUpdatePacketDoneSendingPreloadCharacters(SOEClient soeClient)
@@ -135,5 +135,110 @@ namespace Gateway.Player
 
             LoginManager.SendTunneledClientPacket(soeClient, baseEncounter.GetRaw());
         }
+
+        public static void HandlePlayerUpdatePacketUpdatePosition(SOEClient soeClient, SOEReader reader)
+        {
+            var PlayerGUID = reader.ReadHostUInt64();
+            float[] Position = new float[3];
+            for (var i = 0; i < Position.Length; i++)
+                Position[i] = reader.ReadSingle();
+            float[] Rotation = new float[3];
+            for (var i = 0; i < Rotation.Length; i++)
+                Rotation[i] = reader.ReadSingle();
+            byte CharacterState = reader.ReadByte();
+            byte Unknown = reader.ReadByte();
+
+
+            LoginManager.log.Info($"HandlePlayerUpdatePacketUpdatePosition:\n" +
+                $"X: {Position[0]}\n" +
+                $"Y: {Position[1]}\n" +
+                $"Z: {Position[2]}");
+
+            //LoginManager.log.Info($"HandlePlayerUpdatePacketUpdateRotation:\n" +
+            //    $"X: {Rotation[0]}\n" +
+            //    $"Y: {Rotation[1]}\n" +
+            //    $"Z: {Rotation[2]}");
+
+            var poiChange = new SOEWriter((byte)BasePackets.PacketPOIChangeMessage, true);
+
+            if (Map.inBlackspore(Position))
+            {
+                poiChange.AddHostInt32(3500); // NameId
+                poiChange.AddHostInt32(2); //ZoneId
+                poiChange.AddHostInt32(290); //Unsure
+                LoginManager.SendTunneledClientPacket(soeClient, poiChange.GetRaw());
+            }
+
+            if (Map.inSanctuary(Position))
+            {
+                poiChange.AddHostInt32(3499); // NameId
+                poiChange.AddHostInt32(5); //ZoneId
+                poiChange.AddHostInt32(290); //Unsure
+                LoginManager.SendTunneledClientPacket(soeClient, poiChange.GetRaw());
+            }
+
+            if (Map.inSeaside(Position))
+            {
+                poiChange.AddHostInt32(3501); // NameId
+                poiChange.AddHostInt32(6); //ZoneId
+                poiChange.AddHostInt32(290); //Unsure
+                LoginManager.SendTunneledClientPacket(soeClient, poiChange.GetRaw());
+            }
+
+            if (Map.MerryValeMagnitude(Position) < 290.0)
+            {
+                poiChange.AddHostInt32(3961); // NameId
+                poiChange.AddHostInt32(4); //ZoneId
+                poiChange.AddHostInt32(290); //Unsure
+                LoginManager.SendTunneledClientPacket(soeClient, poiChange.GetRaw());
+            }
+
+            if (Map.inShroudedGlade(Position) < 200.0)
+            {
+                poiChange.AddHostInt32(3502); // NameId
+                poiChange.AddHostInt32(7); //ZoneId
+                poiChange.AddHostInt32(290); //Unsure
+                LoginManager.SendTunneledClientPacket(soeClient, poiChange.GetRaw());
+            }
+
+            if (Map.inSnowhill(Position))
+            {
+                poiChange.AddHostInt32(3961); // NameId
+                poiChange.AddHostInt32(8); //ZoneId
+                poiChange.AddHostInt32(290); //Unsure
+                LoginManager.SendTunneledClientPacket(soeClient, poiChange.GetRaw());
+            }
+
+            if (Map.inWugachug(Position))
+            {
+                poiChange.AddHostInt32(3505); // NameId
+                poiChange.AddHostInt32(9); //ZoneId
+                poiChange.AddHostInt32(290); //Unsure
+                LoginManager.SendTunneledClientPacket(soeClient, poiChange.GetRaw());
+            }
+
+            if (Map.SunstoneValleyMagnitude(Position) < 600.0)
+            {
+                poiChange.AddHostInt32(74159); // NameId
+                poiChange.AddHostInt32(10); //ZoneId
+                poiChange.AddHostInt32(1178); //Unsure
+                LoginManager.SendTunneledClientPacket(soeClient, poiChange.GetRaw());
+            }
+        }
+
+        public static void HandlePlayerUpdatePacketCameraUpdate(SOEReader reader)
+        {
+            var Unknown = reader.ReadHostUInt64();
+            var Useless1 = reader.ReadSingle();
+            var Pitch = reader.ReadSingle();
+            var Useless2 = reader.ReadSingle();
+            var Yaw = reader.ReadSingle();
+
+            LoginManager.log.Info($"HandlePlayerUpdatePacketCameraUpdate:\n" +
+                $"Pitch: {Pitch}\n" +
+                $"Yaw: {Yaw}");
+
+        }
+
     }
 }

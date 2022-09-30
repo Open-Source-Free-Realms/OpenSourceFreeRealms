@@ -5,7 +5,7 @@ using Gateway.Login;
 
 namespace Gateway.MapChat
 {
-    public class Chat
+    public class ChatSystem
     {
         public static void SendQuickChatPacket(SOEClient soeClient)
         {
@@ -71,5 +71,89 @@ namespace Gateway.MapChat
 
             LoginManager.SendTunneledClientPacket(soeClient, quickChatPacket.GetRaw());
         }
+
+        public static void HandleBaseChatPacket(SOEClient soeClient, SOEReader reader)
+        {
+            var subOpCode = reader.ReadHostUInt16();
+            //_log.Debug($"HandleBaseChatPacket:\n\t- Client ID: {soeClient.GetClientID()}\n\t - SubOpCode: {subOpCode}");
+            switch (subOpCode)
+            {
+                case (ushort)BaseChatPackets.PacketChat:
+                    HandlePacketChat(soeClient, reader);
+                    break;
+                case (ushort)BaseChatPackets.ChatPacketEnterArea:
+                    break;
+                case (ushort)BaseChatPackets.ChatPacketDebugChat:
+                    break;
+                case (ushort)BaseChatPackets.ChatPacketFromStringId:
+                    break;
+                case (ushort)BaseChatPackets.TellEchoPacket:
+                    break;
+            }
+        }
+
+        public static void HandlePacketChat(SOEClient soeClient, SOEReader reader)
+        {
+            ushort messageType = reader.ReadHostUInt16();
+            ulong guid1 = reader.ReadHostUInt64();
+            ulong guid2 = reader.ReadHostUInt64();
+
+            for (int i = 0; i < 3; i++)
+                reader.ReadHostInt32(); // unknown in player information struct
+            string senderFirstName = reader.ReadASCIIString();
+            string senderLastName = reader.ReadASCIIString();
+
+            for (int i = 0; i < 3; i++)
+                reader.ReadHostInt32(); // unknown in player information struct
+            string targetFirstName = reader.ReadASCIIString();
+            string targetLastName = reader.ReadASCIIString();
+
+            string message = reader.ReadASCIIString();
+
+            float[] position = new float[4];
+            for (int i = 0; i < 4; i++)
+                position[i] = reader.ReadSingle();
+
+            ulong unknown2 = reader.ReadHostUInt64();
+            int unknown3 = reader.ReadHostInt32();
+
+            int? unknown4;
+            if (messageType == 8)
+                unknown4 = reader.ReadHostInt32();
+
+            SendPacketChat(soeClient, messageType, guid2, message, targetFirstName, targetLastName);
+        }
+
+        public static void HandleBaseQuickChatPacket(SOEClient soeClient, SOEReader reader)
+        {
+            var subOpCode = reader.ReadHostUInt16();
+
+            switch (subOpCode)
+            {
+                case (ushort)BaseQuickChatPackets.QuickChatSendChatToChannelPacket:
+                    HandleQuickChatSendChatToChannelPacket(soeClient, reader);
+                    break;
+            }
+        }
+
+        public static void HandleQuickChatSendChatToChannelPacket(SOEClient soeClient, SOEReader reader)
+        {
+            var commandId = reader.ReadHostInt32();
+            _ = reader.ReadHostInt64();
+
+            // UnknownStruct3
+            _ = reader.ReadHostInt32();
+            _ = reader.ReadHostInt32();
+            _ = reader.ReadHostInt32();
+            _ = reader.ReadASCIIString();
+            _ = reader.ReadASCIIString();
+
+            var channelId = reader.ReadHostInt16();
+            _ = reader.ReadHostInt32();
+            var guildGuid = reader.ReadHostInt64();
+
+            SendQuickChatSendChatToChannelPacket(soeClient, commandId, channelId, guildGuid);
+        }
+
     }
 }
