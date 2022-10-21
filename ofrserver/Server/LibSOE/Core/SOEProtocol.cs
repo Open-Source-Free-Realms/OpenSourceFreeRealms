@@ -223,7 +223,7 @@ namespace SOE.Core
             {
                 // Log
                 string messageName = MessageHandlers.Protocol2MessageName[protocolString][message.GetOpCode()];
-                Log.InfoFormat("Received 0x{0:X}, {1}_{2}!", message.GetOpCode(), gameName, messageName);
+                //Log.InfoFormat("Received 0x{0:X}, {1}_{2}!", message.GetOpCode(), gameName, messageName);
 
                 // Handle it
                 MessageHandlers.GetHandler(protocolString, message.GetOpCode())(sender, message);
