@@ -1,6 +1,6 @@
 ﻿using CommandLine;
 
-namespace LandwalkerServer
+namespace Server
 {
     internal class ServerOptions
     {

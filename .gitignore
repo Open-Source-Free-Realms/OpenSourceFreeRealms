@@ -4,6 +4,5 @@ ofrserver/Server/Server/obj/*
 ofrserver/Server/FreeRealms/obj/*
 ofrserver/Server/LibSOE/obj/*
 ofrserver/Gateway/obj/*
-ofrjsonmaker/*
-ofrclient/*
 bin/*
+GitIgnore/*

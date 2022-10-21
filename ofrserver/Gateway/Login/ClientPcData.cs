@@ -6,7 +6,7 @@ using Newtonsoft.Json;
 
 namespace Gateway.Login
 {
-    internal static class ClientPcData
+    public static class ClientPcData
     {
 
         public static byte[] ReadFromJSON(string filename)
@@ -160,7 +160,7 @@ namespace Gateway.Login
                 }
             }
 
-            bw.Write(clientPcData.Unknown45);
+            bw.Write(clientPcData.Class);
 
             bw.Write(clientPcData.Unknown2List.Count);
 
@@ -224,7 +224,7 @@ namespace Gateway.Login
 
             }
 
-            bw.Write(clientPcData.Unknown46);
+            bw.Write(clientPcData.GenderFilter);
             bw.Write(clientPcData.ClientQuestData.ClientQuests.Count);
 
             foreach (var clientQuests in clientPcData.ClientQuestData.ClientQuests)
@@ -311,11 +311,11 @@ namespace Gateway.Login
 
             foreach (var acquaintances in clientPcData.Acquaintances)
             {
-                bw.Write(acquaintances.PlayerGUID);
-                WriteString(bw, acquaintances.PlayerName);
-                bw.Write(acquaintances.Unknown3);
-                bw.Write(acquaintances.PlayerBirthdate);
-                bw.Write(acquaintances.Online);
+                bw.Write(acquaintances.Guid);
+                WriteString(bw, acquaintances.Name);
+                bw.Write(acquaintances.Type);
+                bw.Write(acquaintances.HowLongAgo);
+                bw.Write(acquaintances.IsOnline);
 
             }
 
@@ -367,10 +367,10 @@ namespace Gateway.Login
                 bw.Write(mounts.MountNumber);
                 bw.Write(mounts.MountName);
                 bw.Write(mounts.MountIcon);
-                bw.Write(mounts.Unknown4);
+                bw.Write(mounts.MountGUID);
                 bw.Write(mounts.MembersOnly);
-                bw.Write(mounts.MountColor);
-                WriteString(bw, mounts.MountTexture);
+                bw.Write(mounts.MountTintId);
+                WriteString(bw, mounts.MountTintAlias);
                 bw.Write(mounts.FlyTraining);
                 bw.Write(mounts.AbleToFly);
             }
@@ -457,15 +457,15 @@ namespace Gateway.Login
 
         public class PlayerTitleData
         {
-            public int Unknown { get; set; }
-            public int Unknown2 { get; set; }
+            public int Id { get; set; }
+            public int Place { get; set; }
             public int TitleName { get; set; }
             public int Unknown4 { get; set; }
 
             public void Serialize(BinaryWriter bw)
             {
-                bw.Write(Unknown);
-                bw.Write(Unknown2);
+                bw.Write(Id);
+                bw.Write(Place);
                 bw.Write(TitleName);
                 bw.Write(Unknown4);
             }
@@ -475,7 +475,7 @@ namespace Gateway.Login
         {
             public List<PlayerTitleData> PlayerTitles { get; set; } = new List<PlayerTitleData>();
 
-            public int Unknown { get; set; }
+            public int Title { get; set; }
 
             public void Serialize(BinaryWriter bw)
             {
@@ -487,7 +487,7 @@ namespace Gateway.Login
                     playerTitles.Serialize(bw);
 
                 }
-                bw.Write(Unknown);
+                bw.Write(Title);
             }
         }
 
@@ -708,12 +708,13 @@ namespace Gateway.Login
             public int MountNumber { get; set; }
             public int MountName { get; set; }
             public int MountIcon { get; set; }
-            public long Unknown4 { get; set; }
+            public long MountGUID { get; set; }
             public bool MembersOnly { get; set; }
-            public int MountColor { get; set; }
-            public string MountTexture { get; set; } = string.Empty;
+            public int MountTintId { get; set; }
+            public string MountTintAlias { get; set; } = string.Empty;
             public bool FlyTraining { get; set; }
             public bool AbleToFly { get; set; }
+            public int MountModelID { get; set; }
         }
 
         public class PetTrickInfo
@@ -739,21 +740,21 @@ namespace Gateway.Login
             public int Unknown { get; set; }
             public bool Unknown2 { get; set; }
             public int Unknown3 { get; set; }
-            public int Unknown4 { get; set; }
-            public int Unknown5 { get; set; }
-            public int Unknown6 { get; set; }
-            public int Unknown7 { get; set; }
+            public float Food { get; set; }
+            public float Groom { get; set; }
+            public float Exercise { get; set; }
+            public float Happiness { get; set; }
             public bool Unknown8 { get; set; }
 
             public List<(int, PetTrickInfo)> PetTricks { get; set; } = new List<(int, PetTrickInfo)>();
             public List<ItemGuid> ItemGuids { get; set; } = new List<ItemGuid>();
             public List<(int, ProfileItemClassData)> ProfileItems { get; set; } = new List<(int, ProfileItemClassData)>();
 
-            public string Unknown9 { get; set; } = string.Empty;
+            public string PetName { get; set; } = string.Empty;
             public int Unknown10 { get; set; }
             public int Unknown11 { get; set; }
-            public string Unknown12 { get; set; } = string.Empty;
-            public int Unknown13 { get; set; }
+            public string TextureAlias { get; set; } = string.Empty;
+            public int IconId { get; set; }
             public bool Unknown14 { get; set; }
             public int Unknown15 { get; set; }
             public bool Unknown16 { get; set; }
@@ -765,10 +766,10 @@ namespace Gateway.Login
                 bw.Write(Unknown);
                 bw.Write(Unknown2);
                 bw.Write(Unknown3);
-                bw.Write(Unknown4);
-                bw.Write(Unknown5);
-                bw.Write(Unknown6);
-                bw.Write(Unknown7);
+                bw.Write(Food);
+                bw.Write(Groom);
+                bw.Write(Exercise);
+                bw.Write(Happiness);
                 bw.Write(Unknown8);
 
                 bw.Write(PetTricks.Count);
@@ -803,11 +804,11 @@ namespace Gateway.Login
                     bw.Write(profileItems.Item2.Unknown2);
                 }
 
-                WriteString(bw, Unknown9);
+                WriteString(bw, PetName);
                 bw.Write(Unknown10);
                 bw.Write(Unknown11);
-                WriteString(bw, Unknown12);
-                bw.Write(Unknown13);
+                WriteString(bw, TextureAlias);
+                bw.Write(IconId);
                 bw.Write(Unknown14);
                 bw.Write(Unknown15);
                 bw.Write(Unknown16);
@@ -964,11 +965,11 @@ namespace Gateway.Login
 
         public class Acquaintance
         {
-            public long PlayerGUID { get; set; }
-            public string PlayerName { get; set; } = string.Empty;
-            public int Unknown3 { get; set; }
-            public long PlayerBirthdate { get; set; }
-            public bool Online { get; set; }
+            public long Guid { get; set; }
+            public string Name { get; set; } = string.Empty;
+            public int Type { get; set; }
+            public long HowLongAgo { get; set; }
+            public bool IsOnline { get; set; }
         }
 
         public class UnknownStruct4
@@ -1414,13 +1415,13 @@ namespace Gateway.Login
 
             public List<ClientPcProfile> ClientPcProfiles { get; set; } = new List<ClientPcProfile>();
 
-            public int Unknown45 { get; set; }
+            public int Class { get; set; }
 
             public List<UnknownStruct2> Unknown2List { get; set; } = new List<UnknownStruct2>();
             public List<Collections> PlayerCollections { get; set; } = new List<Collections>();
             public List<ClientItem> ClientItems { get; set; } = new List<ClientItem>();
 
-            public int Unknown46 { get; set; }
+            public int GenderFilter { get; set; }
 
             public ClientQuestData ClientQuestData { get; set; } = new ClientQuestData();
             public ClientAchievementData ClientAchievementData { get; set; } = new ClientAchievementData();
@@ -1451,7 +1452,7 @@ namespace Gateway.Login
             public VehicleStruct VehicleStruct { get; set; } = new VehicleStruct();
             public PlayerTitleStruct PlayerTitleStruct { get; set; } = new PlayerTitleStruct();
 
-            public int VIPLevel { get; set; }
+            public float VIPLevel { get; set; }
             public int Unknown51 { get; set; }
             public int Unknown52 { get; set; }
 

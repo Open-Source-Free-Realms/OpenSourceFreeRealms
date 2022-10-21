@@ -7,7 +7,7 @@ using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using SOE.Core;
 
-namespace LandwalkerServer
+namespace Server
 {
     class Program
     {
@@ -16,6 +16,10 @@ namespace LandwalkerServer
 
         static void Main(string[] args)
         {
+            AppDomain.CurrentDomain.UnhandledException += (sender, e) =>
+            {
+                File.WriteAllText("Logs/UnhandledException.log", e.ExceptionObject.ToString());
+            };
             Options = new ServerOptions();
 
             // Successful parse?

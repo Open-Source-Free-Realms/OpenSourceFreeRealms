@@ -16,7 +16,7 @@ namespace SOE.Core
         public readonly ILog Log;
 
         // Connections
-        private readonly List<SOEClient> Clients;
+        public readonly List<SOEClient> Clients;
         private readonly Dictionary<IPEndPoint, int> Host2ClientID;
         private readonly Dictionary<uint, int> SessionID2ClientID;
 
