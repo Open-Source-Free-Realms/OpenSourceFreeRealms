@@ -715,7 +715,6 @@ namespace Gateway.Login
             public bool FlyTraining { get; set; }
             public bool AbleToFly { get; set; }
             public int MountModelID { get; set; }
-            public int MountItemDefinitionID { get; set; }
         }
 
         public class PetTrickInfo
