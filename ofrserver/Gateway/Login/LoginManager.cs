@@ -89,6 +89,7 @@ namespace Gateway.Login
 
             var opCode = reader.ReadHostUInt16();
 
+
             switch (opCode)
             {
                 case (ushort)BasePackets.PacketClientIsReady:
@@ -108,11 +109,11 @@ namespace Gateway.Login
                     break;
 
                 case (ushort)BasePackets.BaseInventoryPacket:
-                    HandleInventoryPacket(soeClient, reader);
+                    HandleBaseInventoryPacket(soeClient, reader);
                     break;
 
                 case (ushort)BasePackets.MountBasePacket:
-                    MountSystem.HandlePacketMount(soeClient, reader);
+                    MountSystem.HandleMountBasePacket(soeClient, reader);
                     break;
 
                 case (ushort)BasePackets.BaseQuickChatPacket:
@@ -155,12 +156,12 @@ namespace Gateway.Login
                     break;
 
                 case (ushort)BasePackets.WallOfDataBasePacket:
-                    HandleWallOfData(soeClient, reader);
+                    HandleWallOfDataBasePacket(reader);
                     break;
 
                 default:
                     var data = reader.ReadToEnd();
-                    log.Info($"HandleTunneledClientPacket OpCode: {opCode}\n{BitConverter.ToString(data).Replace("-", "")}");
+                    log.Info($"HandleTunneledClientWorldPacket OpCode: {opCode}\n{BitConverter.ToString(data).Replace("-", "")}");
                     break;
             }
         }
@@ -271,188 +272,184 @@ namespace Gateway.Login
             SendTunneledClientPacket(soeClient, packet.GetRaw());
         }
 
-        private static void HandleInventoryPacket(SOEClient soeClient, SOEReader reader)
+        private static void HandleBaseInventoryPacket(SOEClient soeClient, SOEReader reader)
         {
 
             var OpCode = reader.ReadHostUInt16();
             var GUID = reader.ReadHostInt32();
+            var Class = reader.ReadHostInt32();
+            var Slot = reader.ReadHostInt32();
 
             switch (OpCode)
             {
                 case (ushort)BaseInventoryPackets.InventoryPacketEquipByGuid:
-                    var clientItem = PlayerData.ClientItems.Find(cItem => cItem.Guid == GUID);
-                    var clientItemDef = ClientItemDefinitions.Find(cItemDef => cItemDef.Id == clientItem.Definition);
-                    if (clientItemDef.Slot == 13)
-                    {
-                        SendItemFlairEffect(soeClient, GUID, clientItemDef.CompositeEffectId);
-                    }
-                    else
-                    {
-                        HandleInventoryPacketEquipByGuid(soeClient, reader, GUID);
-                    }
+                    SendClientUpdatePacketEquipItem(soeClient, GUID, Class, Slot);
+
+                    //var clientItem = PlayerData.ClientItems.Find(cItem => cItem.Guid == GUID);
+                    //var clientItemDef = ClientItemDefinitions.Find(cItemDef => cItemDef.Id == clientItem.Definition);
+                    //if (clientItemDef.Slot == 13)
+                    //{
+                    //    SendItemFlairEffect(soeClient, GUID, clientItemDef.CompositeEffectId);
+                    //}
+                    //else
+                    //{
+                    //    HandleInventoryPacketEquipByGuid(soeClient, reader, GUID);
+                    //}
                     break;
 
-                case (ushort)BaseInventoryPackets.InventoryPacketEquipByItemRecord:
-                    log.Debug("EquipByItemRecord");
+                case (ushort)BaseInventoryPackets.InventoryPacketItemActionBarAssign:
+                    log.Debug("InventoryPacketItemActionBarAssign");
+                    break;
+
+                case (ushort)BaseInventoryPackets.InventoryPacketItemRequirementRequest:
+                    log.Debug("InventoryPacketItemRequirementRequest");
                     break;
 
                 default:
+                    var data = reader.ReadToEnd();
+                    log.Info($"HandleMountBasePacket SubOpCode: {OpCode}\n{BitConverter.ToString(data).Replace("-", "")}");
                     break;
             }
         }
 
-        private static void HandleInventoryPacketEquipByGuid(SOEClient soeClient, SOEReader reader, int guid)
+        //private static void SendEquipItemByGuid(SOEClient soeClient, int guid)
+        //{
+        //    ClientItemDefinition flairItemDef = null;
+        //    ClientPcData.ClientItem flairItem = null;
+        //
+        //
+        //    var clientItem = PlayerData.ClientItems.Find(cItem => cItem.Guid == guid);
+        //    var clientItemDef = ClientItemDefinitions.Find(cItemDef => cItemDef.Id == clientItem.Definition);
+        //    var tint = clientItem.Tint;
+        //    var equipped = PlayerData.ClientPcProfiles[0].Items.Find(x => x.Item2.Category == clientItemDef.Slot);
+        //
+        //    var equippedFlair = PlayerData.ClientPcProfiles[0].Items.Find(x => x.Item2.Category == 13);
+        //    if (equippedFlair.Item2.ItemGUID != 0)
+        //    {
+        //        flairItem = PlayerData.ClientItems.Find(x => x.Guid == equippedFlair.Item2.ItemGUID);
+        //        flairItemDef = ClientItemDefinitions.Find(x => x.Id == flairItem.Definition);
+        //    }
+        //
+        //    var packet = new SOEWriter((ushort)BasePackets.BasePlayerUpdatePacket, true);
+        //    packet.AddHostUInt16((ushort)BasePlayerUpdatePackets.PlayerUpdatePacketEquipItemChange);
+        //    packet.AddHostInt64(PlayerData.PlayerGUID);
+        //    packet.AddHostInt32(clientItem.Guid);
+        //    packet.AddASCIIString(clientItemDef.ModelName);
+        //    packet.AddASCIIString(clientItemDef.TextureAlias);
+        //    packet.AddASCIIString(clientItemDef.TintAlias);
+        //
+        //    if (tint == 0)
+        //    {
+        //        packet.AddHostInt32(clientItemDef.IconData.TintId);
+        //    }
+        //    else
+        //    {
+        //        packet.AddHostInt32(tint);
+        //    }
+        //
+        //    if (clientItemDef.Slot == 7 && flairItemDef != null)
+        //    {
+        //        packet.AddHostInt32(flairItemDef.CompositeEffectId);
+        //    }
+        //    else
+        //    {
+        //        packet.AddHostInt32(clientItemDef.CompositeEffectId);
+        //    }
+        //
+        //    packet.AddHostInt32(clientItemDef.Slot);
+        //
+        //    packet.AddHostInt32(clientItemDef.Type);
+        //    packet.AddHostInt32(clientItemDef.Class);
+        //    packet.AddHostInt32(0);
+        //
+        //    equipped.Item2.ItemGUID = clientItem.Guid;
+        //
+        //    SendTunneledClientPacket(soeClient, packet.GetRaw());
+        //    SendClientUpdatePacketEquipItem(soeClient, clientItem.Guid);
+        //}
+
+        //private static void SendItemFlairEffect(SOEClient soeClient, int flairGuid, int flairEffect)
+        //{
+        //    var weapon = PlayerData.ClientPcProfiles[0].Items.Find(x => x.Item2.Category == 7);
+        //    var weaponItem = PlayerData.ClientItems.Find(wItem => wItem.Guid == weapon.Item2.ItemGUID);
+        //    var weaponItemDef = ClientItemDefinitions.Find(wItemDef => wItemDef.Id == weaponItem.Definition);
+        //
+        //    var equippedFlair = PlayerData.ClientPcProfiles[0].Items.Find(x => x.Item2.Category == 13);
+        //
+        //    var packet = new SOEWriter((ushort)BasePackets.BaseClientUpdatePacket, true);
+        //    packet.AddHostUInt16((ushort)BaseClientUpdatePackets.ClientUpdatePacketEquipItem);
+        //    packet.AddHostInt64(PlayerData.PlayerGUID);
+        //    packet.AddHostInt32(weaponItem.Guid);
+        //    packet.AddASCIIString(weaponItemDef.ModelName);
+        //    packet.AddASCIIString(weaponItemDef.TextureAlias);
+        //    packet.AddASCIIString(weaponItemDef.TintAlias);
+        //
+        //    if (weaponItem.Tint == 0)
+        //    {
+        //        packet.AddHostInt32(weaponItemDef.IconData.TintId);
+        //    }
+        //    else
+        //    {
+        //        packet.AddHostInt32(weaponItem.Tint);
+        //    }
+        //
+        //    packet.AddHostInt32(flairEffect);
+        //    packet.AddHostInt32(weaponItemDef.Slot);
+        //
+        //    packet.AddHostInt32(PlayerData.Class);
+        //    packet.AddHostInt32(weaponItemDef.Class);
+        //    packet.AddBoolean(true);
+        //
+        //    equippedFlair.Item2.ItemGUID = flairGuid;
+        //    weaponItemDef.CompositeEffectId = flairEffect;
+        //
+        //    SendTunneledClientPacket(soeClient, packet.GetRaw());
+        //    SendFlairEquip(soeClient, flairGuid);
+        //    SendClientUpdatePacketEquipItem(soeClient, weaponItem.Guid);
+        //} 
+
+        //private static void SendFlairEquip(SOEClient soeClient, int guid)
+        //{
+        //    var flairItem = PlayerData.ClientItems.Find(fItem => fItem.Guid == guid);
+        //    var flairItemDef = ClientItemDefinitions.Find(fItemDef => fItemDef.Id == flairItem.Definition);
+        //
+        //    var packet = new SOEWriter((ushort)BasePackets.BaseClientUpdatePacket, true);
+        //    packet.AddHostUInt16((ushort)BaseClientUpdatePackets.ClientUpdatePacketEquipItem);
+        //    packet.AddHostInt64(PlayerData.PlayerGUID);
+        //    packet.AddHostInt32(flairItem.Guid);
+        //    packet.AddASCIIString(flairItemDef.ModelName);
+        //    packet.AddASCIIString(flairItemDef.TextureAlias);
+        //    packet.AddASCIIString(flairItemDef.TintAlias);
+        //
+        //    if (flairItem.Tint == 0)
+        //    {
+        //        packet.AddHostInt32(flairItemDef.IconData.TintId);
+        //    }
+        //    else
+        //    {
+        //        packet.AddHostInt32(flairItem.Tint);
+        //    }
+        //
+        //    packet.AddHostInt32(flairItemDef.CompositeEffectId);
+        //    packet.AddHostInt32(flairItemDef.Slot);
+        //
+        //    packet.AddHostInt32(PlayerData.Class);
+        //    packet.AddHostInt32(flairItemDef.Class);
+        //    packet.AddBoolean(true);
+        //
+        //    SendTunneledClientPacket(soeClient, packet.GetRaw());
+        //    SendClientUpdatePacketEquipItem(soeClient, flairItem.Guid);
+        //
+        //}
+
+        private static void SendClientUpdatePacketEquipItem(SOEClient soeClient, int GUID, int Class, int Slot)
         {
-            var Class = reader.ReadHostInt32();
-            var Slot = reader.ReadHostInt32();
-            var Unknown = reader.ReadHostInt32();
-
-            log.Info("HandleInventoryPacketEquipByGuid:\n\t" +
-                $"Class: {Class}\n\t" +
-                $"Slot: {Slot}\n\t" +
-                $"Unknown: {Unknown}");
-
-            SendClientUpdatePacketEquipItem(soeClient, guid);
-        }
-
-        private static void SendEquipItemByGuid(SOEClient soeClient, int guid)
-        {
-            ClientItemDefinition flairItemDef = null;
-            ClientPcData.ClientItem flairItem = null;
-
-
-            var clientItem = PlayerData.ClientItems.Find(cItem => cItem.Guid == guid);
-            var clientItemDef = ClientItemDefinitions.Find(cItemDef => cItemDef.Id == clientItem.Definition);
-            var tint = clientItem.Tint;
-            var equipped = PlayerData.ClientPcProfiles[0].Items.Find(x => x.Item2.Category == clientItemDef.Slot);
-
-            var equippedFlair = PlayerData.ClientPcProfiles[0].Items.Find(x => x.Item2.Category == 13);
-            if (equippedFlair.Item2.ItemGUID != 0)
-            {
-                flairItem = PlayerData.ClientItems.Find(x => x.Guid == equippedFlair.Item2.ItemGUID);
-                flairItemDef = ClientItemDefinitions.Find(x => x.Id == flairItem.Definition);
-            }
-
-            var packet = new SOEWriter((ushort)BasePackets.BasePlayerUpdatePacket, true);
-            packet.AddHostUInt16((ushort)BasePlayerUpdatePackets.PlayerUpdatePacketEquipItemChange);
-            packet.AddHostInt64(PlayerData.PlayerGUID);
-            packet.AddHostInt32(clientItem.Guid);
-            packet.AddASCIIString(clientItemDef.ModelName);
-            packet.AddASCIIString(clientItemDef.TextureAlias);
-            packet.AddASCIIString(clientItemDef.TintAlias);
-
-            if (tint == 0)
-            {
-                packet.AddHostInt32(clientItemDef.IconData.TintId);
-            }
-            else
-            {
-                packet.AddHostInt32(tint);
-            }
-
-            if (clientItemDef.Slot == 7 && flairItemDef != null)
-            {
-                packet.AddHostInt32(flairItemDef.CompositeEffectId);
-            }
-            else
-            {
-                packet.AddHostInt32(clientItemDef.CompositeEffectId);
-            }
-
-            packet.AddHostInt32(clientItemDef.Slot);
-
-            packet.AddHostInt32(clientItemDef.Type);
-            packet.AddHostInt32(clientItemDef.Class);
-            packet.AddHostInt32(0);
-
-            equipped.Item2.ItemGUID = clientItem.Guid;
-
-            SendTunneledClientPacket(soeClient, packet.GetRaw());
-            SendClientUpdatePacketEquipItem(soeClient, clientItem.Guid);
-        }
-
-        private static void SendItemFlairEffect(SOEClient soeClient, int flairGuid, int flairEffect)
-        {
-            var weapon = PlayerData.ClientPcProfiles[0].Items.Find(x => x.Item2.Category == 7);
-            var weaponItem = PlayerData.ClientItems.Find(wItem => wItem.Guid == weapon.Item2.ItemGUID);
-            var weaponItemDef = ClientItemDefinitions.Find(wItemDef => wItemDef.Id == weaponItem.Definition);
-
-            var equippedFlair = PlayerData.ClientPcProfiles[0].Items.Find(x => x.Item2.Category == 13);
-
-            var packet = new SOEWriter((ushort)BasePackets.BaseClientUpdatePacket, true);
-            packet.AddHostUInt16((ushort)BaseClientUpdatePackets.ClientUpdatePacketEquipItem);
-            packet.AddHostInt64(PlayerData.PlayerGUID);
-            packet.AddHostInt32(weaponItem.Guid);
-            packet.AddASCIIString(weaponItemDef.ModelName);
-            packet.AddASCIIString(weaponItemDef.TextureAlias);
-            packet.AddASCIIString(weaponItemDef.TintAlias);
-
-            if (weaponItem.Tint == 0)
-            {
-                packet.AddHostInt32(weaponItemDef.IconData.TintId);
-            }
-            else
-            {
-                packet.AddHostInt32(weaponItem.Tint);
-            }
-
-            packet.AddHostInt32(flairEffect);
-            packet.AddHostInt32(weaponItemDef.Slot);
-
-            packet.AddHostInt32(PlayerData.Class);
-            packet.AddHostInt32(weaponItemDef.Class);
-            packet.AddBoolean(true);
-
-            equippedFlair.Item2.ItemGUID = flairGuid;
-            weaponItemDef.CompositeEffectId = flairEffect;
-
-            SendTunneledClientPacket(soeClient, packet.GetRaw());
-            SendFlairEquip(soeClient, flairGuid);
-            SendClientUpdatePacketEquipItem(soeClient, weaponItem.Guid);
-        } 
-
-        private static void SendFlairEquip(SOEClient soeClient, int guid)
-        {
-            var flairItem = PlayerData.ClientItems.Find(fItem => fItem.Guid == guid);
-            var flairItemDef = ClientItemDefinitions.Find(fItemDef => fItemDef.Id == flairItem.Definition);
-
-            var packet = new SOEWriter((ushort)BasePackets.BaseClientUpdatePacket, true);
-            packet.AddHostUInt16((ushort)BaseClientUpdatePackets.ClientUpdatePacketEquipItem);
-            packet.AddHostInt64(PlayerData.PlayerGUID);
-            packet.AddHostInt32(flairItem.Guid);
-            packet.AddASCIIString(flairItemDef.ModelName);
-            packet.AddASCIIString(flairItemDef.TextureAlias);
-            packet.AddASCIIString(flairItemDef.TintAlias);
-
-            if (flairItem.Tint == 0)
-            {
-                packet.AddHostInt32(flairItemDef.IconData.TintId);
-            }
-            else
-            {
-                packet.AddHostInt32(flairItem.Tint);
-            }
-
-            packet.AddHostInt32(flairItemDef.CompositeEffectId);
-            packet.AddHostInt32(flairItemDef.Slot);
-
-            packet.AddHostInt32(PlayerData.Class);
-            packet.AddHostInt32(flairItemDef.Class);
-            packet.AddBoolean(true);
-
-            SendTunneledClientPacket(soeClient, packet.GetRaw());
-            SendClientUpdatePacketEquipItem(soeClient, flairItem.Guid);
-
-        }
-
-        private static void SendClientUpdatePacketEquipItem(SOEClient soeClient, int guid)
-        {
-            var clientItem = PlayerData.ClientItems.Find(cItem => cItem.Guid == guid);
+            var clientItem = PlayerData.ClientItems.Find(cItem => cItem.Guid == GUID);
             var clientItemDef = ClientItemDefinitions.Find(cItemDef => cItemDef.Id == clientItem.Definition);
 
             var packet = new SOEWriter((ushort)BasePackets.BaseClientUpdatePacket, true);
             packet.AddHostUInt16((ushort)BaseClientUpdatePackets.ClientUpdatePacketEquipItem);
-            packet.AddHostInt32(clientItem.Guid);
+            packet.AddHostInt32(GUID);
             packet.AddASCIIString(clientItemDef.ModelName);
             packet.AddASCIIString(clientItemDef.TextureAlias);
             packet.AddASCIIString(clientItemDef.TintAlias);
@@ -467,10 +464,10 @@ namespace Gateway.Login
             }
 
             packet.AddHostInt32(clientItemDef.CompositeEffectId);
-            packet.AddHostInt32(clientItemDef.Slot);
-            packet.AddHostInt32(PlayerData.Class);
+            packet.AddHostInt32(Slot);
+            packet.AddHostInt32(Class);
             packet.AddHostInt32(clientItemDef.Class);
-            packet.AddBoolean(true);
+            packet.AddByte(1);
 
             SendTunneledClientPacket(soeClient, packet.GetRaw());
         }
@@ -507,30 +504,30 @@ namespace Gateway.Login
             SendTunneledClientPacket(soeClient, soeWriter.GetRaw());
         }
 
-        private static void TeleportToBoatLot(SOEClient soeClient)
-        {
-            SOEWriter beginZoning = new SOEWriter((ushort)BasePackets.PacketClientBeginZoning, true);
-            beginZoning.AddASCIIString("hsg_emptylot_boat_01");
-            beginZoning.AddHostUInt32(2u);
-            beginZoning.AddFloat(390f); // X
-            beginZoning.AddFloat(33.5f); // Y
-            beginZoning.AddFloat(425f); // Z
-            beginZoning.AddFloat(0f);
-            for (uint num = 0u; num < 4; num++)
-            {
-                beginZoning.AddHostUInt32(20 * num);
-            }
-            beginZoning.AddASCIIString("");
-            beginZoning.AddBoolean(false);
-            beginZoning.AddByte(2);
-            beginZoning.AddHostUInt32(5u);
-            beginZoning.AddHostUInt32(4u);
-            beginZoning.AddHostUInt32(5u);
-            beginZoning.AddBoolean(false);
-            beginZoning.AddBoolean(false);
-
-            SendTunneledClientPacket(soeClient, beginZoning.GetRaw());
-        }
+        //private static void TeleportToBoatLot(SOEClient soeClient)
+        //{
+        //    SOEWriter beginZoning = new SOEWriter((ushort)BasePackets.PacketClientBeginZoning, true);
+        //    beginZoning.AddASCIIString("hsg_emptylot_boat_01");
+        //    beginZoning.AddHostUInt32(2u);
+        //    beginZoning.AddFloat(390f); // X
+        //    beginZoning.AddFloat(33.5f); // Y
+        //    beginZoning.AddFloat(425f); // Z
+        //    beginZoning.AddFloat(0f);
+        //    for (uint num = 0u; num < 4; num++)
+        //    {
+        //        beginZoning.AddHostUInt32(20 * num);
+        //    }
+        //    beginZoning.AddASCIIString("");
+        //    beginZoning.AddBoolean(false);
+        //    beginZoning.AddByte(2);
+        //    beginZoning.AddHostUInt32(5u);
+        //    beginZoning.AddHostUInt32(4u);
+        //    beginZoning.AddHostUInt32(5u);
+        //    beginZoning.AddBoolean(false);
+        //    beginZoning.AddBoolean(false);
+        //
+        //    SendTunneledClientPacket(soeClient, beginZoning.GetRaw());
+        //}
 
         public static void HandlePacketZoneSafeTeleportRequest(SOEClient soeClient)
         {
@@ -558,7 +555,7 @@ namespace Gateway.Login
             var unknown2 = reader.ReadHostUInt32();
             var unknown3 = reader.ReadBoolean();
 
-            //log.Info($"HandlePacketGameTimeSync Time: {time}, Unknown2: {unknown2}, Unknown3: {unknown3} ");
+            log.Info($"HandlePacketGameTimeSync Time: {time}, Unknown2: {unknown2}, Unknown3: {unknown3} ");
 
             var soeWriter = new SOEWriter((ushort)BasePackets.PacketGameTimeSync, true);
 
@@ -569,28 +566,30 @@ namespace Gateway.Login
             SendTunneledClientPacket(soeClient, soeWriter.GetRaw());
         }
 
-        public static void HandleWallOfData(SOEClient soeClient, SOEReader reader)
+        public static void HandleWallOfDataBasePacket(SOEReader reader)
         {
-            var subOpCode = reader.ReadByte();
+            var OpCode = reader.ReadByte();
 
-            switch (subOpCode)
+            switch (OpCode)
             {
                 case (byte)WallOfDataBasePackets.WallOfDataUIEventPacket:
                     SendWallOfDataUIEventPacket(reader);
+                    break;
+
+                default:
+                    var data = reader.ReadToEnd();
+                    log.Info($"HandleWallOfDataBasePacket SubOpCode: {OpCode}\n{BitConverter.ToString(data).Replace("-", "")}");
                     break;
             }
         }
 
         public static void SendWallOfDataUIEventPacket(SOEReader reader)
         {
-            string Unknown = reader.ReadASCIIString();
-            string Unknown2 = reader.ReadASCIIString();
-            string Slot = reader.ReadASCIIString();
+             string Browser = reader.ReadASCIIString();
+             string Selected = reader.ReadASCIIString();
+             string SelectedSlot = reader.ReadASCIIString();
 
-            log.Info($"HandleWallOfDataUIEventPacket:\n\t" +
-                $"{Unknown}\n\t" +
-                $"{Unknown2}\n\t" +
-                $"{Slot}");
+            log.Info($"HandleWallOfDataUIEventPacket: {Browser} : {Selected} : {SelectedSlot}");
         }
 
         public static void SendTunneledClientPacket(SOEClient soeClient, byte[] rawBytes)
@@ -607,9 +606,9 @@ namespace Gateway.Login
 
         public static void HandleBaseCommandPacket(SOEClient soeClient, SOEReader reader)
         {
-            var opCode = reader.ReadHostUInt16();
+            var OpCode = reader.ReadHostUInt16();
 
-            switch (opCode)
+            switch (OpCode)
             {
                 case (ushort)BaseCommandPackets.CommandPacketFriendsPositionRequest:
                     HandleCommandPacketFriendsPositionRequest(soeClient);
@@ -617,14 +616,14 @@ namespace Gateway.Login
 
                 default:
                     var data = reader.ReadToEnd();
-                    log.Info($"HandleBaseCommandPacket OpCode: {opCode}\n{BitConverter.ToString(data).Replace("-", "")}");
+                    log.Info($"HandleBaseCommandPacket SubOpCode: {OpCode}\n{BitConverter.ToString(data).Replace("-", "")}");
                     break;
             }
         }
 
         public static void HandleCommandPacketFriendsPositionRequest(SOEClient soeClient)
         {
-           /* var soeWriter = new SOEWriter((ushort)BasePackets.PlayerUpdatePacketUpdatePosition, true);
+            var soeWriter = new SOEWriter((ushort)BasePackets.PlayerUpdatePacketUpdatePosition, true);
 
             soeWriter.AddHostInt64(5427660847725618161); // Guid
 
@@ -641,7 +640,7 @@ namespace Gateway.Login
             soeWriter.AddByte(2); // 2 - Player
             soeWriter.AddByte(0);
 
-            SendTunneledClientPacket(soeClient, soeWriter.GetRaw()); */
+            SendTunneledClientPacket(soeClient, soeWriter.GetRaw());
         }
 
         public static void SendTunneledClientWorldPacket(SOEClient soeClient, byte[] rawBytes)
@@ -666,5 +665,22 @@ namespace Gateway.Login
             return array;
         }
 
+        public static Random _random = new Random();
+        public static readonly List<ulong> ConsumedGUIDs = new List<ulong>();
+
+        public static ulong RandomGUID()
+        {
+            ulong GUID;
+            while (true)
+            {
+                byte[] randomBytes = new byte[8];
+                for (int i = 0; i < randomBytes.Length; i++)
+                    randomBytes[i] = (byte)_random.Next(0, 255);
+                GUID = BitConverter.ToUInt64(randomBytes, 0);
+                if (!ConsumedGUIDs.Contains(GUID))
+                    break;
+            }
+            return GUID;
+        }
     }
 }

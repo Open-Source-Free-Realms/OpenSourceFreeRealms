@@ -95,13 +95,13 @@ namespace Gateway.MapChat
         public static void HandlePacketChat(SOEClient soeClient, SOEReader reader)
         {
             ushort messageType = reader.ReadHostUInt16();
-            ulong guid1 = reader.ReadHostUInt64();
+            ulong _ = reader.ReadHostUInt64(); // guid1
             ulong guid2 = reader.ReadHostUInt64();
 
             for (int i = 0; i < 3; i++)
                 reader.ReadHostInt32(); // unknown in player information struct
-            string senderFirstName = reader.ReadASCIIString();
-            string senderLastName = reader.ReadASCIIString();
+            string _2 = reader.ReadASCIIString(); // Sender First Name
+            string _3 = reader.ReadASCIIString(); // Sender Last Name
 
             for (int i = 0; i < 3; i++)
                 reader.ReadHostInt32(); // unknown in player information struct
@@ -114,12 +114,12 @@ namespace Gateway.MapChat
             for (int i = 0; i < 4; i++)
                 position[i] = reader.ReadSingle();
 
-            ulong unknown2 = reader.ReadHostUInt64();
-            int unknown3 = reader.ReadHostInt32();
+            ulong _4 = reader.ReadHostUInt64(); // Unknown
+            int _5 = reader.ReadHostInt32(); // Unknown
 
-            int? unknown4;
+            int? _6; // ChannelId
             if (messageType == 8)
-                unknown4 = reader.ReadHostInt32();
+                _6 = reader.ReadHostInt32();
 
             SendPacketChat(soeClient, messageType, guid2, message, targetFirstName, targetLastName);
         }

@@ -367,7 +367,6 @@ namespace Gateway.Login
                 bw.Write(mounts.MountNumber);
                 bw.Write(mounts.MountName);
                 bw.Write(mounts.MountIcon);
-                bw.Write(mounts.MountId);
                 bw.Write(mounts.MountGUID);
                 bw.Write(mounts.MembersOnly);
                 bw.Write(mounts.MountTintId);
@@ -709,13 +708,14 @@ namespace Gateway.Login
             public int MountNumber { get; set; }
             public int MountName { get; set; }
             public int MountIcon { get; set; }
-            public int MountId { get; set; }
-            public int MountGUID { get; set; }
+            public long MountGUID { get; set; }
             public bool MembersOnly { get; set; }
             public int MountTintId { get; set; }
             public string MountTintAlias { get; set; } = string.Empty;
             public bool FlyTraining { get; set; }
             public bool AbleToFly { get; set; }
+            public int MountModelID { get; set; }
+            public int MountItemDefinitionID { get; set; }
         }
 
         public class PetTrickInfo

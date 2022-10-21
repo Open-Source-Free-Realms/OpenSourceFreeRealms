@@ -9,126 +9,691 @@ namespace Gateway.NPC
     {
         public static void SendPlayerUpdatePacketAddNpc(SOEClient soeClient)
         {
-            var addShBoombox = new SOEWriter((ushort)BasePackets.BasePlayerUpdatePacket, true);
-            addShBoombox.AddHostUInt16((ushort)BasePlayerUpdatePackets.PlayerUpdatePacketAddNpc);
-            addShBoombox.AddHostUInt64(28449863368738); // Guid
-            addShBoombox.AddHostInt32(18044); // Name ID
-            addShBoombox.AddHostInt32(4096); // Model ID
-            addShBoombox.AddBoolean(false); // Unknown4
-            addShBoombox.AddHostInt32(408679); // Unknown5
-            addShBoombox.AddHostInt32(13951728); // Unknown6
-            addShBoombox.AddHostInt32(1); // Unknown7
-            addShBoombox.AddFloat(1.0f); // Unknown8
+            var edwardSullen = new SOEWriter((ushort)BasePackets.BasePlayerUpdatePacket, true);
+            edwardSullen.AddHostUInt16((ushort)BasePlayerUpdatePackets.PlayerUpdatePacketAddNpc);
+            edwardSullen.AddHostUInt64(LoginManager.RandomGUID()); // Guid
+            edwardSullen.AddHostInt32(432135); // Name ID
+            edwardSullen.AddHostInt32(3311); // Model ID
+            edwardSullen.AddBoolean(false); // Unknown4
+            edwardSullen.AddHostInt32(408679); // Unknown5
+            edwardSullen.AddHostInt32(13951728); // Unknown6
+            edwardSullen.AddHostInt32(1); // Unknown7
+            edwardSullen.AddFloat(1.0f); // Unknown8
 
             // Position
-            addShBoombox.AddFloat(88.90495f);
-            addShBoombox.AddFloat(23.542553f);
-            addShBoombox.AddFloat(410.57498f);
-            addShBoombox.AddFloat(1.0f);
+            edwardSullen.AddFloat(-2136.071f);
+            edwardSullen.AddFloat(-32.9525f);
+            edwardSullen.AddFloat(1038.784f);
+            edwardSullen.AddFloat(1.0f);
 
             //Rotation
-            addShBoombox.AddFloat(0.71443385f);
-            addShBoombox.AddFloat(0f);
-            addShBoombox.AddFloat(-0.699703f);
-            addShBoombox.AddFloat(0f);
+            edwardSullen.AddFloat(-0.02317995f);
+            edwardSullen.AddFloat(0f);
+            edwardSullen.AddFloat(0.9997313f);
+            edwardSullen.AddFloat(0f);
 
-            addShBoombox.AddHostInt32(2100); // Unknown11
+            edwardSullen.AddHostInt32(0); // Unknown11
 
-            addShBoombox.AddHostInt32(0); // CharacterAttachmentDataCount
-            addShBoombox.AddHostInt32(1); // Unknown12
+            edwardSullen.AddHostInt32(0); // CharacterAttachmentDataCount
+            edwardSullen.AddHostInt32(1); // Unknown12
 
-            addShBoombox.AddASCIIString(""); // TextureAlias
-            addShBoombox.AddASCIIString(""); // TintAlias
-            addShBoombox.AddHostInt32(0); // TintId
-            addShBoombox.AddBoolean(true); // Unknown16
-            addShBoombox.AddFloat(-0.1f); // Unknown17
-            addShBoombox.AddHostInt32(0); // Unknown18
-            addShBoombox.AddHostInt32(0); // Unknown19
-            addShBoombox.AddASCIIString(""); // Custom Name
-            addShBoombox.AddBoolean(true); // NameDisabled
-            addShBoombox.AddHostInt32(0); // Unknown22
-            addShBoombox.AddFloat(0.0f); // Unknown23
-            addShBoombox.AddFloat(0.0f); // Unknown24
-            addShBoombox.AddHostInt32(0); // Unknown25
-            addShBoombox.AddBoolean(false); // Unknown26
-            addShBoombox.AddFloat(0.0f); // Unknown27
-            addShBoombox.AddBoolean(false); // Unknown28
-            addShBoombox.AddHostInt32(100); // Unknown29
-            addShBoombox.AddHostInt32(-1); // Unknown
-            addShBoombox.AddHostInt32(-1); // Unknown
-            addShBoombox.AddHostInt32(-1); // Unknown
-            addShBoombox.AddBoolean(false); // Unknown
-            addShBoombox.AddBoolean(false); // Unknown
-            addShBoombox.AddHostInt32(-1); // Unknown
-            addShBoombox.AddHostInt32(0); // Unknown
-            addShBoombox.AddHostInt32(0); // Unknown
+            edwardSullen.AddASCIIString(""); // TextureAlias
+            edwardSullen.AddASCIIString(""); // TintAlias
+            edwardSullen.AddHostInt32(0); // TintId
+            edwardSullen.AddBoolean(true); // Unknown16
+            edwardSullen.AddFloat(-0.1f); // Unknown17
+            edwardSullen.AddHostInt32(0); // Unknown18
+            edwardSullen.AddHostInt32(0); // Unknown19
+            edwardSullen.AddASCIIString(""); // Custom Name
+            edwardSullen.AddBoolean(false); // NameDisabled
+            edwardSullen.AddHostInt32(0); // Unknown22
+            edwardSullen.AddFloat(0.0f); // Unknown23
+            edwardSullen.AddFloat(0.0f); // Unknown24
+            edwardSullen.AddHostInt32(0); // Unknown25
+            edwardSullen.AddBoolean(false); // Unknown26
+            edwardSullen.AddFloat(0.0f); // Unknown27
+            edwardSullen.AddBoolean(false); // Unknown28
+            edwardSullen.AddHostInt32(100); // Unknown29
+            edwardSullen.AddHostInt32(-1); // Unknown
+            edwardSullen.AddHostInt32(-1); // Unknown
+            edwardSullen.AddHostInt32(-1); // Unknown
+            edwardSullen.AddBoolean(false); // Unknown
+            edwardSullen.AddBoolean(false); // Unknown
+            edwardSullen.AddHostInt32(-1); // Unknown
+            edwardSullen.AddHostInt32(0); // Unknown
+            edwardSullen.AddHostInt32(0); // Unknown
 
-            addShBoombox.AddHostInt32(0); // EffectTagsCount
+            edwardSullen.AddHostInt32(0); // EffectTagsCount
 
-            addShBoombox.AddBoolean(false); // Unknown
-            addShBoombox.AddHostInt32(0); // Unknown
-            addShBoombox.AddBoolean(false); // Unknown
-            addShBoombox.AddBoolean(false); // Unknown
-            addShBoombox.AddBoolean(false); // Unknown
-            addShBoombox.AddBoolean(false); // Unknown
+            edwardSullen.AddBoolean(false); // Unknown
+            edwardSullen.AddHostInt32(0); // Unknown
+            edwardSullen.AddBoolean(false); // Unknown
+            edwardSullen.AddBoolean(false); // Unknown
+            edwardSullen.AddBoolean(false); // Unknown
+            edwardSullen.AddBoolean(false); // Unknown
 
-            addShBoombox.AddHostInt32(0); // UnknownStruct2
-            addShBoombox.AddHostInt32(0);
-            addShBoombox.AddASCIIString("");
-            addShBoombox.AddASCIIString("");
-            addShBoombox.AddHostInt32(0);
-            addShBoombox.AddASCIIString("");
+            edwardSullen.AddHostInt32(0); // UnknownStruct2
+            edwardSullen.AddASCIIString("");
+            edwardSullen.AddASCIIString("");
+            edwardSullen.AddHostInt32(0);
+            edwardSullen.AddASCIIString("");
 
-            addShBoombox.AddFloat(0.0f);
-            addShBoombox.AddFloat(0.0f);
-            addShBoombox.AddFloat(0.0f);
-            addShBoombox.AddFloat(0.0f);
+            edwardSullen.AddFloat(0.0f);
+            edwardSullen.AddFloat(0.0f);
+            edwardSullen.AddFloat(0.0f);
+            edwardSullen.AddFloat(0.0f);
 
-            addShBoombox.AddHostInt32(-1);
-            addShBoombox.AddHostInt32(0);
-            addShBoombox.AddBoolean(true);
-            addShBoombox.AddHostInt64(0);
-            addShBoombox.AddHostInt32(2);
-            addShBoombox.AddFloat(0.0f);
+            edwardSullen.AddHostInt32(0);
+            edwardSullen.AddHostInt32(-1);
+            edwardSullen.AddHostInt32(0);
+            edwardSullen.AddBoolean(true);
+            edwardSullen.AddHostUInt64(0);
+            edwardSullen.AddHostInt32(2);
+            edwardSullen.AddFloat(0.0f);
 
-            addShBoombox.AddHostInt32(0); // Target
+            edwardSullen.AddHostInt32(0); // Target
 
-            addShBoombox.AddHostInt32(0); // CharacterVariables
+            edwardSullen.AddHostInt32(0); // CharacterVariables
 
-            addShBoombox.AddHostInt32(0);
-            addShBoombox.AddFloat(0.0f);
+            edwardSullen.AddHostInt32(0);
+            edwardSullen.AddFloat(0.0f);
 
-            addShBoombox.AddFloat(0.0f); // Unknown54, float[4]
-            addShBoombox.AddFloat(0.0f);
-            addShBoombox.AddFloat(0.0f);
-            addShBoombox.AddFloat(0.0f);
+            edwardSullen.AddFloat(0.0f); // Unknown54, float[4]
+            edwardSullen.AddFloat(0.0f);
+            edwardSullen.AddFloat(0.0f);
+            edwardSullen.AddFloat(0.0f);
 
-            addShBoombox.AddHostInt32(0); // Unknown
-            addShBoombox.AddFloat(0.0f); // Unknown
-            addShBoombox.AddFloat(0.0f); // Unknown
-            addShBoombox.AddFloat(0.0f); // Unknown
-            addShBoombox.AddASCIIString(""); // Unknown
-            addShBoombox.AddASCIIString(""); // Unknown
-            addShBoombox.AddASCIIString(""); // Unknown
-            addShBoombox.AddBoolean(false); // Unknown
-            addShBoombox.AddHostInt32(0); // Unknown
-            addShBoombox.AddHostInt32(0); // Unknown
-            addShBoombox.AddHostInt32(0); // Unknown
-            addShBoombox.AddHostInt32(8); // Unknown
-            addShBoombox.AddHostInt32(0); // Unknown
-            addShBoombox.AddHostInt32(3442); // Unknown
-            addShBoombox.AddFloat(0.0f); // Unknown
-            addShBoombox.AddHostInt32(0); // Unknown
+            edwardSullen.AddHostInt32(0); // Unknown
+            edwardSullen.AddFloat(0.0f); // Unknown
+            edwardSullen.AddFloat(0.0f); // Unknown
+            edwardSullen.AddFloat(0.0f); // Unknown
+            edwardSullen.AddASCIIString(""); // Unknown
+            edwardSullen.AddASCIIString(""); // Unknown
+            edwardSullen.AddASCIIString(""); // Unknown
+            edwardSullen.AddBoolean(false); // Unknown
+            edwardSullen.AddHostInt32(0); // Unknown
+            edwardSullen.AddHostInt32(0); // Unknown
+            edwardSullen.AddHostInt32(0); // Unknown
+            edwardSullen.AddHostInt32(8); // Unknown
+            edwardSullen.AddHostInt32(0); // Unknown
+            edwardSullen.AddHostInt32(3442); // Unknown
+            edwardSullen.AddFloat(0.0f); // Unknown
+            edwardSullen.AddHostInt32(0); // Unknown
 
-            LoginManager.SendTunneledClientPacket(soeClient, addShBoombox.GetRaw());
+            LoginManager.SendTunneledClientPacket(soeClient, edwardSullen.GetRaw());
+
+            var jakeBlack = new SOEWriter((ushort)BasePackets.BasePlayerUpdatePacket, true);
+            jakeBlack.AddHostUInt16((ushort)BasePlayerUpdatePackets.PlayerUpdatePacketAddNpc);
+            jakeBlack.AddHostUInt64(LoginManager.RandomGUID()); // Guid
+            jakeBlack.AddHostInt32(432094); // Name ID
+            jakeBlack.AddHostInt32(3296); // Model ID
+            jakeBlack.AddBoolean(false); // Unknown4
+            jakeBlack.AddHostInt32(408679); // Unknown5
+            jakeBlack.AddHostInt32(13951728); // Unknown6
+            jakeBlack.AddHostInt32(1); // Unknown7
+            jakeBlack.AddFloat(1.0f); // Unknown8
+
+            // Position
+            jakeBlack.AddFloat(-2136.285f);
+            jakeBlack.AddFloat(-32.94931f);
+            jakeBlack.AddFloat(1044.861f);
+            jakeBlack.AddFloat(1.0f);
+
+            //Rotation
+            jakeBlack.AddFloat(0.205788f);
+            jakeBlack.AddFloat(0f);
+            jakeBlack.AddFloat(-0.9785966f);
+            jakeBlack.AddFloat(0f);
+
+            jakeBlack.AddHostInt32(0); // Unknown11
+
+            jakeBlack.AddHostInt32(0); // CharacterAttachmentDataCount
+            jakeBlack.AddHostInt32(1); // Unknown12
+
+            jakeBlack.AddASCIIString(""); // TextureAlias
+            jakeBlack.AddASCIIString(""); // TintAlias
+            jakeBlack.AddHostInt32(0); // TintId
+            jakeBlack.AddBoolean(true); // Unknown16
+            jakeBlack.AddFloat(-0.1f); // Unknown17
+            jakeBlack.AddHostInt32(0); // Unknown18
+            jakeBlack.AddHostInt32(0); // Unknown19
+            jakeBlack.AddASCIIString(""); // Custom Name
+            jakeBlack.AddBoolean(false); // NameDisabled
+            jakeBlack.AddHostInt32(0); // Unknown22
+            jakeBlack.AddFloat(0.0f); // Unknown23
+            jakeBlack.AddFloat(0.0f); // Unknown24
+            jakeBlack.AddHostInt32(0); // Unknown25
+            jakeBlack.AddBoolean(false); // Unknown26
+            jakeBlack.AddFloat(0.0f); // Unknown27
+            jakeBlack.AddBoolean(false); // Unknown28
+            jakeBlack.AddHostInt32(100); // Unknown29
+            jakeBlack.AddHostInt32(-1); // Unknown
+            jakeBlack.AddHostInt32(-1); // Unknown
+            jakeBlack.AddHostInt32(-1); // Unknown
+            jakeBlack.AddBoolean(false); // Unknown
+            jakeBlack.AddBoolean(false); // Unknown
+            jakeBlack.AddHostInt32(-1); // Unknown
+            jakeBlack.AddHostInt32(0); // Unknown
+            jakeBlack.AddHostInt32(0); // Unknown
+
+            jakeBlack.AddHostInt32(0); // EffectTagsCount
+
+            jakeBlack.AddBoolean(false); // Unknown
+            jakeBlack.AddHostInt32(0); // Unknown
+            jakeBlack.AddBoolean(false); // Unknown
+            jakeBlack.AddBoolean(false); // Unknown
+            jakeBlack.AddBoolean(false); // Unknown
+            jakeBlack.AddBoolean(false); // Unknown
+
+            jakeBlack.AddHostInt32(0); // UnknownStruct2
+            jakeBlack.AddASCIIString("");
+            jakeBlack.AddASCIIString("");
+            jakeBlack.AddHostInt32(0);
+            jakeBlack.AddASCIIString("");
+
+            jakeBlack.AddFloat(0.0f);
+            jakeBlack.AddFloat(0.0f);
+            jakeBlack.AddFloat(0.0f);
+            jakeBlack.AddFloat(0.0f);
+
+            jakeBlack.AddHostInt32(0);
+            jakeBlack.AddHostInt32(-1);
+            jakeBlack.AddHostInt32(0);
+            jakeBlack.AddBoolean(true);
+            jakeBlack.AddHostUInt64(0);
+            jakeBlack.AddHostInt32(2);
+            jakeBlack.AddFloat(0.0f);
+
+            jakeBlack.AddHostInt32(0); // Target
+
+            jakeBlack.AddHostInt32(0); // CharacterVariables
+
+            jakeBlack.AddHostInt32(0);
+            jakeBlack.AddFloat(0.0f);
+
+            jakeBlack.AddFloat(0.0f); // Unknown54, float[4]
+            jakeBlack.AddFloat(0.0f);
+            jakeBlack.AddFloat(0.0f);
+            jakeBlack.AddFloat(0.0f);
+
+            jakeBlack.AddHostInt32(0); // Unknown
+            jakeBlack.AddFloat(0.0f); // Unknown
+            jakeBlack.AddFloat(0.0f); // Unknown
+            jakeBlack.AddFloat(0.0f); // Unknown
+            jakeBlack.AddASCIIString(""); // Unknown
+            jakeBlack.AddASCIIString(""); // Unknown
+            jakeBlack.AddASCIIString(""); // Unknown
+            jakeBlack.AddBoolean(false); // Unknown
+            jakeBlack.AddHostInt32(0); // Unknown
+            jakeBlack.AddHostInt32(0); // Unknown
+            jakeBlack.AddHostInt32(0); // Unknown
+            jakeBlack.AddHostInt32(8); // Unknown
+            jakeBlack.AddHostInt32(0); // Unknown
+            jakeBlack.AddHostInt32(3442); // Unknown
+            jakeBlack.AddFloat(0.0f); // Unknown
+            jakeBlack.AddHostInt32(0); // Unknown
+
+            LoginManager.SendTunneledClientPacket(soeClient, jakeBlack.GetRaw());
+
+            var halloweenBoombox = new SOEWriter((ushort)BasePackets.BasePlayerUpdatePacket, true);
+            halloweenBoombox.AddHostUInt16((ushort)BasePlayerUpdatePackets.PlayerUpdatePacketAddNpc);
+            halloweenBoombox.AddHostUInt64(LoginManager.RandomGUID()); // Guid
+            halloweenBoombox.AddHostInt32(1); // Name ID
+            halloweenBoombox.AddHostInt32(1062); // Model ID
+            halloweenBoombox.AddBoolean(false); // Unknown4
+            halloweenBoombox.AddHostInt32(408679); // Unknown5
+            halloweenBoombox.AddHostInt32(13951728); // Unknown6
+            halloweenBoombox.AddHostInt32(1); // Unknown7
+            halloweenBoombox.AddFloat(1.0f); // Unknown8
+
+            // Position
+            halloweenBoombox.AddFloat(-2129.362f);
+            halloweenBoombox.AddFloat(-30.16377f);
+            halloweenBoombox.AddFloat(1084.563f);
+            halloweenBoombox.AddFloat(1.0f);
+
+            //Rotation
+            halloweenBoombox.AddFloat(-0.1285224f);
+            halloweenBoombox.AddFloat(0f);
+            halloweenBoombox.AddFloat(-0.9917066f);
+            halloweenBoombox.AddFloat(0f);
+
+            halloweenBoombox.AddHostInt32(2100); // Unknown11
+
+            halloweenBoombox.AddHostInt32(0); // CharacterAttachmentDataCount
+            halloweenBoombox.AddHostInt32(1); // Unknown12
+
+            halloweenBoombox.AddASCIIString(""); // TextureAlias
+            halloweenBoombox.AddASCIIString(""); // TintAlias
+            halloweenBoombox.AddHostInt32(0); // TintId
+            halloweenBoombox.AddBoolean(true); // Unknown16
+            halloweenBoombox.AddFloat(-0.1f); // Unknown17
+            halloweenBoombox.AddHostInt32(0); // Unknown18
+            halloweenBoombox.AddHostInt32(0); // Unknown19
+            halloweenBoombox.AddASCIIString("Happy Halloween OSFR!"); // Custom Name
+            halloweenBoombox.AddBoolean(false); // NameDisabled
+            halloweenBoombox.AddHostInt32(0); // Unknown22
+            halloweenBoombox.AddFloat(0.0f); // Unknown23
+            halloweenBoombox.AddFloat(0.0f); // Unknown24
+            halloweenBoombox.AddHostInt32(0); // Unknown25
+            halloweenBoombox.AddBoolean(false); // Unknown26
+            halloweenBoombox.AddFloat(0.0f); // Unknown27
+            halloweenBoombox.AddBoolean(false); // Unknown28
+            halloweenBoombox.AddHostInt32(100); // Unknown29
+            halloweenBoombox.AddHostInt32(-1); // Unknown
+            halloweenBoombox.AddHostInt32(-1); // Unknown
+            halloweenBoombox.AddHostInt32(-1); // Unknown
+            halloweenBoombox.AddBoolean(false); // Unknown
+            halloweenBoombox.AddBoolean(false); // Unknown
+            halloweenBoombox.AddHostInt32(-1); // Unknown
+            halloweenBoombox.AddHostInt32(0); // Unknown
+            halloweenBoombox.AddHostInt32(0); // Unknown
+
+            halloweenBoombox.AddHostInt32(0); // EffectTagsCount
+
+            halloweenBoombox.AddBoolean(false); // Unknown
+            halloweenBoombox.AddHostInt32(0); // Unknown
+            halloweenBoombox.AddBoolean(false); // Unknown
+            halloweenBoombox.AddBoolean(false); // Unknown
+            halloweenBoombox.AddBoolean(false); // Unknown
+            halloweenBoombox.AddBoolean(false); // Unknown
+
+            halloweenBoombox.AddHostInt32(0); // UnknownStruct2
+            halloweenBoombox.AddASCIIString("");
+            halloweenBoombox.AddASCIIString("");
+            halloweenBoombox.AddHostInt32(0);
+            halloweenBoombox.AddASCIIString("");
+
+            halloweenBoombox.AddFloat(0.0f);
+            halloweenBoombox.AddFloat(0.0f);
+            halloweenBoombox.AddFloat(0.0f);
+            halloweenBoombox.AddFloat(0.0f);
+
+            halloweenBoombox.AddHostInt32(0);
+            halloweenBoombox.AddHostInt32(-1);
+            halloweenBoombox.AddHostInt32(0);
+            halloweenBoombox.AddBoolean(true);
+            halloweenBoombox.AddHostUInt64(0);
+            halloweenBoombox.AddHostInt32(2);
+            halloweenBoombox.AddFloat(0.0f);
+
+            halloweenBoombox.AddHostInt32(0); // Target
+
+            halloweenBoombox.AddHostInt32(0); // CharacterVariables
+
+            halloweenBoombox.AddHostInt32(0);
+            halloweenBoombox.AddFloat(0.0f);
+
+            halloweenBoombox.AddFloat(0.0f); // Unknown54, float[4]
+            halloweenBoombox.AddFloat(0.0f);
+            halloweenBoombox.AddFloat(0.0f);
+            halloweenBoombox.AddFloat(0.0f);
+
+            halloweenBoombox.AddHostInt32(0); // Unknown
+            halloweenBoombox.AddFloat(0.0f); // Unknown
+            halloweenBoombox.AddFloat(0.0f); // Unknown
+            halloweenBoombox.AddFloat(0.0f); // Unknown
+            halloweenBoombox.AddASCIIString(""); // Unknown
+            halloweenBoombox.AddASCIIString(""); // Unknown
+            halloweenBoombox.AddASCIIString(""); // Unknown
+            halloweenBoombox.AddBoolean(false); // Unknown
+            halloweenBoombox.AddHostInt32(0); // Unknown
+            halloweenBoombox.AddHostInt32(0); // Unknown
+            halloweenBoombox.AddHostInt32(0); // Unknown
+            halloweenBoombox.AddHostInt32(8); // Unknown
+            halloweenBoombox.AddHostInt32(0); // Unknown
+            halloweenBoombox.AddHostInt32(3442); // Unknown
+            halloweenBoombox.AddFloat(0.0f); // Unknown
+            halloweenBoombox.AddHostInt32(0); // Unknown
+
+            LoginManager.SendTunneledClientPacket(soeClient, halloweenBoombox.GetRaw());
+
+            var smokeDispenser = new SOEWriter((ushort)BasePackets.BasePlayerUpdatePacket, true);
+            smokeDispenser.AddHostUInt16((ushort)BasePlayerUpdatePackets.PlayerUpdatePacketAddNpc);
+            smokeDispenser.AddHostUInt64(LoginManager.RandomGUID()); // Guid
+            smokeDispenser.AddHostInt32(0); // Name ID
+            smokeDispenser.AddHostInt32(4579); // Model ID
+            smokeDispenser.AddBoolean(false); // Unknown4
+            smokeDispenser.AddHostInt32(408679); // Unknown5
+            smokeDispenser.AddHostInt32(13951728); // Unknown6
+            smokeDispenser.AddHostInt32(1); // Unknown7
+            smokeDispenser.AddFloat(1.0f); // Unknown8
+
+            // Position
+            smokeDispenser.AddFloat(-2129.362f);
+            smokeDispenser.AddFloat(-32.16377f);
+            smokeDispenser.AddFloat(1084.563f);
+            smokeDispenser.AddFloat(1.0f);
+
+            //Rotation
+            smokeDispenser.AddFloat(-0.1285224f);
+            smokeDispenser.AddFloat(0f);
+            smokeDispenser.AddFloat(-0.9917066f);
+            smokeDispenser.AddFloat(0f);
+
+            smokeDispenser.AddHostInt32(2100); // Unknown11
+
+            smokeDispenser.AddHostInt32(0); // CharacterAttachmentDataCount
+            smokeDispenser.AddHostInt32(1); // Unknown12
+
+            smokeDispenser.AddASCIIString(""); // TextureAlias
+            smokeDispenser.AddASCIIString(""); // TintAlias
+            smokeDispenser.AddHostInt32(0); // TintId
+            smokeDispenser.AddBoolean(true); // Unknown16
+            smokeDispenser.AddFloat(-0.1f); // Unknown17
+            smokeDispenser.AddHostInt32(0); // Unknown18
+            smokeDispenser.AddHostInt32(0); // Unknown19
+            smokeDispenser.AddASCIIString(""); // Custom Name
+            smokeDispenser.AddBoolean(true); // NameDisabled
+            smokeDispenser.AddHostInt32(0); // Unknown22
+            smokeDispenser.AddFloat(0.0f); // Unknown23
+            smokeDispenser.AddFloat(0.0f); // Unknown24
+            smokeDispenser.AddHostInt32(0); // Unknown25
+            smokeDispenser.AddBoolean(false); // Unknown26
+            smokeDispenser.AddFloat(0.0f); // Unknown27
+            smokeDispenser.AddBoolean(false); // Unknown28
+            smokeDispenser.AddHostInt32(100); // Unknown29
+            smokeDispenser.AddHostInt32(-1); // Unknown
+            smokeDispenser.AddHostInt32(-1); // Unknown
+            smokeDispenser.AddHostInt32(-1); // Unknown
+            smokeDispenser.AddBoolean(false); // Unknown
+            smokeDispenser.AddBoolean(false); // Unknown
+            smokeDispenser.AddHostInt32(-1); // Unknown
+            smokeDispenser.AddHostInt32(0); // Unknown
+            smokeDispenser.AddHostInt32(0); // Unknown
+
+            smokeDispenser.AddHostInt32(0); // EffectTagsCount
+
+            smokeDispenser.AddBoolean(false); // Unknown
+            smokeDispenser.AddHostInt32(0); // Unknown
+            smokeDispenser.AddBoolean(false); // Unknown
+            smokeDispenser.AddBoolean(false); // Unknown
+            smokeDispenser.AddBoolean(false); // Unknown
+            smokeDispenser.AddBoolean(false); // Unknown
+
+            smokeDispenser.AddHostInt32(0); // UnknownStruct2
+            smokeDispenser.AddASCIIString("");
+            smokeDispenser.AddASCIIString("");
+            smokeDispenser.AddHostInt32(0);
+            smokeDispenser.AddASCIIString("");
+
+            smokeDispenser.AddFloat(0.0f);
+            smokeDispenser.AddFloat(0.0f);
+            smokeDispenser.AddFloat(0.0f);
+            smokeDispenser.AddFloat(0.0f);
+
+            smokeDispenser.AddHostInt32(0);
+            smokeDispenser.AddHostInt32(-1);
+            smokeDispenser.AddHostInt32(0);
+            smokeDispenser.AddBoolean(true);
+            smokeDispenser.AddHostUInt64(0);
+            smokeDispenser.AddHostInt32(2);
+            smokeDispenser.AddFloat(0.0f);
+
+            smokeDispenser.AddHostInt32(0); // Target
+
+            smokeDispenser.AddHostInt32(0); // CharacterVariables
+
+            smokeDispenser.AddHostInt32(0);
+            smokeDispenser.AddFloat(0.0f);
+
+            smokeDispenser.AddFloat(0.0f); // Unknown54, float[4]
+            smokeDispenser.AddFloat(0.0f);
+            smokeDispenser.AddFloat(0.0f);
+            smokeDispenser.AddFloat(0.0f);
+
+            smokeDispenser.AddHostInt32(0); // Unknown
+            smokeDispenser.AddFloat(0.0f); // Unknown
+            smokeDispenser.AddFloat(0.0f); // Unknown
+            smokeDispenser.AddFloat(0.0f); // Unknown
+            smokeDispenser.AddASCIIString(""); // Unknown
+            smokeDispenser.AddASCIIString(""); // Unknown
+            smokeDispenser.AddASCIIString(""); // Unknown
+            smokeDispenser.AddBoolean(false); // Unknown
+            smokeDispenser.AddHostInt32(0); // Unknown
+            smokeDispenser.AddHostInt32(0); // Unknown
+            smokeDispenser.AddHostInt32(0); // Unknown
+            smokeDispenser.AddHostInt32(8); // Unknown
+            smokeDispenser.AddHostInt32(0); // Unknown
+            smokeDispenser.AddHostInt32(3442); // Unknown
+            smokeDispenser.AddFloat(0.0f); // Unknown
+            smokeDispenser.AddHostInt32(0); // Unknown
+
+            LoginManager.SendTunneledClientPacket(soeClient, smokeDispenser.GetRaw());
+
+            var halloweenHarry = new SOEWriter((ushort)BasePackets.BasePlayerUpdatePacket, true);
+            halloweenHarry.AddHostUInt16((ushort)BasePlayerUpdatePackets.PlayerUpdatePacketAddNpc);
+            halloweenHarry.AddHostUInt64(LoginManager.RandomGUID()); // Guid
+            halloweenHarry.AddHostInt32(415047); // Name ID
+            halloweenHarry.AddHostInt32(1692); // Model ID
+            halloweenHarry.AddBoolean(false); // Unknown4
+            halloweenHarry.AddHostInt32(408679); // Unknown5
+            halloweenHarry.AddHostInt32(13951728); // Unknown6
+            halloweenHarry.AddHostInt32(1); // Unknown7
+            halloweenHarry.AddFloat(1.0f); // Unknown8
+
+            // Position
+            halloweenHarry.AddFloat(-2125.884f);
+            halloweenHarry.AddFloat(-32.17203f);
+            halloweenHarry.AddFloat(1082.314f);
+            halloweenHarry.AddFloat(1.0f);
+
+            //Rotation
+            halloweenHarry.AddFloat(-0.3614593f);
+            halloweenHarry.AddFloat(0f);
+            halloweenHarry.AddFloat(-0.9323878f);
+            halloweenHarry.AddFloat(0f);
+
+            halloweenHarry.AddHostInt32(1); // Unknown11
+
+            halloweenHarry.AddHostInt32(0); // CharacterAttachmentDataCount
+            halloweenHarry.AddHostInt32(1); // Unknown12
+
+            halloweenHarry.AddASCIIString(""); // TextureAlias
+            halloweenHarry.AddASCIIString(""); // TintAlias
+            halloweenHarry.AddHostInt32(0); // TintId
+            halloweenHarry.AddBoolean(true); // Unknown16
+            halloweenHarry.AddFloat(0f); // Unknown17
+            halloweenHarry.AddHostInt32(0); // Unknown18
+            halloweenHarry.AddHostInt32(0); // Unknown19
+            halloweenHarry.AddASCIIString(""); // Custom Name
+            halloweenHarry.AddBoolean(false); // NameDisabled
+            halloweenHarry.AddHostInt32(0); // Unknown22
+            halloweenHarry.AddFloat(0.0f); // Unknown23
+            halloweenHarry.AddFloat(0.0f); // Unknown24
+            halloweenHarry.AddHostInt32(0); // Unknown25
+            halloweenHarry.AddBoolean(false); // Unknown26
+            halloweenHarry.AddFloat(0.0f); // Unknown27
+            halloweenHarry.AddBoolean(false); // Unknown28
+            halloweenHarry.AddHostInt32(100); // Unknown29
+            halloweenHarry.AddHostInt32(-1); // Unknown
+            halloweenHarry.AddHostInt32(-1); // Unknown
+            halloweenHarry.AddHostInt32(-1); // Unknown
+            halloweenHarry.AddBoolean(false); // Unknown
+            halloweenHarry.AddBoolean(false); // Unknown
+            halloweenHarry.AddHostInt32(-1); // Unknown
+            halloweenHarry.AddHostInt32(0); // Unknown
+            halloweenHarry.AddHostInt32(0); // Unknown
+
+            halloweenHarry.AddHostInt32(0); // EffectTagsCount
+
+            halloweenHarry.AddBoolean(false); // Unknown
+            halloweenHarry.AddHostInt32(0); // Unknown
+            halloweenHarry.AddBoolean(false); // Unknown
+            halloweenHarry.AddBoolean(false); // Unknown
+            halloweenHarry.AddBoolean(false); // Unknown
+            halloweenHarry.AddBoolean(false); // Unknown
+
+            halloweenHarry.AddHostInt32(0); // UnknownStruct2
+            halloweenHarry.AddASCIIString("");
+            halloweenHarry.AddASCIIString("");
+            halloweenHarry.AddHostInt32(0);
+            halloweenHarry.AddASCIIString("");
+
+            halloweenHarry.AddFloat(0.0f);
+            halloweenHarry.AddFloat(0.0f);
+            halloweenHarry.AddFloat(0.0f);
+            halloweenHarry.AddFloat(0.0f);
+
+            halloweenHarry.AddHostInt32(0);
+            halloweenHarry.AddHostInt32(-1);
+            halloweenHarry.AddHostInt32(0);
+            halloweenHarry.AddBoolean(true);
+            halloweenHarry.AddHostUInt64(0);
+            halloweenHarry.AddHostInt32(2);
+            halloweenHarry.AddFloat(0.0f);
+
+            halloweenHarry.AddHostInt32(0); // Target
+
+            halloweenHarry.AddHostInt32(0); // CharacterVariables
+
+            halloweenHarry.AddHostInt32(0);
+            halloweenHarry.AddFloat(0.0f);
+
+            halloweenHarry.AddFloat(0.0f); // Unknown54, float[4]
+            halloweenHarry.AddFloat(0.0f);
+            halloweenHarry.AddFloat(0.0f);
+            halloweenHarry.AddFloat(0.0f);
+
+            halloweenHarry.AddHostInt32(0); // Unknown
+            halloweenHarry.AddFloat(0.0f); // Unknown
+            halloweenHarry.AddFloat(0.0f); // Unknown
+            halloweenHarry.AddFloat(0.0f); // Unknown
+            halloweenHarry.AddASCIIString(""); // Unknown
+            halloweenHarry.AddASCIIString(""); // Unknown
+            halloweenHarry.AddASCIIString(""); // Unknown
+            halloweenHarry.AddBoolean(false); // Unknown
+            halloweenHarry.AddHostInt32(0); // Unknown
+            halloweenHarry.AddHostInt32(0); // Unknown
+            halloweenHarry.AddHostInt32(0); // Unknown
+            halloweenHarry.AddHostInt32(8); // Unknown
+            halloweenHarry.AddHostInt32(0); // Unknown
+            halloweenHarry.AddHostInt32(3442); // Unknown
+            halloweenHarry.AddFloat(0.0f); // Unknown
+            halloweenHarry.AddHostInt32(0); // Unknown
+
+            LoginManager.SendTunneledClientPacket(soeClient, halloweenHarry.GetRaw());
+
+            var ghostCat = new SOEWriter((ushort)BasePackets.BasePlayerUpdatePacket, true);
+            ghostCat.AddHostUInt16((ushort)BasePlayerUpdatePackets.PlayerUpdatePacketAddNpc);
+            ghostCat.AddHostUInt64(LoginManager.RandomGUID()); // Guid
+            ghostCat.AddHostInt32(0); // Name ID
+            ghostCat.AddHostInt32(1013); // Model ID
+            ghostCat.AddBoolean(false); // Unknown4
+            ghostCat.AddHostInt32(408679); // Unknown5
+            ghostCat.AddHostInt32(13951728); // Unknown6
+            ghostCat.AddHostInt32(1); // Unknown7
+            ghostCat.AddFloat(1.0f); // Unknown8
+
+            // Position
+            ghostCat.AddFloat(-2126.807f);
+            ghostCat.AddFloat(-32.12037f);
+            ghostCat.AddFloat(1082.46f);
+            ghostCat.AddFloat(1.0f);
+
+            //Rotation
+            ghostCat.AddFloat(-0.2908207f);
+            ghostCat.AddFloat(0f);
+            ghostCat.AddFloat(-0.9567776f);
+            ghostCat.AddFloat(0f);
+
+            ghostCat.AddHostInt32(1); // Unknown11
+
+            ghostCat.AddHostInt32(0); // CharacterAttachmentDataCount
+            ghostCat.AddHostInt32(1); // Unknown12
+
+            ghostCat.AddASCIIString(""); // TextureAlias
+            ghostCat.AddASCIIString(""); // TintAlias
+            ghostCat.AddHostInt32(0); // TintId
+            ghostCat.AddBoolean(true); // Unknown16
+            ghostCat.AddFloat(0f); // Unknown17
+            ghostCat.AddHostInt32(0); // Unknown18
+            ghostCat.AddHostInt32(0); // Unknown19
+            ghostCat.AddASCIIString(""); // Custom Name
+            ghostCat.AddBoolean(true); // NameDisabled
+            ghostCat.AddHostInt32(0); // Unknown22
+            ghostCat.AddFloat(0.0f); // Unknown23
+            ghostCat.AddFloat(0.0f); // Unknown24
+            ghostCat.AddHostInt32(0); // Unknown25
+            ghostCat.AddBoolean(false); // Unknown26
+            ghostCat.AddFloat(0.0f); // Unknown27
+            ghostCat.AddBoolean(false); // Unknown28
+            ghostCat.AddHostInt32(100); // Unknown29
+            ghostCat.AddHostInt32(-1); // Unknown
+            ghostCat.AddHostInt32(-1); // Unknown
+            ghostCat.AddHostInt32(-1); // Unknown
+            ghostCat.AddBoolean(false); // Unknown
+            ghostCat.AddBoolean(false); // Unknown
+            ghostCat.AddHostInt32(-1); // Unknown
+            ghostCat.AddHostInt32(0); // Unknown
+            ghostCat.AddHostInt32(0); // Unknown
+
+            ghostCat.AddHostInt32(0); // EffectTagsCount
+
+            ghostCat.AddBoolean(false); // Unknown
+            ghostCat.AddHostInt32(0); // Unknown
+            ghostCat.AddBoolean(false); // Unknown
+            ghostCat.AddBoolean(false); // Unknown
+            ghostCat.AddBoolean(false); // Unknown
+            ghostCat.AddBoolean(false); // Unknown
+
+            ghostCat.AddHostInt32(0); // UnknownStruct2
+            ghostCat.AddASCIIString("");
+            ghostCat.AddASCIIString("");
+            ghostCat.AddHostInt32(0);
+            ghostCat.AddASCIIString("");
+
+            ghostCat.AddFloat(0.0f);
+            ghostCat.AddFloat(0.0f);
+            ghostCat.AddFloat(0.0f);
+            ghostCat.AddFloat(0.0f);
+
+            ghostCat.AddHostInt32(0);
+            ghostCat.AddHostInt32(-1);
+            ghostCat.AddHostInt32(0);
+            ghostCat.AddBoolean(true);
+            ghostCat.AddHostUInt64(0);
+            ghostCat.AddHostInt32(2);
+            ghostCat.AddFloat(0.0f);
+
+            ghostCat.AddHostInt32(0); // Target
+
+            ghostCat.AddHostInt32(0); // CharacterVariables
+
+            ghostCat.AddHostInt32(0);
+            ghostCat.AddFloat(0.0f);
+
+            ghostCat.AddFloat(0.0f); // Unknown54, float[4]
+            ghostCat.AddFloat(0.0f);
+            ghostCat.AddFloat(0.0f);
+            ghostCat.AddFloat(0.0f);
+
+            ghostCat.AddHostInt32(0); // Unknown
+            ghostCat.AddFloat(0.0f); // Unknown
+            ghostCat.AddFloat(0.0f); // Unknown
+            ghostCat.AddFloat(0.0f); // Unknown
+            ghostCat.AddASCIIString(""); // Unknown
+            ghostCat.AddASCIIString(""); // Unknown
+            ghostCat.AddASCIIString(""); // Unknown
+            ghostCat.AddBoolean(false); // Unknown
+            ghostCat.AddHostInt32(0); // Unknown
+            ghostCat.AddHostInt32(0); // Unknown
+            ghostCat.AddHostInt32(0); // Unknown
+            ghostCat.AddHostInt32(8); // Unknown
+            ghostCat.AddHostInt32(0); // Unknown
+            ghostCat.AddHostInt32(3442); // Unknown
+            ghostCat.AddFloat(0.0f); // Unknown
+            ghostCat.AddHostInt32(0); // Unknown
+
+            LoginManager.SendTunneledClientPacket(soeClient, ghostCat.GetRaw());
+
         }
-
         public static void SendWarpStones(SOEClient soeClient)
         {
             //Briarheart
             var addBhWarpstone = new SOEWriter((ushort)BasePackets.BasePlayerUpdatePacket, true);
             addBhWarpstone.AddHostUInt16((ushort)BasePlayerUpdatePackets.PlayerUpdatePacketAddNpc);
-            addBhWarpstone.AddHostUInt64(127610765091); // Guid
+            addBhWarpstone.AddHostUInt64(LoginManager.RandomGUID()); // Guid
             addBhWarpstone.AddHostInt32(24730); // Name ID
             addBhWarpstone.AddHostInt32(280); // Model ID
             addBhWarpstone.AddBoolean(false); // Unknown4
@@ -204,7 +769,7 @@ namespace Gateway.NPC
             addBhWarpstone.AddHostInt32(-1);
             addBhWarpstone.AddHostInt32(0);
             addBhWarpstone.AddBoolean(true);
-            addBhWarpstone.AddHostInt64(0);
+            addBhWarpstone.AddHostUInt64(0);
             addBhWarpstone.AddHostInt32(2);
             addBhWarpstone.AddFloat(0.0f);
 
@@ -240,7 +805,7 @@ namespace Gateway.NPC
             //Bristlewood
             var addBswWarpstone = new SOEWriter((ushort)BasePackets.BasePlayerUpdatePacket, true);
             addBswWarpstone.AddHostUInt16((ushort)BasePlayerUpdatePackets.PlayerUpdatePacketAddNpc);
-            addBswWarpstone.AddHostUInt64(12097612768932123); // Guid
+            addBswWarpstone.AddHostUInt64(LoginManager.RandomGUID()); // Guid
             addBswWarpstone.AddHostInt32(390361); // Name ID
             addBswWarpstone.AddHostInt32(280); // Model ID
             addBswWarpstone.AddBoolean(false); // Unknown4
@@ -316,7 +881,7 @@ namespace Gateway.NPC
             addBswWarpstone.AddHostInt32(-1);
             addBswWarpstone.AddHostInt32(0);
             addBswWarpstone.AddBoolean(true);
-            addBswWarpstone.AddHostInt64(0);
+            addBswWarpstone.AddHostUInt64(0);
             addBswWarpstone.AddHostInt32(2);
             addBswWarpstone.AddFloat(0.0f);
 
@@ -352,7 +917,7 @@ namespace Gateway.NPC
             //Briarwood
             var addBwWarpstone = new SOEWriter((ushort)BasePackets.BasePlayerUpdatePacket, true);
             addBwWarpstone.AddHostUInt16((ushort)BasePlayerUpdatePackets.PlayerUpdatePacketAddNpc);
-            addBwWarpstone.AddHostUInt64(21589928175657); // Guid
+            addBwWarpstone.AddHostUInt64(LoginManager.RandomGUID()); // Guid
             addBwWarpstone.AddHostInt32(20832); // Name ID
             addBwWarpstone.AddHostInt32(280); // Model ID
             addBwWarpstone.AddBoolean(false); // Unknown4
@@ -428,7 +993,7 @@ namespace Gateway.NPC
             addBwWarpstone.AddHostInt32(-1);
             addBwWarpstone.AddHostInt32(0);
             addBwWarpstone.AddBoolean(true);
-            addBwWarpstone.AddHostInt64(0);
+            addBwWarpstone.AddHostUInt64(0);
             addBwWarpstone.AddHostInt32(2);
             addBwWarpstone.AddFloat(0.0f);
 
@@ -464,7 +1029,7 @@ namespace Gateway.NPC
             //Greenwood
             var addGwWarpstone = new SOEWriter((ushort)BasePackets.BasePlayerUpdatePacket, true);
             addGwWarpstone.AddHostUInt16((ushort)BasePlayerUpdatePackets.PlayerUpdatePacketAddNpc);
-            addGwWarpstone.AddHostUInt64(1825195893275892); // Guid
+            addGwWarpstone.AddHostUInt64(LoginManager.RandomGUID()); // Guid
             addGwWarpstone.AddHostInt32(428994); // Name ID
             addGwWarpstone.AddHostInt32(280); // Model ID
             addGwWarpstone.AddBoolean(false); // Unknown4
@@ -540,7 +1105,7 @@ namespace Gateway.NPC
             addGwWarpstone.AddHostInt32(-1);
             addGwWarpstone.AddHostInt32(0);
             addGwWarpstone.AddBoolean(true);
-            addGwWarpstone.AddHostInt64(0);
+            addGwWarpstone.AddHostUInt64(0);
             addGwWarpstone.AddHostInt32(2);
             addGwWarpstone.AddFloat(0.0f);
 
@@ -576,7 +1141,7 @@ namespace Gateway.NPC
             //Merry Vale
             var addMvWarpstone = new SOEWriter((ushort)BasePackets.BasePlayerUpdatePacket, true);
             addMvWarpstone.AddHostUInt16((ushort)BasePlayerUpdatePackets.PlayerUpdatePacketAddNpc);
-            addMvWarpstone.AddHostUInt64(92571971102791); // Guid
+            addMvWarpstone.AddHostUInt64(LoginManager.RandomGUID()); // Guid
             addMvWarpstone.AddHostInt32(41303); // Name ID
             addMvWarpstone.AddHostInt32(280); // Model ID
             addMvWarpstone.AddBoolean(false); // Unknown4
@@ -652,7 +1217,7 @@ namespace Gateway.NPC
             addMvWarpstone.AddHostInt32(-1);
             addMvWarpstone.AddHostInt32(0);
             addMvWarpstone.AddBoolean(true);
-            addMvWarpstone.AddHostInt64(0);
+            addMvWarpstone.AddHostUInt64(0);
             addMvWarpstone.AddHostInt32(2);
             addMvWarpstone.AddFloat(0.0f);
 
@@ -688,7 +1253,7 @@ namespace Gateway.NPC
             //Lavender Coast
             var addLcWarpstone = new SOEWriter((ushort)BasePackets.BasePlayerUpdatePacket, true);
             addLcWarpstone.AddHostUInt16((ushort)BasePlayerUpdatePackets.PlayerUpdatePacketAddNpc);
-            addLcWarpstone.AddHostUInt64(98126581251126245); // Guid
+            addLcWarpstone.AddHostUInt64(LoginManager.RandomGUID()); // Guid
             addLcWarpstone.AddHostInt32(41304); // Name ID
             addLcWarpstone.AddHostInt32(280); // Model ID
             addLcWarpstone.AddBoolean(false); // Unknown4
@@ -764,7 +1329,7 @@ namespace Gateway.NPC
             addLcWarpstone.AddHostInt32(-1);
             addLcWarpstone.AddHostInt32(0);
             addLcWarpstone.AddBoolean(true);
-            addLcWarpstone.AddHostInt64(0);
+            addLcWarpstone.AddHostUInt64(0);
             addLcWarpstone.AddHostInt32(2);
             addLcWarpstone.AddFloat(0.0f);
 
@@ -800,7 +1365,7 @@ namespace Gateway.NPC
             //Cobblestone Village
             var addCvWarpstone = new SOEWriter((ushort)BasePackets.BasePlayerUpdatePacket, true);
             addCvWarpstone.AddHostUInt16((ushort)BasePlayerUpdatePackets.PlayerUpdatePacketAddNpc);
-            addCvWarpstone.AddHostUInt64(7265186181216); // Guid
+            addCvWarpstone.AddHostUInt64(LoginManager.RandomGUID()); // Guid
             addCvWarpstone.AddHostInt32(20247); // Name ID
             addCvWarpstone.AddHostInt32(280); // Model ID
             addCvWarpstone.AddBoolean(false); // Unknown4
@@ -876,7 +1441,7 @@ namespace Gateway.NPC
             addCvWarpstone.AddHostInt32(-1);
             addCvWarpstone.AddHostInt32(0);
             addCvWarpstone.AddBoolean(true);
-            addCvWarpstone.AddHostInt64(0);
+            addCvWarpstone.AddHostUInt64(0);
             addCvWarpstone.AddHostInt32(2);
             addCvWarpstone.AddFloat(0.0f);
 
@@ -912,7 +1477,7 @@ namespace Gateway.NPC
             //Lakeshore
             var addLsWarpstone = new SOEWriter((ushort)BasePackets.BasePlayerUpdatePacket, true);
             addLsWarpstone.AddHostUInt16((ushort)BasePlayerUpdatePackets.PlayerUpdatePacketAddNpc);
-            addLsWarpstone.AddHostUInt64(41657623876892); // Guid
+            addLsWarpstone.AddHostUInt64(LoginManager.RandomGUID()); // Guid
             addLsWarpstone.AddHostInt32(41298); // Name ID
             addLsWarpstone.AddHostInt32(280); // Model ID
             addLsWarpstone.AddBoolean(false); // Unknown4
@@ -988,7 +1553,7 @@ namespace Gateway.NPC
             addLsWarpstone.AddHostInt32(-1);
             addLsWarpstone.AddHostInt32(0);
             addLsWarpstone.AddBoolean(true);
-            addLsWarpstone.AddHostInt64(0);
+            addLsWarpstone.AddHostUInt64(0);
             addLsWarpstone.AddHostInt32(2);
             addLsWarpstone.AddFloat(0.0f);
 
@@ -1024,7 +1589,7 @@ namespace Gateway.NPC
             //Shrouded Glade
             var addSdgWarpstone = new SOEWriter((ushort)BasePackets.BasePlayerUpdatePacket, true);
             addSdgWarpstone.AddHostUInt16((ushort)BasePlayerUpdatePackets.PlayerUpdatePacketAddNpc);
-            addSdgWarpstone.AddHostUInt64(321571985671); // Guid
+            addSdgWarpstone.AddHostUInt64(LoginManager.RandomGUID()); // Guid
             addSdgWarpstone.AddHostInt32(41297); // Name ID
             addSdgWarpstone.AddHostInt32(280); // Model ID
             addSdgWarpstone.AddBoolean(false); // Unknown4
@@ -1100,7 +1665,7 @@ namespace Gateway.NPC
             addSdgWarpstone.AddHostInt32(-1);
             addSdgWarpstone.AddHostInt32(0);
             addSdgWarpstone.AddBoolean(true);
-            addSdgWarpstone.AddHostInt64(0);
+            addSdgWarpstone.AddHostUInt64(0);
             addSdgWarpstone.AddHostInt32(2);
             addSdgWarpstone.AddFloat(0.0f);
 
@@ -1136,7 +1701,7 @@ namespace Gateway.NPC
             //Highroad Junction
             var addHjWarpstone = new SOEWriter((ushort)BasePackets.BasePlayerUpdatePacket, true);
             addHjWarpstone.AddHostUInt16((ushort)BasePlayerUpdatePackets.PlayerUpdatePacketAddNpc);
-            addHjWarpstone.AddHostUInt64(2875198671964653); // Guid
+            addHjWarpstone.AddHostUInt64(LoginManager.RandomGUID()); // Guid
             addHjWarpstone.AddHostInt32(104037); // Name ID
             addHjWarpstone.AddHostInt32(280); // Model ID
             addHjWarpstone.AddBoolean(false); // Unknown4
@@ -1212,7 +1777,7 @@ namespace Gateway.NPC
             addHjWarpstone.AddHostInt32(-1);
             addHjWarpstone.AddHostInt32(0);
             addHjWarpstone.AddBoolean(true);
-            addHjWarpstone.AddHostInt64(0);
+            addHjWarpstone.AddHostUInt64(0);
             addHjWarpstone.AddHostInt32(2);
             addHjWarpstone.AddFloat(0.0f);
 
@@ -1248,7 +1813,7 @@ namespace Gateway.NPC
             //Wugachug
             var addWcWarpstone = new SOEWriter((ushort)BasePackets.BasePlayerUpdatePacket, true);
             addWcWarpstone.AddHostUInt16((ushort)BasePlayerUpdatePackets.PlayerUpdatePacketAddNpc);
-            addWcWarpstone.AddHostUInt64(928161896716432); // Guid
+            addWcWarpstone.AddHostUInt64(LoginManager.RandomGUID()); // Guid
             addWcWarpstone.AddHostInt32(41301); // Name ID
             addWcWarpstone.AddHostInt32(280); // Model ID
             addWcWarpstone.AddBoolean(false); // Unknown4
@@ -1324,7 +1889,7 @@ namespace Gateway.NPC
             addWcWarpstone.AddHostInt32(-1);
             addWcWarpstone.AddHostInt32(0);
             addWcWarpstone.AddBoolean(true);
-            addWcWarpstone.AddHostInt64(0);
+            addWcWarpstone.AddHostUInt64(0);
             addWcWarpstone.AddHostInt32(2);
             addWcWarpstone.AddFloat(0.0f);
 
@@ -1360,7 +1925,7 @@ namespace Gateway.NPC
             //Seaside
             var addSsWarpstone = new SOEWriter((ushort)BasePackets.BasePlayerUpdatePacket, true);
             addSsWarpstone.AddHostUInt16((ushort)BasePlayerUpdatePackets.PlayerUpdatePacketAddNpc);
-            addSsWarpstone.AddHostUInt64(981267891613262); // Guid
+            addSsWarpstone.AddHostUInt64(LoginManager.RandomGUID()); // Guid
             addSsWarpstone.AddHostInt32(41302); // Name ID
             addSsWarpstone.AddHostInt32(280); // Model ID
             addSsWarpstone.AddBoolean(false); // Unknown4
@@ -1436,7 +2001,7 @@ namespace Gateway.NPC
             addSsWarpstone.AddHostInt32(-1);
             addSsWarpstone.AddHostInt32(0);
             addSsWarpstone.AddBoolean(true);
-            addSsWarpstone.AddHostInt64(0);
+            addSsWarpstone.AddHostUInt64(0);
             addSsWarpstone.AddHostInt32(2);
             addSsWarpstone.AddFloat(0.0f);
 
@@ -1472,7 +2037,7 @@ namespace Gateway.NPC
             //Sanctuary
             var addSgWarpstone = new SOEWriter((ushort)BasePackets.BasePlayerUpdatePacket, true);
             addSgWarpstone.AddHostUInt16((ushort)BasePlayerUpdatePackets.PlayerUpdatePacketAddNpc);
-            addSgWarpstone.AddHostUInt64(14293651161170); // Guid
+            addSgWarpstone.AddHostUInt64(LoginManager.RandomGUID()); // Guid
             addSgWarpstone.AddHostInt32(20831); // Name ID
             addSgWarpstone.AddHostInt32(280); // Model ID
             addSgWarpstone.AddBoolean(false); // Unknown4
@@ -1548,7 +2113,7 @@ namespace Gateway.NPC
             addSgWarpstone.AddHostInt32(-1);
             addSgWarpstone.AddHostInt32(0);
             addSgWarpstone.AddBoolean(true);
-            addSgWarpstone.AddHostInt64(0);
+            addSgWarpstone.AddHostUInt64(0);
             addSgWarpstone.AddHostInt32(2);
             addSgWarpstone.AddFloat(0.0f);
 
@@ -1584,7 +2149,7 @@ namespace Gateway.NPC
             //Snowhill
             var addShWarpstone = new SOEWriter((ushort)BasePackets.BasePlayerUpdatePacket, true);
             addShWarpstone.AddHostUInt16((ushort)BasePlayerUpdatePackets.PlayerUpdatePacketAddNpc);
-            addShWarpstone.AddHostUInt64(7215545057314); // Guid
+            addShWarpstone.AddHostUInt64(LoginManager.RandomGUID()); // Guid
             addShWarpstone.AddHostInt32(20830); // Name ID
             addShWarpstone.AddHostInt32(280); // Model ID
             addShWarpstone.AddBoolean(false); // Unknown4
@@ -1660,7 +2225,7 @@ namespace Gateway.NPC
             addShWarpstone.AddHostInt32(-1);
             addShWarpstone.AddHostInt32(0);
             addShWarpstone.AddBoolean(true);
-            addShWarpstone.AddHostInt64(0);
+            addShWarpstone.AddHostUInt64(0);
             addShWarpstone.AddHostInt32(2);
             addShWarpstone.AddFloat(0.0f);
 
@@ -1708,12 +2273,11 @@ namespace Gateway.NPC
             LoginManager.SendTunneledClientPacket(soeClient, addSgWarpstone.GetRaw());
             LoginManager.SendTunneledClientPacket(soeClient, addShWarpstone.GetRaw());
         }
-
         public static void SendWarpWatchers(SOEClient soeClient)
         {
             var addKWarpWatcher = new SOEWriter((ushort)BasePackets.BasePlayerUpdatePacket, true);
             addKWarpWatcher.AddHostUInt16((ushort)BasePlayerUpdatePackets.PlayerUpdatePacketAddNpc);
-            addKWarpWatcher.AddHostUInt64(70162585747538); // Guid
+            addKWarpWatcher.AddHostUInt64(LoginManager.RandomGUID()); // Guid
             addKWarpWatcher.AddHostInt32(384749); // Name ID
             addKWarpWatcher.AddHostInt32(468); // Model ID
             addKWarpWatcher.AddBoolean(false); // Unknown4
@@ -1789,7 +2353,7 @@ namespace Gateway.NPC
             addKWarpWatcher.AddHostInt32(-1);
             addKWarpWatcher.AddHostInt32(0);
             addKWarpWatcher.AddBoolean(true);
-            addKWarpWatcher.AddHostInt64(0);
+            addKWarpWatcher.AddHostUInt64(0);
             addKWarpWatcher.AddHostInt32(2);
             addKWarpWatcher.AddFloat(0.0f);
 
@@ -1824,7 +2388,7 @@ namespace Gateway.NPC
 
             var addVWarpWatcher = new SOEWriter((ushort)BasePackets.BasePlayerUpdatePacket, true);
             addVWarpWatcher.AddHostUInt16((ushort)BasePlayerUpdatePackets.PlayerUpdatePacketAddNpc);
-            addVWarpWatcher.AddHostUInt64(26250840113186); // Guid
+            addVWarpWatcher.AddHostUInt64(LoginManager.RandomGUID()); // Guid
             addVWarpWatcher.AddHostInt32(130731); // Name ID
             addVWarpWatcher.AddHostInt32(468); // Model ID
             addVWarpWatcher.AddBoolean(false); // Unknown4
@@ -1900,7 +2464,7 @@ namespace Gateway.NPC
             addVWarpWatcher.AddHostInt32(-1);
             addVWarpWatcher.AddHostInt32(0);
             addVWarpWatcher.AddBoolean(true);
-            addVWarpWatcher.AddHostInt64(0);
+            addVWarpWatcher.AddHostUInt64(0);
             addVWarpWatcher.AddHostInt32(2);
             addVWarpWatcher.AddFloat(0.0f);
 
@@ -1933,118 +2497,121 @@ namespace Gateway.NPC
             addVWarpWatcher.AddFloat(0.0f); // Unknown
             addVWarpWatcher.AddHostInt32(0); // Unknown
 
-            var addShWarpstone = new SOEWriter((ushort)BasePackets.BasePlayerUpdatePacket, true);
-            addShWarpstone.AddHostUInt16((ushort)BasePlayerUpdatePackets.PlayerUpdatePacketAddNpc);
-            addShWarpstone.AddHostUInt64(7215545057314); // Guid
-            addShWarpstone.AddHostInt32(20830); // Name ID
-            addShWarpstone.AddHostInt32(280); // Model ID
-            addShWarpstone.AddBoolean(false); // Unknown4
-            addShWarpstone.AddHostInt32(408679); // Unknown5
-            addShWarpstone.AddHostInt32(13951728); // Unknown6
-            addShWarpstone.AddHostInt32(1); // Unknown7
-            addShWarpstone.AddFloat(1.0f); // Unknown8
-
-            // Position
-            addShWarpstone.AddFloat(50.92852f);
-            addShWarpstone.AddFloat(32.425617f);
-            addShWarpstone.AddFloat(370.30267f);
-            addShWarpstone.AddFloat(1.0f);
-
-            //Rotation
-            addShWarpstone.AddFloat(0.938666f);
-            addShWarpstone.AddFloat(0f);
-            addShWarpstone.AddFloat(0.34482774f);
-            addShWarpstone.AddFloat(0f);
-
-            addShWarpstone.AddHostInt32(1); // Unknown11
-
-            addShWarpstone.AddHostInt32(0); // CharacterAttachmentDataCount
-            addShWarpstone.AddHostInt32(1); // Unknown12
-
-            addShWarpstone.AddASCIIString(""); // TextureAlias
-            addShWarpstone.AddASCIIString(""); // TintAlias
-            addShWarpstone.AddHostInt32(0); // TintId
-            addShWarpstone.AddBoolean(true); // Unknown16
-            addShWarpstone.AddHostInt32(0); // Unknown17
-            addShWarpstone.AddHostInt32(0); // Unknown18
-            addShWarpstone.AddHostInt32(0); // Unknown19
-            addShWarpstone.AddASCIIString(""); // Custom Name
-            addShWarpstone.AddBoolean(false); // NameDisabled
-            addShWarpstone.AddHostInt32(0); // Unknown22
-            addShWarpstone.AddFloat(0.0f); // Unknown23
-            addShWarpstone.AddFloat(0.0f); // Unknown24
-            addShWarpstone.AddHostInt32(0); // Unknown25
-            addShWarpstone.AddBoolean(false); // Unknown26
-            addShWarpstone.AddFloat(0.0f); // Unknown27
-            addShWarpstone.AddBoolean(false); // Unknown28
-            addShWarpstone.AddHostInt32(100); // Unknown29
-            addShWarpstone.AddHostInt32(-1); // Unknown
-            addShWarpstone.AddHostInt32(-1); // Unknown
-            addShWarpstone.AddHostInt32(-1); // Unknown
-            addShWarpstone.AddBoolean(false); // Unknown
-            addShWarpstone.AddBoolean(false); // Unknown
-            addShWarpstone.AddHostInt32(-1); // Unknown
-            addShWarpstone.AddHostInt32(0); // Unknown
-            addShWarpstone.AddHostInt32(0); // Unknown
-
-            addShWarpstone.AddHostInt32(0); // EffectTagsCount
-
-            addShWarpstone.AddBoolean(false); // Unknown
-            addShWarpstone.AddHostInt32(0); // Unknown
-            addShWarpstone.AddBoolean(false); // Unknown
-            addShWarpstone.AddBoolean(false); // Unknown
-            addShWarpstone.AddBoolean(false); // Unknown
-            addShWarpstone.AddBoolean(false); // Unknown
-
-            addShWarpstone.AddHostInt32(0); // UnknownStruct2
-            addShWarpstone.AddHostInt32(0);
-            addShWarpstone.AddASCIIString("");
-            addShWarpstone.AddASCIIString("");
-            addShWarpstone.AddHostInt32(0);
-            addShWarpstone.AddASCIIString("");
-
-            addShWarpstone.AddFloat(0.0f);
-            addShWarpstone.AddFloat(0.0f);
-            addShWarpstone.AddFloat(0.0f);
-            addShWarpstone.AddFloat(0.0f);
-
-            addShWarpstone.AddHostInt32(-1);
-            addShWarpstone.AddHostInt32(0);
-            addShWarpstone.AddBoolean(true);
-            addShWarpstone.AddHostInt64(0);
-            addShWarpstone.AddHostInt32(2);
-            addShWarpstone.AddFloat(0.0f);
-
-            addShWarpstone.AddHostInt32(0); // Target
-
-            addShWarpstone.AddHostInt32(0); // CharacterVariables
-
-            addShWarpstone.AddHostInt32(0);
-            addShWarpstone.AddFloat(0.0f);
-
-            addShWarpstone.AddFloat(0.0f); // Unknown54, float[4]
-            addShWarpstone.AddFloat(0.0f);
-            addShWarpstone.AddFloat(0.0f);
-            addShWarpstone.AddFloat(0.0f);
-
-            addShWarpstone.AddHostInt32(0); // Unknown
-            addShWarpstone.AddFloat(0.0f); // Unknown
-            addShWarpstone.AddFloat(0.0f); // Unknown
-            addShWarpstone.AddFloat(0.0f); // Unknown
-            addShWarpstone.AddASCIIString(""); // Unknown
-            addShWarpstone.AddASCIIString(""); // Unknown
-            addShWarpstone.AddASCIIString(""); // Unknown
-            addShWarpstone.AddBoolean(false); // Unknown
-            addShWarpstone.AddHostInt32(0); // Unknown
-            addShWarpstone.AddHostInt32(0); // Unknown
-            addShWarpstone.AddHostInt32(0); // Unknown
-            addShWarpstone.AddHostInt32(8); // Unknown
-            addShWarpstone.AddHostInt32(0); // Unknown
-            addShWarpstone.AddHostInt32(3442); // Unknown
-            addShWarpstone.AddFloat(0.0f); // Unknown
-            addShWarpstone.AddHostInt32(0); // Unknown
             LoginManager.SendTunneledClientPacket(soeClient, addKWarpWatcher.GetRaw());
             LoginManager.SendTunneledClientPacket(soeClient, addVWarpWatcher.GetRaw());
+
+            var addShBoombox = new SOEWriter((ushort)BasePackets.BasePlayerUpdatePacket, true);
+            addShBoombox.AddHostUInt16((ushort)BasePlayerUpdatePackets.PlayerUpdatePacketAddNpc);
+            addShBoombox.AddHostUInt64(LoginManager.RandomGUID()); // Guid
+            addShBoombox.AddHostInt32(18044); // Name ID
+            addShBoombox.AddHostInt32(185); // Model ID
+            addShBoombox.AddBoolean(false); // Unknown4
+            addShBoombox.AddHostInt32(408679); // Unknown5
+            addShBoombox.AddHostInt32(13951728); // Unknown6
+            addShBoombox.AddHostInt32(1); // Unknown7
+            addShBoombox.AddFloat(1.0f); // Unknown8
+
+            // Position
+            addShBoombox.AddFloat(88.90495f);
+            addShBoombox.AddFloat(23.542553f);
+            addShBoombox.AddFloat(410.57498f);
+            addShBoombox.AddFloat(1.0f);
+
+            //Rotation
+            addShBoombox.AddFloat(0.71443385f);
+            addShBoombox.AddFloat(0f);
+            addShBoombox.AddFloat(-0.699703f);
+            addShBoombox.AddFloat(0f);
+
+            addShBoombox.AddHostInt32(2100); // Unknown11
+
+            addShBoombox.AddHostInt32(0); // CharacterAttachmentDataCount
+            addShBoombox.AddHostInt32(1); // Unknown12
+
+            addShBoombox.AddASCIIString(""); // TextureAlias
+            addShBoombox.AddASCIIString(""); // TintAlias
+            addShBoombox.AddHostInt32(0); // TintId
+            addShBoombox.AddBoolean(true); // Unknown16
+            addShBoombox.AddFloat(-0.1f); // Unknown17
+            addShBoombox.AddHostInt32(0); // Unknown18
+            addShBoombox.AddHostInt32(0); // Unknown19
+            addShBoombox.AddASCIIString(""); // Custom Name
+            addShBoombox.AddBoolean(true); // NameDisabled
+            addShBoombox.AddHostInt32(0); // Unknown22
+            addShBoombox.AddFloat(0.0f); // Unknown23
+            addShBoombox.AddFloat(0.0f); // Unknown24
+            addShBoombox.AddHostInt32(0); // Unknown25
+            addShBoombox.AddBoolean(false); // Unknown26
+            addShBoombox.AddFloat(0.0f); // Unknown27
+            addShBoombox.AddBoolean(false); // Unknown28
+            addShBoombox.AddHostInt32(100); // Unknown29
+            addShBoombox.AddHostInt32(-1); // Unknown
+            addShBoombox.AddHostInt32(-1); // Unknown
+            addShBoombox.AddHostInt32(-1); // Unknown
+            addShBoombox.AddBoolean(false); // Unknown
+            addShBoombox.AddBoolean(false); // Unknown
+            addShBoombox.AddHostInt32(-1); // Unknown
+            addShBoombox.AddHostInt32(0); // Unknown
+            addShBoombox.AddHostInt32(0); // Unknown
+
+            addShBoombox.AddHostInt32(0); // EffectTagsCount
+
+            addShBoombox.AddBoolean(false); // Unknown
+            addShBoombox.AddHostInt32(0); // Unknown
+            addShBoombox.AddBoolean(false); // Unknown
+            addShBoombox.AddBoolean(false); // Unknown
+            addShBoombox.AddBoolean(false); // Unknown
+            addShBoombox.AddBoolean(false); // Unknown
+
+            addShBoombox.AddHostInt32(0); // UnknownStruct2
+            addShBoombox.AddASCIIString("");
+            addShBoombox.AddASCIIString("");
+            addShBoombox.AddHostInt32(0);
+            addShBoombox.AddASCIIString("");
+
+            addShBoombox.AddFloat(0.0f);
+            addShBoombox.AddFloat(0.0f);
+            addShBoombox.AddFloat(0.0f);
+            addShBoombox.AddFloat(0.0f);
+
+            addShBoombox.AddHostInt32(0);
+            addShBoombox.AddHostInt32(-1);
+            addShBoombox.AddHostInt32(0);
+            addShBoombox.AddBoolean(true);
+            addShBoombox.AddHostUInt64(0);
+            addShBoombox.AddHostInt32(2);
+            addShBoombox.AddFloat(0.0f);
+
+            addShBoombox.AddHostInt32(0); // Target
+
+            addShBoombox.AddHostInt32(0); // CharacterVariables
+
+            addShBoombox.AddHostInt32(0);
+            addShBoombox.AddFloat(0.0f);
+
+            addShBoombox.AddFloat(0.0f); // Unknown54, float[4]
+            addShBoombox.AddFloat(0.0f);
+            addShBoombox.AddFloat(0.0f);
+            addShBoombox.AddFloat(0.0f);
+
+            addShBoombox.AddHostInt32(0); // Unknown
+            addShBoombox.AddFloat(0.0f); // Unknown
+            addShBoombox.AddFloat(0.0f); // Unknown
+            addShBoombox.AddFloat(0.0f); // Unknown
+            addShBoombox.AddASCIIString(""); // Unknown
+            addShBoombox.AddASCIIString(""); // Unknown
+            addShBoombox.AddASCIIString(""); // Unknown
+            addShBoombox.AddBoolean(false); // Unknown
+            addShBoombox.AddHostInt32(0); // Unknown
+            addShBoombox.AddHostInt32(0); // Unknown
+            addShBoombox.AddHostInt32(0); // Unknown
+            addShBoombox.AddHostInt32(8); // Unknown
+            addShBoombox.AddHostInt32(0); // Unknown
+            addShBoombox.AddHostInt32(3442); // Unknown
+            addShBoombox.AddFloat(0.0f); // Unknown
+            addShBoombox.AddHostInt32(0); // Unknown
+
+            LoginManager.SendTunneledClientPacket(soeClient, addShBoombox.GetRaw());
         }
     }
 }

@@ -256,7 +256,7 @@
       "Unknown13": 1931819892,
       "Unknown14": false,
       "Unknown15": 0,
-      "JobLevel": 20,
+      "JobLevel": 1,
       "JobLevelXP": 0,
       "JobLevelTotalXP": 0,
       "Unknown19": 0,
@@ -71611,6 +71611,22 @@
       "Unknown": 0,
       "Definition": 78398,
       "Tint": 0
+    },
+    {
+      "Unknown2": false,
+      "Guid": 4595,
+      "Count": 1,
+      "ConsumedCount": 0,
+      "LastCastTime": 2147483647,
+      "ItemStruct": {
+      "HasItemStruct": false,
+      "RentalExpirationTime": 0,
+      "RentalUpsellsSent": 0,
+      "MarketplaceBundleId": 0
+    },
+      "Unknown": 0,
+      "Definition": 78399,
+      "Tint": 0
     }
   ],
   "GenderFilter": 1,
@@ -85631,311 +85647,347 @@
   "Unknown48": 0,
   "Mounts": [
     {
+      "MountNumber": 1033,
+      "MountName": 9911,
+      "MountIcon": 8035,
+      "MountGUID": 0,
+      "MembersOnly": false,
+      "MountTintId": 0,
+      "MountTintAlias": "dyetint",
+      "FlyTraining": false,
+      "AbleToFly": false,
+      "MountModelID": 1529
+    },
+    {
+      "MountNumber": 1032,
+      "MountName": 416632,
+      "MountIcon": 6939,
+      "MountGUID": 0,
+      "MembersOnly": false,
+      "MountTintId": 0,
+      "MountTintAlias": "dyetint",
+      "FlyTraining": false,
+      "AbleToFly": false,
+      "MountModelID": 3338
+    },
+    {
+      "MountNumber": 1031,
+      "MountName": 646,
+      "MountIcon": 7799,
+      "MountGUID": 0,
+      "MembersOnly": false,
+      "MountTintId": 0,
+      "MountTintAlias": "dyetint",
+      "FlyTraining": false,
+      "AbleToFly": false,
+      "MountModelID": 728
+    },
+    {
       "MountNumber": 1030,
       "MountName": 442674,
       "MountIcon": 8556,
-      "MountId": 4590,
-      "MountGUID": 78397,
+      "MountGUID": 0,
       "MembersOnly": false,
       "MountTintId": 0,
       "MountTintAlias": "",
       "FlyTraining": false,
-      "AbleToFly": true
+      "AbleToFly": true,
+      "MountModelID": 4590
     },
     {
       "MountNumber": 1029,
       "MountName": 385,
       "MountIcon": 7700,
-      "MountId": 3882,
-      "MountGUID": 11763,
+      "MountGUID": 0,
       "MembersOnly": false,
       "MountTintId": 0,
       "MountTintAlias": "",
       "FlyTraining": false,
-      "AbleToFly": false
+      "AbleToFly": false,
+      "MountModelID": 3882
     },
     {
       "MountNumber": 1028,
       "MountName": 852,
       "MountIcon": 7928,
-      "MountId": 3989,
-      "MountGUID": 17598,
+      "MountGUID": 0,
       "MembersOnly": false,
       "MountTintId": 249,
       "MountTintAlias": "dyetint",
       "FlyTraining": false,
-      "AbleToFly": false
+      "AbleToFly": false,
+      "MountModelID": 3989
     },
     {
       "MountNumber": 1027,
       "MountName": 378,
       "MountIcon": 7665,
-      "MountId": 3870,
-      "MountGUID": 11584,
+      "MountGUID": 0,
       "MembersOnly": false,
       "MountTintId": 553,
       "MountTintAlias": "dyetint",
       "FlyTraining": false,
-      "AbleToFly": false
+      "AbleToFly": false,
+      "MountModelID": 3870
     },
     {
       "MountNumber": 1026,
       "MountName": 374,
       "MountIcon": 6873,
-      "MountId": 3849,
-      "MountGUID": 14289,
+      "MountGUID": 0,
       "MembersOnly": false,
       "MountTintId": 249,
       "MountTintAlias": "dyetint",
       "FlyTraining": false,
-      "AbleToFly": false
+      "AbleToFly": false,
+      "MountModelID": 3849
     },
     {
       "MountNumber": 1025,
       "MountName": 372,
       "MountIcon": 6937,
-      "MountId": 3848,
-      "MountGUID": 14288,
+      "MountGUID": 0,
       "MembersOnly": false,
       "MountTintId": 249,
       "MountTintAlias": "dyetint",
-      "FlyTraining": true,
-      "AbleToFly": false
+      "FlyTraining": false,
+      "AbleToFly": true,
+      "MountModelID": 3848
     },
     {
       "MountNumber": 1024,
       "MountName": 435557,
       "MountIcon": 7484,
-      "MountId": 3782,
-      "MountGUID": 78069,
+      "MountGUID": 0,
       "MembersOnly": false,
       "MountTintId": 0,
       "MountTintAlias": "dyetint",
-      "FlyTraining": true,
-      "AbleToFly": false
+      "FlyTraining": false,
+      "AbleToFly": true,
+      "MountModelID": 3782
     },
     {
       "MountNumber": 1023,
       "MountName": 442689,
       "MountIcon": 8456,
-      "MountId": 4439,
-      "MountGUID": 78398,
+      "MountGUID": 0,
       "MembersOnly": false,
       "MountTintId": 541,
       "MountTintAlias": "dyetint",
       "FlyTraining": false,
-      "AbleToFly": false
+      "AbleToFly": false,
+      "MountModelID": 4439
     },
     {
       "MountNumber": 1022,
       "MountName": 435431,
       "MountIcon": 7401,
-      "MountId": 3776,
-      "MountGUID": 78036,
+      "MountGUID": 0,
       "MembersOnly": false,
       "MountTintId": 0,
       "MountTintAlias": "",
       "FlyTraining": false,
-      "AbleToFly": false
+      "AbleToFly": false,
+      "MountModelID": 3776
     },
     {
       "MountNumber": 1021,
       "MountName": 6764,
       "MountIcon": 6977,
-      "MountId": 3384,
-      "MountGUID": 76759,
+      "MountGUID": 0,
       "MembersOnly": false,
       "MountTintId": 249,
       "MountTintAlias": "dyetint",
       "FlyTraining": false,
-      "AbleToFly": false
+      "AbleToFly": false,
+      "MountModelID": 3384
     },
     {
       "MountNumber": 1020,
       "MountName": 6966,
       "MountIcon": 7296,
-      "MountId": 3478,
-      "MountGUID": 76903,
+      "MountGUID": 0,
       "MembersOnly": false,
       "MountTintId": 249,
       "MountTintAlias": "dyetint",
       "FlyTraining": false,
-      "AbleToFly": false
+      "AbleToFly": false,
+      "MountModelID": 3478
     },
     {
       "MountNumber": 1019,
       "MountName": 434170,
       "MountIcon": 7056,
-      "MountId": 3480,
-      "MountGUID": 76905,
+      "MountGUID": 0,
       "MembersOnly": false,
       "MountTintId": 0,
       "MountTintAlias": "dyetint",
       "FlyTraining": true,
-      "AbleToFly": false
+      "AbleToFly": false,
+      "MountModelID": 3480
     },
     {
       "MountNumber": 1018,
       "MountName": 6806,
       "MountIcon": 7015,
-      "MountId": 3409,
-      "MountGUID": 11317,
+      "MountGUID": 0,
       "MembersOnly": false,
       "MountTintId": 0,
       "MountTintAlias": "dyetint",
       "FlyTraining": false,
-      "AbleToFly": false
+      "AbleToFly": false,
+      "MountModelID": 3409
     },
     {
       "MountNumber": 1017,
       "MountName": 4897,
       "MountIcon": 6294,
-      "MountId": 2064,
-      "MountGUID": 11038,
+      "MountGUID": 0,
       "MembersOnly": true,
       "MountTintId": 246,
       "MountTintAlias": "dyetint",
       "FlyTraining": true,
-      "AbleToFly": false
+      "AbleToFly": false,
+      "MountModelID": 2064
     },
     {
       "MountNumber": 1016,
       "MountName": 22959,
       "MountIcon": 6978,
-      "MountId": 3376,
-      "MountGUID": 17179,
+      "MountGUID": 0,
       "MembersOnly": false,
       "MountTintId": 117,
       "MountTintAlias": "snow",
       "FlyTraining": false,
-      "AbleToFly": false
+      "AbleToFly": false,
+      "MountModelID": 3376
     },
     {
       "MountNumber": 1015,
       "MountName": 6605,
       "MountIcon": 6922,
-      "MountId": 3314,
-      "MountGUID": 10424,
+      "MountGUID": 0,
       "MembersOnly": false,
       "MountTintId": 0,
       "MountTintAlias": "",
       "FlyTraining": false,
-      "AbleToFly": false
+      "AbleToFly": false,
+      "MountModelID": 3314
     },
     {
       "MountNumber": 1014,
       "MountName": 6403,
       "MountIcon": 6838,
-      "MountId": 3209,
-      "MountGUID": 13686,
+      "MountGUID": 0,
       "MembersOnly": false,
       "MountTintId": 0,
       "MountTintAlias": "sapphire",
       "FlyTraining": false,
-      "AbleToFly": false
+      "AbleToFly": false,
+      "MountModelID": 3209
     },
     {
       "MountNumber": 1013,
       "MountName": 6230,
       "MountIcon": 6820,
-      "MountId": 3162,
-      "MountGUID": 10381,
+      "MountGUID": 0,
       "MembersOnly": false,
       "MountTintId": 0,
       "MountTintAlias": "",
       "FlyTraining": false,
-      "AbleToFly": false
+      "AbleToFly": false,
+      "MountModelID": 3162
     },
     {
       "MountNumber": 1012,
       "MountName": 6408,
       "MountIcon": 6854,
-      "MountId": 3210,
-      "MountGUID": 14318,
+      "MountGUID": 0,
       "MembersOnly": false,
       "MountTintId": 0,
       "MountTintAlias": "skyblue",
       "FlyTraining": false,
-      "AbleToFly": false
+      "AbleToFly": false,
+      "MountModelID": 3210
     },
     {
       "MountNumber": 1011,
       "MountName": 6305,
       "MountIcon": 6821,
-      "MountId": 3208,
-      "MountGUID": 16376,
+      "MountGUID": 0,
       "MembersOnly": false,
       "MountTintId": 0,
       "MountTintAlias": "snow",
       "FlyTraining": false,
-      "AbleToFly": false
+      "AbleToFly": false,
+      "MountModelID": 3208
     },
     {
       "MountNumber": 1010,
       "MountName": 6369,
       "MountIcon": 6825,
-      "MountId": 3199,
-      "MountGUID": 17240,
+      "MountGUID": 0,
       "MembersOnly": false,
       "MountTintId": 0,
       "MountTintAlias": "blizzard",
       "FlyTraining": false,
-      "AbleToFly": false
+      "AbleToFly": false,
+      "MountModelID": 3199
     },
     {
       "MountNumber": 1009,
       "MountName": 6231,
       "MountIcon": 6802,
-      "MountId": 3163,
-      "MountGUID": 10382,
+      "MountGUID": 0,
       "MembersOnly": false,
       "MountTintId": 0,
       "MountTintAlias": "",
       "FlyTraining": false,
-      "AbleToFly": false
+      "AbleToFly": false,
+      "MountModelID": 3163
     },
     {
       "MountNumber": 1008,
       "MountName": 5635,
       "MountIcon": 6658,
-      "MountId": 3033,
-      "MountGUID": 15738,
+      "MountGUID": 0,
       "MembersOnly": false,
       "MountTintId": 0,
       "MountTintAlias": "skyblue",
       "FlyTraining": false,
-      "AbleToFly": false
+      "AbleToFly": false,
+      "MountModelID": 3033
     },
     {
       "MountNumber": 1007,
       "MountName": 6182,
       "MountIcon": 6703,
-      "MountId": 3026,
-      "MountGUID": 15902,
+      "MountGUID": 0,
       "MembersOnly": false,
       "MountTintId": 0,
       "MountTintAlias": "pumpkin",
       "FlyTraining": false,
-      "AbleToFly": false
+      "AbleToFly": false,
+      "MountModelID": 3026
     },
     {
       "MountNumber": 1006,
       "MountName": 6847,
       "MountIcon": 6459,
-      "MountId": 503,
-      "MountGUID": 10549,
+      "MountGUID": 0,
       "MembersOnly": false,
       "MountTintId": 0,
       "MountTintAlias": "skyblue",
       "FlyTraining": false,
-      "AbleToFly": false
+      "AbleToFly": false,
+      "MountModelID": 503
     },
     {
       "MountNumber": 1005,
       "MountName": 5218,
       "MountIcon": 6457,
-      "MountId": 522,
-      "MountGUID": 7975,
+      "MountModelID": 522,
+      "MountItemDefinitionID": 7975,
       "MembersOnly": false,
       "MountTintId": 0,
       "MountTintAlias": "",
@@ -85946,61 +85998,61 @@
       "MountNumber": 1004,
       "MountName": 5219,
       "MountIcon": 6456,
-      "MountId": 523,
-      "MountGUID": 7976,
+      "MountGUID": 0,
       "MembersOnly": false,
       "MountTintId": 0,
       "MountTintAlias": "",
       "FlyTraining": false,
-      "AbleToFly": false
+      "AbleToFly": false,
+      "MountModelID": 523
     },
     {
       "MountNumber": 1003,
       "MountName": 4831,
       "MountIcon": 6355,
-      "MountId": 2108,
-      "MountGUID": 16167,
+      "MountGUID": 0,
       "MembersOnly": false,
       "MountTintId": 0,
       "MountTintAlias": "deepred",
       "FlyTraining": false,
-      "AbleToFly": false
+      "AbleToFly": false,
+      "MountModelID": 2108
     },
     {
       "MountNumber": 1002,
       "MountName": 4897,
       "MountIcon": 6294,
-      "MountId": 2064, 
-      "MountGUID": 7960,
+      "MountGUID": 0,
       "MembersOnly": false,
       "MountTintId": 0,
       "MountTintAlias": "scales-blue",
-      "FlyTraining": true,
-      "AbleToFly": false
+      "FlyTraining": false,
+      "AbleToFly": true,
+      "MountModelID": 2064
     },
     {
       "MountNumber": 1001,
       "MountName": 5572,
       "MountIcon": 6075,
-      "MountId": 2064,
-      "MountGUID": 7954,
+      "MountGUID": 0,
       "MembersOnly": false,
       "MountTintId": 0,
       "MountTintAlias": "goldtips-black",
       "FlyTraining": true,
-      "AbleToFly": false
+      "AbleToFly": false,
+      "MountModelID": 2064
     },
     {
       "MountNumber": 1000,
       "MountName": 5570,
       "MountIcon": 6074,
-      "MountId": 2040,
-      "MountGUID": 7942,
+      "MountGUID": 0,
       "MembersOnly": false,
       "MountTintId": 0,
       "MountTintAlias": "trexbasic-blue",
       "FlyTraining": false,
-      "AbleToFly": false
+      "AbleToFly": false,
+      "MountModelID": 2040
     }
   ],
   "ActionBars": [
@@ -86012,61 +86064,61 @@
           {
             "Item1": 0,
             "Item2": {
-              "ItemEmpty": true,
-              "Icon": 0,
+              "ItemEmpty": false,
+              "Icon": 543,
               "Unknown3": 0,
-              "ItemName": 0,
-              "Unknown5": 0,
-              "Unknown6": 0,
+              "ItemName": 422910,
+              "Unknown5": 1,
+              "Unknown6": 2,
               "Unknown7": 0,
               "Unknown8": 0,
               "Usable": false,
               "Unknown10": 0,
               "Unknown11": 0,
               "Unknown12": 0,
-              "ItemQuanity": 0,
-              "Unknown14": false,
-              "Unknown15": 0
+              "ItemQuanity": 59,
+              "Unknown14": true,
+              "Unknown15": 1789747881
             }
           },
           {
             "Item1": 1,
             "Item2": {
-              "ItemEmpty": true,
-              "Icon": 0,
+              "ItemEmpty": false,
+              "Icon": 777,
               "Unknown3": 0,
-              "ItemName": 0,
-              "Unknown5": 0,
-              "Unknown6": 0,
+              "ItemName": 422913,
+              "Unknown5": 1,
+              "Unknown6": 2,
               "Unknown7": 0,
               "Unknown8": 0,
               "Usable": false,
               "Unknown10": 0,
               "Unknown11": 0,
               "Unknown12": 0,
-              "ItemQuanity": 0,
-              "Unknown14": false,
-              "Unknown15": 0
+              "ItemQuanity": 28,
+              "Unknown14": true,
+              "Unknown15": 2147483647
             }
           },
           {
             "Item1": 2,
             "Item2": {
-              "ItemEmpty": true,
-              "Icon": 0,
+              "ItemEmpty": false,
+              "Icon": 544,
               "Unknown3": 0,
-              "ItemName": 0,
-              "Unknown5": 0,
-              "Unknown6": 0,
+              "ItemName": 422907,
+              "Unknown5": 1,
+              "Unknown6": 2,
               "Unknown7": 0,
               "Unknown8": 0,
               "Usable": false,
               "Unknown10": 0,
               "Unknown11": 0,
               "Unknown12": 0,
-              "ItemQuanity": 0,
+              "ItemQuanity": 33,
               "Unknown14": true,
-              "Unknown15": 0
+              "Unknown15": 1789690881
             }
           },
           {

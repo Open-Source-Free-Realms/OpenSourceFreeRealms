@@ -149,15 +149,13 @@ namespace Gateway.Player
             byte Unknown = reader.ReadByte();
 
 
-            LoginManager.log.Info($"HandlePlayerUpdatePacketUpdatePosition:\n" +
-                $"X: {Position[0]}\n" +
-                $"Y: {Position[1]}\n" +
-                $"Z: {Position[2]}");
-
-            //LoginManager.log.Info($"HandlePlayerUpdatePacketUpdateRotation:\n" +
-            //    $"X: {Rotation[0]}\n" +
-            //    $"Y: {Rotation[1]}\n" +
-            //    $"Z: {Rotation[2]}");
+            LoginManager.log.InfoFormat($"{LoginManager.PlayerData.FirstName}{LoginManager.PlayerData.LastName} -> GUID: {PlayerGUID} State: {CharacterState} " +
+                $"Position X: {Position[0]} " +
+                $"Position Y: {Position[1]} " +
+                $"Position Z: {Position[2]} " +
+                $"Rotation X: {Rotation[0]} " +
+                $"Rotation Y: {Rotation[1]} " +
+                $"Rotation Z: {Rotation[2]} " );
 
             var poiChange = new SOEWriter((byte)BasePackets.PacketPOIChangeMessage, true);
 
@@ -165,7 +163,7 @@ namespace Gateway.Player
             {
                 poiChange.AddHostInt32(3500); // NameId
                 poiChange.AddHostInt32(2); //ZoneId
-                poiChange.AddHostInt32(290); //Unsure
+                poiChange.AddHostInt32(290); //AreaId
                 LoginManager.SendTunneledClientPacket(soeClient, poiChange.GetRaw());
             }
 
@@ -173,7 +171,7 @@ namespace Gateway.Player
             {
                 poiChange.AddHostInt32(3499); // NameId
                 poiChange.AddHostInt32(5); //ZoneId
-                poiChange.AddHostInt32(290); //Unsure
+                poiChange.AddHostInt32(290); //AreaId
                 LoginManager.SendTunneledClientPacket(soeClient, poiChange.GetRaw());
             }
 
@@ -229,15 +227,13 @@ namespace Gateway.Player
         public static void HandlePlayerUpdatePacketCameraUpdate(SOEReader reader)
         {
             var Unknown = reader.ReadHostUInt64();
-            var Useless1 = reader.ReadSingle();
-            var Pitch = reader.ReadSingle();
-            var Useless2 = reader.ReadSingle();
-            var Yaw = reader.ReadSingle();
+            float[] Camera = new float[4];
+            for (var i = 0; i < Camera.Length; i++)
+                Camera[i] = reader.ReadSingle();
 
-            LoginManager.log.Info($"HandlePlayerUpdatePacketCameraUpdate:\n" +
-                $"Pitch: {Pitch}\n" +
-                $"Yaw: {Yaw}");
-
+            //LoginManager.log.Info($"HandlePlayerUpdatePacketCameraUpdate: " +
+            //    $"Front: {Camera[3]} " +
+            //    $"Back: {Camera[1]}");
         }
 
     }
