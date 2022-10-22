@@ -36,7 +36,7 @@ namespace Gateway.NPC
         public static void SendPacketMountResponse(SOEClient soeClient, int guid)
         {
             var mountList = LoginManager.PlayerData.Mounts.Find(mItem => mItem.MountNumber == guid);
-            var mountItemDef = LoginManager.ClientItemDefinitions.Find(mItemDef => mItemDef.NameId == mountList.MountName);
+            var mountItemDef = LoginManager.ClientItemDefinitions.Find(mItemDef => mItemDef.Id == mountList.MountItemDefinitionID);
 
             var mountGUID = LoginManager.PlayerData.PlayerGUID + 1000;
 
