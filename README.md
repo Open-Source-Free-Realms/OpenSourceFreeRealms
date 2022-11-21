@@ -2,7 +2,7 @@
 
 <p align="center">
     <a href="https://github.com/OpenFreeRealms/OpenFreeRealms/releases"><img src="https://img.shields.io/github/v/release/OpenFreeRealms/OpenFreeRealms?style=for-the-badge"></a>
-    <a href="https://discord.gg/GD5vDXr9Zm"><img src="https://img.shields.io/badge/chat-on%20discord-7289da.svg?logo=discord&style=for-the-badge" alt="Discord"></a>
+    <a href="https://discord.gg/Zu5mCyDVaB"><img src="https://img.shields.io/badge/chat-on%20discord-7289da.svg?logo=discord&style=for-the-badge" alt="Discord"></a>
     <img src="https://img.shields.io/github/downloads/OpenFreeRealms/OpenFreeRealms/total?style=for-the-badge">
     
 </p>
