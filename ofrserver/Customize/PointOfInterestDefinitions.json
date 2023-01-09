@@ -17,6 +17,23 @@
     "AtlasName": "sacredgrove"
   },
   {
+    "Id": 2,
+    "NameId": 18140,
+    "LocationId": 282,
+    "X": -1400.386,
+    "Y": -21.029,
+    "Z": 1500.789,
+    "Heading": 0.14,
+    "IconId": 1345,
+    "NotificationType": 7,
+    "SubNameId": 382845,
+    "Unknown11": 651,
+    "BreadcrumbQuestId": 0,
+    "TeleportLocationId": 210021,
+    "Unknown15": 90,
+    "AtlasName": "sacredgrove"
+  },
+  {
     "Id": 4,
     "NameId": 18140,
     "LocationId": 282,

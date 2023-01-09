@@ -2,15 +2,18 @@
 using SOE.Interfaces;
 using SOE;
 using Gateway.Login;
-using System.IO;
-using Newtonsoft.Json;
-using System.Collections.Generic;
+using Gateway.MapChat;
+using log4net;
 using static Gateway.Login.ClientPcData;
 
 namespace Gateway.Player
 {
-    internal class PlayerCode
+    public static class PlayerCode
     {
+
+        public static ILog _log;
+        public static SOEServer _server;
+
         public static void SendPlayerUpdateItemDefinitions(SOEClient soeClient)
         {
             var playerUpdateItemDefinitions = new SOEWriter();
@@ -24,7 +27,7 @@ namespace Gateway.Player
                 playerUpdateItemDefinitions.AddHostInt32(clientItemDefinition.DescriptionId);
                 playerUpdateItemDefinitions.AddHostInt32(clientItemDefinition.IconData.Id);
                 playerUpdateItemDefinitions.AddHostInt32(clientItemDefinition.IconData.TintId);
-                playerUpdateItemDefinitions.AddHostInt32(clientItemDefinition.Unknown4);
+                playerUpdateItemDefinitions.AddHostInt32(clientItemDefinition.Tint);
                 playerUpdateItemDefinitions.AddHostInt32(clientItemDefinition.Unknown5);
                 playerUpdateItemDefinitions.AddHostInt32(clientItemDefinition.Cost);
                 playerUpdateItemDefinitions.AddHostInt32(clientItemDefinition.Class);
@@ -93,16 +96,7 @@ namespace Gateway.Player
 
             basePlayerUpdate.AddBytes(rawBytes);
 
-            rawBytes = basePlayerUpdate.GetRaw();
-
-            var tunneledClient = new SOEWriter((ushort)ClientGatewayBasePackets.PacketTunneledClientPacket, true);
-
-            tunneledClient.AddBoolean(true);
-            tunneledClient.AddHostInt32(rawBytes.Length);
-
-            tunneledClient.AddBytes(rawBytes);
-
-            soeClient.SendMessage(tunneledClient.GetFinalSOEMessage(soeClient));
+            LoginManager.SendTunneledClientPacket(soeClient, basePlayerUpdate.GetRaw());
         }
 
 
@@ -136,16 +130,7 @@ namespace Gateway.Player
 
             baseClientUpdate.AddBoolean(false);
 
-            var rawBytes = baseClientUpdate.GetRaw();
-
-            var tunneledClient = new SOEWriter((ushort)ClientGatewayBasePackets.PacketTunneledClientPacket, true);
-
-            tunneledClient.AddBoolean(true);
-            tunneledClient.AddHostUInt32((uint)rawBytes.Length);
-
-            tunneledClient.AddBytes(rawBytes);
-
-            soeClient.SendMessage(tunneledClient.GetFinalSOEMessage(soeClient));
+            LoginManager.SendTunneledClientPacket(soeClient, baseClientUpdate.GetRaw());
         }
 
         public static void SendEncounterOverworldCombat(SOEClient soeClient)
@@ -158,16 +143,26 @@ namespace Gateway.Player
             baseEncounter.AddHostUInt32(0);
             baseEncounter.AddBoolean(true);
 
-            var rawBytes = baseEncounter.GetRaw();
-
-            var tunneledClient = new SOEWriter((ushort)ClientGatewayBasePackets.PacketTunneledClientPacket, true);
-
-            tunneledClient.AddBoolean(true);
-            tunneledClient.AddHostUInt32((uint)rawBytes.Length);
-
-            tunneledClient.AddBytes(rawBytes);
-
-            soeClient.SendMessage(tunneledClient.GetFinalSOEMessage(soeClient));
+            LoginManager.SendTunneledClientPacket(soeClient, baseEncounter.GetRaw());
         }
+
+     
+
+
+
+        
+
+        public static void HandlePlayerUpdatePacketCameraUpdate(SOEReader reader)
+        {
+            var Unknown = reader.ReadHostUInt64();
+            float[] Camera = new float[4];
+            for (var i = 0; i < Camera.Length; i++)
+                Camera[i] = reader.ReadSingle();
+
+            //LoginManager.log.Info($"HandlePlayerUpdatePacketCameraUpdate: " +
+            //    $"Front: {Camera[3]} " +
+            //    $"Back: {Camera[1]}");
+        }
+
     }
 }

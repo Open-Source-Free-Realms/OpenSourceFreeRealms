@@ -31,9 +31,13 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="FreeRealms, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+    <Reference Include="CommandLine, Version=1.9.71.2, Culture=neutral, PublicKeyToken=de6f01bd326f8c32, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\bin\FreeRealms.dll</HintPath>
+      <HintPath>..\..\bin\CommandLine.dll</HintPath>
+    </Reference>
+    <Reference Include="DotNetZip, Version=1.16.0.0, Culture=neutral, PublicKeyToken=6583c7c814667745, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\bin\DotNetZip.dll</HintPath>
     </Reference>
     <Reference Include="LibSOE, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
@@ -49,12 +53,16 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="GameManager\BroadcastManager.cs" />
+    <Compile Include="GameManager\GUIDManager.cs" />
+    <Compile Include="GameManager\MountManager.cs" />
+    <Compile Include="GameManager\NPCManager.cs" />
+    <Compile Include="GameManager\PetManager.cs" />
     <Compile Include="Gateway.cs" />
     <Compile Include="Login\LoginManager.cs" />
     <Compile Include="Login\ClientPcData.cs" />
     <Compile Include="MapChat\Chat.cs" />
     <Compile Include="MapChat\Map.cs" />
-    <Compile Include="Player\NPC.cs" />
     <Compile Include="Player\PlayerCharacter.cs" />
     <Compile Include="Player\PlayerCode.cs" />
     <Compile Include="Player\UpdateStats.cs" />
