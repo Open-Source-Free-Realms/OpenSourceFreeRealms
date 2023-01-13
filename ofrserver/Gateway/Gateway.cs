@@ -1,7 +1,6 @@
 ﻿using log4net;
 using SOE.Core;
 using Gateway.Login;
-using Gateway.GameManager;
 
 namespace Gateway
 {
