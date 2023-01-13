@@ -7,3 +7,4 @@ ofrserver/Gateway/obj/*
 ofrjsonmaker/*
 ofrclient/*
 bin/*
+/.vs

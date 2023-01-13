@@ -26,7 +26,7 @@ namespace Gateway
         public int NameId { get; set; }
         public int DescriptionId { get; set; }
         public IconData IconData { get; set; }
-        public int Unknown4 { get; set; }
+        public int Tint { get; set; } //Tint
         public int Unknown5 { get; set; }
         public int Cost { get; set; }
         public int Class { get; set; }
@@ -95,5 +95,13 @@ namespace Gateway
         public int TeleportLocationId { get; set; }
         public int Unknown15 { get; set; }
         public string AtlasName { get; set; }
+    }
+    public class ActivePet
+    {
+        public int PetId { get; set; }
+        public ulong PetGUID { get; set; }
+        public int PetState { get; set; }
+        public float[] Position { get; set; } = new float[4];
+        public float[] Rotation { get; set; } = new float[4];
     }
 }

@@ -362,7 +362,7 @@ namespace Gateway.Login
                 bw.Write(mounts.MountNumber);
                 bw.Write(mounts.MountName);
                 bw.Write(mounts.MountIcon);
-                bw.Write(mounts.Unknown4);
+                bw.Write(mounts.MountGUID);
                 bw.Write(mounts.MembersOnly);
                 bw.Write(mounts.MountColor);
                 WriteString(bw, mounts.MountTexture);
@@ -703,12 +703,15 @@ namespace Gateway.Login
             public int MountNumber { get; set; }
             public int MountName { get; set; }
             public int MountIcon { get; set; }
-            public long Unknown4 { get; set; }
+            public ulong MountGUID { get; set; }
             public bool MembersOnly { get; set; }
             public int MountColor { get; set; }
             public string MountTexture { get; set; } = string.Empty;
             public bool FlyTraining { get; set; }
             public bool AbleToFly { get; set; }
+
+            public int MountModel { get; set; }
+            public string MountTextureType { get; set; } = string.Empty;
         }
 
         public class PetTrickInfo
@@ -731,7 +734,7 @@ namespace Gateway.Login
 
         public class UnknownPetStruct
         {
-            public int Unknown { get; set; }
+            public int PetId { get; set; }
             public bool Unknown2 { get; set; }
             public int Unknown3 { get; set; }
             public float Food { get; set; }
@@ -754,10 +757,11 @@ namespace Gateway.Login
             public bool Unknown16 { get; set; }
             public int[] Unknown17 { get; set; } = new int[4];
             public int[] Unknown18 { get; set; } = new int[8];
+            public int ModelId { get; set; }
 
             public void Serialize(BinaryWriter bw)
             {
-                bw.Write(Unknown);
+                bw.Write(PetId);
                 bw.Write(Unknown2);
                 bw.Write(Unknown3);
                 bw.Write(Food);

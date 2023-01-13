@@ -3,6 +3,8 @@ using SOE.Interfaces;
 using SOE;
 using Gateway.Login;
 
+
+
 namespace Gateway.Player
 {
     internal class UpdateStats
@@ -41,6 +43,35 @@ namespace Gateway.Player
             //var setDefinition = new SOEWriter((ushort)BasePackets.BaseAbilityPacket, true);
             //setDefinition.AddHostUInt16((ushort)BaseAbilityPackets.AbilityPacketSetDefinition);
             LoginManager.SendTunneledClientPacket(soeClient, LoginManager.StringToByteArray(/* AbilityPacketSetDefinition */"2400050001000000080000000000000000000000000000000000000000000000000000000000000000000000"));
+
+        }
+            public static void SendUpdatePacketUpdateStat(SOEClient soeClient)
+            {
+                var updatePacketUpdateStat = new SOEWriter((ushort)BasePackets.BaseClientUpdatePacket, true);
+                var player = LoginManager.PlayerCharacters.Find(x => x.client == soeClient);
+                updatePacketUpdateStat.AddHostUInt16((byte)BaseClientUpdatePackets.ClientUpdatePacketUpdateStat);
+
+                updatePacketUpdateStat.AddHostInt64(player.playerGUID);
+
+                // CharacterStat Count
+                updatePacketUpdateStat.AddHostInt32(3);
+
+                // Movement Speed
+                updatePacketUpdateStat.AddHostInt32(2);
+                updatePacketUpdateStat.AddHostInt32(1);
+                updatePacketUpdateStat.AddFloat(8f);
+
+                // Health Refill
+                updatePacketUpdateStat.AddHostInt32(4);
+                updatePacketUpdateStat.AddHostInt32(0);
+                updatePacketUpdateStat.AddFloat(1);
+
+                // Energy Refill
+                updatePacketUpdateStat.AddHostInt32(6);
+                updatePacketUpdateStat.AddHostInt32(0);
+                updatePacketUpdateStat.AddFloat(1);
+
+                LoginManager.SendTunneledClientPacket(soeClient, updatePacketUpdateStat.GetRaw());
+            }
         }
     }
-}

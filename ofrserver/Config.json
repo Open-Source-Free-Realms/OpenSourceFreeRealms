@@ -1,0 +1,29 @@
+[
+    {
+        "Name": "Gateway",
+        "Port": 20260,
+        "ID": 4001,
+        "AppName": "FreeRealms",
+        "ShortAppName": "FR",
+
+        "Application": {
+            "ClientVersion": "1.910.1.530630"
+        },
+        "Roles": [
+            "Gateway.dll"
+        ],
+        
+        "ConnectionManager": {
+            "MaxConnections": 100
+        },
+
+        "Protocol": {
+            "ProtocolString": "CGAPI_527"
+        },
+        "Logger": {
+            "WantColors": true,
+            "WantLibraryLogging": true,
+            "Filename": "./Logs/OSFR.log"
+        }
+    }
+]
