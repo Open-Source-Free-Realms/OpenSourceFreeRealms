@@ -31,10 +31,10 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="LibSOE, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\bin\LibSOE.dll</HintPath>
-    </Reference>
+    <ProjectReference Include="..\Server\LibSOE\LibSOE.csproj">
+      <Project>{2ed6190e-cd8d-47ec-987c-0019bf66a331}</Project>
+      <Name>LibSOE</Name>
+    </ProjectReference>
     <Reference Include="PresentationCore" />
     <Reference Include="System" />
     <Reference Include="System.Core" />
