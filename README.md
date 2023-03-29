@@ -1,7 +1,7 @@
 <p align="center"><img src="res/OSFR.png"></p>
 
 <p align="center">
-    <a href="https://github.com/OpenFreeRealms/OpenFreeRealms/releases"><img src="https://img.shields.io/github/v/release/OpenFreeRealms/OpenFreeRealms?style=for-the-badge"></a>
+    <a href="https://github.com/Open-Source-Free-Realms/OpenSourceFreeRealms/releases"><img src="https://img.shields.io/github/v/release/OpenFreeRealms/OpenFreeRealms?style=for-the-badge"></a>
     <a href="https://discord.gg/Zu5mCyDVaB"><img src="https://img.shields.io/badge/chat-on%20discord-7289da.svg?logo=discord&style=for-the-badge" alt="Discord"></a>
     <img src="https://img.shields.io/github/downloads/OpenFreeRealms/OpenFreeRealms/total?style=for-the-badge">
     
@@ -12,7 +12,7 @@ Open Source Free Realms is a reversed engineered walking emulator for a now suns
 </p>
 
 # Installation
- - Download the new OSFR server from the releases tab: https://github.com/OpenFreeRealms/OpenFreeRealms/releases
+ - Download the new OSFR server from the releases tab: https://github.com/Open-Source-Free-Realms/OpenSourceFreeRealms/releases
 
  - Open the "OSFR Server" folder, start up "OFRServer" (Optionally you can create a shortcut for it), Accept all firewall rules that pop-up.
 
