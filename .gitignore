@@ -6,3 +6,4 @@ ofrserver/Server/LibSOE/obj/*
 ofrserver/Gateway/obj/*
 bin/*
 GitIgnore/*
+.vs/OpenSourceFreeRealms/v17/.wsuo
