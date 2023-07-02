@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.IO;
+using System.Linq;
 using CommandLine;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
@@ -11,7 +12,7 @@ namespace Server
 {
     class Program
     {
-        private static ServerOptions Options;
+        private static DaemonOptions Options;
         private static Dictionary<string, SOEServer> Servers;
 
         static void Main(string[] args)
@@ -20,22 +21,16 @@ namespace Server
             {
                 File.WriteAllText("Logs/UnhandledException.log", e.ExceptionObject.ToString());
             };
-            Options = new ServerOptions();
 
-            // Successful parse?
-            if (Parser.Default.ParseArguments(args, Options))
-            {
-                // Are we verbose?
-                if (Options.Verbose)
-                {
-                    // Console.WriteLine verbosely
-                    Console.WriteLine("Using configuration: {0}", Options.ConfigFile);
-                }
+            ParserResult<DaemonOptions> result = Parser.Default.ParseArguments<DaemonOptions>(args);
+            if (result.Errors.Count() == 0)
+                Options = result.Value;
 
-                // Configure!
-                Configure();
-            }
-            Process.GetCurrentProcess().WaitForExit();
+            // Are we verbose?
+            if (Options.Verbose)
+                Console.WriteLine("Using configuration: {0}", Options.ConfigFile);
+            
+            Configure();
         }
 
         static void Configure()

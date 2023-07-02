@@ -2,15 +2,12 @@
 
 namespace Server
 {
-    internal class ServerOptions
+    internal class DaemonOptions
     {
-        [Option('c', "config", DefaultValue = "Config.json", HelpText = "The configuration for this daemon.")]
-        public string ConfigFile { get; set; }
+        [Option('c', "config", HelpText = "The configuration for this daemon.")]
+        public string ConfigFile { get; set; } = "Config.json";
 
-        [Option('v', "verbose", DefaultValue = false, HelpText = "Ouput daemon-specific messages to stdout.")]
-        public bool Verbose { get; set; }
-
-        [ParserState]
-        public IParserState LastParserState { get; set; }
+        [Option('v', "verbose", HelpText = "Ouput daemon-specific messages to stdout.")]
+        public bool Verbose { get; set; } = false;
     }
 }
