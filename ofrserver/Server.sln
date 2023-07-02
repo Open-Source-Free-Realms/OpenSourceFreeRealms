@@ -1,11 +1,11 @@
-﻿
+
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.2.32630.192
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Roles", "Roles", "{0EEB8E6C-11A0-463B-A26C-E96FE909EEDD}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Gateway", "Gateway\Gateway.csproj", "{B71EC180-EDD4-4CCE-9090-7F6ABC7CBC99}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Gateway", "Gateway\Gateway.csproj", "{B71EC180-EDD4-4CCE-9090-7F6ABC7CBC99}"
 	ProjectSection(ProjectDependencies) = postProject
 		{2ED6190E-CD8D-47EC-987C-0019BF66A331} = {2ED6190E-CD8D-47EC-987C-0019BF66A331}
 		{FFB3E48F-4E1E-4EEB-B614-EA3C922DBD5C} = {FFB3E48F-4E1E-4EEB-B614-EA3C922DBD5C}
@@ -13,9 +13,9 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Gateway", "Gateway\Gateway.
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Server", "Server", "{81F79318-03D9-41B5-ABF9-D65985BFF498}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Server", "Server\Server\Server.csproj", "{FFB3E48F-4E1E-4EEB-B614-EA3C922DBD5C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Server", "Server\Server\Server.csproj", "{FFB3E48F-4E1E-4EEB-B614-EA3C922DBD5C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LibSOE", "Server\LibSOE\LibSOE.csproj", "{2ED6190E-CD8D-47EC-987C-0019BF66A331}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LibSOE", "Server\LibSOE\LibSOE.csproj", "{2ED6190E-CD8D-47EC-987C-0019BF66A331}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
