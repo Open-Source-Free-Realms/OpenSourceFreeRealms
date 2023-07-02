@@ -35,11 +35,11 @@ namespace Gateway.Login
             ClientItemDefinitions = new List<ClientItemDefinition>();
             PointOfInterestDefinitions = new List<PointOfInterestDefinition>();
 
-            if (File.Exists(@"..\ofrserver\Customize\ClientItemDefinitions.json"))
-                ClientItemDefinitions = JsonConvert.DeserializeObject<List<ClientItemDefinition>>(File.ReadAllText(@"..\ofrserver\Customize\ClientItemDefinitions.json"));
+            if (File.Exists(@"..\Customize\ClientItemDefinitions.json"))
+                ClientItemDefinitions = JsonConvert.DeserializeObject<List<ClientItemDefinition>>(File.ReadAllText(@"..\Customize\ClientItemDefinitions.json"));
 
-            if (File.Exists(@"..\ofrserver\Customize\PointOfInterestDefinitions.json"))
-                PointOfInterestDefinitions = JsonConvert.DeserializeObject<List<PointOfInterestDefinition>>(File.ReadAllText(@"..\ofrserver\Customize\PointOfInterestDefinitions.json"));
+            if (File.Exists(@"..\Customize\PointOfInterestDefinitions.json"))
+                PointOfInterestDefinitions = JsonConvert.DeserializeObject<List<PointOfInterestDefinition>>(File.ReadAllText(@"..\Customize\PointOfInterestDefinitions.json"));
         }
 
         [SOEMessageHandler("PacketLogin", (ushort)ClientGatewayBasePackets.PacketLogin, "CGAPI_527")]
@@ -53,8 +53,8 @@ namespace Gateway.Login
             PlayerCode.SendPlayerUpdateItemDefinitions(soeClient);
             SendAnnouncementData(soeClient);
             PlayerCode.SendSelfToClient(soeClient);
-            if (File.Exists(@"..\ofrserver\Customize\PacketSendSelfToClient.json"))
-                PlayerData = JsonConvert.DeserializeObject<ClientPcData.ClientPcDatas>(File.ReadAllText(@"..\ofrserver\Customize\PacketSendSelfToClient.json"));
+            if (File.Exists(@"..\Customize\PacketSendSelfToClient.json"))
+                PlayerData = JsonConvert.DeserializeObject<ClientPcData.ClientPcDatas>(File.ReadAllText(@"..\Customize\PacketSendSelfToClient.json"));
         }
 
         private static void HandlePacketClientIsReady(SOEClient soeClient)

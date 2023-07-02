@@ -98,7 +98,7 @@ namespace Gateway.Player
         public static void SendSelfToClient(SOEClient soeClient)
         {
 
-            var SendSelfToClientData = ClientPcData.ReadFromJSON(@"..\ofrserver\Customize\PacketSendSelfToClient.json");
+            var SendSelfToClientData = ClientPcData.ReadFromJSON(@"..\Customize\PacketSendSelfToClient.json");
 
             var rawBytes = SendSelfToClientData;
 
