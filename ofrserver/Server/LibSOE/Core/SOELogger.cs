@@ -7,6 +7,7 @@ using log4net.Layout;
 using log4net.Appender;
 using log4net.Repository;
 using log4net.Repository.Hierarchy;
+using System.Text;
 
 namespace SOE.Core
 {
@@ -74,6 +75,9 @@ namespace SOE.Core
             PatternLayout pattern = new PatternLayout();
             pattern.ConversionPattern = Configuration["LogPattern"];
             pattern.ActivateOptions();
+
+            // Register encoding
+            Encoding.RegisterProvider(CodePagesEncodingProvider.Instance);
 
             // Create a filter
             LoggerMatchFilter[] filters = new LoggerMatchFilter[0];
